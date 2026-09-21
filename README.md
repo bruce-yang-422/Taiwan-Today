@@ -13,13 +13,26 @@
 
 官網：[today.stack-base.com](https://today.stack-base.com/) · [隱私權政策](https://today.stack-base.com/privacy.html)
 
+版本下載：[v1.0.0 發布頁與更新說明](https://github.com/bruce-yang-422/Taiwan-Today/releases/tag/v1.0.0)
+
 以 Vite、TypeScript、Tailwind CSS 與 Manifest V3 實作的 Chrome 新分頁。無後端、無帳號、無追蹤，離線可用，可選擇連線更新公共資料；使用 `storage` 與 `favicon` 權限，連線更新則另需授權 GitHub Raw 連線。
 
 個人／家族紀事範例：[CSV](templates/history-template.csv)、[XLSX](templates/history-template.xlsx)、[ODS](templates/history-template.ods)。選一種填寫，再使用[官網轉檔工具](https://today.stack-base.com/#converter)預覽並下載 JSON，於插件「設定 → 資料管理 → 匯入個人歷史」匯入。欄位格式見 [範例說明](templates/README.md)。
 
 ## 安裝
 
-需要 Node.js 22.16 以上。
+### 下載安裝（不需要 Node.js）
+
+1. 前往 [v1.0.0 發布頁](https://github.com/bruce-yang-422/Taiwan-Today/releases/tag/v1.0.0)，在 **Assets** 下載 `taiwan-daily-chrome-1.0.0.zip`。
+2. 將 ZIP 解壓縮到固定的資料夾。
+3. 開啟 `chrome://extensions`，啟用「開發人員模式」，按「載入未封裝項目」。
+4. 選取解壓縮後直接包含 `manifest.json` 的資料夾，開啟新分頁即可使用。
+
+Edge 可在 `edge://extensions` 使用相同方式載入。安裝後請保留解壓縮的資料夾，瀏覽器會持續從這裡讀取插件。
+
+### 從原始碼建置
+
+需要 Node.js 22.16 以上。若下載的是 GitHub 自動提供的 **Source code**，請使用此方式建置。
 
 ```sh
 npm ci
@@ -27,8 +40,6 @@ npm run build
 ```
 
 開啟 `chrome://extensions` → 啟用「開發人員模式」→「載入未封裝項目」→ 選取本專案的 **dist** 資料夾。開啟新分頁即可使用。更新程式後重新建置，再於擴充功能頁按重新載入。
-
-Edge 可在 `edge://extensions` 使用相同方式載入。
 
 ## 開發與驗證
 
