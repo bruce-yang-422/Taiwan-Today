@@ -1,0 +1,142 @@
+/* Shared reading sizes; independent of the decorative date and clock sizes. */
+:root[data-text-size] { --reading-body:14px; --reading-small:12px; --reading-control:14px; }
+:root[data-text-size=large] { --reading-body:17px; --reading-small:14px; --reading-control:16px; }
+:root[data-text-size] .history-summary,
+:root[data-text-size] #todo-list,
+:root[data-text-size] #todo-empty { font-size:var(--reading-body); line-height:1.85; overflow-wrap:anywhere; }
+:root[data-text-size] .history-source,
+:root[data-text-size] .history-more,
+:root[data-text-size] .clock-caption,
+:root[data-text-size] .todo-hint,
+:root[data-text-size] #todo-error,
+:root[data-text-size] .month-lunar,
+:root[data-text-size] .month-detail,
+:root[data-text-size] .import-hint,
+:root[data-text-size] .settings-note,
+:root[data-text-size] #settings-dialog .settings-note,
+:root[data-text-size] .daily-quote>p { font-size:var(--reading-small); line-height:1.75; overflow-wrap:anywhere; }
+:root[data-text-size] .quiet-button,
+:root[data-text-size] .shortcut-link,
+:root[data-text-size] .shortcut-add,
+:root[data-text-size] #todo-input,
+:root[data-text-size] dialog label,
+:root[data-text-size] dialog input,
+:root[data-text-size] dialog select,
+:root[data-text-size] dialog button,
+:root[data-text-size] #settings-dialog select,
+:root[data-text-size] #settings-dialog>label,
+:root[data-text-size] #settings-dialog .dialog-actions button,
+:root[data-text-size] .import-title,
+:root[data-text-size] #appearance legend,
+:root[data-text-size] #appearance label>span { font-size:var(--reading-control); }
+:root[data-text-size] dialog { max-height:calc(100dvh - 32px); overflow-y:auto; }
+:root[data-text-size] .history-card { min-width:0; }
+:root[data-text-size] .history-source a { overflow-wrap:anywhere; }
+:root[data-text-size=large] .history-year,
+:root[data-text-size=large] .season,
+:root[data-text-size=large] .season p { font-size:15px; line-height:1.7; }
+:root[data-text-size=large] .daily-quote blockquote { font-size:clamp(26px,2.2vw,38px); }
+:root[data-text-size=large] .month-weekday { font-size:15px; padding-inline:4px; }
+:root[data-text-size=large] .month-cell { min-width:0; padding-inline:6px; }
+@media(min-width:1100px) {
+  :root[data-text-size][data-style=workspace] .concept-stage { gap:14px; padding-block:16px; }
+}
+
+/* Keep hidden widgets out of every layout, including flex/grid overrides. */
+.history-section[hidden], .daily-quote[hidden], .todo-note[hidden] { display:none!important; }
+:root[data-show-second-hand=false] #clock-second { display:none; }
+#display-options { margin:24px 0 0; padding:0; border:0; min-width:0; }
+#display-options legend { font-size:var(--reading-control); font-weight:600; }
+.display-description { font-size:var(--reading-small); color:var(--muted); line-height:1.7; margin:6px 0 12px; }
+#display-options label { display:flex; align-items:center; justify-content:space-between; gap:12px; margin:0; padding:10px 0; cursor:pointer; }
+#display-options input { appearance:none; flex:0 0 38px; width:38px; height:22px; padding:2px; border:1px solid var(--line); border-radius:999px; background:var(--soft); cursor:pointer; }
+#display-options input::before { content:''; display:block; width:16px; height:16px; border-radius:50%; background:var(--muted); transition:transform .18s; }
+#display-options input:checked { background:var(--accent); border-color:var(--accent); }
+#display-options input:checked::before { transform:translateX(16px); background:var(--paper); }
+#display-options:disabled { opacity:.6; }
+:is([data-style=classic],[data-style=modern],[data-style=traditional]) main>.daily-quote { margin:0 auto 28px; max-width:100%; }
+[data-style=classic] main>.daily-quote { background:transparent; border-top:1px solid var(--line); border-bottom:1px solid var(--line); border-radius:0; }
+[data-style=modern] main>.daily-quote { border:1px solid var(--line); }
+[data-style=traditional] main>.daily-quote { background:transparent; border-block:3px double var(--line); border-radius:0; }
+.history-expansion { text-align:center; margin-top:20px; }
+.history-expansion[hidden] { display:none; }
+#history-count { font-size:var(--reading-small,12px); color:var(--muted); margin-bottom:8px; }
+#history-show-more { font-size:var(--reading-control,14px); padding:10px 20px; border:1px solid var(--line); border-radius:999px; color:var(--accent); background:var(--paper); }
+#history-show-more:hover { background:var(--soft); border-color:var(--accent); }
+#history-sources { margin-top:24px; border:0; padding:0; min-width:0; }
+#history-sources legend { font-size:var(--reading-control,14px); font-weight:600; }
+#history-sources-list { list-style:none; padding:0; margin:0; }
+#history-sources-list li { display:flex; align-items:center; gap:8px; border-bottom:1px solid var(--line); padding:8px 0; }
+#history-sources-list label { flex:1; display:flex; align-items:center; gap:8px; margin:0; cursor:pointer; }
+#history-sources-list input { flex:0 0 18px; width:18px; height:18px; padding:0; accent-color:var(--accent); }
+.source-move { display:flex; gap:4px; }
+.source-move button { min-width:32px; min-height:32px; border:1px solid var(--line); background:var(--paper); color:var(--accent); }
+.source-move button:disabled { cursor:default; opacity:.35; }
+#history-sources:disabled { opacity:.6; }
+.data-update-settings { margin-top:24px; border-top:1px solid var(--line); padding-top:18px; }
+#settings-dialog .data-update-settings h3 { margin-bottom:8px; }
+#settings-dialog .data-update-auto { display:flex; align-items:center; gap:8px; line-height:1.6; }
+#settings-dialog #data-update-auto { width:18px; height:18px; flex:0 0 18px; accent-color:var(--accent); }
+#data-update-now { padding:9px 16px; border:1px solid var(--line); border-radius:999px; background:var(--soft); color:var(--accent); }
+#data-update-status { overflow-wrap:anywhere; }
+
+/* Only the settings body scrolls; the completion action stays in view. */
+:root[data-text-size] #settings-dialog { width:min(900px,calc(100% - 32px)); max-height:calc(100dvh - 32px); padding:0; overflow:hidden; }
+#settings-dialog[open] { display:flex; flex-direction:column; }
+#settings-dialog #settings-title { flex-shrink:0; padding:22px 28px 18px; margin:0; border-bottom:1px solid var(--line); }
+.settings-columns { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); overflow-y:auto; min-height:0; overscroll-behavior:contain; }
+.settings-column { min-width:0; padding:20px 28px 24px; }
+.settings-column+.settings-column { border-left:1px solid var(--line); }
+.settings-column h3 { font-size:var(--reading-control,14px); font-weight:650; color:var(--accent); margin:0 0 18px; }
+#settings-dialog .settings-column>label { display:block; font-size:var(--reading-control,14px); letter-spacing:.025em; color:var(--muted); margin:18px 0 8px; }
+#settings-dialog #appearance, #settings-dialog #display-options { margin-top:0; }
+#settings-dialog #display-options label { padding:8px 0; }
+#settings-dialog .settings-note { margin-top:20px; }
+#settings-dialog>.dialog-actions { flex-shrink:0; margin:0; padding:14px 28px; border-top:1px solid var(--line); background:var(--paper); }
+@media(max-width:719px) {
+  .settings-columns { grid-template-columns:minmax(0,1fr); }
+  .settings-column { padding:18px 20px; }
+  .settings-column+.settings-column { border-left:0; border-top:1px solid var(--line); }
+  #settings-dialog #settings-title { padding:18px 20px; font-size:20px; }
+  #settings-dialog>.dialog-actions { padding:12px 20px; }
+}
+
+/* Keep the minimal layout compact when the quote is also enabled. */
+@media(min-width:1100px) {
+  [data-style=classic] header { padding-block:8px; }
+  [data-style=classic] .day { font-size:128px; }
+  [data-style=classic] .calendar-clock-group { padding-top:0; }
+  [data-style=classic] .eyebrow { margin-bottom:10px; }
+  [data-style=classic] .season { margin:10px auto 14px; }
+  [data-style=classic] .shortcuts-section { margin:14px 0 18px; }
+  [data-style=classic] main>.daily-quote { width:min(1200px,calc(100vw - 96px)); max-width:none; position:relative; left:50%; transform:translateX(-50%); padding:12px 16px; margin-bottom:14px; display:grid; grid-template-columns:80px minmax(0,1fr) 90px; align-items:center; gap:16px; }
+  [data-style=classic] .daily-quote blockquote { font-size:22px; line-height:1.5; }
+  [data-style=classic] .daily-quote h2 { margin-bottom:6px; }
+  [data-style=classic] .daily-quote>p { margin-top:6px; }
+  [data-style=classic] .history-card { padding:10px 16px 0; }
+  [data-style=classic] .history-more { margin-top:8px; }
+  [data-style=classic] .history-source { margin-top:4px; }
+  [data-style=classic] footer { padding-block:12px; }
+}
+@media(min-width:1100px) and (max-height:820px) {
+  [data-style=classic] header { padding-block:4px; }
+  [data-style=classic] .eyebrow { margin-bottom:4px; }
+  [data-style=classic] .day { font-size:80px; line-height:1; }
+  [data-style=classic] .month { font-size:22px; line-height:1.2; }
+  [data-style=classic] .lunar { margin:3px 0; }
+  [data-style=classic] .clock-container { margin-top:22px; }
+  [data-style=classic] .analog-clock { width:112px; }
+  [data-style=classic] .digital-clock { margin-top:6px; }
+  [data-style=classic] .season { margin:4px auto 8px; }
+  [data-style=classic] #term-countdown { margin-top:3px; }
+  [data-style=classic] .search { padding-block:10px; }
+  [data-style=classic] .shortcuts-section { margin:8px 0; }
+  [data-style=classic] .shortcut-link,[data-style=classic] .shortcut-add { gap:6px; }
+  [data-style=classic] .shortcut-icon { width:36px; height:36px; }
+  [data-style=classic] main>.daily-quote { padding-block:8px; margin-bottom:12px; }
+  [data-style=classic] .daily-quote blockquote { font-size:20px; line-height:1.5; }
+  [data-style=classic] .history-card h3 { margin:5px 0 8px; }
+  :root[data-text-size][data-style=classic] .history-summary { line-height:1.7; }
+  [data-style=classic] footer { padding-block:8px; }
+  [data-style=classic] footer>span { display:none; }
+}

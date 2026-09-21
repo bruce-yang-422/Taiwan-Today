@@ -12,6 +12,9 @@
 .concept-stage{display:flex;flex-direction:column;gap:20px}
 .concept-sidebar{background:#173a2d;color:#f1f6ed}
 .concept-rail{background:var(--soft);display:flex;flex-direction:column;gap:20px}
+.selected-date-label{font-size:var(--reading-control,14px);font-weight:600;color:var(--accent);line-height:1.7;border-bottom:1px solid var(--line);padding-bottom:10px;margin:0}
+.today-context{font-size:var(--reading-small,12px);line-height:1.8;color:var(--muted);margin:0;overflow-wrap:anywhere}
+[data-style=workspace] .clock-container{border-top:1px solid var(--line);padding-top:16px}
 .concept-bottom{grid-column:1 / -1}
 .concept-shell .shortcuts-section{margin:12px 0}
 [data-style=workspace] #shortcuts{display:flex;flex-direction:column;align-items:stretch;gap:12px}

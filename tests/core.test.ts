@@ -1,3 +1,4 @@
+import { normalizeHistorySources, historyDatasets } from '../src/calendar/history';
 import { describe, expect, it } from 'vitest';
 import { dailyCalendar } from '../src/calendar/dailyCalendar';
 import { normalizeUrl, searchUrl } from '../src/search/search';
@@ -5,6 +6,26 @@ import { parseShortcuts } from '../src/shortcuts/shortcuts';
 import reference from '../data/calendar-2026.json';
 import reference2027 from '../data/calendar-2027.json';
 import { Lunar } from 'lunar-typescript';
+import { bundledFiles, parsePublicData } from '../src/data/publicData';
+import { parseManifest } from '../src/data/updates';
+
+describe('public data updates', () => {
+  it('accepts a complete future leap year and rejects missing days', () => {
+    const days: Record<string, unknown> = {};
+    for (let time = Date.UTC(2028, 0, 1); time < Date.UTC(2029, 0, 1); time += 86400000) {
+      days[new Date(time).toISOString().slice(0, 10)] = { lunar: '測試農曆', isDayOff: true };
+    }
+    const files = { ...bundledFiles, 'calendar-2028.json': { year: 2028, days } };
+    expect(parsePublicData(files).calendars['2028-02-29'].isDayOff).toBe(true);
+    delete days['2028-02-29'];
+    expect(() => parsePublicData(files)).toThrow('年度日曆不完整');
+  });
+  it('rejects private data, code and paths in remote manifests', () => {
+    for (const name of ['history-personal.json', '../quotes.json', 'newtab.js', 'https://example.com/quotes.json']) {
+      expect(() => parseManifest({ schemaVersion: 1, revision: 'a'.repeat(64), files: [{ name, bytes: 10, sha256: 'b'.repeat(64) }] })).toThrow();
+    }
+  });
+});
 describe('Taiwan calendar', () => {
   it('shows folk observances together without treating them as public holidays', () => {
     const onLunar = (month: number, day: number) => {
@@ -86,5 +107,16 @@ describe('safe navigation and storage', () => {
     expect(parseShortcuts([])).toEqual([]); expect(parseShortcuts(undefined)).toHaveLength(4);
     expect(() => parseShortcuts([{ id: 'x', name: 'x', url: 'javascript:alert(1)', order: 0 }])).toThrow();
     expect(() => parseShortcuts({})).toThrow();
+  });
+});
+
+
+describe('history source preferences', () => {
+  it('normalizes ordering, duplicates and future topic defaults', () => {
+    const datasets = [...historyDatasets, { id: 'technology', label: '科技', kind: 'topic' as const, entries: [] }];
+    expect(normalizeHistorySources([{ id: 'world', enabled: false }, { id: 'world', enabled: true }, { id: 'unknown', enabled: true }, null], datasets)).toEqual([
+      { id: 'world', enabled: false }, { id: 'personal', enabled: true }, { id: 'taiwan', enabled: true }, { id: 'technology', enabled: false },
+    ]);
+    expect(normalizeHistorySources(null).map(s => s.id)).toEqual(['personal', 'taiwan', 'world']);
   });
 });

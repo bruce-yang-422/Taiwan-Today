@@ -10,7 +10,7 @@ test('personal history import validates, persists, syncs and can be cleared', as
   await other.clock.install({ time: new Date('2026-09-21T12:00:00+08:00') });
   await other.goto('/newtab.html');
   const open = async () => {
-    await page.getByRole('button', { name: '開啟外觀設定' }).click();
+    await page.getByRole('button', { name: '開啟設定' }).click();
     await page.getByRole('button', { name: '匯入個人歷史 JSON', exact: true }).click();
   };
   const select = async (value: unknown) => page.locator('#personal-history-file').setInputFiles({ name: 'history-personal.json', mimeType: 'application/json', buffer: Buffer.from(JSON.stringify(value)) });
@@ -46,7 +46,7 @@ test('personal history import validates, persists, syncs and can be cleared', as
 
 test('quote category updates immediately and persists across reloads', async ({ page }) => {
   await page.goto('/newtab.html');
-  await page.getByRole('button', { name: '開啟外觀設定' }).click();
+  await page.getByRole('button', { name: '開啟設定' }).click();
   await page.getByLabel('日曆樣式').selectOption('reading');
   await page.getByLabel('每日一句分類').selectOption('sheng-yen');
   await page.keyboard.press('Escape');
@@ -54,12 +54,12 @@ test('quote category updates immediately and persists across reloads', async ({ 
   const quote = await page.locator('.daily-quote blockquote').textContent();
   await page.reload();
   await expect(page.locator('.daily-quote blockquote')).toHaveText(quote!);
-  await page.getByRole('button', { name: '開啟外觀設定' }).click();
+  await page.getByRole('button', { name: '開啟設定' }).click();
   await expect(page.getByLabel('每日一句分類')).toHaveValue('sheng-yen');
   await page.getByLabel('每日一句分類').selectOption('negative');
   await page.keyboard.press('Escape');
   await expect(page.locator('.daily-quote > p')).toHaveText(/^— (台灣今日曆・原創|網路流傳)$/);
-  await page.getByRole('button', { name: '開啟外觀設定' }).click();
+  await page.getByRole('button', { name: '開啟設定' }).click();
   await page.getByLabel('每日一句分類').selectOption('classics');
   await page.keyboard.press('Escape');
   await expect(page.locator('.daily-quote > p')).toHaveText(/《(論語|周易)/);
@@ -83,7 +83,7 @@ test('ChatGPT is added once to existing shortcuts and stays deleted', async ({ p
 test('classic layout restores the centered original design and persists', async ({ page }) => {
   await page.setViewportSize({ width: 1920, height: 1080 });
   await page.goto('/newtab.html');
-  await page.getByRole('button', { name: '開啟外觀設定' }).click();
+  await page.getByRole('button', { name: '開啟設定' }).click();
   await page.getByLabel('日曆樣式').selectOption('classic');
   await page.keyboard.press('Escape');
   await page.reload();
@@ -93,7 +93,7 @@ test('classic layout restores the centered original design and persists', async 
   expect(group.width).toBe(556);
   await expect(page.locator('.concept-shell')).toBeHidden();
   await page.screenshot({ path: 'test-results/classic-desktop.png', fullPage: true });
-  await page.getByRole('button', { name: '開啟外觀設定' }).click();
+  await page.getByRole('button', { name: '開啟設定' }).click();
   await page.getByRole('radio', { name: '暗色', exact: true }).check();
   await page.keyboard.press('Escape');
   await expect(page.locator('html')).toHaveClass('dark');
@@ -105,7 +105,7 @@ test('calendar workspace navigates dates and restores other layouts', async ({ p
   await page.setViewportSize({ width: 1920, height: 1080 });
   await page.clock.install({ time: new Date('2026-09-21T04:00:00Z') });
   await page.goto('/newtab.html');
-  await page.getByRole('button', { name: '開啟外觀設定' }).click();
+  await page.getByRole('button', { name: '開啟設定' }).click();
   await page.getByLabel('日曆樣式').selectOption('workspace');
   await page.keyboard.press('Escape');
   await expect(page.locator('#month-view-title')).toHaveText('2026 年 9 月');
@@ -119,7 +119,7 @@ test('calendar workspace navigates dates and restores other layouts', async ({ p
   expect(await page.getByRole('button', { name: '2026-09-01', exact: true }).evaluate(element => Array.from(element.parentElement!.children).indexOf(element) - 7)).toBe(2);
   await expect(page.getByRole('button', { name: '2026-09-06', exact: true })).toHaveClass(/weekend/);
   await expect(page.getByRole('button', { name: '2026-09-07', exact: true })).not.toHaveClass(/weekend/);
-  await page.getByRole('button', { name: '開啟外觀設定' }).click();
+  await page.getByRole('button', { name: '開啟設定' }).click();
   await page.getByLabel('月曆每週起始日').selectOption('1');
   await page.keyboard.press('Escape');
   await page.reload();
@@ -128,7 +128,15 @@ test('calendar workspace navigates dates and restores other layouts', async ({ p
   await expect(page.getByRole('button', { name: '2026-09-06', exact: true })).toHaveClass(/weekend/);
   await expect(page.getByRole('button', { name: '2026-09-07', exact: true })).not.toHaveClass(/weekend/);
   await expect(page.getByRole('button', { name: '2026-09-21', exact: true })).toHaveAttribute('aria-current', 'date');
+  await expect(page.locator('#selected-date-label')).toHaveText('選取日期 · 2026/09/21 （今天）');
+  const todayQuote = await page.locator('#daily-quote blockquote').textContent();
   await page.getByRole('button', { name: '2026-09-22', exact: true }).click();
+  await expect(page.locator('#selected-date-label')).toHaveText('選取日期 · 2026/09/22');
+  await expect(page.locator('#today-context')).toContainText('今天是 2026/09/21');
+  await expect(page.locator('.clock-caption')).toHaveText('現在時間 · 台灣');
+  await expect(page.locator('#daily-quote h2')).toHaveText('今日語錄');
+  await expect(page.locator('#daily-quote blockquote')).toHaveText(todayQuote!);
+  await expect(page.locator('#todo-panel summary')).toContainText('今日待辦');
   await expect(page.locator('#day')).toHaveText('22');
   await expect(page.locator('#history-heading')).toHaveText('9 月 22 日的歷史');
   await expect(page.locator('#history')).toContainText('伊拉克入侵伊朗');
@@ -137,19 +145,28 @@ test('calendar workspace navigates dates and restores other layouts', async ({ p
   await expect(page.locator('.month-cell')).toHaveCount(31);
   await page.getByRole('button', { name: '回到今天' }).click();
   await expect(page.locator('#day')).toHaveText('21');
+  await expect(page.locator('#selected-date-label')).toContainText('（今天）');
   await expect(page.locator('#history-heading')).toHaveText('歷史上的今天');
   await page.screenshot({ path: 'test-results/workspace-desktop.png', fullPage: true });
-  expect(await page.evaluate(() => document.documentElement.scrollHeight)).toBeLessThanOrEqual(1080);
-  await page.getByRole('button', { name: '開啟外觀設定' }).click();
+  // Readable text may extend below the fold; the last item must remain reachable.
+  await page.locator('.history-card').last().scrollIntoViewIfNeeded();
+  await expect(page.locator('.history-card').last()).toBeInViewport();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(1920);
+  await page.getByRole('button', { name: '開啟設定' }).click();
   await page.getByLabel('日曆樣式').selectOption('reading');
   await page.keyboard.press('Escape');
   await expect(page.locator('#month-view')).toHaveCount(0);
   await expect(page.locator('.daily-quote')).toBeVisible();
   await page.reload();
   await expect(page.locator('html')).toHaveAttribute('data-style', 'reading');
+  await expect(page.locator('#selected-date-label')).toHaveCount(0);
+  await expect(page.locator('#daily-quote h2')).toHaveText('每日一句');
   await page.screenshot({ path: 'test-results/reading-desktop.png', fullPage: true });
-  expect(await page.evaluate(() => document.documentElement.scrollHeight)).toBeLessThanOrEqual(1080);
-  await page.getByRole('button', { name: '開啟外觀設定' }).click();
+  // Readable text may extend below the fold; the last item must remain reachable.
+  await page.locator('.history-card').last().scrollIntoViewIfNeeded();
+  await expect(page.locator('.history-card').last()).toBeInViewport();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(1920);
+  await page.getByRole('button', { name: '開啟設定' }).click();
   await page.getByLabel('日曆樣式').selectOption('modern');
   await page.keyboard.press('Escape');
   await expect(page.locator('.concept-shell')).toBeHidden();
@@ -162,7 +179,7 @@ for (const style of ['workspace', 'reading']) {
   test(`${style} supports dark mode, mobile and saved todos`, async ({ page }) => {
     await page.setViewportSize({ width: 1920, height: 1080 });
     await page.goto('/newtab.html');
-    await page.getByRole('button', { name: '開啟外觀設定' }).click();
+    await page.getByRole('button', { name: '開啟設定' }).click();
     await page.getByRole('radio', { name: '暗色', exact: true }).check();
     await page.getByLabel('日曆樣式').selectOption(style);
     await page.keyboard.press('Escape');
@@ -184,7 +201,7 @@ for (const style of ['workspace', 'reading']) {
 test('traditional calendar uses a paper layout on desktop and fits mobile', async ({ page }) => {
   await page.setViewportSize({ width: 1920, height: 1080 });
   await page.goto('/newtab.html');
-  await page.getByRole('button', { name: '開啟外觀設定' }).click();
+  await page.getByRole('button', { name: '開啟設定' }).click();
   await page.getByRole('radio', { name: '亮色', exact: true }).check();
   await page.getByLabel('日曆樣式').selectOption('traditional');
   await page.keyboard.press('Escape');
@@ -194,8 +211,11 @@ test('traditional calendar uses a paper layout on desktop and fits mobile', asyn
   expect(calendar.x + calendar.width).toBeLessThan(clock.x);
   expect(clock.x + clock.width).toBeLessThan(note.x);
   await page.screenshot({ path: 'test-results/traditional-desktop.png', fullPage: true });
-  expect(await page.evaluate(() => document.documentElement.scrollHeight)).toBeLessThanOrEqual(1080);
-  await page.getByRole('button', { name: '開啟外觀設定' }).click();
+  // Readable text may extend below the fold; the last item must remain reachable.
+  await page.locator('.history-card').last().scrollIntoViewIfNeeded();
+  await expect(page.locator('.history-card').last()).toBeInViewport();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(1920);
+  await page.getByRole('button', { name: '開啟設定' }).click();
   await page.getByRole('radio', { name: '暗色', exact: true }).check();
   await page.keyboard.press('Escape');
   await page.screenshot({ path: 'test-results/traditional-desktop-dark.png', fullPage: true });
@@ -274,7 +294,10 @@ test('analog clock uses Taiwan time and advances its hands', async ({ page }) =>
   expect(clock!.x + clock!.width).toBeLessThan(1920);
   const note = (await page.locator('.todo-note').boundingBox())!;
   expect(clock!.x + clock!.width).toBeLessThan(note.x);
-  expect(await page.evaluate(() => document.documentElement.scrollHeight)).toBeLessThanOrEqual(1080);
+  // Readable text may extend below the fold; the last item must remain reachable.
+  await page.locator('.history-card').last().scrollIntoViewIfNeeded();
+  await expect(page.locator('.history-card').last()).toBeInViewport();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(1920);
   await expect(page.getByRole('heading', { name: '歷史上的今天', exact: true })).toBeVisible();
   await expect(page.locator('.history-card')).toHaveCount(3);
   const cards = await page.locator('.history-card').evaluateAll(elements => elements.map(element => {
@@ -314,7 +337,7 @@ test('offline rendering, shortcuts CRUD, keyboard sorting, themes and search', a
   await page.getByRole('button', { name: '編輯 修改網站', exact: true }).click();
   await page.getByRole('button', { name: '刪除', exact: true }).click();
   await expect(page.getByRole('link', { name: '修改網站', exact: true })).toHaveCount(0);
-  await page.getByRole('button', { name: '開啟外觀設定' }).click();
+  await page.getByRole('button', { name: '開啟設定' }).click();
   await page.getByRole('radio', { name: '暗色', exact: true }).check();
   await expect(page.locator('html')).toHaveClass('dark');
   await page.getByLabel('日曆樣式').selectOption('traditional');

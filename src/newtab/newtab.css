@@ -92,7 +92,16 @@
   footer{padding-top:24px;padding-bottom:16px}
 }
 
-.personal-history-open { margin-top: 20px; width: 100%; }
+.personal-history-open { margin-top:24px; width:100%; display:flex; align-items:center; gap:12px; padding:16px; border:1px dashed var(--line); border-radius:14px; background:var(--paper); color:var(--ink); text-align:left; transition:border-color .18s,background-color .18s; }
+.personal-history-open:hover { border-color:var(--accent); background:var(--soft); }
+.personal-history-open:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
+.import-icon { display:grid; place-items:center; flex:0 0 40px; height:40px; border-radius:12px; background:var(--soft); color:var(--accent); }
+.import-icon svg { width:22px; height:22px; }
+.import-copy { display:flex; flex:1; min-width:0; flex-direction:column; gap:5px; }
+.import-title { font-size:13px; font-weight:600; letter-spacing:.035em; line-height:1.6; }
+.import-format { display:inline-block; font-size:9px; font-weight:500; letter-spacing:.07em; color:var(--muted); border:1px solid var(--line); border-radius:4px; padding:0 4px; vertical-align:middle; }
+.import-hint { font-size:11px; line-height:1.6; color:var(--muted); }
+.import-chevron { flex:0 0 14px; width:14px; height:14px; color:var(--muted); }
 #personal-history-dialog { max-height: 85vh; overflow-y: auto; }
 #personal-history-dialog p, #personal-history-preview { font-size: 13px; line-height: 1.8; overflow-wrap: anywhere; }
 #personal-history-file { width: 100%; margin-block: 12px; }

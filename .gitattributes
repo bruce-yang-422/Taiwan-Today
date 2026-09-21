@@ -1,0 +1,2 @@
+# Keep published JSON byte hashes stable across Windows and GitHub checkouts.
+data/*.json text eol=lf

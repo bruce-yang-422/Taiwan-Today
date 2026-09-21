@@ -1,7 +1,7 @@
 import { dailyCalendar } from '../calendar/dailyCalendar';
 import { taipeiDate } from '../calendar/gregorian';
 import { lunarDate } from '../calendar/lunar';
-import quotes from '../../data/quotes.json';
+import { getPublicData } from '../data/publicData';
 
 export function createConceptLayouts(onSelect: (date?: Date) => void) {
   const main = document.querySelector('main')!;
@@ -24,6 +24,10 @@ export function createConceptLayouts(onSelect: (date?: Date) => void) {
   const quoteText = document.createElement('blockquote');
   const quoteSource = document.createElement('p');
   quote.append(quoteHeading, quoteText, quoteSource);
+  const selectionLabel = document.createElement('p'); selectionLabel.className = 'selected-date-label'; selectionLabel.id = 'selected-date-label'; selectionLabel.setAttribute('role', 'status');
+  const todayContext = document.createElement('p'); todayContext.className = 'today-context'; todayContext.id = 'today-context';
+  const clockCaption = calendar.querySelector<HTMLElement>('.clock-caption')!;
+  const dateSection = calendar.querySelector<HTMLElement>('.calendar')!;
   const monthView = document.createElement('section'); monthView.id = 'month-view'; monthView.setAttribute('aria-label', '月曆');
   const toolbar = document.createElement('div'); toolbar.className = 'month-toolbar';
   const title = document.createElement('h2'); title.id = 'month-view-title'; title.setAttribute('aria-live', 'polite');
@@ -60,6 +64,10 @@ export function createConceptLayouts(onSelect: (date?: Date) => void) {
     const days = new Date(Date.UTC(year, month, 0)).getUTCDate();
     const cells = Math.ceil((offset + days) / 7) * 7;
     const now = taipeiDate();
+    const selectedKey = selected || now.key;
+    selectionLabel.textContent = `選取日期 · ${selectedKey.replaceAll('-', '/')} ${selectedKey === now.key ? '（今天）' : ''}`;
+    dateSection.setAttribute('aria-label', `選取日期 ${selectedKey}`);
+    todayContext.textContent = `今天是 ${now.key.replaceAll('-', '/')}。時鐘、今日待辦與今日語錄不隨選取日期切換；待辦跨日保留。`;
     for (let index = 0; index < cells; index++) {
       const day = index - offset + 1;
       if (day < 1 || day > days) { const blank = document.createElement('div'); blank.className = 'month-blank'; grid.append(blank); continue; }
@@ -87,8 +95,9 @@ export function createConceptLayouts(onSelect: (date?: Date) => void) {
   function refresh() {
     const date = taipeiDate();
     if (todayKey === date.key) return;
+    if (todayKey && !selected) { year = date.year; month = date.month; }
     todayKey = date.key;
-    const matchingQuotes = quotes.filter(item => item.category === quoteCategory);
+    const matchingQuotes = getPublicData().quotes.filter(item => item.category === quoteCategory);
     const item = matchingQuotes[Math.floor(Date.UTC(date.year, date.month - 1, date.day) / 86400000) % matchingQuotes.length];
     quoteText.textContent = item?.text ?? '每日一句尚未收錄。';
     quoteSource.textContent = item?.source ? `— ${item.source}` : '';
@@ -96,6 +105,7 @@ export function createConceptLayouts(onSelect: (date?: Date) => void) {
   }
   return {
     refresh,
+    refreshData() { todayKey = ''; refresh(); },
     setQuoteCategory(value: string) {
       if (value === quoteCategory) return;
       quoteCategory = value; todayKey = ''; refresh();
@@ -109,13 +119,18 @@ export function createConceptLayouts(onSelect: (date?: Date) => void) {
       if (currentStyle === style) return;
       currentStyle = style;
       widgets.forEach(({ element, anchor }) => anchor.after(element));
-      monthView.remove(); quote.remove();
+      monthView.remove(); quote.remove(); selectionLabel.remove(); todayContext.remove();
+      quoteHeading.textContent = style === 'workspace' ? '今日語錄' : '每日一句';
+      quote.setAttribute('aria-label', quoteHeading.textContent);
+      clockCaption.textContent = style === 'workspace' ? '現在時間 · 台灣' : '台灣時間';
       shell.hidden = !['workspace', 'reading'].includes(style);
       if (style === 'workspace') {
-        sidebar.append(shortcuts); stage.append(search, monthView, history); rail.append(calendar, todos, quote);
+        sidebar.append(shortcuts); stage.append(search, monthView, history); rail.append(selectionLabel, calendar, todayContext, todos, quote);
         renderMonth();
       } else if (style === 'reading') {
         sidebar.append(calendar); stage.append(quote, history, todos); bottom.append(search, shortcuts);
+      } else {
+        history.before(quote);
       }
       if (style !== 'workspace') { selected = ''; onSelect(); }
       refresh();

@@ -1,5 +1,125 @@
 [
   {
+    "date": "01-01",
+    "year": 1863,
+    "title": "林肯發布解放奴隸宣言生效",
+    "summary": "美國總統林肯簽署的解放奴隸宣言正式生效，宣告南方邦聯轄下的奴隸獲得自由，改變美國南北戰爭的性質與目標，成為廢奴運動史上的重要里程碑。",
+    "keyword": "解放奴隸宣言 林肯 1863",
+    "region": "國際",
+    "source": "維基百科・1月1日",
+    "sourceUrl": "https://en.wikipedia.org/wiki/January_1"
+  },
+  {
+    "date": "02-11",
+    "year": 1990,
+    "title": "曼德拉獲釋出獄",
+    "summary": "南非反種族隔離運動領袖曼德拉在服刑二十七年後獲釋，自開普敦近郊的維克多維斯特監獄步出，這一刻透過全球電視轉播，象徵種族隔離制度即將走向終結。",
+    "keyword": "曼德拉 獲釋 1990",
+    "region": "國際",
+    "source": "維基百科・2月11日",
+    "sourceUrl": "https://en.wikipedia.org/wiki/February_11"
+  },
+  {
+    "date": "02-20",
+    "year": 1962,
+    "title": "葛倫成為首位環繞地球的美國太空人",
+    "summary": "太空人約翰・葛倫乘坐「友誼七號」太空艙，在四小時五十五分鐘內完成三次繞行地球軌道，成為第一位進入地球軌道的美國人，是美蘇太空競賽的重要進展。",
+    "keyword": "約翰葛倫 太空 1962",
+    "region": "國際",
+    "source": "維基百科・2月20日",
+    "sourceUrl": "https://en.wikipedia.org/wiki/February_20"
+  },
+  {
+    "date": "03-25",
+    "year": 1957,
+    "title": "羅馬條約簽署，歐洲經濟共同體成立",
+    "summary": "西德、法國、義大利、比利時、荷蘭與盧森堡六國簽署羅馬條約，成立歐洲經濟共同體，建立起會員國間的關稅同盟與共同市場，為日後歐洲聯盟奠定基礎。",
+    "keyword": "羅馬條約 歐洲經濟共同體 1957",
+    "region": "國際",
+    "source": "維基百科・3月25日",
+    "sourceUrl": "https://en.wikipedia.org/wiki/March_25"
+  },
+  {
+    "date": "04-12",
+    "year": 1961,
+    "title": "加加林完成人類首次太空飛行",
+    "summary": "蘇聯太空人加加林乘坐東方一號太空船，成為第一位進入外太空並完成繞地球軌道飛行的人類，開啟載人航太時代，也讓蘇聯在太空競賽中取得領先地位。",
+    "keyword": "加加林 太空飛行 1961",
+    "region": "國際",
+    "source": "維基百科・4月12日",
+    "sourceUrl": "https://en.wikipedia.org/wiki/April_12"
+  },
+  {
+    "date": "04-22",
+    "year": 1970,
+    "title": "首屆世界地球日舉行",
+    "summary": "美國各地約兩千萬人參與首屆世界地球日活動，倡議環境保護與永續發展，這場民間運動促成美國環境保護署成立及多項環保法案通過，影響全球環保意識至今。",
+    "keyword": "世界地球日 1970",
+    "region": "國際",
+    "source": "維基百科・4月22日",
+    "sourceUrl": "https://en.wikipedia.org/wiki/April_22"
+  },
+  {
+    "date": "05-08",
+    "year": 1945,
+    "title": "歐戰勝利日，納粹德國投降",
+    "summary": "德國無條件投降書在柏林卡爾斯霍斯特簽署生效，歐洲戰場的第二次世界大戰正式結束，這一天被稱為「歐戰勝利日」，象徵歐洲法西斯政權的終結與戰後新秩序的開始。",
+    "keyword": "歐戰勝利日 二戰 1945",
+    "region": "國際",
+    "source": "維基百科・5月8日",
+    "sourceUrl": "https://en.wikipedia.org/wiki/May_8"
+  },
+  {
+    "date": "06-04",
+    "year": 1989,
+    "title": "六四事件，北京天安門廣場遭武力清場",
+    "summary": "1989年6月3日深夜，自外地調動進入北京的中國人民解放軍戒嚴部隊，對聚集天安門廣場的學生與市民展開武力清場，行動持續至翌日凌晨，造成大量傷亡，成為震驚中外的六四事件。",
+    "keyword": "六四事件 天安門 1989",
+    "region": "國際",
+    "source": "維基百科・六四事件",
+    "sourceUrl": "https://zh.wikipedia.org/zh-tw/%E5%85%AD%E5%9B%9B%E4%BA%8B%E4%BB%B6"
+  },
+  {
+    "date": "06-06",
+    "year": 1944,
+    "title": "諾曼第登陸，盟軍反攻歐陸",
+    "summary": "近十六萬名盟軍部隊橫渡英吉利海峽，在法國諾曼第海岸展開史上規模最大的兩棲登陸作戰，這場代號「大君主作戰」的行動扭轉了第二次世界大戰歐洲戰場的局勢。",
+    "keyword": "諾曼第登陸 D-Day 1944",
+    "region": "國際",
+    "source": "維基百科・6月6日",
+    "sourceUrl": "https://en.wikipedia.org/wiki/June_6"
+  },
+  {
+    "date": "06-26",
+    "year": 1997,
+    "title": "《哈利波特：神秘的魔法石》英國出版",
+    "summary": "英國布魯姆斯伯里出版社發行J.K.羅琳首部小說《哈利波特：神秘的魔法石》，首刷僅五百本精裝書，其中三百本供應圖書館，日後卻成為全球最暢銷的奇幻小說系列起點。",
+    "keyword": "哈利波特 出版 1997",
+    "region": "國際",
+    "source": "維基百科・Harry Potter and the Philosopher's Stone",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Harry_Potter_and_the_Philosopher%27s_Stone"
+  },
+  {
+    "date": "07-20",
+    "year": 1969,
+    "title": "阿波羅十一號成功登陸月球",
+    "summary": "美國太空人阿姆斯壯與艾德林搭乘阿波羅十一號登陸月球寧靜海，阿姆斯壯成為首位踏上月球表面的人類，這一刻透過電視向全球直播，是人類太空探索史上的重要里程碑。",
+    "keyword": "阿波羅11號 登月 1969",
+    "region": "國際",
+    "source": "維基百科・7月20日",
+    "sourceUrl": "https://en.wikipedia.org/wiki/July_20"
+  },
+  {
+    "date": "08-06",
+    "year": 1945,
+    "title": "美軍在廣島投下原子彈",
+    "summary": "美國B-29轟炸機艾諾拉蓋號在日本廣島投下原子彈「小男孩」，造成約七萬人當場罹難，加上後續輻射傷害死亡人數持續攀升，是人類史上首次於戰爭中使用核武器。",
+    "keyword": "廣島 原子彈 1945",
+    "region": "國際",
+    "source": "維基百科・8月6日",
+    "sourceUrl": "https://en.wikipedia.org/wiki/August_6"
+  },
+  {
     "date": "09-04",
     "year": 1998,
     "title": "Google 公司成立",
@@ -198,6 +318,16 @@
     "region": "國際",
     "source": "維基百科・11月2日",
     "sourceUrl": "https://en.wikipedia.org/wiki/November_2"
+  },
+  {
+    "date": "11-04",
+    "year": 2001,
+    "title": "電影《哈利波特：神秘的魔法石》倫敦首映",
+    "summary": "電影版《哈利波特：神秘的魔法石》在倫敦萊斯特廣場奧丁電影院舉行世界首映，戲院特別布置成霍格華茲魔法學校的模樣，開啟這部暢銷小說系列的電影改編之路。",
+    "keyword": "哈利波特 電影 首映 2001",
+    "region": "國際",
+    "source": "維基百科・Harry Potter and the Philosopher's Stone (film)",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Harry_Potter_and_the_Philosopher%27s_Stone_(film)"
   },
   {
     "date": "11-05",

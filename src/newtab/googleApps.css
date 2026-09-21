@@ -1,0 +1,26 @@
+.header-actions { display:flex; align-items:center; gap:12px; flex-shrink:0; }
+.google-quick-links { display:flex; align-items:center; gap:4px; }
+.google-quick-links a { display:grid; place-items:center; width:34px; height:34px; border-radius:50%; }
+.google-quick-links svg { width:20px; height:20px; }
+.google-quick-links a:hover { background:var(--soft); }
+.google-quick-links a:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+.google-apps { position:relative; z-index:10; }
+.google-apps-toggle { display:grid; place-items:center; width:40px; height:40px; border-radius:50%; color:var(--muted); }
+.google-apps-toggle:hover,.google-apps-toggle[aria-expanded=true] { background:var(--soft); color:var(--accent); }
+.google-apps-toggle svg { width:22px; height:22px; }
+.google-apps-panel { position:absolute; top:calc(100% + 12px); right:0; width:320px; max-width:calc(100vw - 40px); max-height:calc(100dvh - 110px); overflow-y:auto; padding:20px 14px 14px; border:1px solid var(--line); border-radius:22px; background:var(--paper); color:var(--ink); box-shadow:0 12px 40px #0003; }
+.google-apps-panel[hidden] { display:none; }
+.google-apps-panel h2 { margin:0 8px 16px; font-size:var(--reading-control,14px); font-weight:600; }
+.google-apps-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:4px; }
+.google-apps-grid a { display:flex; flex-direction:column; align-items:center; gap:10px; min-width:0; padding:14px 4px; border-radius:14px; font-size:var(--reading-control,14px); text-align:center; }
+.google-apps-grid a:hover { background:var(--soft); }
+.google-apps-grid svg { width:36px; height:36px; flex-shrink:0; }
+.google-apps-panel>p { margin:14px 0 0; font-size:var(--reading-small,12px); text-align:center; color:var(--muted); }
+@media(max-width:480px) {
+  :root body>header { flex-wrap:wrap; gap:8px; }
+  .header-actions { margin-left:auto; }
+  .header-actions { gap:4px; }
+  :root .brand { font-size:14px; letter-spacing:.03em; }
+  :root .brand-logo { width:30px; height:30px; }
+  :root .header-actions .quiet-button { padding:8px; }
+}

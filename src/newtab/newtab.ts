@@ -2,12 +2,18 @@ import './newtab.css';
 import './traditional.css';
 import './modern.css';
 import './concepts.css';
+import './readability.css';
+import './googleApps.css';
+import { initializeDataUpdates } from './dataUpdates';
+import { initializeGoogleApps } from './googleApps';
 import { createConceptLayouts } from './concepts';
 
 import { initializeClock } from './clock';
 import { initializeTodos } from './todos';
 import { initializePersonalHistory } from './personalHistory';
-import { dailyCalendar } from '../calendar/dailyCalendar';
+import { createHistorySourceControls } from './historySources';
+import { normalizeHistorySources, type HistorySourceSetting } from '../calendar/history';
+import { dailyCalendar, setHistorySources } from '../calendar/dailyCalendar';
 import { normalizeUrl, searchUrl } from '../search/search';
 import { defaults, parseShortcuts, loadShortcuts, validIcon, shortcutIcon, type Shortcut } from '../shortcuts/shortcuts';
 import { extensionStorage, readStorage, writeStorage } from '../shortcuts/storage';
@@ -18,6 +24,7 @@ const node = <K extends keyof HTMLElementTagNameMap>(tag: K, className = '', tex
 };
 function notify(message: string) { el('status').textContent = message; el('status').hidden = false; }
 let lastDate = '';
+let historyExpanded = false, historyDate = '';
 let selectedDate: Date | undefined;
 function renderCalendar() {
   const date = dailyCalendar(selectedDate);
@@ -25,6 +32,7 @@ function renderCalendar() {
   document.querySelector('.calendar')!.setAttribute('aria-label', selectedDate ? '所選日期' : '今日日期');
   if (lastDate === date.key) return;
   lastDate = date.key;
+  if (historyDate !== date.key) { historyExpanded = false; historyDate = date.key; }
   el('year').textContent = `${date.year} · 民國 ${date.year - 1911} 年`;
   el('month').textContent = `${['一','二','三','四','五','六','七','八','九','十','十一','十二'][date.month - 1]}月`;
   el('day').textContent = String(date.day);
@@ -40,8 +48,13 @@ function renderCalendar() {
   }
   if (date.longHoliday) el('festivals').append(node('span', 'badge', date.longHoliday));
   el('history').replaceChildren();
-  el('history').dataset.count = String(date.history.length);
-  for (const event of date.history) {
+  const visibleHistory = historyExpanded ? date.history : date.history.slice(0, 3);
+  el('history').dataset.count = String(visibleHistory.length);
+  el('history-expansion').hidden = date.history.length <= 3;
+  el('history-count').textContent = `顯示 ${visibleHistory.length} / ${date.history.length} 則紀事`;
+  el('history-show-more').textContent = historyExpanded ? '收合紀事' : `顯示更多（另 ${date.history.length - visibleHistory.length} 則）`;
+  el('history-show-more').setAttribute('aria-expanded', String(historyExpanded));
+  for (const event of visibleHistory) {
     const article = node('article', 'history-card');
     article.append(node('p', 'history-year', `${event.year} · ${event.region} · ${date.year - event.year} 年前`), node('h3', '', event.title), node('p', 'history-summary', event.summary));
     if (event.keyword?.trim()) {
@@ -60,25 +73,40 @@ function renderCalendar() {
   }
   if (!date.history.length) {
     const empty = node('article', 'history-card');
-    empty.append(node('h3', '', '平凡的一天，也值得記得'), node('p', 'history-summary', '這一天的歷史紀事尚未收錄。放慢一點，看看窗外，也為今天留下一點自己的記憶。'));
+    empty.append(node('h3', '', '目前沒有可顯示的紀事'), node('p', 'history-summary', '已開啟的來源在這一天沒有紀事。可在設定的「紀事來源與順序」開啟其他來源。'));
     el('history').append(empty);
   }
 }
 
-type Preferences = { appearance: 'system' | 'light' | 'dark'; style: 'classic' | 'modern' | 'traditional' | 'workspace' | 'reading'; weekStart: 0 | 1; quoteCategory: 'daily' | 'sheng-yen' | 'negative' | 'classics' };
-let preferences: Preferences = { appearance: 'system', style: 'modern', weekStart: 0, quoteCategory: 'daily' };
+el('history-show-more').addEventListener('click', () => {
+  historyExpanded = !historyExpanded; lastDate = ''; renderCalendar();
+});
+
+type Preferences = { historySources: HistorySourceSetting[]; showHistory: boolean; showQuote: boolean; showTodos: boolean; showSecondHand: boolean; textSize: 'standard' | 'large'; appearance: 'system' | 'light' | 'dark'; style: 'classic' | 'modern' | 'traditional' | 'workspace' | 'reading'; weekStart: 0 | 1; quoteCategory: 'daily' | 'sheng-yen' | 'negative' | 'classics' };
+let preferences: Preferences = { historySources: normalizeHistorySources(undefined), showHistory: true, showQuote: true, showTodos: true, showSecondHand: true, textSize: 'standard', appearance: 'system', style: 'modern', weekStart: 0, quoteCategory: 'daily' };
+const displayOptions = [['show-history', 'showHistory'], ['show-quote', 'showQuote'], ['show-todos', 'showTodos'], ['show-second-hand', 'showSecondHand']] as const;
 const media = matchMedia('(prefers-color-scheme: dark)');
 function parsePreferences(value: unknown): Preferences {
   const p = value as Partial<Preferences> | null;
-  return { appearance: p && ['system', 'light', 'dark'].includes(p.appearance ?? '') ? p.appearance! : 'system', style: p && ['classic', 'modern', 'traditional', 'workspace', 'reading'].includes(p.style ?? '') ? p.style! : 'modern', weekStart: p?.weekStart === 1 ? 1 : 0, quoteCategory: p && ['daily', 'sheng-yen', 'negative', 'classics'].includes(p.quoteCategory ?? '') ? p.quoteCategory! : 'daily' };
+  return { historySources: normalizeHistorySources(p?.historySources), showHistory: p?.showHistory !== false, showQuote: p?.showQuote !== false, showTodos: p?.showTodos !== false, showSecondHand: p?.showSecondHand !== false, textSize: p?.textSize === 'large' ? 'large' : 'standard', appearance: p && ['system', 'light', 'dark'].includes(p.appearance ?? '') ? p.appearance! : 'system', style: p && ['classic', 'modern', 'traditional', 'workspace', 'reading'].includes(p.style ?? '') ? p.style! : 'modern', weekStart: p?.weekStart === 1 ? 1 : 0, quoteCategory: p && ['daily', 'sheng-yen', 'negative', 'classics'].includes(p.quoteCategory ?? '') ? p.quoteCategory! : 'daily' };
 }
+const renderHistorySources = createHistorySourceControls(sources => savePreferences(sources));
 function applyPreferences() {
+  if (setHistorySources(preferences.historySources)) { lastDate = ''; historyExpanded = false; renderCalendar(); }
+  renderHistorySources(preferences.historySources);
   document.documentElement.classList.toggle('dark', preferences.appearance === 'dark' || (preferences.appearance === 'system' && media.matches));
   document.documentElement.dataset.style = preferences.style;
+  document.documentElement.dataset.textSize = preferences.textSize;
+  el<HTMLSelectElement>('text-size').value = preferences.textSize;
   concepts.setWeekStart(preferences.weekStart);
   concepts.setQuoteCategory(preferences.quoteCategory);
   el<HTMLSelectElement>('quote-category').value = preferences.quoteCategory;
   concepts.setStyle(preferences.style);
+  document.querySelector<HTMLElement>('.history-section')!.hidden = !preferences.showHistory;
+  el('daily-quote').hidden = !preferences.showQuote;
+  document.querySelector<HTMLElement>('.todo-note')!.hidden = !preferences.showTodos;
+  document.documentElement.dataset.showSecondHand = String(preferences.showSecondHand);
+  for (const [id, key] of displayOptions) el<HTMLInputElement>(id).checked = preferences[key];
   document.querySelectorAll<HTMLInputElement>('input[name="appearance"]').forEach(input => input.checked = input.value === preferences.appearance);
   el('appearance').style.setProperty('--selected', String(['system', 'light', 'dark'].indexOf(preferences.appearance)));
   el<HTMLSelectElement>('calendar-style').value = preferences.style;
@@ -86,15 +114,17 @@ function applyPreferences() {
 }
 media.addEventListener('change', applyPreferences);
 let preferencesReady = false;
-async function savePreferences() {
+async function savePreferences(historySources = preferences.historySources) {
   if (!preferencesReady) return;
-  const next = { appearance: document.querySelector<HTMLInputElement>('input[name="appearance"]:checked')!.value, style: el<HTMLSelectElement>('calendar-style').value, weekStart: Number(el<HTMLSelectElement>('week-start').value), quoteCategory: el<HTMLSelectElement>('quote-category').value } as Preferences;
-  const selectors = [el<HTMLFieldSetElement>('appearance'), el<HTMLSelectElement>('calendar-style'), el<HTMLSelectElement>('week-start'), el<HTMLSelectElement>('quote-category')];
+  const next = { historySources, showHistory: el<HTMLInputElement>('show-history').checked, showQuote: el<HTMLInputElement>('show-quote').checked, showTodos: el<HTMLInputElement>('show-todos').checked, showSecondHand: el<HTMLInputElement>('show-second-hand').checked, textSize: el<HTMLSelectElement>('text-size').value, appearance: document.querySelector<HTMLInputElement>('input[name="appearance"]:checked')!.value, style: el<HTMLSelectElement>('calendar-style').value, weekStart: Number(el<HTMLSelectElement>('week-start').value), quoteCategory: el<HTMLSelectElement>('quote-category').value } as Preferences;
+  const selectors = [el<HTMLFieldSetElement>('history-sources'), el<HTMLFieldSetElement>('display-options'), el<HTMLSelectElement>('text-size'), el<HTMLFieldSetElement>('appearance'), el<HTMLSelectElement>('calendar-style'), el<HTMLSelectElement>('week-start'), el<HTMLSelectElement>('quote-category')];
   selectors.forEach(s => s.disabled = true);
   try { await writeStorage('preferences', next); preferences = next; }
-  catch { notify('外觀設定無法儲存，請稍後重試。'); }
+  catch { notify('設定無法儲存，請稍後重試。'); }
   finally { applyPreferences(); selectors.forEach(s => s.disabled = false); }
 }
+el('display-options').addEventListener('change', () => void savePreferences());
+el('text-size').addEventListener('change', () => void savePreferences());
 el('appearance').addEventListener('change', () => void savePreferences());
 el('calendar-style').addEventListener('change', () => void savePreferences());
 el('week-start').addEventListener('change', () => void savePreferences());
@@ -185,7 +215,10 @@ async function initialize() {
   try { if (storedShortcuts.status === 'rejected') throw storedShortcuts.reason; shortcuts = parseShortcuts(storedShortcuts.value); shortcutsReady = true; }
   catch { notify('無法讀取已儲存的捷徑；暫時顯示預設捷徑。請重新載入後再編輯。'); }
   if (storedPreferences.status === 'fulfilled') { preferences = parsePreferences(storedPreferences.value); preferencesReady = true; }
-  else { notify('無法讀取外觀設定，請重新載入後再試。'); }
+  else { notify('無法讀取設定，請重新載入後再試。'); }
+  el<HTMLFieldSetElement>('history-sources').disabled = !preferencesReady;
+  el<HTMLFieldSetElement>('display-options').disabled = !preferencesReady;
+  el<HTMLSelectElement>('text-size').disabled = !preferencesReady;
   el<HTMLFieldSetElement>('appearance').disabled = !preferencesReady;
   el<HTMLSelectElement>('calendar-style').disabled = !preferencesReady;
   el<HTMLSelectElement>('week-start').disabled = !preferencesReady;
@@ -201,9 +234,12 @@ else window.addEventListener('storage', event => { if (['shortcuts', 'preference
 document.addEventListener('visibilitychange', () => { if (!document.hidden) renderCalendar(); });
 window.addEventListener('focus', renderCalendar);
 setInterval(renderCalendar, 30_000);
+initializeGoogleApps();
 initializeClock();
 const concepts = createConceptLayouts(date => { selectedDate = date; renderCalendar(); });
 setInterval(() => concepts.refresh(), 30_000);
 void initializeTodos();
 initializePersonalHistory(() => { lastDate = ''; renderCalendar(); });
 void initialize().catch(() => notify('頁面載入失敗，請重新整理。'));
+
+void initializeDataUpdates(() => { lastDate = ''; renderCalendar(); concepts.refreshData(); });
