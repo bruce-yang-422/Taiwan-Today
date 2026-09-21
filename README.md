@@ -1,4 +1,10 @@
+<a href="https://today.stack-base.com/"><img src="public/icons/taiwan-today.png" alt="台灣今日曆 Logo" width="80" height="80" /></a>
+
 # 台灣今日曆
+
+官網：[today.stack-base.com](https://today.stack-base.com/)
+
+個人／家族紀事範例：[CSV](templates/history-template.csv)、[XLSX](templates/history-template.xlsx)、[ODS](templates/history-template.ods)。欄位格式見 [範例說明](templates/README.md)，填寫後可在[官網轉檔工具](https://today.stack-base.com/#converter)轉成 JSON，再於插件「設定 → 資料管理」匯入。
 
 以 Vite、TypeScript、Tailwind CSS 與 Manifest V3 實作的 Chrome 新分頁。無後端、無帳號、無追蹤，離線可用，可選擇連線更新公共資料；使用 `storage` 與 `favicon` 權限，連線更新則另需授權 GitHub Raw 連線。
 
@@ -67,9 +73,25 @@ npm run test:e2e
 
 ### GitHub 公共資料更新
 
-`data/versions.json` 集中記錄每份資料 JSON 的 `version`、`updatedAt` 與 `sha256`，原始陣列／物件格式保持相容。版本從 `1.0.0` 起，有內容變更的檔案自動遞增修訂號（例如 `1.0.1`），未變更則保留版本與日期。`history-personal.json` 只記錄內建範本版本，不包含使用者本機匯入內容，也不提供遠端更新。
+每份資料 JSON 都在開頭宣告自己的 `version`，原本的陣列或物件放在 `data`，例如：
 
-`npm run data:prepare-update` 會同時產生逐檔版本與公共資料整批版本；`npm run build` 也會自動執行。請一併提交 `versions.json`、`update-manifest.json` 及修改的資料。設定中的「關於台灣今日曆」提供作者、插件版本、目前使用的資料版本、發布時間、逐檔版本、授權與專案／問題回報連結；插件版本取自 `manifest.json`，與資料版本分開維護。
+```json
+{
+  "version": "1.2.0",
+  "updatedAt": "2026-09-21T17:20:00.000+08:00",
+  "data": []
+}
+```
+
+**直接修改各 JSON 的 `version`，建置不會自動升版。** 不同檔案可以使用不同版本，例如 `quotes.json` 為 `1.2.0`、`history-taiwan.json` 為 `2.0.0`。版號格式為三段數字 `x.y.z`，不加 `v`。`data` 必須保留該檔案原本的內容格式。
+
+不再使用 `data/versions.json`，各檔案自行宣告版本。`update-manifest.json` 是必要的遠端下載清單，由 `npm run data:prepare-update` 或 `npm run build` 產生；請將資料與這份清單一起提交推送。只改版號或只改內容，都會產生新的更新識別碼。首次上架以 `1.0.0` 為基準，之後自行調整有更新的 JSON 版號，工具不會自動升版。
+
+`history-personal.json` 的版號只代表內建範本，不涉及使用者本機資料；匯入仍相容舊版純陣列（包含用來清空的 `[]`）與新版 `{ "version": "1.0.0", "data": [...] }`。官網轉檔與個人備份仍輸出相容的純陣列。
+
+此包裝格式需要新版插件讀取；舊插件無法直接載入新格式，更新驗證失敗時會保留原資料。設定中的「關於」提供作者、插件版本、發布時間與各資料檔版本；插件版本取自 `manifest.json`。
+
+公共資料檔的 `updatedAt` 使用台灣時間 `+08:00`，由 `npm run data:prepare-update` 或建置時自動維護。檔案變更時更新時間，未變更則保留；更新清單同步使用同一時間。`history-personal.json` 不列入遠端清單，其範本版號與時間可自行修改，使用者匯入的紀事與範本版本無關。
 
 首次點「立即更新」或啟用每日檢查時，Chrome 會要求 GitHub 連線授權；允許後才下載，拒絕則保留原資料。若舊版顯示 `connect-src 'none'`，請在 `chrome://extensions` 重新載入指向最新 `dist` 的擴充功能，關閉舊新分頁後重新開啟；單純重新整理頁面不會更新 manifest 政策。
 
@@ -106,7 +128,7 @@ node scripts/import-calendar.mjs --year 2027 --csv path/to/116-calendar.csv
 
 曆法使用本機打包的 [lunar-typescript](https://github.com/6tail/lunar-typescript)（MIT），未引用其中國大陸假日或宜忌資料。
 
-`data/history-taiwan.json` 與 `data/history-world.json` 合計收錄 193 筆「歷史上的今天」紀事，其中台灣 129 筆（67%）、國際 64 筆（33%）。9～12 月每天皆有 1～3 則；1～8 月目前為精選重大事件，僅涵蓋部分日期，尚未每天有內容，缺少資料的日期會顯示空狀態。內容以重大政治、社會、科學、文化及體育事件為主，執行
+`data/history-taiwan.json` 與 `data/history-world.json` 合計收錄 193 筆「歷史上的今天」紀事，其中台灣 129 筆（67%）、國際 64 筆（33%）。9～12 月每天皆有 1～3 則；1～8 月目前為精選重大事件，僅涵蓋部分日期，尚未每天有內容，缺少資料的日期會顯示空狀態。內容以重大政治、社會、科學、文化及體育事件為主。另有預設關閉的主題紀事：`data/history-tech.json`（科技，5 筆）與 `data/history-entertainment.json`（影音娛樂，8 筆），同樣僅涵蓋部分日期，會逐步擴充。執行
 `npm run data:check-history` 可檢查資料完整性。
 
 YouTube、PChome、GitHub 捷徑內建 favicon；其他捷徑透過 [Chrome 內建 favicon 功能](https://developer.chrome.com/docs/extensions/how-to/ui/favicons)取得，也可自行匯入 PNG / ICO（最大 64 KB）。無雲端同步，資料保存在本機。
@@ -129,7 +151,7 @@ zh_TW。新增語系時在 `_locales/` 下建立對應資料夾即可，`vite.co
 - `src/data/`：公共資料格式定義與套用（`publicData.ts`）、GitHub 更新下載與快取（`updates.ts`）。
 - `src/newtab/`：畫面與互動主體（`newtab.ts`）、指針時鐘（`clock.ts`）、工作便利貼（`todos.ts`）、個人歷史匯入／匯出對話框（`personalHistory.ts`）、紀事來源開關與排序（`historySources.ts`）、公共資料更新面板（`dataUpdates.ts`）、Google 應用程式九宮格（`googleApps.ts` 搭配 `googleServices.ts` 服務清單）、月序手帖與時光讀本版面（`concepts.ts`）；樣式依版面拆分為
   `newtab.css`（留白日常）、`modern.css`（日常方格）、`traditional.css`（歲月紙曆）、`concepts.css`（月序手帖／時光讀本）、`googleApps.css`（Google 應用程式選單）、`readability.css`（文字大小與閱讀相關樣式）。
-- `data/`：離線日曆（`calendar-2026.json`、`calendar-2027.json`）、節日與連假規則、歷史紀事（`history-taiwan.json`、`history-world.json`、`history-personal.json`）、每日一句與公共資料更新清單（`update-manifest.json`）。
+- `data/`：離線日曆（`calendar-2026.json`、`calendar-2027.json`）、節日與連假規則、歷史紀事（`history-taiwan.json`、`history-world.json`、`history-tech.json`、`history-entertainment.json`、`history-personal.json`）、每日一句與公共資料更新清單（`update-manifest.json`）。
 - `public/icons/`：應用程式圖示 `taiwan-today.png`（擴充功能與左上角標誌）、`taiwan-today.ico`（分頁圖示），以及內建捷徑的 favicon 與來源紀錄。
 - `_locales/`：擴充功能名稱與說明的中英文語系檔。
 - `scripts/import-calendar.mjs`：依年份重建日曆資料，並可用官方 CSV 核對放假旗標。
@@ -146,9 +168,10 @@ zh_TW。新增語系時在 `_locales/` 下建立對應資料夾即可，`vite.co
 
 `index.html` 是可直接部署到 GitHub Pages 的靜態網站，提供插件介紹、CSV／XLSX 範本、工作表選擇、資料檢查及 JSON 下載。檔案在瀏覽器本機處理，不上傳、不保存；試算表解析器隨網站附帶。
 
-歷史資料分為 `data/history-taiwan.json`（台灣）、`data/history-world.json`（國際）與 `data/history-personal.json`（個人／家族，預設空陣列）。使用者可透過「設定 → 匯入個人歷史 JSON」選檔、預覽並取代本機個人紀事，立即生效，無需重新建置；支援匯出備份、跨分頁同步，匯入空陣列 `[]` 可清空。檔案最大 5 MB、10,000 筆；格式或儲存錯誤會保留原資料。未曾匯入時使用隨程式附帶的個人 JSON，匯入後以本機資料為準。預設顯示三則，預設私人優先，其次台灣、國際，可依使用者開啟的來源調整順序；可按「顯示更多」展開當天全部紀事，再按「收合紀事」恢復三則，切換日期會自動收合；不要將私人資料推送到公開儲存庫。
+歷史資料分為 `data/history-taiwan.json`（台灣）、`data/history-world.json`（國際）、`data/history-tech.json`（科技主題）、`data/history-entertainment.json`（影音娛樂主題）與
+`data/history-personal.json`（個人／家族，預設空陣列）。使用者可透過「設定 → 匯入個人歷史 JSON」選檔、預覽並取代本機個人紀事，立即生效，無需重新建置；支援匯出備份、跨分頁同步，匯入空陣列 `[]` 可清空。檔案最大 5 MB、10,000 筆；格式或儲存錯誤會保留原資料。未曾匯入時使用隨程式附帶的個人 JSON，匯入後以本機資料為準。預設顯示三則，預設私人優先，其次台灣、國際，可依使用者開啟的來源調整順序；可按「顯示更多」展開當天全部紀事，再按「收合紀事」恢復三則，切換日期會自動收合；不要將私人資料推送到公開儲存庫。
 
-除了台灣、國際與個人紀事，未來規劃再加入以特定領域為主題的「主題紀事」，讓有興趣的使用者可以額外開啟。初步構想的方向包含科技發展（例如半導體產業、個人電腦變革、手機發表與上市等產業里程碑）與影音娛樂（例如經典戲劇、歌曲、電影的上映或發行紀念日），性質與現有的台灣、國際紀事類似，同樣每天精選少量事件，而非鉅細靡遺的清單。程式已預留 `HistoryDataset`
-這個資料集介面，往後新增主題時可以直接登錄成一個獨立資料集，讓它自動出現在「設定 → 紀事來源與順序」的開關清單中，使用者能自行決定要不要開啟；不需要修改既有的台灣、國際或個人紀事資料，也不影響原本的顯示邏輯。目前這項功能仍在規劃階段，尚未收錄任何主題內容，也不會有額外的網路連線或權限需求。
+除了台灣、國際與個人紀事，「設定 → 紀事來源與順序」還可以另外開啟兩個主題紀事：科技（半導體、個人電腦、手機等產業里程碑，例如台積電成立、聯發科技成立）與影音娛樂（台灣人較熟知的流行音樂、電影電視與配樂原聲，例如五月天首張專輯、《海角七號》上映、《臥虎藏龍》獲奧斯卡最佳原創音樂）。兩者預設關閉，開啟後才會併入當天的紀事清單；性質與台灣、國際紀事相同，同樣每天精選少量事件而非鉅細靡遺的清單，目前尚未涵蓋全年，會逐步擴充。程式以 `HistoryDataset`
+這個資料集介面登錄每個主題，未來新增其他主題時同樣會自動出現在來源開關清單中，不需要修改既有資料或顯示邏輯。
 
 部署：將網站檔案提交後，在 GitHub 儲存庫 **Settings → Pages → Deploy from a branch → main / (root) → Save**。預期網址為 `https://bruce-yang-422.github.io/Taiwan-Today/`（需啟用 Pages 才會生效）。網站不依賴擴充功能建置，無需部署 `dist/`。本機預覽可執行 `python -m http.server 8080`，再開啟 `http://localhost:8080/`。

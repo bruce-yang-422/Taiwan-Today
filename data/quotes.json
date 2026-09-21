@@ -1,1765 +1,1769 @@
-[
-  {
-    "id": "laozi-001",
-    "category": "daily",
-    "text": "千里之行，始於足下。",
-    "source": "《老子》"
-  },
-  {
-    "id": "taiwan-today-001",
-    "category": "daily",
-    "text": "把大事拆成小步，今天先走一步。",
-    "source": "台灣今日曆"
-  },
-  {
-    "id": "taiwan-today-002",
-    "category": "daily",
-    "text": "為重要的事留一點時間，也為自己留一點空白。",
-    "source": "台灣今日曆"
-  },
-  {
-    "id": "taiwan-today-003",
-    "category": "daily",
-    "text": "不必一次完成所有事，先完成眼前這一件。",
-    "source": "台灣今日曆"
-  },
-  {
-    "id": "sheng-yen-001",
-    "category": "sheng-yen",
-    "text": "面對它、接受它、處理它、放下它。",
-    "source": "聖嚴法師",
-    "sourceUrl": "https://year.ddm.org.tw/xmnews/cont?sid=0N341615092683481924&xsmsid=0N334563745968762940"
-  },
-  {
-    "id": "sheng-yen-002",
-    "category": "sheng-yen",
-    "text": "用智慧來處理事，以慈悲來關心人。",
-    "source": "聖嚴法師",
-    "sourceUrl": "https://taichung.ddm.org.tw/default-ddmtw/xmnews/cont?qcat=0M132555393739788126&sid=0N019536333637964734&xsmsid=0L207419114119814182"
-  },
-  {
-    "id": "sheng-yen-003",
-    "category": "sheng-yen",
-    "text": "要能放下，才能提起。提放自如，是自在人。",
-    "source": "聖嚴法師",
-    "sourceUrl": "https://anniversary.ddm.org.tw/default-ddmtw/xmnews/cont?sid=0O228495282327758163&xsmsid=0L207419114119814182"
-  },
-  {
-    "id": "negative-001",
-    "category": "negative",
-    "text": "今天的待辦很有耐心，明天還會等我。",
-    "source": "台灣今日曆・原創"
-  },
-  {
-    "id": "negative-002",
-    "category": "negative",
-    "text": "工作沒有辜負我，它每天都準時出現。",
-    "source": "台灣今日曆・原創"
-  },
-  {
-    "id": "negative-003",
-    "category": "negative",
-    "text": "我的人生很有彈性，計畫總是被往後彈。",
-    "source": "台灣今日曆・原創"
-  },
-  {
-    "id": "classics-001",
-    "category": "classics",
-    "text": "學而時習之，不亦說乎？",
-    "source": "《論語・學而》",
-    "sourceUrl": "https://ctext.org/analects/xue-er/zh"
-  },
-  {
-    "id": "classics-002",
-    "category": "classics",
-    "text": "天行健，君子以自強不息。",
-    "source": "《周易・乾・象傳》",
-    "sourceUrl": "https://ctext.org/text.pl?if=gb&node=25011&show=parallel"
-  },
-  {
-    "id": "negative-004",
-    "category": "negative",
-    "text": "工作時別跟我談夢想，我的夢想就是不工作。",
-    "source": "網路流傳"
-  },
-  {
-    "id": "negative-005",
-    "category": "negative",
-    "text": "不要相信壓力會轉化為動力，你的壓力只會轉化為病歷。",
-    "source": "網路流傳"
-  },
-  {
-    "id": "negative-006",
-    "category": "negative",
-    "text": "在哪裡跌倒，就在哪裡躺好。",
-    "source": "網路流傳"
-  },
-  {
-    "id": "negative-007",
-    "category": "negative",
-    "text": "人家有的是背景，我有的只是背影。",
-    "source": "網路流傳"
-  },
-  {
-    "id": "negative-008",
-    "category": "negative",
-    "text": "希望大家不要覺得自己一無是處，我們至少還可以讓別人覺得很煩。",
-    "source": "網路流傳"
-  },
-  {
-    "id": "negative-009",
-    "category": "negative",
-    "text": "我最大的缺點，就是缺點錢。",
-    "source": "網路流傳"
-  },
-  {
-    "id": "negative-010",
-    "category": "negative",
-    "text": "選擇比努力更重要，所以我選擇不努力。",
-    "source": "網路流傳"
-  },
-  {
-    "id": "negative-011",
-    "category": "negative",
-    "text": "如果你覺得自己累得跟狗一樣，那真的是誤會了，因為狗都沒你這麼累。",
-    "source": "網路流傳"
-  },
-  {
-    "id": "negative-012",
-    "category": "negative",
-    "text": "很多朋友喜歡分享旅遊經驗，看他們把錢花光出去走一趟，回來生活卻沒有任何改變，我就放心了。",
-    "source": "網路流傳"
-  },
-  {
-    "id": "negative-013",
-    "category": "negative",
-    "text": "以前我以為錢可以買到一切，後來我發現並不是，因為我錢不夠。",
-    "source": "網路流傳"
-  },
-  {
-    "id": "negative-014",
-    "category": "negative",
-    "text": "小時候我以為可以拯救全世界，長大後發現全世界都拯救不了我。",
-    "source": "網路流傳"
-  },
-  {
-    "id": "negative-015",
-    "category": "negative",
-    "text": "我最大的抗壓適應能力是：以不變的薪水應萬變的物價。",
-    "source": "網路流傳"
-  },
-  {
-    "id": "negative-016",
-    "category": "negative",
-    "text": "看時間不是為了起床，而是看還能睡多久。",
-    "source": "網路流傳"
-  },
-  {
-    "id": "negative-017",
-    "category": "negative",
-    "text": "很多人說抖腳會變窮，講得好像我原本多有錢的樣子。",
-    "source": "網路流傳"
-  },
-  {
-    "id": "negative-018",
-    "category": "negative",
-    "text": "不努力一下，你怎麼會知道什麼叫做絕望。",
-    "source": "網路流傳"
-  },
-  {
-    "id": "negative-019",
-    "category": "negative",
-    "text": "棉被以外的地方，都是遠方，請先不要叫我起床。",
-    "source": "網路流傳"
-  },
-  {
-    "id": "negative-020",
-    "category": "negative",
-    "text": "要好好活下去，因為每天都有新的打擊。",
-    "source": "網路流傳"
-  },
-  {
-    "id": "negative-021",
-    "category": "negative",
-    "text": "比一個人吃火鍋更寂寞的是，一個人沒有錢吃火鍋。",
-    "source": "網路流傳"
-  },
-  {
-    "id": "negative-022",
-    "category": "negative",
-    "text": "出社會和人接觸的時間越長，我就越喜歡狗，因為狗永遠是狗，人有時候不是人。",
-    "source": "網路流傳"
-  },
-  {
-    "id": "negative-023",
-    "category": "negative",
-    "text": "有些事情做不到的話，就留到明天做吧，運氣好的話，明天死了就不用做了。",
-    "source": "網路流傳"
-  },
-  {
-    "id": "negative-024",
-    "category": "negative",
-    "text": "努力不一定會成功，但是不努力會很輕鬆。",
-    "source": "網路流傳"
-  },
-  {
-    "id": "negative-025",
-    "category": "negative",
-    "text": "謝謝那些曾經擊倒我的人，躺著真舒服。",
-    "source": "網路流傳"
-  },
-  {
-    "id": "negative-026",
-    "category": "negative",
-    "text": "我爛泥就想好好地攤在地上，不用你們扶。",
-    "source": "網路流傳"
-  },
-  {
-    "id": "negative-027",
-    "category": "negative",
-    "text": "上不去的薪水，下不去的房價。",
-    "source": "網路流傳"
-  },
-  {
-    "id": "negative-028",
-    "category": "negative",
-    "text": "上班打卡制，下班責任制，人生好厭世。",
-    "source": "網路流傳"
-  },
-  {
-    "id": "negative-029",
-    "category": "negative",
-    "text": "被老闆罵完想去動物園，因為在那裡，我才真的像個人。",
-    "source": "網路流傳"
-  },
-  {
-    "id": "negative-030",
-    "category": "negative",
-    "text": "誰說錢買不到自由，你老闆不就買到你了。",
-    "source": "網路流傳"
-  },
-  {
-    "id": "negative-031",
-    "category": "negative",
-    "text": "真懷念小時候哭完就睡，現在哭完還是要上班。",
-    "source": "網路流傳"
-  },
-  {
-    "id": "negative-032",
-    "category": "negative",
-    "text": "以前常常思考自己適合什麼工作，現在發現自己最適合不工作。",
-    "source": "網路流傳"
-  },
-  {
-    "id": "negative-033",
-    "category": "negative",
-    "text": "準時下班需要的不是努力，是勇氣。",
-    "source": "網路流傳"
-  },
-  {
-    "id": "negative-034",
-    "category": "negative",
-    "text": "成功的都是領導有方，失敗的就是下屬無能。",
-    "source": "網路流傳"
-  },
-  {
-    "id": "negative-035",
-    "category": "negative",
-    "text": "失敗並不可怕，可怕的是，你相信這句話。",
-    "source": "網路流傳"
-  },
-  {
-    "id": "negative-036",
-    "category": "negative",
-    "text": "世界上99%的事可以靠錢解決，剩下的1%是需要更多錢。",
-    "source": "網路流傳"
-  },
-  {
-    "id": "negative-037",
-    "category": "negative",
-    "text": "那些鼓勵大家跳出舒適圈的，問題是我從來沒舒適過。",
-    "source": "網路流傳"
-  },
-  {
-    "id": "negative-038",
-    "category": "negative",
-    "text": "長相是上一代給的，規則是上一代訂的，觀念是上一代教的，環境是上一代留的，結果還好意思說：一代不如一代。",
-    "source": "網路流傳"
-  },
-  {
-    "id": "negative-039",
-    "category": "negative",
-    "text": "你必須非常努力，才可以證明自己真的無能為力。",
-    "source": "網路流傳"
-  },
-  {
-    "id": "negative-040",
-    "category": "negative",
-    "text": "我一直把錢視為空氣，因為沒有它我就活不下去。",
-    "source": "網路流傳"
-  },
-  {
-    "id": "negative-041",
-    "category": "negative",
-    "text": "醜小鴨變天鵝並不是因為他多努力，而是因為他的老母就是天鵝。",
-    "source": "網路流傳"
-  },
-  {
-    "id": "negative-042",
-    "category": "negative",
-    "text": "天下無難事，只要肯放棄。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-043",
-    "category": "negative",
-    "text": "傷害你的不是對方的絕情；而是你心存幻想的堅持！",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-044",
-    "category": "negative",
-    "text": "總是說人生掌握在自己手上，但我怎麼看手裡就是什麼也沒有。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-045",
-    "category": "negative",
-    "text": "我的超能力，就是很多事情都超出我的能力。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-046",
-    "category": "negative",
-    "text": "我們總是覺得人生有許多悲劇，卻忘了其實編劇就是—自己。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-047",
-    "category": "negative",
-    "text": "你不喜歡我，我一點都不介意。因為我活下來，不是為了取悅你！",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-048",
-    "category": "negative",
-    "text": "人最怕的是一生庸庸碌碌，還安慰自己平凡的可貴。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-049",
-    "category": "negative",
-    "text": "所謂的人生，就是你的全力以赴，還比不上別人的隨便搞搞。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-050",
-    "category": "negative",
-    "text": "放心，只要是一塊石頭，到哪裡都不會發光。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-051",
-    "category": "negative",
-    "text": "所謂的選擇困難，其實都是因為窮。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-052",
-    "category": "negative",
-    "text": "生活不是林黛玉，不會因為憂傷而風情萬種。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-053",
-    "category": "negative",
-    "text": "最容易走的路，就是下坡路。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-054",
-    "category": "negative",
-    "text": "生氣是拿別人做錯的事來懲罰自己。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-055",
-    "category": "negative",
-    "text": "愛笑的人運氣不會太差，因為運氣太差的根本笑不出來。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-056",
-    "category": "negative",
-    "text": "如果有個人可以秒回你，這只說明了一件事，就是他正在玩手機。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-057",
-    "category": "negative",
-    "text": "才20幾歲沒遇到喜歡的人是很正常的事，過一段時間你就會發現，以後大概也遇不到了。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-058",
-    "category": "negative",
-    "text": "年輕的時候，談到夢想，整晚都睡不著覺，現在談到夢想，只想趕快睡覺。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-059",
-    "category": "negative",
-    "text": "為什麼總是說天妒英才？因為沒人管笨蛋活多久。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-060",
-    "category": "negative",
-    "text": "其實只想跟你玩下半身，不是想跟你過下半生。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-061",
-    "category": "negative",
-    "text": "聽說熬夜會讓人變醜，不過還好我已經夠醜了。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-062",
-    "category": "negative",
-    "text": "沒有人會為了你的未來買單，你要麼努力向上爬，要麼爛在社會最底層的泥淖裡，這就是生活。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-063",
-    "category": "negative",
-    "text": "你從80樓往下看，全是美景，但你從2樓往下看，全是垃圾，人若沒有高度，看到的全是問題，人若沒有格局，看到的全是雞毛蒜皮！",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-064",
-    "category": "negative",
-    "text": "我們總是喜歡拿「順其自然」來敷衍人生道路上的荊棘坎坷，卻很少承認，真正的順其自然，其實是竭盡所能之後的不強求，而非兩手一攤的不作為。",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-065",
-    "category": "negative",
-    "text": "擺臉色是沒有用的，問題還是要解決；光生悶氣也是沒有用的，還是要面對面告訴對方。不說就懂，是默契；說了才懂，是尊重；說了還不懂，是路人。",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-066",
-    "category": "negative",
-    "text": "合理的要求是訓練，不合理的要求是磨練。",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-067",
-    "category": "negative",
-    "text": "有些事不說是個結，說了是道疤，結可以解開，疤卻永遠都在。與其掏心掏肺說的真心話到了別人那成了個笑話，不如讓它直接爛在心裡，自己消化。",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-068",
-    "category": "negative",
-    "text": "別和往事過不去，因為它已經過去，別和現實過不去，因為你還要過下去。",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-069",
-    "category": "negative",
-    "text": "人，其實不需要太多的東西，只要健康的活著，也不失為一種富有，這便是知足，這樣你才會常樂。",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-070",
-    "category": "negative",
-    "text": "有錢，把事做好！沒錢，把人做好！蛇不知道自己有害，人不知道自己有錯。你的好，對別人來說就像一顆糖，吃了就沒了。而你的不好，就像一道傷疤，會永遠存在。這就是人性！",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-071",
-    "category": "negative",
-    "text": "眼是一把尺，量人先量己；心是一桿秤，稱人先稱己。",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-072",
-    "category": "negative",
-    "text": "過錯是暫時的遺憾，而錯過則是永遠的遺憾！",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-073",
-    "category": "negative",
-    "text": "如果你的面前有陰影，那是因為你的背後有陽光。",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-074",
-    "category": "negative",
-    "text": "窮則思變，差則思勤！沒有比人更高的山，沒有比雙腳走的路更長！",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-075",
-    "category": "negative",
-    "text": "成功的人不是贏在起跑點，而是贏在轉捩點。",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-076",
-    "category": "negative",
-    "text": "人生只要盡力了，輸與贏，都是精彩。",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-077",
-    "category": "negative",
-    "text": "能力需要時間去累積，夢想需要時間去證明。",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-078",
-    "category": "negative",
-    "text": "簡單的事重複做，你就是專家，重複的事用心做，你就是贏家。",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-079",
-    "category": "negative",
-    "text": "成敗靠用心，輸贏靠細心。",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-080",
-    "category": "negative",
-    "text": "犧牲享受，享受犧牲，靠的全是你樂在其中。",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-081",
-    "category": "negative",
-    "text": "你可以一無所有，但絕不能一無是處。",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-082",
-    "category": "negative",
-    "text": "能堅持別人不能堅持的，就能擁有別人不能擁有的。",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-083",
-    "category": "negative",
-    "text": "苦難是化了妝的祝福。",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-084",
-    "category": "negative",
-    "text": "哥倫布發現新大陸，靠的不是航海圖，而是信念。",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-085",
-    "category": "negative",
-    "text": "寧願做過了後悔，也不要錯過了後悔。",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-086",
-    "category": "negative",
-    "text": "所謂的「勇氣」是克服心裡的恐懼，而不是心裡毫無恐懼。",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-087",
-    "category": "negative",
-    "text": "人之所以痛苦，在於追求錯誤的東西。",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-088",
-    "category": "negative",
-    "text": "環境不會改變，解決之道在於改變自己。",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-089",
-    "category": "negative",
-    "text": "還能衝動，表示你還對生活有激情，總是衝動，表示你還不懂生活。",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-090",
-    "category": "negative",
-    "text": "放棄該放棄的是無奈，放棄不該放棄的是無能，不放棄該放棄的是無知，不放棄不該放棄的是執著！",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-091",
-    "category": "negative",
-    "text": "生活中處處充滿著驚喜，只要我們有一雙善於發現的眼睛。",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-092",
-    "category": "negative",
-    "text": "與其說是別人讓你痛苦，不如說自己的修養不夠。",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-093",
-    "category": "negative",
-    "text": "得之坦然，失之淡然，順其自然，爭其必然。",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-094",
-    "category": "negative",
-    "text": "運氣就是機會碰巧撞到了你的努力。",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-095",
-    "category": "negative",
-    "text": "時間是治療心靈創傷的大師，但絕不是解決問題的高手。",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-096",
-    "category": "negative",
-    "text": "只有不斷找尋機會的人才會及時把握機會。",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-097",
-    "category": "negative",
-    "text": "雖然我們無法改變人生，但可以改變人生觀。雖然我們無法改變環境，但我們可以改變心境。",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-098",
-    "category": "negative",
-    "text": "不要浪費你的生命，在你一定會後悔的地方上。",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-099",
-    "category": "negative",
-    "text": "不管從什麼時候開始，重要的是開始以後不要停止；不管在什麼時候結束，重要的是結束以後不要後悔。",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-100",
-    "category": "negative",
-    "text": "當你快樂時，要思考這些快樂可能是短暫的，當你痛苦時，也要想，這樣的痛苦也不是永遠的。",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-101",
-    "category": "negative",
-    "text": "命運就像自己的掌紋，雖然彎彎曲曲，卻是掌握在自己手中。",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-102",
-    "category": "negative",
-    "text": "抱最大的希望，為最大的努力，做最壞的打算。",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-103",
-    "category": "negative",
-    "text": "天道酬勤，付出也許不一定得到回報，但不付出一定得不到回報。",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-104",
-    "category": "negative",
-    "text": "忌妒別人，不會給自己增加任何的好處，忌妒別人，也不可能減少別人的成就。",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-105",
-    "category": "negative",
-    "text": "一個人的快樂，不是因為他擁有的多，而是因為他計較的少。",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-106",
-    "category": "negative",
-    "text": "人們總是把幸福解讀為「有」，有車、有房、有錢、有權，但幸福其實是「無」，無憂、無慮、無病、無災。",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-107",
-    "category": "negative",
-    "text": "長得漂亮是優勢，活得漂亮是本事。",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-108",
-    "category": "negative",
-    "text": "每個人都有潛在的能量，只是很容易被習慣所掩蓋，被時間所迷離，被惰性所消磨。",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-109",
-    "category": "negative",
-    "text": "生活本不苦，苦的是慾望太多，人心本不累，累的是放不下的太多。",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-110",
-    "category": "negative",
-    "text": "滴水穿石不是靠力，而是因為不捨晝夜。",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-111",
-    "category": "negative",
-    "text": "心念一轉，萬念皆轉；心路一通，萬路皆通。",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-112",
-    "category": "negative",
-    "text": "用最少的悔恨面對過去。用最少的浪費面對現在。用最多的夢面對未來。",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-113",
-    "category": "negative",
-    "text": "人生像鐘錶，就算可以回到起點，卻已不是昨天！",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-114",
-    "category": "negative",
-    "text": "你不能左右天氣，但可以改變心情。你不能改變容貌，但可以掌握自己。你不能預見明天，但可以珍惜今天。",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-115",
-    "category": "negative",
-    "text": "積極的人在每一次憂患中都看到一個機會，而消極的人則在每個機會都看到某種憂患。",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-116",
-    "category": "negative",
-    "text": "創造機會的人是勇者，等待機會的人是愚者。",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-117",
-    "category": "negative",
-    "text": "不要因為自己還年輕，用健康去換去金錢，等到老了，才明白金錢換不來健康。",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-118",
-    "category": "negative",
-    "text": "做一個決定，並不難，難的是付諸行動，並且堅持到底。",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-119",
-    "category": "negative",
-    "text": "一杯清水因滴入一滴污水而變污濁，一杯污水卻不會因一滴清水的存在而變清澈。",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-120",
-    "category": "negative",
-    "text": "人生是一場旅行，在乎的不是目的地，是沿途的風景以及看風景的心情。",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-121",
-    "category": "negative",
-    "text": "再長的路，一步步也能走完，再短的路，不邁開雙腳也無法到達。",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-122",
-    "category": "negative",
-    "text": "成功的關鍵在於相信自己有成功的能力。",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-123",
-    "category": "negative",
-    "text": "人生最大的敵人是自己；人生最大的失敗是自大；人生最大的愚蠢是欺騙。",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-124",
-    "category": "negative",
-    "text": "人生最大的錯誤是自卑；人生最大的羞辱是獻媚；人生最大的可悲是嫉妒。",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-125",
-    "category": "negative",
-    "text": "人生最大的危險是貪婪；人生最大的破產是絕望；人生最大的債務是情債。",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-126",
-    "category": "negative",
-    "text": "人生最大的欣慰是布施；人生最大的禮物是寬恕；人生最大的財富是健康；人生最大的幸福是知足。",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-127",
-    "category": "negative",
-    "text": "人生最大的惋惜是錯過；人生最大的煩惱是爭名奪利；人生最大的罪過是自欺欺人。",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-128",
-    "category": "negative",
-    "text": "沒錢的時候多讀書，有錢的時候多旅行。當讀過萬卷書、行過萬里路後，最後就會發現眼前這些，其實都是小事。",
-    "source": "網路流傳",
-    "tags": [
-      "反向激勵"
-    ]
-  },
-  {
-    "id": "negative-129",
-    "category": "negative",
-    "text": "比你聰明的人都比你努力了，那你努力有個屁用。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-130",
-    "category": "negative",
-    "text": "成功就像懷孕，大家都會恭喜你，但沒人知道你被搞了幾次才成功！",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-131",
-    "category": "negative",
-    "text": "騎在白馬上的不一定是王子，也可能是唐三藏。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-132",
-    "category": "negative",
-    "text": "現在做什麼事都好難，連想當個宅男，都還要先買得起房子。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-133",
-    "category": "negative",
-    "text": "別再說世界上幾十億人，也遇不到一個對的人，就算是選擇題只有四個選項，你還不是一樣照樣選不對。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-134",
-    "category": "negative",
-    "text": "當全世界都不要你的時候，請記得還有我，我也不要你。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-135",
-    "category": "negative",
-    "text": "不用太在意一些人說的話，因為他們有嘴卻不一定有腦。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-136",
-    "category": "negative",
-    "text": "我覺得人和人還是應該保持適當的距離，尤其是我討厭的人，最好是陰陽相隔。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-137",
-    "category": "negative",
-    "text": "別動不動就把錯誤丟給時間去處理，時間才懶得理你這個爛攤子。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-138",
-    "category": "negative",
-    "text": "喜歡就去告白呀，說不定人家也等著拒絕你呢！",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-139",
-    "category": "negative",
-    "text": "如果擺錯地方，鑽石也會被當石頭。但是石頭不管擺哪裡，都還是石頭。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-140",
-    "category": "negative",
-    "text": "生活中那些討厭的人表面上風光，其實私底下也過得如魚得水喔！",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-141",
-    "category": "negative",
-    "text": "很多人常會被罵，說每天睡得跟豬一樣。真的太委屈了，因為豬都起得比你早。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-142",
-    "category": "negative",
-    "text": "人生很多事，會隨著時間好轉，像很多人原本只是胖，時間久了就變得好胖。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-143",
-    "category": "negative",
-    "text": "別一眼就斷定一個人，因為相處過後你會發現，他比原來更討厭！",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-144",
-    "category": "negative",
-    "text": "都要畢業了，你還不快點告白，對方就來不及拒絕你了！",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-145",
-    "category": "negative",
-    "text": "別再說窮到被鬼抓走了，因為連鬼都嫌棄你窮。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-146",
-    "category": "negative",
-    "text": "如果你覺得自己很平凡，是個普通人，別難過！還是有機會特別的，就是當個特別普通的人。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-147",
-    "category": "negative",
-    "text": "男女之間一定有純友誼，因為每一個我認識的女生，都說最多只能跟我當朋友。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-148",
-    "category": "negative",
-    "text": "有時候你會懷疑自己的能力，別擔心！你是對的，因為你的能力真的有問題。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-149",
-    "category": "negative",
-    "text": "人生就像遊樂園，只不過大多數的人都是工作人員。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-150",
-    "category": "negative",
-    "text": "有夢最美，失望相隨。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-151",
-    "category": "negative",
-    "text": "不敢跟別人說自己有認真讀書，因為不想證明用盡全力，結果還是個腦殘。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-152",
-    "category": "negative",
-    "text": "工作許多年，人家還問你是不是剛進社會，不是因為你看起來年輕，而是因為覺得你怎麼那麼笨。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-153",
-    "category": "negative",
-    "text": "越是沒能力改變自己生活的人，越喜歡批評別人的改變。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-154",
-    "category": "negative",
-    "text": "誰說你沒有毅力，單身這件事你不就堅持了好幾十年嗎？",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-155",
-    "category": "negative",
-    "text": "跟長輩聊天，想盡方法想討他們開心，但長輩三言兩語就可以讓我們煩心。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-156",
-    "category": "negative",
-    "text": "有時候覺得別人很膚淺，這不是偏見，因為他真的是在敷衍你。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-157",
-    "category": "negative",
-    "text": "你要好好愛自己，因為沒有人愛你。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-158",
-    "category": "negative",
-    "text": "有錢不一定快樂，但沒有錢更不快樂。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-159",
-    "category": "negative",
-    "text": "麻雀雖小，也沒有我小，因為我超雖小。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-160",
-    "category": "negative",
-    "text": "很多人都愛說做自己，不過是能力太差，所以連扮演自己都難。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-161",
-    "category": "negative",
-    "text": "很多人愛說都是別人教壞他的小孩，但你怎麼不自己教好自己的小孩呢？",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-162",
-    "category": "negative",
-    "text": "一個人連自己的情緒都控制不了，即使給了全世界也是早晚毀掉。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-163",
-    "category": "negative",
-    "text": "用錢當然買不到快樂，但是有錢，別人會想辦法讓你快樂。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-164",
-    "category": "negative",
-    "text": "當別人跟你說忙沒時間，其實他只是要把時間留給更重要的人。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-165",
-    "category": "negative",
-    "text": "有些人努力了一輩子，也不過是從社會的四流擠入三流。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-166",
-    "category": "negative",
-    "text": "別減肥了，你的醜不是因為胖。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-167",
-    "category": "negative",
-    "text": "一提到錢，大家就變得沒那麼親熱了。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-168",
-    "category": "negative",
-    "text": "不曾擁有的，談不上失去；不屬於自己的，就無法留住；不想留下的，也勉強不來。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-169",
-    "category": "negative",
-    "text": "我不是討厭你，而是你沒有一點讓我喜歡。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-170",
-    "category": "negative",
-    "text": "我的優點是勇於認錯，缺點是堅持不改。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-171",
-    "category": "negative",
-    "text": "賴床是對週末最起碼的尊重。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-172",
-    "category": "negative",
-    "text": "我最擅長的戀愛就是自戀，因為愛自己沒情敵。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-173",
-    "category": "negative",
-    "text": "世界上只有騙子肯定是真心，因為他是真心想騙你。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-174",
-    "category": "negative",
-    "text": "我這一輩子最情深意長的注目都給了手機。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-175",
-    "category": "negative",
-    "text": "女人喜歡長得壞壞的男人，而不是長壞的男人。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-176",
-    "category": "negative",
-    "text": "出外靠朋友，出醜靠自己。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-177",
-    "category": "negative",
-    "text": "有一種女人可以讓你變成百萬富翁，但前提是你得先是個千萬富翁。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-178",
-    "category": "negative",
-    "text": "如果你很努力還是沒有成功，那就表示你努力也沒有用。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-179",
-    "category": "negative",
-    "text": "無能，也是一種答案。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-180",
-    "category": "negative",
-    "text": "有錢才能任性，沒錢只能認命。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-181",
-    "category": "negative",
-    "text": "不要放棄你的夢！繼續睡！",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-182",
-    "category": "negative",
-    "text": "自己選擇的路，走不完換一條就好。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-183",
-    "category": "negative",
-    "text": "吃飽了，才有力氣減肥。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-184",
-    "category": "negative",
-    "text": "減肥永遠是明天的事。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-185",
-    "category": "negative",
-    "text": "單身是一種選擇，只不過不是我選的。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-186",
-    "category": "negative",
-    "text": "有人考試靠實力，有人考試靠視力，而我考試靠的是豐富的想像力。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-187",
-    "category": "negative",
-    "text": "好好讀書吧！畢竟你也不能靠臉吃飯。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-188",
-    "category": "negative",
-    "text": "常說「自古紅顏多薄命」，那是因為沒人在乎醜的人死活。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-189",
-    "category": "negative",
-    "text": "只要是用錢能解決的事情，我一件都解決不了。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-190",
-    "category": "negative",
-    "text": "生活中的美好事物，都是需要花很多錢。理想很豐滿，現實卻很骨感。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-191",
-    "category": "negative",
-    "text": "先學會不生氣，再學會氣死人。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-192",
-    "category": "negative",
-    "text": "你不用對每個過客負責，也不用對每個路人說教。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-193",
-    "category": "negative",
-    "text": "如果你覺得自己又窮又醜，請不要悲傷，你還有希望，至少你的判斷是正確的。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-194",
-    "category": "negative",
-    "text": "手機摔了這麼多次都沒事，後來想想還是我的身高救了它。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-195",
-    "category": "negative",
-    "text": "女人一生最喜歡兩朵花：一是有錢花，二是盡量花！",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-196",
-    "category": "negative",
-    "text": "長得醜就是病，不然整形醫院為什麼會是「醫院」。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-197",
-    "category": "negative",
-    "text": "每個人都有幸福的權力，卻只有少數人有幸福的能力。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-198",
-    "category": "negative",
-    "text": "人若不是帥，再暖都是變態。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-199",
-    "category": "negative",
-    "text": "自從得了精神病之後，整個人都精神多了。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-200",
-    "category": "negative",
-    "text": "女人之美，在於蠢的無怨無悔，男人之美，在於說謊時的那一張嘴。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-201",
-    "category": "negative",
-    "text": "這個世界上願意一輩子對自己不離不棄的，只有自己的影子。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-202",
-    "category": "negative",
-    "text": "忍一時越想越氣，退一步越想越虧。",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  },
-  {
-    "id": "negative-203",
-    "category": "negative",
-    "text": "你不是一無所有，你還有病啊！",
-    "source": "網路流傳",
-    "tags": [
-      "一針見血吐槽"
-    ]
-  }
-]
+{
+  "version": "1.0.0",
+  "updatedAt": "2026-09-21T17:10:04.106+08:00",
+  "data": [
+    {
+      "id": "laozi-001",
+      "category": "daily",
+      "text": "千里之行，始於足下。",
+      "source": "《老子》"
+    },
+    {
+      "id": "taiwan-today-001",
+      "category": "daily",
+      "text": "把大事拆成小步，今天先走一步。",
+      "source": "台灣今日曆"
+    },
+    {
+      "id": "taiwan-today-002",
+      "category": "daily",
+      "text": "為重要的事留一點時間，也為自己留一點空白。",
+      "source": "台灣今日曆"
+    },
+    {
+      "id": "taiwan-today-003",
+      "category": "daily",
+      "text": "不必一次完成所有事，先完成眼前這一件。",
+      "source": "台灣今日曆"
+    },
+    {
+      "id": "sheng-yen-001",
+      "category": "sheng-yen",
+      "text": "面對它、接受它、處理它、放下它。",
+      "source": "聖嚴法師",
+      "sourceUrl": "https://year.ddm.org.tw/xmnews/cont?sid=0N341615092683481924&xsmsid=0N334563745968762940"
+    },
+    {
+      "id": "sheng-yen-002",
+      "category": "sheng-yen",
+      "text": "用智慧來處理事，以慈悲來關心人。",
+      "source": "聖嚴法師",
+      "sourceUrl": "https://taichung.ddm.org.tw/default-ddmtw/xmnews/cont?qcat=0M132555393739788126&sid=0N019536333637964734&xsmsid=0L207419114119814182"
+    },
+    {
+      "id": "sheng-yen-003",
+      "category": "sheng-yen",
+      "text": "要能放下，才能提起。提放自如，是自在人。",
+      "source": "聖嚴法師",
+      "sourceUrl": "https://anniversary.ddm.org.tw/default-ddmtw/xmnews/cont?sid=0O228495282327758163&xsmsid=0L207419114119814182"
+    },
+    {
+      "id": "negative-001",
+      "category": "negative",
+      "text": "今天的待辦很有耐心，明天還會等我。",
+      "source": "台灣今日曆・原創"
+    },
+    {
+      "id": "negative-002",
+      "category": "negative",
+      "text": "工作沒有辜負我，它每天都準時出現。",
+      "source": "台灣今日曆・原創"
+    },
+    {
+      "id": "negative-003",
+      "category": "negative",
+      "text": "我的人生很有彈性，計畫總是被往後彈。",
+      "source": "台灣今日曆・原創"
+    },
+    {
+      "id": "classics-001",
+      "category": "classics",
+      "text": "學而時習之，不亦說乎？",
+      "source": "《論語・學而》",
+      "sourceUrl": "https://ctext.org/analects/xue-er/zh"
+    },
+    {
+      "id": "classics-002",
+      "category": "classics",
+      "text": "天行健，君子以自強不息。",
+      "source": "《周易・乾・象傳》",
+      "sourceUrl": "https://ctext.org/text.pl?if=gb&node=25011&show=parallel"
+    },
+    {
+      "id": "negative-004",
+      "category": "negative",
+      "text": "工作時別跟我談夢想，我的夢想就是不工作。",
+      "source": "網路流傳"
+    },
+    {
+      "id": "negative-005",
+      "category": "negative",
+      "text": "不要相信壓力會轉化為動力，你的壓力只會轉化為病歷。",
+      "source": "網路流傳"
+    },
+    {
+      "id": "negative-006",
+      "category": "negative",
+      "text": "在哪裡跌倒，就在哪裡躺好。",
+      "source": "網路流傳"
+    },
+    {
+      "id": "negative-007",
+      "category": "negative",
+      "text": "人家有的是背景，我有的只是背影。",
+      "source": "網路流傳"
+    },
+    {
+      "id": "negative-008",
+      "category": "negative",
+      "text": "希望大家不要覺得自己一無是處，我們至少還可以讓別人覺得很煩。",
+      "source": "網路流傳"
+    },
+    {
+      "id": "negative-009",
+      "category": "negative",
+      "text": "我最大的缺點，就是缺點錢。",
+      "source": "網路流傳"
+    },
+    {
+      "id": "negative-010",
+      "category": "negative",
+      "text": "選擇比努力更重要，所以我選擇不努力。",
+      "source": "網路流傳"
+    },
+    {
+      "id": "negative-011",
+      "category": "negative",
+      "text": "如果你覺得自己累得跟狗一樣，那真的是誤會了，因為狗都沒你這麼累。",
+      "source": "網路流傳"
+    },
+    {
+      "id": "negative-012",
+      "category": "negative",
+      "text": "很多朋友喜歡分享旅遊經驗，看他們把錢花光出去走一趟，回來生活卻沒有任何改變，我就放心了。",
+      "source": "網路流傳"
+    },
+    {
+      "id": "negative-013",
+      "category": "negative",
+      "text": "以前我以為錢可以買到一切，後來我發現並不是，因為我錢不夠。",
+      "source": "網路流傳"
+    },
+    {
+      "id": "negative-014",
+      "category": "negative",
+      "text": "小時候我以為可以拯救全世界，長大後發現全世界都拯救不了我。",
+      "source": "網路流傳"
+    },
+    {
+      "id": "negative-015",
+      "category": "negative",
+      "text": "我最大的抗壓適應能力是：以不變的薪水應萬變的物價。",
+      "source": "網路流傳"
+    },
+    {
+      "id": "negative-016",
+      "category": "negative",
+      "text": "看時間不是為了起床，而是看還能睡多久。",
+      "source": "網路流傳"
+    },
+    {
+      "id": "negative-017",
+      "category": "negative",
+      "text": "很多人說抖腳會變窮，講得好像我原本多有錢的樣子。",
+      "source": "網路流傳"
+    },
+    {
+      "id": "negative-018",
+      "category": "negative",
+      "text": "不努力一下，你怎麼會知道什麼叫做絕望。",
+      "source": "網路流傳"
+    },
+    {
+      "id": "negative-019",
+      "category": "negative",
+      "text": "棉被以外的地方，都是遠方，請先不要叫我起床。",
+      "source": "網路流傳"
+    },
+    {
+      "id": "negative-020",
+      "category": "negative",
+      "text": "要好好活下去，因為每天都有新的打擊。",
+      "source": "網路流傳"
+    },
+    {
+      "id": "negative-021",
+      "category": "negative",
+      "text": "比一個人吃火鍋更寂寞的是，一個人沒有錢吃火鍋。",
+      "source": "網路流傳"
+    },
+    {
+      "id": "negative-022",
+      "category": "negative",
+      "text": "出社會和人接觸的時間越長，我就越喜歡狗，因為狗永遠是狗，人有時候不是人。",
+      "source": "網路流傳"
+    },
+    {
+      "id": "negative-023",
+      "category": "negative",
+      "text": "有些事情做不到的話，就留到明天做吧，運氣好的話，明天死了就不用做了。",
+      "source": "網路流傳"
+    },
+    {
+      "id": "negative-024",
+      "category": "negative",
+      "text": "努力不一定會成功，但是不努力會很輕鬆。",
+      "source": "網路流傳"
+    },
+    {
+      "id": "negative-025",
+      "category": "negative",
+      "text": "謝謝那些曾經擊倒我的人，躺著真舒服。",
+      "source": "網路流傳"
+    },
+    {
+      "id": "negative-026",
+      "category": "negative",
+      "text": "我爛泥就想好好地攤在地上，不用你們扶。",
+      "source": "網路流傳"
+    },
+    {
+      "id": "negative-027",
+      "category": "negative",
+      "text": "上不去的薪水，下不去的房價。",
+      "source": "網路流傳"
+    },
+    {
+      "id": "negative-028",
+      "category": "negative",
+      "text": "上班打卡制，下班責任制，人生好厭世。",
+      "source": "網路流傳"
+    },
+    {
+      "id": "negative-029",
+      "category": "negative",
+      "text": "被老闆罵完想去動物園，因為在那裡，我才真的像個人。",
+      "source": "網路流傳"
+    },
+    {
+      "id": "negative-030",
+      "category": "negative",
+      "text": "誰說錢買不到自由，你老闆不就買到你了。",
+      "source": "網路流傳"
+    },
+    {
+      "id": "negative-031",
+      "category": "negative",
+      "text": "真懷念小時候哭完就睡，現在哭完還是要上班。",
+      "source": "網路流傳"
+    },
+    {
+      "id": "negative-032",
+      "category": "negative",
+      "text": "以前常常思考自己適合什麼工作，現在發現自己最適合不工作。",
+      "source": "網路流傳"
+    },
+    {
+      "id": "negative-033",
+      "category": "negative",
+      "text": "準時下班需要的不是努力，是勇氣。",
+      "source": "網路流傳"
+    },
+    {
+      "id": "negative-034",
+      "category": "negative",
+      "text": "成功的都是領導有方，失敗的就是下屬無能。",
+      "source": "網路流傳"
+    },
+    {
+      "id": "negative-035",
+      "category": "negative",
+      "text": "失敗並不可怕，可怕的是，你相信這句話。",
+      "source": "網路流傳"
+    },
+    {
+      "id": "negative-036",
+      "category": "negative",
+      "text": "世界上99%的事可以靠錢解決，剩下的1%是需要更多錢。",
+      "source": "網路流傳"
+    },
+    {
+      "id": "negative-037",
+      "category": "negative",
+      "text": "那些鼓勵大家跳出舒適圈的，問題是我從來沒舒適過。",
+      "source": "網路流傳"
+    },
+    {
+      "id": "negative-038",
+      "category": "negative",
+      "text": "長相是上一代給的，規則是上一代訂的，觀念是上一代教的，環境是上一代留的，結果還好意思說：一代不如一代。",
+      "source": "網路流傳"
+    },
+    {
+      "id": "negative-039",
+      "category": "negative",
+      "text": "你必須非常努力，才可以證明自己真的無能為力。",
+      "source": "網路流傳"
+    },
+    {
+      "id": "negative-040",
+      "category": "negative",
+      "text": "我一直把錢視為空氣，因為沒有它我就活不下去。",
+      "source": "網路流傳"
+    },
+    {
+      "id": "negative-041",
+      "category": "negative",
+      "text": "醜小鴨變天鵝並不是因為他多努力，而是因為他的老母就是天鵝。",
+      "source": "網路流傳"
+    },
+    {
+      "id": "negative-042",
+      "category": "negative",
+      "text": "天下無難事，只要肯放棄。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-043",
+      "category": "negative",
+      "text": "傷害你的不是對方的絕情；而是你心存幻想的堅持！",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-044",
+      "category": "negative",
+      "text": "總是說人生掌握在自己手上，但我怎麼看手裡就是什麼也沒有。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-045",
+      "category": "negative",
+      "text": "我的超能力，就是很多事情都超出我的能力。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-046",
+      "category": "negative",
+      "text": "我們總是覺得人生有許多悲劇，卻忘了其實編劇就是—自己。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-047",
+      "category": "negative",
+      "text": "你不喜歡我，我一點都不介意。因為我活下來，不是為了取悅你！",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-048",
+      "category": "negative",
+      "text": "人最怕的是一生庸庸碌碌，還安慰自己平凡的可貴。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-049",
+      "category": "negative",
+      "text": "所謂的人生，就是你的全力以赴，還比不上別人的隨便搞搞。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-050",
+      "category": "negative",
+      "text": "放心，只要是一塊石頭，到哪裡都不會發光。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-051",
+      "category": "negative",
+      "text": "所謂的選擇困難，其實都是因為窮。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-052",
+      "category": "negative",
+      "text": "生活不是林黛玉，不會因為憂傷而風情萬種。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-053",
+      "category": "negative",
+      "text": "最容易走的路，就是下坡路。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-054",
+      "category": "negative",
+      "text": "生氣是拿別人做錯的事來懲罰自己。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-055",
+      "category": "negative",
+      "text": "愛笑的人運氣不會太差，因為運氣太差的根本笑不出來。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-056",
+      "category": "negative",
+      "text": "如果有個人可以秒回你，這只說明了一件事，就是他正在玩手機。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-057",
+      "category": "negative",
+      "text": "才20幾歲沒遇到喜歡的人是很正常的事，過一段時間你就會發現，以後大概也遇不到了。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-058",
+      "category": "negative",
+      "text": "年輕的時候，談到夢想，整晚都睡不著覺，現在談到夢想，只想趕快睡覺。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-059",
+      "category": "negative",
+      "text": "為什麼總是說天妒英才？因為沒人管笨蛋活多久。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-060",
+      "category": "negative",
+      "text": "其實只想跟你玩下半身，不是想跟你過下半生。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-061",
+      "category": "negative",
+      "text": "聽說熬夜會讓人變醜，不過還好我已經夠醜了。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-062",
+      "category": "negative",
+      "text": "沒有人會為了你的未來買單，你要麼努力向上爬，要麼爛在社會最底層的泥淖裡，這就是生活。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-063",
+      "category": "negative",
+      "text": "你從80樓往下看，全是美景，但你從2樓往下看，全是垃圾，人若沒有高度，看到的全是問題，人若沒有格局，看到的全是雞毛蒜皮！",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-064",
+      "category": "negative",
+      "text": "我們總是喜歡拿「順其自然」來敷衍人生道路上的荊棘坎坷，卻很少承認，真正的順其自然，其實是竭盡所能之後的不強求，而非兩手一攤的不作為。",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-065",
+      "category": "negative",
+      "text": "擺臉色是沒有用的，問題還是要解決；光生悶氣也是沒有用的，還是要面對面告訴對方。不說就懂，是默契；說了才懂，是尊重；說了還不懂，是路人。",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-066",
+      "category": "negative",
+      "text": "合理的要求是訓練，不合理的要求是磨練。",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-067",
+      "category": "negative",
+      "text": "有些事不說是個結，說了是道疤，結可以解開，疤卻永遠都在。與其掏心掏肺說的真心話到了別人那成了個笑話，不如讓它直接爛在心裡，自己消化。",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-068",
+      "category": "negative",
+      "text": "別和往事過不去，因為它已經過去，別和現實過不去，因為你還要過下去。",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-069",
+      "category": "negative",
+      "text": "人，其實不需要太多的東西，只要健康的活著，也不失為一種富有，這便是知足，這樣你才會常樂。",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-070",
+      "category": "negative",
+      "text": "有錢，把事做好！沒錢，把人做好！蛇不知道自己有害，人不知道自己有錯。你的好，對別人來說就像一顆糖，吃了就沒了。而你的不好，就像一道傷疤，會永遠存在。這就是人性！",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-071",
+      "category": "negative",
+      "text": "眼是一把尺，量人先量己；心是一桿秤，稱人先稱己。",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-072",
+      "category": "negative",
+      "text": "過錯是暫時的遺憾，而錯過則是永遠的遺憾！",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-073",
+      "category": "negative",
+      "text": "如果你的面前有陰影，那是因為你的背後有陽光。",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-074",
+      "category": "negative",
+      "text": "窮則思變，差則思勤！沒有比人更高的山，沒有比雙腳走的路更長！",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-075",
+      "category": "negative",
+      "text": "成功的人不是贏在起跑點，而是贏在轉捩點。",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-076",
+      "category": "negative",
+      "text": "人生只要盡力了，輸與贏，都是精彩。",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-077",
+      "category": "negative",
+      "text": "能力需要時間去累積，夢想需要時間去證明。",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-078",
+      "category": "negative",
+      "text": "簡單的事重複做，你就是專家，重複的事用心做，你就是贏家。",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-079",
+      "category": "negative",
+      "text": "成敗靠用心，輸贏靠細心。",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-080",
+      "category": "negative",
+      "text": "犧牲享受，享受犧牲，靠的全是你樂在其中。",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-081",
+      "category": "negative",
+      "text": "你可以一無所有，但絕不能一無是處。",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-082",
+      "category": "negative",
+      "text": "能堅持別人不能堅持的，就能擁有別人不能擁有的。",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-083",
+      "category": "negative",
+      "text": "苦難是化了妝的祝福。",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-084",
+      "category": "negative",
+      "text": "哥倫布發現新大陸，靠的不是航海圖，而是信念。",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-085",
+      "category": "negative",
+      "text": "寧願做過了後悔，也不要錯過了後悔。",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-086",
+      "category": "negative",
+      "text": "所謂的「勇氣」是克服心裡的恐懼，而不是心裡毫無恐懼。",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-087",
+      "category": "negative",
+      "text": "人之所以痛苦，在於追求錯誤的東西。",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-088",
+      "category": "negative",
+      "text": "環境不會改變，解決之道在於改變自己。",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-089",
+      "category": "negative",
+      "text": "還能衝動，表示你還對生活有激情，總是衝動，表示你還不懂生活。",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-090",
+      "category": "negative",
+      "text": "放棄該放棄的是無奈，放棄不該放棄的是無能，不放棄該放棄的是無知，不放棄不該放棄的是執著！",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-091",
+      "category": "negative",
+      "text": "生活中處處充滿著驚喜，只要我們有一雙善於發現的眼睛。",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-092",
+      "category": "negative",
+      "text": "與其說是別人讓你痛苦，不如說自己的修養不夠。",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-093",
+      "category": "negative",
+      "text": "得之坦然，失之淡然，順其自然，爭其必然。",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-094",
+      "category": "negative",
+      "text": "運氣就是機會碰巧撞到了你的努力。",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-095",
+      "category": "negative",
+      "text": "時間是治療心靈創傷的大師，但絕不是解決問題的高手。",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-096",
+      "category": "negative",
+      "text": "只有不斷找尋機會的人才會及時把握機會。",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-097",
+      "category": "negative",
+      "text": "雖然我們無法改變人生，但可以改變人生觀。雖然我們無法改變環境，但我們可以改變心境。",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-098",
+      "category": "negative",
+      "text": "不要浪費你的生命，在你一定會後悔的地方上。",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-099",
+      "category": "negative",
+      "text": "不管從什麼時候開始，重要的是開始以後不要停止；不管在什麼時候結束，重要的是結束以後不要後悔。",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-100",
+      "category": "negative",
+      "text": "當你快樂時，要思考這些快樂可能是短暫的，當你痛苦時，也要想，這樣的痛苦也不是永遠的。",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-101",
+      "category": "negative",
+      "text": "命運就像自己的掌紋，雖然彎彎曲曲，卻是掌握在自己手中。",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-102",
+      "category": "negative",
+      "text": "抱最大的希望，為最大的努力，做最壞的打算。",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-103",
+      "category": "negative",
+      "text": "天道酬勤，付出也許不一定得到回報，但不付出一定得不到回報。",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-104",
+      "category": "negative",
+      "text": "忌妒別人，不會給自己增加任何的好處，忌妒別人，也不可能減少別人的成就。",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-105",
+      "category": "negative",
+      "text": "一個人的快樂，不是因為他擁有的多，而是因為他計較的少。",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-106",
+      "category": "negative",
+      "text": "人們總是把幸福解讀為「有」，有車、有房、有錢、有權，但幸福其實是「無」，無憂、無慮、無病、無災。",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-107",
+      "category": "negative",
+      "text": "長得漂亮是優勢，活得漂亮是本事。",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-108",
+      "category": "negative",
+      "text": "每個人都有潛在的能量，只是很容易被習慣所掩蓋，被時間所迷離，被惰性所消磨。",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-109",
+      "category": "negative",
+      "text": "生活本不苦，苦的是慾望太多，人心本不累，累的是放不下的太多。",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-110",
+      "category": "negative",
+      "text": "滴水穿石不是靠力，而是因為不捨晝夜。",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-111",
+      "category": "negative",
+      "text": "心念一轉，萬念皆轉；心路一通，萬路皆通。",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-112",
+      "category": "negative",
+      "text": "用最少的悔恨面對過去。用最少的浪費面對現在。用最多的夢面對未來。",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-113",
+      "category": "negative",
+      "text": "人生像鐘錶，就算可以回到起點，卻已不是昨天！",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-114",
+      "category": "negative",
+      "text": "你不能左右天氣，但可以改變心情。你不能改變容貌，但可以掌握自己。你不能預見明天，但可以珍惜今天。",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-115",
+      "category": "negative",
+      "text": "積極的人在每一次憂患中都看到一個機會，而消極的人則在每個機會都看到某種憂患。",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-116",
+      "category": "negative",
+      "text": "創造機會的人是勇者，等待機會的人是愚者。",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-117",
+      "category": "negative",
+      "text": "不要因為自己還年輕，用健康去換去金錢，等到老了，才明白金錢換不來健康。",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-118",
+      "category": "negative",
+      "text": "做一個決定，並不難，難的是付諸行動，並且堅持到底。",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-119",
+      "category": "negative",
+      "text": "一杯清水因滴入一滴污水而變污濁，一杯污水卻不會因一滴清水的存在而變清澈。",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-120",
+      "category": "negative",
+      "text": "人生是一場旅行，在乎的不是目的地，是沿途的風景以及看風景的心情。",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-121",
+      "category": "negative",
+      "text": "再長的路，一步步也能走完，再短的路，不邁開雙腳也無法到達。",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-122",
+      "category": "negative",
+      "text": "成功的關鍵在於相信自己有成功的能力。",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-123",
+      "category": "negative",
+      "text": "人生最大的敵人是自己；人生最大的失敗是自大；人生最大的愚蠢是欺騙。",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-124",
+      "category": "negative",
+      "text": "人生最大的錯誤是自卑；人生最大的羞辱是獻媚；人生最大的可悲是嫉妒。",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-125",
+      "category": "negative",
+      "text": "人生最大的危險是貪婪；人生最大的破產是絕望；人生最大的債務是情債。",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-126",
+      "category": "negative",
+      "text": "人生最大的欣慰是布施；人生最大的禮物是寬恕；人生最大的財富是健康；人生最大的幸福是知足。",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-127",
+      "category": "negative",
+      "text": "人生最大的惋惜是錯過；人生最大的煩惱是爭名奪利；人生最大的罪過是自欺欺人。",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-128",
+      "category": "negative",
+      "text": "沒錢的時候多讀書，有錢的時候多旅行。當讀過萬卷書、行過萬里路後，最後就會發現眼前這些，其實都是小事。",
+      "source": "網路流傳",
+      "tags": [
+        "反向激勵"
+      ]
+    },
+    {
+      "id": "negative-129",
+      "category": "negative",
+      "text": "比你聰明的人都比你努力了，那你努力有個屁用。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-130",
+      "category": "negative",
+      "text": "成功就像懷孕，大家都會恭喜你，但沒人知道你被搞了幾次才成功！",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-131",
+      "category": "negative",
+      "text": "騎在白馬上的不一定是王子，也可能是唐三藏。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-132",
+      "category": "negative",
+      "text": "現在做什麼事都好難，連想當個宅男，都還要先買得起房子。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-133",
+      "category": "negative",
+      "text": "別再說世界上幾十億人，也遇不到一個對的人，就算是選擇題只有四個選項，你還不是一樣照樣選不對。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-134",
+      "category": "negative",
+      "text": "當全世界都不要你的時候，請記得還有我，我也不要你。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-135",
+      "category": "negative",
+      "text": "不用太在意一些人說的話，因為他們有嘴卻不一定有腦。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-136",
+      "category": "negative",
+      "text": "我覺得人和人還是應該保持適當的距離，尤其是我討厭的人，最好是陰陽相隔。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-137",
+      "category": "negative",
+      "text": "別動不動就把錯誤丟給時間去處理，時間才懶得理你這個爛攤子。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-138",
+      "category": "negative",
+      "text": "喜歡就去告白呀，說不定人家也等著拒絕你呢！",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-139",
+      "category": "negative",
+      "text": "如果擺錯地方，鑽石也會被當石頭。但是石頭不管擺哪裡，都還是石頭。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-140",
+      "category": "negative",
+      "text": "生活中那些討厭的人表面上風光，其實私底下也過得如魚得水喔！",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-141",
+      "category": "negative",
+      "text": "很多人常會被罵，說每天睡得跟豬一樣。真的太委屈了，因為豬都起得比你早。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-142",
+      "category": "negative",
+      "text": "人生很多事，會隨著時間好轉，像很多人原本只是胖，時間久了就變得好胖。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-143",
+      "category": "negative",
+      "text": "別一眼就斷定一個人，因為相處過後你會發現，他比原來更討厭！",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-144",
+      "category": "negative",
+      "text": "都要畢業了，你還不快點告白，對方就來不及拒絕你了！",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-145",
+      "category": "negative",
+      "text": "別再說窮到被鬼抓走了，因為連鬼都嫌棄你窮。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-146",
+      "category": "negative",
+      "text": "如果你覺得自己很平凡，是個普通人，別難過！還是有機會特別的，就是當個特別普通的人。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-147",
+      "category": "negative",
+      "text": "男女之間一定有純友誼，因為每一個我認識的女生，都說最多只能跟我當朋友。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-148",
+      "category": "negative",
+      "text": "有時候你會懷疑自己的能力，別擔心！你是對的，因為你的能力真的有問題。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-149",
+      "category": "negative",
+      "text": "人生就像遊樂園，只不過大多數的人都是工作人員。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-150",
+      "category": "negative",
+      "text": "有夢最美，失望相隨。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-151",
+      "category": "negative",
+      "text": "不敢跟別人說自己有認真讀書，因為不想證明用盡全力，結果還是個腦殘。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-152",
+      "category": "negative",
+      "text": "工作許多年，人家還問你是不是剛進社會，不是因為你看起來年輕，而是因為覺得你怎麼那麼笨。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-153",
+      "category": "negative",
+      "text": "越是沒能力改變自己生活的人，越喜歡批評別人的改變。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-154",
+      "category": "negative",
+      "text": "誰說你沒有毅力，單身這件事你不就堅持了好幾十年嗎？",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-155",
+      "category": "negative",
+      "text": "跟長輩聊天，想盡方法想討他們開心，但長輩三言兩語就可以讓我們煩心。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-156",
+      "category": "negative",
+      "text": "有時候覺得別人很膚淺，這不是偏見，因為他真的是在敷衍你。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-157",
+      "category": "negative",
+      "text": "你要好好愛自己，因為沒有人愛你。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-158",
+      "category": "negative",
+      "text": "有錢不一定快樂，但沒有錢更不快樂。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-159",
+      "category": "negative",
+      "text": "麻雀雖小，也沒有我小，因為我超雖小。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-160",
+      "category": "negative",
+      "text": "很多人都愛說做自己，不過是能力太差，所以連扮演自己都難。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-161",
+      "category": "negative",
+      "text": "很多人愛說都是別人教壞他的小孩，但你怎麼不自己教好自己的小孩呢？",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-162",
+      "category": "negative",
+      "text": "一個人連自己的情緒都控制不了，即使給了全世界也是早晚毀掉。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-163",
+      "category": "negative",
+      "text": "用錢當然買不到快樂，但是有錢，別人會想辦法讓你快樂。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-164",
+      "category": "negative",
+      "text": "當別人跟你說忙沒時間，其實他只是要把時間留給更重要的人。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-165",
+      "category": "negative",
+      "text": "有些人努力了一輩子，也不過是從社會的四流擠入三流。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-166",
+      "category": "negative",
+      "text": "別減肥了，你的醜不是因為胖。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-167",
+      "category": "negative",
+      "text": "一提到錢，大家就變得沒那麼親熱了。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-168",
+      "category": "negative",
+      "text": "不曾擁有的，談不上失去；不屬於自己的，就無法留住；不想留下的，也勉強不來。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-169",
+      "category": "negative",
+      "text": "我不是討厭你，而是你沒有一點讓我喜歡。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-170",
+      "category": "negative",
+      "text": "我的優點是勇於認錯，缺點是堅持不改。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-171",
+      "category": "negative",
+      "text": "賴床是對週末最起碼的尊重。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-172",
+      "category": "negative",
+      "text": "我最擅長的戀愛就是自戀，因為愛自己沒情敵。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-173",
+      "category": "negative",
+      "text": "世界上只有騙子肯定是真心，因為他是真心想騙你。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-174",
+      "category": "negative",
+      "text": "我這一輩子最情深意長的注目都給了手機。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-175",
+      "category": "negative",
+      "text": "女人喜歡長得壞壞的男人，而不是長壞的男人。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-176",
+      "category": "negative",
+      "text": "出外靠朋友，出醜靠自己。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-177",
+      "category": "negative",
+      "text": "有一種女人可以讓你變成百萬富翁，但前提是你得先是個千萬富翁。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-178",
+      "category": "negative",
+      "text": "如果你很努力還是沒有成功，那就表示你努力也沒有用。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-179",
+      "category": "negative",
+      "text": "無能，也是一種答案。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-180",
+      "category": "negative",
+      "text": "有錢才能任性，沒錢只能認命。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-181",
+      "category": "negative",
+      "text": "不要放棄你的夢！繼續睡！",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-182",
+      "category": "negative",
+      "text": "自己選擇的路，走不完換一條就好。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-183",
+      "category": "negative",
+      "text": "吃飽了，才有力氣減肥。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-184",
+      "category": "negative",
+      "text": "減肥永遠是明天的事。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-185",
+      "category": "negative",
+      "text": "單身是一種選擇，只不過不是我選的。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-186",
+      "category": "negative",
+      "text": "有人考試靠實力，有人考試靠視力，而我考試靠的是豐富的想像力。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-187",
+      "category": "negative",
+      "text": "好好讀書吧！畢竟你也不能靠臉吃飯。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-188",
+      "category": "negative",
+      "text": "常說「自古紅顏多薄命」，那是因為沒人在乎醜的人死活。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-189",
+      "category": "negative",
+      "text": "只要是用錢能解決的事情，我一件都解決不了。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-190",
+      "category": "negative",
+      "text": "生活中的美好事物，都是需要花很多錢。理想很豐滿，現實卻很骨感。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-191",
+      "category": "negative",
+      "text": "先學會不生氣，再學會氣死人。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-192",
+      "category": "negative",
+      "text": "你不用對每個過客負責，也不用對每個路人說教。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-193",
+      "category": "negative",
+      "text": "如果你覺得自己又窮又醜，請不要悲傷，你還有希望，至少你的判斷是正確的。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-194",
+      "category": "negative",
+      "text": "手機摔了這麼多次都沒事，後來想想還是我的身高救了它。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-195",
+      "category": "negative",
+      "text": "女人一生最喜歡兩朵花：一是有錢花，二是盡量花！",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-196",
+      "category": "negative",
+      "text": "長得醜就是病，不然整形醫院為什麼會是「醫院」。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-197",
+      "category": "negative",
+      "text": "每個人都有幸福的權力，卻只有少數人有幸福的能力。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-198",
+      "category": "negative",
+      "text": "人若不是帥，再暖都是變態。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-199",
+      "category": "negative",
+      "text": "自從得了精神病之後，整個人都精神多了。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-200",
+      "category": "negative",
+      "text": "女人之美，在於蠢的無怨無悔，男人之美，在於說謊時的那一張嘴。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-201",
+      "category": "negative",
+      "text": "這個世界上願意一輩子對自己不離不棄的，只有自己的影子。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-202",
+      "category": "negative",
+      "text": "忍一時越想越氣，退一步越想越虧。",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    },
+    {
+      "id": "negative-203",
+      "category": "negative",
+      "text": "你不是一無所有，你還有病啊！",
+      "source": "網路流傳",
+      "tags": [
+        "一針見血吐槽"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "version": "1.0.0",
+  "updatedAt": "2026-09-21T17:10:04.106+08:00",
+  "data": [
+    {
+      "date": "02-21",
+      "year": 1987,
+      "title": "台積電成立",
+      "summary": "張忠謀創辦台灣積體電路製造公司，開創全球首見的純晶圓代工模式，只負責製造、不涉入晶片設計，讓上下游廠商能專注分工，為日後台灣半導體產業奠定關鍵基礎。",
+      "keyword": "台積電 成立 1987",
+      "region": "科技",
+      "source": "維基百科",
+      "sourceUrl": "https://zh.wikipedia.org/wiki/%E5%8F%B0%E7%81%A3%E7%A9%8D%E9%AB%94%E9%9B%BB%E8%B7%AF%E5%85%AC%E5%8F%B8"
+    },
+    {
+      "date": "05-28",
+      "year": 1997,
+      "title": "聯發科技成立",
+      "summary": "聯華電子將旗下多媒體部門分割獨立，成立聯發科技，從光碟機晶片起家，日後跨足手機晶片領域，成長為全球重要的IC設計公司，是台灣半導體產業鏈中設計端的代表企業。",
+      "keyword": "聯發科技 成立 1997",
+      "region": "科技",
+      "source": "維基百科",
+      "sourceUrl": "https://zh.wikipedia.org/zh-tw/%E8%81%AF%E7%99%BC%E7%A7%91%E6%8A%80"
+    },
+    {
+      "date": "06-23",
+      "year": 2011,
+      "title": "通訊軟體LINE正式上線",
+      "summary": "日本NHN Japan（今LINE公司）推出即時通訊軟體LINE，開發團隊受東日本大地震啟發、盼提供更穩定的聯繫方式，之後迅速在台灣普及，成為多數人日常聯繫與貼圖文化的重要平台。",
+      "keyword": "LINE 上線 2011",
+      "region": "科技",
+      "source": "維基百科",
+      "sourceUrl": "https://zh.m.wikipedia.org/zh-tw/LINE"
+    },
+    {
+      "date": "01-09",
+      "year": 2007,
+      "title": "初代iPhone發表",
+      "summary": "Steve Jobs 在 Macworld 大會發表第一代 iPhone，結合手機、iPod 與網路瀏覽器於一體，觸控螢幕取代實體鍵盤的操作方式徹底改變手機設計思維，開啟智慧型手機時代的新篇章。",
+      "keyword": "iPhone 發表 2007",
+      "region": "科技",
+      "source": "維基百科",
+      "sourceUrl": "https://zh.wikipedia.org/zh-tw/IPhone_(%E7%AC%AC%E4%B8%80%E4%BB%A3)"
+    },
+    {
+      "date": "12-13",
+      "year": 2008,
+      "title": "iPhone 3G台灣正式開賣",
+      "summary": "中華電信舉辦首賣會，iPhone 3G 在台灣正式開賣，是第一款正式在台上市的iPhone機種，吸引大批果粉排隊搶購，帶動台灣智慧型手機市場邁入新的競爭階段。",
+      "keyword": "iPhone 3G 台灣開賣 2008",
+      "region": "科技",
+      "source": "工商時報",
+      "sourceUrl": "https://www.ctee.com.tw/news/20081212700011-439901"
+    }
+  ]
+}

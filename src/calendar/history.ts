@@ -27,9 +27,11 @@ export interface HistoryDataset {
 
 // Only existing collections are registered. Order controls display priority.
 export const historyDatasets: readonly HistoryDataset[] = [
-  { id: 'personal', label: '私人（個人／家族）', kind: 'personal', entries: personal },
+  { id: 'personal', label: '私人（個人／家族）', kind: 'personal', entries: personal.data },
   { id: 'taiwan', label: '台灣', kind: 'regional', get entries() { return getPublicData().taiwan; } },
   { id: 'world', label: '國際', kind: 'regional', get entries() { return getPublicData().world; } },
+  { id: 'tech', label: '科技', kind: 'topic', get entries() { return getPublicData().tech; } },
+  { id: 'entertainment', label: '影音娛樂', kind: 'topic', get entries() { return getPublicData().entertainment; } },
 ];
 
 export interface HistorySourceSetting { id: string; enabled: boolean }

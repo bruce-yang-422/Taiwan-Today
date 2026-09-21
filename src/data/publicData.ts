@@ -1,5 +1,7 @@
 import taiwan from '../../data/history-taiwan.json';
 import world from '../../data/history-world.json';
+import tech from '../../data/history-tech.json';
+import entertainment from '../../data/history-entertainment.json';
 import quotes from '../../data/quotes.json';
 import festivals from '../../data/festivals.json';
 import holidays from '../../data/holidays.json';
@@ -8,15 +10,17 @@ import calendar2026 from '../../data/calendar-2026.json';
 import calendar2027 from '../../data/calendar-2027.json';
 import { parsePersonalHistory } from '../calendar/personalHistory';
 import type { HistoryEntry } from '../calendar/history';
+import { unwrapData } from './document';
 
-export const REQUIRED_FILES = ['history-taiwan.json', 'history-world.json', 'quotes.json', 'festivals.json', 'holidays.json', 'long-holidays.json'];
+export const REQUIRED_FILES = ['history-taiwan.json', 'history-world.json', 'history-tech.json', 'history-entertainment.json', 'quotes.json', 'festivals.json', 'holidays.json', 'long-holidays.json'];
 export const bundledFiles: Record<string, unknown> = {
-  'history-taiwan.json': taiwan, 'history-world.json': world, 'quotes.json': quotes,
+  'history-taiwan.json': taiwan, 'history-world.json': world,
+  'history-tech.json': tech, 'history-entertainment.json': entertainment, 'quotes.json': quotes,
   'festivals.json': festivals, 'holidays.json': holidays, 'long-holidays.json': longHolidays,
   'calendar-2026.json': calendar2026, 'calendar-2027.json': calendar2027,
 };
 export interface PublicData {
-  taiwan: HistoryEntry[]; world: HistoryEntry[];
+  taiwan: HistoryEntry[]; world: HistoryEntry[]; tech: HistoryEntry[]; entertainment: HistoryEntry[];
   quotes: { id: string; category: string; text: string; source: string }[];
   festivals: { calendar: string; date: string; name: string; observances: string[] }[];
   holidays: Record<string, string>;
@@ -43,7 +47,37 @@ function date(value: unknown): string {
 export function allowedFile(name: string) {
   return REQUIRED_FILES.includes(name) || /^calendar-(19\d{2}|20\d{2}|2100)\.json$/.test(name);
 }
+/** Topic packs (e.g. tech, entertainment) share the entry shape but not the region whitelist used for personal imports. */
+function parseTopicHistory(value: unknown, region: string): HistoryEntry[] {
+  const entries = list(value, 10000).map((raw, index) => {
+    const fail = (message: string): never => { throw new Error(`${region} 第 ${index + 1} 筆：${message}`); };
+    const e = object(raw);
+    const day = text(e.date, 5, true);
+    if (!/^\d{2}-\d{2}$/.test(day)) return fail('日期格式錯誤');
+    if (!Number.isInteger(e.year) || (e.year as number) <= 0) return fail('年份格式錯誤');
+    const year = e.year as number;
+    const stamp = new Date(`2000-${day}T00:00:00Z`);
+    if (Number.isNaN(stamp.getTime()) || stamp.toISOString().slice(5, 10) !== day) return fail('日期不存在');
+    const title = text(e.title, 200, true), summary = text(e.summary, 5000, true);
+    if ([...summary].length < 50 || [...summary].length > 100) return fail('摘要須為 50～100 字');
+    const sourceUrl = text(e.sourceUrl, 2048, true);
+    try { const url = new URL(sourceUrl); if (url.protocol !== 'https:') return fail('來源須為 HTTPS 網址'); }
+    catch { return fail('來源須為 HTTPS 網址'); }
+    if (e.region !== region) return fail(`region 須為「${region}」`);
+    const tags = e.tags;
+    if (tags !== undefined && (!Array.isArray(tags) || tags.length > 30 || tags.some(t => typeof t !== 'string' || !t.trim() || t.length > 60))) return fail('tags 必須是最多 30 個短標籤的陣列');
+    return { date: day, year, title, summary, region, keyword: text(e.keyword, 500), source: text(e.source, 200, true), sourceUrl, ...(tags ? { tags: [...tags] } : {}) };
+  });
+  const seen = new Set<string>();
+  for (const entry of entries) {
+    const key = `${entry.date}|${entry.year}|${entry.title}`;
+    if (seen.has(key)) throw new Error(`${region}：日期、年份與標題重複的紀事`);
+    seen.add(key);
+  }
+  return entries;
+}
 export function parsePublicData(files: Record<string, unknown>): PublicData {
+  files = Object.fromEntries(Object.entries(files).map(([name, value]) => [name, unwrapData(value)]));
   if (REQUIRED_FILES.some(name => !(name in files)) || Object.keys(files).some(name => !allowedFile(name))) throw new Error('更新檔案清單不完整或不支援');
   const history = (name: string, region: string) => {
     const entries = parsePersonalHistory(files[name]);
@@ -84,7 +118,11 @@ export function parsePublicData(files: Record<string, unknown>): PublicData {
       calendars[key] = { lunar: text(day.lunar), isDayOff: day.isDayOff };
     }
   }
-  return { taiwan: history('history-taiwan.json', '台灣'), world: history('history-world.json', '國際'), quotes: parsedQuotes, festivals: parsedFestivals, holidays: parsedHolidays, periods, calendars };
+  return {
+    taiwan: history('history-taiwan.json', '台灣'), world: history('history-world.json', '國際'),
+    tech: parseTopicHistory(files['history-tech.json'], '科技'), entertainment: parseTopicHistory(files['history-entertainment.json'], '影音娛樂'),
+    quotes: parsedQuotes, festivals: parsedFestivals, holidays: parsedHolidays, periods, calendars,
+  };
 }
 let current = parsePublicData(bundledFiles);
 const listeners = new Set<() => void>();

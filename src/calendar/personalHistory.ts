@@ -1,6 +1,8 @@
 import type { HistoryEntry } from './history';
+import { unwrapData } from '../data/document';
 
 export function parsePersonalHistory(value: unknown): HistoryEntry[] {
+  value = unwrapData(value);
   if (!Array.isArray(value) || value.length > 10000) throw new Error('JSON 必須是陣列，最多 10,000 筆紀事。');
   const seen = new Set<string>();
   return value.map((raw, index) => {

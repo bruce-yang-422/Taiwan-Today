@@ -3,13 +3,10 @@ const $=id=>document.getElementById(id);
 let workbook,records=[],revision=0;
 function reset(){records=[];$('output').value='';$('count').textContent='尚無紀事';$('download').disabled=true;$('errors').replaceChildren();}
 function download(name,content,type){const url=URL.createObjectURL(new Blob([content],{type}));const a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
-const sample=[['日期','年份','標題','摘要','分類','關鍵字','來源','來源網址'],['09-21',2010,'搬進第一個家','一起整理紙箱、煮第一頓晚餐。','家族','','家庭相簿',''],['06-15',2018,'大學畢業','和家人一起留下畢業合照。','個人','','私人紀事','']];
-$('csv-template').onclick=()=>{const csv=sample.map(row=>row.map(v=>'"'+String(v).replaceAll('"','""')+'"').join(',')).join('\r\n');download('history-template.csv','\uFEFF'+csv,'text/csv;charset=utf-8');};
-$('xlsx-template').onclick=()=>{const book=XLSX.utils.book_new();XLSX.utils.book_append_sheet(book,XLSX.utils.aoa_to_sheet(sample),'我的紀事');download('history-template.xlsx',XLSX.write(book,{type:'array',bookType:'xlsx'}),'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');};
 $('file').onchange=async()=>{
  const token=++revision;reset();workbook=undefined;$('sheet').replaceChildren();$('sheet').disabled=true;$('convert').disabled=true;
  const file=$('file').files[0];if(!file){$('status').textContent='等待選擇檔案。';return;}
- if(!/\.(csv|xlsx)$/i.test(file.name)||file.size>5*1024*1024){$('status').textContent='請選擇不超過 5 MB 的 CSV 或 XLSX 檔案。';return;}
+ if(!/\.(csv|xlsx|ods)$/i.test(file.name)||file.size>5*1024*1024){$('status').textContent='請選擇不超過 5 MB 的 CSV、XLSX 或 ODS 檔案。';return;}
  $('status').textContent='正在讀取檔案…';
  try{
   const csv=/\.csv$/i.test(file.name);const input=csv?await file.text():await file.arrayBuffer();if(token!==revision)return;

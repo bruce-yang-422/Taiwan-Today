@@ -1,223 +1,227 @@
-[
-  {
-    "calendar": "solar",
-    "date": "01-01",
-    "name": "元旦"
-  },
-  {
-    "calendar": "solar",
-    "date": "02-28",
-    "name": "和平紀念日"
-  },
-  {
-    "calendar": "solar",
-    "date": "04-04",
-    "name": "兒童節"
-  },
-  {
-    "calendar": "solar",
-    "date": "05-01",
-    "name": "勞動節"
-  },
-  {
-    "calendar": "solar",
-    "date": "08-08",
-    "name": "父親節"
-  },
-  {
-    "calendar": "solar",
-    "date": "09-28",
-    "name": "教師節"
-  },
-  {
-    "calendar": "solar",
-    "date": "10-10",
-    "name": "國慶日"
-  },
-  {
-    "calendar": "solar",
-    "date": "10-25",
-    "name": "臺灣光復暨金門古寧頭大捷紀念日"
-  },
-  {
-    "calendar": "solar",
-    "date": "12-25",
-    "name": "行憲紀念日"
-  },
-  {
-    "calendar": "lunar",
-    "date": "01-01",
-    "name": "春節",
-    "description": "過年祭祖、走春。"
-  },
-  {
-    "calendar": "lunar",
-    "date": "01-04",
-    "name": "迎神日（接神）",
-    "description": "民間接神、迎神返家。"
-  },
-  {
-    "calendar": "lunar",
-    "date": "01-05",
-    "name": "迎財神",
-    "description": "開工迎財神，祈求新春開市利市、財源廣進。"
-  },
-  {
-    "calendar": "lunar",
-    "date": "01-09",
-    "name": "天公生（玉皇上帝聖壽）",
-    "description": "敬拜天公、酬謝神恩，祈求全家一年平安順遂。"
-  },
-  {
-    "calendar": "lunar",
-    "date": "01-15",
-    "name": "元宵節",
-    "description": "上元節賞花燈；民間信仰中祈求天官賜福、補年頭運與財庫。",
-    "observances": [
-      "上元天官大帝聖誕"
-    ]
-  },
-  {
-    "calendar": "lunar",
-    "date": "02-02",
-    "name": "頭牙（福德正神千秋）",
-    "description": "做牙、拜土地公，祈求地方安寧、生意興隆與招財。"
-  },
-  {
-    "calendar": "lunar",
-    "date": "02-03",
-    "name": "文昌帝君聖誕",
-    "description": "考生祈求金榜題名、升遷考試順利與開啟智慧。"
-  },
-  {
-    "calendar": "lunar",
-    "date": "02-19",
-    "name": "觀世音菩薩誕辰",
-    "description": "觀音三節之一：慶賀菩薩降生，祈求慈悲庇佑、平安吉祥。"
-  },
-  {
-    "calendar": "lunar",
-    "date": "03-03",
-    "name": "玄天上帝萬壽",
-    "description": "民間信仰中祈求降妖伏魔、鎮宅避煞、消災延壽。"
-  },
-  {
-    "calendar": "lunar",
-    "date": "03-15",
-    "name": "保生大帝聖誕",
-    "description": "民間信仰中祈求醫藥健康、祛病延年；同日中路財神趙元帥聖誕，祈求商場發達與財源。",
-    "observances": [
-      "中路財神趙元帥聖誕"
-    ]
-  },
-  {
-    "calendar": "lunar",
-    "date": "03-20",
-    "name": "註生娘娘千秋",
-    "description": "民間信仰中祈求子嗣、孕期平安與孩童順利長大。"
-  },
-  {
-    "calendar": "lunar",
-    "date": "03-23",
-    "name": "天上聖母聖誕（媽祖生）",
-    "description": "媽祖信仰慶典，祈求護國庇民、出入平安與順境。"
-  },
-  {
-    "calendar": "lunar",
-    "date": "04-08",
-    "name": "釋迦牟尼佛聖誕（浴佛節）",
-    "description": "浴佛洗滌身心煩惱，祈求增長福報與智慧。"
-  },
-  {
-    "calendar": "lunar",
-    "date": "05-05",
-    "name": "端午節",
-    "description": "吃粽子、立蛋、賽龍舟。"
-  },
-  {
-    "calendar": "lunar",
-    "date": "05-13",
-    "name": "霞海城隍爺聖誕",
-    "description": "祈求保境安民，參拜者常同時拜月老求良緣。"
-  },
-  {
-    "calendar": "lunar",
-    "date": "06-06",
-    "name": "虎爺聖誕",
-    "description": "民間信仰中祈求咬錢招財、防小人、護佑孩童平安健康。"
-  },
-  {
-    "calendar": "lunar",
-    "date": "06-19",
-    "name": "觀世音菩薩得道紀念日",
-    "description": "觀音三節之二：感念修道圓滿，祈求心靈澄淨、指引迷津。"
-  },
-  {
-    "calendar": "lunar",
-    "date": "06-24",
-    "name": "關聖帝君聖誕（恩主公）",
-    "description": "民間信仰中祈求事業信義、商業財源、驅邪與升遷。"
-  },
-  {
-    "calendar": "lunar",
-    "date": "07-01",
-    "name": "鬼門開",
-    "description": "民間俗稱開龕門，進入農曆七月祭祀時節。"
-  },
-  {
-    "calendar": "lunar",
-    "date": "07-07",
-    "name": "七夕"
-  },
-  {
-    "calendar": "lunar",
-    "date": "07-15",
-    "name": "中元節",
-    "description": "中元普渡、放水燈；民間信仰中祈求地官赦罪、拔度冤親債主與消災化劫。",
-    "observances": [
-      "中元地官大帝聖誕"
-    ]
-  },
-  {
-    "calendar": "lunar",
-    "date": "08-15",
-    "name": "中秋節",
-    "description": "賞月吃月餅，亦有土地公得道日祭祀；月下老人聖誕祈求良緣、感情與人際和睦。",
-    "observances": [
-      "月下老人聖誕"
-    ]
-  },
-  {
-    "calendar": "lunar",
-    "date": "09-09",
-    "name": "重陽節",
-    "description": "敬老、登高；中壇元帥聖誕祈求行車平安、護宅與業務順利。",
-    "observances": [
-      "中壇元帥聖誕（太子爺）"
-    ]
-  },
-  {
-    "calendar": "lunar",
-    "date": "09-19",
-    "name": "觀世音菩薩出家紀念日",
-    "description": "觀音三節之三：紀念捨世俗發大願，祈求慈悲加持、化解厄難。"
-  },
-  {
-    "calendar": "lunar",
-    "date": "10-15",
-    "name": "下元節（水官大帝聖誕）",
-    "description": "民間信仰中祈求水官解厄、化解過往罪障與年尾消災。"
-  },
-  {
-    "calendar": "lunar",
-    "date": "12-16",
-    "name": "尾牙",
-    "description": "感謝土地公，亦為公司年終聚餐時節。"
-  },
-  {
-    "calendar": "lunar",
-    "date": "12-24",
-    "name": "送神日",
-    "description": "民間信仰中灶君回天庭述職。"
-  }
-]
+{
+  "version": "1.0.0",
+  "updatedAt": "2026-09-21T17:10:04.106+08:00",
+  "data": [
+    {
+      "calendar": "solar",
+      "date": "01-01",
+      "name": "元旦"
+    },
+    {
+      "calendar": "solar",
+      "date": "02-28",
+      "name": "和平紀念日"
+    },
+    {
+      "calendar": "solar",
+      "date": "04-04",
+      "name": "兒童節"
+    },
+    {
+      "calendar": "solar",
+      "date": "05-01",
+      "name": "勞動節"
+    },
+    {
+      "calendar": "solar",
+      "date": "08-08",
+      "name": "父親節"
+    },
+    {
+      "calendar": "solar",
+      "date": "09-28",
+      "name": "教師節"
+    },
+    {
+      "calendar": "solar",
+      "date": "10-10",
+      "name": "國慶日"
+    },
+    {
+      "calendar": "solar",
+      "date": "10-25",
+      "name": "臺灣光復暨金門古寧頭大捷紀念日"
+    },
+    {
+      "calendar": "solar",
+      "date": "12-25",
+      "name": "行憲紀念日"
+    },
+    {
+      "calendar": "lunar",
+      "date": "01-01",
+      "name": "春節",
+      "description": "過年祭祖、走春。"
+    },
+    {
+      "calendar": "lunar",
+      "date": "01-04",
+      "name": "迎神日（接神）",
+      "description": "民間接神、迎神返家。"
+    },
+    {
+      "calendar": "lunar",
+      "date": "01-05",
+      "name": "迎財神",
+      "description": "開工迎財神，祈求新春開市利市、財源廣進。"
+    },
+    {
+      "calendar": "lunar",
+      "date": "01-09",
+      "name": "天公生（玉皇上帝聖壽）",
+      "description": "敬拜天公、酬謝神恩，祈求全家一年平安順遂。"
+    },
+    {
+      "calendar": "lunar",
+      "date": "01-15",
+      "name": "元宵節",
+      "description": "上元節賞花燈；民間信仰中祈求天官賜福、補年頭運與財庫。",
+      "observances": [
+        "上元天官大帝聖誕"
+      ]
+    },
+    {
+      "calendar": "lunar",
+      "date": "02-02",
+      "name": "頭牙（福德正神千秋）",
+      "description": "做牙、拜土地公，祈求地方安寧、生意興隆與招財。"
+    },
+    {
+      "calendar": "lunar",
+      "date": "02-03",
+      "name": "文昌帝君聖誕",
+      "description": "考生祈求金榜題名、升遷考試順利與開啟智慧。"
+    },
+    {
+      "calendar": "lunar",
+      "date": "02-19",
+      "name": "觀世音菩薩誕辰",
+      "description": "觀音三節之一：慶賀菩薩降生，祈求慈悲庇佑、平安吉祥。"
+    },
+    {
+      "calendar": "lunar",
+      "date": "03-03",
+      "name": "玄天上帝萬壽",
+      "description": "民間信仰中祈求降妖伏魔、鎮宅避煞、消災延壽。"
+    },
+    {
+      "calendar": "lunar",
+      "date": "03-15",
+      "name": "保生大帝聖誕",
+      "description": "民間信仰中祈求醫藥健康、祛病延年；同日中路財神趙元帥聖誕，祈求商場發達與財源。",
+      "observances": [
+        "中路財神趙元帥聖誕"
+      ]
+    },
+    {
+      "calendar": "lunar",
+      "date": "03-20",
+      "name": "註生娘娘千秋",
+      "description": "民間信仰中祈求子嗣、孕期平安與孩童順利長大。"
+    },
+    {
+      "calendar": "lunar",
+      "date": "03-23",
+      "name": "天上聖母聖誕（媽祖生）",
+      "description": "媽祖信仰慶典，祈求護國庇民、出入平安與順境。"
+    },
+    {
+      "calendar": "lunar",
+      "date": "04-08",
+      "name": "釋迦牟尼佛聖誕（浴佛節）",
+      "description": "浴佛洗滌身心煩惱，祈求增長福報與智慧。"
+    },
+    {
+      "calendar": "lunar",
+      "date": "05-05",
+      "name": "端午節",
+      "description": "吃粽子、立蛋、賽龍舟。"
+    },
+    {
+      "calendar": "lunar",
+      "date": "05-13",
+      "name": "霞海城隍爺聖誕",
+      "description": "祈求保境安民，參拜者常同時拜月老求良緣。"
+    },
+    {
+      "calendar": "lunar",
+      "date": "06-06",
+      "name": "虎爺聖誕",
+      "description": "民間信仰中祈求咬錢招財、防小人、護佑孩童平安健康。"
+    },
+    {
+      "calendar": "lunar",
+      "date": "06-19",
+      "name": "觀世音菩薩得道紀念日",
+      "description": "觀音三節之二：感念修道圓滿，祈求心靈澄淨、指引迷津。"
+    },
+    {
+      "calendar": "lunar",
+      "date": "06-24",
+      "name": "關聖帝君聖誕（恩主公）",
+      "description": "民間信仰中祈求事業信義、商業財源、驅邪與升遷。"
+    },
+    {
+      "calendar": "lunar",
+      "date": "07-01",
+      "name": "鬼門開",
+      "description": "民間俗稱開龕門，進入農曆七月祭祀時節。"
+    },
+    {
+      "calendar": "lunar",
+      "date": "07-07",
+      "name": "七夕"
+    },
+    {
+      "calendar": "lunar",
+      "date": "07-15",
+      "name": "中元節",
+      "description": "中元普渡、放水燈；民間信仰中祈求地官赦罪、拔度冤親債主與消災化劫。",
+      "observances": [
+        "中元地官大帝聖誕"
+      ]
+    },
+    {
+      "calendar": "lunar",
+      "date": "08-15",
+      "name": "中秋節",
+      "description": "賞月吃月餅，亦有土地公得道日祭祀；月下老人聖誕祈求良緣、感情與人際和睦。",
+      "observances": [
+        "月下老人聖誕"
+      ]
+    },
+    {
+      "calendar": "lunar",
+      "date": "09-09",
+      "name": "重陽節",
+      "description": "敬老、登高；中壇元帥聖誕祈求行車平安、護宅與業務順利。",
+      "observances": [
+        "中壇元帥聖誕（太子爺）"
+      ]
+    },
+    {
+      "calendar": "lunar",
+      "date": "09-19",
+      "name": "觀世音菩薩出家紀念日",
+      "description": "觀音三節之三：紀念捨世俗發大願，祈求慈悲加持、化解厄難。"
+    },
+    {
+      "calendar": "lunar",
+      "date": "10-15",
+      "name": "下元節（水官大帝聖誕）",
+      "description": "民間信仰中祈求水官解厄、化解過往罪障與年尾消災。"
+    },
+    {
+      "calendar": "lunar",
+      "date": "12-16",
+      "name": "尾牙",
+      "description": "感謝土地公，亦為公司年終聚餐時節。"
+    },
+    {
+      "calendar": "lunar",
+      "date": "12-24",
+      "name": "送神日",
+      "description": "民間信仰中灶君回天庭述職。"
+    }
+  ]
+}

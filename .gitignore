@@ -11,6 +11,7 @@ playwright-report/
 
 # 研究暫存
 .research/
+.scratch/
 
 # 原始參考資料（不進版控，來源另存於外部）
 附表3.pdf

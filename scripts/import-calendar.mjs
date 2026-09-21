@@ -11,7 +11,8 @@ for (let i = 0; i < args.length; i += 2) {
 }
 const year = Number(options['--year'] ?? 2027);
 if (!Number.isInteger(year) || year < 1900 || year > 2100) throw new Error('年份必須介於 1900 與 2100');
-const read = path => JSON.parse(readFileSync(path, 'utf8'));
+const readDocument = path => JSON.parse(readFileSync(path, 'utf8'));
+const read = path => { const value = readDocument(path); return value.data ?? value; };
 const output = `data/calendar-${year}.json`;
 const previous = existsSync(output) ? read(output).days : {};
 const holidays = read('data/holidays.json').dates;
@@ -44,5 +45,7 @@ for (let index = 0; index < count; index++) {
 }
 const termCount = Object.values(days).filter(d => d.solarTerm).length;
 if (termCount !== 24) throw new Error(`節氣數量錯誤：${termCount}`);
-writeFileSync(output, JSON.stringify({ year, days }, null, 2) + '\n');
+const version = existsSync(output) ? readDocument(output).version ?? '1.0.0' : '1.0.0';
+const updatedAt = existsSync(output) ? readDocument(output).updatedAt : undefined;
+writeFileSync(output, JSON.stringify({ version, ...(updatedAt ? { updatedAt } : {}), data: { year, days } }, null, 2) + '\n');
 console.log(`${output}: ${count} days, ${termCount} solar terms, ${Object.values(days).filter(d => d.isDayOff).length} official days off.`);

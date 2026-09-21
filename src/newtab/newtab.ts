@@ -7,6 +7,7 @@ import './compact.css';
 import './googleApps.css';
 import './settingsTabs.css';
 import { initializeSettingsTabs } from './settingsTabs';
+import { initializeAbout } from './about';
 import { initializeDataUpdates } from './dataUpdates';
 import { initializeGoogleApps } from './googleApps';
 import { createConceptLayouts } from './concepts';
@@ -22,6 +23,7 @@ import { defaults, parseShortcuts, loadShortcuts, validIcon, shortcutIcon, type 
 import { extensionStorage, readStorage, writeStorage } from '../shortcuts/storage';
 
 const el = <T extends HTMLElement = HTMLElement>(id: string) => document.getElementById(id) as T;
+initializeAbout();
 const node = <K extends keyof HTMLElementTagNameMap>(tag: K, className = '', text = '') => {
   const element = document.createElement(tag); element.className = className; element.textContent = text; return element;
 };

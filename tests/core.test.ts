@@ -8,8 +8,18 @@ import reference2027 from '../data/calendar-2027.json';
 import { Lunar } from 'lunar-typescript';
 import { bundledFiles, parsePublicData } from '../src/data/publicData';
 import { parseManifest } from '../src/data/updates';
+import { parsePersonalHistory } from '../src/calendar/personalHistory';
+import { unwrapData } from '../src/data/document';
 
 describe('public data updates', () => {
+  it('reads versioned documents and legacy payloads identically', () => {
+    const legacy = Object.fromEntries(Object.entries(bundledFiles).map(([name, value]) => [name, unwrapData(value)]));
+    expect(parsePublicData(bundledFiles)).toEqual(parsePublicData(legacy));
+    expect(parsePersonalHistory({ version: '2.3.0', data: [] })).toEqual([]);
+    expect(parsePersonalHistory([])).toEqual([]);
+    expect(() => parsePersonalHistory({ version: 'invalid', data: [] })).toThrow('資料版本');
+    expect(() => parsePublicData({ ...bundledFiles, 'quotes.json': { version: 'invalid', data: [] } })).toThrow('資料版本');
+  });
   it('accepts a complete future leap year and rejects missing days', () => {
     const days: Record<string, unknown> = {};
     for (let time = Date.UTC(2028, 0, 1); time < Date.UTC(2029, 0, 1); time += 86400000) {
@@ -43,9 +53,9 @@ describe('Taiwan calendar', () => {
     expect(dailyCalendar(new Date(`${leap.toYmd()}T12:00:00+08:00`)).festivals).not.toContain('虎爺聖誕');
   });
   it('supports the official 2027 calendar and recurring festival rules', () => {
-    expect(Object.keys(reference2027.days)).toHaveLength(365);
-    expect(Object.values(reference2027.days).filter(day => day.isDayOff)).toHaveLength(121);
-    expect(Object.values(reference2027.days).filter(day => day.solarTerm)).toHaveLength(24);
+    expect(Object.keys(reference2027.data.days)).toHaveLength(365);
+    expect(Object.values(reference2027.data.days).filter(day => day.isDayOff)).toHaveLength(121);
+    expect(Object.values(reference2027.data.days).filter(day => day.solarTerm)).toHaveLength(24);
     const on = (date: string) => dailyCalendar(new Date(`${date}T12:00:00+08:00`));
     expect(on('2027-01-01').holiday).toBe('中華民國開國紀念日（元旦）放假');
     expect(on('2027-02-04').holiday).toBe('除夕前一日（小年夜）放假');
@@ -63,9 +73,9 @@ describe('Taiwan calendar', () => {
     expect(on('2027-12-31')).toMatchObject({ holiday: '2028 年元旦補假', longHoliday: '2028 年元旦連假 1 / 3 天' });
   });
   it('integrates reviewed CSV data and both official appendices', () => {
-    expect(Object.keys(reference.days)).toHaveLength(365);
-    expect(Object.values(reference.days).filter(day => day.isDayOff)).toHaveLength(120);
-    expect(Object.values(reference.days).filter(day => day.solarTerm)).toHaveLength(24);
+    expect(Object.keys(reference.data.days)).toHaveLength(365);
+    expect(Object.values(reference.data.days).filter(day => day.isDayOff)).toHaveLength(120);
+    expect(Object.values(reference.data.days).filter(day => day.solarTerm)).toHaveLength(24);
     expect(dailyCalendar(new Date('2026-01-01T12:00:00+08:00'))).toMatchObject({ isDayOff: true, holiday: '元旦放假' });
     expect(dailyCalendar(new Date('2026-09-28T12:00:00+08:00'))).toMatchObject({ holiday: '教師節放假', longHoliday: '中秋節及教師節連假 4 / 4 天' });
     expect(dailyCalendar(new Date('2026-02-14T12:00:00+08:00')).longHoliday).toBe('除夕及春節連假 1 / 9 天');
@@ -113,10 +123,11 @@ describe('safe navigation and storage', () => {
 
 describe('history source preferences', () => {
   it('normalizes ordering, duplicates and future topic defaults', () => {
-    const datasets = [...historyDatasets, { id: 'technology', label: '科技', kind: 'topic' as const, entries: [] }];
+    const datasets = [...historyDatasets, { id: 'sports', label: '體育', kind: 'topic' as const, entries: [] }];
     expect(normalizeHistorySources([{ id: 'world', enabled: false }, { id: 'world', enabled: true }, { id: 'unknown', enabled: true }, null], datasets)).toEqual([
-      { id: 'world', enabled: false }, { id: 'personal', enabled: true }, { id: 'taiwan', enabled: true }, { id: 'technology', enabled: false },
+      { id: 'world', enabled: false }, { id: 'personal', enabled: true }, { id: 'taiwan', enabled: true },
+      { id: 'tech', enabled: false }, { id: 'entertainment', enabled: false }, { id: 'sports', enabled: false },
     ]);
-    expect(normalizeHistorySources(null).map(s => s.id)).toEqual(['personal', 'taiwan', 'world']);
+    expect(normalizeHistorySources(null).map(s => s.id)).toEqual(['personal', 'taiwan', 'world', 'tech', 'entertainment']);
   });
 });

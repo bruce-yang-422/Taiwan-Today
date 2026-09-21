@@ -1,3 +1,4 @@
+import { readFileSync } from 'node:fs';
 import {test,expect} from '@playwright/test';
 import {convertRows} from '../../docs/site/converter.js';
 
@@ -41,3 +42,18 @@ test('reads XLSX sheets and Excel dates and renders user content as text',async(
  await page.locator('#convert').click();expect(JSON.parse(await page.locator('#output').inputValue())[0].title).toContain('<img');await expect(page.locator('img')).toHaveCount(0);
  await page.setViewportSize({width:1440,height:1000});await page.screenshot({path:'test-results/pages-desktop.png',fullPage:true});
 });
+
+for (const format of ['csv','xlsx','ods']) {
+ test(`downloads and converts the published ${format} template`,async({page})=>{
+  await page.goto('/');
+  const pending=page.waitForEvent('download');
+  await page.locator(`#${format}-template`).click();
+  const download=await pending;
+  expect(download.suggestedFilename()).toBe(`history-template.${format}`);
+  await page.locator('#file').setInputFiles({name:download.suggestedFilename(),mimeType:'application/octet-stream',buffer:readFileSync(await download.path())});
+  await page.locator('#convert').click();
+  await expect(page.locator('#count')).toHaveText('2 則紀事');
+  const records=JSON.parse(await page.locator('#output').inputValue());
+  expect(records.map(item=>[item.date,item.year,item.region])).toEqual([['06-15',2018,'個人'],['09-21',2010,'家族']]);
+ });
+}

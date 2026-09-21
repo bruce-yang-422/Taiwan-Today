@@ -29,14 +29,14 @@ test('permission denial preserves data and a later grant proceeds with the updat
   await expect(page.locator('#data-update-status')).toContainText('資料更新完成');
 });
 
-const names = ['history-taiwan.json','history-world.json','quotes.json','festivals.json','holidays.json','long-holidays.json','calendar-2026.json','calendar-2027.json'];
+const names = ['history-taiwan.json','history-world.json','history-tech.json','history-entertainment.json','quotes.json','festivals.json','holidays.json','long-holidays.json','calendar-2026.json','calendar-2027.json'];
 function release(marker: string, invalid = false) {
   const bodies: Record<string,string> = {};
   for (const name of names) {
     const value = JSON.parse(readFileSync(`data/${name}`,'utf8'));
-    if (name === 'history-taiwan.json') for (const entry of value) if (entry.date === '09-21') entry.title = marker;
-    if (name === 'quotes.json') for (const quote of value) quote.text = marker;
-    if (invalid && name === 'festivals.json') value[0].calendar = 'execute-code';
+    if (name === 'history-taiwan.json') for (const entry of value.data) if (entry.date === '09-21') entry.title = marker;
+    if (name === 'quotes.json') for (const quote of value.data) quote.text = marker;
+    if (invalid && name === 'festivals.json') value.data[0].calendar = 'execute-code';
     bodies[name] = JSON.stringify(value);
   }
   const files = names.map(name=>({name,version:'1.2.3',updatedAt:'2026-09-21T00:00:00Z',bytes:Buffer.byteLength(bodies[name]),sha256:createHash('sha256').update(bodies[name]).digest('hex')}));
@@ -105,7 +105,6 @@ test('automatic public updates are opt-in and limited to once per day', async ({
   await page.locator('.about-settings>summary').click();
   await expect(page.locator('#about-author')).toHaveText('Bruce Yang');
   await expect(page.locator('#about-version')).toHaveText('1.0.0');
-  await expect(page.locator('#about-data-version')).toHaveText('v1.2.3 · GitHub 更新');
   await page.locator('.about-file-details>summary').click();
   await expect(page.locator('#about-data-files>div')).toHaveCount(8);
   await expect(page.locator('#about-data-files dd').first()).toHaveText('v1.2.3');

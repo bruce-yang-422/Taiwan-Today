@@ -1,7 +1,10 @@
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 
-const load = async name => JSON.parse(await readFile(new URL(`../data/history-${name}.json`, import.meta.url), 'utf8'));
+const load = async name => {
+  const value = JSON.parse(await readFile(new URL(`../data/history-${name}.json`, import.meta.url), 'utf8'));
+  return value.data ?? value;
+};
 const taiwan = await load('taiwan'), world = await load('world'), personal = await load('personal');
 assert(Array.isArray(taiwan) && taiwan.every(e => e.region === '台灣'), 'Taiwan file must contain Taiwan entries');
 assert(Array.isArray(world) && world.every(e => e.region === '國際'), 'World file must contain international entries');
@@ -55,3 +58,29 @@ for (const [month, count] of [[9, 30], [10, 31], [11, 30], [12, 31]]) {
 console.log(`共 ${records.length} 筆，欄位、日期、摘要長度、來源網址格式與重複檢查通過。`);
 const taiwanCount = records.filter(entry => entry.region === '台灣').length;
 console.log(`台灣 ${taiwanCount} 筆（${(taiwanCount / records.length * 100).toFixed(2)}%）；國際 ${records.length - taiwanCount} 筆。`);
+
+// Topic packs share the same entry shape but are not required to cover every day, and use their own region value.
+for (const [name, region] of [['tech', '科技'], ['entertainment', '影音娛樂']]) {
+  const topic = await load(name);
+  assert(Array.isArray(topic) && topic.every(e => e.region === region), `${name} file must use region "${region}"`);
+  const topicSeen = new Set();
+  const topicCounts = new Map();
+  for (const entry of topic) {
+    const context = `${name} ${entry.date}: ${entry.title}`;
+    for (const field of ['date', 'title', 'summary', 'keyword', 'source', 'sourceUrl']) {
+      assert(typeof entry[field] === 'string' && entry[field].trim(), `${context}: missing ${field}`);
+    }
+    assert(/^\d{2}-\d{2}$/.test(entry.date), `${context}: invalid date format`);
+    const date = new Date(`2000-${entry.date}T00:00:00Z`);
+    assert(!Number.isNaN(date.getTime()) && date.toISOString().slice(5, 10) === entry.date, `${context}: invalid date`);
+    assert(Number.isInteger(entry.year) && entry.year > 0, `${context}: invalid year`);
+    assert(new URL(entry.sourceUrl).protocol === 'https:', `${context}: source must use HTTPS`);
+    assert([...entry.summary].length >= 50 && [...entry.summary].length <= 100, `${context}: summary must contain 50–100 characters`);
+    const key = `${entry.date}|${entry.year}|${entry.title}`;
+    assert(!topicSeen.has(key), `${context}: duplicate entry`);
+    topicSeen.add(key);
+    topicCounts.set(entry.date, (topicCounts.get(entry.date) ?? 0) + 1);
+    assert(topicCounts.get(entry.date) <= 3, `${context}: more than three curated events`);
+  }
+  console.log(`${region}主題：${topic.length} 筆驗證通過`);
+}
