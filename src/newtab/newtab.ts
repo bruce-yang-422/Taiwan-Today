@@ -6,6 +6,7 @@ import { createConceptLayouts } from './concepts';
 
 import { initializeClock } from './clock';
 import { initializeTodos } from './todos';
+import { initializePersonalHistory } from './personalHistory';
 import { dailyCalendar } from '../calendar/dailyCalendar';
 import { normalizeUrl, searchUrl } from '../search/search';
 import { defaults, parseShortcuts, loadShortcuts, validIcon, shortcutIcon, type Shortcut } from '../shortcuts/shortcuts';
@@ -42,9 +43,19 @@ function renderCalendar() {
   el('history').dataset.count = String(date.history.length);
   for (const event of date.history) {
     const article = node('article', 'history-card');
-    const more = node('a', 'history-more', '深入了解 ↗'); more.href = searchUrl(event.keyword);
-    const source = node('p', 'history-source', '資料來源：'); const link = node('a', '', event.source); link.href = event.sourceUrl; source.append(link);
-    article.append(node('p', 'history-year', `${event.year} · ${event.region} · ${date.year - event.year} 年前`), node('h3', '', event.title), node('p', 'history-summary', event.summary), more, source);
+    article.append(node('p', 'history-year', `${event.year} · ${event.region} · ${date.year - event.year} 年前`), node('h3', '', event.title), node('p', 'history-summary', event.summary));
+    if (event.keyword?.trim()) {
+      const more = node('a', 'history-more', '深入了解 ↗'); more.href = searchUrl(event.keyword); article.append(more);
+    }
+    if (event.source?.trim()) {
+      const source = node('p', 'history-source', '資料來源：');
+      try {
+        const url = new URL(event.sourceUrl ?? '');
+        if (url.protocol !== 'https:' || url.username || url.password) throw new Error('Invalid source');
+        const link = node('a', '', event.source); link.href = url.href; source.append(link);
+      } catch { source.append(document.createTextNode(event.source)); }
+      article.append(source);
+    }
     el('history').append(article);
   }
   if (!date.history.length) {
@@ -194,4 +205,5 @@ initializeClock();
 const concepts = createConceptLayouts(date => { selectedDate = date; renderCalendar(); });
 setInterval(() => concepts.refresh(), 30_000);
 void initializeTodos();
+initializePersonalHistory(() => { lastDate = ''; renderCalendar(); });
 void initialize().catch(() => notify('頁面載入失敗，請重新整理。'));

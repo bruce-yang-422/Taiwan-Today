@@ -3,7 +3,44 @@ import { dailyCalendar } from '../src/calendar/dailyCalendar';
 import { normalizeUrl, searchUrl } from '../src/search/search';
 import { parseShortcuts } from '../src/shortcuts/shortcuts';
 import reference from '../data/calendar-2026.json';
+import reference2027 from '../data/calendar-2027.json';
+import { Lunar } from 'lunar-typescript';
 describe('Taiwan calendar', () => {
+  it('shows folk observances together without treating them as public holidays', () => {
+    const onLunar = (month: number, day: number) => {
+      const solar = Lunar.fromYmd(2027, month, day).getSolar();
+      return dailyCalendar(new Date(`${solar.toYmd()}T12:00:00+08:00`));
+    };
+    expect(onLunar(2, 2).festivals).toContain('頭牙（福德正神千秋）');
+    expect(onLunar(3, 23).festivals).toContain('天上聖母聖誕（媽祖生）');
+    expect(onLunar(3, 23).holiday).toBeUndefined();
+    expect(onLunar(7, 15).festivals).toEqual(['中元節', '中元地官大帝聖誕']);
+    expect(onLunar(8, 15).festivals).toEqual(['中秋節', '月下老人聖誕']);
+    expect(onLunar(12, 16).festivals).toContain('尾牙');
+    expect(onLunar(12, 24).festivals).toContain('送神日');
+    const leap = Lunar.fromYmd(2025, -6, 6).getSolar();
+    expect(dailyCalendar(new Date(`${leap.toYmd()}T12:00:00+08:00`)).festivals).not.toContain('虎爺聖誕');
+  });
+  it('supports the official 2027 calendar and recurring festival rules', () => {
+    expect(Object.keys(reference2027.days)).toHaveLength(365);
+    expect(Object.values(reference2027.days).filter(day => day.isDayOff)).toHaveLength(121);
+    expect(Object.values(reference2027.days).filter(day => day.solarTerm)).toHaveLength(24);
+    const on = (date: string) => dailyCalendar(new Date(`${date}T12:00:00+08:00`));
+    expect(on('2027-01-01').holiday).toBe('中華民國開國紀念日（元旦）放假');
+    expect(on('2027-02-04').holiday).toBe('除夕前一日（小年夜）放假');
+    expect(on('2027-09-28').holiday).toBe('孔子誕辰紀念日／教師節放假');
+    expect(on('2027-03-12')).toMatchObject({ isDayOff: false });
+    expect(on('2027-03-12').holiday).toBeUndefined();
+    expect(on('2027-02-06').festivals).toContain('春節');
+    expect(on('2027-02-05').festivals).toContain('除夕');
+    expect(on('2027-06-09').festivals).toContain('端午節');
+    expect(on('2027-09-15').festivals).toContain('中秋節');
+    expect(on('2027-04-05').festivals).toContain('清明節');
+    expect(on('2027-10-25').festivals).toContain('臺灣光復暨金門古寧頭大捷紀念日');
+    expect(on('2027-02-10')).toMatchObject({ holiday: '春節補假', longHoliday: '除夕及春節連假 7 / 7 天' });
+    expect(on('2027-04-06').holiday).toBe('兒童節補假');
+    expect(on('2027-12-31')).toMatchObject({ holiday: '2028 年元旦補假', longHoliday: '2028 年元旦連假 1 / 3 天' });
+  });
   it('integrates reviewed CSV data and both official appendices', () => {
     expect(Object.keys(reference.days)).toHaveLength(365);
     expect(Object.values(reference.days).filter(day => day.isDayOff)).toHaveLength(120);
@@ -36,7 +73,7 @@ describe('Taiwan calendar', () => {
     const past = dailyCalendar(new Date('1998-09-21T12:00:00+08:00')).history;
     expect(past.length).toBeGreaterThan(0);
     expect(past.every(event => event.year <= 1998)).toBe(true);
-    expect(dailyCalendar(new Date('2027-01-01T12:00:00+08:00')).holiday).toBeUndefined();
+    expect(dailyCalendar(new Date('2028-06-01T12:00:00+08:00')).holiday).toBeUndefined();
   });
 });
 describe('safe navigation and storage', () => {

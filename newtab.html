@@ -65,7 +65,18 @@
     <footer class="text-center"><p>把今天，留一點給自己。</p><span>TAIWAN DAILY · 每日一頁</span></footer>
     <p id="status" role="status" class="status" hidden></p>
     <dialog id="shortcut-dialog"><form id="shortcut-form"><h2 id="shortcut-title">新增捷徑</h2><label for="shortcut-name">名稱</label><input id="shortcut-name" maxlength="40" required autocomplete="off" /><label for="shortcut-url">網址</label><input id="shortcut-url" placeholder="https://example.com" maxlength="2048" required autocomplete="off" inputmode="url" /><label for="shortcut-icon">網站圖示（選填，PNG / ICO，最大 64 KB）</label><input id="shortcut-icon" type="file" accept=".png,.ico,image/png,image/x-icon,image/vnd.microsoft.icon" /><label><input id="shortcut-icon-clear" type="checkbox" style="width:auto" /> 移除已儲存圖示</label><p id="shortcut-error" class="error" role="alert"></p><div class="dialog-actions"><button type="button" id="shortcut-delete" class="danger" hidden>刪除</button><button type="button" data-close="shortcut-dialog">取消</button><button type="submit" class="primary">完成</button></div></form></dialog>
-    <dialog id="settings-dialog"><h2>留一頁，喜歡的樣子</h2>
+    <dialog id="personal-history-dialog" aria-labelledby="personal-history-heading">
+<h2 id="personal-history-heading">我的歷史上的今天</h2>
+<p id="personal-history-count">正在讀取…</p>
+<p class="settings-note">匯入 history-personal.json，紀事只儲存在這台裝置。匯入成功後立即生效，每天優先顯示個人紀事，合計最多三則。移除擴充功能會刪除本機資料。</p>
+<button id="personal-history-export" type="button" disabled>匯出目前紀事備份</button>
+<label for="personal-history-file">選擇個人歷史 JSON（最大 5 MB）</label>
+<input id="personal-history-file" type="file" accept=".json,application/json" disabled>
+<ul id="personal-history-preview" aria-label="前五筆紀事預覽"></ul>
+<p id="personal-history-status" role="status" aria-live="polite">選取檔案後可先預覽，再決定是否取代。也可匯入空陣列 [] 清空個人紀事。</p>
+<div class="dialog-actions"><button type="button" data-close="personal-history-dialog">關閉</button><button class="primary" id="personal-history-save" type="button" disabled>匯入並取代</button></div>
+</dialog>
+<dialog id="settings-dialog"><h2>留一頁，喜歡的樣子</h2>
       <fieldset id="appearance" disabled>
         <legend>外觀</legend>
         <div class="appearance-segments">
@@ -75,6 +86,6 @@
           <label><input type="radio" name="appearance" value="dark" /><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14A9 9 0 0 1 10 3.5 9 9 0 1 0 20.5 14Z"/></svg>暗色</span></label>
         </div>
       </fieldset>
-      <label for="calendar-style">日曆樣式</label><select id="calendar-style"><option value="classic">經典極簡</option><option value="modern">現代</option><option value="traditional">傳統</option><option value="workspace">月曆工作台</option><option value="reading">閱讀日曆</option></select><label for="week-start">月曆每週起始日</label><select id="week-start" disabled><option value="0">星期日（預設）</option><option value="1">星期一</option></select><label for="quote-category">每日一句分類</label><select id="quote-category" disabled><option value="daily">每日提醒</option><option value="sheng-yen">聖嚴法師語錄</option><option value="negative">負能量（幽默）</option><option value="classics">四書五經</option></select><p class="settings-note">每日一句顯示於月曆工作台與閱讀日曆。日期以台灣時間顯示。設定、捷徑與待辦只儲存在這台裝置，不傳送搜尋或瀏覽紀錄。</p><div class="dialog-actions"><button class="primary" data-close="settings-dialog">完成</button></div></dialog>
+      <label for="calendar-style">日曆樣式</label><select id="calendar-style"><option value="classic">留白日常</option><option value="modern">日常方格</option><option value="traditional">歲月紙曆</option><option value="workspace">月序手帖</option><option value="reading">時光讀本</option></select><label for="week-start">月曆每週起始日</label><select id="week-start" disabled><option value="0">星期日（預設）</option><option value="1">星期一</option></select><label for="quote-category">每日一句分類</label><select id="quote-category" disabled><option value="daily">每日提醒</option><option value="sheng-yen">聖嚴法師語錄</option><option value="negative">負能量（幽默）</option><option value="classics">四書五經</option></select><button id="personal-history-open" class="personal-history-open" type="button">匯入個人歷史 JSON</button><p class="settings-note">每日一句顯示於月序手帖與時光讀本。日期以台灣時間顯示。設定、捷徑與待辦只儲存在這台裝置，不傳送搜尋或瀏覽紀錄。</p><div class="dialog-actions"><button class="primary" data-close="settings-dialog">完成</button></div></dialog>
   </body>
 </html>

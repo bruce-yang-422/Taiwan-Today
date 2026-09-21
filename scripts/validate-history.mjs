@@ -1,7 +1,27 @@
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 
-const records = JSON.parse(await readFile(new URL('../data/history.json', import.meta.url), 'utf8'));
+const load = async name => JSON.parse(await readFile(new URL(`../data/history-${name}.json`, import.meta.url), 'utf8'));
+const taiwan = await load('taiwan'), world = await load('world'), personal = await load('personal');
+assert(Array.isArray(taiwan) && taiwan.every(e => e.region === '台灣'), 'Taiwan file must contain Taiwan entries');
+assert(Array.isArray(world) && world.every(e => e.region === '國際'), 'World file must contain international entries');
+const records = [...taiwan, ...world];
+assert(Array.isArray(personal), 'Personal history must be an array');
+const privateSeen = new Set();
+for (const item of personal) {
+  assert(typeof item.date === 'string' && /^\d{2}-\d{2}$/.test(item.date), 'Invalid personal date');
+  assert(Number.isInteger(item.year) && item.year >= 1 && item.year <= 9999, 'Invalid personal year');
+  const stamp = `${String(item.year).padStart(4, '0')}-${item.date}`;
+  const date = new Date(`${stamp}T00:00:00Z`);
+  assert(!Number.isNaN(date.getTime()) && date.toISOString().slice(0,10) === stamp, 'Invalid personal calendar date');
+  for (const field of ['title', 'summary']) assert(typeof item[field] === 'string' && item[field].trim(), `Missing personal ${field}`);
+  assert(['個人', '家族', '台灣', '國際'].includes(item.region), 'Invalid personal region');
+  for (const field of ['keyword', 'source', 'sourceUrl']) assert(item[field] === undefined || typeof item[field] === 'string', `Invalid personal ${field}`);
+  if (item.sourceUrl) { const url = new URL(item.sourceUrl); assert(url.protocol === 'https:' && !url.username && !url.password, 'Invalid personal source URL'); }
+  const key = `${item.date}|${item.year}|${item.title}`;
+  assert(!privateSeen.has(key), 'Duplicate personal entry'); privateSeen.add(key);
+}
+console.log(`個人／家族紀事：${personal.length} 筆驗證通過`);
 const seen = new Set();
 const dates = new Set();
 const counts = new Map();

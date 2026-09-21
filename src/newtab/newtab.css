@@ -91,3 +91,8 @@
   .history-card{padding-top:18px}
   footer{padding-top:24px;padding-bottom:16px}
 }
+
+.personal-history-open { margin-top: 20px; width: 100%; }
+#personal-history-dialog { max-height: 85vh; overflow-y: auto; }
+#personal-history-dialog p, #personal-history-preview { font-size: 13px; line-height: 1.8; overflow-wrap: anywhere; }
+#personal-history-file { width: 100%; margin-block: 12px; }

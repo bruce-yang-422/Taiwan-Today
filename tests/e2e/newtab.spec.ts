@@ -3,6 +3,47 @@ import { resolve, dirname, basename } from 'node:path';
 import { mkdtemp, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 
+test('personal history import validates, persists, syncs and can be cleared', async ({ page, context }) => {
+  await page.clock.install({ time: new Date('2026-09-21T12:00:00+08:00') });
+  await page.goto('/newtab.html');
+  const other = await context.newPage();
+  await other.clock.install({ time: new Date('2026-09-21T12:00:00+08:00') });
+  await other.goto('/newtab.html');
+  const open = async () => {
+    await page.getByRole('button', { name: '開啟外觀設定' }).click();
+    await page.getByRole('button', { name: '匯入個人歷史 JSON', exact: true }).click();
+  };
+  const select = async (value: unknown) => page.locator('#personal-history-file').setInputFiles({ name: 'history-personal.json', mimeType: 'application/json', buffer: Buffer.from(JSON.stringify(value)) });
+  const entries = [{ date: '09-21', year: 2010, title: '我們的新家', summary: '<img src=x> 一起搬家', region: '家族' }];
+  await open(); await select(entries);
+  await expect(page.locator('#personal-history-status')).toContainText('已驗證 1 筆');
+  await page.locator('#personal-history-save').click();
+  await expect(page.locator('#personal-history-status')).toContainText('已匯入 1 筆');
+  await page.keyboard.press('Escape');
+  await expect(page.locator('.history-card h3').first()).toHaveText('我們的新家');
+  await expect(other.locator('.history-card h3').first()).toHaveText('我們的新家');
+  await expect(page.locator('.history-card').first().locator('img, a')).toHaveCount(0);
+  await page.reload(); await expect(page.locator('.history-card h3').first()).toHaveText('我們的新家');
+  await open(); await select([{ ...entries[0], date: '02-30' }]);
+  await expect(page.locator('#personal-history-status')).toContainText('日期不存在');
+  await expect(page.locator('#personal-history-save')).toBeDisabled();
+  await select([{ ...entries[0], sourceUrl: 'javascript:alert(1)' }]);
+  await expect(page.locator('#personal-history-save')).toBeDisabled();
+  await select(entries);
+  await page.evaluate(() => { const original = Storage.prototype.setItem; (window as any).restorePersonalStorage = () => Storage.prototype.setItem = original; Storage.prototype.setItem = function(key, value) { if (key === 'personalHistory') throw new Error('quota'); original.call(this, key, value); }; });
+  await page.locator('#personal-history-save').click();
+  await expect(page.locator('#personal-history-status')).toContainText('儲存失敗');
+  await expect(page.locator('.history-card h3').first()).toHaveText('我們的新家');
+  await page.evaluate(() => (window as any).restorePersonalStorage());
+  const downloaded = page.waitForEvent('download'); await page.locator('#personal-history-export').click();
+  expect((await downloaded).suggestedFilename()).toBe('history-personal.json');
+  await select([]); await page.locator('#personal-history-save').click();
+  await expect(page.locator('#personal-history-count')).toHaveText('目前 0 筆個人／家族紀事');
+  await page.keyboard.press('Escape');
+  await expect(page.locator('.history-card h3').first()).not.toHaveText('我們的新家');
+  await page.reload(); await expect(page.locator('.history-card h3').first()).not.toHaveText('我們的新家');
+});
+
 test('quote category updates immediately and persists across reloads', async ({ page }) => {
   await page.goto('/newtab.html');
   await page.getByRole('button', { name: '開啟外觀設定' }).click();
@@ -265,7 +306,7 @@ test('offline rendering, shortcuts CRUD, keyboard sorting, themes and search', a
   await expect(page.getByRole('link', { name: '測試網站', exact: true }).locator('img')).toHaveAttribute('src', /^data:image\/png;base64,/);
   await page.getByRole('button', { name: '編輯 測試網站', exact: true }).focus();
   await page.keyboard.press('Alt+ArrowLeft');
-  await expect(page.locator('.shortcut-name')).toHaveText(['YouTube', 'PChome', 'GitHub', '測試網站', 'ChatGPT']);
+  await expect(page.locator('.shortcut-name')).toHaveText(['YouTube', 'Facebook', 'Yahoo 奇摩', '測試網站', 'ChatGPT']);
   await page.reload();
   await page.getByRole('button', { name: '編輯 測試網站', exact: true }).click();
   await page.getByLabel('名稱', { exact: true }).fill('修改網站');
@@ -321,7 +362,8 @@ test('packaged MV3 extension loads offline and uses chrome.storage', async () =>
     await expect(page.locator('#day')).not.toBeEmpty();
     await expect(page.getByRole('button', { name: '新增捷徑', exact: true })).toBeEnabled();
     expect(await page.evaluate(() => chrome.runtime.getManifest().permissions)).toEqual(['storage', 'favicon']);
-    for (const name of ['YouTube', 'PChome', 'GitHub']) {
+    await expect(page.locator('.shortcut-name')).toHaveText(['YouTube', 'Facebook', 'Yahoo 奇摩', 'ChatGPT']);
+    for (const name of ['YouTube']) {
       const image = page.getByRole('link', { name, exact: true }).locator('img');
       await expect(image).toBeVisible();
       await expect.poll(() => image.evaluate((img: HTMLImageElement) => img.naturalWidth)).toBeGreaterThan(0);

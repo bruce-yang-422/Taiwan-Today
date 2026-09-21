@@ -4,8 +4,8 @@ export interface Shortcut { id: string; name: string; url: string; order: number
 export const validIcon = (value: unknown): value is string => typeof value === 'string' && value.length <= 90000 && /^data:image\/(png|x-icon|vnd.microsoft.icon);base64,[A-Za-z0-9+/]+=*$/.test(value);
 export const defaults: Shortcut[] = [
   { id: 'youtube', name: 'YouTube', url: 'https://www.youtube.com/', order: 0 },
-  { id: 'pchome', name: 'PChome', url: 'https://24h.pchome.com.tw/', order: 1 },
-  { id: 'github', name: 'GitHub', url: 'https://github.com/', order: 2 },
+  { id: 'facebook', name: 'Facebook', url: 'https://www.facebook.com/', order: 1 },
+  { id: 'yahoo', name: 'Yahoo 奇摩', url: 'https://tw.yahoo.com/', order: 2 },
   { id: 'chatgpt', name: 'ChatGPT', url: 'https://chatgpt.com/', order: 3 },
 ];
 export async function loadShortcuts(): Promise<Shortcut[]> {
