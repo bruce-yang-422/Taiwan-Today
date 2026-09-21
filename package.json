@@ -11,7 +11,9 @@
     "test:e2e": "playwright test",
     "data:import": "node scripts/import-calendar.mjs",
     "data:check-history": "node scripts/validate-history.mjs",
-    "data:prepare-update": "node scripts/prepare-data-update.mjs"
+    "data:prepare-update": "node scripts/prepare-data-update.mjs",
+    "build:site": "tailwindcss -c tailwind.site.config.ts -i docs/site/tailwind.css -o docs/site/style.css --minify",
+    "dev:site": "tailwindcss -c tailwind.site.config.ts -i docs/site/tailwind.css -o docs/site/style.css --watch"
   },
   "keywords": [],
   "author": "Bruce Yang",

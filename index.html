@@ -2,34 +2,129 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="台灣今日曆：把新分頁變成日曆。下載 CSV、XLSX、ODS 紀事範本，直接匯入插件，留住人生與家族回憶。">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'self'">
-<title>台灣今日曆 · 記住今天，也記住你的故事</title>
+<meta name="description" content="台灣今日曆：為台灣設計的 Chrome 新分頁插件。五種樣式、農曆節氣、時鐘待辦與歷史上的今天，也能加入自己的紀事。">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; worker-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'self'">
+<title>台灣今日曆 Taiwan Today｜Chrome 新分頁日曆・農曆節氣與每日紀事</title>
+<link rel="canonical" href="https://today.stack-base.com/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Bruce Yang">
+<meta name="theme-color" content="#153b58">
+<link rel="icon" href="./public/icons/taiwan-today.ico" sizes="any">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:site_name" content="台灣今日曆 Taiwan Today">
+<meta property="og:url" content="https://today.stack-base.com/">
+<meta property="og:title" content="台灣今日曆｜讓 Chrome 新分頁成為你的日常日曆">
+<meta property="og:description" content="五種亮暗樣式，國曆農曆、台灣節氣、時鐘待辦與歷史上的今天。也能將自己的紀事加入日曆，無須帳號，資料保存在本機。">
+<meta property="og:image" content="https://today.stack-base.com/docs/site/images/modern-light.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="607">
+<meta property="og:image:alt" content="台灣今日曆日常方格亮色實際畫面">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="台灣今日曆 Taiwan Today｜Chrome 新分頁日曆">
+<meta name="twitter:description" content="農曆節氣、時鐘待辦、歷史紀事與五種亮暗樣式，開啟新分頁就能使用。">
+<meta name="twitter:image" content="https://today.stack-base.com/docs/site/images/modern-light.jpg">
+<meta name="twitter:image:alt" content="台灣今日曆日常方格亮色實際畫面">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://today.stack-base.com/#website",
+      "url": "https://today.stack-base.com/",
+      "name": "台灣今日曆",
+      "alternateName": "Taiwan Today",
+      "inLanguage": "zh-Hant"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://today.stack-base.com/#application",
+      "name": "台灣今日曆 Taiwan Today",
+      "url": "https://today.stack-base.com/",
+      "description": "獨立的 Chrome 新分頁插件，提供台灣日曆、農曆節氣、時鐘、待辦、歷史紀事與個人紀事匯入。",
+      "applicationCategory": "BrowserApplication",
+      "softwareRequirements": "Google Chrome 或 Microsoft Edge",
+      "inLanguage": "zh-Hant",
+      "isAccessibleForFree": true,
+      "author": { "@type": "Person", "name": "Bruce Yang" },
+      "image": "https://today.stack-base.com/public/icons/taiwan-today.png",
+      "screenshot": "https://today.stack-base.com/docs/site/images/modern-light.jpg",
+      "installUrl": "https://github.com/bruce-yang-422/Taiwan-Today#安裝",
+      "license": "https://github.com/bruce-yang-422/Taiwan-Today/blob/main/LICENSE.md"
+    }
+  ]
+}
+</script>
 <link rel="stylesheet" href="./docs/site/style.css">
 </head>
 <body>
-<header><a class="brand" href="#"><span class="seal">日</span><span>台灣今日曆<small>TAIWAN TODAY</small></span></a><nav aria-label="主導覽"><a href="#features">關於插件</a><a href="#templates">下載紀事範本</a><a href="#faq">常見問題</a><a href="https://github.com/bruce-yang-422/Taiwan-Today">GitHub ↗</a></nav></header>
+<header>
+<a class="brand" href="#"><img src="./public/icons/taiwan-today.png" width="40" height="40" alt=""><span>台灣今日曆<small>TAIWAN TODAY</small></span></a>
+<nav aria-label="主導覽" class="shrink-0"><a href="#features">插件特色</a><a href="#styles">五種樣式</a><a href="#templates">個人紀事與轉檔</a><a href="#faq">常見問題</a></nav>
+</header>
 <main>
-<section class="hero"><div><p class="eyebrow">每一次開啟，都是新的一天</p><h1>今天值得看見。<br><em>你的故事也是。</em></h1><p class="intro">一張屬於台灣的新分頁日曆，陪你看日期、記待辦、讀歷史。把人生與家族的重要時刻，也整理成每年值得回望的紀事。</p><div class="actions"><a class="button primary" href="#templates">整理我的歷史 <span>↗</span></a><a class="button" href="https://github.com/bruce-yang-422/Taiwan-Today#安裝">安裝方式</a></div><p class="quiet">無帳號 · 無後端 · 本機儲存</p></div><aside class="paper" aria-label="個人紀事示意"><p>把日子，留成記憶</p><div class="sample-day">21<span>九月<br>值得記得的一天</span></div><hr><p class="eyebrow">2010 · 家族</p><h2>搬進第一個家</h2><p>一起整理紙箱、煮第一頓晚餐。<br>那些平凡的瞬間，後來都成了故事。</p><small>示意內容，非今日實際紀事</small></aside></section>
-<section id="features" class="features" aria-label="插件功能"><article><span>01 / 日曆</span><h2>台灣的時間感</h2><p>國曆、農曆、節氣與民俗節日，搭配台灣時間指針及數字時鐘。已收錄 2026、2027 政府行政機關放假資料。</p></article><article><span>02 / 日常</span><h2>留一點空間給自己</h2><p>本機待辦、Google 搜尋與自訂捷徑。五種日曆樣式、亮暗配色，選一個喜歡的樣子。</p></article><article><span>03 / 記憶</span><h2>讓每一天有故事</h2><p>歷史上的今天與分類語錄。下載範本，記下生日、畢業、旅行或家族的重要時刻，再直接匯入日曆。</p></article></section>
-<span id="converter" aria-hidden="true"></span>
-<section id="templates" class="tool-section"><div class="section-heading"><div><p class="eyebrow">YOUR OWN HISTORY</p><h2>下載範本，留住你的故事</h2></div><span class="privacy">直接在插件匯入</span></div><p>選擇你習慣的檔案格式，填好後直接匯入「台灣今日曆」，不用先轉檔。</p>
-<section class="panel"><h3>先下載一份範本</h3><p>三種範本的欄位和範例相同，選一種即可。保留第一列表頭，把範例換成你自己的紀事。</p><div class="actions"><a class="button" id="csv-template" href="./templates/history-template.csv" download>下載 CSV 範本</a><a class="button" id="xlsx-template" href="./templates/history-template.xlsx" download>下載 Excel（XLSX）範本</a><a class="button" id="ods-template" href="./templates/history-template.ods" download>下載 ODS 範本</a></div><p class="quiet">每個檔案最大 5 MB；每張工作表最多 10,000 筆紀事。CSV 請儲存為 UTF-8 編碼。</p></section>
-<details open><summary>表格欄位怎麼填？</summary><div class="table-wrap"><table><thead><tr><th>欄位（英文亦可）</th><th>填寫方式</th></tr></thead><tbody><tr><td>日期 / date *</td><td>09-21、9/21 或完整日期 2010-09-21；支援 Excel 日期儲存格。</td></tr><tr><td>年份 / year</td><td>西元年，例如 2010。使用完整日期時可省略，兩者皆填須一致。</td></tr><tr><td>標題 / title *</td><td>例如「搬進第一個家」。</td></tr><tr><td>摘要 / summary *</td><td>記錄當天發生的事。</td></tr><tr><td>分類 / region</td><td>自訂分類，最多 40 字，例如「童年」「中年」「公司名稱」「小孩名字」。空白會填入「個人」。私人紀事不必填台灣／國際；分類名稱不影響「私人」來源與優先排序。</td></tr><tr><td>關鍵字 / keyword</td><td>選填；有填才會在插件顯示 Google「深入了解」。</td></tr><tr><td>來源 / source</td><td>選填；例如「家庭相簿」，空白會填「私人紀事」。</td></tr><tr><td>來源網址 / sourceUrl</td><td>選填；僅接受 HTTPS 網址，不必為私人回憶提供公開連結。</td></tr></tbody></table></div></details>
+<div id="plugin-intro" class="min-w-0">
+<section class="hero">
+<div><p class="eyebrow">台灣今日曆 · 為台灣設計的新分頁插件</p><h1>打開新分頁，<br><em>安頓今天的日常。</em></h1>
+<p class="intro">日期、農曆、節氣與時間，一眼就能看見。記下今天的待辦、快速開啟常用網站，再讀一段歷史或一句提醒，從容開始每一天。</p>
+<div class="actions"><a class="button primary" href="#install">開始使用台灣今日曆 ↗</a><a class="button" href="#styles">看看五種樣式</a></div>
+<p class="quiet">Chrome／Edge · 無須帳號 · 設定儲存在本機</p></div>
+<figure class="product-screenshot">
+<a href="./docs/site/images/modern-light.jpg" target="_blank" rel="noopener noreferrer" data-screenshot-link="modern">
+<img src="./docs/site/images/modern-light.jpg" width="1280" height="607" alt="日常方格亮色實際畫面：日期、時鐘、待辦、搜尋、捷徑、語錄與歷史" data-screenshot="modern" data-style-name="日常方格" fetchpriority="high">
+</a><figcaption>日常方格 · 實際插件畫面，點圖查看原尺寸</figcaption>
+</figure></section>
+<section id="features" class="features" aria-label="插件功能">
+<article><span>01 / 台灣日曆</span><h2>熟悉的日子，一起看</h2><p>國曆、農曆、二十四節氣與民俗節日，搭配台灣時間時鐘。已收錄 2026、2027 年政府行政機關放假與連假資料。</p></article>
+<article><span>02 / 日常工具</span><h2>常用的，就在手邊</h2><p>待辦跨日保留，搜尋與網站捷徑隨手可用。Gmail、雲端硬碟與 Google 日曆也能快速開啟。</p></article>
+<article><span>03 / 每日閱讀</span><h2>今天，也有新發現</h2><p>讀台灣與國際的「歷史上的今天」，選擇喜歡的語錄分類。歷史、語錄、待辦與秒針皆可依習慣開關。</p></article>
+</section>
+<section id="styles" class="styles-section" aria-labelledby="styles-title">
+<div class="section-heading"><div><p class="eyebrow">FIVE WAYS TO START YOUR DAY</p><h2 id="styles-title">同一份日常，五種喜歡的樣子</h2></div><span class="privacy">五種樣式 · 真實截圖</span></div>
+<div class="screenshot-controls" role="group" aria-label="截圖配色"><button type="button" data-screenshot-theme="light" aria-pressed="true">亮色畫面</button><button type="button" data-screenshot-theme="dark" aria-pressed="false">暗色畫面</button></div>
+<div class="style-grid"><article><a href="./docs/site/images/classic-light.jpg" target="_blank" rel="noopener noreferrer" data-screenshot-link="classic" aria-label="開啟留白日常原尺寸截圖"><img src="./docs/site/images/classic-light.jpg" width="1280" height="607" alt="留白日常亮色實際畫面" data-screenshot="classic" data-style-name="留白日常" loading="lazy"></a><h3>留白日常</h3><p>留白與置中日期，安靜看見今天。</p></article>
+<article><a href="./docs/site/images/modern-light.jpg" target="_blank" rel="noopener noreferrer" data-screenshot-link="modern" aria-label="開啟日常方格原尺寸截圖"><img src="./docs/site/images/modern-light.jpg" width="1280" height="607" alt="日常方格亮色實際畫面" data-screenshot="modern" data-style-name="日常方格" loading="lazy"></a><h3>日常方格</h3><p>圓角卡片，整齊收納一天的資訊。</p></article>
+<article><a href="./docs/site/images/traditional-light.jpg" target="_blank" rel="noopener noreferrer" data-screenshot-link="traditional" aria-label="開啟歲月紙曆原尺寸截圖"><img src="./docs/site/images/traditional-light.jpg" width="1280" height="607" alt="歲月紙曆亮色實際畫面" data-screenshot="traditional" data-style-name="歲月紙曆" loading="lazy"></a><h3>歲月紙曆</h3><p>紙色與朱紅框線，熟悉的日曆味道。</p></article>
+<article><a href="./docs/site/images/workspace-light.jpg" target="_blank" rel="noopener noreferrer" data-screenshot-link="workspace" aria-label="開啟月序手帖原尺寸截圖"><img src="./docs/site/images/workspace-light.jpg" width="1280" height="607" alt="月序手帖亮色實際畫面" data-screenshot="workspace" data-style-name="月序手帖" loading="lazy"></a><h3>月序手帖</h3><p>整月展開，選一天查看節氣與歷史。</p></article>
+<article><a href="./docs/site/images/reading-light.jpg" target="_blank" rel="noopener noreferrer" data-screenshot-link="reading" aria-label="開啟時光讀本原尺寸截圖"><img src="./docs/site/images/reading-light.jpg" width="1280" height="607" alt="時光讀本亮色實際畫面" data-screenshot="reading" data-style-name="時光讀本" loading="lazy"></a><h3>時光讀本</h3><p>日期如封面，語錄與紀事慢慢讀。</p></article></div>
+<p class="quiet">2026/09/21 實際操作截圖，點圖可查看原尺寸。日期、紀事與捷徑依使用日期及個人設定而異。</p>
+</section>
+<section id="install" class="install-panel" aria-labelledby="install-title">
+<div><p class="eyebrow">READY FOR YOUR NEXT TAB</p><h2 id="install-title">讓下一個新分頁，換個樣子</h2><p>依安裝說明載入插件，開啟新分頁即可使用。日曆與內建資料可離線查看；搜尋、網站捷徑及資料更新需要網路。</p></div>
+<a class="button primary" href="https://github.com/bruce-yang-422/Taiwan-Today#安裝" target="_blank" rel="noopener noreferrer">查看安裝說明 ↗</a>
+</section>
+</div>
+<section id="templates" class="tool-section"><div class="section-heading"><div><p class="eyebrow">也為自己的故事，留一個位置</p><h2>下載範本，留住你的故事</h2></div><span class="privacy">檔案不會上傳</span></div><p>除了內建歷史，你也可以加入生日、畢業、旅行或家族回憶。這是可自由使用的延伸功能，沒有匯入紀事也能完整使用日曆。</p><p class="quiet">下載範本 → 填寫紀事 → 轉換並下載 JSON → 匯入日曆。</p>
+<section class="panel"><h3>先下載一份範本</h3><p>三種範本的欄位和範例相同，選一種即可。保留第一列表頭，把範例換成你自己的紀事。</p><div class="actions"><a class="button" id="csv-template" href="./templates/history-template.csv" download>下載 CSV 範本</a><a class="button" id="xlsx-template" href="./templates/history-template.xlsx" download>下載 Excel（XLSX）範本</a><a class="button" id="ods-template" href="./templates/history-template.ods" download>下載 ODS 範本</a></div></section>
+<section id="converter" class="panel converter"><h3>填好了？幫你轉成日曆檔案</h3>
+<p>選擇填好的表格，確認紀事後按「下載 JSON」。檔案只在你的瀏覽器處理，不會上傳。</p>
+<label for="history-file">選擇你的表格</label>
+<input id="history-file" type="file" accept=".csv,.xlsx,.ods">
+<div id="sheet-field" hidden><label for="history-sheet">要使用哪一張工作表？</label><select id="history-sheet"></select></div>
+<p id="conversion-status" class="break-words" role="status" aria-live="polite">選擇填好的表格，網站會幫你整理成日曆檔案。</p>
+<ul id="conversion-preview" aria-label="紀事預覽（前五筆）"></ul>
+<button id="download-json" class="primary" type="button" disabled>下載 JSON</button>
+</section>
+<details><summary>表格欄位怎麼填？</summary><div class="table-wrap"><table><thead><tr><th>欄位（英文亦可）</th><th>填寫方式</th></tr></thead><tbody><tr><td>日期 / date *</td><td>09-21、9/21 或完整日期 2010-09-21；支援 Excel 日期儲存格。</td></tr><tr><td>年份 / year</td><td>西元年，例如 2010。使用完整日期時可省略，兩者皆填須一致。</td></tr><tr><td>標題 / title *</td><td>例如「搬進第一個家」。</td></tr><tr><td>摘要 / summary *</td><td>記錄當天發生的事。</td></tr><tr><td>分類 / region</td><td>自訂分類，最多 40 字，例如「童年」「中年」「公司名稱」「小孩名字」。空白會填入「個人」。私人紀事不必填台灣／國際；分類名稱不影響「私人」來源與優先排序。</td></tr><tr><td>關鍵字 / keyword</td><td>選填；有填才會在插件顯示 Google「深入了解」。</td></tr><tr><td>來源 / source</td><td>選填；例如「家庭相簿」，空白會填「私人紀事」。</td></tr><tr><td>來源網址 / sourceUrl</td><td>選填；僅接受 HTTPS 網址，不必為私人回憶提供公開連結。</td></tr></tbody></table></div></details>
 <aside class="howto" role="note" aria-labelledby="import-note-title">
-<h3 id="import-note-title">備註 · 把你的紀事加進日曆</h3>
-<p>填好範本後，開啟「台灣今日曆」新分頁，依序點選「設定 → 資料管理 → 匯入個人歷史」，選擇檔案、確認預覽，再按「匯入並取代」。Excel／ODS 請先選好工作表。</p>
+<h3 id="import-note-title">把你的紀事加進日曆</h3>
+<p>下載 JSON 後，開啟「台灣今日曆」新分頁，依序點選「設定 → 資料管理 → 匯入個人歷史」，選擇剛下載的 history-personal.json、確認預覽，再按「匯入並取代」。</p>
 <p>匯入會換掉原有的全部個人紀事；已有資料時，記得先按「匯出目前紀事備份」。</p>
 </aside></section>
 <section id="faq" class="faq" aria-labelledby="faq-title">
 <div class="section-heading"><div><p class="eyebrow">FAQ</p><h2 id="faq-title">常見問題</h2></div></div>
-<details><summary>三種範本要全部下載嗎？</summary><p>不用，選一種就好，內容和欄位都相同。平常用 Excel 可選 XLSX，用 LibreOffice 可選 ODS，也可以用 CSV。填好後直接匯入插件，不用自己轉檔。</p></details>
+<details><summary>一定要匯入自己的紀事才能使用嗎？</summary><p>不用。安裝後就能使用台灣日曆、時鐘、待辦、捷徑、內建歷史與語錄。有想紀念的日子時，再使用上方工具加入即可。</p></details>
+<details><summary>三種範本要全部下載嗎？</summary><p>不用，選一種就好，內容和欄位都相同。平常用 Excel 可選 XLSX，用 LibreOffice 可選 ODS，也可以用 CSV。填好後交給上方工具整理，下載 JSON 再匯入插件即可。</p></details>
 <details><summary>分類可以填公司名稱或小孩名字嗎？</summary><p>可以。你可以填「童年」「中年」、公司名稱或小孩名字，最多 40 字；留白會使用「個人」。不論填什麼，匯入的紀事都屬於「私人」來源，不會變成公共歷史。</p></details>
 <details><summary>匯入後，為什麼今天沒有看到紀事？</summary><p>日曆會在紀事的同月同日顯示回憶，例如 6 月 15 日畢業，就會在每年的 6 月 15 日出現。也可以切換成「月序手帖」，選擇那一天查看。未來年份的紀事不會提前顯示。</p><p>請確認「設定 → 內容」已開啟「歷史上的今天」與「私人」來源；當天紀事較多時，按「顯示更多」就能查看其餘內容。</p></details>
 <details><summary>再匯入一次，會把新紀事加在後面嗎？</summary><p>不會。按「匯入並取代」會換掉原本的全部個人紀事。建議保留一份完整表格，每次把新紀事加進同一份表格，再重新匯入。台灣、國際等公共歷史不受影響。</p></details>
-<details><summary>我的回憶會被上傳或讓別人看到嗎？</summary><p>不會。官網只提供範本下載，插件也只在你的電腦讀取和保存檔案，不會上傳或公開你的紀事。</p></details>
+<details><summary>我的回憶會被上傳或讓別人看到嗎？</summary><p>不會。官網轉檔與插件匯入都只在你的電腦處理，不會上傳或公開你的紀事。</p></details>
 <details><summary>換電腦或移除插件前，要怎麼保存紀事？</summary><p>在「設定 → 資料管理 → 匯入個人歷史」按「匯出目前紀事備份」，把下載的檔案保存好。到新電腦安裝插件後，再匯入這份備份即可。紀事不會自動同步；移除插件會清除原本儲存的紀事。</p></details>
-<details><summary>檔案匯入失敗怎麼辦？</summary><p>先看畫面提示的列數與原因，檢查日期是否存在、年份是否一致，以及標題和摘要有沒有填寫。每個檔案最多 5 MB，每張工作表最多 10,000 筆紀事；CSV 請另存為 UTF-8。Excel／ODS 也要確認選到正確的工作表。</p><p>資料有錯誤時不能確認匯入，原有紀事會保留。修正並儲存表格後，再選一次檔案即可。</p></details>
+<details><summary>檔案匯入失敗怎麼辦？</summary><p>先看畫面提示的列數與原因，檢查日期是否存在、年份是否一致，以及標題和摘要有沒有填寫。網站會指出需要修正的地方，改好表格後重新選檔，再下載新的 JSON 即可。</p><p>資料有錯誤時不能確認匯入，原有紀事會保留。修正並儲存表格後，再選一次檔案即可。</p></details>
 </section>
 </main><footer><span>把今天，留一點給自己。</span><a href="https://github.com/bruce-yang-422/Taiwan-Today">台灣今日曆 · 開放原始碼 ↗</a></footer>
+<script type="module" src="./docs/site/app.js"></script>
+<script type="module" src="./docs/site/gallery.js"></script>
 </body></html>

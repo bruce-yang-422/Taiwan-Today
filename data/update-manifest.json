@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "version": "1.0.0",
-  "updatedAt": "2026-09-21T09:40:46.867Z",
-  "updatedAtTaiwan": "2026-09-21T17:40:46.867+08:00",
-  "revision": "f3dc224fd420c05fb416449c36562030c36a29ae3db87f2d4b2deb1c29fd369e",
+  "updatedAt": "2026-09-21T10:11:32.733Z",
+  "updatedAtTaiwan": "2026-09-21T18:11:32.733+08:00",
+  "revision": "cc379a7ad8a581b73021ce71b6bb07b64cefcbf6c15ca7ff4967f9d191388d8a",
   "files": [
     {
       "name": "calendar-2026.json",
@@ -47,11 +47,11 @@
     },
     {
       "name": "history-tech.json",
-      "sha256": "f1e58dbfbe120a66a7b1eff403183fbc569c138f12e5cadf5ca25820a042d20d",
-      "bytes": 2724,
+      "sha256": "3cd69254da1db15dfb1ae87b8f2b51f7b827a72fc9052c02b9e73974e21ef55a",
+      "bytes": 27921,
       "version": "1.0.0",
-      "updatedAt": "2026-09-21T09:10:04.106Z",
-      "updatedAtTaiwan": "2026-09-21T17:10:04.106+08:00"
+      "updatedAt": "2026-09-21T10:11:32.733Z",
+      "updatedAtTaiwan": "2026-09-21T18:11:32.733+08:00"
     },
     {
       "name": "history-world.json",

@@ -1,7 +1,97 @@
 {
   "version": "1.0.0",
-  "updatedAt": "2026-09-21T17:10:04.106+08:00",
+  "updatedAt": "2026-09-21T18:11:32.733+08:00",
   "data": [
+    {
+      "date": "01-09",
+      "year": 2007,
+      "title": "初代iPhone發表",
+      "summary": "Steve Jobs 在 Macworld 大會發表第一代 iPhone，結合手機、iPod 與網路瀏覽器於一體，觸控螢幕取代實體鍵盤的操作方式徹底改變手機設計思維，開啟智慧型手機時代的新篇章。",
+      "keyword": "iPhone 發表 2007",
+      "region": "科技",
+      "source": "維基百科",
+      "sourceUrl": "https://zh.wikipedia.org/zh-tw/IPhone_(%E7%AC%AC%E4%B8%80%E4%BB%A3)"
+    },
+    {
+      "date": "01-11",
+      "year": 2005,
+      "title": "蘋果發表首款無螢幕 iPod shuffle",
+      "summary": "賈伯斯在 Macworld 大會發表體積如口香糖盒大小的初代 iPod shuffle，改採快閃記憶體並大膽捨棄螢幕，主打隨機播放概念與百美元有找的親民定價，讓 iPod 迅速滲透大眾平價隨身聽市場。",
+      "keyword": "iPod shuffle 發表 2005",
+      "region": "科技",
+      "source": "維基百科",
+      "sourceUrl": "https://zh.wikipedia.org/zh-tw/IPod_shuffle"
+    },
+    {
+      "date": "01-15",
+      "year": 2008,
+      "title": "賈伯斯發表初代 MacBook Air",
+      "summary": "賈伯斯在 Macworld 2008 發表會上從牛皮紙公文袋中抽出全球最薄的筆電 MacBook Air，捨棄光碟機與乙太網路孔，改採一體成型鋁合金機身與固態硬碟，重塑輕薄筆電的設計標準。",
+      "keyword": "MacBook Air 賈伯斯 公文袋 2008",
+      "region": "科技",
+      "source": "維基百科",
+      "sourceUrl": "https://zh.wikipedia.org/zh-tw/MacBook_Air"
+    },
+    {
+      "date": "01-15",
+      "year": 2001,
+      "title": "維基百科（Wikipedia）正式上線營運",
+      "summary": "吉米·威爾斯與賴瑞·桑格正式推出多人協作的線上百科全書「維基百科」，藉由開放全球大眾自由編輯與開源精神，迅速取代傳統紙本工具書，成為網路史上最大規模的開放知識庫。",
+      "keyword": "維基百科 成立 2001",
+      "region": "科技",
+      "source": "維基百科",
+      "sourceUrl": "https://zh.wikipedia.org/zh-tw/%E7%BB%B4%E5%9F%BA%E7%99%BE%E7%A7%91"
+    },
+    {
+      "date": "01-27",
+      "year": 2010,
+      "title": "蘋果發表初代 iPad 平板電腦",
+      "summary": "蘋果執行長賈伯斯在舊金山芳草地藝術中心發表初代 iPad，配備 9.7 吋多點觸控螢幕與自主研發的 A4 晶片，於智慧型手機與筆記型電腦之間開闢全新產品線，引領行動運算新風潮。",
+      "keyword": "iPad 發表 2010",
+      "region": "科技",
+      "source": "維基百科",
+      "sourceUrl": "https://zh.wikipedia.org/zh-tw/IPad_(%E7%AC%AC%E4%B8%80%E4%BB%A3)"
+    },
+    {
+      "date": "01-30",
+      "year": 2007,
+      "title": "Office 2007 發售並導入 Ribbon 介面與 OpenXML",
+      "summary": "微軟隨 Windows Vista 推出 Office 2007，淘汰沿用十餘年的下拉式選單，改採標籤式功能區「Ribbon」介面，並全面引進 docx、xlsx 等基於 XML 的開放檔案格式標準。",
+      "keyword": "Office 2007 Ribbon 2007",
+      "region": "科技",
+      "source": "維基百科",
+      "sourceUrl": "https://zh.wikipedia.org/zh-tw/Microsoft_Office_2007"
+    },
+    {
+      "date": "02-04",
+      "year": 2004,
+      "title": "馬克·祖克柏創立 Facebook",
+      "summary": "馬克·祖克柏與哈佛大學室友在宿舍推出「Thefacebook」社群平台，最初僅限哈佛學生註冊使用，隨後迅速拓展至全美大學與全球大眾，開創以真實人際關係為核心的社群網路時代。",
+      "keyword": "Facebook 創立 2004",
+      "region": "科技",
+      "source": "維基百科",
+      "sourceUrl": "https://zh.wikipedia.org/zh-tw/Facebook"
+    },
+    {
+      "date": "02-08",
+      "year": 2005,
+      "title": "Google 地圖（Google Maps）正式上線",
+      "summary": "Google 宣布推出網頁版電子地圖服務 Google 地圖，採用可無縫拖曳的地圖技術，隨後加入街景與即時導航功能，徹底顛覆傳統紙本地圖與車用獨立導航機的生態。",
+      "keyword": "Google Maps 地圖 2005",
+      "region": "科技",
+      "source": "維基百科",
+      "sourceUrl": "https://zh.wikipedia.org/zh-tw/Google%E5%9C%B0%E5%9C%96"
+    },
+    {
+      "date": "02-14",
+      "year": 2005,
+      "title": "YouTube 影音分享平台正式創立",
+      "summary": "前 PayPal 員工查德·賀利、史蒂夫·陳與賈德·卡林姆正式註冊 YouTube 網域名稱，開創易於上傳與嵌入分享的線上影音串流平台，徹底改寫網路影音傳播型態與創作者生態。",
+      "keyword": "YouTube 成立 2005",
+      "region": "科技",
+      "source": "維基百科",
+      "sourceUrl": "https://zh.wikipedia.org/zh-tw/YouTube"
+    },
     {
       "date": "02-21",
       "year": 1987,
@@ -11,6 +101,86 @@
       "region": "科技",
       "source": "維基百科",
       "sourceUrl": "https://zh.wikipedia.org/wiki/%E5%8F%B0%E7%81%A3%E7%A9%8D%E9%AB%94%E9%9B%BB%E8%B7%AF%E5%85%AC%E5%8F%B8"
+    },
+    {
+      "date": "03-10",
+      "year": 1995,
+      "title": "卡西歐推出首款附液晶螢幕消費級數位相機 QV-10",
+      "summary": "卡西歐在日本推出全球首款機背配備彩色液晶螢幕的普及型數位相機 QV-10，讓使用者能當場檢視與刪除照片，改變傳統攝影拍完等待沖洗的習慣，引爆消費型數位相機普及風潮。",
+      "keyword": "Casio QV-10 數位相機 1995",
+      "region": "科技",
+      "source": "維基百科",
+      "sourceUrl": "https://zh.wikipedia.org/zh-tw/%E5%8D%A1%E8%A5%BF%E6%AC%A7"
+    },
+    {
+      "date": "03-21",
+      "year": 2006,
+      "title": "傑克·多西發布推特歷史上第一條推文",
+      "summary": "Twitter 共同創辦人傑克·多西發送了該平台史上第一則推文「just setting up my twttr」，標誌著微網誌與即時短訊息傳播時代的起點。",
+      "keyword": "Twitter 第一條推文 2006",
+      "region": "科技",
+      "source": "維基百科",
+      "sourceUrl": "https://zh.wikipedia.org/zh-tw/Twitter"
+    },
+    {
+      "date": "04-01",
+      "year": 1976,
+      "title": "蘋果電腦公司正式創立",
+      "summary": "史蒂夫·賈伯斯、史蒂夫·沃茲尼克與羅納德·韋恩在加州車庫正式創立蘋果電腦公司，並手工組裝推出單板電腦 Apple I，揭開個人電腦革新與矽谷科技傳奇的序幕。",
+      "keyword": "Apple 創立 1976",
+      "region": "科技",
+      "source": "維基百科",
+      "sourceUrl": "https://zh.wikipedia.org/zh-tw/%E8%8B%B9%E6%9E%9C%E5%85%AC%E5%8F%B8"
+    },
+    {
+      "date": "04-03",
+      "year": 1973,
+      "title": "全球首次手持式行動電話通話完成",
+      "summary": "摩托羅拉工程師馬丁·庫珀在紐約曼哈頓街頭，使用如磚頭般沉重的手持式行動電話原型機 DynaTAC，撥通電話給貝爾實驗室主管，宣告人類通訊正式告別實體電話線時代。",
+      "keyword": "行動電話 發明 摩托羅拉 1973",
+      "region": "科技",
+      "source": "維基百科",
+      "sourceUrl": "https://zh.wikipedia.org/zh-tw/%E9%A9%AC%E4%B8%81%C2%B7%E5%BA%93%E7%8F%80"
+    },
+    {
+      "date": "04-15",
+      "year": 1935,
+      "title": "柯達推出 Kodachrome 彩色反轉底片",
+      "summary": "伊士曼柯達公司正式推出首款成功商業化的三層乳劑減色法彩色底片「Kodachrome」，色彩還原真實且保存持久，終結黑白影像壟斷，徹底改寫二十世紀新聞紀實與家庭影像的彩色視覺記憶。",
+      "keyword": "Kodachrome 彩色底片 1935",
+      "region": "科技",
+      "source": "維基百科",
+      "sourceUrl": "https://zh.wikipedia.org/wiki/%E6%9F%AF%E8%BE%BE%E5%85%8B%E7%BD%97%E5%A7%86%E8%83%B6%E5%8D%B7"
+    },
+    {
+      "date": "04-19",
+      "year": 1965,
+      "title": "戈登·摩爾提出摩爾定律",
+      "summary": "快捷半導體工程師戈登·摩爾於《電子學》雜誌發表文章，預測積體電路上可容納的電晶體數量約每隔兩年便會翻倍，這項觀察日後被命名為「摩爾定律」，成為半導體晶片製程演進的核心指導原則。",
+      "keyword": "摩爾定律 1965",
+      "region": "科技",
+      "source": "維基百科",
+      "sourceUrl": "https://zh.wikipedia.org/zh-tw/%E6%91%A9%E5%B0%94%E5%AE%9A%E5%BE%8B"
+    },
+    {
+      "date": "04-19",
+      "year": 1999,
+      "title": "微軟推出 IntelliMouse Explorer 光學滑鼠",
+      "summary": "微軟發表第一代 IntelliMouse Explorer，搭載光學感測技術，徹底淘汰傳統機械滑鼠內部容易積灰卡垢的軌跡滾球，引領電腦周邊全面進入無需滑鼠墊的光學滑鼠新時代。",
+      "keyword": "IntelliMouse Explorer 光學滑鼠 1999",
+      "region": "科技",
+      "source": "維基百科",
+      "sourceUrl": "https://zh.wikipedia.org/zh-tw/%E5%85%89%E5%AD%B8%E6%BB%91%E9%BC%A0"
+    },
+    {
+      "date": "04-21",
+      "year": 1989,
+      "title": "任天堂推出掌上型遊戲機 Game Boy",
+      "summary": "由橫井軍平主導開發的任天堂首款可更換卡帶掌機 Game Boy 在日本正式發售，搭載低耗電黑白液晶螢幕，搭配同捆作品《俄羅斯方塊》在全球引發狂熱，成為九零年代最具代表性的掌上型娛樂裝置。",
+      "keyword": "Game Boy 發售 1989",
+      "region": "科技",
+      "source": "維基百科",
+      "sourceUrl": "https://zh.wikipedia.org/zh-tw/Game_Boy"
     },
     {
       "date": "05-28",
@@ -23,6 +193,26 @@
       "sourceUrl": "https://zh.wikipedia.org/zh-tw/%E8%81%AF%E7%99%BC%E7%A7%91%E6%8A%80"
     },
     {
+      "date": "05-29",
+      "year": 2014,
+      "title": "台灣正式邁入 4G LTE 時代",
+      "summary": "中華電信宣布 4G LTE 高速行動網路搶先開台營運，宣告台灣行動通訊正式告別 3G，大幅提升傳輸頻寬與行動上網速率，帶動行動支付、高畫質影音與手遊產業的爆發性成長。",
+      "keyword": "台灣 4G 開台 2014",
+      "region": "科技",
+      "source": "中央通訊社",
+      "sourceUrl": "https://www.cna.com.tw/"
+    },
+    {
+      "date": "06-06",
+      "year": 1984,
+      "title": "蘇聯工程師阿列克謝·帕基特諾夫製成《俄羅斯方塊》",
+      "summary": "任職於蘇聯科學院的阿列克謝·帕基特諾夫在 Elektronika 60 電腦上完成幾何方塊益智遊戲《俄羅斯方塊》的首個程式版本，這款風靡全球至今的休閒遊戲隨後引發激烈的跨國版權爭奪戰。",
+      "keyword": "俄羅斯方塊 發明 1984",
+      "region": "科技",
+      "source": "維基百科",
+      "sourceUrl": "https://zh.wikipedia.org/zh-tw/%E4%BF%84%E7%BD%97%E6%96%AF%E6%96%B9%E5%9D%97"
+    },
+    {
       "date": "06-23",
       "year": 2011,
       "title": "通訊軟體LINE正式上線",
@@ -33,14 +223,274 @@
       "sourceUrl": "https://zh.m.wikipedia.org/zh-tw/LINE"
     },
     {
-      "date": "01-09",
-      "year": 2007,
-      "title": "初代iPhone發表",
-      "summary": "Steve Jobs 在 Macworld 大會發表第一代 iPhone，結合手機、iPod 與網路瀏覽器於一體，觸控螢幕取代實體鍵盤的操作方式徹底改變手機設計思維，開啟智慧型手機時代的新篇章。",
-      "keyword": "iPhone 發表 2007",
+      "date": "06-25",
+      "year": 1998,
+      "title": "微軟推出 Windows 98 作業系統",
+      "summary": "微軟正式發行 Windows 98，改善對 USB 裝置隨插即用的硬體支援，並整合 Internet Explorer 4.0 瀏覽器與 FAT32 檔案系統，讓個人電腦娛樂與網路瀏覽體驗更成熟穩定。",
+      "keyword": "Windows 98 發行 1998",
       "region": "科技",
       "source": "維基百科",
-      "sourceUrl": "https://zh.wikipedia.org/zh-tw/IPhone_(%E7%AC%AC%E4%B8%80%E4%BB%A3)"
+      "sourceUrl": "https://zh.wikipedia.org/zh-tw/Windows_98"
+    },
+    {
+      "date": "06-28",
+      "year": 2011,
+      "title": "微軟正式推出雲端訂閱服務 Office 365",
+      "summary": "微軟正式發布 Office 365 雲端生產力套件服務，將傳統單機買斷式套裝軟體轉向雲端運算與月／年費訂閱制，使用者可隨時取得最新版本並搭配 OneDrive 雲端儲存，開啟辦公軟體雲端化時代。",
+      "keyword": "Office 365 推出 2011",
+      "region": "科技",
+      "source": "維基百科",
+      "sourceUrl": "https://zh.wikipedia.org/zh-tw/Microsoft_365"
+    },
+    {
+      "date": "07-01",
+      "year": 1979,
+      "title": "Sony 推出首款 Walkman 隨身聽 TPS-L2",
+      "summary": "索尼在日本發表首款便攜式卡帶隨身聽 Walkman TPS-L2，搭配輕量化立體聲耳機，讓音樂聆聽體驗擺脫固定空間限制，成為席捲全球數十年的隨身音樂革命與標誌性消費電子產品。",
+      "keyword": "Sony Walkman TPS-L2 1979",
+      "region": "科技",
+      "source": "TechEBlog",
+      "sourceUrl": "https://www.techeblog.com/sony-walkman-tps-l2-45th-anniversary/"
+    },
+    {
+      "date": "07-01",
+      "year": 2000,
+      "title": "遊戲橘子代理《天堂》在台灣正式公開測試",
+      "summary": "改編自韓國 NCsoft 漫畫 IP 的大型多人線上角色扮演遊戲《天堂》在台灣啟動公測，憑藉網咖連線組隊、攻城戰與「打寶」文化引爆熱潮，正式開啟台灣線上遊戲的黃金盛世。",
+      "keyword": "天堂 線上遊戲 公測 2000",
+      "region": "科技",
+      "source": "維基百科",
+      "sourceUrl": "https://zh.wikipedia.org/zh-tw/%E5%A4%A9%E5%A0%82_(%E9%81%8A%E6%88%B2)"
+    },
+    {
+      "date": "07-07",
+      "year": 1995,
+      "title": "大宇資訊發行《仙劍奇俠傳》DOS版",
+      "summary": "大宇資訊「狂徒創作群」開發的單機角色扮演遊戲《仙劍奇俠傳》DOS 版正式在台灣發售，李逍遙、趙靈兒與林月如的宿命悲劇搭配動人配樂震撼玩家，被譽為華人電腦 RPG 史上最經典的作品。",
+      "keyword": "仙劍奇俠傳 DOS版 1995",
+      "region": "科技",
+      "source": "維基百科",
+      "sourceUrl": "https://zh.wikipedia.org/zh-tw/%E4%BB%99%E5%8A%8D%E5%A5%87%E4%BF%A0%E5%82%B3_(%E9%81%8A%E6%88%B2)"
+    },
+    {
+      "date": "07-15",
+      "year": 1983,
+      "title": "任天堂推出紅白機（Family Computer）",
+      "summary": "任天堂在日本正式發售家用遊戲主機 Family Computer（通稱紅白機），採用可更換卡帶設計，催生《超級瑪利歐兄弟》等劃時代遊戲，拯救當時低迷的電玩市場，奠定現代電子遊戲產業基礎。",
+      "keyword": "任天堂 紅白機 發售 1983",
+      "region": "科技",
+      "source": "維基百科",
+      "sourceUrl": "https://zh.wikipedia.org/zh-tw/%E7%B4%85%E7%99%BD%E6%A9%9F"
+    },
+    {
+      "date": "07-21",
+      "year": 2001,
+      "title": "大宇資訊推出重製版《新仙劍奇俠傳》",
+      "summary": "大宇資訊正式發售《新仙劍奇俠傳》，採用全新繪製的高解析度圖像、改進戰鬥動態並重新編曲配樂，更首次加入隱藏結局，補足老玩家心中遺憾，成為千禧年初極具代表性的經典重製作品。",
+      "keyword": "新仙劍奇俠傳 2001",
+      "region": "科技",
+      "source": "維基百科",
+      "sourceUrl": "https://zh.wikipedia.org/zh-tw/%E6%96%B0%E4%BB%99%E5%8A%8D%E5%A5%87%E4%BF%A0%E5%82%B3"
+    },
+    {
+      "date": "08-01",
+      "year": 1989,
+      "title": "微軟推出首版 Microsoft Office 套裝軟體",
+      "summary": "微軟最初在 Macintosh 平台推出首款「Microsoft Office」套裝軟體，整合 Word、Excel 與 PowerPoint 為單一套件，開創辦公室生產力軟體捆綁銷售的經典模式。",
+      "keyword": "Microsoft Office 推出 1989",
+      "region": "科技",
+      "source": "維基百科",
+      "sourceUrl": "https://zh.wikipedia.org/zh-tw/Microsoft_Office"
+    },
+    {
+      "date": "08-06",
+      "year": 2016,
+      "title": "手遊《Pokémon GO》在台灣正式上線",
+      "summary": "擴增實境手機遊戲《Pokémon GO》正式在台灣開放下載，結合實體 GPS 定位與經典寶可夢 IP，引發跨年齡層的狂熱抓寶熱潮，各縣市公園湧入成千上萬玩家，成為年度社會現象。",
+      "keyword": "Pokemon GO 台灣上線 2016",
+      "region": "科技",
+      "source": "維基百科",
+      "sourceUrl": "https://zh.wikipedia.org/zh-tw/%E7%B2%BE%E9%9D%88%E5%AF%B6%E5%8F%AF%E5%A4%A2GO"
+    },
+    {
+      "date": "08-24",
+      "year": 1995,
+      "title": "微軟推出 Windows 95 作業系統",
+      "summary": "微軟正式發行 Windows 95 作業系統，首度導入「開始」功能表、工作列與圖形化桌面介面，並全面整合網際網路支援，徹底奠定個人電腦（PC）現代作業系統的標準架構與全球普及率。",
+      "keyword": "Windows 95 發布 1995",
+      "region": "科技",
+      "source": "維基百科",
+      "sourceUrl": "https://zh.wikipedia.org/zh-tw/Windows_95"
+    },
+    {
+      "date": "09-02",
+      "year": 2008,
+      "title": "Google 正式推出 Chrome 網頁瀏覽器",
+      "summary": "Google 釋出開源 Chromium 專案與首版 Chrome 瀏覽器測試版，主打極簡介面、沙盒安全架構與極速 JavaScript 引擎，迅速擊潰長年稱霸的微軟 IE，成為全球市占最高的瀏覽器。",
+      "keyword": "Google Chrome 瀏覽器 2008",
+      "region": "科技",
+      "source": "維基百科",
+      "sourceUrl": "https://zh.wikipedia.org/zh-tw/Google_Chrome"
+    },
+    {
+      "date": "09-04",
+      "year": 1998,
+      "title": "Google 公司正式成立",
+      "summary": "賴利·佩吉與謝爾蓋·布林在加州車庫正式註冊成立 Google 公司。其開發的 PageRank 搜尋演算法徹底革新網頁檢索效率，隨後成長為全球最大的搜尋引擎與跨國科技巨頭。",
+      "keyword": "Google 成立 1998",
+      "region": "科技",
+      "source": "維基百科",
+      "sourceUrl": "https://zh.wikipedia.org/zh-tw/Google"
+    },
+    {
+      "date": "09-04",
+      "year": 1888,
+      "title": "柯達取得相機專利並推出首款膠捲相機",
+      "summary": "喬治·伊士曼取得便攜式底片相機快門專利並註冊「Kodak」商標，該相機預載可拍百張照片的紙基膠捲，打出「你按快門，剩下的交給我們」口號，開啟大眾黑白攝影時代。",
+      "keyword": "柯達 膠捲相機 專利 1888",
+      "region": "科技",
+      "source": "HISTORY",
+      "sourceUrl": "https://www.history.com/this-day-in-history/september-4/kodak-camera-patent"
+    },
+    {
+      "date": "09-08",
+      "year": 2009,
+      "title": "英特爾發表 Lynnfield 處理器與 P55 晶片組取消北橋架構",
+      "summary": "英特爾發布 Core i5 與 i7 系列 Lynnfield 核心處理器及 P55 晶片組，將記憶體控制器整合進 CPU 內部，主機板自此告別傳統南北橋雙晶片架構，邁入單晶片晶片組時代。",
+      "keyword": "Intel P55 Lynnfield 晶片組 2009",
+      "region": "科技",
+      "source": "Intel",
+      "sourceUrl": "https://www.intel.com/pressroom/archive/releases/2009/20090908comp.htm"
+    },
+    {
+      "date": "09-12",
+      "year": 2003,
+      "title": "Valve 正式推出 Steam 數位發行平台",
+      "summary": "Valve 正式上線 Steam 平台，起初主要用於旗下遊戲的自動更新與防作弊機制，隨後逐步引進第三方遊戲銷售與雲端存檔服務，顛覆實體光碟包裝生態，開創 PC 數位遊戲分發新時代。",
+      "keyword": "Steam 上線 2003",
+      "region": "科技",
+      "source": "維基百科",
+      "sourceUrl": "https://zh.wikipedia.org/zh-tw/Steam"
+    },
+    {
+      "date": "09-14",
+      "year": 1995,
+      "title": "BBS 電子布告欄批踢踢實業坊（PTT）創立",
+      "summary": "台灣大學學生杜奕瑾在宿舍以一台個人電腦架設「批踢踢實業坊」（PTT），提供電子布告欄討論平台，日後演變為台灣最具影響力、言論傳播速度最快的網路社群與鄉民文化發源地。",
+      "keyword": "PTT 批踢踢 創立 1995",
+      "region": "科技",
+      "source": "維基百科",
+      "sourceUrl": "https://zh.wikipedia.org/zh-tw/%E6%89%B9%E8%B8%A2%E8%B8%A2"
+    },
+    {
+      "date": "09-17",
+      "year": 2003,
+      "title": "微軟發表經典辦公軟體 Office 2003",
+      "summary": "微軟推出 Microsoft Office 2003，採用與 Windows XP 呼應的視覺介面，並首度納入 OneNote 筆記軟體，因穩定性高且操作成熟，成為生命週期極長的一代經典辦公套件。",
+      "keyword": "Office 2003 發表 2003",
+      "region": "科技",
+      "source": "維基百科",
+      "sourceUrl": "https://zh.wikipedia.org/zh-tw/Microsoft_Office_2003"
+    },
+    {
+      "date": "09-23",
+      "year": 2008,
+      "title": "首款 Android 智慧型手機 HTC Dream 發布",
+      "summary": "宏達電（HTC）與 Google、T-Mobile 合作發表全球首款搭載 Android 系統的商用手機 HTC Dream，開啟開源行動作業系統與 iOS 分庭抗禮的智慧型手機時代。",
+      "keyword": "Android HTC Dream 2008",
+      "region": "科技",
+      "source": "維基百科",
+      "sourceUrl": "https://zh.wikipedia.org/zh-tw/HTC_Dream"
+    },
+    {
+      "date": "10-06",
+      "year": 2010,
+      "title": "Instagram 正式在 iOS App Store 上線",
+      "summary": "凱文·斯特羅姆與麥克·克里格共同開發的照片分享社群應用程式 Instagram 正式在蘋果 App Store 上架，以標誌性的正方形照片與多款復古濾鏡吸引大批用戶，上線首日即突破兩萬名使用者註冊。",
+      "keyword": "Instagram 上線 2010",
+      "region": "科技",
+      "source": "維基百科",
+      "sourceUrl": "https://zh.wikipedia.org/zh-tw/Instagram"
+    },
+    {
+      "date": "10-22",
+      "year": 2011,
+      "title": "Foxy 官方伺服器全面關閉終止服務",
+      "summary": "在遭台灣檢調單位搜索起訴侵權、智慧財產法院重判負責人有期徒刑後，Foxy 官方伺服器正式全面斷線，這款風靡台灣數年的 P2P 檔案下載軟體徹底劃下句點。",
+      "keyword": "Foxy 關閉 2011",
+      "region": "科技",
+      "source": "維基百科",
+      "sourceUrl": "https://zh.wikipedia.org/zh-tw/Foxy"
+    },
+    {
+      "date": "10-23",
+      "year": 2001,
+      "title": "蘋果發表第一代 iPod 數位音樂播放器",
+      "summary": "蘋果公司執行長史蒂芬·賈伯斯發表初代 iPod，配備 5GB 超薄硬碟與獨創的機械轉盤操作介面，主打「將一千首歌裝進口袋」，大幅改寫數位音樂儲存型態與消費電子硬體產業生態。",
+      "keyword": "iPod 發表 2001",
+      "region": "科技",
+      "source": "維基百科",
+      "sourceUrl": "https://zh.wikipedia.org/zh-tw/IPod"
+    },
+    {
+      "date": "10-25",
+      "year": 2001,
+      "title": "微軟發表經典作業系統 Windows XP",
+      "summary": "微軟正式向大眾推出 Windows XP，基於穩定的 NT 核心架構打造，告別過往 DOS 基礎頻繁當機的問題，並換上標誌性的「綠草地與藍天」桌布，成為壽命最長的經典系統之一。",
+      "keyword": "Windows XP 發表 2001",
+      "region": "科技",
+      "source": "維基百科",
+      "sourceUrl": "https://zh.wikipedia.org/zh-tw/Windows_XP"
+    },
+    {
+      "date": "10-29",
+      "year": 1969,
+      "title": "阿帕網（ARPANET）成功傳送首條遠距訊息",
+      "summary": "美國加州大學洛杉磯分校與史丹佛研究所的電腦成功建立連線，送出史上第一條封包交換訊息「LOGIN」（傳輸到「LO」時系統當機），象徵現代網際網路正式誕生。",
+      "keyword": "ARPANET 網際網路誕生 1969",
+      "region": "科技",
+      "source": "ICANN",
+      "sourceUrl": "https://www.icann.org/en/blogs/details/the-first-message-transmission-29-10-2019-en"
+    },
+    {
+      "date": "11-15",
+      "year": 1971,
+      "title": "英特爾推出全球首款商用微處理器 Intel 4004",
+      "summary": "英特爾在《電子新聞》上刊登廣告，正式發表全球第一顆商用單晶片微處理器 Intel 4004。該晶片將運算單元、控制單元等功能整合至單一積體電路中，奠定現代微處理器的發展起點。",
+      "keyword": "Intel 4004 微處理器 1971",
+      "region": "科技",
+      "source": "維基百科",
+      "sourceUrl": "https://zh.wikipedia.org/zh-tw/Intel_4004"
+    },
+    {
+      "date": "11-29",
+      "year": 1972,
+      "title": "雅達利發表投幣式街機遊戲《乓》（Pong）",
+      "summary": "雅達利正式推出雙人桌球模擬街機遊戲《Pong》，簡單好上手的投幣玩法引發全美酒吧與娛樂場所狂熱，成為電子遊戲史上首款取得巨大商業成功的街機遊戲，開啟街機產業黃金時代。",
+      "keyword": "Pong 雅達利 街機 1972",
+      "region": "科技",
+      "source": "維基百科",
+      "sourceUrl": "https://zh.wikipedia.org/zh-tw/%E4%B9%93"
+    },
+    {
+      "date": "11-30",
+      "year": 2022,
+      "title": "OpenAI 正式推出 ChatGPT",
+      "summary": "OpenAI 發表基於 GPT-3.5 架構的對話式大型語言模型 ChatGPT，以流暢自然的對答與廣泛應用能力震撼全球，掀起生成式 AI 技術競爭與產業變革風潮。",
+      "keyword": "ChatGPT 推出 2022",
+      "region": "科技",
+      "source": "維基百科",
+      "sourceUrl": "https://zh.wikipedia.org/zh-tw/ChatGPT"
+    },
+    {
+      "date": "12-03",
+      "year": 1994,
+      "title": "Sony 推出初代 PlayStation 家用遊戲主機",
+      "summary": "索尼電腦娛樂在日本正式發售初代 PlayStation 主機，以優異的 3D 即時多邊形渲染技術與 CD-ROM 大容量光碟載體，正面擊敗卡帶陣營，奠定 Sony 橫跨數十年的家用主機霸主地位。",
+      "keyword": "PlayStation 發售 1994",
+      "region": "科技",
+      "source": "維基百科",
+      "sourceUrl": "https://zh.wikipedia.org/zh-tw/PlayStation_(%E6%B8%B8%E6%88%8F%E6%9C%BA)"
     },
     {
       "date": "12-13",
@@ -51,6 +501,16 @@
       "region": "科技",
       "source": "工商時報",
       "sourceUrl": "https://www.ctee.com.tw/news/20081212700011-439901"
+    },
+    {
+      "date": "12-31",
+      "year": 2011,
+      "title": "台灣電信業者全面終止 BBcall 服務正式退場",
+      "summary": "隨著 2G 與 3G 行動電話全面普及，中華電信正式終止最後一批無線電叫人業務頻道執照，昔日幾乎人手一機、別在腰帶上的 BBcall 正式走入台灣歷史，成為時代的眼淚。",
+      "keyword": "BBcall 終止服務 台灣 2011",
+      "region": "科技",
+      "source": "公視新聞網",
+      "sourceUrl": "https://news.pts.org.tw/article/715418"
     }
   ]
 }
