@@ -5,14 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="light dark" />
     <title>台灣今日曆</title>
+    <link rel="icon" href="/icons/taiwan-today.ico" type="image/x-icon" />
     <script type="module" src="/src/newtab/newtab.ts"></script>
   </head>
   <body>
     <header class="flex items-center justify-between px-6 py-5 sm:px-10">
-      <a class="brand" href="./newtab.html"><span class="brand-mark" aria-hidden="true">日</span> 台灣今日曆</a>
+      <a class="brand" href="./newtab.html"><img class="brand-logo" src="/icons/taiwan-today.png" width="36" height="36" alt="" /> 台灣今日曆</a>
       <button id="settings-open" class="quiet-button" aria-label="開啟外觀設定">外觀 <span aria-hidden="true">☷</span></button>
     </header>
     <main class="mx-auto w-full max-w-2xl px-6 text-center">
+      <div class="calendar-clock-group">
+      <p id="year" class="eyebrow"></p>
       <div class="clock-container">
         <svg id="analog-clock" class="analog-clock" viewBox="0 0 120 120" role="img" aria-label="台灣時間">
           <circle class="clock-face" cx="60" cy="60" r="58" />
@@ -25,16 +28,17 @@
             <circle class="clock-pin" cx="60" cy="60" r="3" />
           </g>
         </svg>
+        <time id="digital-clock" class="digital-clock" aria-label="台灣時間"></time>
         <p class="clock-caption">台灣時間</p>
       </div>
       <section class="calendar" aria-label="今日日期">
-        <p id="year" class="eyebrow"></p>
         <h1><span id="month" class="month"></span><span id="day" class="day"></span></h1>
         <p id="weekday" class="weekday"></p>
         <p id="lunar" class="lunar"></p>
         <div id="festivals" class="flex flex-wrap justify-center gap-2"></div>
         <div class="season"><div class="flex items-center gap-4"><span id="term-current"></span><progress id="term-progress" max="100" value="0" aria-label="節氣進度"></progress><span id="term-next"></span></div><p id="term-countdown"></p></div>
       </section>
+      </div>
       <form id="search-form" class="search" role="search" action="https://www.google.com/search" method="get">
         <svg aria-hidden="true" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg>
         <label class="sr-only" for="search-input">搜尋 Google</label><input id="search-input" name="q" placeholder="搜尋 Google，探索今天" autocomplete="off" maxlength="2000" required /><button type="submit" aria-label="搜尋">↵</button>
@@ -42,9 +46,35 @@
       <section class="shortcuts-section" aria-label="網站捷徑"><div id="shortcuts" class="flex flex-wrap justify-center gap-3 sm:gap-5"></div></section>
       <section class="history-section" aria-labelledby="history-heading"><div class="section-heading"><span></span><h2 id="history-heading">歷史上的今天</h2><span></span></div><div id="history"></div></section>
     </main>
+    <aside class="todo-note" aria-label="工作便利貼">
+      <details id="todo-panel">
+        <summary>今日待辦 <span id="todo-count">0 / 0</span></summary>
+        <div class="todo-body">
+          <form id="todo-form">
+            <label class="sr-only" for="todo-input">新增待辦事項</label>
+            <input id="todo-input" maxlength="200" placeholder="今天想完成什麼？" autocomplete="off" required disabled />
+            <button type="submit" aria-label="新增待辦" disabled>＋</button>
+          </form>
+          <ul id="todo-list" aria-label="待辦事項"></ul>
+          <p id="todo-empty">寫下一件事，慢慢完成。</p>
+          <p class="todo-hint">自動儲存・隔天保留</p>
+          <p id="todo-error" role="status"></p>
+        </div>
+      </details>
+    </aside>
     <footer class="text-center"><p>把今天，留一點給自己。</p><span>TAIWAN DAILY · 每日一頁</span></footer>
     <p id="status" role="status" class="status" hidden></p>
     <dialog id="shortcut-dialog"><form id="shortcut-form"><h2 id="shortcut-title">新增捷徑</h2><label for="shortcut-name">名稱</label><input id="shortcut-name" maxlength="40" required autocomplete="off" /><label for="shortcut-url">網址</label><input id="shortcut-url" placeholder="https://example.com" maxlength="2048" required autocomplete="off" inputmode="url" /><label for="shortcut-icon">網站圖示（選填，PNG / ICO，最大 64 KB）</label><input id="shortcut-icon" type="file" accept=".png,.ico,image/png,image/x-icon,image/vnd.microsoft.icon" /><label><input id="shortcut-icon-clear" type="checkbox" style="width:auto" /> 移除已儲存圖示</label><p id="shortcut-error" class="error" role="alert"></p><div class="dialog-actions"><button type="button" id="shortcut-delete" class="danger" hidden>刪除</button><button type="button" data-close="shortcut-dialog">取消</button><button type="submit" class="primary">完成</button></div></form></dialog>
-    <dialog id="settings-dialog"><h2>留一頁，喜歡的樣子</h2><label for="appearance">外觀</label><select id="appearance"><option value="system">跟隨系統</option><option value="light">淺色</option><option value="dark">深色</option></select><label for="calendar-style">日曆樣式</label><select id="calendar-style"><option value="modern">現代</option><option value="traditional">傳統</option></select><p class="settings-note">日期以台灣時間顯示。設定與捷徑只儲存在這台裝置，不傳送搜尋或瀏覽紀錄。</p><div class="dialog-actions"><button class="primary" data-close="settings-dialog">完成</button></div></dialog>
+    <dialog id="settings-dialog"><h2>留一頁，喜歡的樣子</h2>
+      <fieldset id="appearance" disabled>
+        <legend>外觀</legend>
+        <div class="appearance-segments">
+          <span class="appearance-slider" aria-hidden="true"></span>
+          <label><input type="radio" name="appearance" value="system" checked /><span><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>系統</span></label>
+          <label><input type="radio" name="appearance" value="light" /><span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg>亮色</span></label>
+          <label><input type="radio" name="appearance" value="dark" /><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14A9 9 0 0 1 10 3.5 9 9 0 1 0 20.5 14Z"/></svg>暗色</span></label>
+        </div>
+      </fieldset>
+      <label for="calendar-style">日曆樣式</label><select id="calendar-style"><option value="classic">經典極簡</option><option value="modern">現代</option><option value="traditional">傳統</option><option value="workspace">月曆工作台</option><option value="reading">閱讀日曆</option></select><label for="week-start">月曆每週起始日</label><select id="week-start" disabled><option value="0">星期日（預設）</option><option value="1">星期一</option></select><label for="quote-category">每日一句分類</label><select id="quote-category" disabled><option value="daily">每日提醒</option><option value="sheng-yen">聖嚴法師語錄</option><option value="negative">負能量（幽默）</option><option value="classics">四書五經</option></select><p class="settings-note">每日一句顯示於月曆工作台與閱讀日曆。日期以台灣時間顯示。設定、捷徑與待辦只儲存在這台裝置，不傳送搜尋或瀏覽紀錄。</p><div class="dialog-actions"><button class="primary" data-close="settings-dialog">完成</button></div></dialog>
   </body>
 </html>

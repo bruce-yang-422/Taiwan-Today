@@ -1,11 +1,25 @@
 import { normalizeUrl } from '../search/search';
+import { readStorage, writeStorage } from './storage';
 export interface Shortcut { id: string; name: string; url: string; order: number; icon?: string }
 export const validIcon = (value: unknown): value is string => typeof value === 'string' && value.length <= 90000 && /^data:image\/(png|x-icon|vnd.microsoft.icon);base64,[A-Za-z0-9+/]+=*$/.test(value);
 export const defaults: Shortcut[] = [
   { id: 'youtube', name: 'YouTube', url: 'https://www.youtube.com/', order: 0 },
   { id: 'pchome', name: 'PChome', url: 'https://24h.pchome.com.tw/', order: 1 },
   { id: 'github', name: 'GitHub', url: 'https://github.com/', order: 2 },
+  { id: 'chatgpt', name: 'ChatGPT', url: 'https://chatgpt.com/', order: 3 },
 ];
+export async function loadShortcuts(): Promise<Shortcut[]> {
+  return navigator.locks.request('taiwan-today-shortcut-upgrade', async () => {
+    const items = parseShortcuts(await readStorage('shortcuts'));
+    if (await readStorage('chatgptShortcutAdded')) return items;
+    if (!items.some(item => ['chatgpt.com', 'www.chatgpt.com'].includes(new URL(item.url).hostname))) {
+      items.push({ id: crypto.randomUUID(), name: 'ChatGPT', url: 'https://chatgpt.com/', order: Math.max(-1, ...items.map(item => item.order)) + 1 });
+    }
+    await writeStorage('shortcuts', items);
+    await writeStorage('chatgptShortcutAdded', true);
+    return items;
+  });
+}
 export function shortcutIcon(item: Shortcut): string | undefined {
   if (validIcon(item.icon)) return item.icon;
   const bundled: Record<string, string> = {

@@ -46,7 +46,7 @@ describe('safe navigation and storage', () => {
     for (const bad of ['javascript:alert(1)', 'data:text/html,hi', 'file:///C:/x', 'https://user:pass@example.com', 'https://']) expect(() => normalizeUrl(bad)).toThrow();
   });
   it('preserves intentional empty shortcuts and refuses corrupt data', () => {
-    expect(parseShortcuts([])).toEqual([]); expect(parseShortcuts(undefined)).toHaveLength(3);
+    expect(parseShortcuts([])).toEqual([]); expect(parseShortcuts(undefined)).toHaveLength(4);
     expect(() => parseShortcuts([{ id: 'x', name: 'x', url: 'javascript:alert(1)', order: 0 }])).toThrow();
     expect(() => parseShortcuts({})).toThrow();
   });

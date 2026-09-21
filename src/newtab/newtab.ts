@@ -1,8 +1,14 @@
 import './newtab.css';
+import './traditional.css';
+import './modern.css';
+import './concepts.css';
+import { createConceptLayouts } from './concepts';
+
 import { initializeClock } from './clock';
+import { initializeTodos } from './todos';
 import { dailyCalendar } from '../calendar/dailyCalendar';
 import { normalizeUrl, searchUrl } from '../search/search';
-import { defaults, parseShortcuts, validIcon, shortcutIcon, type Shortcut } from '../shortcuts/shortcuts';
+import { defaults, parseShortcuts, loadShortcuts, validIcon, shortcutIcon, type Shortcut } from '../shortcuts/shortcuts';
 import { extensionStorage, readStorage, writeStorage } from '../shortcuts/storage';
 
 const el = <T extends HTMLElement = HTMLElement>(id: string) => document.getElementById(id) as T;
@@ -11,8 +17,11 @@ const node = <K extends keyof HTMLElementTagNameMap>(tag: K, className = '', tex
 };
 function notify(message: string) { el('status').textContent = message; el('status').hidden = false; }
 let lastDate = '';
+let selectedDate: Date | undefined;
 function renderCalendar() {
-  const date = dailyCalendar();
+  const date = dailyCalendar(selectedDate);
+  el('history-heading').textContent = selectedDate ? `${date.month} 月 ${date.day} 日的歷史` : '歷史上的今天';
+  document.querySelector('.calendar')!.setAttribute('aria-label', selectedDate ? '所選日期' : '今日日期');
   if (lastDate === date.key) return;
   lastDate = date.key;
   el('year').textContent = `${date.year} · 民國 ${date.year - 1911} 年`;
@@ -35,7 +44,7 @@ function renderCalendar() {
     const article = node('article', 'history-card');
     const more = node('a', 'history-more', '深入了解 ↗'); more.href = searchUrl(event.keyword);
     const source = node('p', 'history-source', '資料來源：'); const link = node('a', '', event.source); link.href = event.sourceUrl; source.append(link);
-    article.append(node('p', 'history-year', `${event.year} · ${event.region}`), node('h3', '', event.title), node('p', 'history-summary', event.summary), more, source);
+    article.append(node('p', 'history-year', `${event.year} · ${event.region} · ${date.year - event.year} 年前`), node('h3', '', event.title), node('p', 'history-summary', event.summary), more, source);
     el('history').append(article);
   }
   if (!date.history.length) {
@@ -45,25 +54,31 @@ function renderCalendar() {
   }
 }
 
-type Preferences = { appearance: 'system' | 'light' | 'dark'; style: 'modern' | 'traditional' };
-let preferences: Preferences = { appearance: 'system', style: 'modern' };
+type Preferences = { appearance: 'system' | 'light' | 'dark'; style: 'classic' | 'modern' | 'traditional' | 'workspace' | 'reading'; weekStart: 0 | 1; quoteCategory: 'daily' | 'sheng-yen' | 'negative' | 'classics' };
+let preferences: Preferences = { appearance: 'system', style: 'modern', weekStart: 0, quoteCategory: 'daily' };
 const media = matchMedia('(prefers-color-scheme: dark)');
 function parsePreferences(value: unknown): Preferences {
   const p = value as Partial<Preferences> | null;
-  return { appearance: p && ['system', 'light', 'dark'].includes(p.appearance ?? '') ? p.appearance! : 'system', style: p?.style === 'traditional' ? 'traditional' : 'modern' };
+  return { appearance: p && ['system', 'light', 'dark'].includes(p.appearance ?? '') ? p.appearance! : 'system', style: p && ['classic', 'modern', 'traditional', 'workspace', 'reading'].includes(p.style ?? '') ? p.style! : 'modern', weekStart: p?.weekStart === 1 ? 1 : 0, quoteCategory: p && ['daily', 'sheng-yen', 'negative', 'classics'].includes(p.quoteCategory ?? '') ? p.quoteCategory! : 'daily' };
 }
 function applyPreferences() {
   document.documentElement.classList.toggle('dark', preferences.appearance === 'dark' || (preferences.appearance === 'system' && media.matches));
   document.documentElement.dataset.style = preferences.style;
-  el<HTMLSelectElement>('appearance').value = preferences.appearance;
+  concepts.setWeekStart(preferences.weekStart);
+  concepts.setQuoteCategory(preferences.quoteCategory);
+  el<HTMLSelectElement>('quote-category').value = preferences.quoteCategory;
+  concepts.setStyle(preferences.style);
+  document.querySelectorAll<HTMLInputElement>('input[name="appearance"]').forEach(input => input.checked = input.value === preferences.appearance);
+  el('appearance').style.setProperty('--selected', String(['system', 'light', 'dark'].indexOf(preferences.appearance)));
   el<HTMLSelectElement>('calendar-style').value = preferences.style;
+  el<HTMLSelectElement>('week-start').value = String(preferences.weekStart);
 }
 media.addEventListener('change', applyPreferences);
 let preferencesReady = false;
 async function savePreferences() {
   if (!preferencesReady) return;
-  const next = { appearance: el<HTMLSelectElement>('appearance').value, style: el<HTMLSelectElement>('calendar-style').value } as Preferences;
-  const selectors = [el<HTMLSelectElement>('appearance'), el<HTMLSelectElement>('calendar-style')];
+  const next = { appearance: document.querySelector<HTMLInputElement>('input[name="appearance"]:checked')!.value, style: el<HTMLSelectElement>('calendar-style').value, weekStart: Number(el<HTMLSelectElement>('week-start').value), quoteCategory: el<HTMLSelectElement>('quote-category').value } as Preferences;
+  const selectors = [el<HTMLFieldSetElement>('appearance'), el<HTMLSelectElement>('calendar-style'), el<HTMLSelectElement>('week-start'), el<HTMLSelectElement>('quote-category')];
   selectors.forEach(s => s.disabled = true);
   try { await writeStorage('preferences', next); preferences = next; }
   catch { notify('外觀設定無法儲存，請稍後重試。'); }
@@ -71,6 +86,8 @@ async function savePreferences() {
 }
 el('appearance').addEventListener('change', () => void savePreferences());
 el('calendar-style').addEventListener('change', () => void savePreferences());
+el('week-start').addEventListener('change', () => void savePreferences());
+el('quote-category').addEventListener('change', () => void savePreferences());
 el('settings-open').addEventListener('click', () => el<HTMLDialogElement>('settings-dialog').showModal());
 document.querySelectorAll<HTMLElement>('[data-close]').forEach(button => button.addEventListener('click', () => el<HTMLDialogElement>(button.dataset.close!).close()));
 el<HTMLFormElement>('search-form').addEventListener('submit', event => {
@@ -153,13 +170,15 @@ el('shortcut-form').addEventListener('submit', async event => {
 el('shortcut-delete').addEventListener('click', async () => { if (editing && await saveShortcuts(shortcuts.filter(s => s.id !== editing))) dialog.close(); });
 async function initialize() {
   renderCalendar(); applyPreferences(); renderShortcuts();
-  const [storedShortcuts, storedPreferences] = await Promise.allSettled([readStorage('shortcuts'), readStorage('preferences')]);
+  const [storedShortcuts, storedPreferences] = await Promise.allSettled([loadShortcuts(), readStorage('preferences')]);
   try { if (storedShortcuts.status === 'rejected') throw storedShortcuts.reason; shortcuts = parseShortcuts(storedShortcuts.value); shortcutsReady = true; }
   catch { notify('無法讀取已儲存的捷徑；暫時顯示預設捷徑。請重新載入後再編輯。'); }
   if (storedPreferences.status === 'fulfilled') { preferences = parsePreferences(storedPreferences.value); preferencesReady = true; }
   else { notify('無法讀取外觀設定，請重新載入後再試。'); }
-  el<HTMLSelectElement>('appearance').disabled = !preferencesReady;
+  el<HTMLFieldSetElement>('appearance').disabled = !preferencesReady;
   el<HTMLSelectElement>('calendar-style').disabled = !preferencesReady;
+  el<HTMLSelectElement>('week-start').disabled = !preferencesReady;
+  el<HTMLSelectElement>('quote-category').disabled = !preferencesReady;
   applyPreferences(); renderShortcuts();
 }
 if (extensionStorage()) chrome.storage.onChanged.addListener((changes, area) => {
@@ -172,4 +191,7 @@ document.addEventListener('visibilitychange', () => { if (!document.hidden) rend
 window.addEventListener('focus', renderCalendar);
 setInterval(renderCalendar, 30_000);
 initializeClock();
+const concepts = createConceptLayouts(date => { selectedDate = date; renderCalendar(); });
+setInterval(() => concepts.refresh(), 30_000);
+void initializeTodos();
 void initialize().catch(() => notify('頁面載入失敗，請重新整理。'));

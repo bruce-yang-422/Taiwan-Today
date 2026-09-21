@@ -1,0 +1,136 @@
+.concept-shell[hidden]{display:none}
+:root[data-style=workspace]{background:#f7faf8;--ink:#17372e;--accent:#2d6049;--paper:#fff;--muted:#63786c;--line:#dce5df;--soft:#eaf1e7;--vermilion:#ba632e;color:var(--ink)}
+:root.dark[data-style=workspace]{background:#16241e;--ink:#e1eae3;--accent:#a9c8ae;--paper:#20332a;--muted:#a7b9ac;--line:#3b5145;--soft:#2e4537;--vermilion:#efb184;color:var(--ink)}
+:root[data-style=reading]{background:#faf7f0;--ink:#242d45;--accent:#a94e36;--paper:#fdfaf4;--muted:#6d6b71;--line:#d8cfc4;--soft:#f0e9df;--vermilion:#a94e36;color:var(--ink);font-family:"Noto Serif TC","PMingLiU",Georgia,serif}
+:root.dark[data-style=reading]{background:#1a1e29;--ink:#ebe3d5;--accent:#e5a28c;--paper:#242936;--muted:#b9b4b2;--line:#464955;--soft:#303542;--vermilion:#e5a28c;color:var(--ink)}
+:is([data-style=workspace],[data-style=reading]) header{width:calc(100% - 64px);max-width:1600px;margin:0 auto;padding:16px 0;border-bottom:1px solid var(--line);height:76px}
+:is([data-style=workspace],[data-style=reading]) main{width:calc(100% - 64px);max-width:1600px;margin:16px auto 0;padding:0;text-align:left}
+:is([data-style=workspace],[data-style=reading]) footer{padding:10px}
+:is([data-style=workspace],[data-style=reading]) footer>span{display:none}
+.concept-shell{display:grid;grid-template-columns:200px minmax(0,1fr) 320px;min-height:calc(100vh - 160px)}
+.concept-sidebar,.concept-stage,.concept-rail{min-width:0;padding:24px}
+.concept-stage{display:flex;flex-direction:column;gap:20px}
+.concept-sidebar{background:#173a2d;color:#f1f6ed}
+.concept-rail{background:var(--soft);display:flex;flex-direction:column;gap:20px}
+.concept-bottom{grid-column:1 / -1}
+.concept-shell .shortcuts-section{margin:12px 0}
+[data-style=workspace] #shortcuts{display:flex;flex-direction:column;align-items:stretch;gap:12px}
+[data-style=workspace] .shortcut,[data-style=workspace] .shortcut-link,[data-style=workspace] .shortcut-add{width:100%}
+[data-style=workspace] .shortcut-link,[data-style=workspace] .shortcut-add{flex-direction:row;color:#f1f6ed;font-size:14px;gap:12px}
+[data-style=workspace] .shortcut-icon{background:#ffffff12;color:#e3f0df}
+[data-style=workspace] .shortcut-name{max-width:130px}
+.concept-shell .search{margin:0;border-radius:12px}
+.month-toolbar{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.month-toolbar h2{font-size:26px;font-weight:650;flex:1}
+.month-toolbar button{border:1px solid var(--line);padding:6px 12px;background:var(--paper);color:var(--ink)}
+.month-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.month-weekday,.month-cell,.month-blank{border-right:1px solid var(--line);border-bottom:1px solid var(--line);min-width:0}
+.month-weekday{text-align:center;padding:10px;background:var(--soft);font-size:13px}
+.month-cell,.month-blank{min-height:82px;background:var(--paper);border-radius:0;text-align:left;padding:8px 10px;display:flex;flex-direction:column;align-items:start;gap:3px}
+.month-lunar{font-size:11px;line-height:1.4;color:var(--muted);overflow-wrap:anywhere}
+.month-cell:hover{background:var(--soft)}
+.month-cell[aria-pressed=true]{background:var(--soft);box-shadow:inset 0 0 0 2px var(--accent)}
+.month-number{font-size:18px;padding:2px 5px;border-radius:5px;line-height:1.4}
+.month-cell[aria-current=date] .month-number{background:var(--accent);color:var(--paper)}
+.month-cell.weekend{color:var(--accent)}
+.month-detail{font-size:11px;color:var(--vermilion);overflow-wrap:anywhere}
+.concept-shell .calendar-clock-group{display:flex;flex-direction:column;width:100%;margin:0;padding:0;text-align:center}
+.concept-shell .calendar-clock-group>.eyebrow{margin:0 0 12px;font-size:13px}
+.concept-shell .calendar-clock-group .calendar{width:100%;padding:0;order:1}
+.concept-shell .clock-container{order:2;width:112px;margin:12px auto 0}
+.concept-shell .day{font-size:80px;line-height:1}
+.concept-shell .month{font-size:21px}
+.concept-shell .weekday{font-size:17px}
+.concept-shell .lunar{margin:10px 0;font-size:14px}
+.concept-shell .season{margin:12px auto;width:100%;font-size:13px}
+.concept-shell .season>.flex{justify-content:center}
+.concept-shell .analog-clock{width:112px;height:112px}
+.concept-shell .digital-clock{font-size:24px;letter-spacing:0}
+[data-style=workspace] .clock-container{display:grid;grid-template-columns:140px minmax(0,1fr);column-gap:12px;width:100%;align-items:center;text-align:left}
+[data-style=workspace] .analog-clock{width:140px;height:140px;grid-column:1;grid-row:1 / 3}
+[data-style=workspace] .digital-clock{grid-column:2;grid-row:1;align-self:end;margin:0;font-size:20px}
+[data-style=workspace] .clock-caption{grid-column:2;grid-row:2;align-self:start;margin-top:4px}
+.concept-shell .todo-note{position:static;inset:auto;width:100%;max-width:none;max-height:none;background:var(--paper);color:var(--ink);border:1px solid var(--line);box-shadow:none;border-radius:10px;z-index:auto;overflow:visible}
+.concept-shell .todo-note summary{font-size:18px;font-weight:600}
+.concept-shell #todo-input{font-size:13px}
+.concept-shell #todo-list{max-height:160px}
+.concept-shell .history-section{width:100%;position:static;transform:none}
+.concept-shell .section-heading h2{font-size:21px;letter-spacing:0;color:var(--ink)}
+.concept-shell #history{display:flex;flex-direction:column;gap:14px}
+.concept-shell .history-card{border:0;padding:0 0 12px;border-bottom:1px solid var(--line)}
+.concept-shell .history-card h3{font-size:20px;letter-spacing:0;margin:5px 0}
+.concept-shell .history-summary{max-width:none;text-align:left;font-size:13px;line-height:1.6}
+.concept-shell .history-more{margin-top:8px}
+.concept-shell .history-source{margin-top:6px}
+.daily-quote{padding:20px;background:var(--paper);border-radius:10px}
+.daily-quote h2{font-size:16px;margin-bottom:12px;color:var(--accent)}
+.daily-quote blockquote{font-size:23px;line-height:1.65;font-family:"PMingLiU",Georgia,serif}
+.daily-quote>p{font-size:13px;text-align:right;margin-top:10px;color:var(--muted)}
+[data-style=reading] .concept-shell{grid-template-columns:36% minmax(0,1fr);min-height:0}
+[data-style=reading] .concept-sidebar{background:#232c45;color:#f7f0e1;display:flex;align-items:center;padding:30px}
+[data-style=reading] .concept-rail{display:none}
+[data-style=reading] .concept-stage{padding:20px 48px;gap:16px}
+[data-style=reading] .concept-sidebar .eyebrow,[data-style=reading] .concept-sidebar .month,[data-style=reading] .concept-sidebar .day,[data-style=reading] .concept-sidebar .weekday,[data-style=reading] .concept-sidebar .lunar,[data-style=reading] .concept-sidebar .season,[data-style=reading] .concept-sidebar .season p,[data-style=reading] .concept-sidebar .digital-clock,[data-style=reading] .concept-sidebar .clock-caption{color:#f7f0e1}
+[data-style=reading] .concept-sidebar .month{font-size:36px;margin-bottom:14px}
+[data-style=reading] .concept-sidebar .day{font-size:200px;font-family:Georgia,serif}
+[data-style=reading] .concept-sidebar .weekday{font-size:27px;margin-top:14px}
+[data-style=reading] .concept-sidebar .lunar{font-size:18px;margin:24px 0}
+[data-style=reading] .concept-sidebar .season{margin:26px auto;width:85%}
+[data-style=reading] .concept-sidebar .season progress{flex:1;min-width:30px}
+[data-style=reading] .analog-clock{display:none}
+[data-style=reading] .clock-container{width:auto}
+[data-style=reading] .digital-clock{font-family:Georgia,serif;font-size:32px}
+[data-style=reading] .daily-quote{padding:0 0 24px;border-bottom:1px solid var(--line);border-radius:0;background:transparent}
+[data-style=reading] .daily-quote blockquote{font-size:clamp(26px,2.2vw,38px);line-height:1.5}
+[data-style=reading] .daily-quote>p{text-align:left}
+[data-style=reading] .history-card{position:relative;border:0;border-left:1px solid var(--line);margin-left:8px;padding:0 0 8px 24px}
+[data-style=reading] .history-card::before{content:'';position:absolute;left:-6px;top:4px;width:11px;height:11px;border-radius:50%;background:var(--accent)}
+[data-style=reading] .history-year{font-size:14px;letter-spacing:.04em}
+[data-style=reading] .concept-bottom{display:flex;align-items:center;gap:30px;padding:16px 36px;border-top:1px solid var(--line)}
+[data-style=reading] .concept-bottom .search{flex:1}
+[data-style=reading] .concept-bottom .shortcuts-section{margin:0}
+[data-style=reading] .section-heading{margin-bottom:10px}
+[data-style=reading] .section-heading span{display:none}
+[data-style=reading] .concept-shell #history{gap:8px}
+[data-style=reading] .history-card{padding-bottom:4px}
+[data-style=reading] .todo-note summary{padding:12px 16px}
+[data-style=reading] #todo-empty{display:none}
+[data-style=reading] .todo-body{padding-bottom:10px}
+[data-style=reading] footer{padding:12px}
+@media(min-width:1100px){
+  [data-style=reading] .concept-stage{gap:12px}
+  [data-style=reading] .daily-quote{padding-bottom:12px}
+  [data-style=reading] .daily-quote h2{margin-bottom:6px}
+  [data-style=reading] .concept-shell #history{gap:4px}
+  [data-style=reading] .history-more{margin-top:4px}
+  [data-style=reading] .history-source{margin-top:2px}
+}
+@media(min-width:1500px){
+  .concept-shell{grid-template-columns:200px minmax(0,1fr) 340px}
+  .month-cell,.month-blank{min-height:88px}
+  [data-style=workspace] .concept-shell #history{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+  [data-style=workspace] .history-card h3{font-size:18px}
+  [data-style=workspace] .history-summary{font-size:12px}
+}
+@media(max-width:1099px){
+  .concept-shell{grid-template-columns:minmax(0,1fr) 300px}
+  [data-style=workspace] .concept-sidebar{grid-column:1 / -1;padding:12px 20px}
+  [data-style=workspace] #shortcuts{flex-direction:row;flex-wrap:wrap}
+  [data-style=workspace] .shortcut,[data-style=workspace] .shortcut-add{width:130px}
+  .concept-stage,.concept-rail{padding:16px}
+  [data-style=reading] .concept-stage{padding:24px}
+  [data-style=reading] .concept-sidebar .day{font-size:150px}
+  [data-style=reading] .concept-bottom{flex-direction:column;align-items:stretch}
+}
+@media(max-width:699px){
+  .concept-shell,[data-style=reading] .concept-shell{display:flex;flex-direction:column}
+  .month-toolbar{gap:5px}.month-toolbar h2{font-size:18px}.month-toolbar button{padding:5px 8px}
+  .month-cell,.month-blank{padding:5px 2px;min-height:66px}.month-detail{font-size:10px}.month-number{font-size:15px}
+  .concept-sidebar,.concept-stage,.concept-rail{padding:16px}
+  [data-style=reading] .concept-sidebar .day{font-size:120px}
+  [data-style=reading] .concept-sidebar .season{margin:10px auto}
+  [data-style=reading] .concept-stage{padding:22px}
+  [data-style=reading] .concept-bottom{padding:16px}
+  :is([data-style=workspace],[data-style=reading]) header{width:calc(100% - 24px);padding:12px 0}
+  :is([data-style=workspace],[data-style=reading]) main{width:calc(100% - 24px);margin-top:12px}
+}

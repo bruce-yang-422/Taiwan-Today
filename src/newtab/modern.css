@@ -1,0 +1,66 @@
+:root[data-style=modern]{background:#f3f6fa;color:#15365c;--ink:#15365c;--accent:#194e8a;--paper:#fff;--muted:#5f7592;--line:#dce5ef;--soft:#edf2f8;--vermilion:#c33e3e}
+:root.dark[data-style=modern]{background:#151c28;color:#e4ecf6;--ink:#e4ecf6;--accent:#9cbeef;--paper:#202b3b;--muted:#a5b7ce;--line:#35465d;--soft:#2a384b;--vermilion:#f09b91}
+[data-style=modern] .brand{font-size:21px;font-weight:700;letter-spacing:.06em}
+[data-style=modern] .brand-logo{width:44px;height:44px}
+[data-style=modern] .quiet-button{background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:10px 16px}
+[data-style=modern] .search{border-radius:36px;box-shadow:0 2px 8px #17375805}
+[data-style=modern] .search input{font-size:16px}
+[data-style=modern] .month,[data-style=modern] .day,[data-style=modern] .history-card h3{font-family:inherit}
+[data-style=modern] .day{font-weight:750;letter-spacing:-.07em}
+[data-style=modern] .clock-face{stroke:none}
+[data-style=modern] .clock-numbers{font-family:inherit;font-size:12px}
+[data-style=modern] .digital-clock{font-weight:600;letter-spacing:.02em}
+[data-style=modern] .section-heading{margin-bottom:12px}
+[data-style=modern] .section-heading span{display:none}
+[data-style=modern] .section-heading h2{font-size:21px;font-weight:700;letter-spacing:0;color:var(--ink)}
+[data-style=modern] #history{gap:16px}
+[data-style=modern] .history-card{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:20px 24px;text-align:left;box-shadow:0 2px 6px #15365c04}
+[data-style=modern] .history-year{font-family:inherit;font-size:13px;letter-spacing:.02em;color:var(--muted)}
+[data-style=modern] .history-card h3{font-size:21px;font-weight:650;letter-spacing:0;margin:8px 0}
+[data-style=modern] .history-summary{max-width:none;line-height:1.75}
+[data-style=modern] .history-more{margin-top:12px;font-weight:600}
+[data-style=modern] .todo-note{background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:12px;box-shadow:0 2px 8px #15365c04}
+[data-style=modern] .todo-note summary{font-size:19px;font-weight:650;letter-spacing:0;padding:18px 22px}
+[data-style=modern] #todo-count{font-size:15px;font-weight:400}
+[data-style=modern] .todo-body{padding:0 22px 16px}
+[data-style=modern] #todo-form{border:0;gap:12px;padding:0}
+[data-style=modern] #todo-input{border:1px solid var(--line);border-radius:9px;padding:10px 12px;font-size:14px}
+[data-style=modern] #todo-form button{border-radius:50%;width:36px;height:36px;flex-shrink:0;align-self:center;background:var(--accent);color:var(--paper)}
+[data-style=modern] #todo-empty{text-align:center;padding:28px 0;font-size:14px;opacity:1;color:var(--muted)}
+[data-style=modern] #todo-empty::before{content:'✓';display:block;border:2px solid var(--line);border-radius:50%;width:40px;height:40px;line-height:36px;margin:0 auto 12px;font-size:23px;color:var(--muted)}
+[data-style=modern] .todo-hint{text-align:right;color:var(--muted);opacity:1}
+@media(min-width:1400px){
+  [data-style=modern] header{width:calc(100% - 96px);max-width:1640px;height:88px;padding:12px 0;margin:auto}
+  [data-style=modern] main{width:calc(100% - 96px);max-width:1640px;padding:0}
+  [data-style=modern] .calendar-clock-group{position:relative;isolation:isolate;display:grid;grid-template-columns:38% 22% 38%;column-gap:1%;grid-template-rows:58px auto;width:100%;padding:0;margin:0 0 22px;min-height:352px}
+  [data-style=modern] .calendar-clock-group::before{content:'';grid-column:1 / 2;grid-row:1 / 3;position:absolute;inset:0;z-index:-1;background:var(--paper);border:1px solid var(--line);border-radius:12px;box-shadow:0 2px 8px #15365c04}
+  [data-style=modern] .calendar-clock-group>.eyebrow{grid-column:1;grid-row:1;margin:0;padding:20px 26px 0;text-align:left;font-size:18px;font-weight:550;letter-spacing:0;color:var(--ink)}
+  [data-style=modern] .calendar-clock-group .calendar{grid-column:1;grid-row:2;display:grid;grid-template-columns:44% 56%;grid-template-rows:36px 72px 70px auto auto;width:100%;padding:0 26px 16px;text-align:left}
+  [data-style=modern] .calendar h1{display:contents}
+  [data-style=modern] .month{grid-column:1 / 3;grid-row:1;font-size:28px;font-weight:700;letter-spacing:0;padding:0}
+  [data-style=modern] .day{grid-column:1;grid-row:2 / 4;font-size:140px;line-height:1;align-self:center;padding:0}
+  [data-style=modern] .weekday{grid-column:2;grid-row:2;border-left:1px solid var(--line);font-size:27px;letter-spacing:0;padding:22px 0 0 22px;margin:0;font-weight:700}
+  [data-style=modern] .lunar{grid-column:2;grid-row:3;border-left:1px solid var(--line);font-size:16px;line-height:1.7;padding:0 0 12px 22px;margin:0;color:var(--ink)}
+  [data-style=modern] #festivals{grid-column:1 / 3;grid-row:4}
+  [data-style=modern] .season{grid-column:1 / 3;grid-row:5;width:100%;margin:12px 0 0;font-size:13px}
+  [data-style=modern] .season progress{flex:1;width:auto;height:6px}
+  [data-style=modern] .season p{text-align:center;font-size:13px}
+  [data-style=modern] .clock-container{grid-column:2;grid-row:1 / 3;background:var(--paper);border:1px solid var(--line);border-radius:12px;width:100%;height:100%;margin:0;padding:16px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+  [data-style=modern] .analog-clock{width:222px;height:222px}
+  [data-style=modern] .digital-clock{font-size:29px;margin-top:8px}
+  [data-style=modern] .clock-caption{font-size:14px;margin-top:4px}
+  [data-style=modern] .todo-note{position:absolute;top:88px;right:max(48px,calc((100vw - 1640px)/2));bottom:auto;width:min(calc((100vw - 96px)*.38),623.2px)}
+  [data-style=modern] #todo-panel[open] .todo-body{min-height:288px;display:flex;flex-direction:column}
+  [data-style=modern] #todo-empty{padding:36px 0}
+  [data-style=modern] .todo-hint{margin-top:auto}
+  [data-style=modern] .search{max-width:1160px;margin:0 auto;padding:17px 24px}
+  [data-style=modern] .shortcuts-section{margin:20px 0 24px}
+  [data-style=modern] .shortcut,[data-style=modern] .shortcut-add{width:180px}
+  [data-style=modern] .shortcut-link,[data-style=modern] .shortcut-add{width:180px;min-height:106px;padding:15px 12px;background:var(--paper);border:1px solid var(--line);border-radius:10px;font-size:13px;color:var(--ink)}
+  [data-style=modern] .shortcut-icon{width:44px;height:44px;background:transparent}
+  [data-style=modern] .shortcut-icon img{width:36px;height:36px;object-fit:contain}
+  [data-style=modern] .shortcut-name{max-width:150px}
+  [data-style=modern] .shortcut-add .shortcut-icon{background:var(--soft);border:0;border-radius:50%}
+  [data-style=modern] .history-section{width:100%;left:auto;transform:none}
+  [data-style=modern] footer{padding-top:24px}
+}

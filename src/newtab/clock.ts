@@ -1,5 +1,6 @@
 export function initializeClock() {
   const face = document.getElementById('analog-clock')!;
+  const digital = document.getElementById('digital-clock') as HTMLTimeElement;
   const ticks = document.getElementById('clock-ticks')!;
   for (let index = 0; index < 60; index++) {
     const tick = document.createElementNS('http://www.w3.org/2000/svg', 'line');
@@ -16,6 +17,9 @@ export function initializeClock() {
   });
   function update() {
     const time = formatter.format(new Date());
+    digital.textContent = time;
+    digital.dateTime = time;
+    digital.setAttribute('aria-label', `台灣時間 ${time}`);
     const [hour, minute, second] = time.split(':').map(Number);
     document.getElementById('clock-hour')!.setAttribute('transform', `rotate(${hour % 12 * 30 + minute / 2 + second / 120} 60 60)`);
     document.getElementById('clock-minute')!.setAttribute('transform', `rotate(${minute * 6 + second / 10} 60 60)`);
