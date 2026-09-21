@@ -1,7 +1,7 @@
 import type { Config } from 'tailwindcss';
 
 export default {
-  content: ['./index.html', './docs/site/*.js'],
+  content: ['./index.html', './privacy.html', './docs/site/*.js'],
   // Preserve the site's existing typography and native form controls.
   corePlugins: { preflight: false },
   theme: {

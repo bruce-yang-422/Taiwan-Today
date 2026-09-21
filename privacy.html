@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="台灣今日曆隱私權政策：說明插件的本機資料、權限、公共資料更新、官網轉檔與第三方連線。">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'self'">
+<title>隱私權政策 Privacy Policy｜台灣今日曆 Taiwan Today</title>
+<link rel="canonical" href="https://today.stack-base.com/privacy.html">
+<link rel="icon" href="./public/icons/taiwan-today.ico" sizes="any">
+<link rel="stylesheet" href="./docs/site/style.css">
+</head>
+<body>
+<header><a class="brand" href="./"><img src="./public/icons/taiwan-today.png" width="40" height="40" alt=""><span>台灣今日曆<small>TAIWAN TODAY</small></span></a><a href="./">返回首頁</a></header>
+<main class="privacy-page">
+<article>
+<p class="eyebrow">PRIVACY POLICY</p>
+<h1>隱私權政策</h1>
+<p class="quiet">最後更新：2026 年 9 月 21 日 · 維護者：Bruce Yang</p>
+<p class="privacy-lead">你的紀事、待辦、捷徑與設定保存在自己的裝置。台灣今日曆不設帳號，不加入廣告或使用行為追蹤，也不將這些內容上傳給開發者。</p>
+<p>本政策適用於「台灣今日曆 Taiwan Today」瀏覽器插件，以及官網 <a href="https://today.stack-base.com/">today.stack-base.com</a> 的紀事轉檔工具。</p>
+
+<h2>1. 哪些資料會留在裝置上？</h2>
+<p>插件會儲存你新增或匯入的個人／家族紀事、待辦與完成狀態、捷徑名稱與網址、自訂圖示、外觀與內容設定，以及公共資料快取與更新狀態。這些資料用來顯示你的新分頁、保留操作結果及檢查公共資料是否需要更新。</p>
+<p>插件使用瀏覽器的 <code>chrome.storage.local</code>；一般網頁開發預覽使用 <code>localStorage</code>，兩者資料各自獨立。目前不提供跨裝置雲端同步。</p>
+<p>插件不讀取整份瀏覽紀錄、其他分頁內容、Google 帳戶、聯絡人或位置。搜尋文字僅用於你送出的搜尋，不另外保存成插件搜尋紀錄。</p>
+
+<h2>2. 為什麼需要這些權限？</h2>
+<ul>
+<li><strong>storage：</strong>保存前述本機資料，並同步同一瀏覽器中的插件分頁。</li>
+<li><strong>favicon：</strong>透過 Chrome 的網站圖示功能顯示捷徑圖示，不用來蒐集瀏覽紀錄。</li>
+<li><strong>GitHub Raw 選用連線權限：</strong>僅在你允許後，下載公開日曆、歷史及語錄 JSON；不授權仍可使用隨插件附帶的資料。</li>
+</ul>
+
+<h2>3. 什麼時候會連線？</h2>
+<p>公共資料自動更新預設關閉。你按「立即更新」，或授權並啟用每日檢查後，插件才會向 <code>raw.githubusercontent.com</code> 取得本專案的更新清單與公共 JSON。更新請求不附帶個人紀事、待辦、捷徑、設定、Cookie 或來源頁面資訊。服務提供者仍會收到建立連線所需的 IP 位址等技術資訊，並依其隱私政策處理。</p>
+<p>你可在「設定 → 資料管理」關閉自動檢查，也可從瀏覽器的擴充功能管理頁撤回網站存取權限。關閉所有插件新分頁後，插件不會在背景下載資料。</p>
+<p>使用 Google 搜尋或「深入了解」時，查詢文字或紀事關鍵字會送至 Google。點擊捷徑、Google 應用程式、來源網址或其他外部連結時，瀏覽器會開啟該網站；你的後續操作由該網站依自己的政策處理。Google 應用程式選單只是網站連結，不會讀取你的 Google 帳戶資料。</p>
+
+<h2>4. 官網轉檔會上傳檔案嗎？</h2>
+<p>不會。你選取的 CSV、XLSX、ODS 檔案在自己的瀏覽器記憶體中解析、驗證與預覽，JSON 也由瀏覽器直接產生下載。工具不將檔案內容傳給伺服器，也不把檔案內容寫入官網的本機儲存。重新整理或關閉工具頁面即可清除本次預覽；下載的檔案則由你自行保存或刪除。</p>
+<p>官網程式未加入分析追蹤、廣告或追蹤 Cookie。官網託管於 GitHub Pages；依 <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages" target="_blank" rel="noopener noreferrer">GitHub Pages 說明</a>，網站訪客的 IP 位址會為安全目的被記錄與保存。這不包含轉檔工具在本機處理的檔案內容。詳見 <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">GitHub 隱私聲明</a>。</p>
+
+<h2>5. 如何備份、刪除或停止使用？</h2>
+<p>可在插件中刪除待辦與捷徑；個人紀事可先「匯出目前紀事備份」，再匯入其他檔案取代，或匯入空陣列 <code>[]</code> 清空。這只影響個人紀事，不會刪除台灣或國際等公共歷史。</p>
+<p>移除插件會清除其本機儲存資料；一般網頁開發預覽的資料可由瀏覽器清除此網站資料。你已下載的 JSON、表格與備份不會跟著刪除，請自行管理。開發者沒有你的本機資料副本，無法代為復原。</p>
+
+<h2>6. 資料分享與安全</h2>
+<p>開發者不蒐集、出售或以廣告用途分享你的個人紀事、待辦、捷徑及設定。你主動開啟外部網站或公開分享備份時，請自行確認分享範圍。本機儲存不代表額外的加密保管庫；能存取你裝置或瀏覽器設定檔的人，可能接觸這些資料。</p>
+
+<h2>7. 政策更新與聯絡方式</h2>
+<p>功能或資料處理方式改變時，會更新本頁與上方日期；需要新的瀏覽器權限時，仍須經過瀏覽器授權。</p>
+<p>維護者：Bruce Yang。如有隱私問題，可透過 <a href="https://github.com/bruce-yang-422/Taiwan-Today/issues" target="_blank" rel="noopener noreferrer">專案問題回報</a>聯絡。該頁是公開討論區，請勿貼上私人紀事、備份檔案或其他敏感資訊。</p>
+</article>
+</main>
+<footer><span>台灣今日曆 · Privacy Policy</span><a href="./">返回官網首頁</a></footer>
+</body>
+</html>

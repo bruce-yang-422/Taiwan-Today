@@ -1,6 +1,17 @@
 import {test,expect} from '@playwright/test';
 import {readFileSync} from 'node:fs';
 
+test('privacy policy is accessible from home without scripts', async ({page}) => {
+ await page.goto('/');
+ await page.locator('footer a[href="./privacy.html"]').click();
+ await expect(page).toHaveURL(/\/privacy\.html$/);
+ await expect(page.getByRole('heading',{level:1,name:'隱私權政策'})).toBeVisible();
+ await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href','https://today.stack-base.com/privacy.html');
+ await expect(page.locator('script')).toHaveCount(0);
+ await page.setViewportSize({width:390,height:844});
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+});
+
 test('real screenshots switch themes and preserve their aspect ratio', async ({page}) => {
  await page.setViewportSize({width:1366,height:768});
  await page.goto('/');

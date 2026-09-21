@@ -11,7 +11,7 @@
 [![Website](https://img.shields.io/badge/官網-today.stack--base.com-205E86?style=flat-square)](https://today.stack-base.com/)
 [![GitHub Stars](https://img.shields.io/github/stars/bruce-yang-422/Taiwan-Today?style=flat-square&logo=github)](https://github.com/bruce-yang-422/Taiwan-Today/stargazers)
 
-官網：[today.stack-base.com](https://today.stack-base.com/)
+官網：[today.stack-base.com](https://today.stack-base.com/) · [隱私權政策](https://today.stack-base.com/privacy.html)
 
 以 Vite、TypeScript、Tailwind CSS 與 Manifest V3 實作的 Chrome 新分頁。無後端、無帳號、無追蹤，離線可用，可選擇連線更新公共資料；使用 `storage` 與 `favicon` 權限，連線更新則另需授權 GitHub Raw 連線。
 
@@ -202,6 +202,8 @@ zh_TW。新增語系時在 `_locales/` 下建立對應資料夾即可，`vite.co
 這個資料集介面登錄每個主題，未來新增其他主題時同樣會自動出現在來源開關清單中，不需要修改既有資料或顯示邏輯。
 
 部署：將網站檔案提交後，在 GitHub 儲存庫 **Settings → Pages → Deploy from a branch → main / (root) → Save**。正式網址為 [today.stack-base.com](https://today.stack-base.com/)；根目錄 `CNAME` 已指定此網域，Pages 的自訂網域與 DNS 需對應設定。網站不依賴擴充功能建置，官網採用 Tailwind CSS，修改 `index.html`、`docs/site/tailwind.css` 或 `tailwind.site.config.ts` 後，執行 `npm run build:site`，將產生的 `docs/site/style.css` 一起提交。開發時可用 `npm run dev:site` 持續編譯。無需部署 `dist/`；需保留 `docs/site/`、`templates/`、`vendor/sheetjs/`、`src/calendar/historyRows.js` 及網站使用的 `public/icons/` 資源。本機預覽可執行 `python -m http.server 8080`，再開啟 `http://localhost:8080/`。
+
+隱私權政策位於 `privacy.html`，涵蓋插件本機資料、選用連線權限、搜尋與外部網站、官網轉檔及資料刪除方式。
 
 網站已提供 canonical、Open Graph／Twitter 分享資訊、WebSite／SoftwareApplication 結構化資料，以及 `robots.txt`、`sitemap.xml`；正式網址統一為 `https://today.stack-base.com/`。
 
