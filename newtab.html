@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <title>台灣今日曆</title>
+    <script type="module" src="/src/newtab/newtab.ts"></script>
+  </head>
+  <body>
+    <header class="flex items-center justify-between px-6 py-5 sm:px-10">
+      <a class="brand" href="./newtab.html"><span class="brand-mark" aria-hidden="true">日</span> 台灣今日曆</a>
+      <button id="settings-open" class="quiet-button" aria-label="開啟外觀設定">外觀 <span aria-hidden="true">☷</span></button>
+    </header>
+    <main class="mx-auto w-full max-w-2xl px-6 text-center">
+      <div class="clock-container">
+        <svg id="analog-clock" class="analog-clock" viewBox="0 0 120 120" role="img" aria-label="台灣時間">
+          <circle class="clock-face" cx="60" cy="60" r="58" />
+          <g id="clock-ticks" aria-hidden="true"></g>
+          <g class="clock-numbers" aria-hidden="true"><text x="60" y="28">12</text><text x="94" y="64">3</text><text x="60" y="101">6</text><text x="26" y="64">9</text></g>
+          <g aria-hidden="true">
+            <line id="clock-hour" class="clock-hour" x1="60" y1="65" x2="60" y2="35" />
+            <line id="clock-minute" class="clock-minute" x1="60" y1="67" x2="60" y2="19" />
+            <line id="clock-second" class="clock-second" x1="60" y1="71" x2="60" y2="15" />
+            <circle class="clock-pin" cx="60" cy="60" r="3" />
+          </g>
+        </svg>
+        <p class="clock-caption">台灣時間</p>
+      </div>
+      <section class="calendar" aria-label="今日日期">
+        <p id="year" class="eyebrow"></p>
+        <h1><span id="month" class="month"></span><span id="day" class="day"></span></h1>
+        <p id="weekday" class="weekday"></p>
+        <p id="lunar" class="lunar"></p>
+        <div id="festivals" class="flex flex-wrap justify-center gap-2"></div>
+        <div class="season"><div class="flex items-center gap-4"><span id="term-current"></span><progress id="term-progress" max="100" value="0" aria-label="節氣進度"></progress><span id="term-next"></span></div><p id="term-countdown"></p></div>
+      </section>
+      <form id="search-form" class="search" role="search" action="https://www.google.com/search" method="get">
+        <svg aria-hidden="true" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg>
+        <label class="sr-only" for="search-input">搜尋 Google</label><input id="search-input" name="q" placeholder="搜尋 Google，探索今天" autocomplete="off" maxlength="2000" required /><button type="submit" aria-label="搜尋">↵</button>
+      </form>
+      <section class="shortcuts-section" aria-label="網站捷徑"><div id="shortcuts" class="flex flex-wrap justify-center gap-3 sm:gap-5"></div></section>
+      <section class="history-section" aria-labelledby="history-heading"><div class="section-heading"><span></span><h2 id="history-heading">歷史上的今天</h2><span></span></div><div id="history"></div></section>
+    </main>
+    <footer class="text-center"><p>把今天，留一點給自己。</p><span>TAIWAN DAILY · 每日一頁</span></footer>
+    <p id="status" role="status" class="status" hidden></p>
+    <dialog id="shortcut-dialog"><form id="shortcut-form"><h2 id="shortcut-title">新增捷徑</h2><label for="shortcut-name">名稱</label><input id="shortcut-name" maxlength="40" required autocomplete="off" /><label for="shortcut-url">網址</label><input id="shortcut-url" placeholder="https://example.com" maxlength="2048" required autocomplete="off" inputmode="url" /><label for="shortcut-icon">網站圖示（選填，PNG / ICO，最大 64 KB）</label><input id="shortcut-icon" type="file" accept=".png,.ico,image/png,image/x-icon,image/vnd.microsoft.icon" /><label><input id="shortcut-icon-clear" type="checkbox" style="width:auto" /> 移除已儲存圖示</label><p id="shortcut-error" class="error" role="alert"></p><div class="dialog-actions"><button type="button" id="shortcut-delete" class="danger" hidden>刪除</button><button type="button" data-close="shortcut-dialog">取消</button><button type="submit" class="primary">完成</button></div></form></dialog>
+    <dialog id="settings-dialog"><h2>留一頁，喜歡的樣子</h2><label for="appearance">外觀</label><select id="appearance"><option value="system">跟隨系統</option><option value="light">淺色</option><option value="dark">深色</option></select><label for="calendar-style">日曆樣式</label><select id="calendar-style"><option value="modern">現代</option><option value="traditional">傳統</option></select><p class="settings-note">日期以台灣時間顯示。設定與捷徑只儲存在這台裝置，不傳送搜尋或瀏覽紀錄。</p><div class="dialog-actions"><button class="primary" data-close="settings-dialog">完成</button></div></dialog>
+  </body>
+</html>

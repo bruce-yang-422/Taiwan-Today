@@ -1,0 +1,36 @@
+import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { parse } from 'csv-parse/sync';
+import { Solar } from 'lunar-typescript';
+const read = path => JSON.parse(readFileSync(path, 'utf8'));
+const rows = parse(readFileSync('2026_calendar.csv', 'utf8'), { columns: true, bom: true, skip_empty_lines: true });
+const holidays = read('data/holidays.json');
+const breaks = read('data/long-holidays.json').periods;
+const normalize = text => text.replace('冬月', '十一月').replace(/[臘腊]月/, '十二月').replace('闰', '閏').replace('惊', '驚').replace('蛰', '蟄').replace('谷', '穀').replace('满', '滿').replace('种', '種').replace('处', '處');
+const displayLunar = text => text.replace('正月', '一月（正月）').replace('冬月', '十一月（冬月）').replace(/[臘腊]月/, '十二月（臘月）');
+const warnings = [], days = {};
+if (rows.length !== 365) throw new Error('2026 CSV 必須包含完整 365 天');
+for (let index = 0; index < rows.length; index++) {
+  const row = rows[index];
+  const expected = new Date(Date.UTC(2026, 0, index + 1)).toISOString().slice(0, 10);
+  if (row.date !== expected) throw new Error(`日期缺漏、重複或排序錯誤：${row.date}，預期 ${expected}`);
+  const [year, month, day] = row.date.split('-').map(Number);
+  const lunar = Solar.fromYmd(year, month, day).getLunar();
+  const lunarText = normalize(`${lunar.getMonthInChinese()}月${lunar.getDayInChinese()}`);
+  const term = normalize(lunar.getJieQi());
+  const weekday = new Date(`${row.date}T00:00:00Z`).getUTCDay();
+  if (normalize(row['農曆']) !== lunarText) throw new Error(`${row.date} 農曆不符：CSV ${row['農曆']} / 計算 ${lunarText}`);
+  if (normalize(row['節氣']) !== term) throw new Error(`${row.date} 節氣不符：CSV ${row['節氣']} / 計算 ${term}`);
+  if (row['星期中文'] !== `星期${'日一二三四五六'[weekday]}` || row.weekday !== ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][weekday] || Number(row.is_weekend) !== Number(weekday === 0 || weekday === 6)) throw new Error(`${row.date} 星期或週末欄位不符`);
+  const period = breaks.find(p => row.date >= p.start && row.date <= p.end);
+  const isDayOff = weekday === 0 || weekday === 6 || Boolean(holidays.dates[row.date]);
+  if (Number(row.is_long_holiday) !== Number(Boolean(period))) throw new Error(`${row.date} 連假與附表3不符`);
+  const dayIndex = period ? Math.round((Date.parse(row.date) - Date.parse(period.start)) / 86400000) + 1 : 0;
+  if (Number(row.holiday_day_index) !== dayIndex) throw new Error(`${row.date} 連假日次與附表3不符`);
+  if (row.is_holiday === '0' && holidays.dates[row.date]) warnings.push(`${row.date}：CSV is_holiday=0，依附表4補入「${holidays.dates[row.date]}」。`);
+  if (row.date === '2026-09-28') warnings.push(`${row.date}：CSV 假日名稱為「${row['假日名稱']}」；依附表3，當日節日應為教師節，連假名稱為中秋節及教師節。`);
+  days[row.date] = { lunar: displayLunar(row['農曆']), solarTerm: term, isDayOff, holiday: holidays.dates[row.date] ?? '', ...(period ? { longHoliday: period.name, holidayDayIndex: dayIndex, holidayDays: period.days } : {}) };
+}
+mkdirSync('docs', { recursive: true });
+writeFileSync('data/calendar-2026.json', JSON.stringify({ year: 2026, days }, null, 2) + '\n');
+writeFileSync('docs/calendar-data-review.md', `# 2026 日曆資料校驗\n\n執行方式：\`npm run data:import\`。原始 CSV / PDF 均保留，不覆寫。\n\n- CSV 完整 365 天，日期連續且不重複。\n- 全年農曆、24 節氣、星期、週末與本地曆法運算逐日比對通過；冬月／十一月、臘月／十二月視為同義。\n- 9 段連假及日次比對附表3通過，9/25–9/28 合計4天。\n- 附表4人工視覺核對放假色塊；以週末加節日／補假產生全年 isDayOff，共 ${Object.values(days).filter(d => d.isDayOff).length} 天。\n- CSV is_holiday 表示連假區間，並非完整法定放假清單，不能直接當作工作日旗標。\n- 促銷相關欄位未匯入，符合產品無廣告範圍。\n\n## 差異與處理\n\n${warnings.map(w => '- ' + w).join('\n')}\n\n假日名稱採附表3完整名稱；放假適用範圍為政府行政機關。其他年份仍可離線計算農曆與節氣，但不推測其放假安排。\n`);
+console.log(`365 days verified; ${Object.values(days).filter(d => d.solarTerm).length} solar terms; ${warnings.length} documented corrections.`);

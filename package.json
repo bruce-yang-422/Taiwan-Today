@@ -1,0 +1,35 @@
+{
+  "name": "taiwan_daily_chrome",
+  "version": "0.1.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest run tests/core.test.ts",
+    "dev": "vite --host 127.0.0.1 --open /newtab.html",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "test:e2e": "playwright test",
+    "data:import": "node scripts/import-calendar.mjs",
+    "data:check-history": "node scripts/validate-history.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "lunar-typescript": "^1.8.6"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "@types/chrome": "^0.3.0",
+    "@types/node": "^22.20.4",
+    "autoprefixer": "^10.6.1",
+    "csv-parse": "^7.0.2",
+    "postcss": "^8.5.28",
+    "tailwindcss": "^3.4.19",
+    "typescript": "^7.0.2",
+    "vite": "^6.4.3",
+    "vitest": "^4.1.11"
+  },
+  "type": "module",
+  "private": true
+}

@@ -1,0 +1,26 @@
+# 相依套件
+node_modules/
+
+# 建置與打包產物
+dist/
+release/
+
+# 測試產物
+test-results/
+playwright-report/
+
+# 研究暫存
+.research/
+
+# 原始參考資料（不進版控，來源另存於外部）
+附表3.pdf
+附表4.pdf
+2026_calendar.csv
+
+# 本機專用與雜項暫存
+*.local
+*.log
+*.tmp
+*.swp
+.DS_Store
+Thumbs.db

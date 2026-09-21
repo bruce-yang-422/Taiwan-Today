@@ -1,0 +1,17 @@
+[
+  {"calendar":"solar","date":"01-01","name":"元旦"},
+  {"calendar":"solar","date":"02-28","name":"和平紀念日"},
+  {"calendar":"solar","date":"04-04","name":"兒童節"},
+  {"calendar":"solar","date":"05-01","name":"勞動節"},
+  {"calendar":"solar","date":"08-08","name":"父親節"},
+  {"calendar":"solar","date":"09-28","name":"教師節"},
+  {"calendar":"solar","date":"10-10","name":"國慶日"},
+  {"calendar":"solar","date":"12-25","name":"行憲紀念日"},
+  {"calendar":"lunar","date":"01-01","name":"春節"},
+  {"calendar":"lunar","date":"01-15","name":"元宵節"},
+  {"calendar":"lunar","date":"05-05","name":"端午節"},
+  {"calendar":"lunar","date":"07-07","name":"七夕"},
+  {"calendar":"lunar","date":"07-15","name":"中元節"},
+  {"calendar":"lunar","date":"08-15","name":"中秋節"},
+  {"calendar":"lunar","date":"09-09","name":"重陽節"}
+]

@@ -1,0 +1,128 @@
+import { test, expect, chromium } from '@playwright/test';
+import { resolve, dirname, basename } from 'node:path';
+import { mkdtemp, rm } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+
+test('analog clock uses Taiwan time and advances its hands', async ({ page }) => {
+  await page.setViewportSize({ width: 1920, height: 1080 });
+  await page.clock.install({ time: new Date('2026-09-21T07:30:00Z') });
+  await page.clock.pauseAt(new Date('2026-09-21T07:30:00Z'));
+  await page.goto('/newtab.html');
+  await expect(page.locator('#analog-clock')).toHaveAttribute('aria-label', '台灣時間 15:30:00');
+  await expect(page.locator('#clock-hour')).toHaveAttribute('transform', 'rotate(105 60 60)');
+  await expect(page.locator('#clock-minute')).toHaveAttribute('transform', 'rotate(180 60 60)');
+  await page.clock.runFor(1000);
+  await expect(page.locator('#analog-clock')).toHaveAttribute('aria-label', '台灣時間 15:30:01');
+  await expect(page.locator('#clock-second')).toHaveAttribute('transform', 'rotate(6 60 60)');
+  const clock = await page.locator('#analog-clock').boundingBox();
+  const calendar = await page.locator('.calendar').boundingBox();
+  expect(clock!.x).toBeGreaterThan(calendar!.x + calendar!.width);
+  expect(clock!.x + clock!.width).toBeLessThan(1920);
+  expect(await page.evaluate(() => document.documentElement.scrollHeight)).toBeLessThanOrEqual(1080);
+  await expect(page.getByRole('heading', { name: '歷史上的今天', exact: true })).toBeVisible();
+  await expect(page.locator('.history-card')).toHaveCount(3);
+  const cards = await page.locator('.history-card').evaluateAll(elements => elements.map(element => {
+    const rect = element.getBoundingClientRect();
+    return { x: rect.x, y: rect.y, width: rect.width };
+  }));
+  expect(cards[0].y).toBe(cards[1].y);
+  expect(cards[1].y).toBe(cards[2].y);
+  expect(cards[0].x + cards[0].width).toBeLessThanOrEqual(cards[1].x + 1);
+  expect(cards[1].x + cards[1].width).toBeLessThanOrEqual(cards[2].x + 1);
+  await page.screenshot({ path: 'test-results/desktop-clock.png', fullPage: true });
+});
+test('offline rendering, shortcuts CRUD, keyboard sorting, themes and search', async ({ page, context }) => {
+  const errors: string[] = []; page.on('pageerror', e => errors.push(e.message));
+  await page.clock.install({ time: new Date('2026-09-21T04:00:00Z') });
+  await page.goto('/newtab.html');
+  await expect(page.locator('#day')).toHaveText('21');
+  await expect(page.locator('#lunar')).toContainText('八月十一');
+  await expect(page.getByRole('heading', { name: '九二一大地震震動台灣' })).toBeVisible();
+  await page.getByRole('button', { name: '新增捷徑', exact: true }).click();
+  await page.getByLabel('名稱', { exact: true }).fill('測試網站');
+  await page.getByLabel('網址', { exact: true }).fill('javascript:alert(1)');
+  await page.locator('#shortcut-form').getByRole('button', { name: '完成' }).click();
+  await expect(page.locator('#shortcut-error')).toContainText('HTTP');
+  await page.getByLabel('網址', { exact: true }).fill('example.com');
+  await page.locator('#shortcut-icon').setInputFiles({ name: 'favicon.png', mimeType: 'image/png', buffer: Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+j6i8AAAAASUVORK5CYII=', 'base64') });
+  await page.locator('#shortcut-form').getByRole('button', { name: '完成' }).click();
+  await expect(page.getByRole('link', { name: '測試網站', exact: true })).toHaveAttribute('href', 'https://example.com/');
+  await expect(page.getByRole('link', { name: '測試網站', exact: true }).locator('img')).toHaveAttribute('src', /^data:image\/png;base64,/);
+  await page.getByRole('button', { name: '編輯 測試網站', exact: true }).focus();
+  await page.keyboard.press('Alt+ArrowLeft');
+  await expect(page.locator('.shortcut-name')).toHaveText(['YouTube', 'PChome', '測試網站', 'GitHub']);
+  await page.reload();
+  await page.getByRole('button', { name: '編輯 測試網站', exact: true }).click();
+  await page.getByLabel('名稱', { exact: true }).fill('修改網站');
+  await page.locator('#shortcut-form').getByRole('button', { name: '完成' }).click();
+  await page.getByRole('button', { name: '編輯 修改網站', exact: true }).click();
+  await page.getByRole('button', { name: '刪除', exact: true }).click();
+  await expect(page.getByRole('link', { name: '修改網站', exact: true })).toHaveCount(0);
+  await page.getByRole('button', { name: '開啟外觀設定' }).click();
+  await page.getByLabel('外觀', { exact: true }).selectOption('dark');
+  await expect(page.locator('html')).toHaveClass('dark');
+  await page.getByLabel('日曆樣式').selectOption('traditional');
+  await page.keyboard.press('Escape'); await page.reload();
+  await expect(page.locator('html')).toHaveAttribute('data-style', 'traditional');
+  await expect(page.locator('html')).toHaveClass('dark');
+  await page.screenshot({ path: 'test-results/dark-traditional.png', fullPage: true });
+  await context.setOffline(true);
+  await page.clock.fastForward(24 * 60 * 60 * 1000);
+  await expect(page.locator('#day')).toHaveText('22');
+  await expect(page.locator('#history')).toContainText('伊拉克入侵伊朗');
+  await context.setOffline(false);
+  await page.route('https://www.google.com/**', route => route.fulfill({ body: '<html>search</html>', contentType: 'text/html' }));
+  await page.getByRole('searchbox').count();
+  await page.getByLabel('搜尋 Google', { exact: true }).fill('台灣 & 日曆');
+  await page.locator('#search-input').press('Enter');
+  await expect(page).toHaveURL(/google.com\/search/);
+  expect(new URL(page.url()).searchParams.get('q')).toBe('台灣 & 日曆');
+  expect(errors).toEqual([]);
+});
+test('mobile layout and storage failures', async ({ page }) => {
+  await page.setViewportSize({ width: 360, height: 800 });
+  await page.goto('/newtab.html');
+  await expect(page.getByRole('button', { name: '新增捷徑', exact: true })).toBeEnabled();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  await page.screenshot({ path: 'test-results/mobile.png', fullPage: true });
+  await page.evaluate(() => { Storage.prototype.setItem = () => { throw new DOMException('Full', 'QuotaExceededError'); }; });
+  await page.getByRole('button', { name: '新增捷徑', exact: true }).click();
+  await page.getByLabel('名稱', { exact: true }).fill('cannot save');
+  await page.getByLabel('網址', { exact: true }).fill('example.com');
+  await page.locator('#shortcut-form').getByRole('button', { name: '完成' }).click();
+  await expect(page.getByRole('status')).toContainText('無法儲存');
+  await expect(page.locator('#shortcut-dialog')).toBeVisible();
+});
+test('packaged MV3 extension loads offline and uses chrome.storage', async () => {
+  const profile = await mkdtemp(resolve(tmpdir(), 'taiwan-daily-test-'));
+  const extension = resolve('dist');
+  const context = await chromium.launchPersistentContext(profile, { channel: 'chromium', headless: true, args: [`--disable-extensions-except=${extension}`, `--load-extension=${extension}`] });
+  try {
+    const page = await context.newPage();
+    const external: string[] = [];
+    page.on('request', req => { if (/^https?:/.test(req.url())) external.push(req.url()); });
+    await context.setOffline(true);
+    await page.goto('chrome://newtab/');
+    await expect(page.locator('#day')).not.toBeEmpty();
+    await expect(page.getByRole('button', { name: '新增捷徑', exact: true })).toBeEnabled();
+    expect(await page.evaluate(() => chrome.runtime.getManifest().permissions)).toEqual(['storage', 'favicon']);
+    for (const name of ['YouTube', 'PChome', 'GitHub']) {
+      const image = page.getByRole('link', { name, exact: true }).locator('img');
+      await expect(image).toBeVisible();
+      await expect.poll(() => image.evaluate((img: HTMLImageElement) => img.naturalWidth)).toBeGreaterThan(0);
+    }
+    await page.getByRole('button', { name: '新增捷徑', exact: true }).click();
+    await page.getByLabel('名稱', { exact: true }).fill('離線儲存');
+    await page.getByLabel('網址', { exact: true }).fill('example.com');
+    await page.locator('#shortcut-form').getByRole('button', { name: '完成' }).click();
+    await expect(page.getByRole('link', { name: '離線儲存', exact: true })).toBeVisible();
+    await page.reload();
+    await expect(page.getByRole('link', { name: '離線儲存', exact: true })).toBeVisible();
+    expect(external).toEqual([]);
+    await page.screenshot({ path: 'test-results/extension.png', fullPage: true });
+  } finally {
+    await context.close();
+    if (dirname(resolve(profile)) !== resolve(tmpdir()) || !basename(profile).startsWith('taiwan-daily-test-')) throw new Error('Unexpected test profile path');
+    await rm(profile, { recursive: true, force: true });
+  }
+});

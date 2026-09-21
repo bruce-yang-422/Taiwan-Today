@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{font-family:ui-sans-serif,system-ui,-apple-system,"Microsoft JhengHei",sans-serif;color:#24334c;background:#f7f3e9;--paper:#fffdf6;--ink:#24334c;--muted:#646b79;--line:#d7cfc0;--accent:#16458e;--vermilion:#b3332b;--soft:#e9edf5;color-scheme:light}
+:root.dark{color:#ede7db;background:#191b23;--paper:#232630;--ink:#ede7db;--muted:#b2b3bf;--line:#444754;--accent:#94b7f4;--vermilion:#f09888;--soft:#2c3549;color-scheme:dark}
+*{box-sizing:border-box}body{margin:0;min-width:300px}button,a,input,select{-webkit-tap-highlight-color:transparent}button,a{touch-action:manipulation}button{cursor:pointer}button:disabled{cursor:wait;opacity:.5}a{color:inherit;text-decoration:none}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:5px}button{border-radius:8px}header{max-width:1600px;margin:auto}.brand{font-size:14px;letter-spacing:.13em;display:flex;align-items:center;gap:9px}.brand-mark{border:1px solid var(--vermilion);border-radius:5px;color:var(--vermilion);padding:1px 6px;font-family:serif;font-size:20px}.quiet-button{color:var(--muted);font-size:13px;padding:8px}.quiet-button span{margin-left:6px}.calendar{padding-top:20px}.eyebrow{font-size:11px;letter-spacing:.23em;color:var(--muted);margin-bottom:18px}.month{display:block;font-family:"Noto Serif TC","PMingLiU",serif;font-size:25px;letter-spacing:.2em;padding-left:.2em}.day{display:block;font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:clamp(110px,18vh,164px);line-height:1.12;letter-spacing:-.055em;padding-right:.055em;color:var(--accent)}.weekday{font-size:16px;letter-spacing:.25em;padding-left:.25em;margin-top:4px}.lunar{font-size:13px;color:var(--muted);margin:18px 0 12px}.badge{font-size:11px;background:var(--soft);color:var(--accent);padding:4px 11px;border-radius:20px}.season{width:250px;margin:20px auto 28px;color:var(--accent);font-size:12px}.season p{color:var(--muted);font-size:11px;margin-top:8px}progress{width:130px;height:3px;border:0;border-radius:4px;background:var(--line);accent-color:var(--accent)}progress::-webkit-progress-bar{background:var(--line);border-radius:4px}progress::-webkit-progress-value{background:var(--accent);border-radius:4px}.search{display:flex;align-items:center;gap:14px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:15px 20px;box-shadow:0 4px 16px #18223808;text-align:left}.search svg{color:var(--muted);flex-shrink:0}.search input{background:transparent;border:0;outline:none;width:100%;font-size:14px;color:var(--ink)}.search input::placeholder{color:var(--muted)}.search button{color:var(--muted);padding:0 5px}.shortcuts-section{margin:25px 0 33px}.shortcut{position:relative;width:72px}.shortcut-link,.shortcut-add{display:flex;flex-direction:column;align-items:center;gap:9px;width:72px;font-size:11px;color:var(--muted);padding:5px 0}.shortcut-icon{display:grid;place-items:center;width:43px;height:43px;border-radius:14px;background:var(--soft);font-size:18px;font-weight:600;color:var(--accent)}.shortcut-name{max-width:72px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.shortcut-edit{position:absolute;right:-4px;top:-7px;width:25px;height:25px;background:var(--paper);border:1px solid var(--line);opacity:0;transition:opacity .15s}.shortcut:hover .shortcut-edit,.shortcut:focus-within .shortcut-edit{opacity:1}.shortcut.dragging{opacity:.4}.shortcut-add .shortcut-icon{background:transparent;border:1px dashed var(--line);font-size:24px;font-weight:300}.section-heading{display:flex;align-items:center;gap:20px}.section-heading span{height:1px;flex:1;background:var(--line)}.section-heading h2{font-size:12px;letter-spacing:.2em;color:var(--vermilion)}.history-card{padding:24px 18px 0}.history-year{font-family:Georgia,serif;font-size:14px;color:var(--accent);letter-spacing:.15em}.history-card h3{font-family:"Noto Serif TC","PMingLiU",serif;font-size:23px;letter-spacing:.06em;margin:8px 0 12px}.history-summary{font-size:13px;line-height:1.95;color:var(--muted);max-width:440px;margin:auto;text-align:justify}.history-more{display:inline-block;color:var(--accent);font-size:12px;margin-top:17px}.history-source{font-size:10px;color:var(--muted);margin-top:11px}.history-source a{text-decoration:underline;text-underline-offset:3px}footer{padding:33px 20px 22px;color:var(--muted)}footer p{font-family:serif;font-size:12px;letter-spacing:.2em}footer span{display:block;font-size:9px;letter-spacing:.14em;margin-top:9px}dialog{background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:18px;padding:28px;width:min(420px,calc(100% - 32px));box-shadow:0 20px 100px #0003}dialog::backdrop{background:#151a2959;backdrop-filter:blur(4px)}dialog h2{font-family:serif;font-size:23px;margin:0 0 22px}dialog label{display:block;font-size:13px;margin:16px 0 8px}dialog input,dialog select{width:100%;background:transparent;border:1px solid var(--line);border-radius:8px;padding:11px;color:var(--ink);font-size:14px}dialog option{background:var(--paper)}.dialog-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:25px}.dialog-actions button{padding:9px 16px;font-size:13px}.primary{background:var(--accent);color:var(--paper)}.danger,.error{color:var(--vermilion)}.danger{margin-right:auto}.error{font-size:12px;margin-top:12px}.settings-note{color:var(--muted);font-size:12px;line-height:1.8;margin-top:22px}.status{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--paper);padding:12px 20px;border-radius:10px;font-size:13px;max-width:90vw;z-index:5}[data-style=traditional] .calendar{border-top:5px double var(--vermilion);max-width:340px;margin:20px auto 0}[data-style=traditional] .day{font-family:"PMingLiU",serif}[data-style=traditional] .month{border-bottom:1px solid var(--line);padding-bottom:10px;max-width:180px;margin:auto}@media(hover:none){.shortcut-edit{opacity:1}}@media(max-width:480px){.calendar{padding-top:12px}.eyebrow{margin-bottom:12px}.season{margin-bottom:22px}.history-card{padding-left:0;padding-right:0}.shortcuts-section{margin-bottom:26px}}@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* Traditional calendar printing: blue dates with vermilion details. */
+.month,.weekday,.lunar{color:var(--accent)}
+.clock-container{margin:4px auto 12px;width:112px}
+.analog-clock{display:block;width:112px;height:112px;overflow:visible}
+.clock-face{fill:var(--paper);stroke:var(--line);stroke-width:1.5}
+.clock-major-tick{stroke:var(--accent);stroke-width:1.8}
+.clock-minor-tick{stroke:var(--line);stroke-width:1}
+.clock-numbers{fill:var(--accent);font-family:Georgia,"Times New Roman",serif;font-size:13px;text-anchor:middle}
+.clock-hour,.clock-minute{stroke:var(--accent);stroke-linecap:round}
+.clock-hour{stroke-width:3.5}.clock-minute{stroke-width:2.3}
+.clock-second{stroke:var(--vermilion);stroke-width:1.2;stroke-linecap:round}
+.clock-pin{fill:var(--vermilion)}
+.clock-caption{margin-top:8px;color:var(--muted);font-size:10px;letter-spacing:.15em}
+#history{display:grid;grid-template-columns:minmax(0,1fr);gap:24px}
+.history-card{min-width:0}
+@media(min-width:1100px){
+  .history-section{width:min(1200px,calc(100vw - 96px));position:relative;left:50%;transform:translateX(-50%)}
+  #history{grid-template-columns:repeat(3,minmax(0,1fr));gap:0}
+  .history-card{padding:18px 28px 0}
+  .history-card+.history-card{border-left:1px solid var(--line)}
+  .history-card h3{font-size:21px;letter-spacing:.025em}
+  .history-summary{margin:0;line-height:1.85;text-align:left}
+  #history[data-count="1"]{grid-template-columns:minmax(0,540px);justify-content:center}
+  #history[data-count="2"]{grid-template-columns:repeat(2,minmax(0,440px));justify-content:center}
+  #history[data-count="0"]{grid-template-columns:minmax(0,540px);justify-content:center}
+}
+/* Desktop keeps the calendar centered while the clock occupies the right margin. */
+@media(min-width:1100px){
+  main{position:relative}
+  .clock-container{position:absolute;top:94px;left:calc(100% + 48px);width:144px;margin:0}
+  .analog-clock{width:100%;height:auto}
+  .calendar{padding-top:12px}
+  .day{font-size:144px}
+  .lunar{margin-top:12px}
+  .season{margin:16px auto 22px}
+  .shortcuts-section{margin:20px 0 25px}
+  .history-card{padding-top:18px}
+  footer{padding-top:24px;padding-bottom:16px}
+}
