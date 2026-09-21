@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "__MSG_extName__",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "default_locale": "zh_TW",
   "description": "__MSG_extDescription__",
   "icons": {
@@ -19,7 +19,7 @@
   "content_security_policy": {
     "extension_pages": "script-src 'self'; object-src 'self'; connect-src https://raw.githubusercontent.com; img-src 'self' data:;"
   },
-  "host_permissions": [
+  "optional_host_permissions": [
     "https://raw.githubusercontent.com/*"
   ]
 }

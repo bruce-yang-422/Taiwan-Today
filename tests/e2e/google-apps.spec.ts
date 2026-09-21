@@ -8,8 +8,11 @@ test('Google app launcher supports keyboard, dismissal and mobile layouts', asyn
   await expect(toggle).toHaveAttribute('aria-expanded','true');
   await expect(panel).toBeVisible();
   const links = panel.locator('a');
-  await expect(links).toHaveCount(3);
-  expect(await links.evaluateAll(items=>items.map(a=>(a as HTMLAnchorElement).href))).toEqual(['https://mail.google.com/','https://drive.google.com/','https://calendar.google.com/']);
+  await expect(links).toHaveCount(41);
+  expect(await links.evaluateAll(items=>items.slice(0,3).map(a=>(a as HTMLAnchorElement).href))).toEqual(['https://mail.google.com/','https://drive.google.com/','https://calendar.google.com/']);
+  await expect(page.locator('.google-quick-links a')).toHaveCount(3);
+  await expect.poll(() => panel.locator('img').evaluateAll(images => images.every(img => (img as HTMLImageElement).naturalWidth > 0))).toBe(true);
+  await expect(links.last()).toHaveAttribute('href','https://www.blogger.com/');
   await page.keyboard.press('Tab'); await expect(links.first()).toBeFocused();
   await page.keyboard.press('Escape'); await expect(panel).toBeHidden(); await expect(toggle).toBeFocused();
   await toggle.click(); await page.locator('#day').click(); await expect(panel).toBeHidden();

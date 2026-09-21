@@ -3,7 +3,10 @@ import './traditional.css';
 import './modern.css';
 import './concepts.css';
 import './readability.css';
+import './compact.css';
 import './googleApps.css';
+import './settingsTabs.css';
+import { initializeSettingsTabs } from './settingsTabs';
 import { initializeDataUpdates } from './dataUpdates';
 import { initializeGoogleApps } from './googleApps';
 import { createConceptLayouts } from './concepts';
@@ -129,6 +132,7 @@ el('appearance').addEventListener('change', () => void savePreferences());
 el('calendar-style').addEventListener('change', () => void savePreferences());
 el('week-start').addEventListener('change', () => void savePreferences());
 el('quote-category').addEventListener('change', () => void savePreferences());
+initializeSettingsTabs();
 el('settings-open').addEventListener('click', () => el<HTMLDialogElement>('settings-dialog').showModal());
 document.querySelectorAll<HTMLElement>('[data-close]').forEach(button => button.addEventListener('click', () => el<HTMLDialogElement>(button.dataset.close!).close()));
 el<HTMLFormElement>('search-form').addEventListener('submit', event => {

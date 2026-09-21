@@ -2,15 +2,21 @@ import { allowedFile, REQUIRED_FILES, parsePublicData, type PublicData } from '.
 
 export const DATA_URL = 'https://raw.githubusercontent.com/bruce-yang-422/Taiwan-Today/main/data/';
 export const CACHE_KEY = 'publicDataCache';
-export interface DataManifest { schemaVersion: 1; revision: string; files: { name: string; sha256: string; bytes: number }[] }
-export interface DataCache { schemaVersion: 1; revision: string; updatedAt: string; files: Record<string, unknown> }
+export interface DataManifest { schemaVersion: 1; version?: string; updatedAt?: string; revision: string; files: { name: string; sha256: string; bytes: number; version?: string; updatedAt?: string }[] }
+export interface DataCache { schemaVersion: 1; revision: string; updatedAt: string; files: Record<string, unknown>; manifest?: DataManifest }
+function checkVersion(value: { version?: string; updatedAt?: string }) {
+  if (value.version !== undefined && (typeof value.version !== 'string' || !/^\d{1,6}\.\d{1,6}\.\d{1,6}$/.test(value.version))) throw new Error('資料版本格式錯誤');
+  if (value.updatedAt !== undefined && (typeof value.updatedAt !== 'string' || value.updatedAt.length > 30 || !Number.isFinite(Date.parse(value.updatedAt)))) throw new Error('資料更新時間格式錯誤');
+}
 export function parseManifest(value: unknown): DataManifest {
   const m = value as DataManifest | null;
   if (!m || m.schemaVersion !== 1 || !/^[a-f0-9]{64}$/.test(m.revision) || !Array.isArray(m.files) || m.files.length > 40) throw new Error('更新清單格式不支援');
+  checkVersion(m);
   const seen = new Set<string>(); let size = 0;
   for (const file of m.files) {
     if (!file || typeof file.name !== 'string' || !allowedFile(file.name) || seen.has(file.name) || !/^[a-f0-9]{64}$/.test(file.sha256) || !Number.isInteger(file.bytes) || file.bytes < 1 || file.bytes > 2 * 1024 * 1024) throw new Error('更新清單包含無效檔案');
     seen.add(file.name); size += file.bytes;
+    checkVersion(file);
   }
   if (REQUIRED_FILES.some(name => !seen.has(name)) || size > 5 * 1024 * 1024) throw new Error('更新檔案不完整或超過 5 MB');
   return m;
@@ -18,6 +24,7 @@ export function parseManifest(value: unknown): DataManifest {
 export function parseCache(value: unknown): { cache: DataCache; data: PublicData } {
   const c = value as DataCache | null;
   if (!c || c.schemaVersion !== 1 || !/^[a-f0-9]{64}$/.test(c.revision) || !Number.isFinite(Date.parse(c.updatedAt)) || !c.files || typeof c.files !== 'object' || Array.isArray(c.files)) throw new Error('本機更新快取格式錯誤');
+  if (c.manifest && parseManifest(c.manifest).revision !== c.revision) throw new Error('快取資料版本不符');
   return { cache: c, data: parsePublicData(c.files) };
 }
 async function download(name: string, maxBytes: number, revision = '') {
@@ -36,9 +43,18 @@ async function download(name: string, maxBytes: number, revision = '') {
     const bytes = new Uint8Array(size); let offset = 0;
     for (const chunk of chunks) { bytes.set(chunk, offset); offset += chunk.byteLength; }
     return bytes;
+  } catch (error) {
+    if (controller.signal.aborted) throw new Error(`下載 ${name} 逾時，請稍後重試。`);
+    if (!navigator.onLine) throw new Error('目前沒有網路連線，請連線後重試。');
+    if (error instanceof TypeError) throw new Error(`無法連線 GitHub 下載 ${name}。請重新載入擴充功能並開啟新分頁；若仍失敗，請確認網路可存取 raw.githubusercontent.com。`);
+    throw error;
   } finally { clearTimeout(timeout); }
 }
 export async function fetchPublicUpdate(currentRevision?: string) {
+  if (typeof chrome !== 'undefined' && chrome.runtime?.id && chrome.permissions) {
+    const allowed = await chrome.permissions.contains({ origins: ['https://raw.githubusercontent.com/*'] });
+    if (!allowed) throw new Error('尚未取得 GitHub 連線權限。請按「立即更新」，並在 Chrome 授權視窗選擇允許。');
+  }
   const decode = (bytes: Uint8Array) => JSON.parse(new TextDecoder('utf-8', { fatal: true }).decode(bytes));
   const manifest = parseManifest(decode(await download('update-manifest.json', 32768)));
   if (manifest.revision === currentRevision) return null;
@@ -51,6 +67,6 @@ export async function fetchPublicUpdate(currentRevision?: string) {
     files[file.name] = decode(bytes);
   }
   const data = parsePublicData(files);
-  const cache: DataCache = { schemaVersion: 1, revision: manifest.revision, updatedAt: new Date().toISOString(), files };
+  const cache: DataCache = { schemaVersion: 1, revision: manifest.revision, updatedAt: new Date().toISOString(), files, manifest };
   return { cache, data };
 }

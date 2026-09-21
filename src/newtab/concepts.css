@@ -67,7 +67,7 @@
 .concept-shell .history-source{margin-top:6px}
 .daily-quote{padding:20px;background:var(--paper);border-radius:10px}
 .daily-quote h2{font-size:16px;margin-bottom:12px;color:var(--accent)}
-.daily-quote blockquote{font-size:23px;line-height:1.65;font-family:"PMingLiU",Georgia,serif}
+.daily-quote blockquote{font-size:23px;line-height:1.65;font-family:inherit}
 .daily-quote>p{font-size:13px;text-align:right;margin-top:10px;color:var(--muted)}
 [data-style=reading] .concept-shell{grid-template-columns:36% minmax(0,1fr);min-height:0}
 [data-style=reading] .concept-sidebar{background:#232c45;color:#f7f0e1;display:flex;align-items:center;padding:30px}

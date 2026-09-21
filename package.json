@@ -1,8 +1,9 @@
 {
   "name": "taiwan_daily_chrome",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "prebuild": "npm run data:prepare-update",
     "test": "vitest run tests/core.test.ts",
     "dev": "vite --host 127.0.0.1 --open /newtab.html",
     "build": "tsc --noEmit && vite build",
@@ -13,7 +14,7 @@
     "data:prepare-update": "node scripts/prepare-data-update.mjs"
   },
   "keywords": [],
-  "author": "",
+  "author": "Bruce Yang",
   "license": "ISC",
   "description": "",
   "dependencies": {

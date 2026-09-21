@@ -1,4 +1,14 @@
 /* Shared reading sizes; independent of the decorative date and clock sizes. */
+.about-settings { margin-top:20px; padding-top:16px; border-top:1px solid var(--line); }
+.about-settings summary { cursor:pointer; font-size:var(--reading-control); color:var(--accent); font-weight:600; }
+.about-info { margin-top:12px; font-size:var(--reading-small); line-height:1.7; }
+.about-info>div { display:grid; grid-template-columns:96px minmax(0,1fr); gap:8px; padding:4px 0; }
+.about-info dt { color:var(--muted); }
+.about-info dd { margin:0; overflow-wrap:anywhere; }
+.about-links { display:flex; flex-wrap:wrap; gap:16px; margin:12px 0; font-size:var(--reading-small); }
+.about-links a { text-decoration:underline; text-underline-offset:3px; }
+.about-file-details .about-info>div { grid-template-columns:minmax(0,1fr) auto; }
+.about-file-details dt { overflow-wrap:anywhere; }
 :root[data-text-size] { --reading-body:14px; --reading-small:12px; --reading-control:14px; }
 :root[data-text-size=large] { --reading-body:17px; --reading-small:14px; --reading-control:16px; }
 :root[data-text-size] .history-summary,
@@ -103,6 +113,67 @@
 
 /* Keep the minimal layout compact when the quote is also enabled. */
 @media(min-width:1100px) {
+  [data-style=workspace] header { height:60px; padding-block:8px; }
+  [data-style=workspace] main { margin-top:10px; }
+  [data-style=workspace] .concept-shell { min-height:0; grid-template-columns:170px minmax(0,1fr) 320px; }
+  [data-style=workspace] .concept-rail { gap:10px; padding:16px; }
+  [data-style=workspace] .selected-date-label { padding-bottom:6px; }
+  [data-style=workspace] .calendar-clock-group>.eyebrow { margin-bottom:4px; }
+  [data-style=workspace] .calendar { display:grid; grid-template-columns:100px minmax(0,1fr); align-items:center; column-gap:8px; }
+  [data-style=workspace] .calendar h1 { grid-row:1 / 3; display:flex; align-items:center; gap:6px; }
+  [data-style=workspace] .month { font-size:18px; line-height:1.3; white-space:nowrap; letter-spacing:0; }
+  [data-style=workspace] .day { font-size:52px; }
+  [data-style=workspace] .weekday { margin:0; align-self:end; }
+  [data-style=workspace] .lunar { margin:4px 0; align-self:start; }
+  [data-style=workspace] #festivals,[data-style=workspace] .season { grid-column:1 / -1; }
+  [data-style=workspace] #festivals:empty { display:none; }
+  [data-style=workspace] .season { margin:8px auto 0; }
+  [data-style=workspace] .season p { margin-top:4px; }
+  [data-style=workspace] .clock-container { margin-top:10px; padding-top:10px; }
+  [data-style=workspace] .clock-container { grid-template-columns:112px minmax(0,1fr); }
+  [data-style=workspace] .analog-clock { width:112px; height:112px; }
+  [data-style=workspace] .todo-note summary { padding:10px 14px; font-size:16px; }
+  [data-style=workspace] .todo-body { padding:0 14px 10px; }
+  [data-style=workspace] #todo-form { padding-bottom:4px; }
+  [data-style=workspace] #todo-empty { padding:4px 0; }
+  [data-style=workspace] #todo-list:empty,[data-style=workspace] #todo-error:empty { display:none; }
+  [data-style=workspace] .todo-hint { margin-top:4px; }
+  [data-style=workspace] .daily-quote { padding:12px 14px; }
+  [data-style=workspace] .daily-quote h2 { margin-bottom:6px; }
+  [data-style=workspace] .daily-quote blockquote { font-size:16px; line-height:1.5; }
+  :root[data-text-size=large][data-style=workspace] .daily-quote blockquote { font-size:22px; }
+  [data-style=workspace] .daily-quote>p { margin-top:6px; }
+  [data-style=workspace] .concept-shell #history { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; }
+  [data-style=workspace] .concept-sidebar { padding:16px; }
+  [data-style=workspace] .month-toolbar { margin-bottom:10px; }
+  [data-style=workspace] .month-cell,[data-style=workspace] .month-blank { min-height:64px; padding-block:4px; gap:0; }
+  :root[data-text-size][data-style=workspace] .month-lunar,
+  :root[data-text-size][data-style=workspace] .month-detail { line-height:1.4; }
+  [data-style=workspace] .month-number { line-height:1.2; }
+}
+@media(min-width:1100px) and (max-height:850px) {
+  [data-style=workspace] header { height:52px; }
+  [data-style=workspace] main { margin-top:6px; }
+  [data-style=workspace] footer { padding-block:2px; }
+  :root[data-text-size][data-style=workspace] .concept-stage { gap:10px; padding:10px 16px; }
+  [data-style=workspace] .concept-rail { padding:12px; gap:8px; }
+  [data-style=workspace] .clock-container { grid-template-columns:112px minmax(0,1fr); }
+  [data-style=workspace] .analog-clock { width:112px; height:112px; }
+  [data-style=workspace] .search { padding-block:10px; }
+  [data-style=workspace] .month-weekday { padding-block:6px; }
+  [data-style=workspace] .month-cell,[data-style=workspace] .month-blank { min-height:50px; padding-block:4px; gap:0; }
+  [data-style=workspace] .month-cell { display:grid; grid-template-columns:auto minmax(0,1fr); align-content:start; align-items:center; }
+  [data-style=workspace] .month-lunar { justify-self:end; }
+  [data-style=workspace] .month-detail { grid-column:1 / -1; }
+  [data-style=workspace] .month-toolbar h2 { font-size:22px; }
+  [data-style=workspace] .month-toolbar button { padding-block:4px; }
+  [data-style=workspace] .todo-note summary { padding-block:8px; line-height:1.4; }
+  [data-style=workspace] #todo-form button { line-height:1.3; }
+  [data-style=workspace] .daily-quote { padding-block:8px; }
+  [data-style=workspace] .history-card h3 { font-size:17px; }
+  :root[data-text-size][data-style=workspace] .history-summary { line-height:1.6; }
+}
+@media(min-width:1100px) {
   [data-style=classic] header { padding-block:8px; }
   [data-style=classic] .day { font-size:128px; }
   [data-style=classic] .calendar-clock-group { padding-top:0; }
@@ -140,3 +211,6 @@
   [data-style=classic] footer { padding-block:8px; }
   [data-style=classic] footer>span { display:none; }
 }
+.personal-history-tool { margin:16px 0; padding:12px 16px; border:1px solid var(--line); border-radius:12px; background:var(--soft); }
+.personal-history-tool a { display:inline-block; color:var(--accent); font-size:var(--reading-control,14px); font-weight:600; text-decoration:underline; text-underline-offset:4px; }
+.personal-history-tool p { margin:8px 0 0; font-size:var(--reading-small,13px); line-height:1.7; }

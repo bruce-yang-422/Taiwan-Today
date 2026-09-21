@@ -12,30 +12,17 @@
     <header class="flex items-center justify-between px-6 py-5 sm:px-10">
       <a class="brand" href="./newtab.html"><img class="brand-logo" src="/icons/taiwan-today.png" width="36" height="36" alt="" /> 台灣今日曆</a>
       <div class="header-actions">
-        <button id="settings-open" class="quiet-button" aria-label="開啟設定">設定 <span aria-hidden="true">☷</span></button>
         <div class="google-apps">
           <button id="google-apps-toggle" class="google-apps-toggle" type="button" aria-label="Google 應用程式" title="Google 應用程式" aria-expanded="false" aria-controls="google-apps-panel">
             <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><circle cx="5" cy="5" r="2"/><circle cx="12" cy="5" r="2"/><circle cx="19" cy="5" r="2"/><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="12" cy="19" r="2"/><circle cx="19" cy="19" r="2"/></svg>
           </button>
           <nav id="google-apps-panel" class="google-apps-panel" aria-label="Google 常用應用程式" hidden>
             <h2>Google 應用程式</h2>
-            <div class="google-apps-grid">
-              <a href="https://mail.google.com/" target="_blank" rel="noopener noreferrer" aria-label="Gmail（另開分頁）">
-                <svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285f4" d="M4 12h8v28H8a4 4 0 0 1-4-4z"/><path fill="#34a853" d="M36 12h8v24a4 4 0 0 1-4 4h-4z"/><path fill="#ea4335" d="M4 12a4 4 0 0 1 6-3l14 10L38 9a4 4 0 0 1 6 3v6L24 32 4 18z"/></svg>
-                <span>Gmail</span>
-              </a>
-              <a href="https://drive.google.com/" target="_blank" rel="noopener noreferrer" aria-label="雲端硬碟（另開分頁）">
-                <svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#0f9d58" d="M17 4h14L12 37H0z"/><path fill="#fbbc04" d="m31 4 17 30-7 12-17-30z"/><path fill="#4285f4" d="M12 25h24l7 12-7 7H7L0 32l4-7z"/><path fill="#fff" d="m24 16 6 10H18z"/></svg>
-                <span>雲端硬碟</span>
-              </a>
-              <a href="https://calendar.google.com/" target="_blank" rel="noopener noreferrer" aria-label="Google 日曆（另開分頁）">
-                <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="4" y="5" width="40" height="39" rx="5" fill="#4285f4"/><path fill="#fff" d="M11 14h26v23H11z"/><path fill="#34a853" d="M11 37h26v7H11z"/><path fill="#fbbc04" d="M37 14h7v23h-7z"/><path fill="#ea4335" d="M37 37h7l-7 7z"/><text x="24" y="31" fill="#1a73e8" font-family="Arial,sans-serif" font-size="19" text-anchor="middle">31</text></svg>
-                <span>日曆</span>
-              </a>
-            </div>
+            <div class="google-apps-grid"></div>
             <p>在新分頁開啟 Google 服務</p>
           </nav>
         </div>
+        <button id="settings-open" class="quiet-button" aria-label="開啟設定">設定 <span aria-hidden="true">☷</span></button>
       </div>
     </header>
     <main class="mx-auto w-full max-w-2xl px-6 text-center">
@@ -95,6 +82,10 @@
 <p id="personal-history-count">正在讀取…</p>
 <p class="settings-note">匯入 history-personal.json，紀事只儲存在這台裝置。匯入成功後立即生效，預設私人 → 台灣 → 國際，可在「紀事來源與順序」調整，預設顯示三則，可按「顯示更多」查看當天全部紀事。移除擴充功能會刪除本機資料。</p>
 <button id="personal-history-export" type="button" disabled>匯出目前紀事備份</button>
+<div class="personal-history-tool">
+<a href="https://bruce-yang-422.github.io/Taiwan-Today/#converter" target="_blank" rel="noopener noreferrer">前往官網製作 JSON <span aria-hidden="true">↗</span></a>
+<p>還沒有檔案？下載 CSV／Excel 範本，轉成 JSON 後回到這裡匯入。</p>
+</div>
 <label for="personal-history-file">選擇個人歷史 JSON（最大 5 MB）</label>
 <input id="personal-history-file" type="file" accept=".json,application/json" disabled>
 <ul id="personal-history-preview" aria-label="前五筆紀事預覽"></ul>
@@ -103,11 +94,14 @@
 </dialog>
 <dialog id="settings-dialog" aria-labelledby="settings-title">
 <h2 id="settings-title">留一頁，喜歡的樣子</h2>
-<div class="settings-columns">
-<section class="settings-column" aria-labelledby="settings-appearance-heading">
-<h3 id="settings-appearance-heading">外觀與閱讀</h3>
-
-      <fieldset id="appearance" disabled>
+<div class="settings-tabs" role="tablist" aria-label="設定分類">
+<button type="button" role="tab" id="settings-tab-appearance" aria-controls="settings-panel-appearance" aria-selected="true" tabindex="0">外觀</button>
+<button type="button" role="tab" id="settings-tab-content" aria-controls="settings-panel-content" aria-selected="false" tabindex="-1">內容</button>
+<button type="button" role="tab" id="settings-tab-data" aria-controls="settings-panel-data" aria-selected="false" tabindex="-1">資料管理</button>
+<button type="button" role="tab" id="settings-tab-about" aria-controls="settings-panel-about" aria-selected="false" tabindex="-1">關於</button>
+</div>
+<div class="settings-panels">
+<section class="settings-column" role="tabpanel" id="settings-panel-appearance" aria-labelledby="settings-tab-appearance" tabindex="0">      <fieldset id="appearance" disabled>
         <legend>外觀</legend>
         <div class="appearance-segments">
           <span class="appearance-slider" aria-hidden="true"></span>
@@ -116,28 +110,40 @@
           <label><input type="radio" name="appearance" value="dark" /><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14A9 9 0 0 1 10 3.5 9 9 0 1 0 20.5 14Z"/></svg>暗色</span></label>
         </div>
       </fieldset>
-      <label for="calendar-style">日曆樣式</label><select id="calendar-style"><option value="classic">留白日常</option><option value="modern">日常方格</option><option value="traditional">歲月紙曆</option><option value="workspace">月序手帖</option><option value="reading">時光讀本</option></select><label for="text-size">文字大小</label><select id="text-size" disabled><option value="standard">標準</option><option value="large">大字</option></select><label for="week-start">月曆每週起始日</label><select id="week-start" disabled><option value="0">星期日（預設）</option><option value="1">星期一</option></select><label for="quote-category">每日一句分類</label><select id="quote-category" disabled><option value="daily">每日提醒</option><option value="sheng-yen">聖嚴法師語錄</option><option value="negative">負能量（幽默）</option><option value="classics">四書五經</option></select><section class="data-update-settings" aria-labelledby="data-update-heading">
-<h3 id="data-update-heading">公共資料更新</h3>
-<p class="display-description">從 Taiwan-Today 的 GitHub 下載歷史、語錄、節日與年度日曆。只更新公共 JSON，不上傳或覆蓋私人紀事。</p>
-<label class="data-update-auto"><input id="data-update-auto" type="checkbox" disabled />每日自動檢查（開啟新分頁時）</label>
-<button id="data-update-now" type="button" disabled>立即更新</button>
-<p id="data-update-version" class="display-description">目前使用隨插件附帶的資料</p>
-<p id="data-update-status" class="display-description" role="status" aria-live="polite"></p>
-</section><p class="settings-note">每日一句可在五種樣式顯示；秒針開關不影響數字時鐘。日期以台灣時間顯示。設定、捷徑與待辦只儲存在這台裝置，不傳送搜尋或瀏覽紀錄。</p></section>
-<section class="settings-column" aria-labelledby="settings-content-heading">
-<h3 id="settings-content-heading">內容與紀事</h3>
-<fieldset id="display-options" disabled>
+      <label for="calendar-style">日曆樣式</label><select id="calendar-style"><option value="classic">留白日常</option><option value="modern">日常方格</option><option value="traditional">歲月紙曆</option><option value="workspace">月序手帖</option><option value="reading">時光讀本</option></select><label for="text-size">文字大小</label><select id="text-size" disabled><option value="standard">標準</option><option value="large">大字</option></select><label for="week-start">月曆每週起始日</label><select id="week-start" disabled><option value="0">星期日（預設）</option><option value="1">星期一</option></select></section>
+<section class="settings-column" role="tabpanel" id="settings-panel-content" aria-labelledby="settings-tab-content" tabindex="0" hidden><label for="quote-category">每日一句分類</label><select id="quote-category" disabled><option value="daily">每日提醒</option><option value="sheng-yen">聖嚴法師語錄</option><option value="negative">負能量（幽默）</option><option value="classics">四書五經</option></select><fieldset id="display-options" disabled>
 <legend>顯示內容</legend>
 <p class="display-description">五種樣式共用；關閉顯示不會刪除資料。</p>
 <label><span>歷史上的今天</span><input id="show-history" type="checkbox" role="switch" checked /></label>
 <label><span>每日一句</span><input id="show-quote" type="checkbox" role="switch" checked /></label>
 <label><span>今日待辦</span><input id="show-todos" type="checkbox" role="switch" checked /></label>
 <label><span>指針時鐘秒針</span><input id="show-second-hand" type="checkbox" role="switch" checked /></label>
-</fieldset><fieldset id="history-sources" disabled><legend>紀事來源與順序</legend><p class="display-description">勾選要顯示的來源，以箭頭調整優先順序。前三則與展開列表皆依此排列，關閉不會刪除紀事。</p><ol id="history-sources-list"></ol></fieldset><button id="personal-history-open" class="personal-history-open" type="button" aria-label="匯入個人歷史 JSON" aria-describedby="personal-history-open-hint">
+</fieldset><fieldset id="history-sources" disabled><legend>紀事來源與順序</legend><p class="display-description">勾選要顯示的來源，以箭頭調整優先順序。前三則與展開列表皆依此排列，關閉不會刪除紀事。</p><ol id="history-sources-list"></ol></fieldset></section>
+<section class="settings-column" role="tabpanel" id="settings-panel-data" aria-labelledby="settings-tab-data" tabindex="0" hidden><section class="data-update-settings" aria-labelledby="data-update-heading">
+<h3 id="data-update-heading">公共資料更新</h3>
+<p class="display-description">從 Taiwan-Today 的 GitHub 下載歷史、語錄、節日與年度日曆。只更新公共 JSON，不上傳或覆蓋私人紀事。</p>
+<label class="data-update-auto"><input id="data-update-auto" type="checkbox" disabled />每日自動檢查（開啟新分頁時）</label>
+<button id="data-update-now" type="button" disabled>立即更新</button>
+<p id="data-update-version" class="display-description">目前使用隨插件附帶的資料</p>
+<p id="data-update-status" class="display-description" role="status" aria-live="polite"></p>
+</section><button id="personal-history-open" class="personal-history-open" type="button" aria-label="匯入個人歷史 JSON" aria-describedby="personal-history-open-hint">
 <span class="import-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V3m-4 4 4-4 4 4M4 14v5a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5"/></svg></span>
 <span class="import-copy"><span class="import-title">匯入個人歷史 <span class="import-format">JSON</span></span><span id="personal-history-open-hint" class="import-hint">從檔案加入你與家人的紀事</span></span>
 <svg class="import-chevron" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m9 5 7 7-7 7"/></svg>
-</button></section>
+</button>
+<p class="settings-note">設定、捷徑與待辦只儲存在這台裝置，不傳送搜尋或瀏覽紀錄。</p></section>
+<section class="settings-column" role="tabpanel" id="settings-panel-about" aria-labelledby="settings-tab-about" tabindex="0" hidden>
+<p class="display-description">Taiwan Today · 留一頁，給今天。</p>
+<dl class="about-info">
+<div><dt>作者</dt><dd id="about-author"></dd></div>
+<div><dt>插件版本</dt><dd id="about-version"></dd></div>
+<div><dt>資料版本</dt><dd id="about-data-version"></dd></div>
+<div><dt>資料發布時間</dt><dd id="about-data-updated"></dd></div>
+<div><dt>授權</dt><dd>ISC License</dd></div>
+</dl>
+<p class="about-links"><a href="https://github.com/bruce-yang-422/Taiwan-Today" target="_blank" rel="noopener noreferrer">專案首頁 ↗</a><a href="https://github.com/bruce-yang-422/Taiwan-Today/issues" target="_blank" rel="noopener noreferrer">問題回報 ↗</a></p>
+<details class="about-file-details"><summary>各資料檔版本</summary><dl id="about-data-files" class="about-info"></dl><p id="about-data-files-note" class="display-description" hidden>目前資料缺少逐檔版本資訊。請至「資料管理」按「立即更新」；遠端資料提供版本後即可顯示。</p></details>
+</section>
 </div>
 <div class="dialog-actions"><button class="primary" data-close="settings-dialog">完成</button></div></dialog>
   </body>

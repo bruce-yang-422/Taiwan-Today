@@ -2,6 +2,33 @@ import { test, expect } from '@playwright/test';
 import { readFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 
+test('permission denial preserves data and a later grant proceeds with the update', async ({ page, context }) => {
+  await page.addInitScript(() => {
+    let attempts = 0, granted = false;
+    Object.defineProperty(window, 'chrome', { configurable: true, value: {
+      runtime: { id: 'test-extension', getURL: (path: string) => `${location.origin}${path}` },
+      permissions: {
+        request: async () => { granted = ++attempts > 1; return granted; },
+        contains: async () => granted,
+      },
+    } });
+  });
+  const remote = release('授權後更新'); let requests = 0;
+  await context.route('https://raw.githubusercontent.com/**', async route => {
+    requests++;
+    const name = new URL(route.request().url()).pathname.split('/').pop()!;
+    await route.fulfill({ contentType: 'application/json', body: name === 'update-manifest.json' ? JSON.stringify(remote.manifest) : remote.bodies[name] });
+  });
+  await page.goto('/newtab.html');
+  await page.locator('#settings-open').click();
+  await page.locator('#data-update-now').click();
+  await expect(page.locator('#data-update-status')).toContainText('未允許 GitHub');
+  expect(requests).toBe(0);
+  expect(await page.evaluate(() => localStorage.getItem('publicDataCache'))).toBeNull();
+  await page.locator('#data-update-now').click();
+  await expect(page.locator('#data-update-status')).toContainText('資料更新完成');
+});
+
 const names = ['history-taiwan.json','history-world.json','quotes.json','festivals.json','holidays.json','long-holidays.json','calendar-2026.json','calendar-2027.json'];
 function release(marker: string, invalid = false) {
   const bodies: Record<string,string> = {};
@@ -12,9 +39,9 @@ function release(marker: string, invalid = false) {
     if (invalid && name === 'festivals.json') value[0].calendar = 'execute-code';
     bodies[name] = JSON.stringify(value);
   }
-  const files = names.map(name=>({name,bytes:Buffer.byteLength(bodies[name]),sha256:createHash('sha256').update(bodies[name]).digest('hex')}));
+  const files = names.map(name=>({name,version:'1.2.3',updatedAt:'2026-09-21T00:00:00Z',bytes:Buffer.byteLength(bodies[name]),sha256:createHash('sha256').update(bodies[name]).digest('hex')}));
   const revision = createHash('sha256').update(JSON.stringify(files)).digest('hex');
-  return { bodies, manifest: {schemaVersion:1,revision,files} };
+  return { bodies, manifest: {schemaVersion:1,version:'1.2.3',updatedAt:'2026-09-21T00:00:00Z',revision,files} };
 }
 
 test('public updates commit a complete validated cache and preserve private data offline', async ({ page, context }) => {
@@ -75,6 +102,13 @@ test('automatic public updates are opt-in and limited to once per day', async ({
   await expect(page.locator('#data-update-auto')).not.toBeChecked();expect(checks).toBe(0);
   await page.locator('#data-update-auto').check();
   await expect(page.locator('#data-update-status')).toContainText('資料更新完成');expect(checks).toBe(1);
+  await page.locator('.about-settings>summary').click();
+  await expect(page.locator('#about-author')).toHaveText('Bruce Yang');
+  await expect(page.locator('#about-version')).toHaveText('1.0.0');
+  await expect(page.locator('#about-data-version')).toHaveText('v1.2.3 · GitHub 更新');
+  await page.locator('.about-file-details>summary').click();
+  await expect(page.locator('#about-data-files>div')).toHaveCount(8);
+  await expect(page.locator('#about-data-files dd').first()).toHaveText('v1.2.3');
   await page.reload();await page.locator('#settings-open').click();
   await expect(page.locator('#data-update-auto')).toBeChecked();
   await expect(page.locator('#data-update-now')).toBeEnabled();expect(checks).toBe(1);

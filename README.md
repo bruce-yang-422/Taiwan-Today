@@ -1,6 +1,6 @@
 # 台灣今日曆
 
-以 Vite、TypeScript、Tailwind CSS 與 Manifest V3 實作的 Chrome 新分頁。無後端、無帳號、無追蹤，使用 `storage` 與 `favicon` 權限，並允許連線至 GitHub Raw 下載公共 JSON 資料。
+以 Vite、TypeScript、Tailwind CSS 與 Manifest V3 實作的 Chrome 新分頁。無後端、無帳號、無追蹤，離線可用，可選擇連線更新公共資料；使用 `storage` 與 `favicon` 權限，連線更新則另需授權 GitHub Raw 連線。
 
 ## 安裝
 
@@ -30,9 +30,9 @@ npm run test:e2e
 
 ## 已實作
 
-- 右上角提供 Gmail、雲端硬碟與 Google 日曆的小圖示捷徑，可直接另開分頁；滑鼠停留顯示名稱。旁邊保留 Google 應用程式九宮格，支援鍵盤操作、Esc 與點外側關閉，無需額外權限。
+- 右上角提供 Gmail、雲端硬碟與 Google 日曆的小圖示捷徑，可直接另開分頁；滑鼠停留顯示名稱。自訂 Google 應用程式九宮格收錄 41 個服務，以常用通訊、影音、搜尋及文件工具優先，商務工具靠後（編輯預設順序，非官方熱門排名）；支援選單內捲動、鍵盤操作、Esc 與點外側關閉。圖示隨插件打包，不讀取 Google 帳戶或同步官方最愛，無需額外權限；來源見 [Google 圖示紀錄](public/icons/google/SOURCES.md)。
 
-- 設定視窗在桌面採兩欄：外觀與閱讀／內容與紀事；窄螢幕改為單欄，完成按鈕固定在視窗底部。
+- 設定視窗以圓角頁籤分成「外觀、內容、資料管理、關於」，支援左右方向鍵與 Home／End 切換；適用筆電與手機，完成按鈕固定在視窗底部。
 
 - 「設定 → 紀事來源與順序」可開關來源並以上下箭頭排序，預設私人 → 台灣 → 國際；前三則及展開列表皆依已開啟來源的順序顯示。設定會保存並跨分頁同步，關閉不會刪除資料。
 
@@ -42,6 +42,7 @@ npm run test:e2e
 
 - 月曆預設以星期日為每週第一天，可在「設定 → 月曆每週起始日」改為星期一，設定自動保存。
 - 五種日曆樣式：留白日常、日常方格、歲月紙曆、月序手帖、時光讀本，皆可搭配亮色／暗色。
+- 五種樣式提供筆電緊湊排版，縮減卡片、日期、捷徑及區塊間距；以 1366×768、標準字級、2026/09/21 三則歷史與負能量語錄驗證可完整顯示。大字、更多紀事或較長內容仍可自然捲動，不裁切文字。
 - 留白日常保留最初的米色背景、置中日期與時鐘、小型捷徑及無卡片外框的歷史紀事。
 - 月序手帖：左側網站捷徑、中央國曆與農曆月曆、右側日期、大指針時鐘及待辦；可切換月份、選取日期查看農曆與歷史，或按「今天」返回。右欄標示「選取日期」與完整年月日；「現在時間 · 台灣」、「今日待辦」及「今日語錄」仍以今天為準，並顯示今天日期與說明，待辦共用同一份清單且跨日保留。
 - 時光讀本：深藍日期側欄、每日一句、歷史時間軸，底部提供搜尋與捷徑。每日一句可在設定選擇「每日提醒、聖嚴法師語錄、負能量（幽默）、四書五經」，於五種樣式皆可顯示；分類自動保存，依台灣日期在所選分類內輪替。
@@ -65,6 +66,12 @@ npm run test:e2e
 ## 資料與範圍
 
 ### GitHub 公共資料更新
+
+`data/versions.json` 集中記錄每份資料 JSON 的 `version`、`updatedAt` 與 `sha256`，原始陣列／物件格式保持相容。版本從 `1.0.0` 起，有內容變更的檔案自動遞增修訂號（例如 `1.0.1`），未變更則保留版本與日期。`history-personal.json` 只記錄內建範本版本，不包含使用者本機匯入內容，也不提供遠端更新。
+
+`npm run data:prepare-update` 會同時產生逐檔版本與公共資料整批版本；`npm run build` 也會自動執行。請一併提交 `versions.json`、`update-manifest.json` 及修改的資料。設定中的「關於台灣今日曆」提供作者、插件版本、目前使用的資料版本、發布時間、逐檔版本、授權與專案／問題回報連結；插件版本取自 `manifest.json`，與資料版本分開維護。
+
+首次點「立即更新」或啟用每日檢查時，Chrome 會要求 GitHub 連線授權；允許後才下載，拒絕則保留原資料。若舊版顯示 `connect-src 'none'`，請在 `chrome://extensions` 重新載入指向最新 `dist` 的擴充功能，關閉舊新分頁後重新開啟；單純重新整理頁面不會更新 manifest 政策。
 
 「設定 → 公共資料更新」可按「立即更新」，或開啟預設關閉的每日自動檢查。有新分頁開啟或返回前景時檢查，持續開啟時每小時確認是否已滿 24 小時；關閉所有新分頁後不會在背景下載。
 
@@ -96,12 +103,11 @@ node scripts/import-calendar.mjs --year 2027 --csv path/to/116-calendar.csv
 
 `npm run data:import` 預設重建 2027 年。腳本會檢查全年日期、星期、放假欄位、24 節氣及已收錄的連假日次；沒有官方放假資料時會停止。
 新增其他年度時，另須整理 `holidays.json` 的節日／補假名稱、`long-holidays.json` 的官方連假區間；更新清單會自動納入 `calendar-YYYY.json`（1900～2100 年），已升級的插件可直接下載使用。若要讓新年度隨安裝包附帶，另於 `src/data/publicData.ts` 加入該年匯入。
-資料來源與核對結果見 [日曆資料整理紀錄](docs/calendar-data-review.md)。
 
 曆法使用本機打包的 [lunar-typescript](https://github.com/6tail/lunar-typescript)（MIT），未引用其中國大陸假日或宜忌資料。
 
-`data/history-taiwan.json` 與 `data/history-world.json` 合計收錄 150 筆「歷史上的今天」紀事，其中台灣 99 筆（66%）、國際 51 筆（34%），涵蓋 9～12 月每天 1～3 則（另保留 2/28），以重大政治、社會、科學、文化及體育事件為主；其餘月份尚未收錄，會顯示空狀態。執行
-`npm run data:check-history` 可檢查資料完整性，整理原則見 [歷史資料整理紀錄](docs/history-data-review.md)。
+`data/history-taiwan.json` 與 `data/history-world.json` 合計收錄 193 筆「歷史上的今天」紀事，其中台灣 129 筆（67%）、國際 64 筆（33%）。9～12 月每天皆有 1～3 則；1～8 月目前為精選重大事件，僅涵蓋部分日期，尚未每天有內容，缺少資料的日期會顯示空狀態。內容以重大政治、社會、科學、文化及體育事件為主，執行
+`npm run data:check-history` 可檢查資料完整性。
 
 YouTube、PChome、GitHub 捷徑內建 favicon；其他捷徑透過 [Chrome 內建 favicon 功能](https://developer.chrome.com/docs/extensions/how-to/ui/favicons)取得，也可自行匯入 PNG / ICO（最大 64 KB）。無雲端同步，資料保存在本機。
 
@@ -120,13 +126,15 @@ zh_TW。新增語系時在 `_locales/` 下建立對應資料夾即可，`vite.co
   介面供未來主題擴充）、個人歷史 JSON 驗證（`personalHistory.ts`）。
 - `src/shortcuts/`：捷徑資料驗證與儲存（`chrome.storage.local` / `localStorage`）。
 - `src/search/`：搜尋網址組成與自訂捷徑網址驗證。
-- `src/newtab/`：畫面與互動主體（`newtab.ts`）、指針時鐘（`clock.ts`）、工作便利貼（`todos.ts`）、個人歷史匯入／匯出對話框（`personalHistory.ts`）、月序手帖與時光讀本版面（`concepts.ts`）；樣式依版面拆分為
-  `newtab.css`（留白日常）、`modern.css`（日常方格）、`traditional.css`（歲月紙曆）、`concepts.css`（月序手帖／時光讀本）。
-- `data/`：離線日曆（`calendar-2026.json`、`calendar-2027.json`）、節日與連假規則、歷史紀事（`history-taiwan.json`、`history-world.json`、`history-personal.json`）與每日一句 JSON。
+- `src/data/`：公共資料格式定義與套用（`publicData.ts`）、GitHub 更新下載與快取（`updates.ts`）。
+- `src/newtab/`：畫面與互動主體（`newtab.ts`）、指針時鐘（`clock.ts`）、工作便利貼（`todos.ts`）、個人歷史匯入／匯出對話框（`personalHistory.ts`）、紀事來源開關與排序（`historySources.ts`）、公共資料更新面板（`dataUpdates.ts`）、Google 應用程式九宮格（`googleApps.ts` 搭配 `googleServices.ts` 服務清單）、月序手帖與時光讀本版面（`concepts.ts`）；樣式依版面拆分為
+  `newtab.css`（留白日常）、`modern.css`（日常方格）、`traditional.css`（歲月紙曆）、`concepts.css`（月序手帖／時光讀本）、`googleApps.css`（Google 應用程式選單）、`readability.css`（文字大小與閱讀相關樣式）。
+- `data/`：離線日曆（`calendar-2026.json`、`calendar-2027.json`）、節日與連假規則、歷史紀事（`history-taiwan.json`、`history-world.json`、`history-personal.json`）、每日一句與公共資料更新清單（`update-manifest.json`）。
 - `public/icons/`：應用程式圖示 `taiwan-today.png`（擴充功能與左上角標誌）、`taiwan-today.ico`（分頁圖示），以及內建捷徑的 favicon 與來源紀錄。
 - `_locales/`：擴充功能名稱與說明的中英文語系檔。
 - `scripts/import-calendar.mjs`：依年份重建日曆資料，並可用官方 CSV 核對放假旗標。
 - `scripts/validate-history.mjs`：歷史紀事欄位、重複與月份覆蓋檢查。
+- `scripts/prepare-data-update.mjs`：驗證公共 JSON 並產生 `data/update-manifest.json`，供使用者端下載更新比對。
 - `tests/`：曆法及安全邊界單元測試、瀏覽器操作與真實 MV3 離線載入測試。
 - `index.html`、`docs/site/`：可部署到 GitHub Pages 的專案介紹網站，含 CSV／XLSX 轉個人歷史 JSON 的本機轉換工具。
 
@@ -140,6 +148,7 @@ zh_TW。新增語系時在 `_locales/` 下建立對應資料夾即可，`vite.co
 
 歷史資料分為 `data/history-taiwan.json`（台灣）、`data/history-world.json`（國際）與 `data/history-personal.json`（個人／家族，預設空陣列）。使用者可透過「設定 → 匯入個人歷史 JSON」選檔、預覽並取代本機個人紀事，立即生效，無需重新建置；支援匯出備份、跨分頁同步，匯入空陣列 `[]` 可清空。檔案最大 5 MB、10,000 筆；格式或儲存錯誤會保留原資料。未曾匯入時使用隨程式附帶的個人 JSON，匯入後以本機資料為準。預設顯示三則，預設私人優先，其次台灣、國際，可依使用者開啟的來源調整順序；可按「顯示更多」展開當天全部紀事，再按「收合紀事」恢復三則，切換日期會自動收合；不要將私人資料推送到公開儲存庫。
 
-未來科技、半導體、PC、手機與影音娛樂主題已預留 `HistoryDataset` 介面；目前尚未提供主題內容；資料集登錄後會自動列入來源開關與排序清單，詳見 [歷史主題擴充規劃](docs/history-topics-plan.md)。
+除了台灣、國際與個人紀事，未來規劃再加入以特定領域為主題的「主題紀事」，讓有興趣的使用者可以額外開啟。初步構想的方向包含科技發展（例如半導體產業、個人電腦變革、手機發表與上市等產業里程碑）與影音娛樂（例如經典戲劇、歌曲、電影的上映或發行紀念日），性質與現有的台灣、國際紀事類似，同樣每天精選少量事件，而非鉅細靡遺的清單。程式已預留 `HistoryDataset`
+這個資料集介面，往後新增主題時可以直接登錄成一個獨立資料集，讓它自動出現在「設定 → 紀事來源與順序」的開關清單中，使用者能自行決定要不要開啟；不需要修改既有的台灣、國際或個人紀事資料，也不影響原本的顯示邏輯。目前這項功能仍在規劃階段，尚未收錄任何主題內容，也不會有額外的網路連線或權限需求。
 
 部署：將網站檔案提交後，在 GitHub 儲存庫 **Settings → Pages → Deploy from a branch → main / (root) → Save**。預期網址為 `https://bruce-yang-422.github.io/Taiwan-Today/`（需啟用 Pages 才會生效）。網站不依賴擴充功能建置，無需部署 `dist/`。本機預覽可執行 `python -m http.server 8080`，再開啟 `http://localhost:8080/`。

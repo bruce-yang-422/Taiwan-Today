@@ -1,6 +1,7 @@
 import { applyPublicData } from '../data/publicData';
 import { CACHE_KEY, fetchPublicUpdate, parseCache, type DataCache } from '../data/updates';
 import { extensionStorage, readStorage, writeStorage } from '../shortcuts/storage';
+import { renderAbout } from './about';
 
 export async function initializeDataUpdates(refresh: () => void) {
   const button = document.getElementById('data-update-now') as HTMLButtonElement;
@@ -10,7 +11,8 @@ export async function initializeDataUpdates(refresh: () => void) {
   let cache: DataCache | undefined, busy = false, ready = false, revision = 0;
   function controls() { button.disabled = auto.disabled = busy || !ready; }
   function showVersion() {
-    version.textContent = cache ? `資料版本 ${cache.revision.slice(0, 8)} · 更新於 ${new Date(cache.updatedAt).toLocaleString('zh-TW', { timeZone: 'Asia/Taipei' })}` : '目前使用隨插件附帶的資料';
+    const label = renderAbout(cache);
+    version.textContent = cache ? `資料版本 ${label} · 下載於 ${new Date(cache.updatedAt).toLocaleString('zh-TW', { timeZone: 'Asia/Taipei' })}` : `隨插件附帶的資料 · ${label}`;
   }
   async function load() {
     const token = ++revision;
@@ -34,7 +36,7 @@ export async function initializeDataUpdates(refresh: () => void) {
         if (!manual && typeof last === 'number' && Date.now() - last < 86400000) return;
         await writeStorage('dataUpdateLastAttempt', Date.now());
         status.textContent = '正在檢查 GitHub 資料…';
-        const result = await fetchPublicUpdate(cache?.revision);
+        const result = await fetchPublicUpdate(cache?.manifest?.version ? cache.revision : undefined);
         if (!result) { status.textContent = '已是最新資料。'; return; }
         // One storage write commits the complete validated snapshot; never partial files.
         await writeStorage(CACHE_KEY, result.cache);
@@ -45,10 +47,29 @@ export async function initializeDataUpdates(refresh: () => void) {
       status.textContent = `更新未完成，保留原資料。${error instanceof Error ? error.message : '請稍後重試。'}`;
     } finally { busy = false; controls(); }
   }
-  button.addEventListener('click', () => void update(true));
+  // Call request synchronously from the user gesture, before any storage awaits.
+  function requestAccess(): Promise<boolean> {
+    if (typeof chrome !== 'undefined' && chrome.runtime?.id && chrome.permissions) {
+      return chrome.permissions.request({ origins: ['https://raw.githubusercontent.com/*'] });
+    }
+    return Promise.resolve(true);
+  }
+  const deniedMessage = '未允許 GitHub 連線，保留原資料。需要更新時可再次按「立即更新」並允許。';
+  button.addEventListener('click', async () => {
+    if (busy || !ready) return;
+    busy = true; controls();
+    let granted = false;
+    try { granted = await requestAccess(); if (!granted) status.textContent = deniedMessage; }
+    catch { status.textContent = '無法開啟授權視窗。請到 chrome://extensions 重新載入新版擴充功能，再開啟新分頁重試。'; }
+    finally { busy = false; controls(); }
+    if (granted) void update(true);
+  });
   auto.addEventListener('change', async () => {
     busy = true; controls();
-    try { await writeStorage('autoDataUpdate', auto.checked); status.textContent = auto.checked ? '已開啟每日檢查，現在檢查更新。' : '已關閉自動檢查，仍保留已下載資料。'; }
+    try {
+      if (auto.checked && !await requestAccess()) { auto.checked = false; status.textContent = deniedMessage; return; }
+      await writeStorage('autoDataUpdate', auto.checked); status.textContent = auto.checked ? '已開啟每日檢查，現在檢查更新。' : '已關閉自動檢查，仍保留已下載資料。';
+    }
     catch { auto.checked = !auto.checked; status.textContent = '無法儲存自動更新設定。'; }
     finally { busy = false; controls(); }
     if (auto.checked) void update(true);
@@ -57,6 +78,7 @@ export async function initializeDataUpdates(refresh: () => void) {
     if (area === 'local' && (changes[CACHE_KEY] || changes.autoDataUpdate)) void load();
   });
   else window.addEventListener('storage', event => { if ([CACHE_KEY, 'autoDataUpdate'].includes(event.key ?? '')) void load(); });
+  showVersion();
   await load();
   void update(false);
   document.addEventListener('visibilitychange', () => { if (!document.hidden) void update(false); });

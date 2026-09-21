@@ -1,46 +1,64 @@
 {
   "schemaVersion": 1,
+  "version": "1.0.0",
+  "updatedAt": "2026-09-21T08:19:32.297Z",
   "revision": "2fa8bad6e885cc54007cc2ee92fdf434703506b15b04309e968e23524ca1167c",
   "files": [
     {
       "name": "calendar-2026.json",
       "sha256": "8726565005f2838654b4cb093646f4d33ea4ead9211d7d54b62d37e3097ab01d",
-      "bytes": 51162
+      "bytes": 51162,
+      "version": "1.0.0",
+      "updatedAt": "2026-09-21T08:19:32.297Z"
     },
     {
       "name": "calendar-2027.json",
       "sha256": "1872a654bf6db013bc1b7e1c5214fc99250e0c94714c6634457d0adecde44404",
-      "bytes": 50849
+      "bytes": 50849,
+      "version": "1.0.0",
+      "updatedAt": "2026-09-21T08:19:32.297Z"
     },
     {
       "name": "festivals.json",
       "sha256": "943f3c759b3ec9ffbfd62da4236c02868d62414ba5c2c133f0962ae452425668",
-      "bytes": 5799
+      "bytes": 5799,
+      "version": "1.0.0",
+      "updatedAt": "2026-09-21T08:19:32.297Z"
     },
     {
       "name": "history-taiwan.json",
       "sha256": "db102e1d73edaf79f73e9e6b37800fd140d6407248fbe33d6c79e3d322542ba3",
-      "bytes": 70895
+      "bytes": 70895,
+      "version": "1.0.0",
+      "updatedAt": "2026-09-21T08:19:32.297Z"
     },
     {
       "name": "history-world.json",
       "sha256": "ce2891f7e93beb7237f3b6fcbce2c2cb9c5284e88f8650d5b9b29abe1e08b6fd",
-      "bytes": 33383
+      "bytes": 33383,
+      "version": "1.0.0",
+      "updatedAt": "2026-09-21T08:19:32.297Z"
     },
     {
       "name": "holidays.json",
       "sha256": "28d87cb19bc6d7a09d48c40fd43a4daac1b5c292df08670bebc1d17f109394b8",
-      "bytes": 2250
+      "bytes": 2250,
+      "version": "1.0.0",
+      "updatedAt": "2026-09-21T08:19:32.297Z"
     },
     {
       "name": "long-holidays.json",
       "sha256": "bfe82178ef1eababc9b6a2dd6f9a204435a446410d044303b25a858be0cf7992",
-      "bytes": 2423
+      "bytes": 2423,
+      "version": "1.0.0",
+      "updatedAt": "2026-09-21T08:19:32.297Z"
     },
     {
       "name": "quotes.json",
       "sha256": "fa3de49fef68048778025b1d838013de6a4ca47f92f039dd0713b9adcac007ec",
-      "bytes": 47138
+      "bytes": 47138,
+      "version": "1.0.0",
+      "updatedAt": "2026-09-21T08:19:32.297Z"
     }
   ]
 }

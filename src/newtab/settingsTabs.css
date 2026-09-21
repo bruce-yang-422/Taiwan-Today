@@ -1,0 +1,29 @@
+:root[data-text-size] #settings-dialog { width:min(480px,calc(100% - 24px)); border-radius:20px; }
+#settings-dialog #settings-title { border:0; padding:20px 22px 14px; font-size:18px; font-weight:550; letter-spacing:.025em; }
+.settings-tabs { display:flex; flex-shrink:0; gap:3px; margin:0 22px; padding:4px; border:1px solid var(--line); border-radius:999px; background:var(--soft); }
+#settings-dialog .settings-tabs button { flex:1; min-width:0; padding:7px 6px; border:0; border-radius:999px; color:var(--muted); background:transparent; font-weight:500; white-space:nowrap; }
+#settings-dialog .settings-tabs button[aria-selected=true] { background:var(--paper); color:var(--accent); box-shadow:0 1px 4px #00000010,inset 0 0 0 1px var(--line); }
+#settings-dialog .settings-tabs button:focus-visible { outline:2px solid currentColor; outline-offset:-5px; }
+.settings-panels { min-height:0; overflow-y:auto; overscroll-behavior:contain; }
+.settings-panels .settings-column { padding:16px 22px 20px; border:0; }
+.settings-panels [role=tabpanel][hidden] { display:none; }
+#settings-dialog .settings-column>label:first-child { margin-top:0; }
+#settings-panel-data .data-update-settings { margin:0 0 20px; border:0; padding:0; }
+#settings-panel-about>p:first-child { margin-top:0; }
+@media(max-width:480px) {
+  .settings-tabs { margin-inline:16px; gap:0; }
+  #settings-dialog .settings-tabs button { padding:8px 4px; }
+  .settings-panels .settings-column { padding:16px 20px; }
+}
+
+:root[data-text-size=standard] #settings-dialog { --reading-control:13px; }
+#settings-dialog .settings-column>label { margin:12px 0 6px; }
+#settings-dialog select { padding:8px 11px; border-radius:10px; }
+#settings-dialog #appearance legend { margin-bottom:6px; }
+#settings-dialog #appearance label>span { padding:6px 4px; gap:6px; }
+#settings-dialog #appearance svg { width:16px; height:16px; }
+#settings-dialog>.dialog-actions { padding:10px 22px; }
+#settings-dialog .dialog-actions button { padding:7px 18px; letter-spacing:.025em; }
+#settings-dialog #display-options label { padding:6px 0; }
+#settings-dialog #history-sources { margin-top:16px; }
+#settings-dialog .settings-note { margin-top:12px; }

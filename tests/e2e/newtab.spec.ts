@@ -114,7 +114,7 @@ test('calendar workspace navigates dates and restores other layouts', async ({ p
   await expect(page.locator('.month-lunar')).toHaveCount(30);
   await expect(page.getByRole('button', { name: '2026-09-21', exact: true }).locator('.month-lunar')).toHaveText('十一');
   await expect(page.getByRole('button', { name: '2026-09-11', exact: true }).locator('.month-lunar')).toHaveText('八月初一');
-  expect((await page.locator('#analog-clock').boundingBox())!.width).toBe(140);
+  expect((await page.locator('#analog-clock').boundingBox())!.width).toBe(112);
   await expect(page.locator('.month-weekday')).toHaveText(['日', '一', '二', '三', '四', '五', '六']);
   expect(await page.getByRole('button', { name: '2026-09-01', exact: true }).evaluate(element => Array.from(element.parentElement!.children).indexOf(element) - 7)).toBe(2);
   await expect(page.getByRole('button', { name: '2026-09-06', exact: true })).toHaveClass(/weekend/);
