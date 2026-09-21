@@ -3,7 +3,7 @@ import { runInNewContext } from 'node:vm';
 
 const root = new URL('../', import.meta.url);
 const context = { exports: {} };
-runInNewContext(readFileSync(new URL('docs/site/vendor/xlsx.full.min.js', root), 'utf8'), context);
+runInNewContext(readFileSync(new URL('vendor/sheetjs/xlsx.full.min.js', root), 'utf8'), context);
 const XLSX = context.exports;
 const rows = [
   ['日期', '年份', '標題', '摘要', '分類', '關鍵字', '來源', '來源網址'],

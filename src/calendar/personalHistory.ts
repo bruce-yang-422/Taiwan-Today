@@ -20,8 +20,7 @@ export function parsePersonalHistory(value: unknown): HistoryEntry[] {
     const day = new Date(`${stamp}T00:00:00Z`);
     if (Number.isNaN(day.getTime()) || day.toISOString().slice(0, 10) !== stamp) return fail('日期不存在，請確認閏年與月份。');
     const title = text('title', 200, true), summary = text('summary', 5000, true);
-    const region = text('region', 20) || '個人';
-    if (!['個人', '家族', '台灣', '國際'].includes(region)) return fail('分類須為個人、家族、台灣或國際。');
+    const region = text('region', 40) || '個人';
     const sourceUrl = text('sourceUrl', 2048);
     if (sourceUrl) {
       try { const url = new URL(sourceUrl); if (url.protocol !== 'https:' || url.username || url.password) return fail('來源網址須為不含帳密的 HTTPS 網址。'); }

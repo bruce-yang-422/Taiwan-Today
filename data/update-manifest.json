@@ -1,78 +1,89 @@
 {
   "schemaVersion": 1,
   "version": "1.0.0",
-  "updatedAt": "2026-09-21T17:14:32.909+08:00",
-  "revision": "aa6ca56b7d456e6ab5d39c518454aca0a7da943150d11f2ad780002021fd0c0c",
+  "updatedAt": "2026-09-21T09:40:46.867Z",
+  "updatedAtTaiwan": "2026-09-21T17:40:46.867+08:00",
+  "revision": "f3dc224fd420c05fb416449c36562030c36a29ae3db87f2d4b2deb1c29fd369e",
   "files": [
     {
       "name": "calendar-2026.json",
       "sha256": "9d0badde77e8525d5f6065eeab87b8a81762e462371e8f932da099c6ea50c9e2",
       "bytes": 55844,
       "version": "1.0.0",
-      "updatedAt": "2026-09-21T17:10:04.106+08:00"
+      "updatedAt": "2026-09-21T09:10:04.106Z",
+      "updatedAtTaiwan": "2026-09-21T17:10:04.106+08:00"
     },
     {
       "name": "calendar-2027.json",
       "sha256": "28708a4d8473bea0f6f60ab4f9868098ae13d9d8b60f74f6d74a67655d2e4373",
       "bytes": 55501,
       "version": "1.0.0",
-      "updatedAt": "2026-09-21T17:10:04.106+08:00"
+      "updatedAt": "2026-09-21T09:10:04.106Z",
+      "updatedAtTaiwan": "2026-09-21T17:10:04.106+08:00"
     },
     {
       "name": "festivals.json",
       "sha256": "0f62971da9c4277b2fedbba15895ddaf3c3429e5ea45f6ab2de1ad0d67ecd546",
       "bytes": 6327,
       "version": "1.0.0",
-      "updatedAt": "2026-09-21T17:10:04.106+08:00"
+      "updatedAt": "2026-09-21T09:10:04.106Z",
+      "updatedAtTaiwan": "2026-09-21T17:10:04.106+08:00"
     },
     {
       "name": "history-entertainment.json",
-      "sha256": "8e90f0f5993ce39c97feffb84b7408b4fdc66b782da0e796f53a6f3fd28c8ff3",
-      "bytes": 4897,
+      "sha256": "d18ba6e6308ea9d547704e13d0d5701d099f42630a21e09322bbab0de96d9a3a",
+      "bytes": 16903,
       "version": "1.0.0",
-      "updatedAt": "2026-09-21T17:14:32.909+08:00"
+      "updatedAt": "2026-09-21T09:40:46.867Z",
+      "updatedAtTaiwan": "2026-09-21T17:40:46.867+08:00"
     },
     {
       "name": "history-taiwan.json",
       "sha256": "9cc5fd952178344abeba7b47600c2c35e7cc9d2571be3b3161dd23505f542d58",
       "bytes": 73561,
       "version": "1.0.0",
-      "updatedAt": "2026-09-21T17:10:04.106+08:00"
+      "updatedAt": "2026-09-21T09:10:04.106Z",
+      "updatedAtTaiwan": "2026-09-21T17:10:04.106+08:00"
     },
     {
       "name": "history-tech.json",
       "sha256": "f1e58dbfbe120a66a7b1eff403183fbc569c138f12e5cadf5ca25820a042d20d",
       "bytes": 2724,
       "version": "1.0.0",
-      "updatedAt": "2026-09-21T17:10:04.106+08:00"
+      "updatedAt": "2026-09-21T09:10:04.106Z",
+      "updatedAtTaiwan": "2026-09-21T17:10:04.106+08:00"
     },
     {
       "name": "history-world.json",
       "sha256": "3ac4c619df18902dec01561fa09d8084127ebff6637788d29b2ddccd14cdf78c",
       "bytes": 34749,
       "version": "1.0.0",
-      "updatedAt": "2026-09-21T17:10:04.106+08:00"
+      "updatedAt": "2026-09-21T09:10:04.106Z",
+      "updatedAtTaiwan": "2026-09-21T17:10:04.106+08:00"
     },
     {
       "name": "holidays.json",
       "sha256": "8067090e3cf047a6f357a8a6a29f3d79763ef634cd5c8dfacd0da11cbd4fe2ca",
       "bytes": 2442,
       "version": "1.0.0",
-      "updatedAt": "2026-09-21T17:10:04.106+08:00"
+      "updatedAt": "2026-09-21T09:10:04.106Z",
+      "updatedAtTaiwan": "2026-09-21T17:10:04.106+08:00"
     },
     {
       "name": "long-holidays.json",
       "sha256": "baea1f3d11d72ba8c82a5f99199c023b6a0061df5bc370143b7cfb99ad324508",
       "bytes": 2731,
       "version": "1.0.0",
-      "updatedAt": "2026-09-21T17:10:04.106+08:00"
+      "updatedAt": "2026-09-21T09:10:04.106Z",
+      "updatedAtTaiwan": "2026-09-21T17:10:04.106+08:00"
     },
     {
       "name": "quotes.json",
       "sha256": "d211cd5262630cecc3935666a7cad92afedf048daf0a8a43dff686b1ea63e4f2",
       "bytes": 50750,
       "version": "1.0.0",
-      "updatedAt": "2026-09-21T17:10:04.106+08:00"
+      "updatedAt": "2026-09-21T09:10:04.106Z",
+      "updatedAtTaiwan": "2026-09-21T17:10:04.106+08:00"
     }
   ]
 }

@@ -18,7 +18,7 @@ for (const item of personal) {
   const date = new Date(`${stamp}T00:00:00Z`);
   assert(!Number.isNaN(date.getTime()) && date.toISOString().slice(0,10) === stamp, 'Invalid personal calendar date');
   for (const field of ['title', 'summary']) assert(typeof item[field] === 'string' && item[field].trim(), `Missing personal ${field}`);
-  assert(['個人', '家族', '台灣', '國際'].includes(item.region), 'Invalid personal region');
+  assert(item.region === undefined || (typeof item.region === 'string' && item.region.length <= 40), 'Personal category must be at most 40 characters');
   for (const field of ['keyword', 'source', 'sourceUrl']) assert(item[field] === undefined || typeof item[field] === 'string', `Invalid personal ${field}`);
   if (item.sourceUrl) { const url = new URL(item.sourceUrl); assert(url.protocol === 'https:' && !url.username && !url.password, 'Invalid personal source URL'); }
   const key = `${item.date}|${item.year}|${item.title}`;

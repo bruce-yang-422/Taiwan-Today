@@ -10,8 +10,35 @@ import { bundledFiles, parsePublicData } from '../src/data/publicData';
 import { parseManifest } from '../src/data/updates';
 import { parsePersonalHistory } from '../src/calendar/personalHistory';
 import { unwrapData } from '../src/data/document';
+import { parsePersonalHistoryFile } from '../src/calendar/personalHistoryFile';
+
+describe('personal history file import', () => {
+  it('reads UTF-8 CSV with quoted commas, multiline text and custom categories', () => {
+    const result = parsePersonalHistoryFile('events.CSV', '\uFEFF日期,年份,標題,摘要,分類\r\n09-21,2020,紀念,"第一行,合照\n第二行",小明\r\n');
+    expect(result[0]).toMatchObject({ date: '09-21', year: 2020, summary: '第一行,合照\n第二行', region: '小明' });
+    expect(parsePersonalHistoryFile('backup.json', JSON.stringify(result))).toEqual(result);
+    expect(parsePersonalHistoryFile('backup.json', JSON.stringify({ version: '1.0.0', data: result }))).toEqual(result);
+  });
+  it('rejects invalid CSV without returning a partial import', () => {
+    const header = 'date,year,title,summary\n';
+    expect(() => parsePersonalHistoryFile('bad.csv', header + '09-21,2020,a,b\n02-30,2020,c,d')).toThrow('日期不存在');
+    expect(() => parsePersonalHistoryFile('bad.csv', header + '09-21,2020,a,"unclosed')).toThrow('CSV 格式');
+    expect(() => parsePersonalHistoryFile('bad.csv', header + '09-21,2020,a,\uFFFD')).toThrow('編碼');
+    expect(() => parsePersonalHistoryFile('empty.csv', header)).toThrow();
+    expect(() => parsePersonalHistoryFile('book.xlsx', '')).toThrow('CSV 或 JSON');
+  });
+});
 
 describe('public data updates', () => {
+  it('accepts custom personal categories with bounded length and preserves public categories', () => {
+    const entry = { date: '09-21', year: 2020, title: '紀念', summary: '私人紀事' };
+    for (const region of ['童年', '中年', '某某公司', '小明', '台灣', '國際']) {
+      expect(parsePersonalHistory([{ ...entry, region }])[0].region).toBe(region);
+    }
+    expect(parsePersonalHistory([{ ...entry, region: '' }])[0].region).toBe('個人');
+    expect(() => parsePersonalHistory([{ ...entry, region: '字'.repeat(41) }])).toThrow();
+    expect(() => parsePublicData({ ...bundledFiles, 'history-taiwan.json': [{ ...entry, region: '小明', sourceUrl: 'https://example.com/' }] })).toThrow();
+  });
   it('reads versioned documents and legacy payloads identically', () => {
     const legacy = Object.fromEntries(Object.entries(bundledFiles).map(([name, value]) => [name, unwrapData(value)]));
     expect(parsePublicData(bundledFiles)).toEqual(parsePublicData(legacy));

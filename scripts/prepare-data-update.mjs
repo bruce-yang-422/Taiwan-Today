@@ -42,13 +42,19 @@ for (const name of [...names, 'history-personal.json']) {
   if (name !== 'history-personal.json') files.push({ name, sha256, bytes: bytes.length });
 }
 if (files.length > 40 || files.reduce((sum, f) => sum + f.bytes, 0) > 5 * 1024 * 1024) throw new Error('更新資料超過上限');
-const publishedFiles = files.map(file => ({ ...file, version: versions[file.name].version, updatedAt: versions[file.name].updatedAt }));
+const publishedFiles = files.map(file => ({
+  ...file, version: versions[file.name].version,
+  updatedAt: new Date(versions[file.name].updatedAt).toISOString(),
+  updatedAtTaiwan: taiwanTime(versions[file.name].updatedAt),
+}));
 // Version-only edits must also be detected by clients with an existing cache.
 const revision = hash(JSON.stringify({ version: releaseVersion, files: publishedFiles }));
 const same = oldManifest?.revision === revision;
+const publishedAt = same ? oldManifest.updatedAt : now;
 const manifest = {
   schemaVersion: 1, version: releaseVersion,
-  updatedAt: same ? taiwanTime(oldManifest.updatedAt) : now, revision,
+  updatedAt: new Date(publishedAt).toISOString(),
+  updatedAtTaiwan: taiwanTime(publishedAt), revision,
   files: publishedFiles,
 };
 for (const [name, content] of documents) await writeFile(new URL(name, root), content);

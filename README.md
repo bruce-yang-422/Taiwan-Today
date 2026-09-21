@@ -4,7 +4,7 @@
 
 官網：[today.stack-base.com](https://today.stack-base.com/)
 
-個人／家族紀事範例：[CSV](templates/history-template.csv)、[XLSX](templates/history-template.xlsx)、[ODS](templates/history-template.ods)。欄位格式見 [範例說明](templates/README.md)，填寫後可在[官網轉檔工具](https://today.stack-base.com/#converter)轉成 JSON，再於插件「設定 → 資料管理」匯入。
+個人／家族紀事範例：[CSV](templates/history-template.csv)、[XLSX](templates/history-template.xlsx)、[ODS](templates/history-template.ods)。欄位格式見 [範例說明](templates/README.md)，填寫後直接於插件「設定 → 資料管理」匯入，也可前往[官網下載範本](https://today.stack-base.com/#templates)。
 
 以 Vite、TypeScript、Tailwind CSS 與 Manifest V3 實作的 Chrome 新分頁。無後端、無帳號、無追蹤，離線可用，可選擇連線更新公共資料；使用 `storage` 與 `favicon` 權限，連線更新則另需授權 GitHub Raw 連線。
 
@@ -73,6 +73,10 @@ npm run test:e2e
 
 ### GitHub 公共資料更新
 
+插件可直接匯入 UTF-8 CSV、XLSX、ODS 或 JSON，在本機自動讀取、驗證與預覽，確認後才取代個人紀事；不需先到官網轉檔。CSV 使用與官網範本相同的中英文表頭。XLSX／ODS 可選擇工作表，只匯入選取的工作表；支援 Excel 日期儲存格，解析器隨插件打包，可離線使用。
+
+私人紀事的 `region` 是可自訂分類（最多 40 字），例如童年、中年、公司名稱或小孩名字；留白預設為「個人」。所有匯入紀事皆歸「私人」來源，不因分類文字而改成台灣或國際公共歷史。
+
 每份資料 JSON 都在開頭宣告自己的 `version`，原本的陣列或物件放在 `data`，例如：
 
 ```json
@@ -87,11 +91,11 @@ npm run test:e2e
 
 不再使用 `data/versions.json`，各檔案自行宣告版本。`update-manifest.json` 是必要的遠端下載清單，由 `npm run data:prepare-update` 或 `npm run build` 產生；請將資料與這份清單一起提交推送。只改版號或只改內容，都會產生新的更新識別碼。首次上架以 `1.0.0` 為基準，之後自行調整有更新的 JSON 版號，工具不會自動升版。
 
-`history-personal.json` 的版號只代表內建範本，不涉及使用者本機資料；匯入仍相容舊版純陣列（包含用來清空的 `[]`）與新版 `{ "version": "1.0.0", "data": [...] }`。官網轉檔與個人備份仍輸出相容的純陣列。
+`history-personal.json` 的版號只代表內建範本，不涉及使用者本機資料；匯入仍相容舊版純陣列（包含用來清空的 `[]`）與新版 `{ "version": "1.0.0", "data": [...] }`。個人備份仍輸出相容的純陣列。
 
 此包裝格式需要新版插件讀取；舊插件無法直接載入新格式，更新驗證失敗時會保留原資料。設定中的「關於」提供作者、插件版本、發布時間與各資料檔版本；插件版本取自 `manifest.json`。
 
-公共資料檔的 `updatedAt` 使用台灣時間 `+08:00`，由 `npm run data:prepare-update` 或建置時自動維護。檔案變更時更新時間，未變更則保留；更新清單同步使用同一時間。`history-personal.json` 不列入遠端清單，其範本版號與時間可自行修改，使用者匯入的紀事與範本版本無關。
+公共資料檔的 `updatedAt` 使用台灣時間 `+08:00`，由 `npm run data:prepare-update` 或建置時自動維護。檔案變更時更新時間，未變更則保留。`update-manifest.json` 的頂層與逐檔項目同時提供 UTC `updatedAt`（結尾 `Z`）與台灣時間 `updatedAtTaiwan`（結尾 `+08:00`），兩欄表示同一時刻，皆為 ISO 8601 格式。`history-personal.json` 不列入遠端清單，其範本版號與時間可自行修改，使用者匯入的紀事與範本版本無關。
 
 首次點「立即更新」或啟用每日檢查時，Chrome 會要求 GitHub 連線授權；允許後才下載，拒絕則保留原資料。若舊版顯示 `connect-src 'none'`，請在 `chrome://extensions` 重新載入指向最新 `dist` 的擴充功能，關閉舊新分頁後重新開啟；單純重新整理頁面不會更新 manifest 政策。
 
@@ -128,7 +132,7 @@ node scripts/import-calendar.mjs --year 2027 --csv path/to/116-calendar.csv
 
 曆法使用本機打包的 [lunar-typescript](https://github.com/6tail/lunar-typescript)（MIT），未引用其中國大陸假日或宜忌資料。
 
-`data/history-taiwan.json` 與 `data/history-world.json` 合計收錄 193 筆「歷史上的今天」紀事，其中台灣 129 筆（67%）、國際 64 筆（33%）。9～12 月每天皆有 1～3 則；1～8 月目前為精選重大事件，僅涵蓋部分日期，尚未每天有內容，缺少資料的日期會顯示空狀態。內容以重大政治、社會、科學、文化及體育事件為主。另有預設關閉的主題紀事：`data/history-tech.json`（科技，5 筆）與 `data/history-entertainment.json`（影音娛樂，8 筆），同樣僅涵蓋部分日期，會逐步擴充。執行
+`data/history-taiwan.json` 與 `data/history-world.json` 合計收錄 193 筆「歷史上的今天」紀事，其中台灣 129 筆（67%）、國際 64 筆（33%）。9～12 月每天皆有 1～3 則；1～8 月目前為精選重大事件，僅涵蓋部分日期，尚未每天有內容，缺少資料的日期會顯示空狀態。內容以重大政治、社會、科學、文化及體育事件為主。另有預設關閉的主題紀事：`data/history-tech.json`（科技，5 筆）與 `data/history-entertainment.json`（影音娛樂，28 筆），同樣僅涵蓋部分日期，會逐步擴充。執行
 `npm run data:check-history` 可檢查資料完整性。
 
 YouTube、PChome、GitHub 捷徑內建 favicon；其他捷徑透過 [Chrome 內建 favicon 功能](https://developer.chrome.com/docs/extensions/how-to/ui/favicons)取得，也可自行匯入 PNG / ICO（最大 64 KB）。無雲端同步，資料保存在本機。
@@ -158,7 +162,7 @@ zh_TW。新增語系時在 `_locales/` 下建立對應資料夾即可，`vite.co
 - `scripts/validate-history.mjs`：歷史紀事欄位、重複與月份覆蓋檢查。
 - `scripts/prepare-data-update.mjs`：驗證公共 JSON 並產生 `data/update-manifest.json`，供使用者端下載更新比對。
 - `tests/`：曆法及安全邊界單元測試、瀏覽器操作與真實 MV3 離線載入測試。
-- `index.html`、`docs/site/`：可部署到 GitHub Pages 的專案介紹網站，含 CSV／XLSX 轉個人歷史 JSON 的本機轉換工具。
+- `index.html`、`docs/site/`：可部署到 GitHub Pages 的專案介紹網站，提供 CSV／XLSX／ODS 範本下載與直接匯入教學。
 
 ## 授權
 
@@ -166,7 +170,7 @@ zh_TW。新增語系時在 `_locales/` 下建立對應資料夾即可，`vite.co
 
 ## 專案介紹網站與私人紀事工具
 
-`index.html` 是可直接部署到 GitHub Pages 的靜態網站，提供插件介紹、CSV／XLSX 範本、工作表選擇、資料檢查及 JSON 下載。檔案在瀏覽器本機處理，不上傳、不保存；試算表解析器隨網站附帶。
+`index.html` 是可直接部署到 GitHub Pages 的靜態網站，提供插件介紹、CSV／XLSX／ODS 範本下載、欄位說明及直接匯入教學。官網不讀取使用者檔案；選檔、驗證與儲存皆由插件在本機處理。
 
 歷史資料分為 `data/history-taiwan.json`（台灣）、`data/history-world.json`（國際）、`data/history-tech.json`（科技主題）、`data/history-entertainment.json`（影音娛樂主題）與
 `data/history-personal.json`（個人／家族，預設空陣列）。使用者可透過「設定 → 匯入個人歷史 JSON」選檔、預覽並取代本機個人紀事，立即生效，無需重新建置；支援匯出備份、跨分頁同步，匯入空陣列 `[]` 可清空。檔案最大 5 MB、10,000 筆；格式或儲存錯誤會保留原資料。未曾匯入時使用隨程式附帶的個人 JSON，匯入後以本機資料為準。預設顯示三則，預設私人優先，其次台灣、國際，可依使用者開啟的來源調整順序；可按「顯示更多」展開當天全部紀事，再按「收合紀事」恢復三則，切換日期會自動收合；不要將私人資料推送到公開儲存庫。

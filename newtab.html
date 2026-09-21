@@ -80,14 +80,15 @@
     <dialog id="personal-history-dialog" aria-labelledby="personal-history-heading">
 <h2 id="personal-history-heading">我的歷史上的今天</h2>
 <p id="personal-history-count">正在讀取…</p>
-<p class="settings-note">匯入 history-personal.json，紀事只儲存在這台裝置。匯入成功後立即生效，預設私人 → 台灣 → 國際，可在「紀事來源與順序」調整，預設顯示三則，可按「顯示更多」查看當天全部紀事。移除擴充功能會刪除本機資料。</p>
+<p class="settings-note">選擇填好的 CSV、Excel 或 ODS 表格，或之前下載的 JSON 備份，系統會自動讀取，紀事只儲存在這台裝置。匯入成功後立即生效，預設私人 → 台灣 → 國際，可在「紀事來源與順序」調整，預設顯示三則，可按「顯示更多」查看當天全部紀事。移除擴充功能會刪除本機資料。</p>
 <button id="personal-history-export" type="button" disabled>匯出目前紀事備份</button>
 <div class="personal-history-tool">
-<a href="https://bruce-yang-422.github.io/Taiwan-Today/#converter" target="_blank" rel="noopener noreferrer">前往官網製作 JSON <span aria-hidden="true">↗</span></a>
-<p>還沒有檔案？下載 CSV／Excel 範本，轉成 JSON 後回到這裡匯入。</p>
+<a href="https://today.stack-base.com/#templates" target="_blank" rel="noopener noreferrer">前往官網下載範本 <span aria-hidden="true">↗</span></a>
+<p>下載 CSV、XLSX 或 ODS 範本，填寫後直接在這裡匯入，不用先轉檔。</p>
 </div>
-<label for="personal-history-file">選擇個人歷史 JSON（最大 5 MB）</label>
-<input id="personal-history-file" type="file" accept=".json,application/json" disabled>
+<label for="personal-history-file">選擇紀事檔案（CSV／XLSX／ODS／JSON，最大 5 MB）</label>
+<input id="personal-history-file" type="file" accept=".csv,.xlsx,.ods,.json,text/csv,application/json,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.oasis.opendocument.spreadsheet" disabled>
+<div id="personal-history-sheet-field" hidden><label for="personal-history-sheet">選擇工作表</label><select id="personal-history-sheet"></select><p class="settings-note">只匯入目前選取的工作表，請先確認下方預覽。</p></div>
 <ul id="personal-history-preview" aria-label="前五筆紀事預覽"></ul>
 <p id="personal-history-status" role="status" aria-live="polite">選取檔案後可先預覽，再決定是否取代。也可匯入空陣列 [] 清空個人紀事。</p>
 <div class="dialog-actions"><button type="button" data-close="personal-history-dialog">關閉</button><button class="primary" id="personal-history-save" type="button" disabled>匯入並取代</button></div>
@@ -126,9 +127,9 @@
 <button id="data-update-now" type="button" disabled>立即更新</button>
 <p id="data-update-version" class="display-description">目前使用隨插件附帶的資料</p>
 <p id="data-update-status" class="display-description" role="status" aria-live="polite"></p>
-</section><button id="personal-history-open" class="personal-history-open" type="button" aria-label="匯入個人歷史 JSON" aria-describedby="personal-history-open-hint">
+</section><button id="personal-history-open" class="personal-history-open" type="button" aria-label="匯入個人歷史 CSV、XLSX、ODS 或 JSON" aria-describedby="personal-history-open-hint">
 <span class="import-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V3m-4 4 4-4 4 4M4 14v5a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5"/></svg></span>
-<span class="import-copy"><span class="import-title">匯入個人歷史 <span class="import-format">JSON</span></span><span id="personal-history-open-hint" class="import-hint">從檔案加入你與家人的紀事</span></span>
+<span class="import-copy"><span class="import-title">匯入個人歷史 <span class="import-format">CSV / XLSX / ODS / JSON</span></span><span id="personal-history-open-hint" class="import-hint">從檔案加入你與家人的紀事</span></span>
 <svg class="import-chevron" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m9 5 7 7-7 7"/></svg>
 </button>
 <p class="settings-note">設定、捷徑與待辦只儲存在這台裝置，不傳送搜尋或瀏覽紀錄。</p></section>

@@ -27,5 +27,5 @@ test('settings tabs group controls and remain usable on laptop and mobile', asyn
   await page.getByRole('tab', { name: '資料管理', exact: true }).click();
   await page.locator('#personal-history-open').click();
   await expect(page.locator('#personal-history-dialog')).toBeVisible();
-  await expect(page.getByRole('link', { name: /前往官網製作 JSON/ })).toHaveAttribute('href', 'https://bruce-yang-422.github.io/Taiwan-Today/#converter');
+  await expect(page.getByRole('link', { name: /前往官網下載範本/ })).toHaveAttribute('href', 'https://today.stack-base.com/#templates');
 });

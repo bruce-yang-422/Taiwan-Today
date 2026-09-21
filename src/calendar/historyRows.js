@@ -21,10 +21,10 @@ export function convertRows(rows, category='個人', dateParser=()=>null) {
   if(!/^\d{1,4}$/.test(year)||+year<1){errors.push(`${at}：請填寫西元年份或完整日期。`);return;}
   const d=new Date(0);d.setUTCHours(0,0,0,0);d.setUTCFullYear(+year,(month??0)-1,day??0);
   if(!month||!day||d.getUTCFullYear()!==+year||d.getUTCMonth()+1!==month||d.getUTCDate()!==day){errors.push(`${at}：日期不存在，請確認月份、日期及閏年。`);return;}
-  const title=text(item.title),summary=text(item.summary),region=text(item.region)||category,sourceUrl=text(item.sourceUrl);
+  const title=text(item.title),summary=text(item.summary),region=text(item.region)||text(category)||'個人',sourceUrl=text(item.sourceUrl);
   if(!title||!summary){errors.push(`${at}：標題與摘要不能空白。`);return;}
   if(title.length>200||summary.length>5000){errors.push(`${at}：標題最多 200 字、摘要最多 5,000 字。`);return;}
-  if(!['個人','家族','台灣','國際'].includes(region)){errors.push(`${at}：分類須為個人、家族、台灣或國際。`);return;}
+  if(region.length>40){errors.push(`${at}：自訂分類最多 40 字。`);return;}
   if(sourceUrl){try{const url=new URL(sourceUrl);if(url.protocol!=='https:'||url.username||url.password)throw Error();}catch{errors.push(`${at}：來源網址必須為不含帳密的 HTTPS 網址。`);return;}}
   const date=`${String(month).padStart(2,'0')}-${String(day).padStart(2,'0')}`;
   const key=[date,year,title].join('|');if(seen.has(key)){errors.push(`${at}：相同日期、年份與標題重複。`);return;}seen.add(key);
