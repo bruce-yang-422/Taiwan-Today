@@ -48,11 +48,11 @@
   [data-style=modern] .digital-clock { font-size:23px; margin-top:4px; }
   [data-style=modern] #todo-empty::before { width:28px; height:28px; line-height:24px; font-size:18px; margin-bottom:6px; }
 
-  :root[data-style=traditional] .calendar-clock-group { min-height:0; margin-bottom:10px; }
-  :root[data-style=traditional] .calendar-clock-group>.eyebrow { font-size:16px; padding:4px; }
+  :root[data-style=traditional] .calendar-clock-group { min-height:0; margin-bottom:24px; }
+  :root[data-style=traditional] .calendar-clock-group>.eyebrow { font-size:16px; padding:8px 40px; }
   :root[data-style=traditional] .calendar-clock-group .calendar { padding:6px 14px 0; }
   :root[data-style=traditional] .month { font-size:20px; }
-  :root[data-style=traditional] .day { font-size:64px; }
+  :root[data-style=traditional] .day { font-size:132px; }
   :root[data-style=traditional] .weekday { font-size:20px; }
   :root[data-style=traditional] .lunar { font-size:14px; padding-top:4px; margin:4px auto; }
   :root[data-style=traditional] .season { margin-top:4px; padding:2px 0; }

@@ -2,6 +2,7 @@ import './newtab.css';
 import './traditional.css';
 import './modern.css';
 import './concepts.css';
+import './identity.css';
 import './readability.css';
 import './compact.css';
 import './googleApps.css';

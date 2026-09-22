@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Placeholders carry instructions too; retain full text contrast. */
+input::placeholder,textarea::placeholder{color:var(--muted);opacity:1}
+
 #appearance{border:0;padding:0;margin:16px 0 0;min-width:0}
 #appearance legend{font-size:12px;letter-spacing:.06em;color:var(--muted);margin-bottom:10px}
 .appearance-segments{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));padding:5px;border:1px solid var(--line);border-radius:999px;background:var(--soft);isolation:isolate}
@@ -26,21 +29,21 @@
 .dark .todo-note{background:#302d28;color:#eee4cf;border-color:#585044}
 .todo-note summary{cursor:pointer;user-select:none;padding:16px 18px;font-size:15px;letter-spacing:.08em}
 .todo-note{max-height:calc(100dvh - 16px);overflow:auto}
-#todo-count{float:right;font-size:12px;letter-spacing:0;opacity:.7}
+#todo-count{float:right;font-size:12px;letter-spacing:0;color:var(--muted)}
 .todo-body{padding:0 16px 14px}
 #todo-form{display:flex;gap:6px;border-bottom:1px solid #a18b6055;padding-bottom:10px}
 #todo-input{min-width:0;width:100%;background:transparent;font-size:13px;color:inherit}
-#todo-input::placeholder{color:inherit;opacity:.6}
+#todo-input::placeholder{color:var(--muted);opacity:1}
 #todo-form button{font-size:21px;padding:0 6px}
 #todo-list{max-height:220px;overflow:auto;overscroll-behavior:contain;margin-top:8px}
 #todo-list li{display:flex;align-items:start;gap:6px;border-bottom:1px solid #a18b602b;padding:9px 0;font-size:13px}
 #todo-list label{display:flex;align-items:start;gap:9px;flex:1;min-width:0;cursor:pointer;line-height:1.6}
 #todo-list input{flex-shrink:0;margin-top:4px;accent-color:var(--accent)}
 #todo-list span{overflow-wrap:anywhere;white-space:pre-wrap}
-#todo-list input:checked+span{text-decoration:line-through;opacity:.5}
+#todo-list input:checked+span{text-decoration:line-through;color:var(--muted)}
 #todo-list button{flex-shrink:0;width:24px;font-size:18px;line-height:22px}
-#todo-empty{font-size:13px;padding:20px 0;opacity:.65}
-.todo-hint{font-size:10px;opacity:.6;margin-top:12px}
+#todo-empty{font-size:13px;padding:20px 0;color:var(--muted)}
+.todo-hint{font-size:10px;color:var(--muted);margin-top:12px}
 #todo-error{font-size:12px;color:var(--vermilion);margin-top:6px}
 @media(min-width:1400px){.todo-note{position:absolute;top:140px;bottom:auto;right:max(32px,calc((100vw - 1760px)/2));width:264px}}
 

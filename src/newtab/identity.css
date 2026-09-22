@@ -1,0 +1,129 @@
+/* Five restrained visual identities. Palette chroma is reduced while preserving
+   relative luminance, so text contrast stays intact. Decorative SVGs are local. */
+:root { --serif: "Noto Serif TC", "PMingLiU", Georgia, serif; }
+:root:is([data-style=classic],[data-style=modern]) { --vermilion:#85605d; }
+:root.dark:is([data-style=classic],[data-style=modern]) { --vermilion:#bfa9a5; }
+
+/* 留白日常 — an ivory page with a quiet mountain horizon. */
+:root[data-style=classic] { background:#f6f5f1; --ink:#2c3744; --accent:#303d4f; --paper:#fefdfb; --muted:#484f53; --line:#d7d5d0; --soft:#eceae5; font-family:var(--serif); }
+:root.dark[data-style=classic] { background:#212427; --ink:#e9e7e1; --accent:#c1ccd3; --paper:#2a2e31; --muted:#b9bdbd; --line:#4b5053; --soft:#373d40; }
+[data-style=classic] body { background: url('/art/mountains.svg') center bottom / 100% auto no-repeat; min-height:100vh; }
+[data-style=classic] .brand { font-size:20px; font-weight:700; letter-spacing:.12em; }
+[data-style=classic] .search { border-radius:999px; box-shadow:0 3px 12px #30363e0a; }
+[data-style=classic] .shortcut-icon { border-radius:50%; background:var(--paper); border:1px solid var(--line); }
+[data-style=classic] .todo-note { background:var(--paper); color:var(--ink); border-color:var(--line); border-radius:3px; box-shadow:4px 5px 0 #7b828510; }
+[data-style=classic] .daily-quote { background:transparent; border-radius:0; padding:14px 0; border-block:1px solid var(--line); }
+[data-style=classic] .daily-quote blockquote { font-size:22px; letter-spacing:.06em; }
+[data-style=classic] .clock-face { stroke-width:1; }
+
+/* 日常方格 — mist-blue panels, rounded controls and crisp sans serif. */
+:root[data-style=modern] { background:#f1f4f9; --ink:#2f3b50; --accent:#4f6786; --paper:#fbfdfe; --muted:#484f53; --line:#d2dbe3; --soft:#e4ebf3; }
+:root.dark[data-style=modern] { background:#191e28; --ink:#ecf0f6; --accent:#b0c7e0; --paper:#282f3c; --muted:#b9c3cf; --line:#475260; --soft:#343e4d; }
+[data-style=modern] body { background:radial-gradient(ellipse at 15% 0%, #94abcd22, transparent 65%); min-height:100vh; }
+[data-style=modern] .calendar-clock-group::before { background:var(--soft); border-radius:22px; }
+[data-style=modern] .clock-container { background:var(--soft); border-color:transparent; border-radius:22px; }
+[data-style=modern] .history-card,[data-style=modern] .todo-note { border-radius:18px; box-shadow:0 5px 18px #485a7610; }
+[data-style=modern] .daily-quote { background:var(--soft); border-left:3px solid var(--accent); border-radius:4px 16px 16px 4px; }
+[data-style=modern] .shortcut-link,[data-style=modern] .shortcut-add { border-radius:18px; }
+[data-style=modern] .analog-clock { filter:drop-shadow(0 3px 6px #37465d14); }
+
+/* 歲月紙曆 — a bound tear-off calendar, with navy type and red dates. */
+:root[data-style=traditional] { background:#f2f0ec; --ink:#2e3945; --accent:#303c4c; --vermilion:#8f5452; --paper:#fcfaf6; --muted:#484f53; --line:#cecac2; --soft:#eae6e1; --paper-edge:#d0ccc4; }
+:root.dark[data-style=traditional] { background:#252729; --ink:#e6e3dd; --accent:#c1cbd2; --vermilion:#cfaca4; --paper:#333537; --muted:#bcc0c0; --line:#5c5f61; --soft:#404344; --paper-edge:#474949; }
+[data-style=traditional] header { border-bottom-color:var(--vermilion); }
+[data-style=traditional] body { background-image:radial-gradient(ellipse at 20% 0%,#b1a89916,transparent 65%),repeating-linear-gradient(110deg,#90887e05 0 1px,transparent 1px 5px); }
+:root[data-style=traditional] .calendar-clock-group>.eyebrow {
+  position:relative; z-index:1; padding:18px 44px; border:1px solid #6b3f3d; outline:0;
+  border-radius:5px 5px 1px 1px; color:#f7f1e6;
+  background:repeating-linear-gradient(15deg,#e2d2ba0b 0 1px,transparent 1px 4px),linear-gradient(110deg,#935955,#7f4a48 70%,#6e403e);
+  box-shadow:inset 0 1px 2px #eedfcc88,inset -4px 0 0 #5d383655,2px 4px 5px #332d2a33;
+}
+:root[data-style=traditional] .calendar-clock-group>.eyebrow::before,
+:root[data-style=traditional] .calendar-clock-group>.eyebrow::after {
+  content:''; position:absolute; top:50%; transform:translateY(-50%); width:16px; height:16px; border-radius:50%;
+  border:1px solid #685749; background:radial-gradient(circle at 35% 28%,#eee6cc,#b9a990 55%,#7e705e);
+  box-shadow:inset 0 0 0 2px #ded0b488,1px 2px 2px #38282488; pointer-events:none;
+}
+:root[data-style=traditional] .calendar-clock-group>.eyebrow::before { left:18px; }
+:root[data-style=traditional] .calendar-clock-group>.eyebrow::after { right:18px; }
+:root[data-style=traditional] .calendar-clock-group .calendar {
+  position:relative; border:1px solid var(--line); border-top:0; border-radius:0 0 3px 7px;
+  background:radial-gradient(ellipse at 5% 100%,#aca29414,transparent 60%),repeating-linear-gradient(8deg,#8a837906 0 1px,transparent 1px 4px),var(--paper);
+  box-shadow:inset -4px 0 6px #6b635a0c,1px 3px 0 var(--paper-edge),3px 5px 0 var(--paper),4px 6px 0 var(--paper-edge),6px 9px 0 var(--paper),7px 10px 0 var(--paper-edge),10px 16px 18px #2f2d2926;
+}
+:root[data-style=traditional] .weekday { background:transparent; color:var(--accent); border-top:1px solid var(--vermilion); padding:8px 12px 0; margin:4px 8% 0; letter-spacing:.2em; }
+:root[data-style=traditional] .day { color:var(--vermilion); font-size:180px; text-shadow:1px 1px 0 #7a544f12; }
+:root[data-style=traditional] .lunar { color:var(--vermilion); border-top:0; }
+[data-style=traditional] .analog-clock { border-radius:50%; box-shadow:0 0 0 5px var(--soft),0 0 0 6px var(--line),0 5px 12px #2d2a2612; }
+[data-style=traditional] .clock-face { fill:var(--paper); stroke:var(--line); }
+[data-style=traditional] .daily-quote { background:transparent; border-block:3px double var(--line); border-radius:0; }
+[data-style=traditional] .daily-quote h2 { color:var(--vermilion); }
+[data-style=traditional] .history-card { border-top:1px solid var(--line); }
+[data-style=traditional] .todo-note { border:1px solid var(--line); border-radius:8px; box-shadow:0 3px 12px #2d2a260a; }
+[data-style=traditional] .badge { border:1px solid var(--line); border-radius:2px; }
+
+/* 月序手帖 — muted tones derived from the supplied olive palette. */
+:root[data-style=workspace] {
+  --planner-green:#475c44; --planner-olive:#353f2f; --planner-deep:#364634;
+  --planner-leaf:#708a70; --planner-sage:#a2ad9f;
+  background:#efefec; --ink:#323330; --accent:var(--planner-green); --paper:#fbfbf9;
+  --muted:#484f53; --line:#d8d8d3; --soft:#eeeeea; --vermilion:#7d5751;
+}
+:root.dark[data-style=workspace] {
+  --planner-olive:#344932; --planner-deep:#2d412e; --planner-sage:#b2c7ab;
+  background:#202b23; --ink:#eef0e8; --accent:var(--planner-sage); --paper:#2a392e;
+  --muted:#c1cbbc; --line:#526650; --soft:#334537; --vermilion:#cbb7a9;
+}
+[data-style=workspace] .brand,[data-style=workspace] .month-toolbar h2 { font-family:var(--serif); letter-spacing:.08em; }
+[data-style=workspace] .concept-shell { border:1px solid var(--line); border-radius:10px; background:var(--paper); }
+[data-style=workspace] .concept-sidebar { border-radius:9px 0 0 9px; background:var(--planner-olive) url('/art/tide.svg') center bottom / auto 120px no-repeat; color:#f3f2ed; }
+[data-style=workspace] .shortcut-link,[data-style=workspace] .shortcut-add { color:#f3f2ed; }
+[data-style=workspace] .shortcut-icon { background:#ffffff0d; color:#f3f2ed; }
+[data-style=workspace] .shortcut-add .shortcut-icon { border-color:var(--planner-sage); }
+[data-style=workspace] .concept-rail { border-left:1px solid var(--line); border-radius:0 9px 9px 0; background:var(--soft); }
+[data-style=workspace] .month-grid { border:0; gap:4px; }
+[data-style=workspace] :is(.month-cell,.month-blank,.month-weekday) { border:0; border-radius:5px; }
+[data-style=workspace] .month-cell { border-bottom:1px solid var(--line); }
+[data-style=workspace] .month-weekday { background:transparent; color:var(--muted); }
+[data-style=workspace] .month-number { font-family:Georgia,serif; border-radius:50%; min-width:30px; text-align:center; }
+[data-style=workspace] .month-cell[aria-current=date] .month-number { background:var(--planner-green); color:#fefdfa; }
+[data-style=workspace] .month-cell[aria-pressed=true] { background:#e9ebe6; box-shadow:inset 0 0 0 2px var(--planner-green); }
+.dark[data-style=workspace] .month-cell[aria-pressed=true] { background:var(--planner-olive); box-shadow:inset 0 0 0 2px var(--planner-sage); }
+.dark[data-style=workspace] .month-cell[aria-current=date] .month-number { background:var(--planner-sage); color:#222420; }
+[data-style=workspace] .month-cell:focus-visible { outline-color:var(--accent); }
+[data-style=workspace] .month-toolbar button:hover { background:var(--planner-deep); color:#fefdfa; }
+[data-style=workspace] .daily-quote h2 { border-left:3px solid var(--planner-leaf); padding-left:10px; }
+[data-style=workspace] .daily-quote { border-radius:0; background:transparent; border-top:1px solid var(--line); padding:16px 0 0; }
+[data-style=workspace] .daily-quote blockquote { font-family:var(--serif); }
+
+/* 時光讀本 — muted tones derived from the supplied five blues. */
+:root[data-style=reading] {
+  --reader-paper:#212a32; --reader-teal:#273335; --reader-cover:#212a32;
+  --reader-blue:#37435f; --reader-cobalt:#4a5092;
+  background:#efefee; --ink:var(--reader-paper); --accent:var(--reader-blue); --paper:#fafaf8;
+  --muted:#484f53; --line:#d3d6d9; --soft:#ebedf0; --vermilion:#835955;
+}
+:root.dark[data-style=reading] {
+  background:var(--reader-cover); --ink:#efeeea; --accent:#c9cfdd; --paper:var(--reader-paper);
+  --muted:#bbc1c8; --line:#505a64; --soft:var(--reader-teal); --vermilion:#d0b7ae;
+}
+[data-style=reading] .concept-shell { background:var(--paper); border:1px solid var(--line); box-shadow:0 12px 35px #1e262d0c; }
+[data-style=reading] .concept-sidebar { --accent:#d9dde5; --line:#545e64; background:var(--reader-cover) url('/art/tide.svg') center bottom / 100% auto no-repeat; border-right:1px solid #505a64; }
+[data-style=reading] .concept-stage { background:transparent; }
+[data-style=reading] .daily-quote h2 { font-size:12px; letter-spacing:.22em; }
+[data-style=reading] .history-card::before { width:5px; height:5px; left:-3px; border-radius:0; }
+[data-style=reading] .history-year { color:var(--accent); font-family:Georgia,var(--serif); }
+[data-style=reading] .concept-shell .todo-note { background:transparent; border-radius:2px; }
+[data-style=reading] .concept-bottom { background:var(--soft); }
+[data-style=reading] .history-more { color:var(--reader-cobalt); }
+.dark[data-style=reading] .history-more { color:var(--accent); }
+[data-style=reading] .primary,[data-style=reading] #todo-form button { background:var(--reader-cobalt); color:#fff; }
+[data-style=reading] #todo-form button { border-radius:4px; }
+[data-style=reading] .primary:hover,[data-style=reading] #todo-form button:hover { background:var(--reader-blue); }
+[data-style=reading] .shortcut-add .shortcut-icon { border-color:var(--accent); }
+@media(max-width:699px) {
+  [data-style=classic] body { background-size:auto 200px; }
+  [data-style=workspace] .concept-sidebar { border-radius:9px 9px 0 0; }
+  [data-style=workspace] .concept-rail { border-left:0; border-top:1px solid var(--line); border-radius:0 0 9px 9px; }
+  [data-style=reading] .concept-sidebar { background-size:100% 90px; border-right:0; }
+}
