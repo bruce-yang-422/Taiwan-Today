@@ -1,6 +1,6 @@
 {
-  "version": "1.13.0",
-  "updatedAt": "2026-09-23T14:57:01.821+08:00",
+  "version": "1.14.0",
+  "updatedAt": "2026-09-23T15:30:31.234+08:00",
   "data": [
     {
       "id": "taiwan-today-001",
@@ -27410,6 +27410,4002 @@
       "sourceUrl": "https://clip.cafe/set-it-up-2018/when-i-little-grandmother-used-say/",
       "tags": [
         "關係與接納"
+      ]
+    },
+    {
+      "id": "screen-034",
+      "category": "screen",
+      "text": "不論別人怎麼說，文字與思想都能改變世界。",
+      "source": "《春風化雨》（Dead Poets Society，1989）",
+      "originalText": "No matter what anybody tells you, words and ideas can change the world.",
+      "sourceWork": "《春風化雨》（Dead Poets Society，1989）；John Keating；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Dead_Poets_Society",
+      "tags": [
+        "思想與行動"
+      ]
+    },
+    {
+      "id": "screen-035",
+      "category": "screen",
+      "text": "我們接受眼前被呈現出來的世界，並把它當成現實。",
+      "source": "《楚門的世界》（The Truman Show，1998）",
+      "originalText": "We accept the reality of the world with which we are presented",
+      "sourceWork": "《楚門的世界》（The Truman Show，1998）；Christof；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Truman_Show",
+      "tags": [
+        "獨立思考"
+      ]
+    },
+    {
+      "id": "screen-036",
+      "category": "screen",
+      "text": "擁有出色的頭腦固然很好，但發現一顆美好的心，是更珍貴的禮物。",
+      "source": "《美麗境界》（A Beautiful Mind，2001）",
+      "originalText": "Perhaps it is good to have a beautiful mind, but an even greater gift is to discover a beautiful heart.",
+      "sourceWork": "《美麗境界》（A Beautiful Mind，2001）；John Nash；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/A_Beautiful_Mind_(film)",
+      "tags": [
+        "智慧與善意"
+      ]
+    },
+    {
+      "id": "screen-037",
+      "category": "screen",
+      "text": "不論生活看起來多糟，總有你能做、也能做好的事。",
+      "source": "《愛的萬物論》（The Theory of Everything，2014）",
+      "originalText": "However bad life may seem, there is always something you can do, and succeed at.",
+      "sourceWork": "《愛的萬物論》（The Theory of Everything，2014）；Stephen Hawking；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Theory_of_Everything_(2014_film)",
+      "tags": [
+        "希望與行動"
+      ]
+    },
+    {
+      "id": "screen-038",
+      "category": "screen",
+      "text": "驕傲不是羞恥的反面，而是它的根源。",
+      "source": "《降世神通：最後的氣宗》（Avatar: The Last Airbender，2005 起影集）",
+      "originalText": "Pride is not the opposite of shame, but its source.",
+      "sourceWork": "《降世神通：最後的氣宗》（Avatar: The Last Airbender，2005 起影集）；Bitter Work [2.9]；Iroh；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Avatar:_The_Last_Airbender_(season_2)",
+      "tags": [
+        "謙卑與自省"
+      ]
+    },
+    {
+      "id": "screen-039",
+      "category": "screen",
+      "text": "只是因為思考方式與你不同，就代表沒有在思考嗎？",
+      "source": "《模仿遊戲》（The Imitation Game，2014）",
+      "originalText": "just because something thinks differently from you, does that mean it's not thinking?",
+      "sourceWork": "《模仿遊戲》（The Imitation Game，2014）；Alan Turing；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Imitation_Game",
+      "tags": [
+        "尊重差異"
+      ]
+    },
+    {
+      "id": "screen-040",
+      "category": "screen",
+      "text": "我的工作是讓他們相信自己的聲音，並知道有朋友願意傾聽。",
+      "source": "《王者之聲：宣戰時刻》（The King's Speech，2010）",
+      "originalText": "My job was to give them faith in their own voice, and let them know a friend was listening.",
+      "sourceWork": "《王者之聲：宣戰時刻》（The King's Speech，2010）；Lionel Logue；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_King's_Speech",
+      "tags": [
+        "陪伴與信任"
+      ]
+    },
+    {
+      "id": "screen-041",
+      "category": "screen",
+      "text": "如果你能愛你的敵人，就已經贏得了一場勝利。",
+      "source": "《姊妹》（The Help，2011）",
+      "originalText": "If you can love your enemy, you already have a victory.",
+      "sourceWork": "《姊妹》（The Help，2011）；Preacher Green；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Help_(film)",
+      "tags": [
+        "寬容與力量"
+      ]
+    },
+    {
+      "id": "screen-042",
+      "category": "screen",
+      "text": "分隔與平等，是兩回事。",
+      "source": "《關鍵少數》（Hidden Figures，2016）",
+      "originalText": "Separate and equal are two different things.",
+      "sourceWork": "《關鍵少數》（Hidden Figures，2016）；Dorothy Vaughan；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Hidden_Figures",
+      "tags": [
+        "平等與尊重"
+      ]
+    },
+    {
+      "id": "screen-043",
+      "category": "screen",
+      "text": "若仍困在與過去敵人的戰鬥裡，就無法指望自己應付未來的挑戰。",
+      "source": "《降世神通：柯拉傳奇》（The Legend of Korra，2012 起影集）",
+      "originalText": "You can't expect to deal with future enemies if you're still fighting the old ones.",
+      "sourceWork": "《降世神通：柯拉傳奇》（The Legend of Korra，2012 起影集）；The Calling [4.04]；Toph；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Legend_of_Korra_(season_4)",
+      "tags": [
+        "面對過去"
+      ]
+    },
+    {
+      "id": "screen-044",
+      "category": "screen",
+      "text": "解決一個問題，再解決下一個，然後再下一個。",
+      "source": "《絕地救援》（The Martian，2015）",
+      "originalText": "You solve one problem... and you solve the next one... and then the next.",
+      "sourceWork": "《絕地救援》（The Martian，2015）；Mark Watney；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Martian_(film)",
+      "tags": [
+        "解決問題"
+      ]
+    },
+    {
+      "id": "screen-045",
+      "category": "screen",
+      "text": "愛，是能跨越時間與空間的事物。",
+      "source": "《星際效應》（Interstellar，2014）",
+      "originalText": "Love is the one thing that transcends time and space.",
+      "sourceWork": "《星際效應》（Interstellar，2014）；Amelia Brand；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Interstellar_(film)",
+      "tags": [
+        "愛與連結"
+      ]
+    },
+    {
+      "id": "screen-046",
+      "category": "screen",
+      "text": "即使知道旅程及其終點，我仍選擇擁抱它。",
+      "source": "《異星入境》（Arrival，2016）",
+      "originalText": "Despite knowing the journey and where it leads, I embrace it.",
+      "sourceWork": "《異星入境》（Arrival，2016）；Dr. Louise Banks；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Arrival_(film)",
+      "tags": [
+        "接納人生"
+      ]
+    },
+    {
+      "id": "screen-047",
+      "category": "screen",
+      "text": "你們能懷抱如此美麗的夢想，也能做出如此可怕的噩夢。",
+      "source": "《接觸未來》（Contact，1997）",
+      "originalText": "You're capable of such beautiful dreams, and such horrible nightmares.",
+      "sourceWork": "《接觸未來》（Contact，1997）；Others；Alien；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Contact_(film)",
+      "tags": [
+        "人性與反思"
+      ]
+    },
+    {
+      "id": "screen-048",
+      "category": "screen",
+      "text": "永遠不要殘酷，也不要怯懦。",
+      "source": "《超時空奇俠》（Doctor Who，1963 起影集）",
+      "originalText": "Never be cruel, never be cowardly.",
+      "sourceWork": "《超時空奇俠》（Doctor Who，1963 起影集）；Twice Upon a Time [10.X]；The Doctor；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Twelfth_Doctor",
+      "tags": [
+        "善意與勇氣"
+      ]
+    },
+    {
+      "id": "screen-049",
+      "category": "screen",
+      "text": "難道只有看見我失敗，你才能成功嗎？",
+      "source": "《千鈞一髮》（Gattaca，1997）",
+      "originalText": "Is it the only way you can succeed is to see me fail?",
+      "sourceWork": "《千鈞一髮》（Gattaca，1997）；Vincent；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Gattaca",
+      "tags": [
+        "競爭與自省"
+      ]
+    },
+    {
+      "id": "screen-050",
+      "category": "screen",
+      "text": "有時候，你真的不能只聽別人怎麼說；你得聽聽內心的聲音。",
+      "source": "《十月的天空》（October Sky，1999）",
+      "originalText": "Sometimes you really can't listen to what anybody else says. You just gotta listen inside.",
+      "sourceWork": "《十月的天空》（October Sky，1999）；Freida；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/October_Sky",
+      "tags": [
+        "自我與選擇"
+      ]
+    },
+    {
+      "id": "screen-051",
+      "category": "screen",
+      "text": "我們不能把失敗當成選項！",
+      "source": "《阿波羅13》（Apollo 13，1995）",
+      "originalText": "Failure is not an option!",
+      "sourceWork": "《阿波羅13》（Apollo 13，1995）；Gene Kranz；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Apollo_13_(film)",
+      "tags": [
+        "責任與堅持"
+      ]
+    },
+    {
+      "id": "screen-052",
+      "category": "screen",
+      "text": "我得繼續呼吸，繼續活下去。",
+      "source": "《浩劫重生》（Cast Away，2000）",
+      "originalText": "I got to keep breathing.",
+      "sourceWork": "《浩劫重生》（Cast Away，2000）；Chuck Noland；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Cast_Away",
+      "tags": [
+        "生命與堅持"
+      ]
+    },
+    {
+      "id": "screen-053",
+      "category": "screen",
+      "text": "即使沒有犯錯，也可能輸掉。這不是軟弱，而是人生。",
+      "source": "《銀河飛龍》（Star Trek: The Next Generation，1987 起影集）",
+      "originalText": "It is possible to commit no mistakes and still lose. That is not a weakness; that is life.",
+      "sourceWork": "《銀河飛龍》（Star Trek: The Next Generation，1987 起影集）；Peak Performance [2.21]；Jean-Luc Picard；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Star_Trek:_The_Next_Generation",
+      "tags": [
+        "挫折與接納"
+      ]
+    },
+    {
+      "id": "screen-054",
+      "category": "screen",
+      "text": "有時候，活在謊言裡反而比較容易。",
+      "source": "《神鬼交鋒》（Catch Me If You Can，2002）",
+      "originalText": "Sometimes, it's easier living the lie.",
+      "sourceWork": "《神鬼交鋒》（Catch Me If You Can，2002）；Carl Hanratty；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Catch_Me_If_You_Can",
+      "tags": [
+        "誠實與自省"
+      ]
+    },
+    {
+      "id": "screen-055",
+      "category": "screen",
+      "text": "總有一刻，明理的人會放下驕傲，承認自己犯了大錯。",
+      "source": "《大智若魚》（Big Fish，2003）",
+      "originalText": "Now, there comes a point where a reasonable man will swallow his pride and admit that he's made a terrible mistake.",
+      "sourceWork": "《大智若魚》（Big Fish，2003）；Edward Bloom；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Big_Fish",
+      "tags": [
+        "謙卑與反省"
+      ]
+    },
+    {
+      "id": "screen-056",
+      "category": "screen",
+      "text": "如果要一起生活，就得學會溝通。",
+      "source": "《少年Pi的奇幻漂流》（Life of Pi，2012）",
+      "originalText": "If we're going to live together, we have to learn to communicate.",
+      "sourceWork": "《少年Pi的奇幻漂流》（Life of Pi，2012）；Pi Patel；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Life_of_Pi_(film)",
+      "tags": [
+        "溝通與關係"
+      ]
+    },
+    {
+      "id": "screen-057",
+      "category": "screen",
+      "text": "如果你困在同一個地方，每天都一模一樣，做什麼都無關緊要，你會怎麼辦？",
+      "source": "《今天暫時停止》（Groundhog Day，1993）",
+      "originalText": "What would you do if you were stuck in one place, and every day was exactly the same, and nothing that you did mattered?",
+      "sourceWork": "《今天暫時停止》（Groundhog Day，1993）；Phil；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Groundhog_Day_(film)",
+      "tags": [
+        "生活與改變"
+      ]
+    },
+    {
+      "id": "screen-058",
+      "category": "screen",
+      "text": "身處天堂時，當聖人很容易。",
+      "source": "《銀河前哨》（Star Trek: Deep Space Nine，1993 起影集）",
+      "originalText": "It's easy to be a saint in paradise.",
+      "sourceWork": "《銀河前哨》（Star Trek: Deep Space Nine，1993 起影集）；The Maquis, Part II [2.21]；Benjamin Sisko；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Star_Trek:_Deep_Space_Nine",
+      "tags": [
+        "處境與同理"
+      ]
+    },
+    {
+      "id": "screen-059",
+      "category": "screen",
+      "text": "每個人的生命，都與許多其他生命相連。",
+      "source": "《風雲人物》（It's a Wonderful Life，1946）",
+      "originalText": "Each man's life touches so many other lives.",
+      "sourceWork": "《風雲人物》（It's a Wonderful Life，1946）；Clarence Oddbody；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/It's_a_Wonderful_Life",
+      "tags": [
+        "生命與連結"
+      ]
+    },
+    {
+      "id": "screen-060",
+      "category": "screen",
+      "text": "沒有什麼比那些看似不必要的事更不可或缺。",
+      "source": "《美麗人生》（Life Is Beautiful，1997）",
+      "originalText": "Nothing is more necessary than the unnecessary.",
+      "sourceWork": "《美麗人生》（Life Is Beautiful，1997）；Eliseo；英文版台詞節錄；標點與大小寫整理；中文自譯；英文為配音／翻譯版本，非作品原始語言",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Life_Is_Beautiful",
+      "tags": [
+        "生活與價值"
+      ]
+    },
+    {
+      "id": "screen-061",
+      "category": "screen",
+      "text": "你有夢想，就得守護它。",
+      "source": "《當幸福來敲門》（The Pursuit of Happyness，2006）",
+      "originalText": "You got a dream, you got to protect it.",
+      "sourceWork": "《當幸福來敲門》（The Pursuit of Happyness，2006）；Chris Gardner；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Pursuit_of_Happyness",
+      "tags": [
+        "夢想與行動"
+      ]
+    },
+    {
+      "id": "screen-062",
+      "category": "screen",
+      "text": "我不在乎你們現在是否喜歡彼此，但你們必須尊重彼此。",
+      "source": "《衝鋒陷陣》（Remember the Titans，2000）",
+      "originalText": "I don't care if you like each other right now, but you will respect each other.",
+      "sourceWork": "《衝鋒陷陣》（Remember the Titans，2000）；Coach Boone；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Remember_the_Titans",
+      "tags": [
+        "尊重與合作"
+      ]
+    },
+    {
+      "id": "screen-063",
+      "category": "screen",
+      "text": "別把沉著誤認為輕鬆。",
+      "source": "《星際爭霸戰：重返地球》（Star Trek: Voyager，1995 起影集）",
+      "originalText": "Do not mistake composure for ease.",
+      "sourceWork": "《星際爭霸戰：重返地球》（Star Trek: Voyager，1995 起影集）；State of Flux [1.11]；Tuvok；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Star_Trek:_Voyager",
+      "tags": [
+        "理解與尊重"
+      ]
+    },
+    {
+      "id": "screen-064",
+      "category": "screen",
+      "text": "當我們從自身的恐懼中解脫，也會讓身旁的人感到自由。",
+      "source": "《卡特教頭》（Coach Carter，2005）",
+      "originalText": "As we are liberated from our own fear, our presence automatically liberates others.",
+      "sourceWork": "《卡特教頭》（Coach Carter，2005）；Dialogue；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Coach_Carter",
+      "tags": [
+        "勇氣與影響"
+      ]
+    },
+    {
+      "id": "screen-065",
+      "category": "screen",
+      "text": "有夢想，才能承受生活的艱難。",
+      "source": "《豪情好傢伙》（Rudy，1993）",
+      "originalText": "Having dreams is what makes life tolerable.",
+      "sourceWork": "《豪情好傢伙》（Rudy，1993）；Pete；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Rudy",
+      "tags": [
+        "夢想與堅持"
+      ]
+    },
+    {
+      "id": "screen-066",
+      "category": "screen",
+      "text": "這始終關乎選擇。",
+      "source": "《金牌拳手》（Creed，2015）",
+      "originalText": "It's always about a choice.",
+      "sourceWork": "《金牌拳手》（Creed，2015）；Rocky；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Creed_(film)",
+      "tags": [
+        "選擇與責任"
+      ]
+    },
+    {
+      "id": "screen-067",
+      "category": "screen",
+      "text": "為只有自己看得見的夢想賭上一切，奇妙之處就在這裡。",
+      "source": "《登峰造擊》（Million Dollar Baby，2004）",
+      "originalText": "It's the magic of risking everything for a dream that nobody sees but you.",
+      "sourceWork": "《登峰造擊》（Million Dollar Baby，2004）；Eddie Dupris；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Million_Dollar_Baby",
+      "tags": [
+        "夢想與勇氣"
+      ]
+    },
+    {
+      "id": "screen-068",
+      "category": "screen",
+      "text": "人得到外界的愛與支持，才有機會變好；當他們得不到時，我們怎能一味責怪？",
+      "source": "《良善之地》（The Good Place，2016 起影集）",
+      "originalText": "People improve when they get external love and support. How can we hold it against them when they don't?",
+      "sourceWork": "《良善之地》（The Good Place，2016 起影集）；Chapter 47 - The Funeral to End All Funerals [4.08]；Michael；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Good_Place",
+      "tags": [
+        "支持與成長"
+      ]
+    },
+    {
+      "id": "screen-069",
+      "category": "screen",
+      "text": "寬恕讓心靈自由，也讓恐懼消散。",
+      "source": "《打不倒的勇者》（Invictus，2009）",
+      "originalText": "Forgiveness liberates the soul. It removes fear.",
+      "sourceWork": "《打不倒的勇者》（Invictus，2009）；Nelson Mandela；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Invictus_(film)",
+      "tags": [
+        "寬恕與自由"
+      ]
+    },
+    {
+      "id": "screen-070",
+      "category": "screen",
+      "text": "寫第一稿時，必須用心去寫。",
+      "source": "《心靈訪客》（Finding Forrester，2000）",
+      "originalText": "You must write your first draft with your heart.",
+      "sourceWork": "《心靈訪客》（Finding Forrester，2000）；William Forrester；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Finding_Forrester",
+      "tags": [
+        "創作與真誠"
+      ]
+    },
+    {
+      "id": "screen-071",
+      "category": "screen",
+      "text": "學生會努力成長，達到你對他們的期望。",
+      "source": "《為人師表》（Stand and Deliver，1988）",
+      "originalText": "Students will rise to the level of expectations.",
+      "sourceWork": "《為人師表》（Stand and Deliver，1988）；Jaime Escalante；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Stand_and_Deliver",
+      "tags": [
+        "教育與信任"
+      ]
+    },
+    {
+      "id": "screen-072",
+      "category": "screen",
+      "text": "未來的學者研究我們時，會看見什麼？",
+      "source": "《蒙娜麗莎的微笑》（Mona Lisa Smile，2003）",
+      "originalText": "What will the future scholars see when they study us?",
+      "sourceWork": "《蒙娜麗莎的微笑》（Mona Lisa Smile，2003）；Katherine Watson；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Mona_Lisa_Smile",
+      "tags": [
+        "時代與自省"
+      ]
+    },
+    {
+      "id": "screen-073",
+      "category": "screen",
+      "text": "平凡的事物裡有許多美好。這不正是重點嗎？",
+      "source": "《辦公室瘋雲》（The Office，2005 起影集）",
+      "originalText": "There's a lot of beauty in ordinary things. Isn't that kind of the point?",
+      "sourceWork": "《辦公室瘋雲》（The Office，2005 起影集）；Finale [9.24 & 9.25]；Pam；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Office_(season_9)",
+      "tags": [
+        "珍惜日常"
+      ]
+    },
+    {
+      "id": "screen-074",
+      "category": "screen",
+      "text": "生命的價值，不由一次失敗或一次成功決定。",
+      "source": "《天之驕子》（The Emperor's Club，2002）",
+      "originalText": "The worth of a life is not determined by a single failure or a solitary success.",
+      "sourceWork": "《天之驕子》（The Emperor's Club，2002）；William Hundert；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Emperor's_Club",
+      "tags": [
+        "生命與價值"
+      ]
+    },
+    {
+      "id": "screen-075",
+      "category": "screen",
+      "text": "做對的事，永遠不會錯。",
+      "source": "《高年級實習生》（The Intern，2015）",
+      "originalText": "You're never wrong to do the right thing.",
+      "sourceWork": "《高年級實習生》（The Intern，2015）；Ben；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Intern_(2015_film)",
+      "tags": [
+        "正直與行動"
+      ]
+    },
+    {
+      "id": "screen-076",
+      "category": "screen",
+      "text": "你能看透人們想要什麼、需要什麼，並為自己作出選擇。",
+      "source": "《穿著Prada的惡魔》（The Devil Wears Prada，2006）",
+      "originalText": "You can look beyond what people want, and what they need, and you can choose for yourself.",
+      "sourceWork": "《穿著Prada的惡魔》（The Devil Wears Prada，2006）；Miranda；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Devil_Wears_Prada_(film)",
+      "tags": [
+        "判斷與選擇"
+      ]
+    },
+    {
+      "id": "screen-077",
+      "category": "screen",
+      "text": "真正的失敗者，是害怕贏不了，連試都不敢試的人。",
+      "source": "《小太陽的願望》（Little Miss Sunshine，2006）",
+      "originalText": "A real loser is someone who's so afraid of not winning, they don't even try.",
+      "sourceWork": "《小太陽的願望》（Little Miss Sunshine，2006）；Grandpa；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Little_Miss_Sunshine",
+      "tags": [
+        "勇氣與嘗試"
+      ]
+    },
+    {
+      "id": "screen-078",
+      "category": "screen",
+      "text": "歡迎來到真實世界。它很糟，但你會愛上它。",
+      "source": "《六人行》（Friends，1994 起影集）",
+      "originalText": "Welcome to the real world. It sucks. You're gonna love it.",
+      "sourceWork": "《六人行》（Friends，1994 起影集）；The One Where Monica Gets A New Roommate [1.01]；Monica；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Friends_(season_1)",
+      "tags": [
+        "生活與勇氣"
+      ]
+    },
+    {
+      "id": "screen-079",
+      "category": "screen",
+      "text": "善待他人，因為每個人都在打一場艱難的仗。",
+      "source": "《奇蹟男孩》（Wonder，2017）",
+      "originalText": "Be kind, for everyone is fighting a hard battle.",
+      "sourceWork": "《奇蹟男孩》（Wonder，2017）；Auggie；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Wonder_(film)",
+      "tags": [
+        "善意與理解"
+      ]
+    },
+    {
+      "id": "screen-080",
+      "category": "screen",
+      "text": "後來，我再也沒有交到像十二歲時那樣的朋友。",
+      "source": "《站在我這邊》（Stand by Me，1986）",
+      "originalText": "I never had any friends later on like the ones I had when I was 12.",
+      "sourceWork": "《站在我這邊》（Stand by Me，1986）；The Writer；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Stand_by_Me_(film)",
+      "tags": [
+        "友誼與回憶"
+      ]
+    },
+    {
+      "id": "screen-081",
+      "category": "screen",
+      "text": "孩子，跟隨你的心，就不會走錯路。",
+      "source": "《沙地傳奇》（The Sandlot，1993）",
+      "originalText": "Follow your heart, kid, and you'll never go wrong.",
+      "sourceWork": "《沙地傳奇》（The Sandlot，1993）；Babe Ruth；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Sandlot",
+      "tags": [
+        "內心與選擇"
+      ]
+    },
+    {
+      "id": "screen-082",
+      "category": "screen",
+      "text": "七寶絕不輕言放棄！",
+      "source": "《七寶奇謀》（The Goonies，1985）",
+      "originalText": "Goonies never say die!",
+      "sourceWork": "《七寶奇謀》（The Goonies，1985）；Mikey；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Goonies",
+      "tags": [
+        "夥伴與堅持"
+      ]
+    },
+    {
+      "id": "screen-083",
+      "category": "screen",
+      "text": "愛，是我們做過最美好的事。",
+      "source": "《追愛總動員》（How I Met Your Mother，2005 起影集）",
+      "originalText": "Love is the best thing we do.",
+      "sourceWork": "《追愛總動員》（How I Met Your Mother，2005 起影集）；The End of the Aisle [9.22]；Ted；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/How_I_Met_Your_Mother_(season_9)",
+      "tags": [
+        "愛與生命"
+      ]
+    },
+    {
+      "id": "screen-084",
+      "category": "screen",
+      "text": "平衡掌握好了，空手道才好，一切才會好。",
+      "source": "《小子難纏》（The Karate Kid，1984）",
+      "originalText": "Balance good, karate good, everything good.",
+      "sourceWork": "《小子難纏》（The Karate Kid，1984）；Mr. Hideo Miyagi；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Karate_Kid",
+      "tags": [
+        "平衡與修練"
+      ]
+    },
+    {
+      "id": "screen-085",
+      "category": "screen",
+      "text": "當人生把你擊倒，你可以選擇要不要重新站起來。",
+      "source": "《功夫夢》（The Karate Kid，2010）",
+      "originalText": "when life knocks you down, you could choose whether or not to get back up.",
+      "sourceWork": "《功夫夢》（The Karate Kid，2010）；Dre Parker；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Karate_Kid_(2010_film)",
+      "tags": [
+        "挫折與選擇"
+      ]
+    },
+    {
+      "id": "screen-086",
+      "category": "screen",
+      "text": "重要的是你如何舞動，以及如何表達自己。",
+      "source": "《舞動人生》（Billy Elliot，2000）",
+      "originalText": "it's how you move and how you express yourself that's important.",
+      "sourceWork": "《舞動人生》（Billy Elliot，2000）；Sandra Wilkinson；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Billy_Elliot",
+      "tags": [
+        "自我表達"
+      ]
+    },
+    {
+      "id": "screen-087",
+      "category": "screen",
+      "text": "英語裡，沒有比「做得好」更有害的兩個字。",
+      "source": "《進擊的鼓手》（Whiplash，2014）",
+      "originalText": "There are no two words in the English language more harmful than \"good job\".",
+      "sourceWork": "《進擊的鼓手》（Whiplash，2014）；Fletcher；角色對讚美與訓練的偏執看法，供反思；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Whiplash_(2014_film)",
+      "tags": [
+        "教育與反思"
+      ]
+    },
+    {
+      "id": "screen-088",
+      "category": "screen",
+      "text": "你所熱愛的事物，造就了現在的你。",
+      "source": "《宅男行不行》（The Big Bang Theory，2007 起影集）",
+      "originalText": "it is the things you love that make you who you are.",
+      "sourceWork": "《宅男行不行》（The Big Bang Theory，2007 起影集）；The Nerdvana Annihilation [1.14]；Penny；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Big_Bang_Theory_(season_1)",
+      "tags": [
+        "熱愛與自我"
+      ]
+    },
+    {
+      "id": "screen-089",
+      "category": "screen",
+      "text": "你緊抓著過去，但爵士樂談的是未來。",
+      "source": "《樂來越愛你》（La La Land，2016）",
+      "originalText": "You hold onto the past, but jazz is about the future.",
+      "sourceWork": "《樂來越愛你》（La La Land，2016）；Keith；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/La_La_Land",
+      "tags": [
+        "傳承與改變"
+      ]
+    },
+    {
+      "id": "screen-090",
+      "category": "screen",
+      "text": "失敗教會我們：人生只是草稿，是一場永不上演的戲的無盡彩排。",
+      "source": "《艾蜜莉的異想世界》（Amélie，2001）",
+      "originalText": "Failure teaches us that life is but a draft, an endless rehearsal of a show that will never play.",
+      "sourceWork": "《艾蜜莉的異想世界》（Amélie，2001）；Hipolito；英文版台詞節錄；標點與大小寫整理；中文自譯；英文為配音／翻譯版本，非作品原始語言",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Am%C3%A9lie",
+      "tags": [
+        "失敗與人生"
+      ]
+    },
+    {
+      "id": "screen-091",
+      "category": "screen",
+      "text": "所以我想，如果整個世界是一部大機器，我就不可能是多餘的零件。",
+      "source": "《雨果的冒險》（Hugo，2011）",
+      "originalText": "So I figured, if the entire world was one big machine, I couldn't be an extra part.",
+      "sourceWork": "《雨果的冒險》（Hugo，2011）；Hugo Cabret；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Hugo_(film)",
+      "tags": [
+        "自我價值"
+      ]
+    },
+    {
+      "id": "screen-092",
+      "category": "screen",
+      "text": "從來沒有人靠著與所有人一模一樣，而帶來改變。",
+      "source": "《大娛樂家》（The Greatest Showman，2017）",
+      "originalText": "No one ever made a difference by being like everyone else.",
+      "sourceWork": "《大娛樂家》（The Greatest Showman，2017）；P. T. Barnum；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Greatest_Showman",
+      "tags": [
+        "自我與改變"
+      ]
+    },
+    {
+      "id": "screen-093",
+      "category": "screen",
+      "text": "你們都比自己想像的更好。",
+      "source": "《廢柴聯盟》（Community，2009 起影集）",
+      "originalText": "You are all better than you think you are.",
+      "sourceWork": "《廢柴聯盟》（Community，2009 起影集）；Pilot [1.01]；Jeff；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Community_(TV_series)%2FSeason_1",
+      "tags": [
+        "自我價值"
+      ]
+    },
+    {
+      "id": "screen-094",
+      "category": "screen",
+      "text": "在一切之上，我相信愛。",
+      "source": "《紅磨坊》（Moulin Rouge!，2001）",
+      "originalText": "Above all things I believe in love.",
+      "sourceWork": "《紅磨坊》（Moulin Rouge!，2001）；Christian；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Moulin_Rouge!",
+      "tags": [
+        "愛與信念"
+      ]
+    },
+    {
+      "id": "screen-095",
+      "category": "screen",
+      "text": "當上帝關上一扇門，就會在某處打開一扇窗。",
+      "source": "《真善美》（The Sound of Music，1965）",
+      "originalText": "When the Lord closes a door, somewhere He opens a window.",
+      "sourceWork": "《真善美》（The Sound of Music，1965）；Maria；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Sound_of_Music_(film)",
+      "tags": [
+        "希望與轉機"
+      ]
+    },
+    {
+      "id": "screen-096",
+      "category": "screen",
+      "text": "一切都有可能，就連看似不可能的事也是。",
+      "source": "《愛·滿人間》（Mary Poppins Returns，2018）",
+      "originalText": "Everything is possible, even the impossible.",
+      "sourceWork": "《愛·滿人間》（Mary Poppins Returns，2018）；Mary Poppins；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Mary_Poppins_Returns",
+      "tags": [
+        "想像與可能"
+      ]
+    },
+    {
+      "id": "screen-097",
+      "category": "screen",
+      "text": "衡量一顆心，不在於你付出多少愛，而在於你得到他人多少愛。",
+      "source": "《綠野仙蹤》（The Wizard of Oz，1939）",
+      "originalText": "A heart is not judged by how much you love; but by how much you are loved by others.",
+      "sourceWork": "《綠野仙蹤》（The Wizard of Oz，1939）；The Wizard；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Wizard_of_Oz_(1939_film)",
+      "tags": [
+        "愛與關係"
+      ]
+    },
+    {
+      "id": "screen-098",
+      "category": "screen",
+      "text": "我們能有尊嚴地活著，卻無法有尊嚴地死去。",
+      "source": "《豪斯醫生》（House，2004 起影集）",
+      "originalText": "We can live with dignity - we can't die with it.",
+      "sourceWork": "《豪斯醫生》（House，2004 起影集）；Everybody Lies [1.01]；Dr. House；劇中角色觀點；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/House_(TV_series)%2FSeason_1",
+      "tags": [
+        "生命與尊嚴"
+      ]
+    },
+    {
+      "id": "screen-099",
+      "category": "screen",
+      "text": "在這疲憊的世界裡，一件善行就這樣閃耀。",
+      "source": "《歡樂糖果屋》（Willy Wonka & the Chocolate Factory，1971）",
+      "originalText": "So shines a good deed in a weary world.",
+      "sourceWork": "《歡樂糖果屋》（Willy Wonka & the Chocolate Factory，1971）；Wonka；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Willy_Wonka_&_the_Chocolate_Factory",
+      "tags": [
+        "善意與影響"
+      ]
+    },
+    {
+      "id": "screen-100",
+      "category": "screen",
+      "text": "查理，每個人都有機會。",
+      "source": "《巧克力冒險工廠》（Charlie and the Chocolate Factory，2005）",
+      "originalText": "Everyone has a chance, Charlie.",
+      "sourceWork": "《巧克力冒險工廠》（Charlie and the Chocolate Factory，2005）；Grandma Josephine；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Charlie_and_the_Chocolate_Factory_(film)",
+      "tags": [
+        "希望與機會"
+      ]
+    },
+    {
+      "id": "screen-101",
+      "category": "screen",
+      "text": "家，不只是頭頂上的一片屋瓦。",
+      "source": "《柏靈頓：熊愛趴趴走》（Paddington，2014）",
+      "originalText": "a home is more than a roof over your head.",
+      "sourceWork": "《柏靈頓：熊愛趴趴走》（Paddington，2014）；Mr. Gruber；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Paddington_(film)",
+      "tags": [
+        "家與歸屬"
+      ]
+    },
+    {
+      "id": "screen-102",
+      "category": "screen",
+      "text": "只要我們善良有禮，世界就會更美好。",
+      "source": "《柏靈頓熊熊出任務》（Paddington 2，2017）",
+      "originalText": "If we're kind and polite, the world will be right.",
+      "sourceWork": "《柏靈頓熊熊出任務》（Paddington 2，2017）；Paddington；Aunt Lucy said；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Paddington_2",
+      "tags": [
+        "善意與禮貌"
+      ]
+    },
+    {
+      "id": "screen-103",
+      "category": "screen",
+      "text": "決定，是由願意到場的人作出的。",
+      "source": "《白宮風雲》（The West Wing，1999 起影集）",
+      "originalText": "Decisions are made by those who show up.",
+      "sourceWork": "《白宮風雲》（The West Wing，1999 起影集）；What Kind of Day Has It Been；Bartlet；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_West_Wing",
+      "tags": [
+        "參與與行動"
+      ]
+    },
+    {
+      "id": "screen-104",
+      "category": "screen",
+      "text": "活著，將是一場極大的冒險。",
+      "source": "《虎克船長》（Hook，1991）",
+      "originalText": "To live would be an awfully big adventure.",
+      "sourceWork": "《虎克船長》（Hook，1991）；Peter Banning；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Hook_(film)",
+      "tags": [
+        "生命與探索"
+      ]
+    },
+    {
+      "id": "screen-105",
+      "category": "screen",
+      "text": "公主殿下，人生有苦痛。說不是如此的人，多半是想向你推銷什麼。",
+      "source": "《公主新娘》（The Princess Bride，1987）",
+      "originalText": "Life is pain, Highness. Anyone who says differently is selling something.",
+      "sourceWork": "《公主新娘》（The Princess Bride，1987）；Life is pain.；Man in Black；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Princess_Bride_(film)",
+      "tags": [
+        "人生與真實"
+      ]
+    },
+    {
+      "id": "screen-106",
+      "category": "screen",
+      "text": "不要放棄，好運就會找到你。",
+      "source": "《大魔域》（The NeverEnding Story，1984）",
+      "originalText": "Never give up, and good luck will find you.",
+      "sourceWork": "《大魔域》（The NeverEnding Story，1984）；Falkor；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_NeverEnding_Story_(film)",
+      "tags": [
+        "希望與堅持"
+      ]
+    },
+    {
+      "id": "screen-107",
+      "category": "screen",
+      "text": "你沒有支配我的力量。",
+      "source": "《魔王迷宮》（Labyrinth，1986）",
+      "originalText": "You have no power over me.",
+      "sourceWork": "《魔王迷宮》（Labyrinth，1986）；Sarah；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Labyrinth_(film)",
+      "tags": [
+        "自主與勇氣"
+      ]
+    },
+    {
+      "id": "screen-108",
+      "category": "screen",
+      "text": "解決問題的第一步，是承認問題存在。",
+      "source": "《新聞急先鋒》（The Newsroom，2012 起影集）",
+      "originalText": "First step in solving any problem is recognizing there is one.",
+      "sourceWork": "《新聞急先鋒》（The Newsroom，2012 起影集）；We Just Decided To [1.01]；Will；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Newsroom_(American_TV_series)",
+      "tags": [
+        "誠實與解題"
+      ]
+    },
+    {
+      "id": "screen-109",
+      "category": "screen",
+      "text": "我們所要決定的，只是如何運用被賦予的時間。",
+      "source": "《魔戒首部曲：魔戒現身》（The Lord of the Rings: The Fellowship of the Ring，2001）",
+      "originalText": "All we have to decide is what to do with the time that is given to us.",
+      "sourceWork": "《魔戒首部曲：魔戒現身》（The Lord of the Rings: The Fellowship of the Ring，2001）；Gandalf；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring",
+      "tags": [
+        "時間與選擇"
+      ]
+    },
+    {
+      "id": "screen-110",
+      "category": "screen",
+      "text": "佛羅多先生，世上仍有美好之事，值得我們為之奮鬥。",
+      "source": "《魔戒二部曲：雙城奇謀》（The Lord of the Rings: The Two Towers，2002）",
+      "originalText": "there's some good in the world, Mr. Frodo, and it's worth fighting for.",
+      "sourceWork": "《魔戒二部曲：雙城奇謀》（The Lord of the Rings: The Two Towers，2002）；Sam Gamgee；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Lord_of_the_Rings:_The_Two_Towers",
+      "tags": [
+        "希望與堅持"
+      ]
+    },
+    {
+      "id": "screen-111",
+      "category": "screen",
+      "text": "有些事，時間無法修補；有些傷太深，已在心裡扎根。",
+      "source": "《魔戒三部曲：王者再臨》（The Lord of the Rings: The Return of the King，2003）",
+      "originalText": "There are some things that time cannot mend. Some hurts that go too deep, that have taken hold.",
+      "sourceWork": "《魔戒三部曲：王者再臨》（The Lord of the Rings: The Return of the King，2003）；Frodo Baggins；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Lord_of_the_Rings:_The_Return_of_the_King",
+      "tags": [
+        "傷痛與理解"
+      ]
+    },
+    {
+      "id": "screen-112",
+      "category": "screen",
+      "text": "真正的勇氣，是知道何時放過一條生命，而非何時奪走它。",
+      "source": "《哈比人：意外旅程》（The Hobbit: An Unexpected Journey，2012）",
+      "originalText": "True courage is about knowing not when to take a life, but when to spare one.",
+      "sourceWork": "《哈比人：意外旅程》（The Hobbit: An Unexpected Journey，2012）；Gandalf the Grey；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Hobbit:_An_Unexpected_Journey",
+      "tags": [
+        "勇氣與慈悲"
+      ]
+    },
+    {
+      "id": "screen-113",
+      "category": "screen",
+      "text": "如果你願意，就能改變自己的人生。",
+      "source": "《唐頓莊園》（Downton Abbey，2010 起影集）",
+      "originalText": "You can change your life if you want to.",
+      "sourceWork": "《唐頓莊園》（Downton Abbey，2010 起影集）；Episode 3；Mr. Bates；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Downton_Abbey",
+      "tags": [
+        "改變與行動"
+      ]
+    },
+    {
+      "id": "screen-114",
+      "category": "screen",
+      "text": "如果更多人看重家園勝過黃金，世界會更快樂。",
+      "source": "《哈比人：五軍之戰》（The Hobbit: The Battle of the Five Armies，2014）",
+      "originalText": "If more people valued home above gold, this world would be a merrier place.",
+      "sourceWork": "《哈比人：五軍之戰》（The Hobbit: The Battle of the Five Armies，2014）；Thorin Oakenshield；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Hobbit:_The_Battle_of_the_Five_Armies",
+      "tags": [
+        "家與價值"
+      ]
+    },
+    {
+      "id": "screen-115",
+      "category": "screen",
+      "text": "很快地，我們都得在正確的事與容易的事之間作出選擇。",
+      "source": "《哈利波特：火盃的考驗》（Harry Potter and the Goblet of Fire，2005）",
+      "originalText": "Soon we must all face the choice between what is right and what is easy.",
+      "sourceWork": "《哈利波特：火盃的考驗》（Harry Potter and the Goblet of Fire，2005）；Albus Dumbledore；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Harry_Potter_and_the_Goblet_of_Fire_(film)",
+      "tags": [
+        "正直與選擇"
+      ]
+    },
+    {
+      "id": "screen-116",
+      "category": "screen",
+      "text": "我們每個人的心裡，都同時有光明與黑暗。",
+      "source": "《哈利波特：鳳凰會的密令》（Harry Potter and the Order of the Phoenix，2007）",
+      "originalText": "We have all got both light and dark inside us.",
+      "sourceWork": "《哈利波特：鳳凰會的密令》（Harry Potter and the Order of the Phoenix，2007）；Sirius；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Harry_Potter_and_the_Order_of_the_Phoenix_(film)",
+      "tags": [
+        "人性與自省"
+      ]
+    },
+    {
+      "id": "screen-117",
+      "category": "screen",
+      "text": "多比沒有主人。多比是自由的小精靈。",
+      "source": "《哈利波特：死神的聖物Ⅰ》（Harry Potter and the Deathly Hallows – Part 1，2010）",
+      "originalText": "Dobby has no master. Dobby is a free elf.",
+      "sourceWork": "《哈利波特：死神的聖物Ⅰ》（Harry Potter and the Deathly Hallows – Part 1，2010）；Dobby；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Harry_Potter_and_the_Deathly_Hallows_%E2%80%93_Part_1",
+      "tags": [
+        "自由與尊嚴"
+      ]
+    },
+    {
+      "id": "screen-118",
+      "category": "screen",
+      "text": "這世界最難的事，就是好好活在其中。",
+      "source": "《魔法奇兵》（Buffy the Vampire Slayer，1997 起影集）",
+      "originalText": "The hardest thing in this world is to live in it.",
+      "sourceWork": "《魔法奇兵》（Buffy the Vampire Slayer，1997 起影集）；The Gift；Buffy；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Buffy_the_Vampire_Slayer",
+      "tags": [
+        "生命與勇氣"
+      ]
+    },
+    {
+      "id": "screen-119",
+      "category": "screen",
+      "text": "哈利，別憐憫死者。憐憫活著的人，尤其是生命裡沒有愛的人。",
+      "source": "《哈利波特：死神的聖物Ⅱ》（Harry Potter and the Deathly Hallows – Part 2，2011）",
+      "originalText": "Do not pity the dead, Harry. Pity the living. And above all, those who live without love.",
+      "sourceWork": "《哈利波特：死神的聖物Ⅱ》（Harry Potter and the Deathly Hallows – Part 2，2011）；Dumbledore；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Harry_Potter_and_the_Deathly_Hallows_%E2%80%93_Part_2",
+      "tags": [
+        "愛與生命"
+      ]
+    },
+    {
+      "id": "screen-120",
+      "category": "screen",
+      "text": "我的人生哲學是：憂慮等於讓自己受苦兩次。",
+      "source": "《怪獸與牠們的產地》（Fantastic Beasts and Where to Find Them，2016）",
+      "originalText": "My philosophy is that worrying means you suffer twice.",
+      "sourceWork": "《怪獸與牠們的產地》（Fantastic Beasts and Where to Find Them，2016）；Newt Scamander；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Fantastic_Beasts_and_Where_to_Find_Them_(film)",
+      "tags": [
+        "憂慮與當下"
+      ]
+    },
+    {
+      "id": "screen-121",
+      "category": "screen",
+      "text": "親愛的，事情不會兩次都以同樣的方式發生。",
+      "source": "《納尼亞傳奇：賈思潘王子》（The Chronicles of Narnia: Prince Caspian，2008）",
+      "originalText": "Things never happen the same way twice, dear one.",
+      "sourceWork": "《納尼亞傳奇：賈思潘王子》（The Chronicles of Narnia: Prince Caspian，2008）；Aslan；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Chronicles_of_Narnia:_Prince_Caspian",
+      "tags": [
+        "改變與接納"
+      ]
+    },
+    {
+      "id": "screen-122",
+      "category": "screen",
+      "text": "如果沒有信念，我們就一無所有。",
+      "source": "《納尼亞傳奇：黎明行者號》（The Chronicles of Narnia: The Voyage of the Dawn Treader，2010）",
+      "originalText": "We have nothing, if not belief.",
+      "sourceWork": "《納尼亞傳奇：黎明行者號》（The Chronicles of Narnia: The Voyage of the Dawn Treader，2010）；Reepicheep；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Chronicles_of_Narnia:_The_Voyage_of_the_Dawn_Treader",
+      "tags": [
+        "信念與希望"
+      ]
+    },
+    {
+      "id": "screen-123",
+      "category": "screen",
+      "text": "如果所做的一切都沒有注定的意義，那麼真正重要的，就是我們選擇去做什麼。",
+      "source": "《夜行天使》（Angel，1999 起影集）",
+      "originalText": "If nothing we do matters, then all that matters is what we do.",
+      "sourceWork": "《夜行天使》（Angel，1999 起影集）；Epiphany；Angel；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Angel_(season_2)",
+      "tags": [
+        "行動與意義"
+      ]
+    },
+    {
+      "id": "screen-124",
+      "category": "screen",
+      "text": "如果你愛的只有金錢，得到的也只會是金錢。",
+      "source": "《星際大戰四部曲：曙光乍現》（Star Wars Episode IV: A New Hope，1977）",
+      "originalText": "If money is all that you love, then that's what you'll receive.",
+      "sourceWork": "《星際大戰四部曲：曙光乍現》（Star Wars Episode IV: A New Hope，1977）；Princess Leia Organa；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Star_Wars_Episode_IV:_A_New_Hope",
+      "tags": [
+        "價值與選擇"
+      ]
+    },
+    {
+      "id": "screen-125",
+      "category": "screen",
+      "text": "你必須放下已學會的那些成見。",
+      "source": "《星際大戰五部曲：帝國大反擊》（Star Wars Episode V: The Empire Strikes Back，1980）",
+      "originalText": "You must unlearn what you have learned.",
+      "sourceWork": "《星際大戰五部曲：帝國大反擊》（Star Wars Episode V: The Empire Strikes Back，1980）；Yoda；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Star_Wars_Episode_V:_The_Empire_Strikes_Back",
+      "tags": [
+        "學習與開放"
+      ]
+    },
+    {
+      "id": "screen-126",
+      "category": "screen",
+      "text": "我們緊抓不放的許多真理，其實深受自身觀點影響。",
+      "source": "《星際大戰六部曲：絕地大反攻》（Star Wars Episode VI: Return of the Jedi，1983）",
+      "originalText": "many of the truths we cling to depend greatly on our own point of view.",
+      "sourceWork": "《星際大戰六部曲：絕地大反攻》（Star Wars Episode VI: Return of the Jedi，1983）；Obi-Wan；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Star_Wars_Episode_VI:_Return_of_the_Jedi",
+      "tags": [
+        "觀點與真相"
+      ]
+    },
+    {
+      "id": "screen-127",
+      "category": "screen",
+      "text": "失敗，是最好的老師。",
+      "source": "《STAR WARS：最後的絕地武士》（Star Wars: The Last Jedi，2017）",
+      "originalText": "The greatest teacher, failure is.",
+      "sourceWork": "《STAR WARS：最後的絕地武士》（Star Wars: The Last Jedi，2017）；Yoda；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Star_Wars:_The_Last_Jedi",
+      "tags": [
+        "挫折與學習"
+      ]
+    },
+    {
+      "id": "screen-128",
+      "category": "screen",
+      "text": "心智需要書本，就像劍需要磨刀石。",
+      "source": "《冰與火之歌：權力遊戲》（Game of Thrones，2011 起影集）",
+      "originalText": "A mind needs books like a sword needs a whetstone.",
+      "sourceWork": "《冰與火之歌：權力遊戲》（Game of Thrones，2011 起影集）；The Kingsroad [1.02]；Tyrion Lannister；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Game_of_Thrones%2FSeason_1",
+      "tags": [
+        "閱讀與成長"
+      ]
+    },
+    {
+      "id": "screen-129",
+      "category": "screen",
+      "text": "反抗，是建立在希望之上的！",
+      "source": "《星際大戰外傳：俠盜一號》（Rogue One，2016）",
+      "originalText": "Rebellions are built on hope!",
+      "sourceWork": "《星際大戰外傳：俠盜一號》（Rogue One，2016）；Jyn Erso；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Rogue_One",
+      "tags": [
+        "希望與行動"
+      ]
+    },
+    {
+      "id": "screen-130",
+      "category": "screen",
+      "text": "選擇是一種幻象，存在於掌權者與無權者之間。",
+      "source": "《駭客任務：重裝上陣》（The Matrix Reloaded，2003）",
+      "originalText": "Choice is an illusion, created between those with power, and those without.",
+      "sourceWork": "《駭客任務：重裝上陣》（The Matrix Reloaded，2003）；The Merovingian；Merovingian 的權力觀點；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Matrix_Reloaded",
+      "tags": [
+        "權力與反思"
+      ]
+    },
+    {
+      "id": "screen-131",
+      "category": "screen",
+      "text": "凡有開始，就有結束。",
+      "source": "《駭客任務完結篇：最後戰役》（The Matrix Revolutions，2003）",
+      "originalText": "Everything that has a beginning has an end.",
+      "sourceWork": "《駭客任務完結篇：最後戰役》（The Matrix Revolutions，2003）；The Oracle；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Matrix_Revolutions",
+      "tags": [
+        "無常與接納"
+      ]
+    },
+    {
+      "id": "screen-132",
+      "category": "screen",
+      "text": "身在夢中時，夢總顯得真實。",
+      "source": "《全面啟動》（Inception，2010）",
+      "originalText": "Dreams feel real while we're in them.",
+      "sourceWork": "《全面啟動》（Inception，2010）；Cobb；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Inception",
+      "tags": [
+        "真實與反思"
+      ]
+    },
+    {
+      "id": "screen-133",
+      "category": "screen",
+      "text": "我們能活下來，本身就是力量。",
+      "source": "《曼達洛人》（The Mandalorian，2019 起影集）",
+      "originalText": "Our survival is our strength.",
+      "sourceWork": "《曼達洛人》（The Mandalorian，2019 起影集）；Chapter 3: The Sin [1.3]；Armorer；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Mandalorian",
+      "tags": [
+        "生命與韌性"
+      ]
+    },
+    {
+      "id": "screen-134",
+      "category": "screen",
+      "text": "你要麼以英雄之名死去，要麼活到看見自己成為反派。",
+      "source": "《黑暗騎士》（The Dark Knight，2008）",
+      "originalText": "You either die a hero, or you live long enough to see yourself become the villain.",
+      "sourceWork": "《黑暗騎士》（The Dark Knight，2008）；Harvey Dent/Two-Face；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Dark_Knight",
+      "tags": [
+        "權力與自省"
+      ]
+    },
+    {
+      "id": "screen-135",
+      "category": "screen",
+      "text": "任何人都能成為英雄。",
+      "source": "《黑暗騎士：黎明昇起》（The Dark Knight Rises，2012）",
+      "originalText": "A hero can be anyone.",
+      "sourceWork": "《黑暗騎士：黎明昇起》（The Dark Knight Rises，2012）；Batman；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Dark_Knight_Rises",
+      "tags": [
+        "平凡與勇氣"
+      ]
+    },
+    {
+      "id": "screen-136",
+      "category": "screen",
+      "text": "能力越大，責任越重。",
+      "source": "《蜘蛛人》（Spider-Man，2002）",
+      "originalText": "with great power comes great responsibility.",
+      "sourceWork": "《蜘蛛人》（Spider-Man，2002）；Ben；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Spider-Man_(film)",
+      "tags": [
+        "力量與責任"
+      ]
+    },
+    {
+      "id": "screen-137",
+      "category": "screen",
+      "text": "有時，為了做對的事，我們必須堅定，並放下最想要的東西。",
+      "source": "《蜘蛛人2》（Spider-Man 2，2004）",
+      "originalText": "Sometimes, to do what's right, we have to be steady, and give up the things we want the most.",
+      "sourceWork": "《蜘蛛人2》（Spider-Man 2，2004）；Peter Parker / Spider-Man；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Spider-Man_2",
+      "tags": [
+        "責任與取捨"
+      ]
+    },
+    {
+      "id": "screen-138",
+      "category": "screen",
+      "text": "什麼都不做的風險，會變成所有風險中最大的那一個。",
+      "source": "《安道爾》（Andor，2022 起影集）",
+      "originalText": "the risk of doing nothing becomes the greatest risk of all.",
+      "sourceWork": "《安道爾》（Andor，2022 起影集）；That Would Be Me [1.2]；Deputy Inspector Syril Karn；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Andor_(TV_series)",
+      "tags": [
+        "風險與行動"
+      ]
+    },
+    {
+      "id": "screen-139",
+      "category": "screen",
+      "text": "選擇造就了我們，而我們永遠可以選擇做對的事。",
+      "source": "《蜘蛛人3》（Spider-Man 3，2007）",
+      "originalText": "It's the choices that make us what we are... and we can always choose to do what's right.",
+      "sourceWork": "《蜘蛛人3》（Spider-Man 3，2007）；Peter Parker；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Spider-Man_3",
+      "tags": [
+        "選擇與責任"
+      ]
+    },
+    {
+      "id": "screen-140",
+      "category": "screen",
+      "text": "如果你有能力為他人做好事，就有道義上的責任去做。",
+      "source": "《蜘蛛人：驚奇再起》（The Amazing Spider-Man，2012）",
+      "originalText": "if you could do good things for other people, you had a moral obligation to do those things!",
+      "sourceWork": "《蜘蛛人：驚奇再起》（The Amazing Spider-Man，2012）；Ben Parker；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Amazing_Spider-Man_(2012_film)",
+      "tags": [
+        "能力與責任"
+      ]
+    },
+    {
+      "id": "screen-141",
+      "category": "screen",
+      "text": "我們要比所承受的苦難更強大。",
+      "source": "《蜘蛛人驚奇再起2：電光之戰》（The Amazing Spider-Man 2，2014）",
+      "originalText": "We have to be greater than what we suffer.",
+      "sourceWork": "《蜘蛛人驚奇再起2：電光之戰》（The Amazing Spider-Man 2，2014）；Gwen Stacy；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Amazing_Spider-Man_2",
+      "tags": [
+        "苦難與成長"
+      ]
+    },
+    {
+      "id": "screen-142",
+      "category": "screen",
+      "text": "任何人都能戴上這副面罩，成為英雄。",
+      "source": "《蜘蛛人：新宇宙》（Spider-Man: Into the Spider-Verse，2018）",
+      "originalText": "Anyone can wear the mask.",
+      "sourceWork": "《蜘蛛人：新宇宙》（Spider-Man: Into the Spider-Verse，2018）；Spider-Gang；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Spider-Man:_Into_the_Spider-Verse",
+      "tags": [
+        "可能與勇氣"
+      ]
+    },
+    {
+      "id": "screen-143",
+      "category": "screen",
+      "text": "悲傷，不正是仍在延續的愛嗎？",
+      "source": "《汪達幻視》（WandaVision，2021 起影集）",
+      "originalText": "What is grief, if not love persevering?",
+      "sourceWork": "《汪達幻視》（WandaVision，2021 起影集）；Previously On [1.8]；Vision；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/WandaVision",
+      "tags": [
+        "愛與失落"
+      ]
+    },
+    {
+      "id": "screen-144",
+      "category": "screen",
+      "text": "所有人都在告訴我，我的故事應該怎麼走！",
+      "source": "《蜘蛛人：穿越新宇宙》（Spider-Man: Across the Spider-Verse，2023）",
+      "originalText": "Everyone keeps telling me how my story is supposed to go!",
+      "sourceWork": "《蜘蛛人：穿越新宇宙》（Spider-Man: Across the Spider-Verse，2023）；Miles Morales；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Spider-Man:_Across_the_Spider-Verse",
+      "tags": [
+        "自我與選擇"
+      ]
+    },
+    {
+      "id": "screen-145",
+      "category": "screen",
+      "text": "史塔克，別浪費你的人生。",
+      "source": "《鋼鐵人》（Iron Man，2008）",
+      "originalText": "Don't waste your life, Stark.",
+      "sourceWork": "《鋼鐵人》（Iron Man，2008）；Yinsen；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Iron_Man_(film)",
+      "tags": [
+        "珍惜生命"
+      ]
+    },
+    {
+      "id": "screen-146",
+      "category": "screen",
+      "text": "我們創造了自己的心魔。",
+      "source": "《鋼鐵人3》（Iron Man 3，2013）",
+      "originalText": "We create our own demons.",
+      "sourceWork": "《鋼鐵人3》（Iron Man 3，2013）；Tony Stark；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Iron_Man_3",
+      "tags": [
+        "自省與責任"
+      ]
+    },
+    {
+      "id": "screen-147",
+      "category": "screen",
+      "text": "不求成為完美的士兵，而要做一個好人。",
+      "source": "《美國隊長》（Captain America: The First Avenger，2011）",
+      "originalText": "Not a perfect soldier, but a good man.",
+      "sourceWork": "《美國隊長》（Captain America: The First Avenger，2011）；Erskine；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Captain_America:_The_First_Avenger",
+      "tags": [
+        "品格與選擇"
+      ]
+    },
+    {
+      "id": "screen-148",
+      "category": "screen",
+      "text": "你可以成為任何想成為的人，甚至成為一個好人。",
+      "source": "《洛基》（Loki，2021 起影集）",
+      "originalText": "You could be whoever, whatever you wanna be, even someone good.",
+      "sourceWork": "《洛基》（Loki，2021 起影集）；The Nexus Event [1.04]；Mobius；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Loki_(TV_series)",
+      "tags": [
+        "選擇與改變"
+      ]
+    },
+    {
+      "id": "screen-149",
+      "category": "screen",
+      "text": "有時候，我們能做的最好選擇，就是重新開始。",
+      "source": "《美國隊長2：酷寒戰士》（Captain America: The Winter Soldier，2014）",
+      "originalText": "sometimes the best that we can do is to start over.",
+      "sourceWork": "《美國隊長2：酷寒戰士》（Captain America: The Winter Soldier，2014）；Carter；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Captain_America:_The_Winter_Soldier",
+      "tags": [
+        "重新開始"
+      ]
+    },
+    {
+      "id": "screen-150",
+      "category": "screen",
+      "text": "復仇吞噬了你，也正吞噬他們；我不願再讓它吞噬自己。",
+      "source": "《美國隊長3：英雄內戰》（Captain America: Civil War，2016）",
+      "originalText": "Vengeance has consumed you. It's consuming them. I am done letting it consume me.",
+      "sourceWork": "《美國隊長3：英雄內戰》（Captain America: Civil War，2016）；T'Challa；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Captain_America:_Civil_War",
+      "tags": [
+        "放下與自省"
+      ]
+    },
+    {
+      "id": "screen-151",
+      "category": "screen",
+      "text": "事物的美好，不取決於它是否長久。",
+      "source": "《復仇者聯盟2：奧創紀元》（Avengers: Age of Ultron，2015）",
+      "originalText": "A thing isn't beautiful because it lasts.",
+      "sourceWork": "《復仇者聯盟2：奧創紀元》（Avengers: Age of Ultron，2015）；Vision；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Avengers:_Age_of_Ultron",
+      "tags": [
+        "無常與珍惜"
+      ]
+    },
+    {
+      "id": "screen-152",
+      "category": "screen",
+      "text": "幻視，我們不拿生命做交換。",
+      "source": "《復仇者聯盟：無限之戰》（Avengers: Infinity War，2018）",
+      "originalText": "We don't trade lives, Vision.",
+      "sourceWork": "《復仇者聯盟：無限之戰》（Avengers: Infinity War，2018）；Steve Rogers / Captain America；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Avengers:_Infinity_War",
+      "tags": [
+        "生命與尊嚴"
+      ]
+    },
+    {
+      "id": "screen-153",
+      "category": "screen",
+      "text": "若沒有人賦予意義，象徵本身什麼也不是。",
+      "source": "《獵鷹與酷寒戰士》（The Falcon and the Winter Soldier，2021 起影集）",
+      "originalText": "Symbols are nothing without the women and men that give them meaning.",
+      "sourceWork": "《獵鷹與酷寒戰士》（The Falcon and the Winter Soldier，2021 起影集）；New World Order [1.1]；Sam；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Falcon_and_the_Winter_Soldier",
+      "tags": [
+        "價值與行動"
+      ]
+    },
+    {
+      "id": "screen-154",
+      "category": "screen",
+      "text": "終點，也是旅程的一部分。",
+      "source": "《復仇者聯盟：終局之戰》（Avengers: Endgame，2019）",
+      "originalText": "Part of the journey is the end.",
+      "sourceWork": "《復仇者聯盟：終局之戰》（Avengers: Endgame，2019）；Tony Stark 留給家人的錄影訊息；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Avengers:_Endgame",
+      "tags": [
+        "生命與告別"
+      ]
+    },
+    {
+      "id": "screen-155",
+      "category": "screen",
+      "text": "還有其他事，能賦予你的人生意義。",
+      "source": "《奇異博士》（Doctor Strange，2016）",
+      "originalText": "There are other things that can give your life meaning.",
+      "sourceWork": "《奇異博士》（Doctor Strange，2016）；Palmer；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Doctor_Strange_(film)",
+      "tags": [
+        "生命與可能"
+      ]
+    },
+    {
+      "id": "screen-156",
+      "category": "screen",
+      "text": "智者搭橋，愚者築牆。",
+      "source": "《黑豹》（Black Panther，2018）",
+      "originalText": "The wise build bridges, while the foolish build barriers.",
+      "sourceWork": "《黑豹》（Black Panther，2018）；T'Challa / Black Panther；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Black_Panther_(film)",
+      "tags": [
+        "理解與連結"
+      ]
+    },
+    {
+      "id": "screen-157",
+      "category": "screen",
+      "text": "阿斯嘉不是一個地方，而是那裡的人民。",
+      "source": "《雷神索爾3：諸神黃昏》（Thor: Ragnarok，2017）",
+      "originalText": "Asgard's not a place, it's a people.",
+      "sourceWork": "《雷神索爾3：諸神黃昏》（Thor: Ragnarok，2017）；Thor；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Thor:_Ragnarok",
+      "tags": [
+        "家園與連結"
+      ]
+    },
+    {
+      "id": "screen-158",
+      "category": "screen",
+      "text": "活著意味著奔跑；離開某些事，或奔向某件事、某個人。",
+      "source": "《閃電俠》（The Flash，2014 起影集）",
+      "originalText": "Being alive means running; running from something; running to something or someone.",
+      "sourceWork": "《閃電俠》（The Flash，2014 起影集）；Things You Can't Outrun [1.03]；Barry；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Flash_(2014_TV_series)",
+      "tags": [
+        "生活與方向"
+      ]
+    },
+    {
+      "id": "screen-159",
+      "category": "screen",
+      "text": "孩子，他或許是你的生父，卻不是養育你的爸爸。",
+      "source": "《星際異攻隊2》（Guardians of the Galaxy Vol. 2，2017）",
+      "originalText": "He may have been your father, boy, but he wasn't your daddy.",
+      "sourceWork": "《星際異攻隊2》（Guardians of the Galaxy Vol. 2，2017）；Yondu；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Guardians_of_the_Galaxy_Vol._2",
+      "tags": [
+        "家庭與陪伴"
+      ]
+    },
+    {
+      "id": "screen-160",
+      "category": "screen",
+      "text": "關鍵不在於對方配不配，而在於你相信什麼。",
+      "source": "《神力女超人》（Wonder Woman，2017）",
+      "originalText": "It's not about deserve. It's about what you believe.",
+      "sourceWork": "《神力女超人》（Wonder Woman，2017）；Diana Prince / Wonder Woman；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Wonder_Woman_(2017_film)",
+      "tags": [
+        "信念與善意"
+      ]
+    },
+    {
+      "id": "screen-161",
+      "category": "screen",
+      "text": "人們會害怕自己不了解的事物。",
+      "source": "《超人：鋼鐵英雄》（Man of Steel，2013）",
+      "originalText": "People are afraid of what they don't understand.",
+      "sourceWork": "《超人：鋼鐵英雄》（Man of Steel，2013）；Jonathan Kent；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Man_of_Steel_(film)",
+      "tags": [
+        "理解與恐懼"
+      ]
+    },
+    {
+      "id": "screen-162",
+      "category": "screen",
+      "text": "你有機會參與一件遠比自身更宏大的事。",
+      "source": "《X戰警：第一戰》（X-Men: First Class，2011）",
+      "originalText": "You have a chance to become a part of something much bigger than yourself.",
+      "sourceWork": "《X戰警：第一戰》（X-Men: First Class，2011）；Charles Xavier；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/X-Men:_First_Class",
+      "tags": [
+        "使命與合作"
+      ]
+    },
+    {
+      "id": "screen-163",
+      "category": "screen",
+      "text": "說清楚一點，我在乎每一個人。",
+      "source": "《女超人》（Supergirl，2015 起影集）",
+      "originalText": "For the record, I care about everyone.",
+      "sourceWork": "《女超人》（Supergirl，2015 起影集）；How Does She Do It? [1.04]；Supergirl；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Supergirl_(TV_series)",
+      "tags": [
+        "關懷與平等"
+      ]
+    },
+    {
+      "id": "screen-164",
+      "category": "screen",
+      "text": "無數選擇決定我們的命運；每個選擇、每個瞬間，都是時間河流中的一道漣漪。",
+      "source": "《X戰警：未來昔日》（X-Men: Days of Future Past，2014）",
+      "originalText": "Countless choices define our fate: each choice, each moment, a ripple in the river of time.",
+      "sourceWork": "《X戰警：未來昔日》（X-Men: Days of Future Past，2014）；Charles Xavier/Professor X；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/X-Men:_Days_of_Future_Past",
+      "tags": [
+        "選擇與人生"
+      ]
+    },
+    {
+      "id": "screen-165",
+      "category": "screen",
+      "text": "別成為他們想把你塑造成的人。",
+      "source": "《羅根》（Logan，2017）",
+      "originalText": "Don't be what they made you.",
+      "sourceWork": "《羅根》（Logan，2017）；Logan；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Logan_(film)",
+      "tags": [
+        "自我與自由"
+      ]
+    },
+    {
+      "id": "screen-166",
+      "category": "screen",
+      "text": "重要的是，當安弟需要我們時，我們就在這裡。",
+      "source": "《玩具總動員》（Toy Story，1995）",
+      "originalText": "What matters is that we're here for Andy when he needs us.",
+      "sourceWork": "《玩具總動員》（Toy Story，1995）；Woody；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Toy_Story",
+      "tags": [
+        "陪伴與關懷"
+      ]
+    },
+    {
+      "id": "screen-167",
+      "category": "screen",
+      "text": "我無法阻止安弟長大。",
+      "source": "《玩具總動員2》（Toy Story 2，1999）",
+      "originalText": "I can't stop Andy from growing up...",
+      "sourceWork": "《玩具總動員2》（Toy Story 2，1999）；Woody；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Toy_Story_2",
+      "tags": [
+        "成長與放手"
+      ]
+    },
+    {
+      "id": "screen-168",
+      "category": "screen",
+      "text": "人生不斷改變，有時痛苦，有時美好，但多半兩者並存。",
+      "source": "《超人前傳》（Smallville，2001 起影集）",
+      "originalText": "Life is about change, sometimes it's painful, sometimes it's beautiful, but most of the time it's both.",
+      "sourceWork": "《超人前傳》（Smallville，2001 起影集）；Metamorphosis；Lana Lang；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Smallville_(season_1)",
+      "tags": [
+        "改變與接納"
+      ]
+    },
+    {
+      "id": "screen-169",
+      "category": "screen",
+      "text": "胡迪最特別的地方，是他永遠不會放棄你。",
+      "source": "《玩具總動員3》（Toy Story 3，2010）",
+      "originalText": "But the thing that makes Woody special is that he'll never give up on you.",
+      "sourceWork": "《玩具總動員3》（Toy Story 3，2010）；Andy；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Toy_Story_3",
+      "tags": [
+        "友誼與支持"
+      ]
+    },
+    {
+      "id": "screen-170",
+      "category": "screen",
+      "text": "有時候，改變是好事。",
+      "source": "《玩具總動員4》（Toy Story 4，2019）",
+      "originalText": "Sometimes change can be good.",
+      "sourceWork": "《玩具總動員4》（Toy Story 4，2019）；Bo Peep；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Toy_Story_4",
+      "tags": [
+        "改變與開放"
+      ]
+    },
+    {
+      "id": "screen-171",
+      "category": "screen",
+      "text": "我們比你所說的強大得多。",
+      "source": "《蟲蟲危機》（A Bug's Life，1998）",
+      "originalText": "We're a lot stronger than you say we are...",
+      "sourceWork": "《蟲蟲危機》（A Bug's Life，1998）；Flik；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/A_Bug's_Life",
+      "tags": [
+        "自信與勇氣"
+      ]
+    },
+    {
+      "id": "screen-172",
+      "category": "screen",
+      "text": "繼續游下去。",
+      "source": "《海底總動員》（Finding Nemo，2003）",
+      "originalText": "Just keep swimming.",
+      "sourceWork": "《海底總動員》（Finding Nemo，2003）；Dory；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Finding_Nemo",
+      "tags": [
+        "挫折與堅持"
+      ]
+    },
+    {
+      "id": "screen-173",
+      "category": "screen",
+      "text": "每天，都會容易一點。",
+      "source": "《馬男波傑克》（BoJack Horseman，2014 起影集）",
+      "originalText": "Everyday, it gets a little easier.",
+      "sourceWork": "《馬男波傑克》（BoJack Horseman，2014 起影集）；Out to Sea [2.12]；Jogging Baboon；慢跑者鼓勵 BoJack 持續練習；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/BoJack_Horseman",
+      "tags": [
+        "習慣與堅持"
+      ]
+    },
+    {
+      "id": "screen-174",
+      "category": "screen",
+      "text": "親愛的，我從不回頭看；那會讓人無法專注當下。",
+      "source": "《超人特攻隊》（The Incredibles，2004）",
+      "originalText": "I never look back, darling. It distracts from the now.",
+      "sourceWork": "《超人特攻隊》（The Incredibles，2004）；Edna Mode；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Incredibles",
+      "tags": [
+        "專注當下"
+      ]
+    },
+    {
+      "id": "screen-175",
+      "category": "screen",
+      "text": "如果法律不公，就有途徑改變它！",
+      "source": "《超人特攻隊2》（Incredibles 2，2018）",
+      "originalText": "If laws are unjust, there are laws to change them!",
+      "sourceWork": "《超人特攻隊2》（Incredibles 2，2018）；Helen Parr/Elastigirl；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Incredibles_2",
+      "tags": [
+        "正義與行動"
+      ]
+    },
+    {
+      "id": "screen-176",
+      "category": "screen",
+      "text": "那只是一個空獎盃。",
+      "source": "《汽車總動員》（Cars，2006）",
+      "originalText": "It's just an empty cup.",
+      "sourceWork": "《汽車總動員》（Cars，2006）；Lightning McQueen 談獎盃與幫助他人的取捨；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Cars_(film)",
+      "tags": [
+        "成就與反思"
+      ]
+    },
+    {
+      "id": "screen-177",
+      "category": "screen",
+      "text": "別害怕失敗，要怕的是沒有機會；而你現在有機會！",
+      "source": "《Cars 3：閃電再起》（Cars 3，2017）",
+      "originalText": "Don't fear failure. Be afraid of not having the chance, you have the chance!",
+      "sourceWork": "《Cars 3：閃電再起》（Cars 3，2017）；Sally；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Cars_3",
+      "tags": [
+        "機會與勇氣"
+      ]
+    },
+    {
+      "id": "screen-178",
+      "category": "screen",
+      "text": "所以，你需要自己選擇自己。",
+      "source": "《奇幻貓頭鷹小屋》（The Owl House，2020 起影集）",
+      "originalText": "And that's why you need to choose yourself.",
+      "sourceWork": "《奇幻貓頭鷹小屋》（The Owl House，2020 起影集）；Witches Before Wizards [1.02]；Eda；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Owl_House",
+      "tags": [
+        "自主與勇氣"
+      ]
+    },
+    {
+      "id": "screen-179",
+      "category": "screen",
+      "text": "我不只想生存，我想真正生活！",
+      "source": "《瓦力》（WALL-E，2008）",
+      "originalText": "I don't want to survive. I want to live!",
+      "sourceWork": "《瓦力》（WALL-E，2008）；Captain；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/WALL-E",
+      "tags": [
+        "生命與生活"
+      ]
+    },
+    {
+      "id": "screen-180",
+      "category": "screen",
+      "text": "命運就在我們心中；你只需要勇敢到足以看見它。",
+      "source": "《勇敢傳說》（Brave，2012）",
+      "originalText": "Our fate lives within us. You only have to be brave enough to see it.",
+      "sourceWork": "《勇敢傳說》（Brave，2012）；Lady Merida；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Brave_(2012_film)",
+      "tags": [
+        "勇氣與選擇"
+      ]
+    },
+    {
+      "id": "screen-181",
+      "category": "screen",
+      "text": "但我學會了，每一種情緒都對萊莉有幫助。",
+      "source": "《腦筋急轉彎2》（Inside Out 2，2024）",
+      "originalText": "But I've learned that every emotion is good for Riley.",
+      "sourceWork": "《腦筋急轉彎2》（Inside Out 2，2024）；Joy；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Inside_Out_2",
+      "tags": [
+        "情緒與接納"
+      ]
+    },
+    {
+      "id": "screen-182",
+      "category": "screen",
+      "text": "我們的記憶，要靠生前認識我們的人，在講述我們的故事時傳承下去。",
+      "source": "《可可夜總會》（Coco，2017）",
+      "originalText": "Our memories, they have to be passed down by those who knew us in life - in the stories they tell about us.",
+      "sourceWork": "《可可夜總會》（Coco，2017）；Héctor；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Coco_(2017_film)",
+      "tags": [
+        "記憶與連結"
+      ]
+    },
+    {
+      "id": "screen-183",
+      "category": "screen",
+      "text": "如果從不參與，你就不會輸。",
+      "source": "《火線重案組》（The Wire，2002 起影集）",
+      "originalText": "You cannot lose if you do not play.",
+      "sourceWork": "《火線重案組》（The Wire，2002 起影集）；The Detail [1.2]；Marla Daniels；角色對不參與便不會輸的消極選擇，供反思；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Wire",
+      "tags": [
+        "風險與反思"
+      ]
+    },
+    {
+      "id": "screen-184",
+      "category": "screen",
+      "text": "我會好好活過生命中的每一分鐘。",
+      "source": "《靈魂急轉彎》（Soul，2020）",
+      "originalText": "I'm gonna live every minute of it.",
+      "sourceWork": "《靈魂急轉彎》（Soul，2020）；Joe；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Soul_(2020_film)",
+      "tags": [
+        "珍惜當下"
+      ]
+    },
+    {
+      "id": "screen-185",
+      "category": "screen",
+      "text": "我從未真正去過哪裡，只是在想像。",
+      "source": "《路卡的夏天》（Luca，2021）",
+      "originalText": "I never go anywhere, I just dream about it.",
+      "sourceWork": "《路卡的夏天》（Luca，2021）；Luca Paguro；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Luca_(2021_film)",
+      "tags": [
+        "夢想與行動"
+      ]
+    },
+    {
+      "id": "screen-186",
+      "category": "screen",
+      "text": "你努力讓每個人快樂，卻對自己如此苛刻。",
+      "source": "《青春養成記》（Turning Red，2022）",
+      "originalText": "You try to make everyone happy but are so hard on yourself.",
+      "sourceWork": "《青春養成記》（Turning Red，2022）；Ming Lee；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Turning_Red",
+      "tags": [
+        "自我照顧"
+      ]
+    },
+    {
+      "id": "screen-187",
+      "category": "screen",
+      "text": "我一直努力接下父親的責任，卻從沒問過自己想做什麼。",
+      "source": "《元素方城市》（Elemental，2023）",
+      "originalText": "I've been trying to fill my father's shoes, but I never once asked what I wanted to do.",
+      "sourceWork": "《元素方城市》（Elemental，2023）；Ember Lumen；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Elemental_(2023_film)",
+      "tags": [
+        "自我與期待"
+      ]
+    },
+    {
+      "id": "screen-188",
+      "category": "screen",
+      "text": "成功不是目標，而是努力過程中的收穫。",
+      "source": "《勝利之光》（Friday Night Lights，2006 起影集）",
+      "originalText": "Success is not a goal, it's a byproduct.",
+      "sourceWork": "《勝利之光》（Friday Night Lights，2006 起影集）；Kingdom [5.05]；Coach Taylor；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Friday_Night_Lights_(TV_series)",
+      "tags": [
+        "過程與成長"
+      ]
+    },
+    {
+      "id": "screen-189",
+      "category": "screen",
+      "text": "根本沒有什麼祕密配方。",
+      "source": "《功夫熊貓》（Kung Fu Panda，2008）",
+      "originalText": "There is no secret ingredient.",
+      "sourceWork": "《功夫熊貓》（Kung Fu Panda，2008）；Mr. Ping；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Kung_Fu_Panda",
+      "tags": [
+        "自信與成長"
+      ]
+    },
+    {
+      "id": "screen-190",
+      "category": "screen",
+      "text": "你的故事或許沒有快樂的開端，但那不能決定你是誰。",
+      "source": "《功夫熊貓2》（Kung Fu Panda 2，2011）",
+      "originalText": "Your story may not have such a happy beginning, but that doesn't make you who you are.",
+      "sourceWork": "《功夫熊貓2》（Kung Fu Panda 2，2011）；Soothsayer；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Kung_Fu_Panda_2",
+      "tags": [
+        "過去與成長"
+      ]
+    },
+    {
+      "id": "screen-191",
+      "category": "screen",
+      "text": "我不是要把你變成我，而是要讓你成為真正的自己。",
+      "source": "《功夫熊貓3》（Kung Fu Panda 3，2016）",
+      "originalText": "I'm not trying to turn you into me. I'm trying to turn you into you.",
+      "sourceWork": "《功夫熊貓3》（Kung Fu Panda 3，2016）；Shifu；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Kung_Fu_Panda_3",
+      "tags": [
+        "教育與自我"
+      ]
+    },
+    {
+      "id": "screen-192",
+      "category": "screen",
+      "text": "別再那麼努力，扮成不屬於自己的樣子。",
+      "source": "《馴龍高手》（How to Train Your Dragon，2010）",
+      "originalText": "stop trying so hard to be something you're not.",
+      "sourceWork": "《馴龍高手》（How to Train Your Dragon，2010）；Gobber；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/How_to_Train_Your_Dragon_(film)",
+      "tags": [
+        "真實自我"
+      ]
+    },
+    {
+      "id": "screen-193",
+      "category": "screen",
+      "text": "當你找到那個讓你與世界相連的人，你會成為不同的人，也成為更好的人。",
+      "source": "《疑犯追蹤》（Person of Interest，2011 起影集）",
+      "originalText": "When you find that one person who connects you to the world, you become someone different, someone better.",
+      "sourceWork": "《疑犯追蹤》（Person of Interest，2011 起影集）；Pilot [1.01]；John Reese；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Person_of_Interest_(season_1)",
+      "tags": [
+        "連結與成長"
+      ]
+    },
+    {
+      "id": "screen-194",
+      "category": "screen",
+      "text": "我們是和平的聲音，將一點一滴改變這個世界。",
+      "source": "《馴龍高手2》（How to Train Your Dragon 2，2014）",
+      "originalText": "We are the voice of peace, and bit by bit, we will change this world.",
+      "sourceWork": "《馴龍高手2》（How to Train Your Dragon 2，2014）；Hiccup；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/How_to_Train_Your_Dragon_2",
+      "tags": [
+        "和平與行動"
+      ]
+    },
+    {
+      "id": "screen-195",
+      "category": "screen",
+      "text": "孩子，有愛就會有失去；這是其中的一部分。",
+      "source": "《馴龍高手3》（How to Train Your Dragon: The Hidden World，2019）",
+      "originalText": "With love comes loss, son. It's part of the deal.",
+      "sourceWork": "《馴龍高手3》（How to Train Your Dragon: The Hidden World，2019）；Stoick；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/How_to_Train_Your_Dragon:_The_Hidden_World",
+      "tags": [
+        "愛與告別"
+      ]
+    },
+    {
+      "id": "screen-196",
+      "category": "screen",
+      "text": "朋友就是為了這些時刻而存在。",
+      "source": "《史瑞克》（Shrek，2001）",
+      "originalText": "That's what friends are for.",
+      "sourceWork": "《史瑞克》（Shrek，2001）；Donkey；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Shrek",
+      "tags": [
+        "友誼與支持"
+      ]
+    },
+    {
+      "id": "screen-197",
+      "category": "screen",
+      "text": "我知道自己永遠無法戰勝你，狼；但我絕不停止為這條生命奮戰。",
+      "source": "《鞋貓劍客2》（Puss in Boots: The Last Wish，2022）",
+      "originalText": "I know I can never defeat you, Lobo. But I will never stop fighting for this life.",
+      "sourceWork": "《鞋貓劍客2》（Puss in Boots: The Last Wish，2022）；Puss；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Puss_in_Boots:_The_Last_Wish",
+      "tags": [
+        "生命與勇氣"
+      ]
+    },
+    {
+      "id": "screen-198",
+      "category": "screen",
+      "text": "如果不能共同生活，我們就會孤獨地死去。",
+      "source": "《Lost檔案》（Lost，2004 起影集）",
+      "originalText": "But if we can't live together, we're going to die alone.",
+      "sourceWork": "《Lost檔案》（Lost，2004 起影集）；White Rabbit [1.5]；Jack Shephard；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Lost_(season_1)",
+      "tags": [
+        "合作與共存"
+      ]
+    },
+    {
+      "id": "screen-199",
+      "category": "screen",
+      "text": "那不是在生活！那只是……沒有死去！",
+      "source": "《古魯家族》（The Croods，2013）",
+      "originalText": "That wasn't living! That was just... not dying!",
+      "sourceWork": "《古魯家族》（The Croods，2013）；Eep；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Croods",
+      "tags": [
+        "生活與勇氣"
+      ]
+    },
+    {
+      "id": "screen-200",
+      "category": "screen",
+      "text": "你的內心，有著十分特別的東西。",
+      "source": "《捍衛聯盟》（Rise of the Guardians，2012）",
+      "originalText": "you must have something very special inside.",
+      "sourceWork": "《捍衛聯盟》（Rise of the Guardians，2012）；North；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Rise_of_the_Guardians",
+      "tags": [
+        "自我價值"
+      ]
+    },
+    {
+      "id": "screen-201",
+      "category": "screen",
+      "text": "然後我突然明白：我確實有選擇！",
+      "source": "《麥克邁：超能壞蛋》（Megamind，2010）",
+      "originalText": "Then it suddenly hit me - I do have a choice!",
+      "sourceWork": "《麥克邁：超能壞蛋》（Megamind，2010）；Metro Man；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Megamind",
+      "tags": [
+        "自主與勇氣"
+      ]
+    },
+    {
+      "id": "screen-202",
+      "category": "screen",
+      "text": "你選擇成為什麼樣子，就會是什麼樣的人。",
+      "source": "《鐵巨人》（The Iron Giant，1999）",
+      "originalText": "You are what you choose to be.",
+      "sourceWork": "《鐵巨人》（The Iron Giant，1999）；Hogarth William Hughes；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Iron_Giant",
+      "tags": [
+        "選擇與自我"
+      ]
+    },
+    {
+      "id": "screen-203",
+      "category": "screen",
+      "text": "如果每塊豬排都完美，就不會有熱狗了！",
+      "source": "《史帝芬宇宙》（Steven Universe，2013 起影集）",
+      "originalText": "If every pork chop were perfect, we wouldn't have hotdogs!",
+      "sourceWork": "《史帝芬宇宙》（Steven Universe，2013 起影集）；Laser Light Cannon；Greg；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Steven_Universe_(season_1)",
+      "tags": [
+        "不完美與可能"
+      ]
+    },
+    {
+      "id": "screen-204",
+      "category": "screen",
+      "text": "別一輩子只會聽命行事。",
+      "source": "《小蟻雄兵》（Antz，1998）",
+      "originalText": "Don't follow orders your whole life.",
+      "sourceWork": "《小蟻雄兵》（Antz，1998）；Others；Barbatus；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Antz",
+      "tags": [
+        "自主與思考"
+      ]
+    },
+    {
+      "id": "screen-205",
+      "category": "screen",
+      "text": "人生可不會給你安全帶！",
+      "source": "《樂高蝙蝠俠電影》（The Lego Batman Movie，2017）",
+      "originalText": "Life doesn't give you seat belts!",
+      "sourceWork": "《樂高蝙蝠俠電影》（The Lego Batman Movie，2017）；Batman / Bruce Wayne；The first lesson is；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Lego_Batman_Movie",
+      "tags": [
+        "風險與勇氣"
+      ]
+    },
+    {
+      "id": "screen-206",
+      "category": "screen",
+      "text": "我們都有局限，也都會犯錯。",
+      "source": "《動物方城市》（Zootopia，2016）",
+      "originalText": "We all have limitations, we all make mistakes",
+      "sourceWork": "《動物方城市》（Zootopia，2016）；Judy；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Zootopia",
+      "tags": [
+        "理解與包容"
+      ]
+    },
+    {
+      "id": "screen-207",
+      "category": "screen",
+      "text": "不論你走到哪裡，我都會陪著你。",
+      "source": "《海洋奇緣》（Moana，2016）",
+      "originalText": "There is nowhere you could go where I won’t be with you.",
+      "sourceWork": "《海洋奇緣》（Moana，2016）；Gramma Tala；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Moana_(2016_film)",
+      "tags": [
+        "陪伴與支持"
+      ]
+    },
+    {
+      "id": "screen-208",
+      "category": "screen",
+      "text": "那天，我發誓要幫助每個需要幫助的人，不論他們的問題多小。",
+      "source": "《探險活寶》（Adventure Time，2010 起影集）",
+      "originalText": "That day I vowed to help anyone in need, no matter how small their problem!",
+      "sourceWork": "《探險活寶》（Adventure Time，2010 起影集）；Memories of Boom Boom Mountain [1.10]；Finn；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Adventure_Time_(season_1)",
+      "tags": [
+        "善意與行動"
+      ]
+    },
+    {
+      "id": "screen-209",
+      "category": "screen",
+      "text": "愛，就是把別人的需要放在自己之前。",
+      "source": "《冰雪奇緣》（Frozen，2013）",
+      "originalText": "Love is putting someone else's needs before yours.",
+      "sourceWork": "《冰雪奇緣》（Frozen，2013）；Olaf；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Frozen_(2013_film)",
+      "tags": [
+        "愛與付出"
+      ]
+    },
+    {
+      "id": "screen-210",
+      "category": "screen",
+      "text": "真正不能相信的，是恐懼。",
+      "source": "《冰雪奇緣2》（Frozen II，2019）",
+      "originalText": "Fear is what can't be trusted.",
+      "sourceWork": "《冰雪奇緣2》（Frozen II，2019）；Elsa；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Frozen_II",
+      "tags": [
+        "恐懼與判斷"
+      ]
+    },
+    {
+      "id": "screen-211",
+      "category": "screen",
+      "text": "你可以去尋找一個新的夢想。",
+      "source": "《魔髮奇緣》（Tangled，2010）",
+      "originalText": "You get to go find a new dream.",
+      "sourceWork": "《魔髮奇緣》（Tangled，2010）；Eugene；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Tangled",
+      "tags": [
+        "夢想與成長"
+      ]
+    },
+    {
+      "id": "screen-212",
+      "category": "screen",
+      "text": "有沒有天賦，我都和家人一樣特別。",
+      "source": "《魔法滿屋》（Encanto，2021）",
+      "originalText": "gift or no gift, I'm just as special as the rest of my family.",
+      "sourceWork": "《魔法滿屋》（Encanto，2021）；Mirabel Madrigal；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Encanto",
+      "tags": [
+        "自我價值"
+      ]
+    },
+    {
+      "id": "screen-213",
+      "category": "screen",
+      "text": "我逐漸相信，友誼最貼切的定義，是兩個人朝著彼此最美好的面向靠近。",
+      "source": "《福爾摩斯與華生》（Elementary，2012 起影集）",
+      "originalText": "Friendship, I've come to believe, is most accurately defined as two people moving towards the best aspects of one another.",
+      "sourceWork": "《福爾摩斯與華生》（Elementary，2012 起影集）；One Watson, One Holmes [3.19]；Sherlock Holmes；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Elementary_(TV_series)",
+      "tags": [
+        "友誼與成長"
+      ]
+    },
+    {
+      "id": "screen-214",
+      "category": "screen",
+      "text": "但有時候，人生不會照你的計畫走。",
+      "source": "《大英雄天團》（Big Hero 6，2014）",
+      "originalText": "But, sometimes, life doesn't go the way you planned.",
+      "sourceWork": "《大英雄天團》（Big Hero 6，2014）；Hiro Hamada；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Big_Hero_6_(film)",
+      "tags": [
+        "改變與接納"
+      ]
+    },
+    {
+      "id": "screen-215",
+      "category": "screen",
+      "text": "比起成為任何人，我更願意做自己。",
+      "source": "《無敵破壞王》（Wreck-It Ralph，2012）",
+      "originalText": "There's no one I'd rather be than me.",
+      "sourceWork": "《無敵破壞王》（Wreck-It Ralph，2012）；Wreck-It Ralph；反派遊戲角色談自我接納；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Wreck-It_Ralph",
+      "tags": [
+        "自我認同"
+      ]
+    },
+    {
+      "id": "screen-216",
+      "category": "screen",
+      "text": "繼續向前走。",
+      "source": "《未來小子》（Meet the Robinsons，2007）",
+      "originalText": "Keep moving forward.",
+      "sourceWork": "《未來小子》（Meet the Robinsons，2007）；Wilbur；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Meet_the_Robinsons",
+      "tags": [
+        "成長與行動"
+      ]
+    },
+    {
+      "id": "screen-217",
+      "category": "screen",
+      "text": "家人，意味著誰也不被留下。",
+      "source": "《星際寶貝》（Lilo & Stitch，2002）",
+      "originalText": "Family means nobody gets left behind",
+      "sourceWork": "《星際寶貝》（Lilo & Stitch，2002）；Lilo Pelekai；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Lilo_&_Stitch",
+      "tags": [
+        "家與陪伴"
+      ]
+    },
+    {
+      "id": "screen-218",
+      "category": "screen",
+      "text": "鼓勵孩子追尋幸福，即使那會讓他們走到離你很遠的地方。",
+      "source": "《危機邊緣》（Fringe，2008 起影集）",
+      "originalText": "encourage the quest for happiness in your children, even if it takes them very far away from you.",
+      "sourceWork": "《危機邊緣》（Fringe，2008 起影集）；A Short Story About Love [4.15]；Nina；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Fringe_(TV_series)",
+      "tags": [
+        "親情與放手"
+      ]
+    },
+    {
+      "id": "screen-219",
+      "category": "screen",
+      "text": "你得自己掌舵，規劃自己的航線！",
+      "source": "《星銀島》（Treasure Planet，2002）",
+      "originalText": "you gotta take the helm and chart your own course!",
+      "sourceWork": "《星銀島》（Treasure Planet，2002）；Long John Silver；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Treasure_Planet",
+      "tags": [
+        "潛能與自主"
+      ]
+    },
+    {
+      "id": "screen-220",
+      "category": "screen",
+      "text": "我們留給孩子的禮物，讓後人記得我們的一生。",
+      "source": "《亞特蘭提斯：失落的帝國》（Atlantis: The Lost Empire，2001）",
+      "originalText": "Our lives are remembered by the gifts we leave our children.",
+      "sourceWork": "《亞特蘭提斯：失落的帝國》（Atlantis: The Lost Empire，2001）；Preston B. Whitmore；Your grandad had a saying；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Atlantis:_The_Lost_Empire",
+      "tags": [
+        "傳承與責任"
+      ]
+    },
+    {
+      "id": "screen-221",
+      "category": "screen",
+      "text": "在逆境中綻放的花，是最珍貴、最美麗的。",
+      "source": "《花木蘭》（Mulan，1998）",
+      "originalText": "The flower that blooms in adversity is the most rare and beautiful of all.",
+      "sourceWork": "《花木蘭》（Mulan，1998）；The Emperor；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Mulan_(1998_film)",
+      "tags": [
+        "逆境與成長"
+      ]
+    },
+    {
+      "id": "screen-222",
+      "category": "screen",
+      "text": "真正的英雄，不以力氣大小衡量，而看內心有多堅強。",
+      "source": "《大力士》（Hercules，1997）",
+      "originalText": "For a true hero isn't measured by the size of his strength, but by the strength of his heart.",
+      "sourceWork": "《大力士》（Hercules，1997）；Zeus；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Hercules_(1997_film)",
+      "tags": [
+        "勇氣與品格"
+      ]
+    },
+    {
+      "id": "screen-223",
+      "category": "screen",
+      "text": "應該鼓勵她說出自己的故事，而不是悶在心裡。",
+      "source": "《X檔案》（The X-Files，1993 起影集）",
+      "originalText": "She should be encouraged to tell her story, not to keep it inside",
+      "sourceWork": "《X檔案》（The X-Files，1993 起影集）；Conduit [1.3]；Mulder；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_X-Files_(season_1)",
+      "tags": [
+        "傾聽與支持"
+      ]
+    },
+    {
+      "id": "screen-224",
+      "category": "screen",
+      "text": "人生不是一場只能旁觀的比賽。",
+      "source": "《鐘樓怪人》（The Hunchback of Notre Dame，1996）",
+      "originalText": "Life's not a spectator sport.",
+      "sourceWork": "《鐘樓怪人》（The Hunchback of Notre Dame，1996）；Laverne；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Hunchback_of_Notre_Dame_(1996_film)",
+      "tags": [
+        "參與與行動"
+      ]
+    },
+    {
+      "id": "screen-225",
+      "category": "screen",
+      "text": "美，存在於內心。",
+      "source": "《美女與野獸》（Beauty and the Beast，1991）",
+      "originalText": "beauty is found within.",
+      "sourceWork": "《美女與野獸》（Beauty and the Beast，1991）；The Narrator；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Beauty_and_the_Beast_(1991_film)",
+      "tags": [
+        "內在與價值"
+      ]
+    },
+    {
+      "id": "screen-226",
+      "category": "screen",
+      "text": "孩子得有自由，去過自己的人生。",
+      "source": "《小美人魚》（The Little Mermaid，1989）",
+      "originalText": "Children got to be free to lead their own lives.",
+      "sourceWork": "《小美人魚》（The Little Mermaid，1989）；Sebastian；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Little_Mermaid_(1989_film)",
+      "tags": [
+        "成長與放手"
+      ]
+    },
+    {
+      "id": "screen-227",
+      "category": "screen",
+      "text": "不論我走到哪裡，你永遠都是我的母親。",
+      "source": "《泰山》（Tarzan，1999）",
+      "originalText": "No matter where I go, you will always be my mother.",
+      "sourceWork": "《泰山》（Tarzan，1999）；Tarzan；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Tarzan_(1999_film)",
+      "tags": [
+        "親情與歸屬"
+      ]
+    },
+    {
+      "id": "screen-228",
+      "category": "screen",
+      "text": "你真的該試著原諒自己。",
+      "source": "《超自然檔案》（Supernatural，2005 起影集）",
+      "originalText": "You really should try to forgive yourself.",
+      "sourceWork": "《超自然檔案》（Supernatural，2005 起影集）；Bloody Mary [1.05]；Sam；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Supernatural_(season_1)",
+      "tags": [
+        "自我寬恕"
+      ]
+    },
+    {
+      "id": "screen-229",
+      "category": "screen",
+      "text": "光是許願，並不會讓事情成真。",
+      "source": "《公主與青蛙》（The Princess and the Frog，2009）",
+      "originalText": "Just because you wish for something doesn’t make it true.",
+      "sourceWork": "《公主與青蛙》（The Princess and the Frog，2009）；Tiana；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Princess_and_the_Frog",
+      "tags": [
+        "夢想與行動"
+      ]
+    },
+    {
+      "id": "screen-230",
+      "category": "screen",
+      "text": "不論你作什麼選擇，你永遠是我的弟弟。",
+      "source": "《熊的傳說》（Brother Bear，2003）",
+      "originalText": "No matter what you choose, you'll always be my little brother.",
+      "sourceWork": "《熊的傳說》（Brother Bear，2003）；Denahi；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Brother_Bear",
+      "tags": [
+        "親情與接納"
+      ]
+    },
+    {
+      "id": "screen-231",
+      "category": "screen",
+      "text": "如果完全忘了自己的名字，就再也找不到回家的路。",
+      "source": "《神隱少女》（Spirited Away，2001）",
+      "originalText": "If you completely forget your name, you'll never find your way back home.",
+      "sourceWork": "《神隱少女》（Spirited Away，2001）；Haku；英文版台詞節錄；標點與大小寫整理；中文自譯；英文為配音／翻譯版本，非作品原始語言",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Spirited_Away",
+      "tags": [
+        "自我與記憶"
+      ]
+    },
+    {
+      "id": "screen-232",
+      "category": "screen",
+      "text": "然而，若你願意，就能挺身迎向命運。",
+      "source": "《魔法公主》（Princess Mononoke，1997）",
+      "originalText": "However, you can rise to meet it if you choose.",
+      "sourceWork": "《魔法公主》（Princess Mononoke，1997）；Wise Woman of the Emishi；英文版台詞節錄；標點與大小寫整理；中文自譯；英文為配音／翻譯版本，非作品原始語言",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Princess_Mononoke",
+      "tags": [
+        "命運與勇氣"
+      ]
+    },
+    {
+      "id": "screen-233",
+      "category": "screen",
+      "text": "當我們面對最深的恐懼，真正的勇氣就會浮現。",
+      "source": "《童話小鎮》（Once Upon a Time，2011 起影集）",
+      "originalText": "When we face our deepest fears, our true courage comes out.",
+      "sourceWork": "《童話小鎮》（Once Upon a Time，2011 起影集）；The Tower [3.14]；Regina；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Once_Upon_a_Time_(TV_series)",
+      "tags": [
+        "恐懼與勇氣"
+      ]
+    },
+    {
+      "id": "screen-234",
+      "category": "screen",
+      "text": "飛行本來很快樂，直到我開始靠它維生。",
+      "source": "《魔女宅急便》（Kiki's Delivery Service，1989）",
+      "originalText": "Flying used to be fun until I started doing it for a living.",
+      "sourceWork": "《魔女宅急便》（Kiki's Delivery Service，1989）；Kiki's Delivery Service；Kiki；英文版台詞節錄；標點與大小寫整理；中文自譯；英文為配音／翻譯版本，非作品原始語言",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Kiki's_Delivery_Service",
+      "tags": [
+        "熱愛與工作"
+      ]
+    },
+    {
+      "id": "screen-235",
+      "category": "screen",
+      "text": "當人全心全意創造某樣東西，那件作品就有了靈魂。",
+      "source": "《貓的報恩》（The Cat Returns，2002）",
+      "originalText": "Whenever someone creates something with all of their heart, then that creation is given a soul.",
+      "sourceWork": "《貓的報恩》（The Cat Returns，2002）；The Baron；英文版台詞節錄；標點與大小寫整理；中文自譯；英文為配音／翻譯版本，非作品原始語言",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Cat_Returns",
+      "tags": [
+        "創作與真誠"
+      ]
+    },
+    {
+      "id": "screen-236",
+      "category": "screen",
+      "text": "只要把他們的故事深藏心中，你就永遠無法把他們從我們身邊奪走。",
+      "source": "《酷寶：魔弦傳說》（Kubo and the Two Strings，2016）",
+      "originalText": "if we hold their stories, deep in our hearts… then you will never take them away from us.",
+      "sourceWork": "《酷寶：魔弦傳說》（Kubo and the Two Strings，2016）；Kubo；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Kubo_and_the_Two_Strings",
+      "tags": [
+        "記憶與愛"
+      ]
+    },
+    {
+      "id": "screen-237",
+      "category": "screen",
+      "text": "他們說我們的樹也許不會再長回來，但總有一天，會有別的生命長出來。",
+      "source": "《超級狐狸先生》（Fantastic Mr. Fox，2009）",
+      "originalText": "They say our tree may never grow back, but one day, something will.",
+      "sourceWork": "《超級狐狸先生》（Fantastic Mr. Fox，2009）；Mr. Fox；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Fantastic_Mr._Fox_(film)",
+      "tags": [
+        "失落與新生"
+      ]
+    },
+    {
+      "id": "screen-238",
+      "category": "screen",
+      "text": "我不知道未來會帶來什麼，只能說，要準備好迎接意想不到的事。",
+      "source": "《綠箭俠》（Arrow，2012 起影集）",
+      "originalText": "I don't know what the future holds, except to say expect the unexpected.",
+      "sourceWork": "《綠箭俠》（Arrow，2012 起影集）；Fadeout [8.10]；Diggle；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Arrow_(TV_series)",
+      "tags": [
+        "未來與開放"
+      ]
+    },
+    {
+      "id": "screen-239",
+      "category": "screen",
+      "text": "你在自己的人生中找到喜悅了嗎？",
+      "source": "《一路玩到掛》（The Bucket List，2007）",
+      "originalText": "Have you found joy in your life?",
+      "sourceWork": "《一路玩到掛》（The Bucket List，2007）；Carter Chambers；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Bucket_List",
+      "tags": [
+        "人生與自省"
+      ]
+    },
+    {
+      "id": "screen-240",
+      "category": "screen",
+      "text": "帶來幸福的是旅程，而非終點。",
+      "source": "《深夜加油站遇見蘇格拉底》（Peaceful Warrior，2006）",
+      "originalText": "The journey is what brings us happiness not the destination.",
+      "sourceWork": "《深夜加油站遇見蘇格拉底》（Peaceful Warrior，2006）；Dan Millman；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Peaceful_Warrior",
+      "tags": [
+        "過程與幸福"
+      ]
+    },
+    {
+      "id": "screen-241",
+      "category": "screen",
+      "text": "世界是一座遊樂場！小時候你明白這一點，卻在成長途中漸漸忘記。",
+      "source": "《沒問題先生》（Yes Man，2008）",
+      "originalText": "The world's a playground! You know that when you are a kid, but somewhere along the way everyone forgets it.",
+      "sourceWork": "《沒問題先生》（Yes Man，2008）；Allison；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Yes_Man_(film)",
+      "tags": [
+        "童心與探索"
+      ]
+    },
+    {
+      "id": "screen-242",
+      "category": "screen",
+      "text": "我一直知道哪條路是對的，從來都知道，卻始終沒有走上那條路。",
+      "source": "《女人香》（Scent of a Woman，1992）",
+      "originalText": "I always knew what the right path was; without exception, I knew. But I never took it.",
+      "sourceWork": "《女人香》（Scent of a Woman，1992）；Col. Slade；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Scent_of_a_Woman_(1992_film)",
+      "tags": [
+        "良知與行動"
+      ]
+    },
+    {
+      "id": "screen-243",
+      "category": "screen",
+      "text": "比起否認現實，更好的度過方式，是讓在乎你的人幫助你。",
+      "source": "《神秘小鎮大冒險》（Gravity Falls，2012 起影集）",
+      "originalText": "But there's a better way to get through it than denial, and that's with help from people who care about you.",
+      "sourceWork": "《神秘小鎮大冒險》（Gravity Falls，2012 起影集）；Weirdmageddon 2: Escape from Reality [2.19]；Dipper；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Gravity_Falls",
+      "tags": [
+        "接納與支持"
+      ]
+    },
+    {
+      "id": "screen-244",
+      "category": "screen",
+      "text": "我只能指給你門在哪裡，走過去得靠你自己。",
+      "source": "《駭客任務》（The Matrix，1999）",
+      "originalText": "I can only show you the door. You have to walk through it.",
+      "sourceWork": "《駭客任務》（The Matrix，1999）；Morpheus；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Matrix_(film)",
+      "tags": [
+        "自主與行動"
+      ]
+    },
+    {
+      "id": "screen-245",
+      "category": "screen",
+      "text": "我們接受的愛，是自己認為值得擁有的愛。",
+      "source": "《壁花男孩》（The Perks of Being a Wallflower，2012）",
+      "originalText": "We accept the love we think we deserve.",
+      "sourceWork": "《壁花男孩》（The Perks of Being a Wallflower，2012）；Bill；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Perks_of_Being_a_Wallflower_(film)",
+      "tags": [
+        "自我價值"
+      ]
+    },
+    {
+      "id": "screen-246",
+      "category": "screen",
+      "text": "有些鳥，本來就不該被關進籠子。",
+      "source": "《刺激1995》（The Shawshank Redemption，1994）",
+      "originalText": "some birds aren't meant to be caged.",
+      "sourceWork": "《刺激1995》（The Shawshank Redemption，1994）；Ellis Boyd \"Red\" Redding；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Shawshank_Redemption",
+      "tags": [
+        "自由與尊嚴"
+      ]
+    },
+    {
+      "id": "screen-247",
+      "category": "screen",
+      "text": "你得先放下過去，才能繼續往前走。",
+      "source": "《阿甘正傳》（Forrest Gump，1994）",
+      "originalText": "you've got to put the past behind you before you can move on.",
+      "sourceWork": "《阿甘正傳》（Forrest Gump，1994）；Forrest Gump；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Forrest_Gump",
+      "tags": [
+        "過去與成長"
+      ]
+    },
+    {
+      "id": "screen-248",
+      "category": "screen",
+      "text": "但若和別人作了約定，就要信守承諾。",
+      "source": "《絕命律師》（Better Call Saul，2015 起影集）",
+      "originalText": "But if you make a deal with somebody, you keep your word.",
+      "sourceWork": "《絕命律師》（Better Call Saul，2015 起影集）；Pimento [1.09]；Mike；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Better_Call_Saul_(season_1)",
+      "tags": [
+        "誠信與責任"
+      ]
+    },
+    {
+      "id": "screen-249",
+      "category": "screen",
+      "text": "人們把這些叫作不完美，但不是的，那正是美好的部分。",
+      "source": "《心靈捕手》（Good Will Hunting，1997）",
+      "originalText": "People call these things imperfections, but they're not — aw that's the good stuff.",
+      "sourceWork": "《心靈捕手》（Good Will Hunting，1997）；Sean；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Good_Will_Hunting",
+      "tags": [
+        "關係與接納"
+      ]
+    },
+    {
+      "id": "screen-250",
+      "category": "screen",
+      "text": "但想得到尊重，就得先給予尊重。",
+      "source": "《街頭日記》（Freedom Writers，2007）",
+      "originalText": "But to get respect, you have to give it.",
+      "sourceWork": "《街頭日記》（Freedom Writers，2007）；Erin Gruwell；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Freedom_Writers",
+      "tags": [
+        "尊重與關係"
+      ]
+    },
+    {
+      "id": "screen-251",
+      "category": "screen",
+      "text": "我們都挺古怪的！只是有些人比較會隱藏罷了。",
+      "source": "《早餐俱樂部》（The Breakfast Club，1985）",
+      "originalText": "we're all pretty bizarre! Some of us are just better at hiding it, that's all.",
+      "sourceWork": "《早餐俱樂部》（The Breakfast Club，1985）；Andrew；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Breakfast_Club",
+      "tags": [
+        "自我與接納"
+      ]
+    },
+    {
+      "id": "screen-252",
+      "category": "screen",
+      "text": "一個人不該迷信某種主義，而該相信自己。",
+      "source": "《翹課天才》（Ferris Bueller's Day Off，1986）",
+      "originalText": "A person should not believe in an 'ism,' he should believe in himself.",
+      "sourceWork": "《翹課天才》（Ferris Bueller's Day Off，1986）；Ferris Bueller；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Ferris_Bueller's_Day_Off",
+      "tags": [
+        "獨立思考"
+      ]
+    },
+    {
+      "id": "screen-253",
+      "category": "screen",
+      "text": "從不同的地方汲取智慧，是很重要的事。",
+      "source": "《降世神通：最後的氣宗》（Avatar: The Last Airbender，2005 起影集）",
+      "originalText": "It is important to draw wisdom from many different places.",
+      "sourceWork": "《降世神通：最後的氣宗》（Avatar: The Last Airbender，2005 起影集）；Bitter Work [2.9]；Iroh；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Avatar:_The_Last_Airbender_(season_2)",
+      "tags": [
+        "學習與開放"
+      ]
+    },
+    {
+      "id": "screen-254",
+      "category": "screen",
+      "text": "最讓我疲憊的，是人們彼此惡意相待。",
+      "source": "《綠色奇蹟》（The Green Mile，1999）",
+      "originalText": "Mostly, I'm tired of people being ugly to each other.",
+      "sourceWork": "《綠色奇蹟》（The Green Mile，1999）；John Coffey；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Green_Mile_(film)",
+      "tags": [
+        "同理與善意"
+      ]
+    },
+    {
+      "id": "screen-255",
+      "category": "screen",
+      "text": "讓你的人生活得不平凡。",
+      "source": "《春風化雨》（Dead Poets Society，1989）",
+      "originalText": "Make your lives extraordinary.",
+      "sourceWork": "《春風化雨》（Dead Poets Society，1989）；John Keating；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Dead_Poets_Society",
+      "tags": [
+        "珍惜生命"
+      ]
+    },
+    {
+      "id": "screen-256",
+      "category": "screen",
+      "text": "你從來沒有在我的腦袋裡裝過攝影機！",
+      "source": "《楚門的世界》（The Truman Show，1998）",
+      "originalText": "You never had a camera in my head!",
+      "sourceWork": "《楚門的世界》（The Truman Show，1998）；Truman Burbank；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Truman_Show",
+      "tags": [
+        "自由與自我"
+      ]
+    },
+    {
+      "id": "screen-257",
+      "category": "screen",
+      "text": "只要生命還在，希望就還在。",
+      "source": "《愛的萬物論》（The Theory of Everything，2014）",
+      "originalText": "While there is life, there is hope.",
+      "sourceWork": "《愛的萬物論》（The Theory of Everything，2014）；Stephen Hawking；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Theory_of_Everything_(2014_film)",
+      "tags": [
+        "希望與生命"
+      ]
+    },
+    {
+      "id": "screen-258",
+      "category": "screen",
+      "text": "憎恨總是愚昧，愛總是明智。",
+      "source": "《超時空奇俠》（Doctor Who，1963 起影集）",
+      "originalText": "Hate is always foolish, and love is always wise.",
+      "sourceWork": "《超時空奇俠》（Doctor Who，1963 起影集）；Twice Upon a Time [10.X]；The Doctor；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Twelfth_Doctor",
+      "tags": [
+        "愛與智慧"
+      ]
+    },
+    {
+      "id": "screen-259",
+      "category": "screen",
+      "text": "若不仔細傾聽，你就會錯過一些事。",
+      "source": "《模仿遊戲》（The Imitation Game，2014）",
+      "originalText": "If you are not listening carefully, you will miss things.",
+      "sourceWork": "《模仿遊戲》（The Imitation Game，2014）；Alan Turing；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Imitation_Game",
+      "tags": [
+        "傾聽與理解"
+      ]
+    },
+    {
+      "id": "screen-260",
+      "category": "screen",
+      "text": "當我把真相說出來，就感到自由了。",
+      "source": "《姊妹》（The Help，2011）",
+      "originalText": "Once I told the truth about that, I felt free.",
+      "sourceWork": "《姊妹》（The Help，2011）；Aibileen；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Help_(film)",
+      "tags": [
+        "誠實與自由"
+      ]
+    },
+    {
+      "id": "screen-261",
+      "category": "screen",
+      "text": "不能因為向來如此，就認定這是對的。",
+      "source": "《關鍵少數》（Hidden Figures，2016）",
+      "originalText": "Just 'cause it's the way, doesn't make it right",
+      "sourceWork": "《關鍵少數》（Hidden Figures，2016）；Dorothy Vaughan；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Hidden_Figures",
+      "tags": [
+        "獨立思考"
+      ]
+    },
+    {
+      "id": "screen-262",
+      "category": "screen",
+      "text": "你把夢想借給了我。",
+      "source": "《千鈞一髮》（Gattaca，1997）",
+      "originalText": "You lent me your dream.",
+      "sourceWork": "《千鈞一髮》（Gattaca，1997）；Jerome；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Gattaca",
+      "tags": [
+        "夢想與支持"
+      ]
+    },
+    {
+      "id": "screen-263",
+      "category": "screen",
+      "text": "唯一重要的事，是不要背叛自己。",
+      "source": "《銀河前哨》（Star Trek: Deep Space Nine，1993 起影集）",
+      "originalText": "The only important thing is not to betray yourself.",
+      "sourceWork": "《銀河前哨》（Star Trek: Deep Space Nine，1993 起影集）；Past Prologue [1.3]；Odo；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Star_Trek:_Deep_Space_Nine",
+      "tags": [
+        "誠實與自我"
+      ]
+    },
+    {
+      "id": "screen-264",
+      "category": "screen",
+      "text": "各位，我們得著手解決問題。",
+      "source": "《阿波羅13》（Apollo 13，1995）",
+      "originalText": "Let's work the problem, people.",
+      "sourceWork": "《阿波羅13》（Apollo 13，1995）；Gene Kranz；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Apollo_13_(film)",
+      "tags": [
+        "解決問題"
+      ]
+    },
+    {
+      "id": "screen-265",
+      "category": "screen",
+      "text": "誰知道潮水會帶來什麼？",
+      "source": "《浩劫重生》（Cast Away，2000）",
+      "originalText": "Who knows what the tide could bring?",
+      "sourceWork": "《浩劫重生》（Cast Away，2000）；Chuck Noland；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Cast_Away",
+      "tags": [
+        "希望與未知"
+      ]
+    },
+    {
+      "id": "screen-266",
+      "category": "screen",
+      "text": "誠實的人無須畏懼。",
+      "source": "《神鬼交鋒》（Catch Me If You Can，2002）",
+      "originalText": "An honest man has nothing to fear",
+      "sourceWork": "《神鬼交鋒》（Catch Me If You Can，2002）；Frank Abagnale Jr.；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Catch_Me_If_You_Can",
+      "tags": [
+        "誠實與勇氣"
+      ]
+    },
+    {
+      "id": "screen-267",
+      "category": "screen",
+      "text": "飢餓會改變你以為自己對自身的一切認識。",
+      "source": "《少年Pi的奇幻漂流》（Life of Pi，2012）",
+      "originalText": "Hunger can change everything you ever thought you knew about yourself.",
+      "sourceWork": "《少年Pi的奇幻漂流》（Life of Pi，2012）；Pi Patel；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Life_of_Pi_(film)",
+      "tags": [
+        "處境與自省"
+      ]
+    },
+    {
+      "id": "screen-268",
+      "category": "screen",
+      "text": "我不能犧牲現在，去等待一個也許永遠不會到來的未來。",
+      "source": "《星際爭霸戰：重返地球》（Star Trek: Voyager，1995 起影集）",
+      "originalText": "I can't sacrifice the present waiting for a future that may never happen.",
+      "sourceWork": "《星際爭霸戰：重返地球》（Star Trek: Voyager，1995 起影集）；Resolutions [2.25]；Chakotay；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Star_Trek:_Voyager",
+      "tags": [
+        "當下與選擇"
+      ]
+    },
+    {
+      "id": "screen-269",
+      "category": "screen",
+      "text": "記住，有朋友的人就不算失敗。",
+      "source": "《風雲人物》（It's a Wonderful Life，1946）",
+      "originalText": "remember no man is a failure who has friends",
+      "sourceWork": "《風雲人物》（It's a Wonderful Life，1946）；Clarence Oddbody；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/It's_a_Wonderful_Life",
+      "tags": [
+        "友誼與支持"
+      ]
+    },
+    {
+      "id": "screen-270",
+      "category": "screen",
+      "text": "你想要什麼，就去爭取。",
+      "source": "《當幸福來敲門》（The Pursuit of Happyness，2006）",
+      "originalText": "You want something, go get it.",
+      "sourceWork": "《當幸福來敲門》（The Pursuit of Happyness，2006）；Chris Gardner；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Pursuit_of_Happyness",
+      "tags": [
+        "勇氣與行動"
+      ]
+    },
+    {
+      "id": "screen-271",
+      "category": "screen",
+      "text": "刻意縮小自己，並不能為世界帶來益處。",
+      "source": "《卡特教頭》（Coach Carter，2005）",
+      "originalText": "Your playing small does not serve the world.",
+      "sourceWork": "《卡特教頭》（Coach Carter，2005）；Dialogue；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Coach_Carter",
+      "tags": [
+        "潛能與勇氣"
+      ]
+    },
+    {
+      "id": "screen-272",
+      "category": "screen",
+      "text": "這一生，你無須向任何人證明什麼，除了你自己。",
+      "source": "《豪情好傢伙》（Rudy，1993）",
+      "originalText": "In this lifetime, you don't have to prove nothin' to nobody - except yourself.",
+      "sourceWork": "《豪情好傢伙》（Rudy，1993）；Fortune；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Rudy",
+      "tags": [
+        "自我與成長"
+      ]
+    },
+    {
+      "id": "screen-273",
+      "category": "screen",
+      "text": "人生中無論做了什麼，若沒有朋友在場見證，就稱不上傳奇。",
+      "source": "《追愛總動員》（How I Met Your Mother，2005 起影集）",
+      "originalText": "Whatever you do in this life, it's not legendary unless your friends are there to see it.",
+      "sourceWork": "《追愛總動員》（How I Met Your Mother，2005 起影集）；Sunrise [9.17]；Barney；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/How_I_Met_Your_Mother_(season_9)",
+      "tags": [
+        "友誼與分享"
+      ]
+    },
+    {
+      "id": "screen-274",
+      "category": "screen",
+      "text": "一步一步來，一拳一拳打，一回合一回合走下去。",
+      "source": "《金牌拳手》（Creed，2015）",
+      "originalText": "One step at a time. One punch at a time. One round at a time.",
+      "sourceWork": "《金牌拳手》（Creed，2015）；Rocky Balboa；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Creed_(film)",
+      "tags": [
+        "耐心與堅持"
+      ]
+    },
+    {
+      "id": "screen-275",
+      "category": "screen",
+      "text": "我們要如何鼓舞身邊的每一個人？",
+      "source": "《打不倒的勇者》（Invictus，2009）",
+      "originalText": "How do we inspire everyone around us?",
+      "sourceWork": "《打不倒的勇者》（Invictus，2009）；Nelson Mandela；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Invictus_(film)",
+      "tags": [
+        "領導與影響"
+      ]
+    },
+    {
+      "id": "screen-276",
+      "category": "screen",
+      "text": "當我們不了解時，就會轉而依賴自己的假設。",
+      "source": "《心靈訪客》（Finding Forrester，2000）",
+      "originalText": "And when we don't understand, we turn to our assumptions.",
+      "sourceWork": "《心靈訪客》（Finding Forrester，2000）；Forrester；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Finding_Forrester",
+      "tags": [
+        "理解與偏見"
+      ]
+    },
+    {
+      "id": "screen-277",
+      "category": "screen",
+      "text": "數學，是讓人站上平等起點的力量。",
+      "source": "《為人師表》（Stand and Deliver，1988）",
+      "originalText": "Math is the great equalizer.",
+      "sourceWork": "《為人師表》（Stand and Deliver，1988）；Jaime Escalante；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Stand_and_Deliver",
+      "tags": [
+        "教育與平等"
+      ]
+    },
+    {
+      "id": "screen-278",
+      "category": "screen",
+      "text": "如果要做些什麼，就讓我們一起做。",
+      "source": "《廢柴聯盟》（Community，2009 起影集）",
+      "originalText": "But if we’re gonna do something, let’s do it as a team.",
+      "sourceWork": "《廢柴聯盟》（Community，2009 起影集）；Social Psychology [1.04]；Pierce；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Community_(TV_series)%2FSeason_1",
+      "tags": [
+        "合作與信任"
+      ]
+    },
+    {
+      "id": "screen-279",
+      "category": "screen",
+      "text": "沒有貢獻的雄心與征服，並無意義。",
+      "source": "《天之驕子》（The Emperor's Club，2002）",
+      "originalText": "Great ambition and conquest without contribution is without significance.",
+      "sourceWork": "《天之驕子》（The Emperor's Club，2002）；William Hundert；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Emperor's_Club",
+      "tags": [
+        "成就與貢獻"
+      ]
+    },
+    {
+      "id": "screen-280",
+      "category": "screen",
+      "text": "偉大不在於擁有力量，而在於正確運用力量。",
+      "source": "《奇蹟男孩》（Wonder，2017）",
+      "originalText": "Greatness,\" he wrote, \"lies not in being strong, but in the right using of strength.",
+      "sourceWork": "《奇蹟男孩》（Wonder，2017）；Mr. Tushman；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Wonder_(film)",
+      "tags": [
+        "力量與責任"
+      ]
+    },
+    {
+      "id": "screen-281",
+      "category": "screen",
+      "text": "朋友會走進你的生命，也會離開。",
+      "source": "《站在我這邊》（Stand by Me，1986）",
+      "originalText": "friends come in and out of your life",
+      "sourceWork": "《站在我這邊》（Stand by Me，1986）；The Writer；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Stand_by_Me_(film)",
+      "tags": [
+        "友誼與無常"
+      ]
+    },
+    {
+      "id": "screen-282",
+      "category": "screen",
+      "text": "英雄會被記住，傳奇永不消逝。",
+      "source": "《沙地傳奇》（The Sandlot，1993）",
+      "originalText": "heroes get remembered, but legends never die.",
+      "sourceWork": "《沙地傳奇》（The Sandlot，1993）；Babe Ruth；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Sandlot",
+      "tags": [
+        "生命與影響"
+      ]
+    },
+    {
+      "id": "screen-283",
+      "category": "screen",
+      "text": "最簡單的解釋，總是最好的。",
+      "source": "《豪斯醫生》（House，2004 起影集）",
+      "originalText": "The simplest explanation is always the best.",
+      "sourceWork": "《豪斯醫生》（House，2004 起影集）；Occam's Razor [1.03]；Dr. Foreman；劇中角色觀點；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/House_(TV_series)%2FSeason_1",
+      "tags": [
+        "思考與判斷"
+      ]
+    },
+    {
+      "id": "screen-284",
+      "category": "screen",
+      "text": "沒有壞學生，只有壞老師。",
+      "source": "《小子難纏》（The Karate Kid，1984）",
+      "originalText": "No such thing as bad student, only bad teacher.",
+      "sourceWork": "《小子難纏》（The Karate Kid，1984）；Mr. Miyagi；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Karate_Kid",
+      "tags": [
+        "教育與責任"
+      ]
+    },
+    {
+      "id": "screen-285",
+      "category": "screen",
+      "text": "寫點像你自己一樣有趣的東西。",
+      "source": "《樂來越愛你》（La La Land，2016）",
+      "originalText": "Write something that's as interesting as you are.",
+      "sourceWork": "《樂來越愛你》（La La Land，2016）；Sebastian；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/La_La_Land",
+      "tags": [
+        "創作與自我"
+      ]
+    },
+    {
+      "id": "screen-286",
+      "category": "screen",
+      "text": "對懷抱夢想的人來說，日子並不好過。",
+      "source": "《艾蜜莉的異想世界》（Amélie，2001）",
+      "originalText": "Times are hard for dreamers.",
+      "sourceWork": "《艾蜜莉的異想世界》（Amélie，2001）；Other；英文版台詞節錄；標點與大小寫整理；中文自譯；英文為配音／翻譯版本，非作品原始語言",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Am%C3%A9lie",
+      "tags": [
+        "夢想與現實"
+      ]
+    },
+    {
+      "id": "screen-287",
+      "category": "screen",
+      "text": "來，和我一起做夢。",
+      "source": "《雨果的冒險》（Hugo，2011）",
+      "originalText": "Come and dream with me.",
+      "sourceWork": "《雨果的冒險》（Hugo，2011）；Georges Méliès；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Hugo_(film)",
+      "tags": [
+        "想像與連結"
+      ]
+    },
+    {
+      "id": "screen-288",
+      "category": "screen",
+      "text": "別懷疑，一小群深思熟慮、願意投入的人，能夠改變世界。",
+      "source": "《白宮風雲》（The West Wing，1999 起影集）",
+      "originalText": "Never doubt that a small group of thoughtful and committed people can change the world.",
+      "sourceWork": "《白宮風雲》（The West Wing，1999 起影集）；Inauguration, Over There；Bartlet；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_West_Wing",
+      "tags": [
+        "行動與影響"
+      ]
+    },
+    {
+      "id": "screen-289",
+      "category": "screen",
+      "text": "你不需要每個人都愛你。",
+      "source": "《大娛樂家》（The Greatest Showman，2017）",
+      "originalText": "You don’t need everyone to love you.",
+      "sourceWork": "《大娛樂家》（The Greatest Showman，2017）；Charity Barnum；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Greatest_Showman",
+      "tags": [
+        "自我認同"
+      ]
+    },
+    {
+      "id": "screen-290",
+      "category": "screen",
+      "text": "你讓我一輩子都以為，我的價值只等於別人願意為我付多少錢！",
+      "source": "《紅磨坊》（Moulin Rouge!，2001）",
+      "originalText": "All my life you made believe I was only worth what someone would pay for me!",
+      "sourceWork": "《紅磨坊》（Moulin Rouge!，2001）；Satine；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Moulin_Rouge!",
+      "tags": [
+        "自我價值"
+      ]
+    },
+    {
+      "id": "screen-291",
+      "category": "screen",
+      "text": "你得去活出屬於自己的人生。",
+      "source": "《真善美》（The Sound of Music，1965）",
+      "originalText": "You have to live the life you were born to live.",
+      "sourceWork": "《真善美》（The Sound of Music，1965）；Reverend Mother；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Sound_of_Music_(film)",
+      "tags": [
+        "自我與人生"
+      ]
+    },
+    {
+      "id": "screen-292",
+      "category": "screen",
+      "text": "沒有地方比得上家。",
+      "source": "《綠野仙蹤》（The Wizard of Oz，1939）",
+      "originalText": "There's no place like home.",
+      "sourceWork": "《綠野仙蹤》（The Wizard of Oz，1939）；Dorothy；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Wizard_of_Oz_(1939_film)",
+      "tags": [
+        "家與歸屬"
+      ]
+    },
+    {
+      "id": "screen-293",
+      "category": "screen",
+      "text": "我希望我們至少還能掌握些什麼，哪怕只是自己。",
+      "source": "《唐頓莊園》（Downton Abbey，2010 起影集）",
+      "originalText": "Well I hope we're in control of something, if only ourselves.",
+      "sourceWork": "《唐頓莊園》（Downton Abbey，2010 起影集）；Episode 3；Violet Crawley, the Dowager Countess；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Downton_Abbey",
+      "tags": [
+        "自主與自省"
+      ]
+    },
+    {
+      "id": "screen-294",
+      "category": "screen",
+      "text": "我們創造音樂，也編織夢想。",
+      "source": "《歡樂糖果屋》（Willy Wonka & the Chocolate Factory，1971）",
+      "originalText": "We are the music makers, and we are the dreamers of dreams.",
+      "sourceWork": "《歡樂糖果屋》（Willy Wonka & the Chocolate Factory，1971）；Willy Wonka 引述 Arthur O’Shaughnessy〈Ode〉；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Willy_Wonka_&_the_Chocolate_Factory",
+      "tags": [
+        "創作與夢想"
+      ]
+    },
+    {
+      "id": "screen-295",
+      "category": "screen",
+      "text": "事情可能與你想像的很不一樣。",
+      "source": "《柏靈頓：熊愛趴趴走》（Paddington，2014）",
+      "originalText": "Things can be very different from how you imagined.",
+      "sourceWork": "《柏靈頓：熊愛趴趴走》（Paddington，2014）；Paddington；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Paddington_(film)",
+      "tags": [
+        "接納未知"
+      ]
+    },
+    {
+      "id": "screen-296",
+      "category": "screen",
+      "text": "他會尋找我們每個人身上的美好。",
+      "source": "《柏靈頓熊熊出任務》（Paddington 2，2017）",
+      "originalText": "He looks for the good in all of us",
+      "sourceWork": "《柏靈頓熊熊出任務》（Paddington 2，2017）；Henry Brown；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Paddington_2",
+      "tags": [
+        "善意與理解"
+      ]
+    },
+    {
+      "id": "screen-297",
+      "category": "screen",
+      "text": "你的孩子愛你，他們想和你一起玩。",
+      "source": "《虎克船長》（Hook，1991）",
+      "originalText": "Your children love you, they want to play with you.",
+      "sourceWork": "《虎克船長》（Hook，1991）；Moira；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Hook_(film)",
+      "tags": [
+        "陪伴與家庭"
+      ]
+    },
+    {
+      "id": "screen-298",
+      "category": "screen",
+      "text": "堅強就是奮戰！它很難、很痛，而且每天都得面對。",
+      "source": "《魔法奇兵》（Buffy the Vampire Slayer，1997 起影集）",
+      "originalText": "Strong is fighting! It's hard, and it's painful, and it's every day.",
+      "sourceWork": "《魔法奇兵》（Buffy the Vampire Slayer，1997 起影集）；Amends；Buffy；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Buffy_the_Vampire_Slayer",
+      "tags": [
+        "堅持與勇氣"
+      ]
+    },
+    {
+      "id": "screen-299",
+      "category": "screen",
+      "text": "死亡也阻擋不了真愛。",
+      "source": "《公主新娘》（The Princess Bride，1987）",
+      "originalText": "Death cannot stop true love.",
+      "sourceWork": "《公主新娘》（The Princess Bride，1987）；Death cannot stop true love.；Westley；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Princess_Bride_(film)",
+      "tags": [
+        "愛與信念"
+      ]
+    },
+    {
+      "id": "screen-300",
+      "category": "screen",
+      "text": "沒有希望的人，很容易被控制。",
+      "source": "《大魔域》（The NeverEnding Story，1984）",
+      "originalText": "People who have no hopes are easy to control.",
+      "sourceWork": "《大魔域》（The NeverEnding Story，1984）；G'mork；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_NeverEnding_Story_(film)",
+      "tags": [
+        "希望與自由"
+      ]
+    },
+    {
+      "id": "screen-301",
+      "category": "screen",
+      "text": "你不能把任何事都視為理所當然。",
+      "source": "《魔王迷宮》（Labyrinth，1986）",
+      "originalText": "You can't take anything for granted.",
+      "sourceWork": "《魔王迷宮》（Labyrinth，1986）；Worm；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Labyrinth_(film)",
+      "tags": [
+        "警覺與反思"
+      ]
+    },
+    {
+      "id": "screen-302",
+      "category": "screen",
+      "text": "即使是黑暗，也終將過去。",
+      "source": "《魔戒二部曲：雙城奇謀》（The Lord of the Rings: The Two Towers，2002）",
+      "originalText": "Even darkness must pass.",
+      "sourceWork": "《魔戒二部曲：雙城奇謀》（The Lord of the Rings: The Two Towers，2002）；Sam Gamgee；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Lord_of_the_Rings:_The_Two_Towers",
+      "tags": [
+        "希望與時間"
+      ]
+    },
+    {
+      "id": "screen-303",
+      "category": "screen",
+      "text": "天賦若不經鍛鍊，就毫無用處。",
+      "source": "《曼達洛人》（The Mandalorian，2019 起影集）",
+      "originalText": "talent without training is nothing.",
+      "sourceWork": "《曼達洛人》（The Mandalorian，2019 起影集）；Chapter 16: The Rescue [2.8]；Skywalker；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Mandalorian",
+      "tags": [
+        "天賦與學習"
+      ]
+    },
+    {
+      "id": "screen-304",
+      "category": "screen",
+      "text": "當然，你得做自己認為正確的事。",
+      "source": "《星際大戰四部曲：曙光乍現》（Star Wars Episode IV: A New Hope，1977）",
+      "originalText": "You must do what you feel is right, of course.",
+      "sourceWork": "《星際大戰四部曲：曙光乍現》（Star Wars Episode IV: A New Hope，1977）；Obi-Wan；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Star_Wars_Episode_IV:_A_New_Hope",
+      "tags": [
+        "良知與選擇"
+      ]
+    },
+    {
+      "id": "screen-305",
+      "category": "screen",
+      "text": "做，或不做；沒有「試試看」。",
+      "source": "《星際大戰五部曲：帝國大反擊》（Star Wars Episode V: The Empire Strikes Back，1980）",
+      "originalText": "Do, or do not. There is no try.",
+      "sourceWork": "《星際大戰五部曲：帝國大反擊》（Star Wars Episode V: The Empire Strikes Back，1980）；Yoda；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Star_Wars_Episode_V:_The_Empire_Strikes_Back",
+      "tags": [
+        "決心與行動"
+      ]
+    },
+    {
+      "id": "screen-306",
+      "category": "screen",
+      "text": "把你學到的傳承下去。",
+      "source": "《星際大戰六部曲：絕地大反攻》（Star Wars Episode VI: Return of the Jedi，1983）",
+      "originalText": "Pass on what you have learned.",
+      "sourceWork": "《星際大戰六部曲：絕地大反攻》（Star Wars Episode VI: Return of the Jedi，1983）；Yoda；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Star_Wars_Episode_VI:_Return_of_the_Jedi",
+      "tags": [
+        "學習與傳承"
+      ]
+    },
+    {
+      "id": "screen-307",
+      "category": "screen",
+      "text": "我們存在，是讓後人能成長得比我們更遠。",
+      "source": "《STAR WARS：最後的絕地武士》（Star Wars: The Last Jedi，2017）",
+      "originalText": "We are what they grow beyond.",
+      "sourceWork": "《STAR WARS：最後的絕地武士》（Star Wars: The Last Jedi，2017）；Yoda；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Star_Wars:_The_Last_Jedi",
+      "tags": [
+        "教育與傳承"
+      ]
+    },
+    {
+      "id": "screen-308",
+      "category": "screen",
+      "text": "自由，是一個純粹的信念。",
+      "source": "《安道爾》（Andor，2022 起影集）",
+      "originalText": "Freedom is a pure idea.",
+      "sourceWork": "《安道爾》（Andor，2022 起影集）；Rix Road [1.12]；Karis Nemik；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Andor_(TV_series)",
+      "tags": [
+        "自由與信念"
+      ]
+    },
+    {
+      "id": "screen-309",
+      "category": "screen",
+      "text": "對於尚未理解的選擇，我們看不見它之後的路。",
+      "source": "《駭客任務：重裝上陣》（The Matrix Reloaded，2003）",
+      "originalText": "We can never see past the choices we don't understand.",
+      "sourceWork": "《駭客任務：重裝上陣》（The Matrix Reloaded，2003）；Oracle；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Matrix_Reloaded",
+      "tags": [
+        "理解與選擇"
+      ]
+    },
+    {
+      "id": "screen-310",
+      "category": "screen",
+      "text": "重要的是，那個詞所代表的連結。",
+      "source": "《駭客任務完結篇：最後戰役》（The Matrix Revolutions，2003）",
+      "originalText": "What matters is the connection the word implies.",
+      "sourceWork": "《駭客任務完結篇：最後戰役》（The Matrix Revolutions，2003）；Rama-Kandra；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Matrix_Revolutions",
+      "tags": [
+        "語言與關係"
+      ]
+    },
+    {
+      "id": "screen-311",
+      "category": "screen",
+      "text": "親愛的，別害怕把夢做得更大一點。",
+      "source": "《全面啟動》（Inception，2010）",
+      "originalText": "You mustn't be afraid to dream a little bigger, darling.",
+      "sourceWork": "《全面啟動》（Inception，2010）；Eames；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Inception",
+      "tags": [
+        "夢想與勇氣"
+      ]
+    },
+    {
+      "id": "screen-312",
+      "category": "screen",
+      "text": "要留意自己正在變成什麼樣的人。",
+      "source": "《蜘蛛人》（Spider-Man，2002）",
+      "originalText": "Just be careful who you change into.",
+      "sourceWork": "《蜘蛛人》（Spider-Man，2002）；Ben；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Spider-Man_(film)",
+      "tags": [
+        "成長與自省"
+      ]
+    },
+    {
+      "id": "screen-313",
+      "category": "screen",
+      "text": "有些事，你只能學著與它共處。",
+      "source": "《閃電俠》（The Flash，2014 起影集）",
+      "originalText": "Some things, you just have to live with.",
+      "sourceWork": "《閃電俠》（The Flash，2014 起影集）；Things You Can't Outrun [1.03]；Joe；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Flash_(2014_TV_series)",
+      "tags": [
+        "接納與生活"
+      ]
+    },
+    {
+      "id": "screen-314",
+      "category": "screen",
+      "text": "不論如何，都要為你重視的事物努力。",
+      "source": "《蜘蛛人驚奇再起2：電光之戰》（The Amazing Spider-Man 2，2014）",
+      "originalText": "Fight for what matters to you, no matter what.",
+      "sourceWork": "《蜘蛛人驚奇再起2：電光之戰》（The Amazing Spider-Man 2，2014）；Gwen Stacy；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Amazing_Spider-Man_2",
+      "tags": [
+        "信念與行動"
+      ]
+    },
+    {
+      "id": "screen-315",
+      "category": "screen",
+      "text": "這需要憑著信念，勇敢躍出一步。",
+      "source": "《蜘蛛人：新宇宙》（Spider-Man: Into the Spider-Verse，2018）",
+      "originalText": "It's a leap of faith.",
+      "sourceWork": "《蜘蛛人：新宇宙》（Spider-Man: Into the Spider-Verse，2018）；Spider-Gang；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Spider-Man:_Into_the_Spider-Verse",
+      "tags": [
+        "信念與行動"
+      ]
+    },
+    {
+      "id": "screen-316",
+      "category": "screen",
+      "text": "這一次，讓我們換個方式。",
+      "source": "《蜘蛛人：穿越新宇宙》（Spider-Man: Across the Spider-Verse，2023）",
+      "originalText": "Let's do things differently this time.",
+      "sourceWork": "《蜘蛛人：穿越新宇宙》（Spider-Man: Across the Spider-Verse，2023）；Gwen Stacy；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Spider-Man:_Across_the_Spider-Verse",
+      "tags": [
+        "改變與勇氣"
+      ]
+    },
+    {
+      "id": "screen-317",
+      "category": "screen",
+      "text": "我開始明白，我能為世界做的，不只是製造會爆炸的東西。",
+      "source": "《鋼鐵人》（Iron Man，2008）",
+      "originalText": "I came to realize that I had more to offer this world than just making things that blow up.",
+      "sourceWork": "《鋼鐵人》（Iron Man，2008）；Tony；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Iron_Man_(film)",
+      "tags": [
+        "責任與改變"
+      ]
+    },
+    {
+      "id": "screen-318",
+      "category": "screen",
+      "text": "但這世上，有些人不會讓你覺得自己毫無價值。",
+      "source": "《奇幻貓頭鷹小屋》（The Owl House，2020 起影集）",
+      "originalText": "But there are people out there who won't make you feel worthless.",
+      "sourceWork": "《奇幻貓頭鷹小屋》（The Owl House，2020 起影集）；Eclipse Lake [2.09]；Amity；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Owl_House",
+      "tags": [
+        "自我價值與關係"
+      ]
+    },
+    {
+      "id": "screen-319",
+      "category": "screen",
+      "text": "最初是純粹、令人興奮的事物；接著，錯誤與妥協出現了。",
+      "source": "《鋼鐵人3》（Iron Man 3，2013）",
+      "originalText": "You start with something pure. Something exciting. Then come the mistakes, the compromises.",
+      "sourceWork": "《鋼鐵人3》（Iron Man 3，2013）；Tony Stark；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Iron_Man_3",
+      "tags": [
+        "初心與反省"
+      ]
+    },
+    {
+      "id": "screen-320",
+      "category": "screen",
+      "text": "我不喜歡欺負弱小的人，無論他們來自哪裡。",
+      "source": "《美國隊長》（Captain America: The First Avenger，2011）",
+      "originalText": "I don't like bullies. I don't care where they're from.",
+      "sourceWork": "《美國隊長》（Captain America: The First Avenger，2011）；Steve；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Captain_America:_The_First_Avenger",
+      "tags": [
+        "正義與勇氣"
+      ]
+    },
+    {
+      "id": "screen-321",
+      "category": "screen",
+      "text": "世界已經改變，我們誰也回不到從前。",
+      "source": "《美國隊長2：酷寒戰士》（Captain America: The Winter Soldier，2014）",
+      "originalText": "The world has changed and none of us can go back.",
+      "sourceWork": "《美國隊長2：酷寒戰士》（Captain America: The Winter Soldier，2014）；Carter；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Captain_America:_The_Winter_Soldier",
+      "tags": [
+        "改變與接納"
+      ]
+    },
+    {
+      "id": "screen-322",
+      "category": "screen",
+      "text": "每個人都可能親手造出自己最害怕的事物。",
+      "source": "《復仇者聯盟2：奧創紀元》（Avengers: Age of Ultron，2015）",
+      "originalText": "Everyone creates the thing they dread.",
+      "sourceWork": "《復仇者聯盟2：奧創紀元》（Avengers: Age of Ultron，2015）；Ultron；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Avengers:_Age_of_Ultron",
+      "tags": [
+        "恐懼與自省"
+      ]
+    },
+    {
+      "id": "screen-323",
+      "category": "screen",
+      "text": "你選擇了恨，但我選擇愛。",
+      "source": "《童話小鎮》（Once Upon a Time，2011 起影集）",
+      "originalText": "You chose hate, but I choose love.",
+      "sourceWork": "《童話小鎮》（Once Upon a Time，2011 起影集）；Is This Henry Mills? [7.20]；Tilly；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Once_Upon_a_Time_(TV_series)",
+      "tags": [
+        "選擇與善意"
+      ]
+    },
+    {
+      "id": "screen-324",
+      "category": "screen",
+      "text": "最艱難的選擇，需要最堅定的意志。",
+      "source": "《復仇者聯盟：無限之戰》（Avengers: Infinity War，2018）",
+      "originalText": "The hardest choices require the strongest wills.",
+      "sourceWork": "《復仇者聯盟：無限之戰》（Avengers: Infinity War，2018）；Thanos；Thanos 的角色觀點；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Avengers:_Infinity_War",
+      "tags": [
+        "選擇與決心"
+      ]
+    },
+    {
+      "id": "screen-325",
+      "category": "screen",
+      "text": "正因有死亡，生命才有意義。",
+      "source": "《奇異博士》（Doctor Strange，2016）",
+      "originalText": "Death is what gives life meaning.",
+      "sourceWork": "《奇異博士》（Doctor Strange，2016）；The Ancient One；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Doctor_Strange_(film)",
+      "tags": [
+        "生命與無常"
+      ]
+    },
+    {
+      "id": "screen-326",
+      "category": "screen",
+      "text": "唯有愛，才能真正拯救世界。",
+      "source": "《神力女超人》（Wonder Woman，2017）",
+      "originalText": "only Love can truly save the world.",
+      "sourceWork": "《神力女超人》（Wonder Woman，2017）；Diana Prince / Wonder Woman；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Wonder_Woman_(2017_film)",
+      "tags": [
+        "愛與力量"
+      ]
+    },
+    {
+      "id": "screen-327",
+      "category": "screen",
+      "text": "想知道自己有多強，唯一的方法就是不斷挑戰極限。",
+      "source": "《超人：鋼鐵英雄》（Man of Steel，2013）",
+      "originalText": "The only way to know how strong is to keep testing your limits.",
+      "sourceWork": "《超人：鋼鐵英雄》（Man of Steel，2013）；Jor-El；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Man_of_Steel_(film)",
+      "tags": [
+        "成長與探索"
+      ]
+    },
+    {
+      "id": "screen-328",
+      "category": "screen",
+      "text": "因為未來從來不是真正注定的。",
+      "source": "《X戰警：未來昔日》（X-Men: Days of Future Past，2014）",
+      "originalText": "for the future is never truly set.",
+      "sourceWork": "《X戰警：未來昔日》（X-Men: Days of Future Past，2014）；Charles Xavier/Professor X；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/X-Men:_Days_of_Future_Past",
+      "tags": [
+        "未來與可能"
+      ]
+    },
+    {
+      "id": "screen-329",
+      "category": "screen",
+      "text": "殺戮留下的重量，難以揮去。",
+      "source": "《羅根》（Logan，2017）",
+      "originalText": "There's no living with the killing.",
+      "sourceWork": "《羅根》（Logan，2017）；Laura Kinney / X-23；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Logan_(film)",
+      "tags": [
+        "暴力與反思"
+      ]
+    },
+    {
+      "id": "screen-330",
+      "category": "screen",
+      "text": "這不是飛翔，而是有風格地墜落！",
+      "source": "《玩具總動員》（Toy Story，1995）",
+      "originalText": "This isn't flying. This is falling with style!",
+      "sourceWork": "《玩具總動員》（Toy Story，1995）；Buzz Lightyear；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Toy_Story",
+      "tags": [
+        "幽默與轉念"
+      ]
+    },
+    {
+      "id": "screen-331",
+      "category": "screen",
+      "text": "如果我不願同樣為他付出，就不配自稱是他的朋友。",
+      "source": "《玩具總動員2》（Toy Story 2，1999）",
+      "originalText": "I couldn't call myself his friend if I weren't willing to do the same.",
+      "sourceWork": "《玩具總動員2》（Toy Story 2，1999）；Buzz Lightyear；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Toy_Story_2",
+      "tags": [
+        "友誼與付出"
+      ]
+    },
+    {
+      "id": "screen-332",
+      "category": "screen",
+      "text": "你將幫助她創造能陪伴一生的快樂回憶。",
+      "source": "《玩具總動員4》（Toy Story 4，2019）",
+      "originalText": "You are going to help create happy memories that will last for the rest of her life.",
+      "sourceWork": "《玩具總動員4》（Toy Story 4，2019）；Woody；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Toy_Story_4",
+      "tags": [
+        "陪伴與回憶"
+      ]
+    },
+    {
+      "id": "screen-333",
+      "category": "screen",
+      "text": "領導的第一條規則：出了什麼事，都得由你負責。",
+      "source": "《蟲蟲危機》（A Bug's Life，1998）",
+      "originalText": "First rule of leadership: everything is your fault.",
+      "sourceWork": "《蟲蟲危機》（A Bug's Life，1998）；Hopper；Uh-uh-uh. First rule of leadership；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/A_Bug's_Life",
+      "tags": [
+        "領導與責任"
+      ]
+    },
+    {
+      "id": "screen-334",
+      "category": "screen",
+      "text": "想改變別人對我的看法，得先改變自己。",
+      "source": "《海底總動員》（Finding Nemo，2003）",
+      "originalText": "If I am to change this image, I must first change myself.",
+      "sourceWork": "《海底總動員》（Finding Nemo，2003）；Chum, Bruce and Anchor；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Finding_Nemo",
+      "tags": [
+        "改變與行動"
+      ]
+    },
+    {
+      "id": "screen-335",
+      "category": "screen",
+      "text": "你仍然能做出很棒的事。",
+      "source": "《超人特攻隊》（The Incredibles，2004）",
+      "originalText": "You can still do great things.",
+      "sourceWork": "《超人特攻隊》（The Incredibles，2004）；Mirage；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Incredibles",
+      "tags": [
+        "潛能與希望"
+      ]
+    },
+    {
+      "id": "screen-336",
+      "category": "screen",
+      "text": "政客不明白，有些人做好事，只因那是對的。",
+      "source": "《超人特攻隊2》（Incredibles 2，2018）",
+      "originalText": "Politicians don't understand people who do good simply because it's right.",
+      "sourceWork": "《超人特攻隊2》（Incredibles 2，2018）；Rick；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Incredibles_2",
+      "tags": [
+        "善意與良知"
+      ]
+    },
+    {
+      "id": "screen-337",
+      "category": "screen",
+      "text": "修補那段被驕傲撕裂的連結。",
+      "source": "《勇敢傳說》（Brave，2012）",
+      "originalText": "mend the bond torn by pride.",
+      "sourceWork": "《勇敢傳說》（Brave，2012）；The Witch；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Brave_(2012_film)",
+      "tags": [
+        "關係與謙卑"
+      ]
+    },
+    {
+      "id": "screen-338",
+      "category": "screen",
+      "text": "沒有人是完全沒有價值的。",
+      "source": "《腦筋急轉彎2》（Inside Out 2，2024）",
+      "originalText": "No one is totally worthless.",
+      "sourceWork": "《腦筋急轉彎2》（Inside Out 2，2024）；Disgust；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Inside_Out_2",
+      "tags": [
+        "自我價值"
+      ]
+    },
+    {
+      "id": "screen-339",
+      "category": "screen",
+      "text": "有時，我懷念從前；但沒有什麼會永遠不變。",
+      "source": "《青春養成記》（Turning Red，2022）",
+      "originalText": "Sometimes, I miss how things were, but… nothing stays the same forever.",
+      "sourceWork": "《青春養成記》（Turning Red，2022）；Meilin \"Mei\" Lee；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Turning_Red",
+      "tags": [
+        "成長與接納"
+      ]
+    },
+    {
+      "id": "screen-340",
+      "category": "screen",
+      "text": "最重要的時刻，就是現在。",
+      "source": "《功夫熊貓2》（Kung Fu Panda 2，2011）",
+      "originalText": "The most important time is now.",
+      "sourceWork": "《功夫熊貓2》（Kung Fu Panda 2，2011）；Soothsayer；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Kung_Fu_Panda_2",
+      "tags": [
+        "珍惜當下"
+      ]
+    },
+    {
+      "id": "screen-341",
+      "category": "screen",
+      "text": "我不願殺他，因為他看起來和我一樣害怕。",
+      "source": "《馴龍高手》（How to Train Your Dragon，2010）",
+      "originalText": "I wouldn't kill him, because he looked as frightened as I was.",
+      "sourceWork": "《馴龍高手》（How to Train Your Dragon，2010）；Hiccup；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/How_to_Train_Your_Dragon_(film)",
+      "tags": [
+        "同理與慈悲"
+      ]
+    },
+    {
+      "id": "screen-342",
+      "category": "screen",
+      "text": "我們之中，有些人生來就與眾不同。",
+      "source": "《馴龍高手2》（How to Train Your Dragon 2，2014）",
+      "originalText": "Some of us were just born different.",
+      "sourceWork": "《馴龍高手2》（How to Train Your Dragon 2，2014）；Valka；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/How_to_Train_Your_Dragon_2",
+      "tags": [
+        "差異與接納"
+      ]
+    },
+    {
+      "id": "screen-343",
+      "category": "screen",
+      "text": "別再讓這些不安左右你。",
+      "source": "《馴龍高手3》（How to Train Your Dragon: The Hidden World，2019）",
+      "originalText": "Stop letting these insecurities get the best of you.",
+      "sourceWork": "《馴龍高手3》（How to Train Your Dragon: The Hidden World，2019）；Tuffnut；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/How_to_Train_Your_Dragon:_The_Hidden_World",
+      "tags": [
+        "自信與成長"
+      ]
+    },
+    {
+      "id": "screen-344",
+      "category": "screen",
+      "text": "任何人都能改變。",
+      "source": "《古魯家族》（The Croods，2013）",
+      "originalText": "anyone can change",
+      "sourceWork": "《古魯家族》（The Croods，2013）；Eep；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Croods",
+      "tags": [
+        "改變與可能"
+      ]
+    },
+    {
+      "id": "screen-345",
+      "category": "screen",
+      "text": "你不必成為一件武器。",
+      "source": "《鐵巨人》（The Iron Giant，1999）",
+      "originalText": "You don't have to be a gun.",
+      "sourceWork": "《鐵巨人》（The Iron Giant，1999）；Hogarth William Hughes；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Iron_Giant",
+      "tags": [
+        "自由與選擇"
+      ]
+    },
+    {
+      "id": "screen-346",
+      "category": "screen",
+      "text": "我得保持積極的心態。",
+      "source": "《小蟻雄兵》（Antz，1998）",
+      "originalText": "I've got to keep a positive attitude.",
+      "sourceWork": "《小蟻雄兵》（Antz，1998）；Z Marion-4195；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Antz",
+      "tags": [
+        "心態與行動"
+      ]
+    },
+    {
+      "id": "screen-347",
+      "category": "screen",
+      "text": "有些人，值得我為他融化。",
+      "source": "《冰雪奇緣》（Frozen，2013）",
+      "originalText": "Some people are worth melting for.",
+      "sourceWork": "《冰雪奇緣》（Frozen，2013）；Olaf；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Frozen_(2013_film)",
+      "tags": [
+        "愛與犧牲"
+      ]
+    },
+    {
+      "id": "screen-348",
+      "category": "screen",
+      "text": "你曾是我的新夢想。",
+      "source": "《魔髮奇緣》（Tangled，2010）",
+      "originalText": "You were my new dream.",
+      "sourceWork": "《魔髮奇緣》（Tangled，2010）；Eugene；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Tangled",
+      "tags": [
+        "愛與相遇"
+      ]
+    },
+    {
+      "id": "screen-349",
+      "category": "screen",
+      "text": "我一輩子都被困在必須完美的要求裡！",
+      "source": "《魔法滿屋》（Encanto，2021）",
+      "originalText": "I've been stuck being perfect my whole entire life!",
+      "sourceWork": "《魔法滿屋》（Encanto，2021）；Isabela Madrigal；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Encanto",
+      "tags": [
+        "完美與壓力"
+      ]
+    },
+    {
+      "id": "screen-350",
+      "category": "screen",
+      "text": "你或許還不明白，但人們需要你。",
+      "source": "《大英雄天團》（Big Hero 6，2014）",
+      "originalText": "You don't understand this yet, but people need you.",
+      "sourceWork": "《大英雄天團》（Big Hero 6，2014）；Tadashi Hamada；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Big_Hero_6_(film)",
+      "tags": [
+        "自我價值"
+      ]
+    },
+    {
+      "id": "screen-351",
+      "category": "screen",
+      "text": "我是壞人，這也很好；我不會變成好人，但那也不壞。",
+      "source": "《無敵破壞王》（Wreck-It Ralph，2012）",
+      "originalText": "I'm bad, and that's good. I will never be good, and that's not bad.",
+      "sourceWork": "《無敵破壞王》（Wreck-It Ralph，2012）；Wreck-It Ralph；反派遊戲角色談自我接納；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Wreck-It_Ralph",
+      "tags": [
+        "角色與接納"
+      ]
+    },
+    {
+      "id": "screen-352",
+      "category": "screen",
+      "text": "這是我的家人，是我自己找到的家人。",
+      "source": "《星際寶貝》（Lilo & Stitch，2002）",
+      "originalText": "This is my family. I found it, all on my own.",
+      "sourceWork": "《星際寶貝》（Lilo & Stitch，2002）；Stitch；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Lilo_&_Stitch",
+      "tags": [
+        "家庭與歸屬"
+      ]
+    },
+    {
+      "id": "screen-353",
+      "category": "screen",
+      "text": "不管遇到什麼風暴，都要堅持下去！",
+      "source": "《星銀島》（Treasure Planet，2002）",
+      "originalText": "Stick to it, no matter the squalls!",
+      "sourceWork": "《星銀島》（Treasure Planet，2002）；Long John Silver；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Treasure_Planet",
+      "tags": [
+        "挫折與堅持"
+      ]
+    },
+    {
+      "id": "screen-354",
+      "category": "screen",
+      "text": "沒錯，我們的人民還活著，但文化正在消逝。",
+      "source": "《亞特蘭提斯：失落的帝國》（Atlantis: The Lost Empire，2001）",
+      "originalText": "True, our people live, but our culture is dying.",
+      "sourceWork": "《亞特蘭提斯：失落的帝國》（Atlantis: The Lost Empire，2001）；Princess \"Kida\" Kidagakash；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Atlantis:_The_Lost_Empire",
+      "tags": [
+        "文化與傳承"
+      ]
+    },
+    {
+      "id": "screen-355",
+      "category": "screen",
+      "text": "一粒米，也能使天平傾斜。",
+      "source": "《花木蘭》（Mulan，1998）",
+      "originalText": "A single grain of rice can tip the scale.",
+      "sourceWork": "《花木蘭》（Mulan，1998）；The Emperor；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Mulan_(1998_film)",
+      "tags": [
+        "微小的力量"
+      ]
+    },
+    {
+      "id": "screen-356",
+      "category": "screen",
+      "text": "你口口聲聲談正義，卻殘酷對待最需要你幫助的人！",
+      "source": "《鐘樓怪人》（The Hunchback of Notre Dame，1996）",
+      "originalText": "You speak of justice, yet you are cruel to those most in need of your help!",
+      "sourceWork": "《鐘樓怪人》（The Hunchback of Notre Dame，1996）；Esmeralda；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Hunchback_of_Notre_Dame_(1996_film)",
+      "tags": [
+        "正義與同理"
+      ]
+    },
+    {
+      "id": "screen-357",
+      "category": "screen",
+      "text": "想把事情做好，就得自己動手。",
+      "source": "《小美人魚》（The Little Mermaid，1989）",
+      "originalText": "You want something done, you've got to do it yourself.",
+      "sourceWork": "《小美人魚》（The Little Mermaid，1989）；Sebastian；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Little_Mermaid_(1989_film)",
+      "tags": [
+        "責任與行動"
+      ]
+    },
+    {
+      "id": "screen-358",
+      "category": "screen",
+      "text": "從現在起，家人會仰賴你。",
+      "source": "《泰山》（Tarzan，1999）",
+      "originalText": "Our family will look to you now.",
+      "sourceWork": "《泰山》（Tarzan，1999）；Kerchak；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Tarzan_(1999_film)",
+      "tags": [
+        "家庭與責任"
+      ]
+    },
+    {
+      "id": "screen-359",
+      "category": "screen",
+      "text": "萬物總在不斷轉變。",
+      "source": "《熊的傳說》（Brother Bear，2003）",
+      "originalText": "One thing always changes into another.",
+      "sourceWork": "《熊的傳說》（Brother Bear，2003）；Sitka；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Brother_Bear",
+      "tags": [
+        "無常與成長"
+      ]
+    },
+    {
+      "id": "screen-360",
+      "category": "screen",
+      "text": "即便如此，你仍能找到繼續活下去的理由。",
+      "source": "《魔法公主》（Princess Mononoke，1997）",
+      "originalText": "But still, you find reasons to keep living.",
+      "sourceWork": "《魔法公主》（Princess Mononoke，1997）；Osa；英文版台詞節錄；標點與大小寫整理；中文自譯；英文為配音／翻譯版本，非作品原始語言",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Princess_Mononoke",
+      "tags": [
+        "生命與希望"
+      ]
+    },
+    {
+      "id": "screen-361",
+      "category": "screen",
+      "text": "我試著往內心看，找回當初是怎麼做到的。",
+      "source": "《魔女宅急便》（Kiki's Delivery Service，1989）",
+      "originalText": "trying to look inside myself and find out how I did it.",
+      "sourceWork": "《魔女宅急便》（Kiki's Delivery Service，1989）；Kiki's Delivery Service；Kiki；英文版台詞節錄；標點與大小寫整理；中文自譯；英文為配音／翻譯版本，非作品原始語言",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Kiki's_Delivery_Service",
+      "tags": [
+        "自省與創作"
+      ]
+    },
+    {
+      "id": "screen-362",
+      "category": "screen",
+      "text": "你的人生，曾為別人帶來喜悅嗎？",
+      "source": "《一路玩到掛》（The Bucket List，2007）",
+      "originalText": "Has your life brought joy to others?",
+      "sourceWork": "《一路玩到掛》（The Bucket List，2007）；Carter Chambers；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Bucket_List",
+      "tags": [
+        "付出與意義"
+      ]
+    },
+    {
+      "id": "screen-363",
+      "category": "screen",
+      "text": "沒有任何一刻是平凡無奇的。",
+      "source": "《深夜加油站遇見蘇格拉底》（Peaceful Warrior，2006）",
+      "originalText": "There are no ordinary moments.",
+      "sourceWork": "《深夜加油站遇見蘇格拉底》（Peaceful Warrior，2006）；Dan Millman；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Peaceful_Warrior",
+      "tags": [
+        "珍惜當下"
+      ]
+    },
+    {
+      "id": "screen-364",
+      "category": "screen",
+      "text": "記住，你掌握著自己的人生。",
+      "source": "《駭客任務》（The Matrix，1999）",
+      "originalText": "You’re in control of your own life, remember?",
+      "sourceWork": "《駭客任務》（The Matrix，1999）；Oracle；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Matrix_(film)",
+      "tags": [
+        "自主與選擇"
+      ]
+    },
+    {
+      "id": "screen-365",
+      "category": "screen",
+      "text": "先學會站穩，再學會飛翔。",
+      "source": "《小子難纏》（The Karate Kid，1984）",
+      "originalText": "First learn stand, then learn fly.",
+      "sourceWork": "《小子難纏》（The Karate Kid，1984）；Mr. Miyagi；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/The_Karate_Kid",
+      "tags": [
+        "基礎與成長"
+      ]
+    },
+    {
+      "id": "screen-366",
+      "category": "screen",
+      "text": "保持幽默感，尤其是面對自己時。",
+      "source": "《深夜加油站遇見蘇格拉底》（Peaceful Warrior，2006）",
+      "originalText": "Keep a sense of humour, especially about yourself.",
+      "sourceWork": "《深夜加油站遇見蘇格拉底》（Peaceful Warrior，2006）；Dan Millman；英文台詞節錄；標點與大小寫整理；中文自譯",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Peaceful_Warrior",
+      "tags": [
+        "幽默與自省"
       ]
     }
   ]

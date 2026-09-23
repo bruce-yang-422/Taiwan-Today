@@ -28,7 +28,7 @@ test(`${category} quotes persist, render in all styles and rotate at Taiwan midn
   await expect(page.locator('#quote-category')).toBeEnabled();
   await page.keyboard.press('Escape');
   const entries = quotes.data.filter(q => q.category === category);
-  const expectedCount = category === 'screen' ? 33 : 366;
+  const expectedCount = 366;
   expect(entries).toHaveLength(expectedCount);
   expect(new Set(entries.map(q => q.text)).size).toBe(expectedCount);
   const index = Math.floor(Date.UTC(2026, 8, 23) / 86400000) % entries.length;
