@@ -88,13 +88,13 @@ el('history-show-more').addEventListener('click', () => {
   historyExpanded = !historyExpanded; lastDate = ''; renderCalendar();
 });
 
-type Preferences = { historySources: HistorySourceSetting[]; showHistory: boolean; showQuote: boolean; showTodos: boolean; showSecondHand: boolean; textSize: 'standard' | 'large'; appearance: 'system' | 'light' | 'dark'; style: 'classic' | 'modern' | 'traditional' | 'workspace' | 'reading'; weekStart: 0 | 1; quoteCategory: 'daily' | 'sheng-yen' | 'negative' | 'classics' };
+type Preferences = { historySources: HistorySourceSetting[]; showHistory: boolean; showQuote: boolean; showTodos: boolean; showSecondHand: boolean; textSize: 'standard' | 'large'; appearance: 'system' | 'light' | 'dark'; style: 'classic' | 'modern' | 'traditional' | 'workspace' | 'reading'; weekStart: 0 | 1; quoteCategory: 'daily' | 'sheng-yen' | 'negative' | 'classics' | 'famous' };
 let preferences: Preferences = { historySources: normalizeHistorySources(undefined), showHistory: true, showQuote: true, showTodos: true, showSecondHand: true, textSize: 'standard', appearance: 'system', style: 'modern', weekStart: 0, quoteCategory: 'daily' };
 const displayOptions = [['show-history', 'showHistory'], ['show-quote', 'showQuote'], ['show-todos', 'showTodos'], ['show-second-hand', 'showSecondHand']] as const;
 const media = matchMedia('(prefers-color-scheme: dark)');
 function parsePreferences(value: unknown): Preferences {
   const p = value as Partial<Preferences> | null;
-  return { historySources: normalizeHistorySources(p?.historySources), showHistory: p?.showHistory !== false, showQuote: p?.showQuote !== false, showTodos: p?.showTodos !== false, showSecondHand: p?.showSecondHand !== false, textSize: p?.textSize === 'large' ? 'large' : 'standard', appearance: p && ['system', 'light', 'dark'].includes(p.appearance ?? '') ? p.appearance! : 'system', style: p && ['classic', 'modern', 'traditional', 'workspace', 'reading'].includes(p.style ?? '') ? p.style! : 'modern', weekStart: p?.weekStart === 1 ? 1 : 0, quoteCategory: p && ['daily', 'sheng-yen', 'negative', 'classics'].includes(p.quoteCategory ?? '') ? p.quoteCategory! : 'daily' };
+  return { historySources: normalizeHistorySources(p?.historySources), showHistory: p?.showHistory !== false, showQuote: p?.showQuote !== false, showTodos: p?.showTodos !== false, showSecondHand: p?.showSecondHand !== false, textSize: p?.textSize === 'large' ? 'large' : 'standard', appearance: p && ['system', 'light', 'dark'].includes(p.appearance ?? '') ? p.appearance! : 'system', style: p && ['classic', 'modern', 'traditional', 'workspace', 'reading'].includes(p.style ?? '') ? p.style! : 'modern', weekStart: p?.weekStart === 1 ? 1 : 0, quoteCategory: p && ['daily', 'sheng-yen', 'negative', 'classics', 'famous'].includes(p.quoteCategory ?? '') ? p.quoteCategory! : 'daily' };
 }
 const renderHistorySources = createHistorySourceControls(sources => savePreferences(sources));
 function applyPreferences() {

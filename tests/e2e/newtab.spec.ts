@@ -2,6 +2,7 @@ import { test, expect, chromium } from '@playwright/test';
 import { resolve, dirname, basename } from 'node:path';
 import { mkdtemp, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
+import quotes from '../../data/quotes.json' with { type: 'json' };
 
 test('personal history import validates, persists, syncs and can be cleared', async ({ page, context }) => {
   await page.clock.install({ time: new Date('2026-09-21T12:00:00+08:00') });
@@ -45,24 +46,35 @@ test('personal history import validates, persists, syncs and can be cleared', as
 });
 
 test('quote category updates immediately and persists across reloads', async ({ page }) => {
+  await page.clock.install({ time: new Date('2026-09-23T12:00:00+08:00') });
   await page.goto('/newtab.html');
   await page.getByRole('button', { name: '開啟設定' }).click();
   await page.getByLabel('日曆樣式').selectOption('reading');
+  await page.locator('#settings-tab-content').click();
   await page.getByLabel('每日一句分類').selectOption('sheng-yen');
+  await expect(page.locator('#quote-category option:checked')).toHaveText('佛家智慧');
   await page.keyboard.press('Escape');
-  await expect(page.locator('.daily-quote > p')).toHaveText('— 聖嚴法師');
+  const buddhistQuotes = quotes.data.filter(q => q.category === 'sheng-yen');
+  const expected = buddhistQuotes[Math.floor(Date.UTC(2026, 8, 23) / 86400000) % buddhistQuotes.length];
+  await expect(page.locator('.daily-quote > p')).toHaveText(`— ${expected.source}`);
+  await expect(page.locator('.daily-quote blockquote')).toHaveText(expected.text);
   const quote = await page.locator('.daily-quote blockquote').textContent();
   await page.reload();
   await expect(page.locator('.daily-quote blockquote')).toHaveText(quote!);
   await page.getByRole('button', { name: '開啟設定' }).click();
+  await page.locator('#settings-tab-content').click();
   await expect(page.getByLabel('每日一句分類')).toHaveValue('sheng-yen');
   await page.getByLabel('每日一句分類').selectOption('negative');
   await page.keyboard.press('Escape');
   await expect(page.locator('.daily-quote > p')).toHaveText(/^— (台灣今日曆・原創|網路流傳)$/);
   await page.getByRole('button', { name: '開啟設定' }).click();
+  await page.locator('#settings-tab-content').click();
   await page.getByLabel('每日一句分類').selectOption('classics');
   await page.keyboard.press('Escape');
-  await expect(page.locator('.daily-quote > p')).toHaveText(/《(論語|周易)/);
+  const classics = quotes.data.filter(q => q.category === 'classics');
+  const expectedClassic = classics[Math.floor(Date.UTC(2026, 8, 23) / 86400000) % classics.length];
+  await expect(page.locator('.daily-quote > p')).toHaveText(`— ${expectedClassic.source}`);
+  await expect(page.locator('.daily-quote blockquote')).toHaveText(expectedClassic.text);
 });
 
 test('ChatGPT is added once to existing shortcuts and stays deleted', async ({ page }) => {

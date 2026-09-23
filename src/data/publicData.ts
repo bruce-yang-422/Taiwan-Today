@@ -87,7 +87,7 @@ export function parsePublicData(files: Record<string, unknown>): PublicData {
   const ids = new Set<string>();
   const parsedQuotes = list(files['quotes.json']).map(raw => {
     const q = object(raw), id = text(q.id), category = text(q.category);
-    if (ids.has(id) || !['daily', 'negative', 'sheng-yen', 'classics'].includes(category)) throw new Error('語錄分類或識別碼錯誤');
+    if (ids.has(id) || !['daily', 'negative', 'sheng-yen', 'classics', 'famous'].includes(category)) throw new Error('語錄分類或識別碼錯誤');
     ids.add(id); return { id, category, text: text(q.text, 5000), source: text(q.source) };
   });
   if (!parsedQuotes.length) throw new Error('語錄不得為空');
