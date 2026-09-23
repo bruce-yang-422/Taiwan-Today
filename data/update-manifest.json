@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "version": "1.0.0",
-  "updatedAt": "2026-09-23T05:32:19.036Z",
-  "updatedAtTaiwan": "2026-09-23T13:32:19.036+08:00",
-  "revision": "9e0f25807e8610f281e03b41f4346afe792d08f5ddeae80ba3e52794c3679d06",
+  "updatedAt": "2026-09-23T06:57:01.821Z",
+  "updatedAtTaiwan": "2026-09-23T14:57:01.821+08:00",
+  "revision": "438073c19f94608d16ebb0d3e95ad8e3343f0d4223dfce41cd18c6499a3dc71a",
   "files": [
     {
       "name": "calendar-2026.json",
@@ -79,11 +79,11 @@
     },
     {
       "name": "quotes.json",
-      "sha256": "e3a2383eaa55017a804eedfec93c407e6c1aae1f1dd691c0053df3af6ce508b0",
-      "bytes": 697753,
-      "version": "1.7.0",
-      "updatedAt": "2026-09-23T05:32:19.036Z",
-      "updatedAtTaiwan": "2026-09-23T13:32:19.036+08:00"
+      "sha256": "2fec74380f022c545e9d0bd6bb087e512c4edee32e6e409add571a2caf3e8d58",
+      "bytes": 1183075,
+      "version": "1.13.0",
+      "updatedAt": "2026-09-23T06:57:01.821Z",
+      "updatedAtTaiwan": "2026-09-23T14:57:01.821+08:00"
     }
   ]
 }
