@@ -17,7 +17,7 @@
 
 版本下載：[v1.0.0 發布頁與更新說明](https://github.com/bruce-yang-422/Taiwan-Today/releases/tag/v1.0.0)
 
-以 Vite、TypeScript、Tailwind CSS 與 Manifest V3 實作的 Chrome 新分頁。無後端、無帳號、無追蹤，離線可用，可選擇連線更新公共資料；使用 `storage` 與 `favicon` 權限，連線更新則另需授權 GitHub Raw 連線。
+以 Vite、TypeScript、Tailwind CSS 與 Manifest V3 實作的 Chrome 新分頁。無後端、無帳號、無追蹤，離線可用，可選擇連線更新公共資料；使用 `storage`、`favicon` 與 HTTP／HTTPS 網站存取權限；網站存取用於下載捷徑圖示，公共資料更新仍由使用者手動執行或啟用每日檢查。
 
 個人／家族紀事範例：[CSV](templates/history-template.csv)、[XLSX](templates/history-template.xlsx)、[ODS](templates/history-template.ods)。選一種填寫，再使用[官網轉檔工具](https://today.stack-base.com/#converter)預覽並下載 JSON，於插件「設定 → 資料管理 → 匯入個人歷史」匯入。欄位格式見 [範例說明](templates/README.md)。
 
@@ -95,7 +95,7 @@ npx playwright test --config tests/pages/playwright.config.mjs
 - 台灣民俗節日、2026～2027 年政府行政機關節日／補假，以及連假日次。
 - Google 搜尋及歷史事件深入了解連結。
 - 捷徑新增、編輯、刪除、拖曳排序；編輯按鈕支援 Alt + 左右方向鍵排序。
-- 首次使用的預設捷徑為 YouTube、Facebook、Yahoo 奇摩、ChatGPT；保留使用者已儲存的捷徑。舊版升級時會補上 ChatGPT，手動刪除後不會再次加入。
+- 首次使用的預設捷徑依序為 Yahoo 奇摩、YouTube、ChatGPT、Gemini、Google 搜尋首頁；保留使用者已儲存的捷徑。舊版升級時會補上 ChatGPT，手動刪除後不會再次加入。
 - 外觀使用圖示搭配滑動分段控制（系統／亮色／暗色），支援鍵盤方向鍵與減少動態效果偏好；另可選五種日曆樣式，設定持久保存。
 - 歲月紙曆樣式採撕頁日曆造型：紅色裝訂頭、銅釘、層疊紙邊與柔和陰影，搭配低彩度磚紅大日期、深藍文字及明體字；寬螢幕以日期／大時鐘／待辦並排，支援亮色紙面與深色配色。
 - 響應式畫面、鍵盤操作、儲存錯誤提示、同裝置分頁設定更新。
@@ -184,9 +184,13 @@ node scripts/import-calendar.mjs --year 2027 --csv path/to/116-calendar.csv
 `data/history-taiwan.json` 與 `data/history-world.json` 合計收錄 193 筆「歷史上的今天」紀事，其中台灣 129 筆（67%）、國際 64 筆（33%）。9～12 月每天皆有 1～3 則；1～8 月目前為精選重大事件，僅涵蓋部分日期，尚未每天有內容，缺少資料的日期會顯示空狀態。內容以重大政治、社會、科學、文化及體育事件為主。另有預設關閉的主題紀事：`data/history-tech.json`（科技，51 筆）與 `data/history-entertainment.json`（影音娛樂，28 筆），同樣僅涵蓋部分日期，會逐步擴充。執行
 `npm run data:check-history` 可檢查資料完整性。
 
-### 捷徑圖示
+### 常用網站與捷徑圖示
 
-YouTube、PChome、GitHub 捷徑內建 favicon；其他捷徑透過 [Chrome 內建 favicon 功能](https://developer.chrome.com/docs/extensions/how-to/ui/favicons)取得，也可自行匯入 PNG / ICO（最大 64 KB）。無雲端同步，資料保存在本機。
+捷徑區的「常用網站」可依分類勾選並批次新增，也可搜尋名稱或網址。切換分類與搜尋時保留勾選，已加入的網站會標示「已新增」並避免重複加入；取消勾選會標示「將移除」，按「儲存變更」後才移除對應捷徑。取消或關閉選單不套用變更，「還原變更」可重設本次勾選。其他自訂捷徑不受影響，保留的捷徑維持原名稱、圖示與排序。
+
+網站清單維護於 `data/websites.json`，目前收錄 8 類、52 個網站：搜尋與入口、社群與通訊、影音與音樂、購物與生活、新聞與資訊、AI 工具、工作與學習、交通與旅遊。清單為人工選輯，非熱門排名。`schemaVersion` 為 1；每個分類包含 `id`、`name`、`sites`，每個網站包含唯一 `id`、`name` 與 HTTPS `url`；選用的 `matchPaths` 可指定同一網站的入口路徑，`*` 代表一段帳號等路徑。例如 Gemini 的 `/app`、`/u/0/app` 與首頁會視為同一入口，首頁查詢參數不影響清單的已新增判斷；特定會話與其他不同頁面仍分別保留。修改 JSON 後執行 `npm run build` 即可更新隨插件附帶的清單。瀏覽清單時不下載網站圖示，加入捷徑後沿用下列取得流程。
+
+YouTube、PChome、GitHub 捷徑內建 favicon；其他捷徑先透過 [Chrome 內建 favicon 功能](https://developer.chrome.com/docs/extensions/how-to/ui/favicons)取得；若回傳預設地球圖示或讀取失敗，會讀取網站首頁宣告的 PNG / ICO 圖示，並以 `/favicon.ico` 作為後備來源。下載不帶 Cookie 或 Referer，失敗最多嘗試 3 次，之後隔天再試。成功圖示保存在本機，7 天後於開啟新分頁時更新；更新失敗保留舊圖示並隔天再試。同一網站的同時請求會合併，快取最多保留 100 個網站，也可自行匯入 PNG / ICO（最大 5 MB，匯入後自動縮小為最長邊 64 px，保留透明背景）。無雲端同步，資料保存在本機。
 
 ## 名稱與語系
 

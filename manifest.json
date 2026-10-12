@@ -17,8 +17,12 @@
     "favicon"
   ],
   "content_security_policy": {
-    "extension_pages": "script-src 'self'; object-src 'self'; connect-src https://raw.githubusercontent.com; img-src 'self' data:;"
+    "extension_pages": "script-src 'self'; object-src 'self'; connect-src 'self' https: http:; img-src 'self' data: blob:;"
   },
+  "host_permissions": [
+    "https://*/*",
+    "http://*/*"
+  ],
   "optional_host_permissions": [
     "https://raw.githubusercontent.com/*"
   ]

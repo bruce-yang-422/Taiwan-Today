@@ -3,6 +3,7 @@ import { describe, expect, it } from 'vitest';
 import { dailyCalendar } from '../src/calendar/dailyCalendar';
 import { normalizeUrl, searchUrl } from '../src/search/search';
 import { parseShortcuts } from '../src/shortcuts/shortcuts';
+import { catalogSites, websiteCategories, addCatalogSites, updateCatalogSites, websiteKey } from '../src/shortcuts/websiteCatalog';
 import reference from '../data/calendar-2026.json';
 import reference2027 from '../data/calendar-2027.json';
 import { Lunar } from 'lunar-typescript';
@@ -11,6 +12,63 @@ import { parseManifest } from '../src/data/updates';
 import { parsePersonalHistory } from '../src/calendar/personalHistory';
 import { unwrapData } from '../src/data/document';
 import { parsePersonalHistoryFile } from '../src/calendar/personalHistoryFile';
+
+describe('website catalog', () => {
+  it('preselects five representative sites on first use and preserves saved configurations', () => {
+    expect(parseShortcuts(undefined).map(site => site.id)).toEqual(['yahoo', 'youtube', 'chatgpt', 'gemini', 'google']);
+    const saved = [{ id: 'my-site', name: '私人網站', url: 'https://example.com/', order: 0 }];
+    expect(parseShortcuts(saved)).toEqual(saved);
+    expect(parseShortcuts([])).toEqual([]);
+  });
+  it('recognizes manually added Gemini landing URLs while preserving specific pages', () => {
+    const gemini = catalogSites.find(site => site.id === 'gemini')!;
+    for (const url of ['https://gemini.google.com/app', 'https://gemini.google.com/app/?hl=zh-TW', 'https://gemini.google.com/u/0/app?authuser=0', 'https://gemini.google.com/?utm_source=shortcut']) {
+      const existing = [{ id: 'manual', name: '我的 Gemini', url, order: 0, icon: 'my icon' }];
+      expect(websiteKey(url)).toBe(websiteKey(gemini.url));
+      expect(addCatalogSites(existing, [gemini])).toEqual(existing);
+    }
+    expect(websiteKey('https://gemini.google.com/app/conversation-123')).not.toBe(websiteKey(gemini.url));
+    expect(websiteKey('https://www.google.com/maps')).not.toBe(websiteKey('https://www.google.com/'));
+    expect(websiteKey('https://example.com/report?year=2025')).not.toBe(websiteKey('https://example.com/report?year=2026'));
+  });
+  it('applies only explicit removals and preserves unrelated and customized shortcuts', () => {
+    const yahoo = catalogSites.find(site => site.id === 'yahoo')!;
+    const google = catalogSites.find(site => site.id === 'google')!;
+    const existing = [
+      { id: 'custom', name: '私人網站', url: 'https://example.com/', order: 0, icon: 'custom icon' },
+      { id: 'my-google', name: '我的 Google', url: google.url, order: 1, icon: 'my icon' },
+      { id: 'yahoo', name: 'Yahoo', url: yahoo.url, order: 2 },
+    ];
+    expect(updateCatalogSites(existing, [], [yahoo])).toEqual(existing.slice(0, 2));
+    expect(existing).toHaveLength(3);
+    expect(updateCatalogSites(existing, [google], [])).toEqual(existing);
+  });
+  it('contains unique website IDs, categories and safe normalized URLs', () => {
+    expect(new Set(websiteCategories.map(category => category.id)).size).toBe(websiteCategories.length);
+    expect(new Set(catalogSites.map(site => site.id)).size).toBe(catalogSites.length);
+    expect(new Set(catalogSites.map(site => websiteKey(site.url))).size).toBe(catalogSites.length);
+    for (const category of websiteCategories) {
+      expect(category.name.trim()).not.toBe('');
+      expect(category.sites.length).toBeGreaterThan(0);
+    }
+    for (const site of catalogSites) {
+      expect(normalizeUrl(site.url)).toBe(site.url);
+      expect(site.name.length).toBeLessThanOrEqual(40);
+      expect(site.url).toMatch(/^https:\/\//);
+    }
+  });
+  it('preserves existing shortcuts and skips equivalent and repeated selections', () => {
+    const existing = [{ id: 'my-google', name: '我的搜尋', url: 'https://google.com/#saved', order: 0, icon: 'custom' }];
+    const google = catalogSites.find(site => site.id === 'google')!;
+    const github = catalogSites.find(site => site.id === 'github')!;
+    const result = addCatalogSites(existing, [google, github, github]);
+    expect(result).toHaveLength(2);
+    expect(result[0]).toEqual(existing[0]);
+    expect(result[1]).toMatchObject({ name: 'GitHub', url: github.url, order: 1 });
+    expect(result[1].id).not.toBe(existing[0].id);
+    expect(existing).toHaveLength(1);
+  });
+});
 
 describe('personal history file import', () => {
   it('reads UTF-8 CSV with quoted commas, multiline text and custom categories', () => {
@@ -141,7 +199,7 @@ describe('safe navigation and storage', () => {
     for (const bad of ['javascript:alert(1)', 'data:text/html,hi', 'file:///C:/x', 'https://user:pass@example.com', 'https://']) expect(() => normalizeUrl(bad)).toThrow();
   });
   it('preserves intentional empty shortcuts and refuses corrupt data', () => {
-    expect(parseShortcuts([])).toEqual([]); expect(parseShortcuts(undefined)).toHaveLength(4);
+    expect(parseShortcuts([])).toEqual([]); expect(parseShortcuts(undefined)).toHaveLength(5);
     expect(() => parseShortcuts([{ id: 'x', name: 'x', url: 'javascript:alert(1)', order: 0 }])).toThrow();
     expect(() => parseShortcuts({})).toThrow();
   });

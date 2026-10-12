@@ -7,6 +7,10 @@ import './readability.css';
 import './compact.css';
 import './googleApps.css';
 import './settingsTabs.css';
+import './websiteCatalog.css';
+import { initializeWebsiteCatalog } from './websiteCatalog';
+import { websiteGridIcon } from './websiteIcon';
+import { updateCatalogSites, websiteKey } from '../shortcuts/websiteCatalog';
 import { initializeSettingsTabs } from './settingsTabs';
 import { initializeAbout } from './about';
 import { initializeDataUpdates } from './dataUpdates';
@@ -20,7 +24,10 @@ import { createHistorySourceControls } from './historySources';
 import { normalizeHistorySources, type HistorySourceSetting } from '../calendar/history';
 import { dailyCalendar, setHistorySources } from '../calendar/dailyCalendar';
 import { normalizeUrl, searchUrl } from '../search/search';
-import { defaults, parseShortcuts, loadShortcuts, validIcon, shortcutIcon, type Shortcut } from '../shortcuts/shortcuts';
+import { defaults, parseShortcuts, loadShortcuts, shortcutIcon, type Shortcut } from '../shortcuts/shortcuts';
+import { importShortcutIcon } from '../shortcuts/importIcon';
+import { automaticShortcutIcon, cachedAutomaticShortcutIcon } from '../shortcuts/automaticIcon';
+import { applyIconContrast } from '../shortcuts/iconContrast';
 import { extensionStorage, readStorage, writeStorage } from '../shortcuts/storage';
 
 const el = <T extends HTMLElement = HTMLElement>(id: string) => document.getElementById(id) as T;
@@ -144,6 +151,17 @@ el<HTMLFormElement>('search-form').addEventListener('submit', event => {
 
 let shortcuts: Shortcut[] = structuredClone(defaults), editing: string | null = null, dragging: string | null = null, saving = false, shortcutsReady = false;
 const dialog = el<HTMLDialogElement>('shortcut-dialog');
+const websiteCatalog = initializeWebsiteCatalog(() => shortcuts, async (sites, removedSites) => {
+  if (!shortcutsReady || saving) return false;
+  const removeKeys = new Set(removedSites.map(site => websiteKey(site.url)));
+  const removed = shortcuts.filter(item => removeKeys.has(websiteKey(item.url))).length;
+  const next = updateCatalogSites(shortcuts, sites, removedSites);
+  const added = next.length - shortcuts.length + removed;
+  if (!added && !removed) return true;
+  if (!await saveShortcuts(next)) return false;
+  notify(removed ? `捷徑已更新：新增 ${added} 個、移除 ${removed} 個。` : `已新增 ${added} 個網站捷徑。`);
+  return true;
+});
 function openShortcut(item?: Shortcut) {
   if (!shortcutsReady || saving) return;
   editing = item?.id ?? null;
@@ -181,8 +199,21 @@ function renderShortcuts() {
     const iconUrl = shortcutIcon(item);
     if (iconUrl) {
       const image = node('img'); image.src = iconUrl; image.alt = ''; image.width = 24; image.height = 24;
+      applyIconContrast(image, icon);
       image.addEventListener('error', () => { icon.textContent = item.name.slice(0, 1).toUpperCase(); });
       icon.replaceChildren(image);
+    } else if (shortcutsReady) {
+      const showIcon = (iconUrl: string | undefined) => {
+        if (!iconUrl || !icon.isConnected) return;
+        const image = node('img'); image.src = iconUrl; image.alt = ''; image.width = 24; image.height = 24;
+        applyIconContrast(image, icon);
+        image.addEventListener('error', () => { icon.textContent = item.name.slice(0, 1).toUpperCase(); });
+        icon.replaceChildren(image);
+      };
+      void cachedAutomaticShortcutIcon(item.url).then(iconUrl => {
+        showIcon(iconUrl);
+        return automaticShortcutIcon(item.url);
+      }).then(showIcon);
     }
     link.append(icon, node('span', 'shortcut-name', item.name));
     const edit = node('button', 'shortcut-edit', '⋯'); edit.type = 'button'; edit.dataset.editId = item.id; edit.setAttribute('aria-label', `編輯 ${item.name}`); edit.title = '編輯捷徑；Alt + 左右方向鍵排序';
@@ -196,6 +227,13 @@ function renderShortcuts() {
   }
   const add = node('button', 'shortcut-add'); add.type = 'button'; add.setAttribute('aria-label', '新增捷徑'); add.disabled = !shortcutsReady;
   add.append(node('span', 'shortcut-icon', '+'), node('span', '', '新增捷徑')); add.addEventListener('click', () => openShortcut()); container.append(add);
+  const browse = node('button', 'shortcut-add shortcut-catalog'); browse.type = 'button'; browse.disabled = !shortcutsReady;
+  browse.setAttribute('aria-label', '常用網站');
+  const browseIcon = node('span', 'shortcut-icon'); browseIcon.append(websiteGridIcon());
+  browse.append(browseIcon, node('span', '', '常用網站'));
+  browse.addEventListener('click', () => { if (shortcutsReady && !saving) websiteCatalog.open(); });
+  container.append(browse);
+  websiteCatalog.refresh();
 }
 el('shortcut-form').addEventListener('submit', async event => {
   event.preventDefault();
@@ -205,11 +243,7 @@ el('shortcut-form').addEventListener('submit', async event => {
     const url = normalizeUrl(el<HTMLInputElement>('shortcut-url').value);
     let icon = el<HTMLInputElement>('shortcut-icon-clear').checked ? undefined : shortcuts.find(s => s.id === editing)?.icon;
     const file = el<HTMLInputElement>('shortcut-icon').files?.[0];
-    if (file) {
-      if (file.size > 65536) throw new Error('圖示不得超過 64 KB。');
-      icon = await new Promise<string>((resolve, reject) => { const reader = new FileReader(); reader.onload = () => resolve(String(reader.result)); reader.onerror = () => reject(new Error('圖示讀取失敗。')); reader.readAsDataURL(file); });
-      if (!validIcon(icon)) throw new Error('請選擇 PNG 或 ICO 圖示。');
-    }
+    if (file) icon = await importShortcutIcon(file);
     const item = { id: editing ?? crypto.randomUUID(), name, url, order: shortcuts.length, ...(icon ? { icon } : {}) };
     const next = editing ? shortcuts.map(s => s.id === editing ? { ...item, order: s.order } : s) : [...shortcuts, item];
     if (await saveShortcuts(next)) dialog.close();

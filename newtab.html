@@ -76,7 +76,22 @@
     </aside>
     <footer class="text-center"><p>把今天，留一點給自己。</p><span>TAIWAN DAILY · 每日一頁</span></footer>
     <p id="status" role="status" class="status" hidden></p>
-    <dialog id="shortcut-dialog"><form id="shortcut-form"><h2 id="shortcut-title">新增捷徑</h2><label for="shortcut-name">名稱</label><input id="shortcut-name" maxlength="40" required autocomplete="off" /><label for="shortcut-url">網址</label><input id="shortcut-url" placeholder="https://example.com" maxlength="2048" required autocomplete="off" inputmode="url" /><label for="shortcut-icon">網站圖示（選填，PNG / ICO，最大 64 KB）</label><input id="shortcut-icon" type="file" accept=".png,.ico,image/png,image/x-icon,image/vnd.microsoft.icon" /><label><input id="shortcut-icon-clear" type="checkbox" style="width:auto" /> 移除已儲存圖示</label><p id="shortcut-error" class="error" role="alert"></p><div class="dialog-actions"><button type="button" id="shortcut-delete" class="danger" hidden>刪除</button><button type="button" data-close="shortcut-dialog">取消</button><button type="submit" class="primary">完成</button></div></form></dialog>
+    <dialog id="shortcut-dialog"><form id="shortcut-form"><h2 id="shortcut-title">新增捷徑</h2><label for="shortcut-name">名稱</label><input id="shortcut-name" maxlength="40" required autocomplete="off" /><label for="shortcut-url">網址</label><input id="shortcut-url" placeholder="https://example.com" maxlength="2048" required autocomplete="off" inputmode="url" /><label for="shortcut-icon">網站圖示（選填）</label><input id="shortcut-icon" aria-describedby="shortcut-icon-help" type="file" accept=".png,.ico,image/png,image/x-icon,image/vnd.microsoft.icon" /><p id="shortcut-icon-help" class="settings-note">未上傳時會自動取得，並定期更新。<br>PNG / ICO，最大 5 MB，自動縮小。</p><label><input id="shortcut-icon-clear" type="checkbox" style="width:auto" /> 移除已儲存圖示</label><p id="shortcut-error" class="error" role="alert"></p><div class="dialog-actions"><button type="button" id="shortcut-delete" class="danger" hidden>刪除</button><button type="button" data-close="shortcut-dialog">取消</button><button type="submit" class="primary">完成</button></div></form></dialog>
+    <dialog id="website-catalog-dialog" aria-labelledby="website-catalog-title">
+      <form id="website-catalog-form">
+        <div class="catalog-heading"><span id="website-catalog-symbol" aria-hidden="true"></span><div><h2 id="website-catalog-title">常用網站</h2><p class="catalog-subtitle">把常去的網站，放在順手的位置</p></div><button class="catalog-close" type="button" data-close="website-catalog-dialog" aria-label="關閉常用網站"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" /></svg></button></div>
+        <p class="catalog-intro">勾選新增、取消勾選移除，儲存後才套用。圖示會自動取得。</p>
+        <label class="sr-only" for="website-catalog-search">搜尋常用網站</label>
+        <div class="catalog-search"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" /><path d="m16 16 5 5" /></svg><input id="website-catalog-search" type="search" placeholder="搜尋網站名稱或網址" autocomplete="off" /></div>
+        <div id="website-catalog-categories" role="group" aria-label="網站分類"></div>
+        <div class="catalog-results-heading"><h3 id="website-catalog-section">全部網站</h3><span id="website-catalog-results"></span></div><div id="website-catalog-list" role="group" aria-label="選擇網站"></div>
+        <p id="website-catalog-error" class="error" role="alert"></p>
+        <div class="catalog-footer">
+          <div class="catalog-selection"><p id="website-catalog-count" role="status">已選 0 個網站</p><button id="website-catalog-clear" type="button" hidden>還原變更</button></div>
+          <div class="dialog-actions"><button type="button" data-close="website-catalog-dialog">取消</button><button id="website-catalog-add" type="submit" class="primary" disabled>新增捷徑</button></div>
+        </div>
+      </form>
+    </dialog>
     <dialog id="personal-history-dialog" aria-labelledby="personal-history-heading">
 <h2 id="personal-history-heading">我的歷史上的今天</h2>
 <p id="personal-history-count">正在讀取…</p>

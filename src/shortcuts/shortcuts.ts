@@ -3,10 +3,11 @@ import { readStorage, writeStorage } from './storage';
 export interface Shortcut { id: string; name: string; url: string; order: number; icon?: string }
 export const validIcon = (value: unknown): value is string => typeof value === 'string' && value.length <= 90000 && /^data:image\/(png|x-icon|vnd.microsoft.icon);base64,[A-Za-z0-9+/]+=*$/.test(value);
 export const defaults: Shortcut[] = [
-  { id: 'youtube', name: 'YouTube', url: 'https://www.youtube.com/', order: 0 },
-  { id: 'facebook', name: 'Facebook', url: 'https://www.facebook.com/', order: 1 },
-  { id: 'yahoo', name: 'Yahoo 奇摩', url: 'https://tw.yahoo.com/', order: 2 },
-  { id: 'chatgpt', name: 'ChatGPT', url: 'https://chatgpt.com/', order: 3 },
+  { id: 'yahoo', name: 'Yahoo 奇摩', url: 'https://tw.yahoo.com/', order: 0 },
+  { id: 'youtube', name: 'YouTube', url: 'https://www.youtube.com/', order: 1 },
+  { id: 'chatgpt', name: 'ChatGPT', url: 'https://chatgpt.com/', order: 2 },
+  { id: 'gemini', name: 'Gemini', url: 'https://gemini.google.com/', order: 3 },
+  { id: 'google', name: 'Google', url: 'https://www.google.com/', order: 4 },
 ];
 export async function loadShortcuts(): Promise<Shortcut[]> {
   return navigator.locks.request('taiwan-today-shortcut-upgrade', async () => {
@@ -28,12 +29,6 @@ export function shortcutIcon(item: Shortcut): string | undefined {
   };
   const file = bundled[new URL(item.url).hostname];
   if (file) return `./icons/${file}`;
-  if (typeof chrome !== 'undefined' && chrome.runtime?.id) {
-    const url = new URL(chrome.runtime.getURL('/_favicon/'));
-    url.searchParams.set('pageUrl', item.url);
-    url.searchParams.set('size', '32');
-    return url.href;
-  }
   return undefined;
 }
 export function parseShortcuts(value: unknown): Shortcut[] {

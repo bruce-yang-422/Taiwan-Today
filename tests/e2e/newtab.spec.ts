@@ -341,7 +341,7 @@ test('offline rendering, shortcuts CRUD, keyboard sorting, themes and search', a
   await expect(page.getByRole('link', { name: '測試網站', exact: true }).locator('img')).toHaveAttribute('src', /^data:image\/png;base64,/);
   await page.getByRole('button', { name: '編輯 測試網站', exact: true }).focus();
   await page.keyboard.press('Alt+ArrowLeft');
-  await expect(page.locator('.shortcut-name')).toHaveText(['YouTube', 'Facebook', 'Yahoo 奇摩', '測試網站', 'ChatGPT']);
+  await expect(page.locator('.shortcut-name')).toHaveText(['Yahoo 奇摩', 'YouTube', 'ChatGPT', 'Gemini', '測試網站', 'Google']);
   await page.reload();
   await page.getByRole('button', { name: '編輯 測試網站', exact: true }).click();
   await page.getByLabel('名稱', { exact: true }).fill('修改網站');
@@ -397,7 +397,7 @@ test('packaged MV3 extension loads offline and uses chrome.storage', async () =>
     await expect(page.locator('#day')).not.toBeEmpty();
     await expect(page.getByRole('button', { name: '新增捷徑', exact: true })).toBeEnabled();
     expect(await page.evaluate(() => chrome.runtime.getManifest().permissions)).toEqual(['storage', 'favicon']);
-    await expect(page.locator('.shortcut-name')).toHaveText(['YouTube', 'Facebook', 'Yahoo 奇摩', 'ChatGPT']);
+    await expect(page.locator('.shortcut-name')).toHaveText(['Yahoo 奇摩', 'YouTube', 'ChatGPT', 'Gemini', 'Google']);
     for (const name of ['YouTube']) {
       const image = page.getByRole('link', { name, exact: true }).locator('img');
       await expect(image).toBeVisible();
