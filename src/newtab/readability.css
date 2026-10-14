@@ -70,7 +70,7 @@
 :is([data-style=classic],[data-style=modern],[data-style=traditional]) main>.daily-quote { margin:0 auto 28px; max-width:100%; }
 [data-style=classic] main>.daily-quote { background:color-mix(in srgb,var(--paper) 75%,transparent); border-top:1px solid var(--line); border-bottom:1px solid var(--line); border-radius:0; }
 [data-style=modern] main>.daily-quote { border:1px solid var(--line); }
-[data-style=traditional] main>.daily-quote { background:transparent; border-block:3px double var(--line); border-radius:0; }
+[data-style=traditional] main>.daily-quote { background:color-mix(in srgb,var(--paper) 90%,transparent); border-block:3px double var(--line); border-radius:0; }
 .history-expansion { text-align:center; margin-top:20px; }
 .history-expansion[hidden] { display:none; }
 #history-count { font-size:var(--reading-small,12px); color:var(--muted); margin-bottom:8px; }

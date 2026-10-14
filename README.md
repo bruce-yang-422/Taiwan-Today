@@ -17,6 +17,8 @@
 
 版本下載：[v1.0.0 發布頁與更新說明](https://github.com/bruce-yang-422/Taiwan-Today/releases/tag/v1.0.0)
 
+目前原始碼版本：**1.1.0**，更新內容見 [v1.1.0 更新說明](V1.1.0.md)；本版封裝檔為 [`release/taiwan-daily-chrome-1.1.0.zip`](release/taiwan-daily-chrome-1.1.0.zip)。
+
 以 Vite、TypeScript、Tailwind CSS 與 Manifest V3 實作的 Chrome 新分頁。無後端、無帳號、無追蹤，日曆與內建內容可離線使用；Google 文字／圖片搜尋、外部連結、捷徑圖示更新與公共資料更新需要網路。使用 `storage`、`favicon` 與 HTTP／HTTPS 網站存取權限；網站存取用於下載捷徑圖示，公共資料更新由使用者手動執行或啟用每日檢查。
 
 個人／家族紀事範例：[CSV](templates/history-template.csv)、[XLSX](templates/history-template.xlsx)、[ODS](templates/history-template.ods)。選一種填寫，再使用[官網轉檔工具](https://today.stack-base.com/#converter)預覽並下載 JSON，於插件「設定 → 資料管理 → 匯入個人歷史」匯入。欄位格式見 [範例說明](templates/README.md)。
@@ -102,7 +104,7 @@ npx playwright test --config tests/pages/playwright.config.mjs
 - 捷徑新增、編輯、刪除、拖曳排序；編輯按鈕支援 Alt + 左右方向鍵排序。
 - 首次使用的預設捷徑依序為 Yahoo 奇摩、YouTube、ChatGPT、Gemini、Google 搜尋首頁；保留使用者已儲存的捷徑。舊版升級時會補上 ChatGPT，手動刪除後不會再次加入。
 - 外觀使用圖示搭配滑動分段控制（系統／亮色／暗色），支援鍵盤方向鍵與減少動態效果偏好；另可選五種日曆樣式，設定持久保存。
-- 歲月紙曆樣式以 CSS 繪製撕頁日曆造型：紅色裝訂頭、銅釘、紙紋、層疊紙邊與柔和陰影，搭配低彩度磚紅大日期、深藍文字及明體字；寬螢幕以日期／大時鐘／待辦並排，支援亮色紙面與深色配色。
+- 歲月紙曆樣式以 CSS 繪製撕頁日曆造型：紅色裝訂頭、銅釘、紙紋、層疊紙邊與柔和陰影，搭配低彩度磚紅大日期、深藍文字及明體字；寬螢幕以日期／大時鐘／待辦並排。亮／暗模式分別搭配晨光／暖燈花卉背景（`public/art/traditional-light.png`、`public/art/traditional-dark.png`），保留原始 21:9 比例，16:9 等比例裁切兩側。每日一句、歷史區塊與標誌使用 90% 不透明的襯底，保持花卉背景上的文字清楚。
 - 響應式畫面、鍵盤操作、儲存錯誤提示、同裝置分頁設定更新。
 
 ## 下一階段規劃
@@ -242,7 +244,7 @@ zh_TW。新增語系時在 `_locales/` 下建立對應資料夾即可，`vite.co
   `newtab.css`（共用基礎與留白日常）、`modern.css`（日常方格）、`traditional.css`（歲月紙曆）、`concepts.css`（月序手帖／時光讀本）、`identity.css`（五種樣式的配色、背景與材質）、`googleApps.css`（Google 應用程式選單）、`readability.css`（文字大小與閱讀相關樣式）、`settingsTabs.css`（設定頁籤）、`compact.css`（桌面與筆電緊湊排版）。
 - `data/`：離線日曆（`calendar-2026.json`、`calendar-2027.json`）、節日與連假規則、歷史紀事（`history-taiwan.json`、`history-world.json`、`history-tech.json`、`history-entertainment.json`、`history-personal.json`）、每日一句與公共資料更新清單（`update-manifest.json`）。
 - `public/icons/`：應用程式圖示 `taiwan-today.png`（擴充功能與左上角標誌）、`taiwan-today.ico`（分頁圖示），以及內建捷徑的 favicon 與來源紀錄；`public/icons/google/` 保存 Google 應用程式選單圖示，`public/icons/websites/` 保存常用網站預設圖示，皆附來源說明。
-- `public/art/`：留白日常的亮／暗山景 PNG、日常方格的亮／暗幾何 SVG，以及其他樣式的山海線條裝飾。
+- `public/art/`：留白日常的亮／暗山景 PNG、日常方格的亮／暗幾何 SVG、歲月紙曆的亮／暗花卉 PNG，以及其他樣式的山海線條裝飾。
 - `templates/`：CSV、XLSX、ODS 個人紀事範本與填寫說明，供官網下載。
 - `vendor/sheetjs/`：插件與官網共用的本機試算表解析器及第三方授權。
 - `_locales/`：擴充功能名稱與說明的中英文語系檔。

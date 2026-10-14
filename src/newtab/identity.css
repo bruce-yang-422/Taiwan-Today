@@ -41,7 +41,12 @@
 :root[data-style=traditional] { background:#f2f0ec; --ink:#2e3945; --accent:#303c4c; --vermilion:#8f5452; --paper:#fcfaf6; --muted:#484f53; --line:#cecac2; --soft:#eae6e1; --paper-edge:#d0ccc4; }
 :root.dark[data-style=traditional] { background:#252729; --ink:#e6e3dd; --accent:#c1cbd2; --vermilion:#cfaca4; --paper:#333537; --muted:#bcc0c0; --line:#5c5f61; --soft:#404344; --paper-edge:#474949; }
 [data-style=traditional] header { border-bottom-color:var(--vermilion); }
-[data-style=traditional] body { background-image:radial-gradient(ellipse at 20% 0%,#b1a89916,transparent 65%),repeating-linear-gradient(110deg,#90887e05 0 1px,transparent 1px 5px); }
+[data-style=traditional] body { background:url('/art/traditional-light.png') center / cover no-repeat fixed; min-height:100vh; }
+.dark[data-style=traditional] body { background-image:url('/art/traditional-dark.png'); }
+[data-style=traditional] .history-section { background:color-mix(in srgb,var(--paper) 90%,transparent); }
+[data-style=traditional] .quiet-button { background:var(--paper); }
+[data-style=traditional] .brand { background:color-mix(in srgb,var(--paper) 90%,transparent); border-radius:4px; padding:4px 8px; }
+[data-style=traditional] .google-apps-toggle { background:var(--paper); }
 :root[data-style=traditional] .calendar-clock-group>.eyebrow {
   position:relative; z-index:1; padding:18px 44px; border:1px solid #6b3f3d; outline:0;
   border-radius:5px 5px 1px 1px; color:#f7f1e6;
