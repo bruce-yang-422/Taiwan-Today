@@ -32,6 +32,9 @@
 #website-catalog-dialog .catalog-site:has(input:disabled) { cursor:default; background:color-mix(in srgb,var(--soft) 45%,var(--paper)); }
 .catalog-site-symbol { display:grid; place-items:center; width:36px; height:36px; flex:none; border-radius:10px; background:var(--soft); color:var(--accent); font-family:system-ui,sans-serif; font-size:13px; font-weight:600; letter-spacing:.02em; }
 .catalog-site-text { min-width:0; flex:1; }
+.catalog-site-symbol img { display:block; width:24px; height:24px; object-fit:contain; }
+:root .catalog-site-symbol.icon-light-artwork { background:#253144; }
+:root .catalog-site-symbol.icon-dark-artwork { background:#f4f3ef; }
 .catalog-site strong { display:block; font-weight:600; font-size:var(--reading-control,14px); line-height:1.4; overflow-wrap:anywhere; }
 .catalog-site small { display:block; color:var(--muted); font-size:var(--reading-small,12px); overflow-wrap:anywhere; margin-top:4px; line-height:1.4; }
 .catalog-added { color:var(--muted); font-size:11px; flex-shrink:0; border:1px solid var(--line); border-radius:999px; padding:3px 6px; }

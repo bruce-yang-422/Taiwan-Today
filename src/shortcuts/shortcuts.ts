@@ -1,5 +1,6 @@
 import { normalizeUrl } from '../search/search';
 import { readStorage, writeStorage } from './storage';
+import { catalogSites, websiteKey } from './websiteCatalog';
 export interface Shortcut { id: string; name: string; url: string; order: number; icon?: string }
 export const validIcon = (value: unknown): value is string => typeof value === 'string' && value.length <= 90000 && /^data:image\/(png|x-icon|vnd.microsoft.icon);base64,[A-Za-z0-9+/]+=*$/.test(value);
 export const defaults: Shortcut[] = [
@@ -23,6 +24,9 @@ export async function loadShortcuts(): Promise<Shortcut[]> {
 }
 export function shortcutIcon(item: Shortcut): string | undefined {
   if (validIcon(item.icon)) return item.icon;
+  const key = websiteKey(item.url);
+  const site = catalogSites.find(site => websiteKey(site.url) === key);
+  if (site?.icon) return `./${site.icon}`;
   const bundled: Record<string, string> = {
     'www.youtube.com': 'youtube.png', 'youtube.com': 'youtube.png',
     '24h.pchome.com.tw': 'pchome.ico', 'github.com': 'github.ico',

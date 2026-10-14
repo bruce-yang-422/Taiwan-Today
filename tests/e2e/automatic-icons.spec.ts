@@ -35,6 +35,7 @@ test('extension replaces Chrome globe, retries, caches and refreshes changed ico
     await page.evaluate(async () => {
       await chrome.storage.local.set({ shortcuts: [{ id: 'yahoo', name: 'Yahoo 奇摩', url: 'https://tw.yahoo.com/', order: 0 }], chatgptShortcutAdded: true });
     });
+    await expect(page.getByRole('link', { name: 'Yahoo 奇摩', exact: true }).locator('img')).toHaveAttribute('src', './icons/websites/yahoo.png');
     await context.addCookies([{ name: 'login', value: 'secret', domain: 'tw.yahoo.com', path: '/' }]);
     await context.setOffline(false);
     await page.reload();

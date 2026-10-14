@@ -17,7 +17,7 @@
 
 版本下載：[v1.0.0 發布頁與更新說明](https://github.com/bruce-yang-422/Taiwan-Today/releases/tag/v1.0.0)
 
-以 Vite、TypeScript、Tailwind CSS 與 Manifest V3 實作的 Chrome 新分頁。無後端、無帳號、無追蹤，離線可用，可選擇連線更新公共資料；使用 `storage`、`favicon` 與 HTTP／HTTPS 網站存取權限；網站存取用於下載捷徑圖示，公共資料更新仍由使用者手動執行或啟用每日檢查。
+以 Vite、TypeScript、Tailwind CSS 與 Manifest V3 實作的 Chrome 新分頁。無後端、無帳號、無追蹤，日曆與內建內容可離線使用；Google 文字／圖片搜尋、外部連結、捷徑圖示更新與公共資料更新需要網路。使用 `storage`、`favicon` 與 HTTP／HTTPS 網站存取權限；網站存取用於下載捷徑圖示，公共資料更新由使用者手動執行或啟用每日檢查。
 
 個人／家族紀事範例：[CSV](templates/history-template.csv)、[XLSX](templates/history-template.xlsx)、[ODS](templates/history-template.ods)。選一種填寫，再使用[官網轉檔工具](https://today.stack-base.com/#converter)預覽並下載 JSON，於插件「設定 → 資料管理 → 匯入個人歷史」匯入。欄位格式見 [範例說明](templates/README.md)。
 
@@ -59,6 +59,8 @@ npm run build
 npx playwright install chromium
 npm run test:e2e
 npx playwright test tests/e2e/contrast.spec.ts
+# 桌面高度、五種樣式貼圖搜尋及 MV3 圖片上傳
+npx playwright test tests/e2e/modern-layout.spec.ts tests/e2e/search-clipboard.spec.ts
 npm run data:check-history
 # 官網下載與轉檔測試（需安裝 Python）
 npx playwright test --config tests/pages/playwright.config.mjs
@@ -83,21 +85,24 @@ npx playwright test --config tests/pages/playwright.config.mjs
 - 月曆預設以星期日為每週第一天，可在「設定 → 外觀 → 月曆每週起始日」改為星期一，設定自動保存。
 - 五種日曆樣式：留白日常、日常方格、歲月紙曆、月序手帖、時光讀本，皆可搭配亮色／暗色。
 - 五種樣式提供筆電緊湊排版，縮減卡片、日期、捷徑及區塊間距；以 1366×768、標準字級、2026/09/21 三則歷史與負能量語錄驗證可完整顯示。大字、更多紀事或較長內容仍可自然捲動，不裁切文字。
-- 五種樣式統一採低彩度配色，保留文字對比與各自的視覺特色：留白日常使用米白紙色與山景線條；日常方格使用霧藍色與圓角卡片；歲月紙曆使用低彩度磚紅大日期、紅色裝訂頭與層疊紙邊；月序手帖使用米白／低彩度深灰綠底色，搭配橄欖綠側欄與灰綠重點色；時光讀本使用深海藍封面與山海線條。皆提供亮／暗色，裝飾 SVG 隨插件打包，無須網路。
+- 日常方格與歲月紙曆另針對較高的桌面視窗縮減卡片高度與留白；以 1920×1080、2560×1214、1366×768，標準字級、七個捷徑及三則紀事驗證主要內容可在一頁內顯示。日常方格的捷徑卡片依可用寬度縮放，七個網站加「新增捷徑」「常用網站」可維持同一列。
+- 五種樣式統一採低彩度配色，保留文字對比與各自的視覺特色：留白日常依亮／暗模式使用晨光／月夜山景背景（`public/art/classic-light.png`、`public/art/classic-dark.png`）；日常方格使用霧藍色與圓角卡片；歲月紙曆使用低彩度磚紅大日期、紅色裝訂頭與層疊紙邊；月序手帖使用米白／低彩度深灰綠底色，搭配橄欖綠側欄與灰綠重點色；時光讀本使用深海藍封面與山海線條。皆提供亮／暗色，背景圖片與裝飾 SVG 隨插件打包，無須網路。
 - 留白日常採置中日期與時鐘、圓形捷徑、襯線字體及無卡片外框的歷史紀事。
+- 留白日常的山景背景保留原始 21:9 比例，依視窗等比例滿版縮放；16:9 與較窄的螢幕適度裁切兩側，暗色背景靠右保留月亮。每日一句、歷史紀事與頁尾使用 75% 不透明的底色維持文字可讀性，底色寬度與內容對齊。
 - 月序手帖：左側網站捷徑、中央國曆與農曆月曆、右側日期、大指針時鐘及待辦；可切換月份、選取日期查看農曆與歷史，或按「今天」返回。右欄標示「選取日期」與完整年月日；「現在時間 · 台灣」、「今日待辦」及「今日語錄」仍以今天為準，並顯示今天日期與說明，待辦共用同一份清單且跨日保留。
 - 時光讀本：深藍日期側欄、每日一句、歷史時間軸，底部提供搜尋與捷徑。每日一句可在設定選擇「每日提醒、佛家智慧、負能量（幽默）、四書五經、名人語錄、文學短句、聖經、影視佳句」，於五種樣式皆可顯示；分類自動保存，依台灣日期在所選分類內輪替。
-- 日常方格樣式採霧藍色背景與圓角卡片；寬螢幕並排日期、時鐘、待辦，下方提供膠囊搜尋列、捷徑卡片與歷史卡片，支援暗色模式。
+- 日常方格樣式採本機 SVG 背景：霧藍細格、半透明圓角幾何與柔光；亮色呈現晨光，暗色搭配冷藍光與少量暖光。背景檔案為 `public/art/modern-light.svg` 與 `public/art/modern-dark.svg`。寬螢幕並排日期、時鐘、待辦，下方提供膠囊搜尋列、捷徑卡片與歷史卡片。
 - 便利貼固定於各樣式的預設位置，不可拖曳；點標題可收合／展開，舊版儲存的拖曳位置不再套用。
 - 右側工作便利貼：新增待辦、勾選完成、刪除與完成數量；自動儲存在本機，跨日保留，不自動清空。桌面展開、小螢幕收合，可點標題切換；移除擴充功能會清除本機資料。
 - 台灣時間指針時鐘，含時針、分針與秒針；每秒更新，背景分頁暫停更新，返回時校正。桌面以 1920×1080 設計，時鐘置於中央日曆右側；窄螢幕改為上下排列。
 - 台灣時區國曆、星期、農曆、二十四節氣、節氣進度與倒數；跨午夜及返回分頁更新。
 - 台灣民俗節日、2026～2027 年政府行政機關節日／補假，以及連假日次。
 - Google 搜尋及歷史事件深入了解連結。
+- 五種樣式的 Google 搜尋列皆可貼上剪貼簿圖片，預覽後傳送至 Google Lens；操作與格式限制見[文字與圖片搜尋](#文字與圖片搜尋)。
 - 捷徑新增、編輯、刪除、拖曳排序；編輯按鈕支援 Alt + 左右方向鍵排序。
 - 首次使用的預設捷徑依序為 Yahoo 奇摩、YouTube、ChatGPT、Gemini、Google 搜尋首頁；保留使用者已儲存的捷徑。舊版升級時會補上 ChatGPT，手動刪除後不會再次加入。
 - 外觀使用圖示搭配滑動分段控制（系統／亮色／暗色），支援鍵盤方向鍵與減少動態效果偏好；另可選五種日曆樣式，設定持久保存。
-- 歲月紙曆樣式採撕頁日曆造型：紅色裝訂頭、銅釘、層疊紙邊與柔和陰影，搭配低彩度磚紅大日期、深藍文字及明體字；寬螢幕以日期／大時鐘／待辦並排，支援亮色紙面與深色配色。
+- 歲月紙曆樣式以 CSS 繪製撕頁日曆造型：紅色裝訂頭、銅釘、紙紋、層疊紙邊與柔和陰影，搭配低彩度磚紅大日期、深藍文字及明體字；寬螢幕以日期／大時鐘／待辦並排，支援亮色紙面與深色配色。
 - 響應式畫面、鍵盤操作、儲存錯誤提示、同裝置分頁設定更新。
 
 ## 下一階段規劃
@@ -184,13 +189,38 @@ node scripts/import-calendar.mjs --year 2027 --csv path/to/116-calendar.csv
 `data/history-taiwan.json` 與 `data/history-world.json` 合計收錄 193 筆「歷史上的今天」紀事，其中台灣 129 筆（67%）、國際 64 筆（33%）。9～12 月每天皆有 1～3 則；1～8 月目前為精選重大事件，僅涵蓋部分日期，尚未每天有內容，缺少資料的日期會顯示空狀態。內容以重大政治、社會、科學、文化及體育事件為主。另有預設關閉的主題紀事：`data/history-tech.json`（科技，51 筆）與 `data/history-entertainment.json`（影音娛樂，28 筆），同樣僅涵蓋部分日期，會逐步擴充。執行
 `npm run data:check-history` 可檢查資料完整性。
 
+### 文字與圖片搜尋
+
+五種樣式共用同一個 Google 搜尋列。輸入文字後按 Enter 或搜尋按鈕，會在目前分頁開啟文字搜尋；貼上純文字也維持原本的輸入方式。
+
+以剪貼簿圖片搜尋：
+
+1. 複製圖片或截圖，點選 Google 搜尋列。
+2. 按 Ctrl+V（macOS 為 Command+V），確認跳出的圖片預覽。
+3. 按「以圖片搜尋」，將圖片傳送至 Google Lens，結果於新分頁開啟；按「取消」或 Esc 可關閉預覽。
+
+支援 PNG、JPEG、WebP、GIF、BMP，單張最大 20 MB。格式不支援、超過限制或無法解碼時會顯示提示。圖片僅在本機暫存，按搜尋後才送到 Google；取消或送出後清除暫存，不保存為搜尋紀錄，不在背景讀取剪貼簿，也不需要新增剪貼簿讀取權限。原本輸入的文字會保留。第三方資料處理說明見[隱私權政策](privacy.html)。
+
 ### 常用網站與捷徑圖示
 
 捷徑區的「常用網站」可依分類勾選並批次新增，也可搜尋名稱或網址。切換分類與搜尋時保留勾選，已加入的網站會標示「已新增」並避免重複加入；取消勾選會標示「將移除」，按「儲存變更」後才移除對應捷徑。取消或關閉選單不套用變更，「還原變更」可重設本次勾選。其他自訂捷徑不受影響，保留的捷徑維持原名稱、圖示與排序。
 
-網站清單維護於 `data/websites.json`，目前收錄 8 類、52 個網站：搜尋與入口、社群與通訊、影音與音樂、購物與生活、新聞與資訊、AI 工具、工作與學習、交通與旅遊。清單為人工選輯，非熱門排名。`schemaVersion` 為 1；每個分類包含 `id`、`name`、`sites`，每個網站包含唯一 `id`、`name` 與 HTTPS `url`；選用的 `matchPaths` 可指定同一網站的入口路徑，`*` 代表一段帳號等路徑。例如 Gemini 的 `/app`、`/u/0/app` 與首頁會視為同一入口，首頁查詢參數不影響清單的已新增判斷；特定會話與其他不同頁面仍分別保留。修改 JSON 後執行 `npm run build` 即可更新隨插件附帶的清單。瀏覽清單時不下載網站圖示，加入捷徑後沿用下列取得流程。
+網站清單維護於 `data/websites.json`，目前收錄 8 類、52 個網站：搜尋與入口、社群與通訊、影音與音樂、購物與生活、新聞與資訊、AI 工具、工作與學習、交通與旅遊。清單為人工選輯，非熱門排名。`schemaVersion` 為 1；每個分類包含 `id`、`name`、`sites`，每個網站包含唯一 `id`、`name`、HTTPS `url` 與指向打包圖示的相對路徑 `icon`。選用的 `matchPaths` 可指定同一網站的入口路徑，`*` 代表一段帳號等路徑。例如 Gemini 的 `/app`、`/u/0/app` 與首頁會視為同一入口，首頁查詢參數不影響清單的已新增判斷；特定會話與其他不同頁面仍分別保留。修改 JSON 後執行 `npm run build` 即可更新隨插件附帶的清單。
 
-YouTube、PChome、GitHub 捷徑內建 favicon；其他捷徑先透過 [Chrome 內建 favicon 功能](https://developer.chrome.com/docs/extensions/how-to/ui/favicons)取得；若回傳預設地球圖示或讀取失敗，會讀取網站首頁宣告的 PNG / ICO 圖示，並以 `/favicon.ico` 作為後備來源。下載不帶 Cookie 或 Referer，失敗最多嘗試 3 次，之後隔天再試。成功圖示保存在本機，7 天後於開啟新分頁時更新；更新失敗保留舊圖示並隔天再試。同一網站的同時請求會合併，快取最多保留 100 個網站，也可自行匯入 PNG / ICO（最大 5 MB，匯入後自動縮小為最長邊 64 px，保留透明背景）。無雲端同步，資料保存在本機。
+52 個網站皆預先備好 Logo，隨插件打包；常用網站選單離線也能顯示，圖示載入失敗時以名稱縮寫替代。加入捷徑後先使用同一份預設圖示，再依下列機制取得與更新網站圖示。來源見[常用網站圖示紀錄](public/icons/websites/SOURCES.md)。
+
+自動圖示先透過 [Chrome 內建 favicon 功能](https://developer.chrome.com/docs/extensions/how-to/ui/favicons)取得；若回傳預設地球圖示或讀取失敗，會讀取網站首頁宣告的 PNG / ICO 圖示，並以 `/favicon.ico` 作為後備來源。下載不帶 Cookie 或 Referer，失敗最多嘗試 3 次，之後隔天再試。成功圖示保存在本機，滿 7 天後於開啟新分頁時檢查更新；取得新版後取代預設圖示或舊快取，更新失敗保留舊圖示並隔天再試，沒有快取時保留打包圖示。同一網站的同時請求會合併，快取最多保留 100 個網站。
+
+也可自行匯入 PNG / ICO（最大 5 MB，匯入後自動縮小為最長邊 64 px，保留透明背景）；自訂圖示優先使用，不被自動更新覆蓋。無雲端同步，資料保存在本機。
+
+維護者要重新下載常用網站的預設圖示時，執行：
+
+```sh
+node scripts/prepare-website-icons.mjs
+npm run build
+```
+
+圖示準備腳本會連線官方網站或 DuckDuckGo 圖示服務，並更新 `data/websites.json` 的 `icon` 路徑及來源紀錄；一般建置直接使用已打包的檔案，不會自動重新下載 Logo。
 
 ## 名稱與語系
 
@@ -206,12 +236,13 @@ zh_TW。新增語系時在 `_locales/` 下建立對應資料夾即可，`vite.co
 - `src/calendar/`：台灣日期、農曆、節氣、節日組合（`dailyCalendar.ts` 等）；歷史資料集登錄與合併（`history.ts`，`HistoryDataset`
   介面供未來主題擴充）、個人歷史 JSON 驗證（`personalHistory.ts`）、CSV 解析與表格欄位轉換（`personalHistoryFile.ts`、`historyRows.js`）、XLSX／ODS 解析（`spreadsheet.ts`、`spreadsheet.worker.ts`）。
 - `src/shortcuts/`：捷徑資料驗證與儲存（`chrome.storage.local` / `localStorage`）。
-- `src/search/`：搜尋網址組成與自訂捷徑網址驗證。
+- `src/search/`：搜尋網址組成與自訂捷徑網址驗證（`search.ts`）、剪貼簿圖片預覽與 Google Lens 表單上傳（`imageSearch.ts`）。
 - `src/data/`：資料版本包裝解析（`document.ts`）、公共資料格式定義與套用（`publicData.ts`）、GitHub 更新下載與快取（`updates.ts`）。
 - `src/newtab/`：畫面與互動主體（`newtab.ts`）、設定頁籤與鍵盤導覽（`settingsTabs.ts`）、關於與各資料檔版本（`about.ts`）、指針時鐘（`clock.ts`）、工作便利貼（`todos.ts`）、個人歷史匯入／匯出對話框（`personalHistory.ts`）、紀事來源開關與排序（`historySources.ts`）、公共資料更新面板（`dataUpdates.ts`）、Google 應用程式九宮格（`googleApps.ts` 搭配 `googleServices.ts` 服務清單）、月序手帖與時光讀本版面（`concepts.ts`）；樣式依版面拆分為
-  `newtab.css`（留白日常）、`modern.css`（日常方格）、`traditional.css`（歲月紙曆）、`concepts.css`（月序手帖／時光讀本）、`googleApps.css`（Google 應用程式選單）、`readability.css`（文字大小與閱讀相關樣式）、`settingsTabs.css`（設定頁籤）、`compact.css`（筆電緊湊排版）。
+  `newtab.css`（共用基礎與留白日常）、`modern.css`（日常方格）、`traditional.css`（歲月紙曆）、`concepts.css`（月序手帖／時光讀本）、`identity.css`（五種樣式的配色、背景與材質）、`googleApps.css`（Google 應用程式選單）、`readability.css`（文字大小與閱讀相關樣式）、`settingsTabs.css`（設定頁籤）、`compact.css`（桌面與筆電緊湊排版）。
 - `data/`：離線日曆（`calendar-2026.json`、`calendar-2027.json`）、節日與連假規則、歷史紀事（`history-taiwan.json`、`history-world.json`、`history-tech.json`、`history-entertainment.json`、`history-personal.json`）、每日一句與公共資料更新清單（`update-manifest.json`）。
-- `public/icons/`：應用程式圖示 `taiwan-today.png`（擴充功能與左上角標誌）、`taiwan-today.ico`（分頁圖示），以及內建捷徑的 favicon 與來源紀錄；`public/icons/google/` 保存 Google 應用程式選單圖示及來源說明。
+- `public/icons/`：應用程式圖示 `taiwan-today.png`（擴充功能與左上角標誌）、`taiwan-today.ico`（分頁圖示），以及內建捷徑的 favicon 與來源紀錄；`public/icons/google/` 保存 Google 應用程式選單圖示，`public/icons/websites/` 保存常用網站預設圖示，皆附來源說明。
+- `public/art/`：留白日常的亮／暗山景 PNG、日常方格的亮／暗幾何 SVG，以及其他樣式的山海線條裝飾。
 - `templates/`：CSV、XLSX、ODS 個人紀事範本與填寫說明，供官網下載。
 - `vendor/sheetjs/`：插件與官網共用的本機試算表解析器及第三方授權。
 - `_locales/`：擴充功能名稱與說明的中英文語系檔。
@@ -219,6 +250,7 @@ zh_TW。新增語系時在 `_locales/` 下建立對應資料夾即可，`vite.co
 - `scripts/validate-history.mjs`：歷史紀事欄位、重複與月份覆蓋檢查。
 - `scripts/prepare-history-templates.mjs`：產生三種格式的紀事範本，並核對 XLSX／ODS 內容。
 - `scripts/prepare-data-update.mjs`：驗證公共 JSON 並產生 `data/update-manifest.json`，供使用者端下載更新比對。
+- `scripts/prepare-website-icons.mjs`：預先下載常用網站 Logo，更新圖示路徑與來源紀錄。
 - `tests/`：曆法及安全邊界單元測試、瀏覽器操作與真實 MV3 離線載入測試；`tests/pages/` 驗證官網範本下載與三種格式轉檔。
 - `index.html`、`docs/site/`：可部署到 GitHub Pages 的專案介紹網站，提供五種樣式的真實截圖、CSV／XLSX／ODS 範本下載、JSON 轉檔與匯入教學。樣式來源為 `docs/site/tailwind.css`，由 `tailwind.site.config.ts` 建置；截圖存放於 `docs/site/images/`，首頁裁切範圍定義於 `docs/site/tailwind.css`。
 
@@ -240,7 +272,7 @@ zh_TW。新增語系時在 `_locales/` 下建立對應資料夾即可，`vite.co
 
 ## 授權
 
-本專案採用 [ISC License](LICENSE.md)，與 `package.json` 的授權宣告一致。第三方套件、網站圖示及商標仍依各自的授權與權利聲明，圖示來源見 [來源紀錄](public/icons/SOURCES.md)。
+本專案採用 [ISC License](LICENSE.md)，與 `package.json` 的授權宣告一致。第三方套件、網站圖示及商標仍依各自的授權與權利聲明，圖示來源見[捷徑來源紀錄](public/icons/SOURCES.md)、[Google 圖示紀錄](public/icons/google/SOURCES.md)及[常用網站圖示紀錄](public/icons/websites/SOURCES.md)。
 
 佛家智慧共 366 則：保留聖嚴法師、星雲大師、惟覺老和尚、淨空法師，以及《金剛般若波羅蜜經》《佛遺教經》的原有 16 則，新增《法句經》240 則、《六祖大師法寶壇經》80 則、《四十二章經》30 則。每則附核對網址，新增選句保留原文、經名及篇章資訊。內部分類值沿用 `sheng-yen`，相容既有偏好設定。
 

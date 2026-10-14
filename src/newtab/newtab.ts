@@ -24,7 +24,8 @@ import { createHistorySourceControls } from './historySources';
 import { normalizeHistorySources, type HistorySourceSetting } from '../calendar/history';
 import { dailyCalendar, setHistorySources } from '../calendar/dailyCalendar';
 import { normalizeUrl, searchUrl } from '../search/search';
-import { defaults, parseShortcuts, loadShortcuts, shortcutIcon, type Shortcut } from '../shortcuts/shortcuts';
+import { initializeSearch } from '../search/imageSearch';
+import { defaults, parseShortcuts, loadShortcuts, shortcutIcon, validIcon, type Shortcut } from '../shortcuts/shortcuts';
 import { importShortcutIcon } from '../shortcuts/importIcon';
 import { automaticShortcutIcon, cachedAutomaticShortcutIcon } from '../shortcuts/automaticIcon';
 import { applyIconContrast } from '../shortcuts/iconContrast';
@@ -145,9 +146,7 @@ el('quote-category').addEventListener('change', () => void savePreferences());
 initializeSettingsTabs();
 el('settings-open').addEventListener('click', () => el<HTMLDialogElement>('settings-dialog').showModal());
 document.querySelectorAll<HTMLElement>('[data-close]').forEach(button => button.addEventListener('click', () => el<HTMLDialogElement>(button.dataset.close!).close()));
-el<HTMLFormElement>('search-form').addEventListener('submit', event => {
-  event.preventDefault(); const query = el<HTMLInputElement>('search-input').value.trim(); if (query) location.assign(searchUrl(query));
-});
+initializeSearch(notify);
 
 let shortcuts: Shortcut[] = structuredClone(defaults), editing: string | null = null, dragging: string | null = null, saving = false, shortcutsReady = false;
 const dialog = el<HTMLDialogElement>('shortcut-dialog');
@@ -202,7 +201,8 @@ function renderShortcuts() {
       applyIconContrast(image, icon);
       image.addEventListener('error', () => { icon.textContent = item.name.slice(0, 1).toUpperCase(); });
       icon.replaceChildren(image);
-    } else if (shortcutsReady) {
+    }
+    if (shortcutsReady && !validIcon(item.icon)) {
       const showIcon = (iconUrl: string | undefined) => {
         if (!iconUrl || !icon.isConnected) return;
         const image = node('img'); image.src = iconUrl; image.alt = ''; image.width = 24; image.height = 24;

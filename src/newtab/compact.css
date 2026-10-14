@@ -1,4 +1,60 @@
+/* Nine shortcut tiles (seven sites and two actions) fit the desktop row. */
+@media(min-width:1100px) {
+  :root[data-style=modern] { --modern-shortcut-width:clamp(96px,calc((min(1640px,100vw - 96px) - 160px)/9),160px); }
+  :root[data-style=modern] #shortcuts { gap:20px; }
+  :root[data-style=modern] .shortcut,
+  :root[data-style=modern] .shortcut-link,
+  :root[data-style=modern] .shortcut-add { width:var(--modern-shortcut-width); }
+}
+/* Taller desktop windows still need room for the quote and history below. */
+@media(min-width:1100px) and (min-height:1001px) {
+  [data-style=modern] header { height:72px; padding-block:8px; }
+  [data-style=modern] .calendar-clock-group { grid-template-rows:44px auto; min-height:280px; margin-bottom:16px; }
+  [data-style=modern] .calendar-clock-group>.eyebrow { padding-top:14px; }
+  [data-style=modern] .calendar-clock-group .calendar { grid-template-rows:30px 54px 54px auto auto; padding-bottom:12px; }
+  [data-style=modern] .day { font-size:112px; }
+  [data-style=modern] .weekday { padding-top:12px; }
+  [data-style=modern] .season { margin-top:8px; }
+  [data-style=modern] .analog-clock { width:180px; height:180px; }
+  [data-style=modern] .todo-note { top:72px; }
+  [data-style=modern] #todo-panel[open] .todo-body { min-height:220px; }
+  [data-style=modern] #todo-empty { padding:20px 0; }
+  [data-style=modern] .search { padding-block:12px; }
+  [data-style=modern] .shortcuts-section { margin:16px 0; }
+  [data-style=modern] .shortcut-link,[data-style=modern] .shortcut-add { min-height:90px; padding-block:10px; }
+  [data-style=modern] main>.daily-quote { display:grid; grid-template-columns:80px minmax(0,1fr) 100px; align-items:center; gap:16px; padding:12px 16px; margin-bottom:16px; }
+  [data-style=modern] .daily-quote h2,[data-style=modern] .daily-quote>p { margin:0; }
+  [data-style=modern] .daily-quote blockquote { font-size:22px; line-height:1.5; }
+  :root[data-style=modern][data-text-size=large] .daily-quote blockquote { font-size:26px; }
+  [data-style=modern] footer { padding-block:12px; }
+}
 /* Short desktop windows: reduce decorative space, retain readable body text. */
+@media(min-width:1100px) and (min-height:1001px) {
+  [data-style=traditional] header { height:64px; padding-block:8px; margin-bottom:12px; }
+  :root[data-style=traditional] .calendar-clock-group { min-height:0; margin-bottom:16px; }
+  :root[data-style=traditional] .calendar-clock-group>.eyebrow { font-size:16px; padding:10px 40px; }
+  :root[data-style=traditional] .calendar-clock-group .calendar { padding:8px 18px 0; }
+  :root[data-style=traditional] .month { font-size:22px; }
+  :root[data-style=traditional] .day { font-size:140px; }
+  :root[data-style=traditional] .weekday { font-size:20px; padding-top:6px; }
+  :root[data-style=traditional] .lunar { font-size:14px; margin:6px auto; }
+  :root[data-style=traditional] .season { margin-top:6px; padding:4px 0; }
+  :root[data-style=traditional] .clock-container { width:200px; }
+  [data-style=traditional] .todo-note { top:76px; }
+  [data-style=traditional] #todo-panel[open] .todo-body { min-height:220px; }
+  [data-style=traditional] #todo-empty { padding:28px 0; }
+  [data-style=traditional] .shortcuts-section { margin:12px 0; }
+  [data-style=traditional] main>.daily-quote { display:grid; grid-template-columns:80px minmax(0,1fr) 100px; align-items:center; gap:16px; padding:10px 16px; margin-bottom:12px; }
+  [data-style=traditional] .daily-quote h2,[data-style=traditional] .daily-quote>p { margin:0; }
+  [data-style=traditional] .daily-quote blockquote { font-size:22px; line-height:1.5; }
+  :root[data-style=traditional][data-text-size=large] .daily-quote blockquote { font-size:26px; }
+  [data-style=traditional] .history-card { padding:12px 20px 0; }
+  [data-style=traditional] .history-card h3 { font-size:21px; margin:6px 0; }
+  :root[data-style=traditional][data-text-size] .history-summary { line-height:1.7; }
+  [data-style=traditional] .history-more { margin-top:8px; }
+  [data-style=traditional] .history-source { margin-top:6px; }
+  [data-style=traditional] footer { padding-block:8px; margin-top:12px; }
+}
 @media(min-width:1100px) and (max-height:1000px) {
   :is([data-style=modern],[data-style=traditional]) header { height:48px; padding-block:4px; margin:0 auto 8px; }
   :is([data-style=modern],[data-style=traditional]) .brand-logo { width:34px; height:34px; }
@@ -34,7 +90,8 @@
   :is([data-style=modern],[data-style=traditional]) footer { padding:4px 0; margin:4px auto 0; }
   :is([data-style=modern],[data-style=traditional]) footer>span { display:none; }
 
-  [data-style=modern] .calendar-clock-group { grid-template-rows:32px auto; min-height:214px; }
+  [data-style=modern] .calendar-clock-group { grid-template-rows:32px auto; min-height:214px; margin-bottom:8px; }
+  [data-style=modern] .shortcuts-section { margin:6px 0; }
   [data-style=modern] .calendar-clock-group>.eyebrow { padding:10px 18px 0; font-size:15px; }
   [data-style=modern] .calendar-clock-group .calendar { grid-template-rows:24px 42px 42px auto auto; padding:0 18px 8px; }
   [data-style=modern] .month { font-size:22px; }
@@ -48,16 +105,17 @@
   [data-style=modern] .digital-clock { font-size:23px; margin-top:4px; }
   [data-style=modern] #todo-empty::before { width:28px; height:28px; line-height:24px; font-size:18px; margin-bottom:6px; }
 
-  :root[data-style=traditional] .calendar-clock-group { min-height:0; margin-bottom:24px; }
-  :root[data-style=traditional] .calendar-clock-group>.eyebrow { font-size:16px; padding:8px 40px; }
-  :root[data-style=traditional] .calendar-clock-group .calendar { padding:6px 14px 0; }
-  :root[data-style=traditional] .month { font-size:20px; }
-  :root[data-style=traditional] .day { font-size:132px; }
-  :root[data-style=traditional] .weekday { font-size:20px; }
-  :root[data-style=traditional] .lunar { font-size:14px; padding-top:4px; margin:4px auto; }
-  :root[data-style=traditional] .season { margin-top:4px; padding:2px 0; }
-  :root[data-style=traditional] .season p { margin-top:2px; }
-  [data-style=traditional] .shortcuts-section { margin:6px 0; }
+  :root[data-style=traditional] .calendar-clock-group { min-height:0; margin-bottom:6px; }
+  :root[data-style=traditional] .calendar-clock-group>.eyebrow { font-size:15px; padding:4px 40px; }
+  :root[data-style=traditional] .calendar-clock-group .calendar { padding:4px 14px 0; }
+  :root[data-style=traditional] .month { font-size:18px; }
+  :root[data-style=traditional] .day { font-size:100px; }
+  :root[data-style=traditional] .weekday { font-size:18px; padding-top:4px; margin-block:2px; }
+  :root[data-style=traditional] .lunar { font-size:14px; line-height:1.45; padding-top:2px; margin:2px auto; }
+  :root[data-style=traditional] .season { font-size:12px; margin-top:2px; padding:2px 0; }
+  :root[data-style=traditional] .season p { font-size:12px; margin-top:0; }
+  [data-style=traditional] .search input { padding-block:6px; }
+  [data-style=traditional] .shortcuts-section { margin:4px 0; }
   [data-style=traditional] .shortcut-link,[data-style=traditional] .shortcut-add { gap:4px; padding-block:2px; }
   [data-style=traditional] .history-card { padding-block:8px; }
   [data-style=traditional] .history-card h3 { line-height:1.3; }

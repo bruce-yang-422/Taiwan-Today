@@ -2,7 +2,7 @@ import database from '../../data/websites.json';
 import { normalizeUrl } from '../search/search';
 import type { Shortcut } from './shortcuts';
 
-export interface CatalogSite { id: string; name: string; url: string; matchPaths?: string[] }
+export interface CatalogSite { id: string; name: string; url: string; icon?: string; matchPaths?: string[] }
 export const websiteCategories = database.categories;
 export const catalogSites: CatalogSite[] = websiteCategories.flatMap(category => category.sites);
 

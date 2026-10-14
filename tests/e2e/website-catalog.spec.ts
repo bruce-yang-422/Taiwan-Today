@@ -24,6 +24,10 @@ test('categorized selection adds once, persists, handles failures and fits mobil
     expect(center.x).toBeLessThan(1); expect(center.y).toBeLessThan(1);
     await open.click();
     await expect(dialog.locator('.catalog-site')).toHaveCount(52);
+    const logos = dialog.locator('.catalog-site-symbol img');
+    await expect(logos).toHaveCount(52);
+    await expect.poll(() => logos.evaluateAll(images => images.every(image =>
+      (image as HTMLImageElement).complete && (image as HTMLImageElement).naturalWidth > 0))).toBe(true);
     await expect(dialog.locator('input[value=youtube]')).toBeChecked();
     await expect(dialog.locator('input[value=youtube]')).toBeEnabled();
     for (const id of ['yahoo', 'youtube', 'chatgpt', 'gemini', 'google']) {
@@ -54,6 +58,7 @@ test('categorized selection adds once, persists, handles failures and fits mobil
     await expect(page.locator('.shortcut-name')).toHaveText(['Yahoo 奇摩', 'YouTube', 'ChatGPT', 'Gemini', 'Google', 'DuckDuckGo', 'Claude', 'Gmail']);
     await page.reload();
     await expect(page.getByRole('link', { name: 'Claude', exact: true })).toHaveAttribute('href', 'https://claude.ai/');
+    await expect(page.getByRole('link', { name: 'Claude', exact: true }).locator('img')).toHaveAttribute('src', './icons/websites/claude.ico');
     await open.click();
     await expect(dialog.locator('input[value=google]')).toBeEnabled();
     const search = dialog.getByRole('searchbox', { name: '搜尋常用網站' });

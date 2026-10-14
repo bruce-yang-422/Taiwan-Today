@@ -1,6 +1,7 @@
 import { catalogSites, websiteCategories, websiteKey, type CatalogSite } from '../shortcuts/websiteCatalog';
 import type { Shortcut } from '../shortcuts/shortcuts';
 import { websiteGridIcon } from './websiteIcon';
+import { applyIconContrast } from '../shortcuts/iconContrast';
 
 export function initializeWebsiteCatalog(getShortcuts: () => Shortcut[], save: (sites: CatalogSite[], removed: CatalogSite[]) => Promise<boolean>) {
   const dialog = document.getElementById('website-catalog-dialog') as HTMLDialogElement;
@@ -46,6 +47,16 @@ export function initializeWebsiteCatalog(getShortcuts: () => Shortcut[], save: (
       input.checked = (added && !removal.has(site.id)) || selection.has(site.id); input.disabled = busy;
       const badge = document.createElement('span'); badge.className = 'catalog-site-symbol'; badge.setAttribute('aria-hidden', 'true');
       badge.textContent = /^[A-Za-z]/.test(site.name) ? site.name.slice(0, 2).toUpperCase() : site.name.slice(0, 1);
+      if (site.icon) {
+        const image = document.createElement('img');
+        image.alt = ''; image.width = 24; image.height = 24; image.src = `./${site.icon}`;
+        applyIconContrast(image, badge);
+        image.addEventListener('error', () => {
+          badge.classList.remove('icon-light-artwork', 'icon-dark-artwork');
+          badge.textContent = /^[A-Za-z]/.test(site.name) ? site.name.slice(0, 2).toUpperCase() : site.name.slice(0, 1);
+        });
+        badge.replaceChildren(image);
+      }
       const text = document.createElement('span'); text.className = 'catalog-site-text';
       const name = document.createElement('strong'); name.textContent = site.name;
       const domain = document.createElement('small'); domain.textContent = new URL(site.url).hostname;

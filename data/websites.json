@@ -4,93 +4,93 @@
     {
       "id": "search", "name": "搜尋與入口",
       "sites": [
-        { "id": "google", "name": "Google", "url": "https://www.google.com/" },
-        { "id": "yahoo", "name": "Yahoo 奇摩", "url": "https://tw.yahoo.com/" },
-        { "id": "bing", "name": "Bing", "url": "https://www.bing.com/" },
-        { "id": "duckduckgo", "name": "DuckDuckGo", "url": "https://duckduckgo.com/" },
-        { "id": "wikipedia", "name": "維基百科", "url": "https://zh.wikipedia.org/" }
+        { "id": "google", "name": "Google", "url": "https://www.google.com/", "icon": "icons/google/search.webp" },
+        { "id": "yahoo", "name": "Yahoo 奇摩", "url": "https://tw.yahoo.com/", "icon": "icons/websites/yahoo.png" },
+        { "id": "bing", "name": "Bing", "url": "https://www.bing.com/", "icon": "icons/websites/bing.png" },
+        { "id": "duckduckgo", "name": "DuckDuckGo", "url": "https://duckduckgo.com/", "icon": "icons/websites/duckduckgo.ico" },
+        { "id": "wikipedia", "name": "維基百科", "url": "https://zh.wikipedia.org/", "icon": "icons/websites/wikipedia.ico" }
       ]
     },
     {
       "id": "social", "name": "社群與通訊",
       "sites": [
-        { "id": "facebook", "name": "Facebook", "url": "https://www.facebook.com/" },
-        { "id": "instagram", "name": "Instagram", "url": "https://www.instagram.com/" },
-        { "id": "threads", "name": "Threads", "url": "https://www.threads.com/" },
-        { "id": "x", "name": "X", "url": "https://x.com/" },
-        { "id": "reddit", "name": "Reddit", "url": "https://www.reddit.com/" },
-        { "id": "discord", "name": "Discord", "url": "https://discord.com/app" },
-        { "id": "dcard", "name": "Dcard", "url": "https://www.dcard.tw/" }
+        { "id": "facebook", "name": "Facebook", "url": "https://www.facebook.com/", "icon": "icons/websites/facebook.ico" },
+        { "id": "instagram", "name": "Instagram", "url": "https://www.instagram.com/", "icon": "icons/websites/instagram.png" },
+        { "id": "threads", "name": "Threads", "url": "https://www.threads.com/", "icon": "icons/websites/threads.ico" },
+        { "id": "x", "name": "X", "url": "https://x.com/", "icon": "icons/websites/x.png" },
+        { "id": "reddit", "name": "Reddit", "url": "https://www.reddit.com/", "icon": "icons/websites/reddit.png" },
+        { "id": "discord", "name": "Discord", "url": "https://discord.com/app", "icon": "icons/websites/discord.png" },
+        { "id": "dcard", "name": "Dcard", "url": "https://www.dcard.tw/", "icon": "icons/websites/dcard.png" }
       ]
     },
     {
       "id": "media", "name": "影音與音樂",
       "sites": [
-        { "id": "youtube", "name": "YouTube", "url": "https://www.youtube.com/" },
-        { "id": "netflix", "name": "Netflix", "url": "https://www.netflix.com/" },
-        { "id": "disney", "name": "Disney+", "url": "https://www.disneyplus.com/" },
-        { "id": "spotify", "name": "Spotify", "url": "https://open.spotify.com/" },
-        { "id": "twitch", "name": "Twitch", "url": "https://www.twitch.tv/" },
-        { "id": "kkbox", "name": "KKBOX", "url": "https://www.kkbox.com/tw/" }
+        { "id": "youtube", "name": "YouTube", "url": "https://www.youtube.com/", "icon": "icons/youtube.png" },
+        { "id": "netflix", "name": "Netflix", "url": "https://www.netflix.com/", "icon": "icons/websites/netflix.ico" },
+        { "id": "disney", "name": "Disney+", "url": "https://www.disneyplus.com/", "icon": "icons/websites/disney.png" },
+        { "id": "spotify", "name": "Spotify", "url": "https://open.spotify.com/", "icon": "icons/websites/spotify.png" },
+        { "id": "twitch", "name": "Twitch", "url": "https://www.twitch.tv/", "icon": "icons/websites/twitch.png" },
+        { "id": "kkbox", "name": "KKBOX", "url": "https://www.kkbox.com/tw/", "icon": "icons/websites/kkbox.ico" }
       ]
     },
     {
       "id": "shopping", "name": "購物與生活",
       "sites": [
-        { "id": "shopee", "name": "蝦皮購物", "url": "https://shopee.tw/" },
-        { "id": "momo", "name": "momo 購物網", "url": "https://www.momoshop.com.tw/" },
-        { "id": "pchome", "name": "PChome 24h", "url": "https://24h.pchome.com.tw/" },
-        { "id": "books", "name": "博客來", "url": "https://www.books.com.tw/" },
-        { "id": "ruten", "name": "露天市集", "url": "https://www.ruten.com.tw/" },
-        { "id": "rakuten", "name": "樂天市場", "url": "https://www.rakuten.com.tw/" }
+        { "id": "shopee", "name": "蝦皮購物", "url": "https://shopee.tw/", "icon": "icons/websites/shopee.png" },
+        { "id": "momo", "name": "momo 購物網", "url": "https://www.momoshop.com.tw/", "icon": "icons/websites/momo.ico" },
+        { "id": "pchome", "name": "PChome 24h", "url": "https://24h.pchome.com.tw/", "icon": "icons/pchome.ico" },
+        { "id": "books", "name": "博客來", "url": "https://www.books.com.tw/", "icon": "icons/websites/books.ico" },
+        { "id": "ruten", "name": "露天市集", "url": "https://www.ruten.com.tw/", "icon": "icons/websites/ruten.ico" },
+        { "id": "rakuten", "name": "樂天市場", "url": "https://www.rakuten.com.tw/", "icon": "icons/websites/rakuten.ico" }
       ]
     },
     {
       "id": "news", "name": "新聞與資訊",
       "sites": [
-        { "id": "cna", "name": "中央社", "url": "https://www.cna.com.tw/" },
-        { "id": "udn", "name": "聯合新聞網", "url": "https://udn.com/" },
-        { "id": "ltn", "name": "自由時報", "url": "https://www.ltn.com.tw/" },
-        { "id": "pts", "name": "公視新聞網", "url": "https://news.pts.org.tw/" },
-        { "id": "tvbs", "name": "TVBS 新聞網", "url": "https://news.tvbs.com.tw/" },
-        { "id": "bbc", "name": "BBC 中文", "url": "https://www.bbc.com/zhongwen/trad" }
+        { "id": "cna", "name": "中央社", "url": "https://www.cna.com.tw/", "icon": "icons/websites/cna.ico" },
+        { "id": "udn", "name": "聯合新聞網", "url": "https://udn.com/", "icon": "icons/websites/udn.ico" },
+        { "id": "ltn", "name": "自由時報", "url": "https://www.ltn.com.tw/", "icon": "icons/websites/ltn.png" },
+        { "id": "pts", "name": "公視新聞網", "url": "https://news.pts.org.tw/", "icon": "icons/websites/pts.png" },
+        { "id": "tvbs", "name": "TVBS 新聞網", "url": "https://news.tvbs.com.tw/", "icon": "icons/websites/tvbs.png" },
+        { "id": "bbc", "name": "BBC 中文", "url": "https://www.bbc.com/zhongwen/trad", "icon": "icons/websites/bbc.png" }
       ]
     },
     {
       "id": "ai", "name": "AI 工具",
       "sites": [
-        { "id": "chatgpt", "name": "ChatGPT", "url": "https://chatgpt.com/" },
-        { "id": "claude", "name": "Claude", "url": "https://claude.ai/" },
-        { "id": "gemini", "name": "Gemini", "url": "https://gemini.google.com/", "matchPaths": ["/app", "/u/*", "/u/*/app"] },
-        { "id": "perplexity", "name": "Perplexity", "url": "https://www.perplexity.ai/" },
-        { "id": "copilot", "name": "Microsoft Copilot", "url": "https://copilot.microsoft.com/" },
-        { "id": "notebooklm", "name": "NotebookLM", "url": "https://notebooklm.google.com/" },
-        { "id": "napkin", "name": "Napkin AI", "url": "https://app.napkin.ai/" }
+        { "id": "chatgpt", "name": "ChatGPT", "url": "https://chatgpt.com/", "icon": "icons/websites/chatgpt.webp" },
+        { "id": "claude", "name": "Claude", "url": "https://claude.ai/", "icon": "icons/websites/claude.ico" },
+        { "id": "gemini", "name": "Gemini", "url": "https://gemini.google.com/", "matchPaths": ["/app", "/u/*", "/u/*/app"], "icon": "icons/google/gemini.png" },
+        { "id": "perplexity", "name": "Perplexity", "url": "https://www.perplexity.ai/", "icon": "icons/websites/perplexity.png" },
+        { "id": "copilot", "name": "Microsoft Copilot", "url": "https://copilot.microsoft.com/", "icon": "icons/websites/copilot.ico" },
+        { "id": "notebooklm", "name": "NotebookLM", "url": "https://notebooklm.google.com/", "icon": "icons/google/notebook-symbol.svg" },
+        { "id": "napkin", "name": "Napkin AI", "url": "https://app.napkin.ai/", "icon": "icons/websites/napkin.png" }
       ]
     },
     {
       "id": "work", "name": "工作與學習",
       "sites": [
-        { "id": "gmail", "name": "Gmail", "url": "https://mail.google.com/" },
-        { "id": "outlook", "name": "Outlook", "url": "https://outlook.live.com/" },
-        { "id": "drive", "name": "Google 雲端硬碟", "url": "https://drive.google.com/" },
-        { "id": "docs", "name": "Google 文件", "url": "https://docs.google.com/" },
-        { "id": "apps-script", "name": "Google Apps Script", "url": "https://script.google.com/" },
-        { "id": "notion", "name": "Notion", "url": "https://www.notion.so/" },
-        { "id": "canva", "name": "Canva", "url": "https://www.canva.com/" },
-        { "id": "github", "name": "GitHub", "url": "https://github.com/" },
-        { "id": "coursera", "name": "Coursera", "url": "https://www.coursera.org/" }
+        { "id": "gmail", "name": "Gmail", "url": "https://mail.google.com/", "icon": "icons/google/gmail.webp" },
+        { "id": "outlook", "name": "Outlook", "url": "https://outlook.live.com/", "icon": "icons/websites/outlook.ico" },
+        { "id": "drive", "name": "Google 雲端硬碟", "url": "https://drive.google.com/", "icon": "icons/google/drive.webp" },
+        { "id": "docs", "name": "Google 文件", "url": "https://docs.google.com/", "icon": "icons/google/docs.webp" },
+        { "id": "apps-script", "name": "Google Apps Script", "url": "https://script.google.com/", "icon": "icons/websites/apps-script.png" },
+        { "id": "notion", "name": "Notion", "url": "https://www.notion.so/", "icon": "icons/websites/notion.ico" },
+        { "id": "canva", "name": "Canva", "url": "https://www.canva.com/", "icon": "icons/websites/canva.ico" },
+        { "id": "github", "name": "GitHub", "url": "https://github.com/", "icon": "icons/github.ico" },
+        { "id": "coursera", "name": "Coursera", "url": "https://www.coursera.org/", "icon": "icons/websites/coursera.png" }
       ]
     },
     {
       "id": "travel", "name": "交通與旅遊",
       "sites": [
-        { "id": "maps", "name": "Google 地圖", "url": "https://www.google.com/maps" },
-        { "id": "cwa", "name": "中央氣象署", "url": "https://www.cwa.gov.tw/" },
-        { "id": "tra", "name": "台鐵", "url": "https://www.railway.gov.tw/" },
-        { "id": "thsrc", "name": "台灣高鐵", "url": "https://www.thsrc.com.tw/" },
-        { "id": "booking", "name": "Booking.com", "url": "https://www.booking.com/" },
-        { "id": "klook", "name": "Klook", "url": "https://www.klook.com/zh-TW/" }
+        { "id": "maps", "name": "Google 地圖", "url": "https://www.google.com/maps", "icon": "icons/google/maps.webp" },
+        { "id": "cwa", "name": "中央氣象署", "url": "https://www.cwa.gov.tw/", "icon": "icons/websites/cwa.ico" },
+        { "id": "tra", "name": "台鐵", "url": "https://www.railway.gov.tw/", "icon": "icons/websites/tra.ico" },
+        { "id": "thsrc", "name": "台灣高鐵", "url": "https://www.thsrc.com.tw/", "icon": "icons/websites/thsrc.ico" },
+        { "id": "booking", "name": "Booking.com", "url": "https://www.booking.com/", "icon": "icons/websites/booking.png" },
+        { "id": "klook", "name": "Klook", "url": "https://www.klook.com/zh-TW/", "icon": "icons/websites/klook.png" }
       ]
     }
   ]

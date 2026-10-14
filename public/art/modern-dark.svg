@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="sky" x2="1" y2="1"><stop stop-color="#24364c"/><stop offset=".5" stop-color="#191e28"/><stop offset="1" stop-color="#22313b"/></linearGradient>
+    <linearGradient id="glass" x2="1" y2="1"><stop stop-color="#749abd" stop-opacity=".25"/><stop offset=".45" stop-color="#38516c" stop-opacity=".12"/><stop offset="1" stop-color="#517895" stop-opacity=".32"/></linearGradient>
+    <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse"><path d="M64 0H0V64" fill="none" stroke="#9ebfda" stroke-opacity=".055"/></pattern>
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%"><feDropShadow dx="8" dy="18" stdDeviation="18" flood-color="#050c16" flood-opacity=".4"/></filter>
+    <radialGradient id="light"><stop stop-color="#638fb6" stop-opacity=".18"/><stop offset="1" stop-color="#638fb6" stop-opacity="0"/></radialGradient>
+    <radialGradient id="lamp"><stop stop-color="#d6b37c" stop-opacity=".12"/><stop offset="1" stop-color="#d6b37c" stop-opacity="0"/></radialGradient>
+  </defs>
+  <path fill="url(#sky)" d="M0 0h1920v1080H0z"/>
+  <path fill="url(#grid)" d="M0 0h1920v1080H0z"/>
+  <ellipse cx="80" cy="250" rx="550" ry="650" fill="url(#light)"/>
+  <ellipse cx="1890" cy="900" rx="500" ry="500" fill="url(#lamp)"/>
+  <g fill="url(#glass)" stroke="#a8c9e1" stroke-opacity=".23" stroke-width="2" filter="url(#shadow)">
+    <rect x="-125" y="110" width="310" height="370" rx="65" transform="rotate(-14 30 295)"/>
+    <rect x="-90" y="750" width="270" height="260" rx="55" transform="rotate(18 45 880)"/>
+    <rect x="1760" y="-120" width="285" height="330" rx="58" transform="rotate(17 1900 50)"/>
+    <rect x="1730" y="685" width="355" height="340" rx="75" transform="rotate(-18 1907 855)"/>
+    <rect x="1650" y="925" width="180" height="170" rx="40" transform="rotate(12 1740 1010)"/>
+  </g>
+</svg>
