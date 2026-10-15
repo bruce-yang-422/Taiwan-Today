@@ -5,6 +5,7 @@ import './concepts.css';
 import './identity.css';
 import './readability.css';
 import './compact.css';
+import './traditionalLayout.css';
 import './googleApps.css';
 import './settingsTabs.css';
 import './websiteCatalog.css';

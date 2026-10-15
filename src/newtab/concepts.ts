@@ -131,6 +131,7 @@ export function createConceptLayouts(onSelect: (date?: Date) => void) {
         sidebar.append(calendar); stage.append(quote, history, todos); bottom.append(search, shortcuts);
       } else {
         history.before(quote);
+        if (style === 'traditional') calendar.after(todos);
       }
       if (style !== 'workspace') { selected = ''; onSelect(); }
       refresh();

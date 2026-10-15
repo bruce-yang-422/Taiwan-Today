@@ -8,7 +8,9 @@ test('shared display switches persist across styles and tabs without deleting da
   const widgets = [['show-history', '.history-section'], ['show-quote', '#daily-quote'], ['show-todos', '.todo-note']] as const;
   for (const style of ['classic', 'modern', 'traditional', 'workspace', 'reading']) {
     await page.locator('#settings-open').click();
+    await page.getByRole('tab', { name: '外觀', exact: true }).click();
     await page.locator('#calendar-style').selectOption(style);
+    await page.getByRole('tab', { name: '內容', exact: true }).click();
     await expect(page.locator('#display-options')).toBeEnabled();
     for (const [id] of widgets) {
       await page.locator(`#${id}`).uncheck();
@@ -26,6 +28,7 @@ test('shared display switches persist across styles and tabs without deleting da
     await page.reload();
     for (const [, selector] of widgets) await expect(page.locator(selector)).toBeHidden();
     await page.locator('#settings-open').click();
+    await page.getByRole('tab', { name: '內容', exact: true }).click();
     for (const [id] of widgets) {
       await page.locator(`#${id}`).check();
       await expect(page.locator('#display-options')).toBeEnabled();
@@ -40,6 +43,7 @@ test('shared display switches persist across styles and tabs without deleting da
   }
   await page.evaluate(() => { Storage.prototype.setItem = () => { throw new Error('quota'); }; });
   await page.locator('#settings-open').click();
+  await page.getByRole('tab', { name: '內容', exact: true }).click();
   await page.locator('#show-quote').click();
   await expect(page.locator('#show-quote')).toBeChecked();
   await expect(page.locator('#status')).toContainText('無法儲存');

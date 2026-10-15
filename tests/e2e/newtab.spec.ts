@@ -222,6 +222,13 @@ test('traditional calendar uses a paper layout on desktop and fits mobile', asyn
   const note = (await page.locator('.todo-note').boundingBox())!;
   expect(calendar.x + calendar.width).toBeLessThan(clock.x);
   expect(clock.x + clock.width).toBeLessThan(note.x);
+  const binding = (await page.locator('#year').boundingBox())!;
+  expect(calendar.height + binding.height).toBeGreaterThan(calendar.width * 1.4);
+  for (const selector of ['#search-form', '.shortcuts-section', '#daily-quote', '.history-section']) {
+    const content = (await page.locator(selector).boundingBox())!;
+    expect(content.x).toBeGreaterThan(calendar.x + calendar.width);
+    expect(content.y + content.height).toBeLessThanOrEqual(calendar.y + calendar.height + 1);
+  }
   await page.screenshot({ path: 'test-results/traditional-desktop.png', fullPage: true });
   // Readable text may extend below the fold; the last item must remain reachable.
   await page.locator('.history-card').last().scrollIntoViewIfNeeded();
@@ -231,6 +238,11 @@ test('traditional calendar uses a paper layout on desktop and fits mobile', asyn
   await page.getByRole('radio', { name: '暗色', exact: true }).check();
   await page.keyboard.press('Escape');
   await page.screenshot({ path: 'test-results/traditional-desktop-dark.png', fullPage: true });
+  await page.setViewportSize({ width: 1280, height: 800 });
+  expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(1280);
+  const narrowCalendar = (await page.locator('.calendar').boundingBox())!;
+  const narrowSearch = (await page.locator('#search-form').boundingBox())!;
+  expect(narrowSearch.x).toBeGreaterThan(narrowCalendar.x + narrowCalendar.width);
   await page.setViewportSize({ width: 360, height: 800 });
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(360);
 });

@@ -41,8 +41,18 @@
 :root[data-style=traditional] { background:#f2f0ec; --ink:#2e3945; --accent:#303c4c; --vermilion:#8f5452; --paper:#fcfaf6; --muted:#484f53; --line:#cecac2; --soft:#eae6e1; --paper-edge:#d0ccc4; }
 :root.dark[data-style=traditional] { background:#252729; --ink:#e6e3dd; --accent:#c1cbd2; --vermilion:#cfaca4; --paper:#333537; --muted:#bcc0c0; --line:#5c5f61; --soft:#404344; --paper-edge:#474949; }
 [data-style=traditional] header { border-bottom-color:var(--vermilion); }
-[data-style=traditional] body { background:url('/art/traditional-light.png') center / cover no-repeat fixed; min-height:100vh; }
-.dark[data-style=traditional] body { background-image:url('/art/traditional-dark.png'); }
+[data-style=traditional] body {
+  --calendar-scene:url('/art/traditional-light.png');
+  background:none; min-height:100vh; isolation:isolate;
+}
+.dark[data-style=traditional] body { --calendar-scene:url('/art/traditional-dark.png'); }
+/* Keep the paper and controls in focus above a softly defocused scene.
+   Overscan prevents the blur from exposing a halo at viewport edges. */
+[data-style=traditional] body::before {
+  content:''; position:fixed; inset:-12px; z-index:-1; pointer-events:none;
+  background:radial-gradient(ellipse at 40% 28%,transparent 25%,#30271f18 100%),var(--calendar-scene) center / cover no-repeat;
+  filter:blur(4px);
+}
 [data-style=traditional] .history-section { background:color-mix(in srgb,var(--paper) 90%,transparent); }
 [data-style=traditional] .quiet-button { background:var(--paper); }
 [data-style=traditional] .brand { background:color-mix(in srgb,var(--paper) 90%,transparent); border-radius:4px; padding:4px 8px; }
