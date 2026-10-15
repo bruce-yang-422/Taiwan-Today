@@ -1,3 +1,38 @@
+@font-face {
+  font-family:'Paper Calendar Numerals';
+  src:url('/fonts/anton/Anton-Regular.ttf') format('truetype');
+  font-style:normal; font-weight:400; font-display:swap;
+  unicode-range:U+0030-003A;
+}
+:root[data-style=traditional] { --calendar-print:#174d91; --calendar-holiday:#b22e2b; }
+:root.dark[data-style=traditional] { --calendar-print:#a4c6f2; --calendar-holiday:#f1a39a; }
+:root[data-style=traditional] .day,
+:root[data-style=traditional] .clock-numbers,
+:root[data-style=traditional] .digital-clock {
+  font-family:'Paper Calendar Numerals','Arial Narrow',sans-serif;
+  font-weight:400; font-synthesis:none; font-variant-numeric:tabular-nums;
+}
+:root[data-style=traditional] .day { color:var(--calendar-print); letter-spacing:-.025em; text-shadow:none; }
+:root[data-style=traditional] .clock-numbers { font-size:14px; }
+:root[data-style=traditional] .digital-clock { letter-spacing:.04em; }
+.paper-mini-calendar { display:none; }
+:root[data-style=traditional] .paper-mini-calendar {
+  display:table; position:absolute; top:14px; right:14px; width:106px;
+  border-collapse:collapse; table-layout:fixed; color:var(--calendar-print);
+  font:11px/1.45 Arial,sans-serif; text-align:center;
+}
+.paper-mini-calendar caption { font-weight:700; font-size:10px; letter-spacing:.05em; padding-bottom:4px; }
+.paper-mini-calendar :is(th,td) { padding:0; border:0; font-weight:400; }
+.paper-mini-calendar th { padding-bottom:3px; }
+.paper-mini-calendar time { display:block; border-radius:2px; }
+.paper-mini-calendar [aria-current=date] { background:var(--calendar-print); color:var(--paper); font-weight:700; }
+:root[data-style=traditional] .calendar.paper-red-day :is(.day,.weekday),
+:root[data-style=traditional] .paper-mini-calendar .paper-red-day { color:var(--calendar-holiday); }
+:root[data-style=traditional] .paper-mini-calendar .paper-red-day[aria-current=date] {
+  background:var(--calendar-holiday); color:var(--paper);
+}
+:root[data-style=traditional] .calendar h1 { padding-top:104px; }
+
 /* A portrait calendar spans the full height of the desktop reading area. */
 @media(min-width:1100px) {
   :root[data-style=traditional] main {
@@ -21,7 +56,9 @@
     flex:1; display:flex; flex-direction:column; justify-content:center; gap:24px;
   }
   :root[data-style=traditional] .month { margin:0 auto; font-size:clamp(26px,2.4vw,38px); }
-  :root[data-style=traditional] .day { font-size:clamp(160px,15vw,250px); line-height:1.1; }
+  :root[data-style=traditional] .day { font-size:clamp(180px,17vw,300px); line-height:1.1; }
+  :root[data-style=traditional] .paper-mini-calendar { width:124px; font-size:12px; top:20px; right:20px; }
+  :root[data-style=traditional] .calendar h1 { padding-top:112px; }
   :root[data-style=traditional] .weekday { font-size:28px; padding-top:18px; margin:20px 4% 0; }
   :root[data-style=traditional] .lunar { margin:18px auto; }
   :root[data-style=traditional] .season { margin-top:16px; padding:16px 0 0; }

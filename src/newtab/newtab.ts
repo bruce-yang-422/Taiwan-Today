@@ -19,6 +19,7 @@ import { initializeGoogleApps } from './googleApps';
 import { createConceptLayouts } from './concepts';
 
 import { initializeClock } from './clock';
+import { isPaperRedDay, renderPaperMonth } from './paperMonth';
 import { initializeTodos } from './todos';
 import { initializePersonalHistory } from './personalHistory';
 import { createHistorySourceControls } from './historySources';
@@ -51,6 +52,8 @@ function renderCalendar() {
   el('year').textContent = `${date.year} · 民國 ${date.year - 1911} 年`;
   el('month').textContent = `${['一','二','三','四','五','六','七','八','九','十','十一','十二'][date.month - 1]}月`;
   el('day').textContent = String(date.day);
+  document.querySelector('.calendar')!.classList.toggle('paper-red-day', isPaperRedDay(date.year, date.month, date.day));
+  renderPaperMonth(el<HTMLTableElement>('paper-mini-calendar'), date);
   el('weekday').textContent = date.weekday;
   el('lunar').textContent = `農曆 ${date.lunar}`;
   el('term-current').textContent = date.terms.current;
