@@ -1,3 +1,4 @@
+import { t } from '../i18n';
 import { googleServices } from './googleServices';
 
 export function initializeGoogleApps() {
@@ -10,7 +11,7 @@ export function initializeGoogleApps() {
     link.href = service.url;
     link.target = '_blank';
     link.rel = 'noopener noreferrer';
-    link.setAttribute('aria-label', `${service.label}（另開分頁）`);
+    link.setAttribute('aria-label', t("{0}（另開分頁）", [service.label]));
     link.title = service.label;
     link.dataset.service = service.id;
     const icon = document.createElement('img');
@@ -24,7 +25,7 @@ export function initializeGoogleApps() {
   }
   const shortcuts = document.createElement('nav');
   shortcuts.className = 'google-quick-links';
-  shortcuts.setAttribute('aria-label', 'Google 快速捷徑');
+  shortcuts.setAttribute('aria-label', t("Google 快速捷徑"));
   panel.querySelectorAll<HTMLAnchorElement>('[data-service=gmail], [data-service=drive], [data-service=calendar]').forEach(link => {
     const shortcut = link.cloneNode(true) as HTMLAnchorElement;
     shortcut.title = link.getAttribute('aria-label')!;

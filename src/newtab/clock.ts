@@ -1,3 +1,4 @@
+import { t } from '../i18n';
 export function initializeClock() {
   const face = document.getElementById('analog-clock')!;
   const digital = document.getElementById('digital-clock') as HTMLTimeElement;
@@ -19,12 +20,12 @@ export function initializeClock() {
     const time = formatter.format(new Date());
     digital.textContent = time;
     digital.dateTime = time;
-    digital.setAttribute('aria-label', `台灣時間 ${time}`);
+    digital.setAttribute('aria-label', t("台灣時間 {0}", [time]));
     const [hour, minute, second] = time.split(':').map(Number);
     document.getElementById('clock-hour')!.setAttribute('transform', `rotate(${hour % 12 * 30 + minute / 2 + second / 120} 60 60)`);
     document.getElementById('clock-minute')!.setAttribute('transform', `rotate(${minute * 6 + second / 10} 60 60)`);
     document.getElementById('clock-second')!.setAttribute('transform', `rotate(${second * 6} 60 60)`);
-    face.setAttribute('aria-label', `台灣時間 ${time}`);
+    face.setAttribute('aria-label', t("台灣時間 {0}", [time]));
   }
   let timer: ReturnType<typeof setInterval> | undefined;
   function resume() {

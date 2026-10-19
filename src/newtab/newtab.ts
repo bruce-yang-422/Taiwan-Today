@@ -1,3 +1,5 @@
+import { t, monthName, weekdayName } from '../i18n';
+import { localizedCalendar } from '../i18n/calendar';
 import './newtab.css';
 import './traditional.css';
 import './modern.css';
@@ -43,23 +45,23 @@ let lastDate = '';
 let historyExpanded = false, historyDate = '';
 let selectedDate: Date | undefined;
 function renderCalendar() {
-  const date = dailyCalendar(selectedDate);
-  el('history-heading').textContent = selectedDate ? `${date.month} 月 ${date.day} 日的歷史` : '歷史上的今天';
-  document.querySelector('.calendar')!.setAttribute('aria-label', selectedDate ? '所選日期' : '今日日期');
+  const date = localizedCalendar(dailyCalendar(selectedDate));
+  el('history-heading').textContent = selectedDate ? t("{0} 月 {1} 日的歷史", [date.month, date.day]) : t("歷史上的今天");
+  document.querySelector('.calendar')!.setAttribute('aria-label', selectedDate ? t("所選日期") : t("今日日期"));
   if (lastDate === date.key) return;
   lastDate = date.key;
   if (historyDate !== date.key) { historyExpanded = false; historyDate = date.key; }
-  el('year').textContent = `${date.year} · 民國 ${date.year - 1911} 年`;
-  el('month').textContent = `${['一','二','三','四','五','六','七','八','九','十','十一','十二'][date.month - 1]}月`;
+  el('year').textContent = t("{0} · 民國 {1} 年", [date.year, date.year - 1911]);
+  el('month').textContent = monthName(date.year, date.month);
   el('day').textContent = String(date.day);
   document.querySelector('.calendar')!.classList.toggle('paper-red-day', isPaperRedDay(date.year, date.month, date.day));
   renderPaperMonth(el<HTMLTableElement>('paper-mini-calendar'), date);
-  el('weekday').textContent = date.weekday;
-  el('lunar').textContent = `農曆 ${date.lunar}`;
+  el('weekday').textContent = weekdayName(new Date(`${date.key}T12:00:00+08:00`).getUTCDay());
+  el('lunar').textContent = t("農曆 {0}", [date.lunar]);
   el('term-current').textContent = date.terms.current;
   el('term-next').textContent = date.terms.next;
   el<HTMLProgressElement>('term-progress').value = date.terms.progress;
-  el('term-countdown').textContent = `${date.terms.today ? `今日${date.terms.today}・` : ''}距${date.terms.next} ${date.terms.days} 天`;
+  el('term-countdown').textContent = t("{0}距{1} {2} 天", [date.terms.today ? t("今日{0}・", [date.terms.today]) : '', date.terms.next, date.terms.days]);
   el('festivals').replaceChildren(...date.festivals.map(name => node('span', 'badge', name)));
   if (date.holiday) {
     el('festivals').append(node('span', 'badge', date.holiday));
@@ -69,17 +71,17 @@ function renderCalendar() {
   const visibleHistory = historyExpanded ? date.history : date.history.slice(0, 3);
   el('history').dataset.count = String(visibleHistory.length);
   el('history-expansion').hidden = date.history.length <= 3;
-  el('history-count').textContent = `顯示 ${visibleHistory.length} / ${date.history.length} 則紀事`;
-  el('history-show-more').textContent = historyExpanded ? '收合紀事' : `顯示更多（另 ${date.history.length - visibleHistory.length} 則）`;
+  el('history-count').textContent = t("顯示 {0} / {1} 則紀事", [visibleHistory.length, date.history.length]);
+  el('history-show-more').textContent = historyExpanded ? t("收合紀事") : t("顯示更多（另 {0} 則）", [date.history.length - visibleHistory.length]);
   el('history-show-more').setAttribute('aria-expanded', String(historyExpanded));
   for (const event of visibleHistory) {
     const article = node('article', 'history-card');
-    article.append(node('p', 'history-year', `${event.year} · ${event.region} · ${date.year - event.year} 年前`), node('h3', '', event.title), node('p', 'history-summary', event.summary));
+    article.append(node('p', 'history-year', t("{0} · {1} · {2} 年前", [event.year, event.region, date.year - event.year])), node('h3', '', event.title), node('p', 'history-summary', event.summary));
     if (event.keyword?.trim()) {
-      const more = node('a', 'history-more', '深入了解 ↗'); more.href = searchUrl(event.keyword); article.append(more);
+      const more = node('a', 'history-more', t("深入了解 ↗")); more.href = searchUrl(event.keyword); article.append(more);
     }
     if (event.source?.trim()) {
-      const source = node('p', 'history-source', '資料來源：');
+      const source = node('p', 'history-source', t("資料來源："));
       try {
         const url = new URL(event.sourceUrl ?? '');
         if (url.protocol !== 'https:' || url.username || url.password) throw new Error('Invalid source');
@@ -91,7 +93,7 @@ function renderCalendar() {
   }
   if (!date.history.length) {
     const empty = node('article', 'history-card');
-    empty.append(node('h3', '', '目前沒有可顯示的紀事'), node('p', 'history-summary', '已開啟的來源在這一天沒有紀事。可在設定的「紀事來源與順序」開啟其他來源。'));
+    empty.append(node('h3', '', t("目前沒有可顯示的紀事")), node('p', 'history-summary', t("已開啟的來源在這一天沒有紀事。可在設定的「紀事來源與順序」開啟其他來源。")));
     el('history').append(empty);
   }
 }
@@ -138,7 +140,7 @@ async function savePreferences(historySources = preferences.historySources) {
   const selectors = [el<HTMLFieldSetElement>('history-sources'), el<HTMLFieldSetElement>('display-options'), el<HTMLSelectElement>('text-size'), el<HTMLFieldSetElement>('appearance'), el<HTMLSelectElement>('calendar-style'), el<HTMLSelectElement>('week-start'), el<HTMLSelectElement>('quote-category')];
   selectors.forEach(s => s.disabled = true);
   try { await writeStorage('preferences', next); preferences = next; }
-  catch { notify('設定無法儲存，請稍後重試。'); }
+  catch { notify(t("設定無法儲存，請稍後重試。")); }
   finally { applyPreferences(); selectors.forEach(s => s.disabled = false); }
 }
 el('display-options').addEventListener('change', () => void savePreferences());
@@ -162,13 +164,13 @@ const websiteCatalog = initializeWebsiteCatalog(() => shortcuts, async (sites, r
   const added = next.length - shortcuts.length + removed;
   if (!added && !removed) return true;
   if (!await saveShortcuts(next)) return false;
-  notify(removed ? `捷徑已更新：新增 ${added} 個、移除 ${removed} 個。` : `已新增 ${added} 個網站捷徑。`);
+  notify(removed ? t("捷徑已更新：新增 {0} 個、移除 {1} 個。", [added, removed]) : t("已新增 {0} 個網站捷徑。", [added]));
   return true;
 });
 function openShortcut(item?: Shortcut) {
   if (!shortcutsReady || saving) return;
   editing = item?.id ?? null;
-  el('shortcut-title').textContent = item ? '編輯捷徑' : '新增捷徑';
+  el('shortcut-title').textContent = item ? t("編輯捷徑") : t("新增捷徑");
   el<HTMLInputElement>('shortcut-name').value = item?.name ?? '';
   el<HTMLInputElement>('shortcut-url').value = item?.url ?? '';
   el<HTMLInputElement>('shortcut-icon').value = '';
@@ -184,7 +186,7 @@ async function saveShortcuts(next: Shortcut[]) {
   try {
     const ordered = next.map((s, order) => ({ ...s, order }));
     await writeStorage('shortcuts', ordered); shortcuts = ordered; renderShortcuts(); return true;
-  } catch { notify('捷徑無法儲存，請檢查儲存空間後重試。'); return false; }
+  } catch { notify(t("捷徑無法儲存，請檢查儲存空間後重試。")); return false; }
   finally { saving = false; dialog.querySelectorAll('button').forEach(b => b.disabled = false); }
 }
 async function reorder(from: string, to: string) {
@@ -220,7 +222,7 @@ function renderShortcuts() {
       }).then(showIcon);
     }
     link.append(icon, node('span', 'shortcut-name', item.name));
-    const edit = node('button', 'shortcut-edit', '⋯'); edit.type = 'button'; edit.dataset.editId = item.id; edit.setAttribute('aria-label', `編輯 ${item.name}`); edit.title = '編輯捷徑；Alt + 左右方向鍵排序';
+    const edit = node('button', 'shortcut-edit', '⋯'); edit.type = 'button'; edit.dataset.editId = item.id; edit.setAttribute('aria-label', t("編輯 {0}", [item.name])); edit.title = t("編輯捷徑；Alt + 左右方向鍵排序");
     edit.addEventListener('click', () => openShortcut(item));
     edit.addEventListener('keydown', e => { if (e.altKey && ['ArrowLeft', 'ArrowRight'].includes(e.key)) { e.preventDefault(); const target = shortcuts[shortcuts.findIndex(s => s.id === item.id) + (e.key === 'ArrowLeft' ? -1 : 1)]; if (target) void reorder(item.id, target.id); } });
     wrapper.addEventListener('dragstart', e => { dragging = item.id; e.dataTransfer?.setData('text/plain', item.id); wrapper.classList.add('dragging'); });
@@ -229,12 +231,12 @@ function renderShortcuts() {
     wrapper.addEventListener('drop', e => { e.preventDefault(); if (dragging) void reorder(dragging, item.id); dragging = null; });
     wrapper.append(link, edit); container.append(wrapper);
   }
-  const add = node('button', 'shortcut-add'); add.type = 'button'; add.setAttribute('aria-label', '新增捷徑'); add.disabled = !shortcutsReady;
-  add.append(node('span', 'shortcut-icon', '+'), node('span', '', '新增捷徑')); add.addEventListener('click', () => openShortcut()); container.append(add);
+  const add = node('button', 'shortcut-add'); add.type = 'button'; add.setAttribute('aria-label', t("新增捷徑")); add.disabled = !shortcutsReady;
+  add.append(node('span', 'shortcut-icon', '+'), node('span', '', t("新增捷徑"))); add.addEventListener('click', () => openShortcut()); container.append(add);
   const browse = node('button', 'shortcut-add shortcut-catalog'); browse.type = 'button'; browse.disabled = !shortcutsReady;
-  browse.setAttribute('aria-label', '常用網站');
+  browse.setAttribute('aria-label', t("常用網站"));
   const browseIcon = node('span', 'shortcut-icon'); browseIcon.append(websiteGridIcon());
-  browse.append(browseIcon, node('span', '', '常用網站'));
+  browse.append(browseIcon, node('span', '', t("常用網站")));
   browse.addEventListener('click', () => { if (shortcutsReady && !saving) websiteCatalog.open(); });
   container.append(browse);
   websiteCatalog.refresh();
@@ -243,7 +245,7 @@ el('shortcut-form').addEventListener('submit', async event => {
   event.preventDefault();
   const name = el<HTMLInputElement>('shortcut-name').value.trim();
   try {
-    if (!name) throw new Error('請輸入捷徑名稱。');
+    if (!name) throw new Error(t("請輸入捷徑名稱。"));
     const url = normalizeUrl(el<HTMLInputElement>('shortcut-url').value);
     let icon = el<HTMLInputElement>('shortcut-icon-clear').checked ? undefined : shortcuts.find(s => s.id === editing)?.icon;
     const file = el<HTMLInputElement>('shortcut-icon').files?.[0];
@@ -251,16 +253,16 @@ el('shortcut-form').addEventListener('submit', async event => {
     const item = { id: editing ?? crypto.randomUUID(), name, url, order: shortcuts.length, ...(icon ? { icon } : {}) };
     const next = editing ? shortcuts.map(s => s.id === editing ? { ...item, order: s.order } : s) : [...shortcuts, item];
     if (await saveShortcuts(next)) dialog.close();
-  } catch (error) { el('shortcut-error').textContent = error instanceof Error ? error.message : '網址格式有誤。'; }
+  } catch (error) { el('shortcut-error').textContent = error instanceof Error ? error.message : t("網址格式有誤。"); }
 });
 el('shortcut-delete').addEventListener('click', async () => { if (editing && await saveShortcuts(shortcuts.filter(s => s.id !== editing))) dialog.close(); });
 async function initialize() {
   renderCalendar(); applyPreferences(); renderShortcuts();
   const [storedShortcuts, storedPreferences] = await Promise.allSettled([loadShortcuts(), readStorage('preferences')]);
   try { if (storedShortcuts.status === 'rejected') throw storedShortcuts.reason; shortcuts = parseShortcuts(storedShortcuts.value); shortcutsReady = true; }
-  catch { notify('無法讀取已儲存的捷徑；暫時顯示預設捷徑。請重新載入後再編輯。'); }
+  catch { notify(t("無法讀取已儲存的捷徑；暫時顯示預設捷徑。請重新載入後再編輯。")); }
   if (storedPreferences.status === 'fulfilled') { preferences = parsePreferences(storedPreferences.value); preferencesReady = true; }
-  else { notify('無法讀取設定，請重新載入後再試。'); }
+  else { notify(t("無法讀取設定，請重新載入後再試。")); }
   el<HTMLFieldSetElement>('history-sources').disabled = !preferencesReady;
   el<HTMLFieldSetElement>('display-options').disabled = !preferencesReady;
   el<HTMLSelectElement>('text-size').disabled = !preferencesReady;
@@ -272,7 +274,7 @@ async function initialize() {
 }
 if (extensionStorage()) chrome.storage.onChanged.addListener((changes, area) => {
   if (area !== 'local') return;
-  if (changes.shortcuts) { try { shortcuts = parseShortcuts(changes.shortcuts.newValue); renderShortcuts(); } catch { notify('其他分頁的捷徑資料無法讀取。'); } }
+  if (changes.shortcuts) { try { shortcuts = parseShortcuts(changes.shortcuts.newValue); renderShortcuts(); } catch { notify(t("其他分頁的捷徑資料無法讀取。")); } }
   if (changes.preferences) { preferences = parsePreferences(changes.preferences.newValue); applyPreferences(); }
 });
 else window.addEventListener('storage', event => { if (['shortcuts', 'preferences'].includes(event.key ?? '')) void initialize(); });
@@ -285,6 +287,6 @@ const concepts = createConceptLayouts(date => { selectedDate = date; renderCalen
 setInterval(() => concepts.refresh(), 30_000);
 void initializeTodos();
 initializePersonalHistory(() => { lastDate = ''; renderCalendar(); });
-void initialize().catch(() => notify('頁面載入失敗，請重新整理。'));
+void initialize().catch(() => notify(t("頁面載入失敗，請重新整理。")));
 
 void initializeDataUpdates(() => { lastDate = ''; renderCalendar(); concepts.refreshData(); });

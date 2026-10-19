@@ -1,3 +1,4 @@
+import { t } from '../i18n';
 import { searchUrl } from './search';
 
 const imageTypes = new Set(['image/png', 'image/jpeg', 'image/webp', 'image/gif', 'image/bmp']);
@@ -21,8 +22,8 @@ export function initializeSearch(reportError: (message: string) => void) {
       .find(item => item.kind === 'file' && item.type.startsWith('image/'))?.getAsFile();
     if (!file) return;
     event.preventDefault();
-    if (!imageTypes.has(file.type)) { reportError('圖片搜尋支援 PNG、JPEG、WebP、GIF 或 BMP。'); return; }
-    if (file.size > 20 * 1024 * 1024) { reportError('圖片不可超過 20 MB。'); return; }
+    if (!imageTypes.has(file.type)) { reportError(t("圖片搜尋支援 PNG、JPEG、WebP、GIF 或 BMP。")); return; }
+    if (file.size > 20 * 1024 * 1024) { reportError(t("圖片不可超過 20 MB。")); return; }
     const attempt = ++revision;
     const url = URL.createObjectURL(file);
     const image = new Image(); image.src = url;
@@ -37,7 +38,7 @@ export function initializeSearch(reportError: (message: string) => void) {
       (document.getElementById('image-search-submit') as HTMLButtonElement).focus();
     }).catch(() => {
       URL.revokeObjectURL(url);
-      if (attempt === revision) reportError('無法讀取這張圖片，請重新複製後貼上。');
+      if (attempt === revision) reportError(t("無法讀取這張圖片，請重新複製後貼上。"));
     });
   });
   form.addEventListener('submit', () => {

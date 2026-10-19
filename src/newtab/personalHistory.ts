@@ -1,3 +1,4 @@
+import { t } from '../i18n';
 import { parsePersonalHistory } from '../calendar/personalHistory';
 import { parsePersonalHistoryFile } from '../calendar/personalHistoryFile';
 import { readHistoryWorkbook, parseHistorySheet, type HistorySheet } from '../calendar/spreadsheet';
@@ -22,33 +23,33 @@ export function initializePersonalHistory(refresh: () => void) {
   function showPreview(entries: HistoryEntry[]) {
     pending = entries; preview.replaceChildren();
     for (const entry of entries.slice(0, 5)) { const li = document.createElement('li'); li.textContent = `${entry.year}-${entry.date} · ${entry.title}`; preview.append(li); }
-    status.textContent = `已驗證 ${entries.length} 筆。按「匯入並取代」會取代目前的個人紀事${entries.length ? '，公共歷史資料不受影響。' : '並清空清單。'}`;
+    status.textContent = t("已驗證 {0} 筆。按「匯入並取代」會取代目前的個人紀事{1}", [entries.length, entries.length ? t("，公共歷史資料不受影響。") : t("並清空清單。")]);
   }
   sheetPicker.onchange = () => {
     pending = undefined; preview.replaceChildren();
     try { showPreview(parseHistorySheet(sheets[Number(sheetPicker.value)])); }
-    catch (error) { status.textContent = error instanceof Error ? error.message : '工作表讀取失敗。'; }
+    catch (error) { status.textContent = error instanceof Error ? error.message : t("工作表讀取失敗。"); }
     controls();
   };
   function apply(value: unknown) {
     const parsed = value === undefined ? undefined : parsePersonalHistory(value);
     current = parsed ?? historyDatasets.find(d => d.id === 'personal')!.entries;
     setPersonalHistory(parsed); ready = true;
-    el('personal-history-count').textContent = `目前 ${current.length} 筆個人／家族紀事`;
+    el('personal-history-count').textContent = t("目前 {0} 筆個人／家族紀事", [current.length]);
     controls(); refresh();
   }
   async function load() {
     const token = ++loadRevision;
     try { const value = await readStorage('personalHistory'); if (token === loadRevision) apply(value); }
-    catch { if (token === loadRevision) { status.textContent = '無法讀取已儲存的個人紀事，請重新整理後再試。'; ready = false; controls(); } }
+    catch { if (token === loadRevision) { status.textContent = t("無法讀取已儲存的個人紀事，請重新整理後再試。"); ready = false; controls(); } }
   }
   el<HTMLButtonElement>('personal-history-open').onclick = () => { el<HTMLDialogElement>('settings-dialog').close(); dialog.showModal(); };
   file.onchange = async () => {
     const token = ++revision; pending = undefined; sheets = []; sheetPicker.replaceChildren(); sheetField.hidden = true; preview.replaceChildren(); controls();
-    const selected = file.files?.[0]; if (!selected) { status.textContent = '請選擇 CSV、XLSX、ODS 或 JSON 檔案。'; return; }
+    const selected = file.files?.[0]; if (!selected) { status.textContent = t("請選擇 CSV、XLSX、ODS 或 JSON 檔案。"); return; }
     try {
-      if (selected.size > 5 * 1024 * 1024) throw new Error('檔案不得超過 5 MB。');
-      status.textContent = '正在讀取檔案…';
+      if (selected.size > 5 * 1024 * 1024) throw new Error(t("檔案不得超過 5 MB。"));
+      status.textContent = t("正在讀取檔案…");
       if (/\.(xlsx|ods)$/i.test(selected.name)) {
         const bytes = await selected.arrayBuffer(); if (token !== revision) return;
         const loaded = await readHistoryWorkbook(bytes); if (token !== revision) return;
@@ -61,7 +62,7 @@ export function initializePersonalHistory(refresh: () => void) {
       const entries = parsePersonalHistoryFile(selected.name, content);
       showPreview(entries);
       }
-    } catch (error) { if (token !== revision) return; status.textContent = error instanceof SyntaxError ? 'JSON 格式錯誤，請確認檔案內容。' : error instanceof Error ? error.message : '讀取失敗。'; }
+    } catch (error) { if (token !== revision) return; status.textContent = error instanceof SyntaxError ? t("JSON 格式錯誤，請確認檔案內容。") : error instanceof Error ? error.message : t("讀取失敗。"); }
     controls();
   };
   save.onclick = async () => {
@@ -71,8 +72,8 @@ export function initializePersonalHistory(refresh: () => void) {
       await writeStorage('personalHistory', entries);
       ++loadRevision; apply(entries); pending = undefined; file.value = ''; preview.replaceChildren();
       sheets = []; sheetPicker.replaceChildren(); sheetField.hidden = true;
-      status.textContent = `已匯入 ${entries.length} 筆，已儲存在本機。`;
-    } catch { status.textContent = '儲存失敗（可能空間不足）；原有紀事仍保留，可重新嘗試。'; }
+      status.textContent = t("已匯入 {0} 筆，已儲存在本機。", [entries.length]);
+    } catch { status.textContent = t("儲存失敗（可能空間不足）；原有紀事仍保留，可重新嘗試。"); }
     finally { busy = false; controls(); }
   };
   exportButton.onclick = () => {

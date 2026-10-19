@@ -1,3 +1,4 @@
+import { t, weekdayName } from '../i18n';
 import { getPublicData } from '../data/publicData';
 
 /** Weekends stay red; the local holiday calendar also covers weekday days off. */
@@ -12,14 +13,14 @@ export function isPaperRedDay(year: number, month: number, day: number) {
 export function renderPaperMonth(table: HTMLTableElement, date: { year: number; month: number; day: number }) {
   const { year, month, day } = date;
   table.replaceChildren();
-  table.setAttribute('aria-label', `${year} 年 ${month} 月月曆`);
-  table.createCaption().textContent = `${year} · ${month} 月`;
+  table.setAttribute('aria-label', t("{0} 年 {1} 月月曆", [year, month]));
+  table.createCaption().textContent = t("{0} · {1} 月", [year, month]);
   const heading = table.createTHead().insertRow();
   ['S', 'M', 'T', 'W', 'T', 'F', 'S'].forEach((label, index) => {
     const cell = document.createElement('th');
     cell.scope = 'col'; cell.textContent = label;
     if (index === 0 || index === 6) cell.className = 'paper-red-day';
-    cell.setAttribute('aria-label', `星期${'日一二三四五六'[index]}`);
+    cell.setAttribute('aria-label', weekdayName(index));
     heading.append(cell);
   });
   const first = new Date(Date.UTC(year, month - 1, 1)).getUTCDay();
@@ -35,7 +36,7 @@ export function renderPaperMonth(table: HTMLTableElement, date: { year: number; 
     time.textContent = String(value);
     if (isPaperRedDay(year, month, value)) time.className = 'paper-red-day';
     const holiday = getPublicData().holidays[time.dateTime];
-    if (holiday) time.title = holiday;
+    if (holiday) time.title = t(holiday);
     if (value === day) time.setAttribute('aria-current', 'date');
     cell.append(time);
   }

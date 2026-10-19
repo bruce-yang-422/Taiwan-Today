@@ -1,3 +1,4 @@
+import { t } from '../i18n';
 import { extensionStorage, readStorage, writeStorage } from '../shortcuts/storage';
 
 type Todo = { id: string; text: string; done: boolean };
@@ -31,7 +32,7 @@ export async function initializeTodos() {
       const text = document.createElement('span'); text.textContent = item.text;
       check.addEventListener('change', () => void save(items => items.map(todo => todo.id === item.id ? { ...todo, done: check.checked } : todo)));
       const remove = document.createElement('button');
-      remove.type = 'button'; remove.textContent = '×'; remove.setAttribute('aria-label', `刪除待辦：${item.text}`);
+      remove.type = 'button'; remove.textContent = '×'; remove.setAttribute('aria-label', t("刪除待辦：{0}", [item.text]));
       remove.addEventListener('click', () => void save(items => items.filter(todo => todo.id !== item.id)));
       label.append(check, text); row.append(label, remove); list.append(row);
     }
@@ -50,7 +51,7 @@ export async function initializeTodos() {
       });
       error.textContent = '';
       return true;
-    } catch { error.textContent = '待辦無法儲存，請稍後重試。'; return false; }
+    } catch { error.textContent = t("待辦無法儲存，請稍後重試。"); return false; }
     finally { saving = false; render(); }
   }
 
@@ -63,7 +64,7 @@ export async function initializeTodos() {
   });
   async function reload() {
     try { todos = parse(await readStorage(key)); ready = true; error.textContent = ''; }
-    catch { ready = false; error.textContent = '待辦讀取失敗，請重新載入後再試。'; }
+    catch { ready = false; error.textContent = t("待辦讀取失敗，請重新載入後再試。"); }
     render();
   }
   if (extensionStorage()) chrome.storage.onChanged.addListener((changes, area) => {

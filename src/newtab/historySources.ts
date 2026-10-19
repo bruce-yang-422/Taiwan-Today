@@ -1,3 +1,4 @@
+import { t } from '../i18n';
 import { historyDatasets, type HistorySourceSetting } from '../calendar/history';
 
 export function createHistorySourceControls(save: (sources: HistorySourceSetting[]) => Promise<void>) {
@@ -14,11 +15,11 @@ export function createHistorySourceControls(save: (sources: HistorySourceSetting
         await save(sources.map(s => s.id === source.id ? { ...s, enabled: check.checked } : { ...s }));
         document.getElementById(check.id)?.focus();
       });
-      label.append(check, document.createTextNode(dataset.label)); row.append(label);
+      label.append(check, document.createTextNode(t(dataset.label))); row.append(label);
       const actions = document.createElement('span'); actions.className = 'source-move';
-      for (const [delta, text, name] of [[-1, '↑', '上移'], [1, '↓', '下移']] as const) {
+      for (const [delta, text, name] of [[-1, '↑', t("上移")], [1, '↓', t("下移")]] as const) {
         const button = document.createElement('button'); button.type = 'button'; button.textContent = text;
-        button.id = `source-${source.id}-${delta}`; button.setAttribute('aria-label', `${name}${dataset.label}`);
+        button.id = `source-${source.id}-${delta}`; button.setAttribute('aria-label', `${name} ${t(dataset.label)}`.trim());
         button.disabled = index + delta < 0 || index + delta >= sources.length;
         button.addEventListener('click', async () => {
           const next = sources.map(s => ({ ...s }));

@@ -1,3 +1,4 @@
+import { t } from '../i18n';
 import { catalogSites, websiteCategories, websiteKey, type CatalogSite } from '../shortcuts/websiteCatalog';
 import type { Shortcut } from '../shortcuts/shortcuts';
 import { websiteGridIcon } from './websiteIcon';
@@ -25,8 +26,8 @@ export function initializeWebsiteCatalog(getShortcuts: () => Shortcut[], save: (
       if (keys.has(websiteKey(site.url))) selection.delete(site.id);
       else removal.delete(site.id);
     }
-    count.textContent = removal.size ? `新增 ${selection.size} 個・移除 ${removal.size} 個` : `已選 ${selection.size} 個網站`;
-    submit.textContent = removal.size ? '儲存變更' : selection.size ? `新增 ${selection.size} 個捷徑` : '儲存變更';
+    count.textContent = removal.size ? t("新增 {0} 個・移除 {1} 個", [selection.size, removal.size]) : t("已選 {0} 個網站", [selection.size]);
+    submit.textContent = removal.size ? t("儲存變更") : selection.size ? t("新增 {0} 個捷徑", [selection.size]) : t("儲存變更");
     submit.disabled = busy || (selection.size === 0 && removal.size === 0);
     clear.hidden = selection.size === 0 && removal.size === 0;
     clear.disabled = busy;
@@ -37,9 +38,9 @@ export function initializeWebsiteCatalog(getShortcuts: () => Shortcut[], save: (
     categories.querySelectorAll<HTMLButtonElement>('button').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.category === category)));
     list.replaceChildren();
     const sites = category === 'all' ? catalogSites : websiteCategories.find(item => item.id === category)!.sites;
-    const matches = sites.filter(site => `${site.name} ${site.url}`.toLocaleLowerCase().includes(query));
-    document.getElementById('website-catalog-section')!.textContent = category === 'all' ? '全部網站' : websiteCategories.find(item => item.id === category)!.name;
-    document.getElementById('website-catalog-results')!.textContent = `${matches.length} 個網站`;
+    const matches = sites.filter(site => `${site.name} ${t(site.name)} ${site.url}`.toLocaleLowerCase().includes(query));
+    document.getElementById('website-catalog-section')!.textContent = category === 'all' ? t("全部網站") : t(websiteCategories.find(item => item.id === category)!.name);
+    document.getElementById('website-catalog-results')!.textContent = t("{0} 個網站", [matches.length]);
     for (const site of matches) {
       const added = keys.has(websiteKey(site.url));
       const label = document.createElement('label'); label.className = 'catalog-site';
@@ -58,13 +59,13 @@ export function initializeWebsiteCatalog(getShortcuts: () => Shortcut[], save: (
         badge.replaceChildren(image);
       }
       const text = document.createElement('span'); text.className = 'catalog-site-text';
-      const name = document.createElement('strong'); name.textContent = site.name;
+      const name = document.createElement('strong'); name.textContent = t(site.name);
       const domain = document.createElement('small'); domain.textContent = new URL(site.url).hostname;
       text.append(name, domain); label.append(badge, text);
       const status = document.createElement('span'); status.className = 'catalog-added'; status.hidden = !added;
       const updateStatus = () => {
         const removing = removal.has(site.id);
-        status.textContent = removing ? '將移除' : '已新增';
+        status.textContent = removing ? t("將移除") : t("已新增");
         label.classList.toggle('catalog-site-removing', removing);
         label.classList.toggle('catalog-site-existing', added && !removing);
       };
@@ -81,11 +82,11 @@ export function initializeWebsiteCatalog(getShortcuts: () => Shortcut[], save: (
       });
       list.append(label);
     }
-    if (!list.children.length) { const empty = document.createElement('p'); empty.className = 'catalog-empty'; empty.textContent = '找不到符合的網站，試試其他分類或關鍵字。'; list.append(empty); }
+    if (!list.children.length) { const empty = document.createElement('p'); empty.className = 'catalog-empty'; empty.textContent = t("找不到符合的網站，試試其他分類或關鍵字。"); list.append(empty); }
     updateCount();
   }
-  for (const item of [{ id: 'all', name: '全部' }, ...websiteCategories]) {
-    const button = document.createElement('button'); button.type = 'button'; button.textContent = item.name;
+  for (const item of [{ id: 'all', name: t("全部") }, ...websiteCategories]) {
+    const button = document.createElement('button'); button.type = 'button'; button.textContent = t(item.name);
     const total = document.createElement('span'); total.className = 'catalog-category-count'; total.setAttribute('aria-hidden', 'true');
     total.textContent = String(item.id === 'all' ? catalogSites.length : websiteCategories.find(category => category.id === item.id)!.sites.length);
     button.append(total);
@@ -104,8 +105,8 @@ export function initializeWebsiteCatalog(getShortcuts: () => Shortcut[], save: (
       const selected = catalogSites.filter(site => selection.has(site.id));
       const removed = catalogSites.filter(site => removal.has(site.id));
       if (await save(selected, removed)) { selection.clear(); removal.clear(); dialog.close(); }
-      else error.textContent = '捷徑無法儲存，請稍後重試。';
-    } catch { error.textContent = '捷徑無法儲存，請稍後重試。'; }
+      else error.textContent = t("捷徑無法儲存，請稍後重試。");
+    } catch { error.textContent = t("捷徑無法儲存，請稍後重試。"); }
     finally {
       busy = false; search.disabled = false;
       dialog.querySelectorAll<HTMLButtonElement>('button').forEach(button => button.disabled = false);
