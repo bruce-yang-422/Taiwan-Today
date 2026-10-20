@@ -21,6 +21,7 @@ test('permission denial preserves data and a later grant proceeds with the updat
   });
   await page.goto('/newtab.html');
   await page.locator('#settings-open').click();
+  await page.locator('#settings-tab-data').click();
   await page.locator('#data-update-now').click();
   await expect(page.locator('#data-update-status')).toContainText('未允許 GitHub');
   expect(requests).toBe(0);

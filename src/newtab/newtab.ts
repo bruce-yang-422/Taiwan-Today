@@ -12,6 +12,10 @@ import './traditionalLayout.css';
 import './googleApps.css';
 import './settingsTabs.css';
 import './websiteCatalog.css';
+import './weather.css';
+import { initializeWeather } from './weather';
+import { initializeCalendarContext } from './calendarContext';
+import { getCalendarContext, usesTaiwanCalendar } from '../calendar/context';
 import { initializeWebsiteCatalog } from './websiteCatalog';
 import { websiteGridIcon } from './websiteIcon';
 import { updateCatalogSites, websiteKey } from '../shortcuts/websiteCatalog';
@@ -37,6 +41,7 @@ import { applyIconContrast } from '../shortcuts/iconContrast';
 import { extensionStorage, readStorage, writeStorage } from '../shortcuts/storage';
 
 const el = <T extends HTMLElement = HTMLElement>(id: string) => document.getElementById(id) as T;
+const weather = initializeWeather();
 initializeAbout();
 const node = <K extends keyof HTMLElementTagNameMap>(tag: K, className = '', text = '') => {
   const element = document.createElement(tag); element.className = className; element.textContent = text; return element;
@@ -52,7 +57,7 @@ function renderCalendar() {
   if (lastDate === date.key) return;
   lastDate = date.key;
   if (historyDate !== date.key) { historyExpanded = false; historyDate = date.key; }
-  el('year').textContent = t("{0} · 民國 {1} 年", [date.year, date.year - 1911]);
+  el('year').textContent = usesTaiwanCalendar() ? t("{0} · 民國 {1} 年", [date.year, date.year - 1911]) : String(date.year);
   el('month').textContent = monthName(date.year, date.month);
   el('day').textContent = String(date.day);
   document.querySelector('.calendar')!.classList.toggle('paper-red-day', isPaperRedDay(date.year, date.month, date.day));
@@ -117,6 +122,7 @@ function applyPreferences() {
   renderHistorySources(preferences.historySources);
   document.documentElement.classList.toggle('dark', preferences.appearance === 'dark' || (preferences.appearance === 'system' && media.matches));
   document.documentElement.dataset.style = preferences.style;
+  weather.setVisible(preferences.style === 'traditional');
   document.documentElement.dataset.textSize = preferences.textSize;
   el<HTMLSelectElement>('text-size').value = preferences.textSize;
   concepts.setWeekStart(preferences.weekStart);
@@ -285,6 +291,11 @@ setInterval(renderCalendar, 30_000);
 initializeGoogleApps();
 initializeClock();
 const concepts = createConceptLayouts(date => { selectedDate = date; renderCalendar(); });
+window.addEventListener('calendarcontextchange', () => {
+  document.documentElement.dataset.calendarMode = getCalendarContext().mode;
+  selectedDate = undefined; lastDate = ''; renderCalendar(); concepts.refreshContext();
+});
+initializeCalendarContext();
 setInterval(() => concepts.refresh(), 30_000);
 void initializeTodos();
 initializePersonalHistory(() => { lastDate = ''; renderCalendar(); });

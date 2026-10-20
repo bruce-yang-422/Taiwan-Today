@@ -3,7 +3,7 @@ import { mkdtemp, readFile, rm } from 'node:fs/promises';
 import { resolve, dirname, basename } from 'node:path';
 import { tmpdir } from 'node:os';
 
-test('extension replaces Chrome globe, retries, caches and refreshes changed icons', async () => {
+test('extension uses Chrome favicons, preserves cached icons and blocks arbitrary website requests', async () => {
   const profile = await mkdtemp(resolve(tmpdir(), 'taiwan-icon-test-'));
   const extension = resolve('dist');
   const context = await chromium.launchPersistentContext(profile, {
@@ -11,76 +11,83 @@ test('extension replaces Chrome globe, retries, caches and refreshes changed ico
     args: [`--disable-extensions-except=${extension}`, `--load-extension=${extension}`],
   });
   try {
-    const firstIcon = await readFile('public/icons/youtube.png');
-    const secondIcon = await readFile('public/icons/github.ico');
-    let requests = 0, fail = false, changed = false;
-    const cookieHeaders: string[] = [];
-    await context.route('https://**/*', async route => {
-      const url = route.request().url();
-      cookieHeaders.push(route.request().headers().cookie || '');
-      if (url === 'https://tw.yahoo.com/') {
-        requests++;
-        if (fail || requests < 3) return route.fulfill({ status: 503, body: 'temporary failure' });
-        return route.fulfill({ contentType: 'text/html', body: '<link rel="icon" href="https://s.yimg.com/test/favicon">' });
-      }
-      if (url === 'https://s.yimg.com/test/favicon' && !fail) {
-        return route.fulfill({ contentType: changed ? 'image/x-icon' : 'image/png', body: changed ? secondIcon : firstIcon });
-      }
-      return route.fulfill({ status: 404, body: 'not found' });
+    const firstIcon = (await readFile('public/icons/youtube.png')).toString('base64');
+    const secondIcon = (await readFile('public/icons/taiwan-today.png')).toString('base64');
+    const websiteRequests: string[] = [];
+    await context.route('https://**/*', route => {
+      if (new URL(route.request().url()).hostname === 'api.open-meteo.com') return route.fulfill({ json: { permitted: true } });
+      websiteRequests.push(route.request().url()); return route.abort();
     });
-    await context.setOffline(true);
+    // Supply controlled Chrome favicon results, retaining the real default-icon endpoint.
+    await context.addInitScript(({ firstIcon, secondIcon }) => {
+      const originalFetch = window.fetch.bind(window);
+      window.fetch = async (input, init) => {
+        const url = new URL(input instanceof Request ? input.url : String(input), location.href);
+        if (url.origin === location.origin && url.pathname === '/_favicon/' && url.searchParams.get('pageUrl') === 'https://tw.yahoo.com/') {
+          const { iconTestState } = await chrome.storage.local.get('iconTestState');
+          const state = (iconTestState || {}) as { changed?: boolean; fail?: boolean; requests?: number };
+          await chrome.storage.local.set({ iconTestState: { ...state, requests: (state.requests || 0) + 1 } });
+          if (state.fail) throw new TypeError('Favicon unavailable');
+          return new Response(Uint8Array.from(atob(state.changed ? secondIcon : firstIcon), c => c.charCodeAt(0)), { headers: { 'Content-Type': 'image/png' } });
+        }
+        return originalFetch(input, init);
+      };
+    }, { firstIcon, secondIcon });
     const page = await context.newPage();
     await page.goto('chrome://newtab/');
     await expect(page.getByRole('button', { name: '新增捷徑', exact: true })).toBeEnabled();
+    const manifest = await page.evaluate(() => chrome.runtime.getManifest());
+    expect(manifest.host_permissions).toEqual(['https://api.open-meteo.com/*']);
+    expect(manifest.optional_host_permissions).toEqual(['https://raw.githubusercontent.com/*']);
+    expect(await page.evaluate(async () => (await (await fetch('https://api.open-meteo.com/v1/forecast?latitude=25&longitude=121')).json()).permitted)).toBe(true);
+    expect(await page.evaluate(() => chrome.permissions.contains({ origins:['https://example.com/*'] }))).toBe(false);
+    expect(await page.evaluate(async () => {
+      try { await fetch('https://example.com/'); return 'allowed'; } catch { return 'blocked'; }
+    })).toBe('blocked');
+    // The actual Chrome endpoint is still accessible with only the favicon permission.
+    expect(await page.evaluate(async () => (await fetch(chrome.runtime.getURL('/_favicon/?pageUrl=https://taiwan-today-no-icon.invalid/&size=32'))).ok)).toBe(true);
     await page.evaluate(async () => {
       await chrome.storage.local.set({ shortcuts: [{ id: 'yahoo', name: 'Yahoo 奇摩', url: 'https://tw.yahoo.com/', order: 0 }], chatgptShortcutAdded: true });
     });
-    await expect(page.getByRole('link', { name: 'Yahoo 奇摩', exact: true }).locator('img')).toHaveAttribute('src', './icons/websites/yahoo.png');
-    await context.addCookies([{ name: 'login', value: 'secret', domain: 'tw.yahoo.com', path: '/' }]);
-    await context.setOffline(false);
-    await page.reload();
     const image = page.getByRole('link', { name: 'Yahoo 奇摩', exact: true }).locator('img');
-    await expect(image).toHaveAttribute('src', /^data:image\/png;base64,/, { timeout: 20000 });
-    expect(requests).toBe(3);
+    await expect(image).toHaveAttribute('src', /^data:image\/png;base64,/);
     const original = await image.getAttribute('src');
-    expect(cookieHeaders.every(header => header === '')).toBe(true);
-    await page.reload();
-    await expect(image).toHaveAttribute('src', original!);
-    expect(requests).toBe(3);
-
-    const expire = async () => page.evaluate(async () => {
-      const { automaticShortcutIcons } = await chrome.storage.local.get('automaticShortcutIcons');
-      const cache = automaticShortcutIcons as Record<string, { icon?: string; checked: number; retryAfter?: number }>;
+    const requests = async () => page.evaluate(async () => {
+      const { iconTestState } = await chrome.storage.local.get('iconTestState');
+      return (iconTestState as { requests: number }).requests;
+    });
+    expect(await requests()).toBe(1);
+    await page.reload(); await expect(image).toHaveAttribute('src', original!);
+    expect(await requests()).toBe(1);
+    const expire = async (fail: boolean) => page.evaluate(async fail => {
+      const { automaticShortcutIcons, iconTestState } = await chrome.storage.local.get(['automaticShortcutIcons','iconTestState']);
+      const cache = automaticShortcutIcons as Record<string, { checked: number; retryAfter?: number }>;
       cache['https://tw.yahoo.com'].checked = Date.now() - 8 * 86400000;
       delete cache['https://tw.yahoo.com'].retryAfter;
-      await chrome.storage.local.set({ automaticShortcutIcons: cache });
-    });
-    await expire(); changed = true;
-    await page.reload();
+      await chrome.storage.local.set({ automaticShortcutIcons: cache, iconTestState: { ...(iconTestState as object), changed: true, fail } });
+    }, fail);
+    await expire(false); await page.reload();
+    await expect.poll(requests).toBe(2);
     await expect(image).toHaveAttribute('src', /^data:image\/png;base64,/);
     await expect.poll(() => image.getAttribute('src')).not.toBe(original);
     const updated = await image.getAttribute('src');
-    expect(requests).toBe(4);
-
-    await expire(); fail = true;
-    await page.reload();
+    expect(await requests()).toBe(2);
+    await expire(true); await page.reload();
     await expect(image).toHaveAttribute('src', updated!);
     await expect.poll(async () => page.evaluate(async () => {
       const { automaticShortcutIcons } = await chrome.storage.local.get('automaticShortcutIcons');
       return (automaticShortcutIcons as Record<string, { retryAfter?: number }>)['https://tw.yahoo.com'].retryAfter || 0;
-    }), { timeout: 20000 }).toBeGreaterThan(Date.now());
-    expect(requests).toBe(7);
-    await page.reload();
-    await expect(image).toHaveAttribute('src', updated!);
-    expect(requests).toBe(7);
-
+    })).toBeGreaterThan(Date.now());
+    expect(await requests()).toBe(3);
+    await page.reload(); await expect(image).toHaveAttribute('src', updated!);
+    expect(await requests()).toBe(3);
     await page.evaluate(async icon => {
       await chrome.storage.local.set({ shortcuts: [{ id: 'yahoo', name: 'Yahoo 奇摩', url: 'https://tw.yahoo.com/', order: 0, icon }] });
     }, original);
     await expect(image).toHaveAttribute('src', original!);
-    await page.reload();
-    await expect(image).toHaveAttribute('src', original!);
-    expect(requests).toBe(7);
+    await page.reload(); await expect(image).toHaveAttribute('src', original!);
+    expect(await requests()).toBe(3);
+    expect(websiteRequests).toEqual([]);
     await page.evaluate(async () => {
       const artwork = (color: string, opaque = false) => {
         const canvas = document.createElement('canvas'); canvas.width = 32; canvas.height = 32;

@@ -58,10 +58,10 @@
 [data-style=traditional] .brand { background:color-mix(in srgb,var(--paper) 90%,transparent); border-radius:4px; padding:4px 8px; }
 [data-style=traditional] .google-apps-toggle { background:var(--paper); }
 :root[data-style=traditional] .calendar-clock-group>.eyebrow {
-  position:relative; z-index:1; padding:18px 44px; border:1px solid #6b3f3d; outline:0;
+  position:relative; z-index:1; padding:18px 44px; border:1px solid #79000d; outline:0;
   border-radius:5px 5px 1px 1px; color:#f7f1e6;
-  background:repeating-linear-gradient(15deg,#e2d2ba0b 0 1px,transparent 1px 4px),linear-gradient(110deg,#935955,#7f4a48 70%,#6e403e);
-  box-shadow:inset 0 1px 2px #eedfcc88,inset -4px 0 0 #5d383655,2px 4px 5px #332d2a33;
+  background:repeating-linear-gradient(15deg,#ffffff08 0 1px,transparent 1px 4px),linear-gradient(110deg,#be0718,#a90014 70%,#8c0010);
+  box-shadow:inset 0 1px 2px #ffffff33,inset -4px 0 0 #65000c55,2px 4px 5px #49000826;
 }
 :root[data-style=traditional] .calendar-clock-group>.eyebrow::before,
 :root[data-style=traditional] .calendar-clock-group>.eyebrow::after {

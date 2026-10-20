@@ -1,0 +1,2774 @@
+{
+  "sources": [
+    {
+      "title": "中央氣象署縣市、鄉鎮預報行政區名稱與英文名稱",
+      "urls": [
+        "https://www.cwa.gov.tw/Data/js/info/Info_County.js",
+        "https://www.cwa.gov.tw/Data/js/info/Info_Town.js"
+      ]
+    },
+    {
+      "title": "中華郵政：3碼郵遞區號與行政區中心點經緯度對照表",
+      "url": "https://data.gov.tw/dataset/25489",
+      "download": "https://www.post.gov.tw/post/download/1050812_%E8%A1%8C%E6%94%BF%E5%8D%80%E7%B6%93%E7%B7%AF%E5%BA%A6%28toPost%29.xml",
+      "license": "政府資料開放授權條款-第1版",
+      "generated": "2016-08-12",
+      "coordinateMeaning": "行政區中心點，非測站或使用者所在地"
+    }
+  ],
+  "retrieved": "2026-10-20",
+  "cities": [
+    {
+      "id": "keelung",
+      "name": "基隆市",
+      "english": "Keelung City",
+      "defaultTown": "1001701",
+      "towns": [
+        {
+          "id": "1001701",
+          "name": "中正區",
+          "english": "Zhongzheng District",
+          "latitude": 25.14365754,
+          "longitude": 121.7783549
+        },
+        {
+          "id": "1001702",
+          "name": "七堵區",
+          "english": "Qidu District",
+          "latitude": 25.10962028,
+          "longitude": 121.683628
+        },
+        {
+          "id": "1001703",
+          "name": "暖暖區",
+          "english": "Nuannuan District",
+          "latitude": 25.08097003,
+          "longitude": 121.7447344
+        },
+        {
+          "id": "1001704",
+          "name": "仁愛區",
+          "english": "Ren’ai District",
+          "latitude": 25.11945421,
+          "longitude": 121.7434205
+        },
+        {
+          "id": "1001705",
+          "name": "中山區",
+          "english": "Zhongshan District",
+          "latitude": 25.14986365,
+          "longitude": 121.7308913
+        },
+        {
+          "id": "1001706",
+          "name": "安樂區",
+          "english": "Anle District",
+          "latitude": 25.14139521,
+          "longitude": 121.7078325
+        },
+        {
+          "id": "1001707",
+          "name": "信義區",
+          "english": "Xinyi District",
+          "latitude": 25.12576579,
+          "longitude": 121.772646
+        }
+      ]
+    },
+    {
+      "id": "taipei",
+      "name": "臺北市",
+      "english": "Taipei City",
+      "defaultTown": "6300200",
+      "towns": [
+        {
+          "id": "6300100",
+          "name": "松山區",
+          "english": "Songshan District",
+          "latitude": 25.05999101,
+          "longitude": 121.5575876
+        },
+        {
+          "id": "6300200",
+          "name": "信義區",
+          "english": "Xinyi District",
+          "latitude": 25.03062083,
+          "longitude": 121.5716697
+        },
+        {
+          "id": "6300300",
+          "name": "大安區",
+          "english": "Da’an District",
+          "latitude": 25.02677012,
+          "longitude": 121.5434446
+        },
+        {
+          "id": "6300400",
+          "name": "中山區",
+          "english": "Zhongshan District",
+          "latitude": 25.06969917,
+          "longitude": 121.5381597
+        },
+        {
+          "id": "6300500",
+          "name": "中正區",
+          "english": "Zhongzheng District",
+          "latitude": 25.03240487,
+          "longitude": 121.5198839
+        },
+        {
+          "id": "6300600",
+          "name": "大同區",
+          "english": "Datong District",
+          "latitude": 25.06342433,
+          "longitude": 121.5130417
+        },
+        {
+          "id": "6300700",
+          "name": "萬華區",
+          "english": "Wanhua District",
+          "latitude": 25.0285899,
+          "longitude": 121.4979858
+        },
+        {
+          "id": "6300800",
+          "name": "文山區",
+          "english": "Wenshan District",
+          "latitude": 24.98857934,
+          "longitude": 121.5736082
+        },
+        {
+          "id": "6300900",
+          "name": "南港區",
+          "english": "Nangang District",
+          "latitude": 25.03600934,
+          "longitude": 121.6097573
+        },
+        {
+          "id": "6301000",
+          "name": "內湖區",
+          "english": "Neihu District",
+          "latitude": 25.08370623,
+          "longitude": 121.5923828
+        },
+        {
+          "id": "6301100",
+          "name": "士林區",
+          "english": "Shilin District",
+          "latitude": 25.12546704,
+          "longitude": 121.5508473
+        },
+        {
+          "id": "6301200",
+          "name": "北投區",
+          "english": "Beitou District",
+          "latitude": 25.1480682,
+          "longitude": 121.5177992
+        }
+      ]
+    },
+    {
+      "id": "new-taipei",
+      "name": "新北市",
+      "english": "New Taipei City",
+      "defaultTown": "6500100",
+      "towns": [
+        {
+          "id": "6500100",
+          "name": "板橋區",
+          "english": "Banqiao District",
+          "latitude": 25.01186453,
+          "longitude": 121.4579675
+        },
+        {
+          "id": "6500200",
+          "name": "三重區",
+          "english": "Sanchong District",
+          "latitude": 25.06281651,
+          "longitude": 121.4870977
+        },
+        {
+          "id": "6500300",
+          "name": "中和區",
+          "english": "Zhonghe District",
+          "latitude": 24.99088039,
+          "longitude": 121.4936744
+        },
+        {
+          "id": "6500400",
+          "name": "永和區",
+          "english": "Yonghe District",
+          "latitude": 25.00810199,
+          "longitude": 121.516745
+        },
+        {
+          "id": "6500500",
+          "name": "新莊區",
+          "english": "Xinzhuang District",
+          "latitude": 25.0358303,
+          "longitude": 121.4367535
+        },
+        {
+          "id": "6500600",
+          "name": "新店區",
+          "english": "Xindian District",
+          "latitude": 24.93039008,
+          "longitude": 121.5316565
+        },
+        {
+          "id": "6500700",
+          "name": "樹林區",
+          "english": "Shulin District",
+          "latitude": 24.97970609,
+          "longitude": 121.401034
+        },
+        {
+          "id": "6500800",
+          "name": "鶯歌區",
+          "english": "Yingge District",
+          "latitude": 24.9566258,
+          "longitude": 121.3466269
+        },
+        {
+          "id": "6500900",
+          "name": "三峽區",
+          "english": "Sanxia District",
+          "latitude": 24.88209766,
+          "longitude": 121.4163094
+        },
+        {
+          "id": "6501000",
+          "name": "淡水區",
+          "english": "Tamsui District",
+          "latitude": 25.18907636,
+          "longitude": 121.463904
+        },
+        {
+          "id": "6501100",
+          "name": "汐止區",
+          "english": "Xizhi District",
+          "latitude": 25.07331322,
+          "longitude": 121.6546992
+        },
+        {
+          "id": "6501200",
+          "name": "瑞芳區",
+          "english": "Ruifang District",
+          "latitude": 25.0981293,
+          "longitude": 121.8232018
+        },
+        {
+          "id": "6501300",
+          "name": "土城區",
+          "english": "Tucheng District",
+          "latitude": 24.96425102,
+          "longitude": 121.445737
+        },
+        {
+          "id": "6501400",
+          "name": "蘆洲區",
+          "english": "Luzhou District",
+          "latitude": 25.08927173,
+          "longitude": 121.4712461
+        },
+        {
+          "id": "6501500",
+          "name": "五股區",
+          "english": "Wugu District",
+          "latitude": 25.09614746,
+          "longitude": 121.4332139
+        },
+        {
+          "id": "6501600",
+          "name": "泰山區",
+          "english": "Taishan District",
+          "latitude": 25.05549774,
+          "longitude": 121.4162785
+        },
+        {
+          "id": "6501700",
+          "name": "林口區",
+          "english": "Linkou District",
+          "latitude": 25.1000868,
+          "longitude": 121.3527235
+        },
+        {
+          "id": "6501800",
+          "name": "深坑區",
+          "english": "Shenkeng District",
+          "latitude": 24.99767506,
+          "longitude": 121.6200624
+        },
+        {
+          "id": "6501900",
+          "name": "石碇區",
+          "english": "Shiding District",
+          "latitude": 24.94714107,
+          "longitude": 121.6472277
+        },
+        {
+          "id": "6502000",
+          "name": "坪林區",
+          "english": "Pinglin District",
+          "latitude": 24.91097073,
+          "longitude": 121.724223
+        },
+        {
+          "id": "6502100",
+          "name": "三芝區",
+          "english": "Sanzhi District",
+          "latitude": 25.23159891,
+          "longitude": 121.515558
+        },
+        {
+          "id": "6502200",
+          "name": "石門區",
+          "english": "Shimen District",
+          "latitude": 25.26518079,
+          "longitude": 121.5692761
+        },
+        {
+          "id": "6502300",
+          "name": "八里區",
+          "english": "Bali District",
+          "latitude": 25.13812763,
+          "longitude": 121.4138359
+        },
+        {
+          "id": "6502400",
+          "name": "平溪區",
+          "english": "Pingxi District",
+          "latitude": 25.02607068,
+          "longitude": 121.7578817
+        },
+        {
+          "id": "6502500",
+          "name": "雙溪區",
+          "english": "Shuangxi District",
+          "latitude": 24.99698394,
+          "longitude": 121.8329822
+        },
+        {
+          "id": "6502600",
+          "name": "貢寮區",
+          "english": "Gongliao District",
+          "latitude": 25.02485641,
+          "longitude": 121.9182466
+        },
+        {
+          "id": "6502700",
+          "name": "金山區",
+          "english": "Jinshan District",
+          "latitude": 25.21714594,
+          "longitude": 121.6052639
+        },
+        {
+          "id": "6502800",
+          "name": "萬里區",
+          "english": "Wanli District",
+          "latitude": 25.17572457,
+          "longitude": 121.6439307
+        },
+        {
+          "id": "6502900",
+          "name": "烏來區",
+          "english": "Wulai District",
+          "latitude": 24.78824295,
+          "longitude": 121.5414806
+        }
+      ]
+    },
+    {
+      "id": "taoyuan",
+      "name": "桃園市",
+      "english": "Taoyuan City",
+      "defaultTown": "6800100",
+      "towns": [
+        {
+          "id": "6800100",
+          "name": "桃園區",
+          "english": "Taoyuan District",
+          "latitude": 25.00040024,
+          "longitude": 121.2996612
+        },
+        {
+          "id": "6800200",
+          "name": "中壢區",
+          "english": "Zhongli District",
+          "latitude": 24.97993803,
+          "longitude": 121.2147243
+        },
+        {
+          "id": "6800300",
+          "name": "大溪區",
+          "english": "Daxi District",
+          "latitude": 24.86797026,
+          "longitude": 121.296342
+        },
+        {
+          "id": "6800400",
+          "name": "楊梅區",
+          "english": "Yangmei District",
+          "latitude": 24.91820989,
+          "longitude": 121.1291697
+        },
+        {
+          "id": "6800500",
+          "name": "蘆竹區",
+          "english": "Luzhu District",
+          "latitude": 25.06073337,
+          "longitude": 121.2831266
+        },
+        {
+          "id": "6800600",
+          "name": "大園區",
+          "english": "Dayuan District",
+          "latitude": 25.06384709,
+          "longitude": 121.21177
+        },
+        {
+          "id": "6800700",
+          "name": "龜山區",
+          "english": "Guishan District",
+          "latitude": 25.02417472,
+          "longitude": 121.3569265
+        },
+        {
+          "id": "6800800",
+          "name": "八德區",
+          "english": "Bade District",
+          "latitude": 24.94968903,
+          "longitude": 121.2913102
+        },
+        {
+          "id": "6800900",
+          "name": "龍潭區",
+          "english": "Longtan District",
+          "latitude": 24.85064954,
+          "longitude": 121.2117877
+        },
+        {
+          "id": "6801000",
+          "name": "平鎮區",
+          "english": "Pingzhen District",
+          "latitude": 24.92117923,
+          "longitude": 121.2140051
+        },
+        {
+          "id": "6801100",
+          "name": "新屋區",
+          "english": "Xinwu District",
+          "latitude": 24.97280352,
+          "longitude": 121.067758
+        },
+        {
+          "id": "6801200",
+          "name": "觀音區",
+          "english": "Guanyin District",
+          "latitude": 25.02671611,
+          "longitude": 121.1155021
+        },
+        {
+          "id": "6801300",
+          "name": "復興區",
+          "english": "Fuxing District",
+          "latitude": 24.72949884,
+          "longitude": 121.3754588
+        }
+      ]
+    },
+    {
+      "id": "hsinchu-city",
+      "name": "新竹市",
+      "english": "Hsinchu City",
+      "defaultTown": "1001802",
+      "towns": [
+        {
+          "id": "1001801",
+          "name": "東區",
+          "english": "East District",
+          "latitude": 24.79028174,
+          "longitude": 120.9927505
+        },
+        {
+          "id": "1001802",
+          "name": "北區",
+          "english": "North District",
+          "latitude": 24.82269542,
+          "longitude": 120.9491233
+        },
+        {
+          "id": "1001803",
+          "name": "香山區",
+          "english": "Xiangshan District",
+          "latitude": 24.77104342,
+          "longitude": 120.9236727
+        }
+      ]
+    },
+    {
+      "id": "hsinchu-county",
+      "name": "新竹縣",
+      "english": "Hsinchu County",
+      "defaultTown": "1000401",
+      "towns": [
+        {
+          "id": "1000401",
+          "name": "竹北市",
+          "english": "Zhubei City",
+          "latitude": 24.83816209,
+          "longitude": 120.9948704
+        },
+        {
+          "id": "1000402",
+          "name": "竹東鎮",
+          "english": "Zhudong Township",
+          "latitude": 24.73075802,
+          "longitude": 121.0753632
+        },
+        {
+          "id": "1000403",
+          "name": "新埔鎮",
+          "english": "Xinpu Township",
+          "latitude": 24.84133959,
+          "longitude": 121.0939886
+        },
+        {
+          "id": "1000404",
+          "name": "關西鎮",
+          "english": "Guanxi Township",
+          "latitude": 24.78514681,
+          "longitude": 121.1866221
+        },
+        {
+          "id": "1000405",
+          "name": "湖口鄉",
+          "english": "Hukou Township",
+          "latitude": 24.88566341,
+          "longitude": 121.0517242
+        },
+        {
+          "id": "1000406",
+          "name": "新豐鄉",
+          "english": "Xinfeng Township",
+          "latitude": 24.90731298,
+          "longitude": 120.9956033
+        },
+        {
+          "id": "1000407",
+          "name": "芎林鄉",
+          "english": "Qionglin Township",
+          "latitude": 24.7657116,
+          "longitude": 121.1046394
+        },
+        {
+          "id": "1000408",
+          "name": "橫山鄉",
+          "english": "Hengshan Township",
+          "latitude": 24.7078092,
+          "longitude": 121.1469732
+        },
+        {
+          "id": "1000409",
+          "name": "北埔鄉",
+          "english": "Beipu Township",
+          "latitude": 24.67207405,
+          "longitude": 121.0642745
+        },
+        {
+          "id": "1000410",
+          "name": "寶山鄉",
+          "english": "Baoshan Township",
+          "latitude": 24.73697351,
+          "longitude": 120.9991605
+        },
+        {
+          "id": "1000411",
+          "name": "峨眉鄉",
+          "english": "Emei Township",
+          "latitude": 24.67811197,
+          "longitude": 121.0110809
+        },
+        {
+          "id": "1000412",
+          "name": "尖石鄉",
+          "english": "Jianshi Township",
+          "latitude": 24.59493235,
+          "longitude": 121.2819341
+        },
+        {
+          "id": "1000413",
+          "name": "五峰鄉",
+          "english": "Wufeng Township",
+          "latitude": 24.578054,
+          "longitude": 121.1389495
+        }
+      ]
+    },
+    {
+      "id": "miaoli",
+      "name": "苗栗縣",
+      "english": "Miaoli County",
+      "defaultTown": "1000501",
+      "towns": [
+        {
+          "id": "1000501",
+          "name": "苗栗市",
+          "english": "Miaoli City",
+          "latitude": 24.56382141,
+          "longitude": 120.8112299
+        },
+        {
+          "id": "1000502",
+          "name": "苑裡鎮",
+          "english": "Yuanli Township",
+          "latitude": 24.4110232,
+          "longitude": 120.6882195
+        },
+        {
+          "id": "1000503",
+          "name": "通霄鎮",
+          "english": "Tongxiao Township",
+          "latitude": 24.4850464,
+          "longitude": 120.7146378
+        },
+        {
+          "id": "1000504",
+          "name": "竹南鎮",
+          "english": "Zhunan Township",
+          "latitude": 24.69862459,
+          "longitude": 120.8777316
+        },
+        {
+          "id": "1000505",
+          "name": "頭份市",
+          "english": "Toufen City",
+          "latitude": 24.67628243,
+          "longitude": 120.9189437
+        },
+        {
+          "id": "1000506",
+          "name": "後龍鎮",
+          "english": "Houlong Township",
+          "latitude": 24.6156265,
+          "longitude": 120.781205
+        },
+        {
+          "id": "1000507",
+          "name": "卓蘭鎮",
+          "english": "Zhuolan Township",
+          "latitude": 24.32510167,
+          "longitude": 120.8561966
+        },
+        {
+          "id": "1000508",
+          "name": "大湖鄉",
+          "english": "Dahu Township",
+          "latitude": 24.39359641,
+          "longitude": 120.8631192
+        },
+        {
+          "id": "1000509",
+          "name": "公館鄉",
+          "english": "Gongguan Township",
+          "latitude": 24.50249686,
+          "longitude": 120.8505904
+        },
+        {
+          "id": "1000510",
+          "name": "銅鑼鄉",
+          "english": "Tongluo Township",
+          "latitude": 24.45591832,
+          "longitude": 120.7992043
+        },
+        {
+          "id": "1000511",
+          "name": "南庄鄉",
+          "english": "Nanzhuang Township",
+          "latitude": 24.56608432,
+          "longitude": 121.017471
+        },
+        {
+          "id": "1000512",
+          "name": "頭屋鄉",
+          "english": "Touwu Township",
+          "latitude": 24.57345497,
+          "longitude": 120.8826631
+        },
+        {
+          "id": "1000513",
+          "name": "三義鄉",
+          "english": "Sanyi Township",
+          "latitude": 24.38081659,
+          "longitude": 120.7701929
+        },
+        {
+          "id": "1000514",
+          "name": "西湖鄉",
+          "english": "Xihu Township",
+          "latitude": 24.54153218,
+          "longitude": 120.7614144
+        },
+        {
+          "id": "1000515",
+          "name": "造橋鄉",
+          "english": "Zaoqiao Township",
+          "latitude": 24.62481314,
+          "longitude": 120.8695663
+        },
+        {
+          "id": "1000516",
+          "name": "三灣鄉",
+          "english": "Sanwan Township",
+          "latitude": 24.63599405,
+          "longitude": 120.9525745
+        },
+        {
+          "id": "1000517",
+          "name": "獅潭鄉",
+          "english": "Shitan Township",
+          "latitude": 24.51978614,
+          "longitude": 120.9206688
+        },
+        {
+          "id": "1000518",
+          "name": "泰安鄉",
+          "english": "Tai’an Township",
+          "latitude": 24.41925819,
+          "longitude": 121.0681571
+        }
+      ]
+    },
+    {
+      "id": "taichung",
+      "name": "臺中市",
+      "english": "Taichung City",
+      "defaultTown": "6600400",
+      "towns": [
+        {
+          "id": "6600100",
+          "name": "中區",
+          "english": "Central District",
+          "latitude": 24.14168566,
+          "longitude": 120.680598
+        },
+        {
+          "id": "6600200",
+          "name": "東區",
+          "english": "East District",
+          "latitude": 24.13733209,
+          "longitude": 120.6970865
+        },
+        {
+          "id": "6600300",
+          "name": "南區",
+          "english": "South District",
+          "latitude": 24.12114107,
+          "longitude": 120.6646178
+        },
+        {
+          "id": "6600400",
+          "name": "西區",
+          "english": "West District",
+          "latitude": 24.14391082,
+          "longitude": 120.6647579
+        },
+        {
+          "id": "6600500",
+          "name": "北區",
+          "english": "North District",
+          "latitude": 24.15863985,
+          "longitude": 120.6809521
+        },
+        {
+          "id": "6600600",
+          "name": "西屯區",
+          "english": "Xitun District",
+          "latitude": 24.18308895,
+          "longitude": 120.6270131
+        },
+        {
+          "id": "6600700",
+          "name": "南屯區",
+          "english": "Nantun District",
+          "latitude": 24.14165524,
+          "longitude": 120.6177379
+        },
+        {
+          "id": "6600800",
+          "name": "北屯區",
+          "english": "Beitun District",
+          "latitude": 24.18400298,
+          "longitude": 120.7362319
+        },
+        {
+          "id": "6600900",
+          "name": "豐原區",
+          "english": "Fengyuan District",
+          "latitude": 24.24990298,
+          "longitude": 120.7375715
+        },
+        {
+          "id": "6601000",
+          "name": "東勢區",
+          "english": "Dongshi District",
+          "latitude": 24.24952637,
+          "longitude": 120.8401401
+        },
+        {
+          "id": "6601100",
+          "name": "大甲區",
+          "english": "Dajia District",
+          "latitude": 24.37827161,
+          "longitude": 120.6357901
+        },
+        {
+          "id": "6601200",
+          "name": "清水區",
+          "english": "Qingshui District",
+          "latitude": 24.29205743,
+          "longitude": 120.5809094
+        },
+        {
+          "id": "6601300",
+          "name": "沙鹿區",
+          "english": "Shalu District",
+          "latitude": 24.23425212,
+          "longitude": 120.5838628
+        },
+        {
+          "id": "6601400",
+          "name": "梧棲區",
+          "english": "Wuqi District",
+          "latitude": 24.24552431,
+          "longitude": 120.5301259
+        },
+        {
+          "id": "6601500",
+          "name": "后里區",
+          "english": "Houli District",
+          "latitude": 24.30962483,
+          "longitude": 120.7146127
+        },
+        {
+          "id": "6601600",
+          "name": "神岡區",
+          "english": "Shengang District",
+          "latitude": 24.26568008,
+          "longitude": 120.6733321
+        },
+        {
+          "id": "6601700",
+          "name": "潭子區",
+          "english": "Tanzi District",
+          "latitude": 24.21171121,
+          "longitude": 120.710997
+        },
+        {
+          "id": "6601800",
+          "name": "大雅區",
+          "english": "Daya District",
+          "latitude": 24.22704181,
+          "longitude": 120.6411818
+        },
+        {
+          "id": "6601900",
+          "name": "新社區",
+          "english": "Xinshe District",
+          "latitude": 24.17769289,
+          "longitude": 120.8313228
+        },
+        {
+          "id": "6602000",
+          "name": "石岡區",
+          "english": "Shigang District",
+          "latitude": 24.26493299,
+          "longitude": 120.7903822
+        },
+        {
+          "id": "6602100",
+          "name": "外埔區",
+          "english": "Waipu District",
+          "latitude": 24.33551071,
+          "longitude": 120.6650639
+        },
+        {
+          "id": "6602200",
+          "name": "大安區",
+          "english": "Da’an District",
+          "latitude": 24.36509555,
+          "longitude": 120.5914407
+        },
+        {
+          "id": "6602300",
+          "name": "烏日區",
+          "english": "Wuri District",
+          "latitude": 24.0839271,
+          "longitude": 120.6293305
+        },
+        {
+          "id": "6602400",
+          "name": "大肚區",
+          "english": "Dadu District",
+          "latitude": 24.14467504,
+          "longitude": 120.5543243
+        },
+        {
+          "id": "6602500",
+          "name": "龍井區",
+          "english": "Longjing District",
+          "latitude": 24.20062892,
+          "longitude": 120.5283728
+        },
+        {
+          "id": "6602600",
+          "name": "霧峰區",
+          "english": "Wufeng District",
+          "latitude": 24.04332785,
+          "longitude": 120.7201989
+        },
+        {
+          "id": "6602700",
+          "name": "太平區",
+          "english": "Taiping District",
+          "latitude": 24.11477375,
+          "longitude": 120.7734217
+        },
+        {
+          "id": "6602800",
+          "name": "大里區",
+          "english": "Dali District",
+          "latitude": 24.09575742,
+          "longitude": 120.6926261
+        },
+        {
+          "id": "6602900",
+          "name": "和平區",
+          "english": "Heping District",
+          "latitude": 24.27620277,
+          "longitude": 121.140185
+        }
+      ]
+    },
+    {
+      "id": "changhua",
+      "name": "彰化縣",
+      "english": "Changhua County",
+      "defaultTown": "1000701",
+      "towns": [
+        {
+          "id": "1000701",
+          "name": "彰化市",
+          "english": "Changhua City",
+          "latitude": 24.07532909,
+          "longitude": 120.5694208
+        },
+        {
+          "id": "1000702",
+          "name": "鹿港鎮",
+          "english": "Lukang Township",
+          "latitude": 24.08286685,
+          "longitude": 120.4385491
+        },
+        {
+          "id": "1000703",
+          "name": "和美鎮",
+          "english": "Hemei Township",
+          "latitude": 24.11379535,
+          "longitude": 120.5112045
+        },
+        {
+          "id": "1000704",
+          "name": "線西鄉",
+          "english": "Xianxi Township",
+          "latitude": 24.13158127,
+          "longitude": 120.452157
+        },
+        {
+          "id": "1000705",
+          "name": "伸港鄉",
+          "english": "Shengang Township",
+          "latitude": 24.16367107,
+          "longitude": 120.486449
+        },
+        {
+          "id": "1000706",
+          "name": "福興鄉",
+          "english": "Fuxing Township",
+          "latitude": 24.03021674,
+          "longitude": 120.4310511
+        },
+        {
+          "id": "1000707",
+          "name": "秀水鄉",
+          "english": "Xiushui Township",
+          "latitude": 24.03249405,
+          "longitude": 120.5041184
+        },
+        {
+          "id": "1000708",
+          "name": "花壇鄉",
+          "english": "Huatan Township",
+          "latitude": 24.03006875,
+          "longitude": 120.5597655
+        },
+        {
+          "id": "1000709",
+          "name": "芬園鄉",
+          "english": "Fenyuan Township",
+          "latitude": 24.00628794,
+          "longitude": 120.6294414
+        },
+        {
+          "id": "1000710",
+          "name": "員林市",
+          "english": "Yuanlin City",
+          "latitude": 23.95650448,
+          "longitude": 120.593073
+        },
+        {
+          "id": "1000711",
+          "name": "溪湖鎮",
+          "english": "Xihu Township",
+          "latitude": 23.95171456,
+          "longitude": 120.4831739
+        },
+        {
+          "id": "1000712",
+          "name": "田中鎮",
+          "english": "Tianzhong Township",
+          "latitude": 23.85723872,
+          "longitude": 120.5903471
+        },
+        {
+          "id": "1000713",
+          "name": "大村鄉",
+          "english": "Dacun Township",
+          "latitude": 23.99209206,
+          "longitude": 120.5586866
+        },
+        {
+          "id": "1000714",
+          "name": "埔鹽鄉",
+          "english": "Puyan Township",
+          "latitude": 23.99204417,
+          "longitude": 120.4594626
+        },
+        {
+          "id": "1000715",
+          "name": "埔心鄉",
+          "english": "Puxin Township",
+          "latitude": 23.95277521,
+          "longitude": 120.5342802
+        },
+        {
+          "id": "1000716",
+          "name": "永靖鄉",
+          "english": "Yongjing Township",
+          "latitude": 23.92139507,
+          "longitude": 120.5416032
+        },
+        {
+          "id": "1000717",
+          "name": "社頭鄉",
+          "english": "Shetou Township",
+          "latitude": 23.90536413,
+          "longitude": 120.6021661
+        },
+        {
+          "id": "1000718",
+          "name": "二水鄉",
+          "english": "Ershui Township",
+          "latitude": 23.8092402,
+          "longitude": 120.628589
+        },
+        {
+          "id": "1000719",
+          "name": "北斗鎮",
+          "english": "Beidou Township",
+          "latitude": 23.867574,
+          "longitude": 120.5331566
+        },
+        {
+          "id": "1000720",
+          "name": "二林鎮",
+          "english": "Erlin Township",
+          "latitude": 23.91621405,
+          "longitude": 120.404225
+        },
+        {
+          "id": "1000721",
+          "name": "田尾鄉",
+          "english": "Tianwei Township",
+          "latitude": 23.90056065,
+          "longitude": 120.5223244
+        },
+        {
+          "id": "1000722",
+          "name": "埤頭鄉",
+          "english": "Pitou Township",
+          "latitude": 23.88234118,
+          "longitude": 120.4675642
+        },
+        {
+          "id": "1000723",
+          "name": "芳苑鄉",
+          "english": "Fangyuan Township",
+          "latitude": 23.9537906,
+          "longitude": 120.3539226
+        },
+        {
+          "id": "1000724",
+          "name": "大城鄉",
+          "english": "Dacheng Township",
+          "latitude": 23.85069276,
+          "longitude": 120.3113284
+        },
+        {
+          "id": "1000725",
+          "name": "竹塘鄉",
+          "english": "Zhutang Township",
+          "latitude": 23.8505872,
+          "longitude": 120.4136645
+        },
+        {
+          "id": "1000726",
+          "name": "溪州鄉",
+          "english": "Xizhou Township",
+          "latitude": 23.82725185,
+          "longitude": 120.5224904
+        }
+      ]
+    },
+    {
+      "id": "nantou",
+      "name": "南投縣",
+      "english": "Nantou County",
+      "defaultTown": "1000801",
+      "towns": [
+        {
+          "id": "1000801",
+          "name": "南投市",
+          "english": "Nantou City",
+          "latitude": 23.92173537,
+          "longitude": 120.6787658
+        },
+        {
+          "id": "1000802",
+          "name": "埔里鎮",
+          "english": "Puli Township",
+          "latitude": 23.97892591,
+          "longitude": 120.9625259
+        },
+        {
+          "id": "1000803",
+          "name": "草屯鎮",
+          "english": "Caotun Township",
+          "latitude": 23.98321081,
+          "longitude": 120.7326182
+        },
+        {
+          "id": "1000804",
+          "name": "竹山鎮",
+          "english": "Zhushan Township",
+          "latitude": 23.69805518,
+          "longitude": 120.7100797
+        },
+        {
+          "id": "1000805",
+          "name": "集集鎮",
+          "english": "Jiji Township",
+          "latitude": 23.83701687,
+          "longitude": 120.7854192
+        },
+        {
+          "id": "1000806",
+          "name": "名間鄉",
+          "english": "Mingjian Township",
+          "latitude": 23.8510771,
+          "longitude": 120.6774402
+        },
+        {
+          "id": "1000807",
+          "name": "鹿谷鄉",
+          "english": "Lugu Township",
+          "latitude": 23.73776029,
+          "longitude": 120.7815065
+        },
+        {
+          "id": "1000808",
+          "name": "中寮鄉",
+          "english": "Zhongliao Township",
+          "latitude": 23.90589214,
+          "longitude": 120.7859159
+        },
+        {
+          "id": "1000809",
+          "name": "魚池鄉",
+          "english": "Yuchi Township",
+          "latitude": 23.87601213,
+          "longitude": 120.9256736
+        },
+        {
+          "id": "1000810",
+          "name": "國姓鄉",
+          "english": "Guoxing Township",
+          "latitude": 24.03135413,
+          "longitude": 120.8676052
+        },
+        {
+          "id": "1000811",
+          "name": "水里鄉",
+          "english": "Shuili Township",
+          "latitude": 23.79612907,
+          "longitude": 120.8622721
+        },
+        {
+          "id": "1000812",
+          "name": "信義鄉",
+          "english": "Xinyi Township",
+          "latitude": 23.6554647,
+          "longitude": 121.0212867
+        },
+        {
+          "id": "1000813",
+          "name": "仁愛鄉",
+          "english": "Ren’ai Township",
+          "latitude": 24.02886513,
+          "longitude": 121.1443879
+        }
+      ]
+    },
+    {
+      "id": "yunlin",
+      "name": "雲林縣",
+      "english": "Yunlin County",
+      "defaultTown": "1000901",
+      "towns": [
+        {
+          "id": "1000901",
+          "name": "斗六市",
+          "english": "Douliu City",
+          "latitude": 23.70651883,
+          "longitude": 120.5600044
+        },
+        {
+          "id": "1000902",
+          "name": "斗南鎮",
+          "english": "Dounan Township",
+          "latitude": 23.67066393,
+          "longitude": 120.4826356
+        },
+        {
+          "id": "1000903",
+          "name": "虎尾鎮",
+          "english": "Huwei Township",
+          "latitude": 23.71661545,
+          "longitude": 120.4293061
+        },
+        {
+          "id": "1000904",
+          "name": "西螺鎮",
+          "english": "Xiluo Township",
+          "latitude": 23.77942109,
+          "longitude": 120.4580795
+        },
+        {
+          "id": "1000905",
+          "name": "土庫鎮",
+          "english": "Tuku Township",
+          "latitude": 23.69110665,
+          "longitude": 120.3647252
+        },
+        {
+          "id": "1000906",
+          "name": "北港鎮",
+          "english": "Beigang Township",
+          "latitude": 23.59219528,
+          "longitude": 120.2940164
+        },
+        {
+          "id": "1000907",
+          "name": "古坑鄉",
+          "english": "Gukeng Township",
+          "latitude": 23.62545469,
+          "longitude": 120.6117351
+        },
+        {
+          "id": "1000908",
+          "name": "大埤鄉",
+          "english": "Dapi Township",
+          "latitude": 23.6455971,
+          "longitude": 120.4255592
+        },
+        {
+          "id": "1000909",
+          "name": "莿桐鄉",
+          "english": "Citong Township",
+          "latitude": 23.76973894,
+          "longitude": 120.5290419
+        },
+        {
+          "id": "1000910",
+          "name": "林內鄉",
+          "english": "Linnei Township",
+          "latitude": 23.7557209,
+          "longitude": 120.6155018
+        },
+        {
+          "id": "1000911",
+          "name": "二崙鄉",
+          "english": "Erlun Township",
+          "latitude": 23.7925521,
+          "longitude": 120.3964598
+        },
+        {
+          "id": "1000912",
+          "name": "崙背鄉",
+          "english": "Lunbei Township",
+          "latitude": 23.77849791,
+          "longitude": 120.3339769
+        },
+        {
+          "id": "1000913",
+          "name": "麥寮鄉",
+          "english": "Mailiao Township",
+          "latitude": 23.78817056,
+          "longitude": 120.243533
+        },
+        {
+          "id": "1000914",
+          "name": "東勢鄉",
+          "english": "Dongshi Township",
+          "latitude": 23.69612324,
+          "longitude": 120.2564173
+        },
+        {
+          "id": "1000915",
+          "name": "褒忠鄉",
+          "english": "Baozhong Township",
+          "latitude": 23.71613204,
+          "longitude": 120.3116122
+        },
+        {
+          "id": "1000916",
+          "name": "臺西鄉",
+          "english": "Taixi Township",
+          "latitude": 23.71600815,
+          "longitude": 120.2054952
+        },
+        {
+          "id": "1000917",
+          "name": "元長鄉",
+          "english": "Yuanchang Township",
+          "latitude": 23.64243095,
+          "longitude": 120.3279617
+        },
+        {
+          "id": "1000918",
+          "name": "四湖鄉",
+          "english": "Sihu Township",
+          "latitude": 23.64206875,
+          "longitude": 120.2064699
+        },
+        {
+          "id": "1000919",
+          "name": "口湖鄉",
+          "english": "Kouhu Township",
+          "latitude": 23.55365395,
+          "longitude": 120.1413711
+        },
+        {
+          "id": "1000920",
+          "name": "水林鄉",
+          "english": "Shuilin Township",
+          "latitude": 23.56162849,
+          "longitude": 120.2352734
+        }
+      ]
+    },
+    {
+      "id": "chiayi-city",
+      "name": "嘉義市",
+      "english": "Chiayi City",
+      "defaultTown": "1002001",
+      "towns": [
+        {
+          "id": "1002001",
+          "name": "東區",
+          "english": "East District",
+          "latitude": 23.48170334,
+          "longitude": 120.4706244
+        },
+        {
+          "id": "1002002",
+          "name": "西區",
+          "english": "West District",
+          "latitude": 23.47915529,
+          "longitude": 120.4248724
+        }
+      ]
+    },
+    {
+      "id": "chiayi-county",
+      "name": "嘉義縣",
+      "english": "Chiayi County",
+      "defaultTown": "1001001",
+      "towns": [
+        {
+          "id": "1001001",
+          "name": "太保市",
+          "english": "Taibao City",
+          "latitude": 23.4729191,
+          "longitude": 120.3440009
+        },
+        {
+          "id": "1001002",
+          "name": "朴子市",
+          "english": "Puzi City",
+          "latitude": 23.44610605,
+          "longitude": 120.2538977
+        },
+        {
+          "id": "1001003",
+          "name": "布袋鎮",
+          "english": "Budai Township",
+          "latitude": 23.37494276,
+          "longitude": 120.1777498
+        },
+        {
+          "id": "1001004",
+          "name": "大林鎮",
+          "english": "Dalin Township",
+          "latitude": 23.59890827,
+          "longitude": 120.4807865
+        },
+        {
+          "id": "1001005",
+          "name": "民雄鄉",
+          "english": "Minxiong Township",
+          "latitude": 23.54255347,
+          "longitude": 120.4442798
+        },
+        {
+          "id": "1001006",
+          "name": "溪口鄉",
+          "english": "Xikou Township",
+          "latitude": 23.59353089,
+          "longitude": 120.4010282
+        },
+        {
+          "id": "1001007",
+          "name": "新港鄉",
+          "english": "Xingang Township",
+          "latitude": 23.54581295,
+          "longitude": 120.3482873
+        },
+        {
+          "id": "1001008",
+          "name": "六腳鄉",
+          "english": "Liujiao Township",
+          "latitude": 23.51020984,
+          "longitude": 120.2714728
+        },
+        {
+          "id": "1001009",
+          "name": "東石鄉",
+          "english": "Dongshi Township",
+          "latitude": 23.46866059,
+          "longitude": 120.1738682
+        },
+        {
+          "id": "1001010",
+          "name": "義竹鄉",
+          "english": "Yizhu Township",
+          "latitude": 23.34575872,
+          "longitude": 120.2239433
+        },
+        {
+          "id": "1001011",
+          "name": "鹿草鄉",
+          "english": "Lucao Township",
+          "latitude": 23.40811736,
+          "longitude": 120.3045468
+        },
+        {
+          "id": "1001012",
+          "name": "水上鄉",
+          "english": "Shuishang Township",
+          "latitude": 23.42911287,
+          "longitude": 120.4147357
+        },
+        {
+          "id": "1001013",
+          "name": "中埔鄉",
+          "english": "Zhongpu Township",
+          "latitude": 23.40408998,
+          "longitude": 120.5365312
+        },
+        {
+          "id": "1001014",
+          "name": "竹崎鄉",
+          "english": "Zhuqi Township",
+          "latitude": 23.50376527,
+          "longitude": 120.5965771
+        },
+        {
+          "id": "1001015",
+          "name": "梅山鄉",
+          "english": "Meishan Township",
+          "latitude": 23.55535465,
+          "longitude": 120.6387459
+        },
+        {
+          "id": "1001016",
+          "name": "番路鄉",
+          "english": "Fanlu Township",
+          "latitude": 23.42765669,
+          "longitude": 120.6075335
+        },
+        {
+          "id": "1001017",
+          "name": "大埔鄉",
+          "english": "Dapu Township",
+          "latitude": 23.28848426,
+          "longitude": 120.5896466
+        },
+        {
+          "id": "1001018",
+          "name": "阿里山鄉",
+          "english": "Alishan Township",
+          "latitude": 23.44077619,
+          "longitude": 120.7596173
+        }
+      ]
+    },
+    {
+      "id": "tainan",
+      "name": "臺南市",
+      "english": "Tainan City",
+      "defaultTown": "6703600",
+      "towns": [
+        {
+          "id": "6700100",
+          "name": "新營區",
+          "english": "Xinying District",
+          "latitude": 23.30152488,
+          "longitude": 120.2954067
+        },
+        {
+          "id": "6700200",
+          "name": "鹽水區",
+          "english": "Yanshui District",
+          "latitude": 23.29798622,
+          "longitude": 120.2482977
+        },
+        {
+          "id": "6700300",
+          "name": "白河區",
+          "english": "Baihe District",
+          "latitude": 23.35132068,
+          "longitude": 120.4578565
+        },
+        {
+          "id": "6700400",
+          "name": "柳營區",
+          "english": "Liuying District",
+          "latitude": 23.26887001,
+          "longitude": 120.3549205
+        },
+        {
+          "id": "6700500",
+          "name": "後壁區",
+          "english": "Houbi District",
+          "latitude": 23.36201478,
+          "longitude": 120.3485081
+        },
+        {
+          "id": "6700600",
+          "name": "東山區",
+          "english": "Dongshan District",
+          "latitude": 23.2783187,
+          "longitude": 120.4441211
+        },
+        {
+          "id": "6700700",
+          "name": "麻豆區",
+          "english": "Madou District",
+          "latitude": 23.18248033,
+          "longitude": 120.241308
+        },
+        {
+          "id": "6700800",
+          "name": "下營區",
+          "english": "Xiaying District",
+          "latitude": 23.23103978,
+          "longitude": 120.26484
+        },
+        {
+          "id": "6700900",
+          "name": "六甲區",
+          "english": "Liujia District",
+          "latitude": 23.2272672,
+          "longitude": 120.3800259
+        },
+        {
+          "id": "6701000",
+          "name": "官田區",
+          "english": "Guantian District",
+          "latitude": 23.19098548,
+          "longitude": 120.3479918
+        },
+        {
+          "id": "6701100",
+          "name": "大內區",
+          "english": "Danei District",
+          "latitude": 23.14482152,
+          "longitude": 120.3988147
+        },
+        {
+          "id": "6701200",
+          "name": "佳里區",
+          "english": "Jiali District",
+          "latitude": 23.1669941,
+          "longitude": 120.178593
+        },
+        {
+          "id": "6701300",
+          "name": "學甲區",
+          "english": "Xuejia District",
+          "latitude": 23.25219805,
+          "longitude": 120.1841865
+        },
+        {
+          "id": "6701400",
+          "name": "西港區",
+          "english": "Xigang District",
+          "latitude": 23.12491893,
+          "longitude": 120.2002309
+        },
+        {
+          "id": "6701500",
+          "name": "七股區",
+          "english": "Qigu District",
+          "latitude": 23.12326578,
+          "longitude": 120.1005854
+        },
+        {
+          "id": "6701600",
+          "name": "將軍區",
+          "english": "Jiangjun District",
+          "latitude": 23.20834413,
+          "longitude": 120.1276958
+        },
+        {
+          "id": "6701700",
+          "name": "北門區",
+          "english": "Beimen District",
+          "latitude": 23.2777708,
+          "longitude": 120.1262357
+        },
+        {
+          "id": "6701800",
+          "name": "新化區",
+          "english": "Xinhua District",
+          "latitude": 23.03394545,
+          "longitude": 120.3357964
+        },
+        {
+          "id": "6701900",
+          "name": "善化區",
+          "english": "Shanhua District",
+          "latitude": 23.14031072,
+          "longitude": 120.2988274
+        },
+        {
+          "id": "6702000",
+          "name": "新市區",
+          "english": "Xinshi District",
+          "latitude": 23.08319496,
+          "longitude": 120.2923941
+        },
+        {
+          "id": "6702100",
+          "name": "安定區",
+          "english": "Anding District",
+          "latitude": 23.09974927,
+          "longitude": 120.2296235
+        },
+        {
+          "id": "6702200",
+          "name": "山上區",
+          "english": "Shanshang District",
+          "latitude": 23.09689329,
+          "longitude": 120.370977
+        },
+        {
+          "id": "6702300",
+          "name": "玉井區",
+          "english": "Yujing District",
+          "latitude": 23.11480926,
+          "longitude": 120.4609622
+        },
+        {
+          "id": "6702400",
+          "name": "楠西區",
+          "english": "Nanxi District",
+          "latitude": 23.17885854,
+          "longitude": 120.5170304
+        },
+        {
+          "id": "6702500",
+          "name": "南化區",
+          "english": "Nanhua District",
+          "latitude": 23.1151111,
+          "longitude": 120.5441223
+        },
+        {
+          "id": "6702600",
+          "name": "左鎮區",
+          "english": "Zuozhen District",
+          "latitude": 23.02604611,
+          "longitude": 120.4123917
+        },
+        {
+          "id": "6702700",
+          "name": "仁德區",
+          "english": "Rende District",
+          "latitude": 22.94130931,
+          "longitude": 120.2418788
+        },
+        {
+          "id": "6702800",
+          "name": "歸仁區",
+          "english": "Guiren District",
+          "latitude": 22.94679469,
+          "longitude": 120.2930627
+        },
+        {
+          "id": "6702900",
+          "name": "關廟區",
+          "english": "Guanmiao District",
+          "latitude": 22.95577909,
+          "longitude": 120.3342821
+        },
+        {
+          "id": "6703000",
+          "name": "龍崎區",
+          "english": "Longqi District",
+          "latitude": 22.95482276,
+          "longitude": 120.3869373
+        },
+        {
+          "id": "6703100",
+          "name": "永康區",
+          "english": "Yongkang District",
+          "latitude": 23.02729532,
+          "longitude": 120.2542795
+        },
+        {
+          "id": "6703200",
+          "name": "東區",
+          "english": "East District",
+          "latitude": 22.98178202,
+          "longitude": 120.2281858
+        },
+        {
+          "id": "6703300",
+          "name": "南區",
+          "english": "South District",
+          "latitude": 22.95561863,
+          "longitude": 120.1903743
+        },
+        {
+          "id": "6703400",
+          "name": "北區",
+          "english": "North District",
+          "latitude": 23.01012179,
+          "longitude": 120.2068735
+        },
+        {
+          "id": "6703500",
+          "name": "安南區",
+          "english": "Annan District",
+          "latitude": 23.04869681,
+          "longitude": 120.1526189
+        },
+        {
+          "id": "6703600",
+          "name": "安平區",
+          "english": "Anping District",
+          "latitude": 22.99008437,
+          "longitude": 120.1649949
+        },
+        {
+          "id": "6703700",
+          "name": "中西區",
+          "english": "West Central District",
+          "latitude": 22.99594458,
+          "longitude": 120.192874
+        }
+      ]
+    },
+    {
+      "id": "kaohsiung",
+      "name": "高雄市",
+      "english": "Kaohsiung City",
+      "defaultTown": "6400800",
+      "towns": [
+        {
+          "id": "6400100",
+          "name": "鹽埕區",
+          "english": "Yancheng District",
+          "latitude": 22.62424585,
+          "longitude": 120.2842331
+        },
+        {
+          "id": "6400200",
+          "name": "鼓山區",
+          "english": "Gushan District",
+          "latitude": 22.65019525,
+          "longitude": 120.274163
+        },
+        {
+          "id": "6400300",
+          "name": "左營區",
+          "english": "Zuoying District",
+          "latitude": 22.68395699,
+          "longitude": 120.2951588
+        },
+        {
+          "id": "6400400",
+          "name": "楠梓區",
+          "english": "Nanzi District",
+          "latitude": 22.72109961,
+          "longitude": 120.300758
+        },
+        {
+          "id": "6400500",
+          "name": "三民區",
+          "english": "Sanmin District",
+          "latitude": 22.64989883,
+          "longitude": 120.3179187
+        },
+        {
+          "id": "6400600",
+          "name": "新興區",
+          "english": "Xinxing District",
+          "latitude": 22.62992906,
+          "longitude": 120.3067337
+        },
+        {
+          "id": "6400700",
+          "name": "前金區",
+          "english": "Qianjin District",
+          "latitude": 22.6269905,
+          "longitude": 120.2944217
+        },
+        {
+          "id": "6400800",
+          "name": "苓雅區",
+          "english": "Lingya District",
+          "latitude": 22.62359448,
+          "longitude": 120.3209103
+        },
+        {
+          "id": "6400900",
+          "name": "前鎮區",
+          "english": "Qianzhen District",
+          "latitude": 22.59269724,
+          "longitude": 120.3146749
+        },
+        {
+          "id": "6401000",
+          "name": "旗津區",
+          "english": "Qijin District",
+          "latitude": 22.58565583,
+          "longitude": 120.2891539
+        },
+        {
+          "id": "6401100",
+          "name": "小港區",
+          "english": "Xiaogang District",
+          "latitude": 22.55140207,
+          "longitude": 120.3592605
+        },
+        {
+          "id": "6401200",
+          "name": "鳳山區",
+          "english": "Fengshan District",
+          "latitude": 22.61379251,
+          "longitude": 120.3554359
+        },
+        {
+          "id": "6401300",
+          "name": "林園區",
+          "english": "Linyuan District",
+          "latitude": 22.50813743,
+          "longitude": 120.399052
+        },
+        {
+          "id": "6401400",
+          "name": "大寮區",
+          "english": "Daliao District",
+          "latitude": 22.59283576,
+          "longitude": 120.4111468
+        },
+        {
+          "id": "6401500",
+          "name": "大樹區",
+          "english": "Dashu District",
+          "latitude": 22.71100364,
+          "longitude": 120.425407
+        },
+        {
+          "id": "6401600",
+          "name": "大社區",
+          "english": "Dashe District",
+          "latitude": 22.73983479,
+          "longitude": 120.3707994
+        },
+        {
+          "id": "6401700",
+          "name": "仁武區",
+          "english": "Renwu District",
+          "latitude": 22.70120782,
+          "longitude": 120.3605265
+        },
+        {
+          "id": "6401800",
+          "name": "鳥松區",
+          "english": "Niaosong District",
+          "latitude": 22.66249302,
+          "longitude": 120.3727783
+        },
+        {
+          "id": "6401900",
+          "name": "岡山區",
+          "english": "Gangshan District",
+          "latitude": 22.80505886,
+          "longitude": 120.2978906
+        },
+        {
+          "id": "6402000",
+          "name": "橋頭區",
+          "english": "Qiaotou District",
+          "latitude": 22.75252398,
+          "longitude": 120.3006534
+        },
+        {
+          "id": "6402100",
+          "name": "燕巢區",
+          "english": "Yanchao District",
+          "latitude": 22.78769626,
+          "longitude": 120.370799
+        },
+        {
+          "id": "6402200",
+          "name": "田寮區",
+          "english": "Tianliao District",
+          "latitude": 22.86394307,
+          "longitude": 120.3959842
+        },
+        {
+          "id": "6402300",
+          "name": "阿蓮區",
+          "english": "Alian District",
+          "latitude": 22.87022883,
+          "longitude": 120.3210967
+        },
+        {
+          "id": "6402400",
+          "name": "路竹區",
+          "english": "Luzhu District",
+          "latitude": 22.85724171,
+          "longitude": 120.2659871
+        },
+        {
+          "id": "6402500",
+          "name": "湖內區",
+          "english": "Hunei District",
+          "latitude": 22.89324952,
+          "longitude": 120.2259375
+        },
+        {
+          "id": "6402600",
+          "name": "茄萣區",
+          "english": "Qieding District",
+          "latitude": 22.88241399,
+          "longitude": 120.1980519
+        },
+        {
+          "id": "6402700",
+          "name": "永安區",
+          "english": "Yong’an District",
+          "latitude": 22.82224585,
+          "longitude": 120.228051
+        },
+        {
+          "id": "6402800",
+          "name": "彌陀區",
+          "english": "Mituo District",
+          "latitude": 22.77944528,
+          "longitude": 120.2394571
+        },
+        {
+          "id": "6402900",
+          "name": "梓官區",
+          "english": "Ziguan District",
+          "latitude": 22.748209,
+          "longitude": 120.2593989
+        },
+        {
+          "id": "6403000",
+          "name": "旗山區",
+          "english": "Qishan District",
+          "latitude": 22.86497033,
+          "longitude": 120.4754554
+        },
+        {
+          "id": "6403100",
+          "name": "美濃區",
+          "english": "Meinong District",
+          "latitude": 22.90005529,
+          "longitude": 120.5634635
+        },
+        {
+          "id": "6403200",
+          "name": "六龜區",
+          "english": "Liugui District",
+          "latitude": 23.01195426,
+          "longitude": 120.6585635
+        },
+        {
+          "id": "6403300",
+          "name": "甲仙區",
+          "english": "Jiaxian District",
+          "latitude": 23.11654995,
+          "longitude": 120.6232895
+        },
+        {
+          "id": "6403400",
+          "name": "杉林區",
+          "english": "Shanlin District",
+          "latitude": 22.99694681,
+          "longitude": 120.5621971
+        },
+        {
+          "id": "6403500",
+          "name": "內門區",
+          "english": "Neimen District",
+          "latitude": 22.95668817,
+          "longitude": 120.4719272
+        },
+        {
+          "id": "6403600",
+          "name": "茂林區",
+          "english": "Maolin District",
+          "latitude": 22.91993256,
+          "longitude": 120.752384
+        },
+        {
+          "id": "6403700",
+          "name": "桃源區",
+          "english": "Taoyuan District",
+          "latitude": 23.2249459,
+          "longitude": 120.8523383
+        },
+        {
+          "id": "6403800",
+          "name": "那瑪夏區",
+          "english": "Namaxia District",
+          "latitude": 23.275008,
+          "longitude": 120.741944
+        }
+      ]
+    },
+    {
+      "id": "pingtung",
+      "name": "屏東縣",
+      "english": "Pingtung County",
+      "defaultTown": "1001301",
+      "towns": [
+        {
+          "id": "1001301",
+          "name": "屏東市",
+          "english": "Pingtung City",
+          "latitude": 22.6647375,
+          "longitude": 120.4799948
+        },
+        {
+          "id": "1001302",
+          "name": "潮州鎮",
+          "english": "Chaozhou Township",
+          "latitude": 22.53642947,
+          "longitude": 120.5568063
+        },
+        {
+          "id": "1001303",
+          "name": "東港鎮",
+          "english": "Donggang Township",
+          "latitude": 22.46265635,
+          "longitude": 120.4751333
+        },
+        {
+          "id": "1001304",
+          "name": "恆春鎮",
+          "english": "Hengchun Township",
+          "latitude": 21.98531645,
+          "longitude": 120.7632537
+        },
+        {
+          "id": "1001305",
+          "name": "萬丹鄉",
+          "english": "Wandan Township",
+          "latitude": 22.58849547,
+          "longitude": 120.4766188
+        },
+        {
+          "id": "1001306",
+          "name": "長治鄉",
+          "english": "Changzhi Township",
+          "latitude": 22.69454952,
+          "longitude": 120.555979
+        },
+        {
+          "id": "1001307",
+          "name": "麟洛鄉",
+          "english": "Linluo Township",
+          "latitude": 22.64876367,
+          "longitude": 120.5299693
+        },
+        {
+          "id": "1001308",
+          "name": "九如鄉",
+          "english": "Jiuru Township",
+          "latitude": 22.7316677,
+          "longitude": 120.4845044
+        },
+        {
+          "id": "1001309",
+          "name": "里港鄉",
+          "english": "Ligang Township",
+          "latitude": 22.79854831,
+          "longitude": 120.5061276
+        },
+        {
+          "id": "1001310",
+          "name": "鹽埔鄉",
+          "english": "Yanpu Township",
+          "latitude": 22.74253636,
+          "longitude": 120.5693941
+        },
+        {
+          "id": "1001311",
+          "name": "高樹鄉",
+          "english": "Gaoshu Township",
+          "latitude": 22.80992022,
+          "longitude": 120.6017678
+        },
+        {
+          "id": "1001312",
+          "name": "萬巒鄉",
+          "english": "Wanluan Township",
+          "latitude": 22.58233459,
+          "longitude": 120.601817
+        },
+        {
+          "id": "1001313",
+          "name": "內埔鄉",
+          "english": "Neipu Township",
+          "latitude": 22.65116933,
+          "longitude": 120.5888222
+        },
+        {
+          "id": "1001314",
+          "name": "竹田鄉",
+          "english": "Zhutian Township",
+          "latitude": 22.58855636,
+          "longitude": 120.5266379
+        },
+        {
+          "id": "1001315",
+          "name": "新埤鄉",
+          "english": "Xinpi Township",
+          "latitude": 22.48676279,
+          "longitude": 120.5846257
+        },
+        {
+          "id": "1001316",
+          "name": "枋寮鄉",
+          "english": "Fangliao Township",
+          "latitude": 22.40334199,
+          "longitude": 120.5975845
+        },
+        {
+          "id": "1001317",
+          "name": "新園鄉",
+          "english": "Xinyuan Township",
+          "latitude": 22.5171903,
+          "longitude": 120.4501429
+        },
+        {
+          "id": "1001318",
+          "name": "崁頂鄉",
+          "english": "Kanding Township",
+          "latitude": 22.51528151,
+          "longitude": 120.5006598
+        },
+        {
+          "id": "1001319",
+          "name": "林邊鄉",
+          "english": "Linbian Township",
+          "latitude": 22.44142101,
+          "longitude": 120.5125095
+        },
+        {
+          "id": "1001320",
+          "name": "南州鄉",
+          "english": "Nanzhou Township",
+          "latitude": 22.47980704,
+          "longitude": 120.5180561
+        },
+        {
+          "id": "1001321",
+          "name": "佳冬鄉",
+          "english": "Jiadong Township",
+          "latitude": 22.42980624,
+          "longitude": 120.5476124
+        },
+        {
+          "id": "1001322",
+          "name": "琉球鄉",
+          "english": "Liuqiu Township",
+          "latitude": 22.34000278,
+          "longitude": 120.3710466
+        },
+        {
+          "id": "1001323",
+          "name": "車城鄉",
+          "english": "Checheng Township",
+          "latitude": 22.07915617,
+          "longitude": 120.7432633
+        },
+        {
+          "id": "1001324",
+          "name": "滿州鄉",
+          "english": "Manzhou Township",
+          "latitude": 22.04930015,
+          "longitude": 120.8435675
+        },
+        {
+          "id": "1001325",
+          "name": "枋山鄉",
+          "english": "Fangshan Township",
+          "latitude": 22.27086962,
+          "longitude": 120.6567673
+        },
+        {
+          "id": "1001326",
+          "name": "三地門鄉",
+          "english": "Sandimen Township",
+          "latitude": 22.79786847,
+          "longitude": 120.6865219
+        },
+        {
+          "id": "1001327",
+          "name": "霧臺鄉",
+          "english": "Wutai Township",
+          "latitude": 22.75990478,
+          "longitude": 120.8008099
+        },
+        {
+          "id": "1001328",
+          "name": "瑪家鄉",
+          "english": "Majia Township",
+          "latitude": 22.67107764,
+          "longitude": 120.6799239
+        },
+        {
+          "id": "1001329",
+          "name": "泰武鄉",
+          "english": "Taiwu Township",
+          "latitude": 22.60408477,
+          "longitude": 120.6917929
+        },
+        {
+          "id": "1001330",
+          "name": "來義鄉",
+          "english": "Laiyi Township",
+          "latitude": 22.50157206,
+          "longitude": 120.6857232
+        },
+        {
+          "id": "1001331",
+          "name": "春日鄉",
+          "english": "Chunri Township",
+          "latitude": 22.40399754,
+          "longitude": 120.6975799
+        },
+        {
+          "id": "1001332",
+          "name": "獅子鄉",
+          "english": "Shizi Township",
+          "latitude": 22.26084921,
+          "longitude": 120.7356454
+        },
+        {
+          "id": "1001333",
+          "name": "牡丹鄉",
+          "english": "Mudan Township",
+          "latitude": 22.15552859,
+          "longitude": 120.8173609
+        }
+      ]
+    },
+    {
+      "id": "yilan",
+      "name": "宜蘭縣",
+      "english": "Yilan County",
+      "defaultTown": "1000201",
+      "towns": [
+        {
+          "id": "1000201",
+          "name": "宜蘭市",
+          "english": "Yilan City",
+          "latitude": 24.75021184,
+          "longitude": 121.7569358
+        },
+        {
+          "id": "1000202",
+          "name": "羅東鎮",
+          "english": "Luodong Township",
+          "latitude": 24.67884824,
+          "longitude": 121.7701782
+        },
+        {
+          "id": "1000203",
+          "name": "蘇澳鎮",
+          "english": "Su’ao Township",
+          "latitude": 24.55467058,
+          "longitude": 121.8346892
+        },
+        {
+          "id": "1000204",
+          "name": "頭城鎮",
+          "english": "Toucheng Township",
+          "latitude": 24.90075882,
+          "longitude": 121.845797
+        },
+        {
+          "id": "1000205",
+          "name": "礁溪鄉",
+          "english": "Jiaoxi Township",
+          "latitude": 24.81144192,
+          "longitude": 121.7346606
+        },
+        {
+          "id": "1000206",
+          "name": "壯圍鄉",
+          "english": "Zhuangwei Township",
+          "latitude": 24.75183042,
+          "longitude": 121.8017622
+        },
+        {
+          "id": "1000207",
+          "name": "員山鄉",
+          "english": "Yuanshan Township",
+          "latitude": 24.74199237,
+          "longitude": 121.6612282
+        },
+        {
+          "id": "1000208",
+          "name": "冬山鄉",
+          "english": "Dongshan Township",
+          "latitude": 24.64214986,
+          "longitude": 121.760255
+        },
+        {
+          "id": "1000209",
+          "name": "五結鄉",
+          "english": "Wujie Township",
+          "latitude": 24.68887343,
+          "longitude": 121.8058342
+        },
+        {
+          "id": "1000210",
+          "name": "三星鄉",
+          "english": "Sanxing Township",
+          "latitude": 24.66771972,
+          "longitude": 121.6642714
+        },
+        {
+          "id": "1000211",
+          "name": "大同鄉",
+          "english": "Datong Township",
+          "latitude": 24.55152082,
+          "longitude": 121.5040369
+        },
+        {
+          "id": "1000212",
+          "name": "南澳鄉",
+          "english": "Nan’ao Township",
+          "latitude": 24.44864058,
+          "longitude": 121.6560593
+        }
+      ]
+    },
+    {
+      "id": "hualien",
+      "name": "花蓮縣",
+      "english": "Hualien County",
+      "defaultTown": "1001501",
+      "towns": [
+        {
+          "id": "1001501",
+          "name": "花蓮市",
+          "english": "Hualien City",
+          "latitude": 23.99700271,
+          "longitude": 121.6071463
+        },
+        {
+          "id": "1001502",
+          "name": "鳳林鎮",
+          "english": "Fenglin Township",
+          "latitude": 23.74324462,
+          "longitude": 121.4698848
+        },
+        {
+          "id": "1001503",
+          "name": "玉里鎮",
+          "english": "Yuli Township",
+          "latitude": 23.37143588,
+          "longitude": 121.3604476
+        },
+        {
+          "id": "1001504",
+          "name": "新城鄉",
+          "english": "Xincheng Township",
+          "latitude": 24.05579952,
+          "longitude": 121.6137969
+        },
+        {
+          "id": "1001505",
+          "name": "吉安鄉",
+          "english": "Ji’an Township",
+          "latitude": 23.95546585,
+          "longitude": 121.5646738
+        },
+        {
+          "id": "1001506",
+          "name": "壽豐鄉",
+          "english": "Shoufeng Township",
+          "latitude": 23.84459714,
+          "longitude": 121.5341569
+        },
+        {
+          "id": "1001507",
+          "name": "光復鄉",
+          "english": "Guangfu Township",
+          "latitude": 23.64658742,
+          "longitude": 121.4351231
+        },
+        {
+          "id": "1001508",
+          "name": "豐濱鄉",
+          "english": "Fengbin Township",
+          "latitude": 23.58519428,
+          "longitude": 121.4942331
+        },
+        {
+          "id": "1001509",
+          "name": "瑞穗鄉",
+          "english": "Ruisui Township",
+          "latitude": 23.5156124,
+          "longitude": 121.4073472
+        },
+        {
+          "id": "1001510",
+          "name": "富里鄉",
+          "english": "Fuli Township",
+          "latitude": 23.19672092,
+          "longitude": 121.2980494
+        },
+        {
+          "id": "1001511",
+          "name": "秀林鄉",
+          "english": "Xiulin Township",
+          "latitude": 24.12374414,
+          "longitude": 121.4807194
+        },
+        {
+          "id": "1001512",
+          "name": "萬榮鄉",
+          "english": "Wanrong Township",
+          "latitude": 23.72772629,
+          "longitude": 121.3189531
+        },
+        {
+          "id": "1001513",
+          "name": "卓溪鄉",
+          "english": "Zhuoxi Township",
+          "latitude": 23.39062875,
+          "longitude": 121.1804222
+        }
+      ]
+    },
+    {
+      "id": "taitung",
+      "name": "臺東縣",
+      "english": "Taitung County",
+      "defaultTown": "1001401",
+      "towns": [
+        {
+          "id": "1001401",
+          "name": "臺東市",
+          "english": "Taitung City",
+          "latitude": 22.75165721,
+          "longitude": 121.1103647
+        },
+        {
+          "id": "1001402",
+          "name": "成功鎮",
+          "english": "Chenggong Township",
+          "latitude": 23.12663716,
+          "longitude": 121.3537983
+        },
+        {
+          "id": "1001403",
+          "name": "關山鎮",
+          "english": "Guanshan Township",
+          "latitude": 23.03780684,
+          "longitude": 121.1766197
+        },
+        {
+          "id": "1001404",
+          "name": "卑南鄉",
+          "english": "Beinan Township",
+          "latitude": 22.76494453,
+          "longitude": 121.0015521
+        },
+        {
+          "id": "1001405",
+          "name": "鹿野鄉",
+          "english": "Luye Township",
+          "latitude": 22.95125666,
+          "longitude": 121.1560376
+        },
+        {
+          "id": "1001406",
+          "name": "池上鄉",
+          "english": "Chishang Township",
+          "latitude": 23.09248714,
+          "longitude": 121.2184501
+        },
+        {
+          "id": "1001407",
+          "name": "東河鄉",
+          "english": "Donghe Township",
+          "latitude": 22.98006921,
+          "longitude": 121.2517917
+        },
+        {
+          "id": "1001408",
+          "name": "長濱鄉",
+          "english": "Changbin Township",
+          "latitude": 23.33476899,
+          "longitude": 121.4261725
+        },
+        {
+          "id": "1001409",
+          "name": "太麻里鄉",
+          "english": "Taimali Township",
+          "latitude": 22.59098082,
+          "longitude": 120.9797643
+        },
+        {
+          "id": "1001410",
+          "name": "大武鄉",
+          "english": "Dawu Township",
+          "latitude": 22.38359522,
+          "longitude": 120.8991703
+        },
+        {
+          "id": "1001411",
+          "name": "綠島鄉",
+          "english": "Ludao Township",
+          "latitude": 22.66017537,
+          "longitude": 121.4901951
+        },
+        {
+          "id": "1001412",
+          "name": "海端鄉",
+          "english": "Haiduan Township",
+          "latitude": 23.11478528,
+          "longitude": 121.0175672
+        },
+        {
+          "id": "1001413",
+          "name": "延平鄉",
+          "english": "Yanping Township",
+          "latitude": 22.90343174,
+          "longitude": 120.9831902
+        },
+        {
+          "id": "1001414",
+          "name": "金峰鄉",
+          "english": "Jinfeng Township",
+          "latitude": 22.58161687,
+          "longitude": 120.8570384
+        },
+        {
+          "id": "1001415",
+          "name": "達仁鄉",
+          "english": "Daren Township",
+          "latitude": 22.38430718,
+          "longitude": 120.8355239
+        },
+        {
+          "id": "1001416",
+          "name": "蘭嶼鄉",
+          "english": "Lanyu Township",
+          "latitude": 22.04616835,
+          "longitude": 121.5508328
+        }
+      ]
+    },
+    {
+      "id": "penghu",
+      "name": "澎湖縣",
+      "english": "Penghu County",
+      "defaultTown": "1001601",
+      "towns": [
+        {
+          "id": "1001601",
+          "name": "馬公市",
+          "english": "Magong City",
+          "latitude": 23.55534,
+          "longitude": 119.59234
+        },
+        {
+          "id": "1001602",
+          "name": "湖西鄉",
+          "english": "Huxi Township",
+          "latitude": 23.57364,
+          "longitude": 119.64462
+        },
+        {
+          "id": "1001603",
+          "name": "白沙鄉",
+          "english": "Baisha Township",
+          "latitude": 23.64178,
+          "longitude": 119.59251
+        },
+        {
+          "id": "1001604",
+          "name": "西嶼鄉",
+          "english": "Xiyu Township",
+          "latitude": 23.59975,
+          "longitude": 119.50783
+        },
+        {
+          "id": "1001605",
+          "name": "望安鄉",
+          "english": "Wang’an Township",
+          "latitude": 23.36904,
+          "longitude": 119.50406
+        },
+        {
+          "id": "1001606",
+          "name": "七美鄉",
+          "english": "Qimei Township",
+          "latitude": 23.20108,
+          "longitude": 119.43393
+        }
+      ]
+    },
+    {
+      "id": "kinmen",
+      "name": "金門縣",
+      "english": "Kinmen County",
+      "defaultTown": "0902001",
+      "towns": [
+        {
+          "id": "0902001",
+          "name": "金城鎮",
+          "english": "Jincheng Township",
+          "latitude": 24.38402,
+          "longitude": 118.30128
+        },
+        {
+          "id": "0902002",
+          "name": "金沙鎮",
+          "english": "Jinsha Township",
+          "latitude": 24.45865,
+          "longitude": 118.40841
+        },
+        {
+          "id": "0902003",
+          "name": "金湖鎮",
+          "english": "Jinhu Township",
+          "latitude": 24.41496,
+          "longitude": 118.40373
+        },
+        {
+          "id": "0902004",
+          "name": "金寧鄉",
+          "english": "Jinning Township",
+          "latitude": 24.42482,
+          "longitude": 118.31705
+        },
+        {
+          "id": "0902005",
+          "name": "烈嶼鄉",
+          "english": "Lieyu Township",
+          "latitude": 24.40166,
+          "longitude": 118.22789
+        },
+        {
+          "id": "0902006",
+          "name": "烏坵鄉",
+          "english": "Wuqiu Township",
+          "latitude": 24.992338,
+          "longitude": 119.452738
+        }
+      ]
+    },
+    {
+      "id": "lienchiang",
+      "name": "連江縣",
+      "english": "Lienchiang County",
+      "defaultTown": "0900701",
+      "towns": [
+        {
+          "id": "0900701",
+          "name": "南竿鄉",
+          "english": "Nangan Township",
+          "latitude": 26.154321,
+          "longitude": 119.931128
+        },
+        {
+          "id": "0900702",
+          "name": "北竿鄉",
+          "english": "Beigan Township",
+          "latitude": 26.225637,
+          "longitude": 119.994251
+        },
+        {
+          "id": "0900703",
+          "name": "莒光鄉",
+          "english": "Juguang Township",
+          "latitude": 25.97298,
+          "longitude": 119.938877
+        },
+        {
+          "id": "0900704",
+          "name": "東引鄉",
+          "english": "Dongyin Township",
+          "latitude": 26.366101,
+          "longitude": 120.4903
+        }
+      ]
+    }
+  ]
+}

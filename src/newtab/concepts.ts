@@ -1,7 +1,7 @@
 import { t, getLocale, weekdayName } from '../i18n';
 import { localizedCalendar } from '../i18n/calendar';
 import { dailyCalendar } from '../calendar/dailyCalendar';
-import { taipeiDate } from '../calendar/gregorian';
+import { calendarDate, calendarNoon, usesTaiwanCalendar } from '../calendar/context';
 import { lunarDate } from '../calendar/lunar';
 import { getPublicData } from '../data/publicData';
 
@@ -28,7 +28,6 @@ export function createConceptLayouts(onSelect: (date?: Date) => void) {
   quote.append(quoteHeading, quoteText, quoteSource);
   const selectionLabel = document.createElement('p'); selectionLabel.className = 'selected-date-label'; selectionLabel.id = 'selected-date-label'; selectionLabel.setAttribute('role', 'status');
   const todayContext = document.createElement('p'); todayContext.className = 'today-context'; todayContext.id = 'today-context';
-  const clockCaption = calendar.querySelector<HTMLElement>('.clock-caption')!;
   const dateSection = calendar.querySelector<HTMLElement>('.calendar')!;
   const monthView = document.createElement('section'); monthView.id = 'month-view'; monthView.setAttribute('aria-label', t("月曆"));
   const toolbar = document.createElement('div'); toolbar.className = 'month-toolbar';
@@ -39,11 +38,11 @@ export function createConceptLayouts(onSelect: (date?: Date) => void) {
   let currentStyle = '', selected = '', todayKey = '';
   let weekStart: 0 | 1 = 0;
   let quoteCategory = 'daily';
-  let year = taipeiDate().year, month = taipeiDate().month;
+  let year = calendarDate().year, month = calendarDate().month;
   const prev = button('‹', t("上一個月"), () => changeMonth(-1));
   const next = button('›', t("下一個月"), () => changeMonth(1));
   const today = button(t("今天"), t("回到今天"), () => {
-    const date = taipeiDate(); year = date.year; month = date.month; selected = ''; onSelect(); renderMonth();
+    const date = calendarDate(); year = date.year; month = date.month; selected = ''; onSelect(); renderMonth();
   });
   toolbar.append(prev, title, next, today);
   const grid = document.createElement('div'); grid.className = 'month-grid'; grid.setAttribute('role', 'group'); grid.setAttribute('aria-labelledby', title.id);
@@ -65,7 +64,7 @@ export function createConceptLayouts(onSelect: (date?: Date) => void) {
     const offset = (new Date(Date.UTC(year, month - 1, 1)).getUTCDay() - weekStart + 7) % 7;
     const days = new Date(Date.UTC(year, month, 0)).getUTCDate();
     const cells = Math.ceil((offset + days) / 7) * 7;
-    const now = taipeiDate();
+    const now = calendarDate();
     const selectedKey = selected || now.key;
     selectionLabel.textContent = t("選取日期 · {0} {1}", [selectedKey.replaceAll('-', '/'), selectedKey === now.key ? t("（今天）") : '']);
     dateSection.setAttribute('aria-label', t("選取日期 {0}", [selectedKey]));
@@ -74,7 +73,7 @@ export function createConceptLayouts(onSelect: (date?: Date) => void) {
       const day = index - offset + 1;
       if (day < 1 || day > days) { const blank = document.createElement('div'); blank.className = 'month-blank'; grid.append(blank); continue; }
       const key = `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
-      const date = new Date(`${key}T12:00:00+08:00`);
+      const date = calendarNoon(key);
       const info = localizedCalendar(dailyCalendar(date));
       const cell = button('', key, () => {
         selected = key; onSelect(date); renderMonth(); grid.querySelector<HTMLButtonElement>(`[aria-label="${key}"]`)?.focus();
@@ -87,15 +86,15 @@ export function createConceptLayouts(onSelect: (date?: Date) => void) {
       const lunar = lunarDate(info).lunar;
       const lunarLabel = document.createElement('span'); lunarLabel.className = 'month-lunar';
       lunarLabel.textContent = getLocale() === 'zh-TW' ? (lunar.getDay() === 1 ? info.lunar.split('・').pop()! : lunar.getDayInChinese()) : `${Math.abs(lunar.getMonth())}/${lunar.getDay()}`;
-      const detail = document.createElement('span'); detail.className = 'month-detail'; detail.textContent = info.terms.today || info.holiday || info.festivals[0] || '';
-      cell.title = t("{0} · 農曆 {1}{2}", [key, info.lunar, detail.textContent ? ` · ${detail.textContent}` : '']);
+      const detail = document.createElement('span'); detail.className = 'month-detail'; detail.textContent = (usesTaiwanCalendar() ? info.terms.today : '') || info.holiday || info.festivals[0] || '';
+      cell.title = usesTaiwanCalendar() ? t("{0} · 農曆 {1}{2}", [key, info.lunar, detail.textContent ? ` · ${detail.textContent}` : '']) : key;
       cell.append(number, lunarLabel);
       if (detail.textContent) cell.append(detail);
       grid.append(cell);
     }
   }
   function refresh() {
-    const date = taipeiDate();
+    const date = calendarDate();
     if (todayKey === date.key) return;
     if (todayKey && !selected) { year = date.year; month = date.month; }
     todayKey = date.key;
@@ -108,6 +107,7 @@ export function createConceptLayouts(onSelect: (date?: Date) => void) {
   return {
     refresh,
     refreshData() { todayKey = ''; refresh(); },
+    refreshContext() { const date = calendarDate(); year = date.year; month = date.month; selected = ''; todayKey = ''; onSelect(); refresh(); },
     setQuoteCategory(value: string) {
       if (value === quoteCategory) return;
       quoteCategory = value; todayKey = ''; refresh();
@@ -124,7 +124,6 @@ export function createConceptLayouts(onSelect: (date?: Date) => void) {
       monthView.remove(); quote.remove(); selectionLabel.remove(); todayContext.remove();
       quoteHeading.textContent = style === 'workspace' ? t("今日語錄") : t("每日一句");
       quote.setAttribute('aria-label', quoteHeading.textContent);
-      clockCaption.textContent = style === 'workspace' ? t("現在時間 · 台灣") : t("台灣時間");
       shell.hidden = !['workspace', 'reading'].includes(style);
       if (style === 'workspace') {
         sidebar.append(shortcuts); stage.append(search, monthView, history); rail.append(selectionLabel, calendar, todayContext, todos, quote);

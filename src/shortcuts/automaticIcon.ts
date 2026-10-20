@@ -67,33 +67,6 @@ async function chromeIcon(pageUrl: string): Promise<string | undefined> {
   } catch { return; }
 }
 
-async function websiteIcon(origin: string): Promise<string> {
-  let candidates: string[] = [];
-  try {
-    const page = await download(origin + '/', 1024 * 1024);
-    const doc = new DOMParser().parseFromString(new TextDecoder().decode(page.bytes), 'text/html');
-    let base = page.url;
-    try { base = new URL(doc.querySelector('base[href]')?.getAttribute('href') || page.url, page.url).href; } catch { /* Use final page URL. */ }
-    for (const link of doc.querySelectorAll('link[href]')) {
-      const rel = (link.getAttribute('rel') || '').toLowerCase().split(/\s+/);
-      if (!rel.includes('icon') && !rel.includes('apple-touch-icon')) continue;
-      try {
-        const url = new URL(link.getAttribute('href')!, base);
-        if (['https:', 'http:'].includes(url.protocol) && !url.username && !url.password) candidates.push(url.href);
-      } catch { /* Skip malformed icon links. */ }
-    }
-    candidates = [...new Set(candidates)].slice(0, 4);
-    candidates.push(new URL('/favicon.ico', page.url).href);
-  } catch { candidates.push(origin + '/favicon.ico'); }
-  for (const url of [...new Set(candidates)]) {
-    try {
-      const result = await download(url, 5 * 1024 * 1024);
-      return await importShortcutIcon(new File([result.bytes], 'favicon', { type: result.type }));
-    } catch { /* Try the next icon declared by the website. */ }
-  }
-  throw new Error('No usable website icon');
-}
-
 export function automaticShortcutIcon(pageUrl: string): Promise<string | undefined> {
   const origin = new URL(pageUrl).origin;
   const existing = pending.get(origin);
@@ -113,21 +86,13 @@ async function resolveIcon(pageUrl: string, origin: string): Promise<string | un
   const cached = (await readCache())[origin];
   if (cached?.icon && Date.now() - cached.checked < 7 * day) return cached.icon;
   if (cached?.retryAfter && Date.now() < cached.retryAfter) return cached.icon;
-  // An expired success must check the website, not renew Chrome's old copy.
-  const local = cached?.icon ? undefined : await chromeIcon(pageUrl);
-  if (local) {
-    await saveCache(origin, { icon: local, checked: Date.now() }).catch(() => {});
-    return local;
-  }
-  if (cached && !cached.icon && Date.now() - cached.checked < day) return;
+  // Refresh only through Chrome's favicon endpoint; no arbitrary website requests.
   if (navigator.onLine === false) return cached?.icon;
-  for (let attempt = 0; attempt < 3; attempt++) {
-    if (attempt) await new Promise(resolve => setTimeout(resolve, attempt * 1000));
-    try {
-      const icon = await websiteIcon(origin);
-      await saveCache(origin, { icon, checked: Date.now() }).catch(() => {});
-      return icon;
-    } catch { /* A temporary failure gets a bounded retry. */ }
+  if (cached && !cached.icon && Date.now() - cached.checked < day) return;
+  const icon = await chromeIcon(pageUrl);
+  if (icon) {
+    await saveCache(origin, { icon, checked: Date.now() }).catch(() => {});
+    return icon;
   }
   await saveCache(origin, cached?.icon ? { ...cached, retryAfter: Date.now() + day } : { checked: Date.now() }).catch(() => {});
   return cached?.icon;

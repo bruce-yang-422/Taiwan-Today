@@ -1,4 +1,5 @@
 import { t } from '../i18n';
+import { clockTimezone, getCalendarContext } from '../calendar/context';
 export function initializeClock() {
   const face = document.getElementById('analog-clock')!;
   const digital = document.getElementById('digital-clock') as HTMLTimeElement;
@@ -13,19 +14,28 @@ export function initializeClock() {
     tick.setAttribute('class', index % 5 === 0 ? 'clock-major-tick' : 'clock-minor-tick');
     ticks.append(tick);
   }
-  const formatter = new Intl.DateTimeFormat('en-GB', {
-    timeZone: 'Asia/Taipei', hourCycle: 'h23', hour: '2-digit', minute: '2-digit', second: '2-digit',
-  });
+  let zone = '', formatter: Intl.DateTimeFormat;
   function update() {
+    const timezone = clockTimezone();
+    const caption = document.querySelector<HTMLElement>('.clock-caption')!;
+    if (!timezone) {
+      digital.textContent = '--:--:--'; digital.removeAttribute('datetime');
+      caption.textContent = t('正在取得 GPS 時區…');
+      digital.setAttribute('aria-label', caption.textContent); face.setAttribute('aria-label', caption.textContent);
+      face.style.opacity = '0.35'; return;
+    }
+    face.style.opacity = '';
+    if (timezone !== zone) { zone = timezone; formatter = new Intl.DateTimeFormat('en-GB', { timeZone: zone, hourCycle: 'h23', hour: '2-digit', minute: '2-digit', second: '2-digit' }); }
+    caption.textContent = getCalendarContext().mode === 'taiwan' || (getCalendarContext().mode === 'travel' && getCalendarContext().travelClock === 'taiwan') ? t('台灣時間') : t('當地時間 · {0}', [zone]);
     const time = formatter.format(new Date());
     digital.textContent = time;
     digital.dateTime = time;
-    digital.setAttribute('aria-label', t("台灣時間 {0}", [time]));
+    digital.setAttribute('aria-label', `${caption.textContent} ${time}`);
     const [hour, minute, second] = time.split(':').map(Number);
     document.getElementById('clock-hour')!.setAttribute('transform', `rotate(${hour % 12 * 30 + minute / 2 + second / 120} 60 60)`);
     document.getElementById('clock-minute')!.setAttribute('transform', `rotate(${minute * 6 + second / 10} 60 60)`);
     document.getElementById('clock-second')!.setAttribute('transform', `rotate(${second * 6} 60 60)`);
-    face.setAttribute('aria-label', t("台灣時間 {0}", [time]));
+    face.setAttribute('aria-label', `${caption.textContent} ${time}`);
   }
   let timer: ReturnType<typeof setInterval> | undefined;
   function resume() {
@@ -35,5 +45,6 @@ export function initializeClock() {
   }
   document.addEventListener('visibilitychange', resume);
   window.addEventListener('focus', resume);
+  window.addEventListener('calendarcontextchange', resume);
   resume();
 }

@@ -1,0 +1,85 @@
+/* The month and miniature month share the printed header. */
+:root[data-style=traditional] .calendar-clock-group .calendar {
+  --paper-inset:20px;
+  display:grid; grid-template-columns:minmax(0,1fr) 144px;
+  grid-template-rows:auto auto auto auto auto minmax(0,1fr) auto;
+  align-content:start; column-gap:12px; padding:16px 20px 10px;
+}
+:root[data-style=traditional] .calendar h1 { display:contents; padding:0; }
+:root[data-style=traditional] .month { grid-column:1; grid-row:1; align-self:center; justify-self:stretch; margin:0 -12px 0 calc(-1 * var(--paper-inset)); padding:0; max-width:none; text-align:center; font-size:clamp(24px,2.4vw,36px); letter-spacing:.05em; overflow-wrap:anywhere; }
+:root[data-style=traditional] .paper-mini-calendar { grid-column:2; grid-row:1; position:static; width:100%; max-width:144px; justify-self:end; font-size:11px; }
+:root[data-style=traditional] .day { grid-column:1 / -1; grid-row:2; font-size:clamp(150px,15vw,230px); line-height:1.08; padding:8px 0 0; margin-top:4px; }
+:root[data-style=traditional] .weekday { grid-column:1 / -1; grid-row:3; font-size:23px; border:0; padding:0; margin:0; line-height:1.4; }
+:root[data-style=traditional] .lunar { grid-column:1 / -1; grid-row:4; border:0; padding:4px 0 8px; margin:0 auto; font-size:14px; }
+:root[data-style=traditional] #festivals { grid-column:1 / -1; grid-row:5; gap:4px; }
+:root[data-style=traditional] #festivals:empty { display:none; }
+:root[data-style=traditional] .season { grid-column:1 / -1; grid-row:7; align-self:end; margin:8px 0 0; padding-top:8px; }
+.paper-weather { min-width:0; text-align:left; }
+.paper-weather[hidden], .paper-weather [hidden] { display:none; }
+:root[data-style=traditional] .paper-weather { grid-column:1 / -1; grid-row:6; align-self:end; margin-top:12px; border-top:1px solid var(--line); padding-top:10px; color:var(--ink); }
+.weather-heading { display:flex; align-items:center; gap:8px; margin-bottom:10px; }
+.weather-heading strong { flex:1; min-width:0; font-size:13px; font-weight:500; text-align:left; overflow-wrap:anywhere; }
+#weather-settings-controls { display:grid; gap:10px; }
+#weather-district-field { display:grid; gap:10px; }
+#weather-settings-controls select { width:100%; min-width:0; font:inherit; padding:8px; color:var(--ink); background:var(--paper); border:1px solid var(--line); border-radius:4px; }
+#weather-settings-controls [hidden] { display:none; }
+#settings-dialog #weather-settings-open {
+  display:grid; grid-template-columns:24px minmax(0,1fr) 16px; align-items:center; gap:12px;
+  width:100%; min-height:64px; margin:16px 0 4px; padding:12px 14px;
+  border:1px solid var(--accent); border-radius:12px; background:var(--soft); color:var(--accent);
+  text-align:left; cursor:pointer; box-shadow:0 2px 4px #0000000d;
+}
+#weather-settings-open svg { width:24px; height:24px; }
+#weather-settings-open .weather-settings-copy { display:grid; gap:3px; min-width:0; overflow-wrap:anywhere; }
+#weather-settings-open strong { font-size:var(--reading-control,14px); font-weight:650; }
+#weather-settings-current { font-size:12px; line-height:1.5; }
+#weather-settings-open .weather-settings-arrow { font-size:26px; line-height:1; }
+#settings-dialog #weather-settings-open:hover { background:var(--accent); color:var(--paper); }
+#settings-dialog #weather-settings-open:focus-visible { outline:3px solid var(--accent); outline-offset:3px; }
+#settings-dialog #weather-settings-open:active { transform:translateY(1px); box-shadow:none; }
+.weather-heading button { padding:3px 8px; font-size:20px; line-height:1; border:1px solid var(--line); border-radius:4px; }
+.weather-days { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); }
+.weather-days article { min-width:0; padding:0 10px; text-align:center; }
+.weather-days article:first-child { border-right:1px solid var(--line); padding-left:0; }
+.weather-days article:last-child { padding-right:0; }
+.weather-days h2 { font-size:12px; letter-spacing:.06em; margin:0 0 5px; color:var(--muted); }
+.weather-value { display:flex; align-items:center; justify-content:center; gap:6px; flex-wrap:wrap; }
+.weather-value span { font-size:26px; line-height:1.2; }
+.weather-value strong { font-size:22px; line-height:1.4; font-family:ui-sans-serif,system-ui,sans-serif; font-weight:600; letter-spacing:-.03em; white-space:nowrap; }
+.weather-days article:last-child strong { font-size:18px; }
+.weather-days p { font-size:12px; line-height:1.45; margin:3px 0 0; overflow-wrap:anywhere; }
+.weather-source, .weather-status, .weather-coordinate { font-size:10px; line-height:1.5; margin:6px 0 0; text-align:center; color:var(--muted); overflow-wrap:anywhere; }
+.weather-source a { text-decoration:underline; text-underline-offset:2px; }
+.weather-gps { padding:8px; margin-bottom:8px; background:var(--soft); border:1px solid var(--line); border-radius:4px; }
+.weather-gps p { font-size:12px; margin-bottom:6px; }
+.weather-gps>div:first-of-type { display:grid; grid-template-columns:auto minmax(0,1fr); gap:5px 8px; align-items:center; }
+.weather-gps label { font-size:12px; }
+.weather-gps input { min-width:0; width:100%; font-size:13px; padding:4px 6px; background:var(--paper); color:var(--ink); border:1px solid var(--line); border-radius:3px; }
+.weather-gps-actions { display:flex; gap:10px; justify-content:flex-end; margin-top:8px; font-size:12px; }
+.weather-gps-actions button { border:1px solid var(--line); padding:3px 8px; border-radius:3px; }
+:root[data-calendar-mode=international] :is(#lunar,.season,#festivals,.month-lunar) { display:none; }
+:root[data-calendar-mode=international][data-style=traditional] .calendar { grid-template-rows:auto auto auto 0 0 minmax(0,1fr) 0; }
+@media(min-width:1100px) and (max-height:850px) {
+  :root[data-style=traditional] main { grid-template-rows:32px auto auto auto auto 1fr; }
+  :root[data-style=traditional] .clock-container { width:124px; margin:6px auto 10px; }
+  :root[data-style=traditional] #todo-panel[open] .todo-body { min-height:110px; }
+  :root[data-style=traditional] .shortcuts-section { margin:6px 0; }
+  :root[data-style=traditional] main>.daily-quote { grid-template-columns:80px minmax(0,1fr) 100px; padding:8px 14px; gap:10px; margin-bottom:8px; }
+  :root[data-style=traditional] .daily-quote blockquote { font-size:18px; line-height:1.4; }
+  :root[data-style=traditional] .daily-quote>p { grid-column:auto; }
+  :root[data-style=traditional] #history:not([data-count="1"]):not([data-count="2"]):not([data-count="0"]) { grid-template-columns:repeat(3,minmax(0,1fr)); }
+  :root[data-style=traditional] .history-card, :root[data-style=traditional] .history-card:first-child { padding:6px 0; }
+  :root[data-style=traditional] .calendar-clock-group .calendar { --paper-inset:14px; min-height:0; padding:10px 14px 6px; }
+  :root[data-style=traditional] .day { font-size:148px; padding-top:4px; }
+  :root[data-style=traditional] .month { font-size:25px; }
+  :root[data-style=traditional] .weekday { font-size:20px; }
+  :root[data-style=traditional] .paper-mini-calendar { font-size:10px; }
+  :root[data-style=traditional] .lunar { padding:2px 0 4px; }
+  :root[data-style=traditional] .paper-weather { margin-top:6px; padding-top:6px; }
+  .weather-heading { margin-bottom:5px; }
+  .weather-value strong { font-size:20px; }
+}
+@media(max-width:1099px) {
+  :root[data-style=traditional] .calendar-clock-group .calendar { max-width:520px; margin-inline:auto; }
+  :root[data-style=traditional] .day { font-size:172px; }
+}

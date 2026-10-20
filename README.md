@@ -17,9 +17,9 @@
 
 版本下載：[v1.0.0 發布頁與更新說明](https://github.com/bruce-yang-422/Taiwan-Today/releases/tag/v1.0.0)
 
-目前原始碼版本：**1.1.0**，更新內容見 [v1.1.0 更新說明](V1.1.0.md)；本版封裝檔為 [`release/taiwan-daily-chrome-1.1.0.zip`](release/taiwan-daily-chrome-1.1.0.zip)。
+目前原始碼版本：**1.1.0**，更新內容見 [v1.1.0 更新說明](V1.1.0.md)；本版封裝檔統一為 [`release/taiwan-daily-chrome-1.1.0.zip`](release/taiwan-daily-chrome-1.1.0.zip)，已包含縮小網站存取權限的修改，可用於商店上傳。
 
-以 Vite、TypeScript、Tailwind CSS 與 Manifest V3 實作的 Chrome 新分頁。無後端、無帳號、無追蹤，日曆與內建內容可離線使用；Google 文字／圖片搜尋、外部連結、捷徑圖示更新與公共資料更新需要網路。使用 `storage`、`favicon` 與 HTTP／HTTPS 網站存取權限；網站存取用於下載捷徑圖示，公共資料更新由使用者手動執行或啟用每日檢查。
+以 Vite、TypeScript、Tailwind CSS 與 Manifest V3 實作的 Chrome 新分頁。無後端、無帳號、無追蹤，日曆與內建內容可離線使用；Google 文字／圖片搜尋、外部連結、捷徑圖示更新與公共資料更新需要網路。使用 `storage`、`favicon` 與限定於 `api.open-meteo.com` 的天氣連線權限；公共資料更新的 `raw.githubusercontent.com` 為選用權限，由使用者手動執行或啟用每日檢查時授權。不申請所有 HTTP／HTTPS 網站的存取權限。
 
 個人／家族紀事範例：[CSV](templates/history-template.csv)、[XLSX](templates/history-template.xlsx)、[ODS](templates/history-template.ods)。選一種填寫，再使用[官網轉檔工具](https://today.stack-base.com/#converter)預覽並下載 JSON，於插件「設定 → 資料管理 → 匯入個人歷史」匯入。欄位格式見 [範例說明](templates/README.md)。
 
@@ -84,6 +84,10 @@ npx playwright test --config tests/pages/playwright.config.mjs
 開發預覽網址為 `/newtab.html`；一般網頁使用 localStorage，擴充功能使用 chrome.storage.local，兩者資料互相獨立。建置由小型 Vite 外掛複製 manifest，無需 CRXJS 或背景 service worker。
 
 ## 已實作
+
+- 「歲月紙曆」月份移到左上，與右側小月曆並排；星期、農曆緊接日期數字，下方顯示今天即時天氣與明日預報。天氣卡只顯示地點與更新按鈕；從「設定 → 外觀 → 設定天氣地點」選擇臺灣 22 縣市、368 鄉鎮市區（預設臺北市信義區），國內外皆可自行輸入 GPS 緯度／經度並保存在本機，不請求裝置定位權限。舊版只有縣市的設定會採用該縣市的預設行政區。
+- 「設定 → 外觀 → 日曆使用情境」分為國內使用（預設）、短期出差及長期海外。國內與出差保留臺灣日期、農曆、節氣及放假資訊；出差時鐘可獨立選臺灣時間或天氣 GPS 地點時間。長期海外使用裝置當地時區（亦可自選 IANA 時區）的西曆與時鐘，隱藏農曆、節氣及臺灣假期，不推測其他國家的法定假日。語言、天氣地點、日曆模式彼此獨立。
+- 天氣使用開源 [Open-Meteo Forecast API](https://open-meteo.com/en/docs)，請求目前溫度、天氣代碼及明日高低溫／降雨機率；目前值為模式估算。顯示來源與 [CC BY 4.0](https://open-meteo.com/en/licence) 授權，縣市、行政區及行政區英文名稱依[中央氣象署](https://www.cwa.gov.tw/Data/js/info/Info_Town.js)；行政區中心點座標採[中華郵政政府開放資料](https://data.gov.tw/dataset/25489)（2016-08-12 版，政府資料開放授權條款第 1 版），來源保存在 `src/weather/taiwan-locations.json`。日本語介面的行政區保留官方中文原名，不自行音譯。中心點無法代表整區的微氣候，山區或沿海可改填 GPS；縮小查詢範圍不代表模式估算一定準確。資料快取 10 分鐘，同地點的分頁透過瀏覽器鎖共用快取；功能使用中且分頁可見時每 10 分鐘更新，重新聚焦補查過期資料。網路失敗保留上次資料並標示，沒有快取時顯示錯誤與重試按鈕。GPS 天氣的今天／明天依 API 回傳的所在地時區判定。
 
 - 「設定 → 外觀 → 語言」支援繁體中文、English、日本語，預設依瀏覽器語言選擇；未支援的語言回退為繁體中文。選擇會保存在本機，切換時重新載入目前分頁。五種樣式的操作介面、日期、農曆、節氣、節日與提示訊息皆支援三語；時區與假日維持台灣規則。歷史紀事、語錄、私人內容及已儲存捷徑名稱保留原文，官網與下載範本仍使用原有語言。
 
@@ -226,7 +230,7 @@ node scripts/import-calendar.mjs --year 2027 --csv path/to/116-calendar.csv
 
 52 個網站皆預先備好 Logo，隨插件打包；常用網站選單離線也能顯示，圖示載入失敗時以名稱縮寫替代。加入捷徑後先使用同一份預設圖示，再依下列機制取得與更新網站圖示。來源見[常用網站圖示紀錄](public/icons/websites/SOURCES.md)。
 
-自動圖示先透過 [Chrome 內建 favicon 功能](https://developer.chrome.com/docs/extensions/how-to/ui/favicons)取得；若回傳預設地球圖示或讀取失敗，會讀取網站首頁宣告的 PNG / ICO 圖示，並以 `/favicon.ico` 作為後備來源。下載不帶 Cookie 或 Referer，失敗最多嘗試 3 次，之後隔天再試。成功圖示保存在本機，滿 7 天後於開啟新分頁時檢查更新；取得新版後取代預設圖示或舊快取，更新失敗保留舊圖示並隔天再試，沒有快取時保留打包圖示。同一網站的同時請求會合併，快取最多保留 100 個網站。
+自動圖示僅透過 [Chrome 內建 favicon 功能](https://developer.chrome.com/docs/extensions/how-to/ui/favicons)取得，不直接下載捷徑網站首頁、CDN 或 `/favicon.ico`，因此不需要任意網站存取權限。若 Chrome 回傳預設地球圖示或讀取失敗，保留原有快取、打包圖示或名稱縮寫，也可自行上傳圖示。成功圖示保存在本機，滿 7 天後於開啟新分頁時重新向 Chrome 查詢；失敗隔天再試，不保證 Chrome 已有網站最新圖示。同一網站的同時請求會合併，快取最多保留 100 個網站。
 
 也可自行匯入 PNG / ICO（最大 5 MB，匯入後自動縮小為最長邊 64 px，保留透明背景）；自訂圖示優先使用，不被自動更新覆蓋。無雲端同步，資料保存在本機。
 
