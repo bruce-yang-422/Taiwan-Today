@@ -1,3 +1,4 @@
+import { errorMessage } from '../i18n/errors';
 import { t } from '../i18n';
 import libraryUrl from '../../vendor/sheetjs/xlsx.full.min.js?url';
 import { convertRows } from './historyRows.js';
@@ -12,7 +13,7 @@ export function readHistoryWorkbook(bytes: ArrayBuffer): Promise<HistorySheet[]>
     worker.onerror = () => { finish(); reject(new Error(t("無法讀取試算表，請確認檔案沒有損毀或加密。"))); };
     worker.onmessage = event => {
       finish();
-      if (event.data.error) reject(new Error(t("無法讀取試算表：{0}", [event.data.error])));
+      if (event.data.error) reject(new Error(t("無法讀取試算表：{0}", [errorMessage(event.data.error)])));
       else resolve(event.data.sheets);
     };
     worker.postMessage({ bytes, libraryUrl: new URL(libraryUrl, location.href).href }, [bytes]);

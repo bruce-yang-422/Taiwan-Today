@@ -1,4 +1,5 @@
 import { t, weekdayName } from '../i18n';
+import { holidayLabel } from '../i18n/calendar';
 import { getPublicData } from '../data/publicData';
 
 /** Weekends stay red; the local holiday calendar also covers weekday days off. */
@@ -36,7 +37,7 @@ export function renderPaperMonth(table: HTMLTableElement, date: { year: number; 
     time.textContent = String(value);
     if (isPaperRedDay(year, month, value)) time.className = 'paper-red-day';
     const holiday = getPublicData().holidays[time.dateTime];
-    if (holiday) time.title = t(holiday);
+    if (holiday) time.title = holidayLabel(holiday);
     if (value === day) time.setAttribute('aria-current', 'date');
     cell.append(time);
   }

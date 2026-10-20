@@ -53,6 +53,19 @@ npm run build
 
 ## 開發與驗證
 
+### 英文與日文日曆資料
+
+`data/en/` 與 `data/ja/` 各提供 `long-holidays.json`、`holidays.json`、`calendar-2026.json`、`calendar-2027.json`、`festivals.json`。內容包含名稱、節日說明、適用範圍、農曆與節氣翻譯；沿用中文原檔的 JSON 欄位、資料版本與原始更新時間，日期、休假規則及連假天數保持一致。這些是獨立資料檔，目前新分頁仍以中文公共資料配合介面翻譯顯示，尚未將這十份檔案接入遠端更新清單。
+
+節日英文名稱參考[人事行政總處](https://www.dgpa.gov.tw/en/information?pid=12580&uid=353)，日文名稱參考[交通部觀光署](https://jp.taiwan.net.tw/m1.aspx?sNo=0003064)；神祇英文名稱優先採[臺北市民政局中英對照](https://reduce-co2.civil.taipei/News_Content.aspx?n=9805C9CBAC56EE33&s=63D784EA791273D9&sms=9A5AC51390A2BB5C)，節氣名稱參考[日本國立天文台](https://eco2.mtk.nao.ac.jp/koyomi/faq/24sekki.html.en)。來源與採用範圍見 [translation-sources.json](data/translation-sources.json)：`official` 表示查得完整官方用語，`derived` 表示採官方專名組成的譯文，其餘為 `project_translation`，不宣稱是官方名稱。節日說明與適用範圍為中文原文的專案翻譯。
+
+```sh
+npm run data:localize      # 從中文原檔、介面辭典及說明翻譯產生十份資料
+npm run data:check-locales # 檢查翻譯檔是否與來源同步，不寫入檔案
+```
+
+節日名稱與節氣名稱維護於 `src/i18n/en.json`、`src/i18n/ja.json`；完整說明與適用範圍維護於 `scripts/calendar-data-translations.json`。新增專名、歷史名稱或地標譯文時，先查主管政府機關公布的名稱並記錄來源；查無官方譯名時明確標示為專案翻譯。
+
 ```sh
 npm run dev
 npm run data:import
@@ -71,6 +84,8 @@ npx playwright test --config tests/pages/playwright.config.mjs
 開發預覽網址為 `/newtab.html`；一般網頁使用 localStorage，擴充功能使用 chrome.storage.local，兩者資料互相獨立。建置由小型 Vite 外掛複製 manifest，無需 CRXJS 或背景 service worker。
 
 ## 已實作
+
+- 「設定 → 外觀 → 語言」支援繁體中文、English、日本語，預設依瀏覽器語言選擇；未支援的語言回退為繁體中文。選擇會保存在本機，切換時重新載入目前分頁。五種樣式的操作介面、日期、農曆、節氣、節日與提示訊息皆支援三語；時區與假日維持台灣規則。歷史紀事、語錄、私人內容及已儲存捷徑名稱保留原文，官網與下載範本仍使用原有語言。
 
 - 右上角提供 Gmail、雲端硬碟與 Google 日曆的小圖示捷徑，可直接另開分頁；滑鼠停留顯示名稱。自訂 Google 應用程式九宮格收錄 41 個服務，以常用通訊、影音、搜尋及文件工具優先，商務工具靠後（編輯預設順序，非官方熱門排名）；支援選單內捲動、鍵盤操作、Esc 與點外側關閉。圖示隨插件打包，不讀取 Google 帳戶或同步官方最愛，無需額外權限；來源見 [Google 圖示紀錄](public/icons/google/SOURCES.md)。
 

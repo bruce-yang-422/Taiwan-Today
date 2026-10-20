@@ -33,4 +33,4 @@ void start().catch(() => {
   const status = document.getElementById('status')!;
   status.hidden = false;
   status.textContent = t('頁面載入失敗，請重新整理。');
-});
+}).finally(() => document.documentElement.removeAttribute('data-loading'));

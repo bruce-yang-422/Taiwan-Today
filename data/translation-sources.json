@@ -1,0 +1,957 @@
+{
+  "checkedAt": "2026-10-20",
+  "scope": [
+    "long-holidays.json",
+    "holidays.json",
+    "calendar-2026.json",
+    "calendar-2027.json",
+    "festivals.json"
+  ],
+  "policy": {
+    "preferredSources": "Taiwan central/local government publications; public astronomy institutions for solar-term terminology.",
+    "defaultStatus": "project_translation",
+    "meaning": {
+      "official": "The complete translated label is attested in the linked public-sector source.",
+      "derived": "An official base name is used in a project-composed label, such as a deity birthday or a combined holiday.",
+      "project_translation": "No exact official translation was established in this review. The wording is a project translation, not an official designation."
+    },
+    "descriptions": "Translations of the original Chinese descriptions and scope notes; not quotations from government pages.",
+    "calendarRules": "Only terminology is localized. Dates, lunar calendar data, day-off flags and holiday periods remain those in the Chinese source.",
+    "futureProperNames": "Check responsible government agencies for people, historical events, place names and landmarks before translating; record official wording and sources, and mark unattested wording as a project translation."
+  },
+  "sources": {
+    "dgpa-en": {
+      "publisher": "Directorate-General of Personnel Administration, Executive Yuan",
+      "title": "2026 Work Calendar / Enforcement Act for Memorial Days and Festivals",
+      "url": "https://www.dgpa.gov.tw/en/information?pid=12580&uid=353"
+    },
+    "tourism-ja-holidays": {
+      "publisher": "交通部觀光署",
+      "title": "実用的な情報・祝祭日",
+      "url": "https://jp.taiwan.net.tw/m1.aspx?sNo=0003064"
+    },
+    "tourism-ja-festivals": {
+      "publisher": "交通部觀光署",
+      "title": "伝統的な行事やイベント",
+      "url": "https://jp.taiwan.net.tw/m1.aspx?sNo=0003020"
+    },
+    "taipei-deities-en": {
+      "publisher": "臺北市政府民政局",
+      "title": "神祇中英介紹 (Introduction)",
+      "url": "https://reduce-co2.civil.taipei/News_Content.aspx?n=9805C9CBAC56EE33&s=63D784EA791273D9&sms=9A5AC51390A2BB5C"
+    },
+    "tainan-deities-en": {
+      "publisher": "臺南市山上區公所",
+      "title": "Shanshang Village",
+      "url": "https://shanshang.tainan.gov.tw/en/cp.aspx?n=8588"
+    },
+    "taipei-xiahai-en": {
+      "publisher": "臺北市政府",
+      "title": "Xiahai City God Cultural Festival to Spotlight Dadaocheng Tourism",
+      "url": "https://english.gov.taipei/News_Content.aspx?n=A11F01CFC9F58C83&s=818D61D213D4B138&sms=DFFA119D1FD5602C"
+    },
+    "naoj-solar-terms": {
+      "publisher": "National Astronomical Observatory of Japan, Ephemeris Computation Office",
+      "title": "Glossary on Solar Terms",
+      "url": "https://eco2.mtk.nao.ac.jp/koyomi/faq/24sekki.html.en",
+      "note": "Terminology only. Japanese calendar dates, time zones and holiday rules are not imported."
+    }
+  },
+  "terms": {
+    "和平紀念日": {
+      "en": {
+        "text": "Peace Memorial Day",
+        "status": "official",
+        "sourceIds": [
+          "dgpa-en"
+        ]
+      },
+      "ja": {
+        "text": "平和記念日",
+        "status": "official",
+        "sourceIds": [
+          "tourism-ja-holidays"
+        ]
+      }
+    },
+    "兒童節": {
+      "en": {
+        "text": "Children's Day",
+        "status": "official",
+        "sourceIds": [
+          "dgpa-en"
+        ]
+      },
+      "ja": {
+        "text": "こどもの日",
+        "status": "official",
+        "sourceIds": [
+          "tourism-ja-holidays"
+        ]
+      }
+    },
+    "勞動節": {
+      "en": {
+        "text": "Labor Day",
+        "status": "official",
+        "sourceIds": [
+          "dgpa-en"
+        ]
+      },
+      "ja": {
+        "text": "労働者の日",
+        "status": "official",
+        "sourceIds": [
+          "tourism-ja-holidays"
+        ]
+      }
+    },
+    "父親節": {
+      "en": {
+        "text": "Father's Day",
+        "status": "official",
+        "sourceIds": [
+          "dgpa-en"
+        ]
+      }
+    },
+    "教師節": {
+      "en": {
+        "text": "Teachers' Day",
+        "status": "official",
+        "sourceIds": [
+          "dgpa-en"
+        ]
+      },
+      "ja": {
+        "text": "教師の日",
+        "status": "official",
+        "sourceIds": [
+          "tourism-ja-holidays"
+        ]
+      }
+    },
+    "國慶日": {
+      "en": {
+        "text": "National Day",
+        "status": "official",
+        "sourceIds": [
+          "dgpa-en"
+        ]
+      },
+      "ja": {
+        "text": "国慶日",
+        "status": "official",
+        "sourceIds": [
+          "tourism-ja-holidays"
+        ]
+      }
+    },
+    "臺灣光復暨金門古寧頭大捷紀念日": {
+      "en": {
+        "text": "Taiwan Retrocession Day and Memorial Day of Great Victory at Kuningtou Kinmen",
+        "status": "official",
+        "sourceIds": [
+          "dgpa-en"
+        ]
+      },
+      "ja": {
+        "text": "台湾光復および金門古寧頭戦勝記念日",
+        "status": "official",
+        "sourceIds": [
+          "tourism-ja-holidays"
+        ]
+      }
+    },
+    "行憲紀念日": {
+      "en": {
+        "text": "Constitution Day",
+        "status": "official",
+        "sourceIds": [
+          "dgpa-en"
+        ]
+      },
+      "ja": {
+        "text": "憲法施行記念日",
+        "status": "official",
+        "sourceIds": [
+          "tourism-ja-holidays"
+        ]
+      }
+    },
+    "春節": {
+      "en": {
+        "text": "Lunar New Year",
+        "status": "official",
+        "sourceIds": [
+          "dgpa-en"
+        ]
+      },
+      "ja": {
+        "text": "春節",
+        "status": "official",
+        "sourceIds": [
+          "tourism-ja-festivals"
+        ]
+      }
+    },
+    "元宵節": {
+      "en": {
+        "text": "Lantern Festival",
+        "status": "official",
+        "sourceIds": [
+          "dgpa-en"
+        ]
+      },
+      "ja": {
+        "text": "元宵節",
+        "status": "official",
+        "sourceIds": [
+          "tourism-ja-festivals"
+        ]
+      }
+    },
+    "端午節": {
+      "en": {
+        "text": "Dragon Boat Festival",
+        "status": "official",
+        "sourceIds": [
+          "dgpa-en"
+        ]
+      },
+      "ja": {
+        "text": "端午節",
+        "status": "official",
+        "sourceIds": [
+          "tourism-ja-holidays"
+        ]
+      }
+    },
+    "中元節": {
+      "en": {
+        "text": "Zhongyuan Festival",
+        "status": "official",
+        "sourceIds": [
+          "dgpa-en"
+        ]
+      }
+    },
+    "中秋節": {
+      "en": {
+        "text": "Mid-Autumn Festival",
+        "status": "official",
+        "sourceIds": [
+          "dgpa-en"
+        ]
+      },
+      "ja": {
+        "text": "中秋節",
+        "status": "official",
+        "sourceIds": [
+          "tourism-ja-holidays"
+        ]
+      }
+    },
+    "重陽節": {
+      "en": {
+        "text": "Double Ninth Festival",
+        "status": "official",
+        "sourceIds": [
+          "dgpa-en"
+        ]
+      }
+    },
+    "清明節": {
+      "en": {
+        "text": "Qingming Festival",
+        "status": "official",
+        "sourceIds": [
+          "dgpa-en"
+        ]
+      },
+      "ja": {
+        "text": "清明節",
+        "status": "official",
+        "sourceIds": [
+          "tourism-ja-holidays"
+        ]
+      }
+    },
+    "除夕": {
+      "en": {
+        "text": "Lunar New Year's Eve",
+        "status": "official",
+        "sourceIds": [
+          "dgpa-en"
+        ]
+      }
+    },
+    "母親節": {
+      "en": {
+        "text": "Mother's Day",
+        "status": "official",
+        "sourceIds": [
+          "dgpa-en"
+        ]
+      }
+    },
+    "元旦": {
+      "en": {
+        "text": "Founding Day of the Republic of China",
+        "status": "official",
+        "sourceIds": [
+          "dgpa-en"
+        ],
+        "note": "Uses the statutory name for the January 1 memorial day."
+      }
+    },
+    "立春": {
+      "en": {
+        "text": "Beginning of Spring",
+        "status": "official",
+        "sourceIds": [
+          "naoj-solar-terms"
+        ]
+      },
+      "ja": {
+        "text": "立春",
+        "status": "official",
+        "sourceIds": [
+          "naoj-solar-terms"
+        ]
+      }
+    },
+    "雨水": {
+      "en": {
+        "text": "Rain Water",
+        "status": "official",
+        "sourceIds": [
+          "naoj-solar-terms"
+        ]
+      },
+      "ja": {
+        "text": "雨水",
+        "status": "official",
+        "sourceIds": [
+          "naoj-solar-terms"
+        ]
+      }
+    },
+    "驚蟄": {
+      "en": {
+        "text": "Insects Awakening",
+        "status": "official",
+        "sourceIds": [
+          "naoj-solar-terms"
+        ]
+      },
+      "ja": {
+        "text": "啓蟄",
+        "status": "official",
+        "sourceIds": [
+          "naoj-solar-terms"
+        ]
+      }
+    },
+    "春分": {
+      "en": {
+        "text": "Spring Equinox",
+        "status": "official",
+        "sourceIds": [
+          "naoj-solar-terms"
+        ]
+      },
+      "ja": {
+        "text": "春分",
+        "status": "official",
+        "sourceIds": [
+          "naoj-solar-terms"
+        ]
+      }
+    },
+    "清明": {
+      "en": {
+        "text": "Fresh Green",
+        "status": "official",
+        "sourceIds": [
+          "naoj-solar-terms"
+        ]
+      },
+      "ja": {
+        "text": "清明",
+        "status": "official",
+        "sourceIds": [
+          "naoj-solar-terms"
+        ]
+      }
+    },
+    "穀雨": {
+      "en": {
+        "text": "Grain Rain",
+        "status": "official",
+        "sourceIds": [
+          "naoj-solar-terms"
+        ]
+      },
+      "ja": {
+        "text": "穀雨",
+        "status": "official",
+        "sourceIds": [
+          "naoj-solar-terms"
+        ]
+      }
+    },
+    "立夏": {
+      "en": {
+        "text": "Beginning of Summer",
+        "status": "official",
+        "sourceIds": [
+          "naoj-solar-terms"
+        ]
+      },
+      "ja": {
+        "text": "立夏",
+        "status": "official",
+        "sourceIds": [
+          "naoj-solar-terms"
+        ]
+      }
+    },
+    "小滿": {
+      "en": {
+        "text": "Lesser Fullness",
+        "status": "official",
+        "sourceIds": [
+          "naoj-solar-terms"
+        ]
+      },
+      "ja": {
+        "text": "小満",
+        "status": "official",
+        "sourceIds": [
+          "naoj-solar-terms"
+        ]
+      }
+    },
+    "芒種": {
+      "en": {
+        "text": "Grain in Ear",
+        "status": "official",
+        "sourceIds": [
+          "naoj-solar-terms"
+        ]
+      },
+      "ja": {
+        "text": "芒種",
+        "status": "official",
+        "sourceIds": [
+          "naoj-solar-terms"
+        ]
+      }
+    },
+    "夏至": {
+      "en": {
+        "text": "Summer Solstice",
+        "status": "official",
+        "sourceIds": [
+          "naoj-solar-terms"
+        ]
+      },
+      "ja": {
+        "text": "夏至",
+        "status": "official",
+        "sourceIds": [
+          "naoj-solar-terms"
+        ]
+      }
+    },
+    "小暑": {
+      "en": {
+        "text": "Lesser Heat",
+        "status": "official",
+        "sourceIds": [
+          "naoj-solar-terms"
+        ]
+      },
+      "ja": {
+        "text": "小暑",
+        "status": "official",
+        "sourceIds": [
+          "naoj-solar-terms"
+        ]
+      }
+    },
+    "大暑": {
+      "en": {
+        "text": "Greater Heat",
+        "status": "official",
+        "sourceIds": [
+          "naoj-solar-terms"
+        ]
+      },
+      "ja": {
+        "text": "大暑",
+        "status": "official",
+        "sourceIds": [
+          "naoj-solar-terms"
+        ]
+      }
+    },
+    "立秋": {
+      "en": {
+        "text": "Beginning of Autumn",
+        "status": "official",
+        "sourceIds": [
+          "naoj-solar-terms"
+        ]
+      },
+      "ja": {
+        "text": "立秋",
+        "status": "official",
+        "sourceIds": [
+          "naoj-solar-terms"
+        ]
+      }
+    },
+    "處暑": {
+      "en": {
+        "text": "End of Heat",
+        "status": "official",
+        "sourceIds": [
+          "naoj-solar-terms"
+        ]
+      },
+      "ja": {
+        "text": "処暑",
+        "status": "official",
+        "sourceIds": [
+          "naoj-solar-terms"
+        ]
+      }
+    },
+    "白露": {
+      "en": {
+        "text": "White Dew",
+        "status": "official",
+        "sourceIds": [
+          "naoj-solar-terms"
+        ]
+      },
+      "ja": {
+        "text": "白露",
+        "status": "official",
+        "sourceIds": [
+          "naoj-solar-terms"
+        ]
+      }
+    },
+    "秋分": {
+      "en": {
+        "text": "Autumnal Equinox",
+        "status": "official",
+        "sourceIds": [
+          "naoj-solar-terms"
+        ]
+      },
+      "ja": {
+        "text": "秋分",
+        "status": "official",
+        "sourceIds": [
+          "naoj-solar-terms"
+        ]
+      }
+    },
+    "寒露": {
+      "en": {
+        "text": "Cold Dew",
+        "status": "official",
+        "sourceIds": [
+          "naoj-solar-terms"
+        ]
+      },
+      "ja": {
+        "text": "寒露",
+        "status": "official",
+        "sourceIds": [
+          "naoj-solar-terms"
+        ]
+      }
+    },
+    "霜降": {
+      "en": {
+        "text": "First Frost",
+        "status": "official",
+        "sourceIds": [
+          "naoj-solar-terms"
+        ]
+      },
+      "ja": {
+        "text": "霜降",
+        "status": "official",
+        "sourceIds": [
+          "naoj-solar-terms"
+        ]
+      }
+    },
+    "立冬": {
+      "en": {
+        "text": "Beginning of Winter",
+        "status": "official",
+        "sourceIds": [
+          "naoj-solar-terms"
+        ]
+      },
+      "ja": {
+        "text": "立冬",
+        "status": "official",
+        "sourceIds": [
+          "naoj-solar-terms"
+        ]
+      }
+    },
+    "小雪": {
+      "en": {
+        "text": "Light Snow",
+        "status": "official",
+        "sourceIds": [
+          "naoj-solar-terms"
+        ]
+      },
+      "ja": {
+        "text": "小雪",
+        "status": "official",
+        "sourceIds": [
+          "naoj-solar-terms"
+        ]
+      }
+    },
+    "大雪": {
+      "en": {
+        "text": "Heavy Snow",
+        "status": "official",
+        "sourceIds": [
+          "naoj-solar-terms"
+        ]
+      },
+      "ja": {
+        "text": "大雪",
+        "status": "official",
+        "sourceIds": [
+          "naoj-solar-terms"
+        ]
+      }
+    },
+    "冬至": {
+      "en": {
+        "text": "Winter Solstice",
+        "status": "official",
+        "sourceIds": [
+          "naoj-solar-terms"
+        ]
+      },
+      "ja": {
+        "text": "冬至",
+        "status": "official",
+        "sourceIds": [
+          "naoj-solar-terms"
+        ]
+      }
+    },
+    "小寒": {
+      "en": {
+        "text": "Lesser Cold",
+        "status": "official",
+        "sourceIds": [
+          "naoj-solar-terms"
+        ]
+      },
+      "ja": {
+        "text": "小寒",
+        "status": "official",
+        "sourceIds": [
+          "naoj-solar-terms"
+        ]
+      }
+    },
+    "大寒": {
+      "en": {
+        "text": "Greater Cold",
+        "status": "official",
+        "sourceIds": [
+          "naoj-solar-terms"
+        ]
+      },
+      "ja": {
+        "text": "大寒",
+        "status": "official",
+        "sourceIds": [
+          "naoj-solar-terms"
+        ]
+      }
+    },
+    "天公生（玉皇上帝聖壽）": {
+      "en": {
+        "text": "Jade Emperor's Birthday",
+        "status": "derived",
+        "sourceIds": [
+          "taipei-deities-en"
+        ],
+        "note": "Birthday/observance wording is project-composed; the deity base name follows the official glossary."
+      }
+    },
+    "文昌帝君聖誕": {
+      "en": {
+        "text": "Wenchang dijun's Birthday",
+        "status": "derived",
+        "sourceIds": [
+          "taipei-deities-en"
+        ],
+        "note": "Birthday/observance wording is project-composed; the deity base name follows the official glossary."
+      }
+    },
+    "觀世音菩薩誕辰": {
+      "en": {
+        "text": "Guanyin's Birthday",
+        "status": "derived",
+        "sourceIds": [
+          "taipei-deities-en"
+        ],
+        "note": "Birthday/observance wording is project-composed; the deity base name follows the official glossary."
+      }
+    },
+    "玄天上帝萬壽": {
+      "en": {
+        "text": "Xuantian shandi's Birthday",
+        "status": "derived",
+        "sourceIds": [
+          "taipei-deities-en"
+        ],
+        "note": "Birthday/observance wording is project-composed; the deity base name follows the official glossary."
+      }
+    },
+    "保生大帝聖誕": {
+      "en": {
+        "text": "Baosheng Emperor's Birthday",
+        "status": "derived",
+        "sourceIds": [
+          "taipei-deities-en"
+        ],
+        "note": "Birthday/observance wording is project-composed; the deity base name follows the official glossary."
+      }
+    },
+    "天上聖母聖誕（媽祖生）": {
+      "en": {
+        "text": "Mazu's Birthday",
+        "status": "derived",
+        "sourceIds": [
+          "taipei-deities-en"
+        ],
+        "note": "Birthday/observance wording is project-composed; the deity base name follows the official glossary."
+      }
+    },
+    "釋迦牟尼佛聖誕（浴佛節）": {
+      "en": {
+        "text": "Buddha's Birthday (Sakyamuni)",
+        "status": "derived",
+        "sourceIds": [
+          "taipei-deities-en"
+        ],
+        "note": "Birthday/observance wording is project-composed; the deity base name follows the official glossary."
+      }
+    },
+    "虎爺聖誕": {
+      "en": {
+        "text": "Huye's Birthday",
+        "status": "derived",
+        "sourceIds": [
+          "taipei-deities-en"
+        ],
+        "note": "Birthday/observance wording is project-composed; the deity base name follows the official glossary."
+      }
+    },
+    "觀世音菩薩得道紀念日": {
+      "en": {
+        "text": "Guanyin's Enlightenment Day",
+        "status": "derived",
+        "sourceIds": [
+          "taipei-deities-en"
+        ],
+        "note": "Birthday/observance wording is project-composed; the deity base name follows the official glossary."
+      }
+    },
+    "關聖帝君聖誕（恩主公）": {
+      "en": {
+        "text": "Holy Emperor Guan's Birthday",
+        "status": "derived",
+        "sourceIds": [
+          "taipei-deities-en"
+        ],
+        "note": "Birthday/observance wording is project-composed; the deity base name follows the official glossary."
+      }
+    },
+    "中壇元帥聖誕（太子爺）": {
+      "en": {
+        "text": "Zhongtan Yuanshuai's Birthday (Nezha)",
+        "status": "derived",
+        "sourceIds": [
+          "taipei-deities-en"
+        ],
+        "note": "Birthday/observance wording is project-composed; the deity base name follows the official glossary."
+      }
+    },
+    "觀世音菩薩出家紀念日": {
+      "en": {
+        "text": "Guanyin's Renunciation Day",
+        "status": "derived",
+        "sourceIds": [
+          "taipei-deities-en"
+        ],
+        "note": "Birthday/observance wording is project-composed; the deity base name follows the official glossary."
+      }
+    },
+    "註生娘娘千秋": {
+      "en": {
+        "text": "Zhusheng Niangniang's Birthday",
+        "status": "derived",
+        "sourceIds": [
+          "tainan-deities-en"
+        ]
+      }
+    },
+    "霞海城隍爺聖誕": {
+      "en": {
+        "text": "Xiahai City God's Birthday",
+        "status": "derived",
+        "sourceIds": [
+          "taipei-xiahai-en"
+        ]
+      }
+    },
+    "除夕及春節": {
+      "en": {
+        "text": "Lunar New Year's Eve & New Year",
+        "status": "derived",
+        "sourceIds": [
+          "dgpa-en"
+        ],
+        "note": "Combined labels, explanations or year qualifiers are project-composed."
+      },
+      "ja": {
+        "text": "旧暦の大みそか・春節",
+        "status": "derived",
+        "sourceIds": [
+          "tourism-ja-holidays"
+        ],
+        "note": "Combined labels, explanations or year qualifiers are project-composed."
+      }
+    },
+    "兒童節及清明節": {
+      "en": {
+        "text": "Children's Day & Qingming Festival",
+        "status": "derived",
+        "sourceIds": [
+          "dgpa-en"
+        ],
+        "note": "Combined labels, explanations or year qualifiers are project-composed."
+      },
+      "ja": {
+        "text": "こどもの日・清明節",
+        "status": "derived",
+        "sourceIds": [
+          "tourism-ja-holidays"
+        ],
+        "note": "Combined labels, explanations or year qualifiers are project-composed."
+      }
+    },
+    "中秋節及教師節": {
+      "en": {
+        "text": "Mid-Autumn Festival & Teachers' Day",
+        "status": "derived",
+        "sourceIds": [
+          "dgpa-en"
+        ],
+        "note": "Combined labels, explanations or year qualifiers are project-composed."
+      },
+      "ja": {
+        "text": "中秋節・教師の日",
+        "status": "derived",
+        "sourceIds": [
+          "tourism-ja-holidays"
+        ],
+        "note": "Combined labels, explanations or year qualifiers are project-composed."
+      }
+    },
+    "中華民國開國紀念日（元旦）": {
+      "en": {
+        "text": "Founding Day of the Republic of China (New Year's Day)",
+        "status": "derived",
+        "sourceIds": [
+          "dgpa-en"
+        ],
+        "note": "Combined labels, explanations or year qualifiers are project-composed."
+      },
+      "ja": {
+        "text": "中華民国建国記念日（元日）",
+        "status": "derived",
+        "sourceIds": [
+          "tourism-ja-holidays"
+        ],
+        "note": "Combined labels, explanations or year qualifiers are project-composed."
+      }
+    },
+    "孔子誕辰紀念日／教師節": {
+      "en": {
+        "text": "Confucius' Birthday / Teachers' Day",
+        "status": "derived",
+        "sourceIds": [
+          "dgpa-en"
+        ],
+        "note": "Combined labels, explanations or year qualifiers are project-composed."
+      },
+      "ja": {
+        "text": "孔子誕生日／教師の日",
+        "status": "derived",
+        "sourceIds": [
+          "tourism-ja-holidays"
+        ],
+        "note": "Combined labels, explanations or year qualifiers are project-composed."
+      }
+    },
+    "除夕前一日（小年夜）": {
+      "en": {
+        "text": "Day before Lunar New Year's Eve",
+        "status": "derived",
+        "sourceIds": [
+          "dgpa-en"
+        ],
+        "note": "Combined labels, explanations or year qualifiers are project-composed."
+      },
+      "ja": {
+        "text": "旧暦の大みそかの前日",
+        "status": "derived",
+        "sourceIds": [
+          "tourism-ja-holidays"
+        ],
+        "note": "Combined labels, explanations or year qualifiers are project-composed."
+      }
+    },
+    "2028 年元旦": {
+      "en": {
+        "text": "New Year's Day 2028",
+        "status": "derived",
+        "sourceIds": [
+          "dgpa-en"
+        ],
+        "note": "Combined labels, explanations or year qualifiers are project-composed."
+      },
+      "ja": {
+        "text": "2028年の元日",
+        "status": "derived",
+        "sourceIds": [
+          "tourism-ja-holidays"
+        ],
+        "note": "Combined labels, explanations or year qualifiers are project-composed."
+      }
+    }
+  }
+}

@@ -1,3 +1,4 @@
+import { errorMessage } from '../i18n/errors';
 import { t, getLocale } from '../i18n';
 import { applyPublicData } from '../data/publicData';
 import { CACHE_KEY, fetchPublicUpdate, parseCache, type DataCache } from '../data/updates';
@@ -45,7 +46,7 @@ export async function initializeDataUpdates(refresh: () => void) {
         status.textContent = t("資料更新完成，已立即套用。");
       });
     } catch (error) {
-      status.textContent = t("更新未完成，保留原資料。{0}", [error instanceof Error ? error.message : t("請稍後重試。")]);
+      status.textContent = t("更新未完成，保留原資料。{0}", [error instanceof Error ? errorMessage(error.message) : t("請稍後重試。")]);
     } finally { busy = false; controls(); }
   }
   // Call request synchronously from the user gesture, before any storage awaits.

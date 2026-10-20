@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "prebuild": "npm run data:prepare-update",
-    "test": "vitest run tests/core.test.ts",
+    "test": "vitest run tests/core.test.ts tests/i18n.test.ts",
     "dev": "vite --host 127.0.0.1 --open /newtab.html",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview --host 127.0.0.1",
@@ -12,6 +12,8 @@
     "data:import": "node scripts/import-calendar.mjs",
     "data:check-history": "node scripts/validate-history.mjs",
     "data:prepare-update": "node scripts/prepare-data-update.mjs",
+    "data:localize": "node scripts/localize-calendar-data.mjs",
+    "data:check-locales": "node scripts/localize-calendar-data.mjs --check",
     "build:site": "tailwindcss -c tailwind.site.config.ts -i docs/site/tailwind.css -o docs/site/style.css --minify",
     "dev:site": "tailwindcss -c tailwind.site.config.ts -i docs/site/tailwind.css -o docs/site/style.css --watch"
   },

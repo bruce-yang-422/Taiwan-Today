@@ -1,3 +1,4 @@
+import { errorMessage } from '../i18n/errors';
 import { t } from '../i18n';
 import { parsePersonalHistory } from '../calendar/personalHistory';
 import { parsePersonalHistoryFile } from '../calendar/personalHistoryFile';
@@ -28,7 +29,7 @@ export function initializePersonalHistory(refresh: () => void) {
   sheetPicker.onchange = () => {
     pending = undefined; preview.replaceChildren();
     try { showPreview(parseHistorySheet(sheets[Number(sheetPicker.value)])); }
-    catch (error) { status.textContent = error instanceof Error ? error.message : t("工作表讀取失敗。"); }
+    catch (error) { status.textContent = error instanceof Error ? errorMessage(error.message) : t("工作表讀取失敗。"); }
     controls();
   };
   function apply(value: unknown) {
@@ -62,7 +63,7 @@ export function initializePersonalHistory(refresh: () => void) {
       const entries = parsePersonalHistoryFile(selected.name, content);
       showPreview(entries);
       }
-    } catch (error) { if (token !== revision) return; status.textContent = error instanceof SyntaxError ? t("JSON 格式錯誤，請確認檔案內容。") : error instanceof Error ? error.message : t("讀取失敗。"); }
+    } catch (error) { if (token !== revision) return; status.textContent = error instanceof SyntaxError ? t("JSON 格式錯誤，請確認檔案內容。") : error instanceof Error ? errorMessage(error.message) : t("讀取失敗。"); }
     controls();
   };
   save.onclick = async () => {

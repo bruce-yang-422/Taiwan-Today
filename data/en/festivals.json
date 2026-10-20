@@ -1,0 +1,227 @@
+{
+  "version": "1.0.0",
+  "updatedAt": "2026-09-21T17:10:04.106+08:00",
+  "data": [
+    {
+      "calendar": "solar",
+      "date": "01-01",
+      "name": "Founding Day of the Republic of China"
+    },
+    {
+      "calendar": "solar",
+      "date": "02-28",
+      "name": "Peace Memorial Day"
+    },
+    {
+      "calendar": "solar",
+      "date": "04-04",
+      "name": "Children's Day"
+    },
+    {
+      "calendar": "solar",
+      "date": "05-01",
+      "name": "Labor Day"
+    },
+    {
+      "calendar": "solar",
+      "date": "08-08",
+      "name": "Father's Day"
+    },
+    {
+      "calendar": "solar",
+      "date": "09-28",
+      "name": "Teachers' Day"
+    },
+    {
+      "calendar": "solar",
+      "date": "10-10",
+      "name": "National Day"
+    },
+    {
+      "calendar": "solar",
+      "date": "10-25",
+      "name": "Taiwan Retrocession Day and Memorial Day of Great Victory at Kuningtou Kinmen"
+    },
+    {
+      "calendar": "solar",
+      "date": "12-25",
+      "name": "Constitution Day"
+    },
+    {
+      "calendar": "lunar",
+      "date": "01-01",
+      "name": "Lunar New Year",
+      "description": "Families honor their ancestors and make New Year visits and outings."
+    },
+    {
+      "calendar": "lunar",
+      "date": "01-04",
+      "name": "Welcoming the Gods",
+      "description": "In folk tradition, households welcome the deities back home."
+    },
+    {
+      "calendar": "lunar",
+      "date": "01-05",
+      "name": "Welcoming the God of Wealth",
+      "description": "Businesses resume work and welcome the God of Wealth, praying for a prosperous start to the year and abundant income."
+    },
+    {
+      "calendar": "lunar",
+      "date": "01-09",
+      "name": "Jade Emperor's Birthday",
+      "description": "Worshippers honor the Jade Emperor and give thanks for divine blessings, praying for their family's peace and good fortune throughout the year."
+    },
+    {
+      "calendar": "lunar",
+      "date": "01-15",
+      "name": "Lantern Festival",
+      "description": "People enjoy lantern displays during the Lantern Festival. In folk belief, prayers to the Heavenly Official seek blessings, good fortune at the start of the year and replenished wealth.",
+      "observances": [
+        "Heavenly Official's Birthday"
+      ]
+    },
+    {
+      "calendar": "lunar",
+      "date": "02-02",
+      "name": "Touya · Earth God's Birthday",
+      "description": "People make ritual offerings and worship Tudi gong, the Earth God, praying for peace in the community, flourishing business and prosperity."
+    },
+    {
+      "calendar": "lunar",
+      "date": "02-03",
+      "name": "Wenchang dijun's Birthday",
+      "description": "Examinees pray for academic achievement, success in promotion examinations and greater wisdom."
+    },
+    {
+      "calendar": "lunar",
+      "date": "02-19",
+      "name": "Guanyin's Birthday",
+      "description": "The first of three annual Guanyin observances celebrates the bodhisattva's birth. Devotees pray for compassionate protection, peace and good fortune."
+    },
+    {
+      "calendar": "lunar",
+      "date": "03-03",
+      "name": "Xuantian shandi's Birthday",
+      "description": "In folk belief, devotees pray for the defeat of evil spirits, protection of the home, relief from calamity and a long life."
+    },
+    {
+      "calendar": "lunar",
+      "date": "03-15",
+      "name": "Baosheng Emperor's Birthday",
+      "description": "In folk belief, devotees pray to the Baosheng Emperor for health, recovery from illness and longevity. The same day marks the birthday of Zhao Gongming, a God of Wealth, with prayers for business success and prosperity.",
+      "observances": [
+        "Zhao Gongming's Birthday"
+      ]
+    },
+    {
+      "calendar": "lunar",
+      "date": "03-20",
+      "name": "Zhusheng Niangniang's Birthday",
+      "description": "In folk belief, devotees pray for children, a safe pregnancy and their children's healthy growth."
+    },
+    {
+      "calendar": "lunar",
+      "date": "03-23",
+      "name": "Mazu's Birthday",
+      "description": "Celebrations honoring Mazu include prayers for protection of the country and its people, safe journeys and good fortune."
+    },
+    {
+      "calendar": "lunar",
+      "date": "04-08",
+      "name": "Buddha's Birthday (Sakyamuni)",
+      "description": "The ritual bathing of the Buddha symbolizes cleansing worries from body and mind, with prayers for blessings and wisdom."
+    },
+    {
+      "calendar": "lunar",
+      "date": "05-05",
+      "name": "Dragon Boat Festival",
+      "description": "Customs include eating zongzi, balancing eggs upright and racing dragon boats."
+    },
+    {
+      "calendar": "lunar",
+      "date": "05-13",
+      "name": "Xiahai City God's Birthday",
+      "description": "Devotees pray for protection of the community and its people. Many also worship Yue Lao, the matchmaker deity, to seek a good partner."
+    },
+    {
+      "calendar": "lunar",
+      "date": "06-06",
+      "name": "Huye's Birthday",
+      "description": "In folk belief, devotees ask Huye to bring wealth, ward off malicious people and protect children's health and safety."
+    },
+    {
+      "calendar": "lunar",
+      "date": "06-19",
+      "name": "Guanyin's Enlightenment Day",
+      "description": "The second of three annual Guanyin observances honors the bodhisattva's enlightenment. Devotees pray for clarity of mind and guidance through uncertainty."
+    },
+    {
+      "calendar": "lunar",
+      "date": "06-24",
+      "name": "Holy Emperor Guan's Birthday",
+      "description": "In folk belief, devotees pray for integrity in their careers, business prosperity, protection from evil and advancement at work."
+    },
+    {
+      "calendar": "lunar",
+      "date": "07-01",
+      "name": "Opening of the Ghost Gate",
+      "description": "Traditionally known as the opening of the shrine gates, this day begins the seventh lunar month's season of offerings to spirits."
+    },
+    {
+      "calendar": "lunar",
+      "date": "07-07",
+      "name": "Qixi Festival"
+    },
+    {
+      "calendar": "lunar",
+      "date": "07-15",
+      "name": "Zhongyuan Festival",
+      "description": "Customs include communal offerings to wandering spirits and floating water lanterns. In folk belief, prayers to the Earth Official seek forgiveness, deliverance for spirits bound by grievances or karmic debts, and relief from calamity.",
+      "observances": [
+        "Earth Official's Birthday"
+      ]
+    },
+    {
+      "calendar": "lunar",
+      "date": "08-15",
+      "name": "Mid-Autumn Festival",
+      "description": "People admire the moon and eat mooncakes. Some also honor the Earth God's enlightenment. Yue Lao's birthday is an occasion to pray for a good partner and harmony in romantic and social relationships.",
+      "observances": [
+        "Yue Lao's Birthday"
+      ]
+    },
+    {
+      "calendar": "lunar",
+      "date": "09-09",
+      "name": "Double Ninth Festival",
+      "description": "Customs include honoring older people and visiting high places. On Zhongtan Yuanshuai's birthday, devotees pray for road safety, protection of the home and success at work.",
+      "observances": [
+        "Zhongtan Yuanshuai's Birthday (Nezha)"
+      ]
+    },
+    {
+      "calendar": "lunar",
+      "date": "09-19",
+      "name": "Guanyin's Renunciation Day",
+      "description": "The third of three annual Guanyin observances commemorates the bodhisattva's renunciation of worldly life and great vows. Devotees pray for compassionate blessings and relief from hardship."
+    },
+    {
+      "calendar": "lunar",
+      "date": "10-15",
+      "name": "Xiayuan · Water Official's Birthday",
+      "description": "In folk belief, devotees pray to the Water Official for relief from misfortune, release from past wrongdoing and protection from calamity as the year ends."
+    },
+    {
+      "calendar": "lunar",
+      "date": "12-16",
+      "name": "Weiya Festival",
+      "description": "People give thanks to Tudi gong, the Earth God. This is also the season for company year-end banquets."
+    },
+    {
+      "calendar": "lunar",
+      "date": "12-24",
+      "name": "Sending Off the Gods",
+      "description": "In folk belief, the Kitchen God returns to the heavenly court to report on the household."
+    }
+  ]
+}

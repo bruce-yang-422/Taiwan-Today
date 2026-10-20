@@ -1,7 +1,7 @@
 :root[data-text-size] #settings-dialog { width:min(480px,calc(100% - 24px)); border-radius:20px; }
 #settings-dialog #settings-title { border:0; padding:20px 22px 14px; font-size:18px; font-weight:550; letter-spacing:.025em; }
 .settings-tabs { display:flex; flex-shrink:0; gap:3px; margin:0 22px; padding:4px; border:1px solid var(--line); border-radius:999px; background:var(--soft); }
-#settings-dialog .settings-tabs button { flex:1; min-width:0; padding:7px 6px; border:0; border-radius:999px; color:var(--muted); background:transparent; font-weight:500; white-space:nowrap; }
+#settings-dialog .settings-tabs button { flex:1; min-width:0; padding:7px 6px; border:0; border-radius:999px; color:var(--muted); background:transparent; font-weight:500; white-space:normal; overflow-wrap:anywhere; }
 #settings-dialog .settings-tabs button[aria-selected=true] { background:var(--paper); color:var(--accent); box-shadow:0 1px 4px #00000010,inset 0 0 0 1px var(--line); }
 #settings-dialog .settings-tabs button:focus-visible { outline:2px solid currentColor; outline-offset:-5px; }
 .settings-panels { min-height:0; overflow-y:auto; overscroll-behavior:contain; }

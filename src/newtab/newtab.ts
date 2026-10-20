@@ -1,3 +1,4 @@
+import { errorMessage } from '../i18n/errors';
 import { t, monthName, weekdayName } from '../i18n';
 import { localizedCalendar } from '../i18n/calendar';
 import './newtab.css';
@@ -253,7 +254,7 @@ el('shortcut-form').addEventListener('submit', async event => {
     const item = { id: editing ?? crypto.randomUUID(), name, url, order: shortcuts.length, ...(icon ? { icon } : {}) };
     const next = editing ? shortcuts.map(s => s.id === editing ? { ...item, order: s.order } : s) : [...shortcuts, item];
     if (await saveShortcuts(next)) dialog.close();
-  } catch (error) { el('shortcut-error').textContent = error instanceof Error ? error.message : t("網址格式有誤。"); }
+  } catch (error) { el('shortcut-error').textContent = error instanceof Error ? errorMessage(error.message) : t("網址格式有誤。"); }
 });
 el('shortcut-delete').addEventListener('click', async () => { if (editing && await saveShortcuts(shortcuts.filter(s => s.id !== editing))) dialog.close(); });
 async function initialize() {
