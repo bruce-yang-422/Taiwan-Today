@@ -46,7 +46,7 @@ for (const locale of ['zh-TW', 'en', 'ja'] as const) {
           await page.keyboard.press('Escape');
         }
         await page.setViewportSize({ width: 1366, height: 768 });
-        if (locale === 'en') await page.screenshot({ path: `.scratch/i18n-${style}.png`, fullPage: true });
+        if (locale === 'en') await page.screenshot({ path: `test-results/i18n-${style}.png`, fullPage: true });
       }
       expect(errors).toEqual([]);
     });

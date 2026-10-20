@@ -15,11 +15,13 @@
 
 立即安裝：[Chrome 線上應用程式商店](https://chromewebstore.google.com/detail/adgohcafbfdmkkllmphehaeainhbeigp)
 
-版本下載：[v1.0.0 發布頁與更新說明](https://github.com/bruce-yang-422/Taiwan-Today/releases/tag/v1.0.0)
+版本下載：[v1.1.0 安裝包](release/taiwan-daily-chrome-1.1.0.zip) · [v1.1.0 更新說明](V1.1.0.md) · [v1.0.0 發布頁](https://github.com/bruce-yang-422/Taiwan-Today/releases/tag/v1.0.0)
 
 目前原始碼版本：**1.1.0**，更新內容見 [v1.1.0 更新說明](V1.1.0.md)；本版封裝檔統一為 [`release/taiwan-daily-chrome-1.1.0.zip`](release/taiwan-daily-chrome-1.1.0.zip)，已包含縮小網站存取權限的修改，可用於商店上傳。
 
-以 Vite、TypeScript、Tailwind CSS 與 Manifest V3 實作的 Chrome 新分頁。無後端、無帳號、無追蹤，日曆與內建內容可離線使用；Google 文字／圖片搜尋、外部連結、捷徑圖示更新與公共資料更新需要網路。使用 `storage`、`favicon` 與限定於 `api.open-meteo.com` 的天氣連線權限；公共資料更新的 `raw.githubusercontent.com` 為選用權限，由使用者手動執行或啟用每日檢查時授權。不申請所有 HTTP／HTTPS 網站的存取權限。
+以 Vite、TypeScript、Tailwind CSS 與 Manifest V3 實作的 Chrome 新分頁，提供繁體中文、English、日本語介面，支援國內、短期出差及長期海外的日曆與時鐘設定。無後端、無帳號、無追蹤，日曆與內建內容可離線使用；天氣、Google 文字／圖片搜尋、外部連結與公共資料更新需要網路。
+
+使用 `storage`、`favicon` 與限定於 `api.open-meteo.com` 的天氣連線權限；公共資料更新的 `raw.githubusercontent.com` 為選用權限，由使用者手動執行或啟用每日檢查時授權。不申請所有 HTTP／HTTPS 網站的存取權限；捷徑圖示由 Chrome 內建功能、打包素材或自行上傳提供。
 
 個人／家族紀事範例：[CSV](templates/history-template.csv)、[XLSX](templates/history-template.xlsx)、[ODS](templates/history-template.ods)。選一種填寫，再使用[官網轉檔工具](https://today.stack-base.com/#converter)預覽並下載 JSON，於插件「設定 → 資料管理 → 匯入個人歷史」匯入。欄位格式見 [範例說明](templates/README.md)。
 
@@ -33,7 +35,7 @@
 
 ### 手動下載安裝（不需要 Node.js）
 
-1. 前往 [v1.0.0 發布頁](https://github.com/bruce-yang-422/Taiwan-Today/releases/tag/v1.0.0)，在 **Assets** 下載 `taiwan-daily-chrome-1.0.0.zip`。
+1. 下載 [taiwan-daily-chrome-1.1.0.zip](release/taiwan-daily-chrome-1.1.0.zip)。
 2. 將 ZIP 解壓縮到固定的資料夾。
 3. 開啟 `chrome://extensions`，啟用「開發人員模式」，按「載入未封裝項目」。
 4. 選取解壓縮後直接包含 `manifest.json` 的資料夾，開啟新分頁即可使用。
@@ -50,6 +52,36 @@ npm run build
 ```
 
 開啟 `chrome://extensions` → 啟用「開發人員模式」→「載入未封裝項目」→ 選取本專案的 **dist** 資料夾。開啟新分頁即可使用。更新程式後重新建置，再於擴充功能頁按重新載入。
+
+## 語言、日曆情境與天氣
+
+### 三語介面
+
+在「設定 → 外觀 → 語言」選擇繁體中文、English、日本語，或依瀏覽器自動選擇。設定保存在本機，切換後重新載入目前分頁。五種樣式的介面與日曆標籤均支援三語；歷史紀事、語錄、私人內容及已儲存捷徑名稱保留原文。語言切換不會自動改變日曆情境、天氣地點或假日規則。
+
+### 國內、短期出差與長期海外
+
+在「設定 → 外觀 → 日曆使用情境」選擇：
+
+| 使用情境 | 日期與日曆內容 | 時鐘 |
+| --- | --- | --- |
+| 國內使用（預設） | 臺灣日期、民國年、農曆、節氣與臺灣假期。 | 臺灣時間。 |
+| 短期出差 | 保留臺灣日期與日曆，適合短期在歐美、日本等地工作或旅行。 | 可選臺灣時間，或依天氣地點回傳的時區顯示。 |
+| 長期海外 | 依裝置當地或自選 IANA 時區顯示西曆，隱藏民國年、農曆、節氣與臺灣假期。 | 與日曆使用相同時區。 |
+
+長期海外模式不自動加入其他國家的法定假日。出差時鐘選擇地點時間時，會透過天氣 API 取得時區，尚未取得時顯示等待提示。天氣地點與日曆情境分開保存，人在海外也可以繼續使用臺灣日曆。
+
+### 設定天氣地點
+
+1. 開啟「設定 → 外觀」，點選有定位圖示、底色與箭頭的「設定天氣地點」按鈕；按鈕下方顯示目前地點。
+2. 臺灣可選 22 縣市、368 鄉鎮市區，預設為臺北市信義區；國內外也可選「自訂 GPS（國內外）」並輸入緯度、經度。
+3. 套用後保存於本機；歲月紙曆卡片只顯示已選地點、更新按鈕、目前天氣與明日預報。
+
+目前天氣包含溫度與天氣狀況；明日預報包含高低溫與降雨機率。資料使用 Open-Meteo，功能使用中且分頁可見時每 10 分鐘更新，同地點共用快取；返回分頁時補查過期資料。更新失敗保留上次資料並標示，沒有快取時顯示錯誤與重試按鈕。天氣的今天／明天依 API 回傳的所在地時區判定。
+
+縣市、行政區名稱與行政區英文名稱依中央氣象署，中心點座標採中華郵政政府開放資料（2016-08-12 版）；來源保存在 [taiwan-locations.json](src/weather/taiwan-locations.json)。日本語介面的行政區保留官方中文原名。行政區中心點無法代表整區的微氣候，山區、沿海或住家可改填 GPS；目前天氣仍為模式估算，可能與實況不同。資料來源與授權見 [Open-Meteo](https://open-meteo.com/) 及 [CC BY 4.0](https://open-meteo.com/en/licence)，座標資料依政府資料開放授權條款第 1 版使用。
+
+插件不請求裝置定位權限。天氣 API 會收到查詢座標與連線 IP，不會收到私人紀事、待辦或捷徑；處理方式見[隱私權政策](privacy.html)。
 
 ## 開發與驗證
 
@@ -76,6 +108,8 @@ npm run test:e2e
 npx playwright test tests/e2e/contrast.spec.ts
 # 桌面高度、五種樣式貼圖搜尋及 MV3 圖片上傳
 npx playwright test tests/e2e/modern-layout.spec.ts tests/e2e/search-clipboard.spec.ts
+# 天氣、日曆時區與縮小權限後的 Chrome 圖示
+npx playwright test tests/e2e/weather.spec.ts tests/e2e/automatic-icons.spec.ts
 npm run data:check-history
 # 官網下載與轉檔測試（需安裝 Python）
 npx playwright test --config tests/pages/playwright.config.mjs
@@ -83,13 +117,16 @@ npx playwright test --config tests/pages/playwright.config.mjs
 
 開發預覽網址為 `/newtab.html`；一般網頁使用 localStorage，擴充功能使用 chrome.storage.local，兩者資料互相獨立。建置由小型 Vite 外掛複製 manifest，無需 CRXJS 或背景 service worker。
 
+### 建置、封裝與暫存檔
+
+`dist/` 是 `npm run build` 產生的可載入擴充功能；封裝時只壓縮 `dist/` 內的檔案，確保 `manifest.json` 位於 ZIP 根目錄，版本封裝統一保存為 `release/taiwan-daily-chrome-1.1.0.zip`。上傳商店前，核對 ZIP 中的版本與權限是否和根目錄 manifest 一致。
+
+測試截圖與執行結果輸出到 `test-results/`，報告可能產生於 `playwright-report/`；兩者均可刪除，後續執行測試時會重新產生。`.scratch/`、`.research/` 與 `*.log` 為忽略的本機暫存。一次性翻譯腳本與中間檔已移除，正式翻譯維護使用下述語言包及 `scripts/localize-calendar-data.mjs`。
+
 ## 已實作
 
-- 「歲月紙曆」月份移到左上，與右側小月曆並排；星期、農曆緊接日期數字，下方顯示今天即時天氣與明日預報。天氣卡只顯示地點與更新按鈕；從「設定 → 外觀 → 設定天氣地點」選擇臺灣 22 縣市、368 鄉鎮市區（預設臺北市信義區），國內外皆可自行輸入 GPS 緯度／經度並保存在本機，不請求裝置定位權限。舊版只有縣市的設定會採用該縣市的預設行政區。
-- 「設定 → 外觀 → 日曆使用情境」分為國內使用（預設）、短期出差及長期海外。國內與出差保留臺灣日期、農曆、節氣及放假資訊；出差時鐘可獨立選臺灣時間或天氣 GPS 地點時間。長期海外使用裝置當地時區（亦可自選 IANA 時區）的西曆與時鐘，隱藏農曆、節氣及臺灣假期，不推測其他國家的法定假日。語言、天氣地點、日曆模式彼此獨立。
-- 天氣使用開源 [Open-Meteo Forecast API](https://open-meteo.com/en/docs)，請求目前溫度、天氣代碼及明日高低溫／降雨機率；目前值為模式估算。顯示來源與 [CC BY 4.0](https://open-meteo.com/en/licence) 授權，縣市、行政區及行政區英文名稱依[中央氣象署](https://www.cwa.gov.tw/Data/js/info/Info_Town.js)；行政區中心點座標採[中華郵政政府開放資料](https://data.gov.tw/dataset/25489)（2016-08-12 版，政府資料開放授權條款第 1 版），來源保存在 `src/weather/taiwan-locations.json`。日本語介面的行政區保留官方中文原名，不自行音譯。中心點無法代表整區的微氣候，山區或沿海可改填 GPS；縮小查詢範圍不代表模式估算一定準確。資料快取 10 分鐘，同地點的分頁透過瀏覽器鎖共用快取；功能使用中且分頁可見時每 10 分鐘更新，重新聚焦補查過期資料。網路失敗保留上次資料並標示，沒有快取時顯示錯誤與重試按鈕。GPS 天氣的今天／明天依 API 回傳的所在地時區判定。
-
-- 「設定 → 外觀 → 語言」支援繁體中文、English、日本語，預設依瀏覽器語言選擇；未支援的語言回退為繁體中文。選擇會保存在本機，切換時重新載入目前分頁。五種樣式的操作介面、日期、農曆、節氣、節日與提示訊息皆支援三語；時區與假日維持台灣規則。歷史紀事、語錄、私人內容及已儲存捷徑名稱保留原文，官網與下載範本仍使用原有語言。
+- 歲月紙曆月份置中於左上可用區域，右側顯示小月曆；星期與農曆緊接日期數字，下方顯示目前天氣與明日預報，裝訂頭採飽和深紅色。
+- 提供繁體中文、English、日本語介面，以及國內、短期出差、長期海外情境；天氣支援臺灣鄉鎮市區與自訂 GPS。操作方式見[語言、日曆情境與天氣](#語言日曆情境與天氣)，翻譯資料維護見[英文與日文日曆資料](#英文與日文日曆資料)。
 
 - 右上角提供 Gmail、雲端硬碟與 Google 日曆的小圖示捷徑，可直接另開分頁；滑鼠停留顯示名稱。自訂 Google 應用程式九宮格收錄 41 個服務，以常用通訊、影音、搜尋及文件工具優先，商務工具靠後（編輯預設順序，非官方熱門排名）；支援選單內捲動、鍵盤操作、Esc 與點外側關閉。圖示隨插件打包，不讀取 Google 帳戶或同步官方最愛，無需額外權限；來源見 [Google 圖示紀錄](public/icons/google/SOURCES.md)。
 
@@ -107,23 +144,23 @@ npx playwright test --config tests/pages/playwright.config.mjs
 - 五種日曆樣式：留白日常、日常方格、歲月紙曆、月序手帖、時光讀本，皆可搭配亮色／暗色。
 - 五種樣式提供筆電緊湊排版，縮減卡片、日期、捷徑及區塊間距；以 1366×768、標準字級、2026/09/21 三則歷史與負能量語錄驗證可完整顯示。大字、更多紀事或較長內容仍可自然捲動，不裁切文字。
 - 日常方格與歲月紙曆另針對較高的桌面視窗縮減卡片高度與留白；以 1920×1080、2560×1214、1366×768，標準字級、七個捷徑及三則紀事驗證主要內容可在一頁內顯示。日常方格的捷徑卡片依可用寬度縮放，七個網站加「新增捷徑」「常用網站」可維持同一列。
-- 五種樣式統一採低彩度配色，保留文字對比與各自的視覺特色：留白日常依亮／暗模式使用晨光／月夜山景背景（`public/art/classic-light.png`、`public/art/classic-dark.png`）；日常方格使用霧藍色與圓角卡片；歲月紙曆使用低彩度磚紅大日期、紅色裝訂頭與層疊紙邊；月序手帖使用米白／低彩度深灰綠底色，搭配橄欖綠側欄與灰綠重點色；時光讀本使用深海藍封面與山海線條。皆提供亮／暗色，背景圖片與裝飾 SVG 隨插件打包，無須網路。
+- 五種樣式以低彩度配色為主，歲月紙曆裝訂頭採飽和深紅色，保留文字對比與各自的視覺特色：留白日常依亮／暗模式使用晨光／月夜山景背景（`public/art/classic-light.png`、`public/art/classic-dark.png`）；日常方格使用霧藍色與圓角卡片；歲月紙曆使用依日期狀態區分顏色的大日期、深紅色裝訂頭與層疊紙邊；月序手帖使用米白／低彩度深灰綠底色，搭配橄欖綠側欄與灰綠重點色；時光讀本使用深海藍封面與山海線條。皆提供亮／暗色，背景圖片與裝飾 SVG 隨插件打包，無須網路。
 - 留白日常採置中日期與時鐘、圓形捷徑、襯線字體及無卡片外框的歷史紀事。
 - 留白日常的山景背景保留原始 21:9 比例，依視窗等比例滿版縮放；16:9 與較窄的螢幕適度裁切兩側，暗色背景靠右保留月亮。每日一句、歷史紀事與頁尾使用 75% 不透明的底色維持文字可讀性，底色寬度與內容對齊。
-- 月序手帖：左側網站捷徑、中央國曆與農曆月曆、右側日期、大指針時鐘及待辦；可切換月份、選取日期查看農曆與歷史，或按「今天」返回。右欄標示「選取日期」與完整年月日；「現在時間 · 台灣」、「今日待辦」及「今日語錄」仍以今天為準，並顯示今天日期與說明，待辦共用同一份清單且跨日保留。
-- 時光讀本：深藍日期側欄、每日一句、歷史時間軸，底部提供搜尋與捷徑。每日一句可在設定選擇「每日提醒、佛家智慧、負能量（幽默）、四書五經、名人語錄、文學短句、聖經、影視佳句」，於五種樣式皆可顯示；分類自動保存，依台灣日期在所選分類內輪替。
+- 月序手帖：左側網站捷徑、中央國曆與農曆月曆、右側日期、大指針時鐘及待辦；可切換月份、選取日期查看農曆與歷史，或按「今天」返回。右欄標示「選取日期」與完整年月日；時鐘依日曆情境顯示臺灣或所選時區時間，「今日待辦」及「今日語錄」仍以今天為準，並顯示今天日期與說明，待辦共用同一份清單且跨日保留。
+- 時光讀本：深藍日期側欄、每日一句、歷史時間軸，底部提供搜尋與捷徑。每日一句可在設定選擇「每日提醒、佛家智慧、負能量（幽默）、四書五經、名人語錄、文學短句、聖經、影視佳句」，於五種樣式皆可顯示；分類自動保存，依所選日曆時區的日期在所選分類內輪替。
 - 日常方格樣式採本機 SVG 背景：霧藍細格、半透明圓角幾何與柔光；亮色呈現晨光，暗色搭配冷藍光與少量暖光。背景檔案為 `public/art/modern-light.svg` 與 `public/art/modern-dark.svg`。寬螢幕並排日期、時鐘、待辦，下方提供膠囊搜尋列、捷徑卡片與歷史卡片。
 - 便利貼固定於各樣式的預設位置，不可拖曳；點標題可收合／展開，舊版儲存的拖曳位置不再套用。
 - 右側工作便利貼：新增待辦、勾選完成、刪除與完成數量；自動儲存在本機，跨日保留，不自動清空。桌面展開、小螢幕收合，可點標題切換；移除擴充功能會清除本機資料。
-- 台灣時間指針時鐘，含時針、分針與秒針；每秒更新，背景分頁暫停更新，返回時校正。桌面以 1920×1080 設計，時鐘置於中央日曆右側；窄螢幕改為上下排列。
-- 台灣時區國曆、星期、農曆、二十四節氣、節氣進度與倒數；跨午夜及返回分頁更新。
+- 依日曆情境設定時區的指針時鐘，含時針、分針與秒針；每秒更新，背景分頁暫停更新，返回時校正。桌面以 1920×1080 設計，時鐘置於中央日曆右側；窄螢幕改為上下排列。
+- 國內與出差模式提供臺灣時區國曆、星期、農曆、二十四節氣、節氣進度與倒數；長期海外依所選時區顯示西曆。跨午夜及返回分頁更新。
 - 台灣民俗節日、2026～2027 年政府行政機關節日／補假，以及連假日次。
 - Google 搜尋及歷史事件深入了解連結。
 - 五種樣式的 Google 搜尋列皆可貼上剪貼簿圖片，預覽後傳送至 Google Lens；操作與格式限制見[文字與圖片搜尋](#文字與圖片搜尋)。
 - 捷徑新增、編輯、刪除、拖曳排序；編輯按鈕支援 Alt + 左右方向鍵排序。
 - 首次使用的預設捷徑依序為 Yahoo 奇摩、YouTube、ChatGPT、Gemini、Google 搜尋首頁；保留使用者已儲存的捷徑。舊版升級時會補上 ChatGPT，手動刪除後不會再次加入。
 - 外觀使用圖示搭配滑動分段控制（系統／亮色／暗色），支援鍵盤方向鍵與減少動態效果偏好；另可選五種日曆樣式，設定持久保存。
-- 歲月紙曆樣式以 CSS 繪製撕頁日曆造型：紅色裝訂頭、銅釘、紙紋、層疊紙邊與柔和陰影，搭配低彩度磚紅大日期、深藍文字及明體字；寬螢幕以日期／大時鐘／待辦並排。亮／暗模式分別搭配晨光／暖燈花卉背景（`public/art/traditional-light.png`、`public/art/traditional-dark.png`），保留原始 21:9 比例，16:9 等比例裁切兩側。每日一句、歷史區塊與標誌使用 90% 不透明的襯底，保持花卉背景上的文字清楚。
+- 歲月紙曆樣式以 CSS 繪製撕頁日曆造型：深紅色裝訂頭、銅釘、紙紋、層疊紙邊與柔和陰影，搭配依日期狀態區分顏色的大日期、深藍文字及明體字；寬螢幕以日期／大時鐘／待辦並排。亮／暗模式分別搭配晨光／暖燈花卉背景（`public/art/traditional-light.png`、`public/art/traditional-dark.png`），保留原始 21:9 比例，16:9 等比例裁切兩側。每日一句、歷史區塊與標誌使用 90% 不透明的襯底，保持花卉背景上的文字清楚。
 - 響應式畫面、鍵盤操作、儲存錯誤提示、同裝置分頁設定更新。
 
 ## 下一階段規劃
@@ -180,7 +217,7 @@ npm run data:prepare-update
 
 ### 每日一句
 
-每日一句存放在 [`data/quotes.json`](data/quotes.json)，每筆包含唯一的 `id`、分類 `category`、句子 `text`、出處或署名 `source`，引用語錄另附 `sourceUrl` 供核對。分類值：`daily`（每日提醒）、`sheng-yen`（佛家智慧）、`negative`（負能量／幽默）、`classics`（四書五經，共 366 則）、`famous`（名人語錄）、`literature`（文學短句）、`bible`（聖經，共 366 則）、`screen`（影視佳句，共 366 則）。可直接新增或修改 JSON，依上方公共資料更新流程發布；或重新執行 `npm run build` 將內容隨插件打包。依台灣日期在所選分類內按陣列順序循環選取，同一天顯示同一句；資料隨程式打包，可離線使用。每日提醒共 366 則原創短句，包含專注與時間、學習與成長、溝通與關係、情緒整理、休息與身體照顧、生活整理、決策與處事七個方向；專注與時間、決策與處事各 53 則，其餘各 52 則，主題交錯安排。在資料內容與順序不變的情況下，連續 366 天不重複，第 367 天開始下一輪，跨年不重設。
+每日一句存放在 [`data/quotes.json`](data/quotes.json)，每筆包含唯一的 `id`、分類 `category`、句子 `text`、出處或署名 `source`，引用語錄另附 `sourceUrl` 供核對。分類值：`daily`（每日提醒）、`sheng-yen`（佛家智慧）、`negative`（負能量／幽默）、`classics`（四書五經，共 366 則）、`famous`（名人語錄）、`literature`（文學短句）、`bible`（聖經，共 366 則）、`screen`（影視佳句，共 366 則）。可直接新增或修改 JSON，依上方公共資料更新流程發布；或重新執行 `npm run build` 將內容隨插件打包。依所選日曆時區的日期在所選分類內按陣列順序循環選取，同一天顯示同一句；資料隨程式打包，可離線使用。每日提醒共 366 則原創短句，包含專注與時間、學習與成長、溝通與關係、情緒整理、休息與身體照顧、生活整理、決策與處事七個方向；專注與時間、決策與處事各 53 則，其餘各 52 則，主題交錯安排。在資料內容與順序不變的情況下，連續 366 天不重複，第 367 天開始下一輪，跨年不重設。
 
 名人語錄收錄 366 則，涵蓋 21 位中外作者，包含老子、魯迅、張愛玲、三毛、林語堂、愛默生、梭羅、培根、海倫・凱勒、富蘭克林、羅素等人的著作、書信、演說與文學節錄。排除中國詩詞及四書五經內容，與 `classics` 分類區隔；《道德經》選句保留於名人語錄。作者交錯安排，資料內容與順序不變時，連續 366 天不重複，第 367 天開始下一輪，跨年不重設。
 
@@ -188,7 +225,7 @@ npm run data:prepare-update
 
 ### 日曆與節日
 
-放假資料涵蓋 2026～2027 年政府行政機關；未收錄年度以本地曆法運算，不臆測放假或補班。
+臺灣放假資料涵蓋 2026～2027 年政府行政機關，僅於國內與短期出差模式套用；未收錄年度以本地曆法運算，不臆測放假或補班。長期海外模式使用西曆，不套用臺灣假期或其他國家的法定假日。
 `calendar-2026.json` 保留原年度資料，新增的 `calendar-2027.json` 供 2027 年日期使用。
 `festivals.json` 是跨年度的國曆／農曆節日規則，不必逐年改日期；春節、端午、中秋依農曆自動換算，清明、除夕與母親節由程式計算。
 另收錄迎神、迎財神、天公生、頭牙、尾牙、送神及常見神明誕辰；`description` 保存民俗活動與信仰說明，`observances` 列出同日一併顯示的其他紀念名稱。這些內容依使用者提供的民俗資料整理，農曆規則不在閏月重複匹配，亦不作為政府放假依據。
@@ -245,34 +282,37 @@ npm run build
 
 ## 名稱與語系
 
-擴充功能正式名稱：中文「台灣今日曆」、英文「Taiwan Today」。`manifest.json` 使用
+擴充功能正式名稱：中文「台灣今日曆」、英文「Taiwan Today」、日文「台湾こよみ」。`manifest.json` 使用
 Chrome 擴充功能的 i18n 機制（`__MSG_extName__` / `__MSG_extDescription__` +
 `default_locale: zh_TW`），實際文字定義在 `_locales/zh_TW/messages.json` 與
-`_locales/en/messages.json`；Chrome 會依瀏覽器 UI 語言自動選字，找不到對應語系則退回
+`_locales/en/messages.json`、`_locales/ja/messages.json`；Chrome 會依瀏覽器 UI 語言自動選字，找不到對應語系則退回
 zh_TW。新增語系時在 `_locales/` 下建立對應資料夾即可，`vite.config.ts` 會自動一併複製到
 `dist/`。
 
 ## 檔案
 
-- `src/calendar/`：台灣日期、農曆、節氣、節日組合（`dailyCalendar.ts` 等）；歷史資料集登錄與合併（`history.ts`，`HistoryDataset`
+- `src/calendar/`：日曆情境與時區（`context.ts`）、臺灣日期、農曆、節氣、節日組合（`dailyCalendar.ts` 等）；歷史資料集登錄與合併（`history.ts`，`HistoryDataset`
   介面供未來主題擴充）、個人歷史 JSON 驗證（`personalHistory.ts`）、CSV 解析與表格欄位轉換（`personalHistoryFile.ts`、`historyRows.js`）、XLSX／ODS 解析（`spreadsheet.ts`、`spreadsheet.worker.ts`）。
-- `src/shortcuts/`：捷徑資料驗證與儲存（`chrome.storage.local` / `localStorage`）。
+- `src/i18n/`：介面英文／日文辭典（`en.json`、`ja.json`）、語言選擇與格式化（`index.ts`）、日曆標籤及錯誤訊息翻譯。繁體中文以原始字串作為索引與預設文字。
+- `src/weather/`：天氣查詢、座標與快取驗證（`weather.ts`），以及臺灣 22 縣市、368 鄉鎮市區的政府名稱與中心點資料（`taiwan-locations.json`）。
+- `src/shortcuts/`：捷徑資料驗證與儲存（`chrome.storage.local` / `localStorage`）、Chrome 圖示查詢與快取（`automaticIcon.ts`）。
 - `src/search/`：搜尋網址組成與自訂捷徑網址驗證（`search.ts`）、剪貼簿圖片預覽與 Google Lens 表單上傳（`imageSearch.ts`）。
 - `src/data/`：資料版本包裝解析（`document.ts`）、公共資料格式定義與套用（`publicData.ts`）、GitHub 更新下載與快取（`updates.ts`）。
-- `src/newtab/`：畫面與互動主體（`newtab.ts`）、設定頁籤與鍵盤導覽（`settingsTabs.ts`）、關於與各資料檔版本（`about.ts`）、指針時鐘（`clock.ts`）、工作便利貼（`todos.ts`）、個人歷史匯入／匯出對話框（`personalHistory.ts`）、紀事來源開關與排序（`historySources.ts`）、公共資料更新面板（`dataUpdates.ts`）、Google 應用程式九宮格（`googleApps.ts` 搭配 `googleServices.ts` 服務清單）、月序手帖與時光讀本版面（`concepts.ts`）；樣式依版面拆分為
-  `newtab.css`（共用基礎與留白日常）、`modern.css`（日常方格）、`traditional.css`（歲月紙曆）、`concepts.css`（月序手帖／時光讀本）、`identity.css`（五種樣式的配色、背景與材質）、`googleApps.css`（Google 應用程式選單）、`readability.css`（文字大小與閱讀相關樣式）、`settingsTabs.css`（設定頁籤）、`compact.css`（桌面與筆電緊湊排版）。
-- `data/`：離線日曆（`calendar-2026.json`、`calendar-2027.json`）、節日與連假規則、歷史紀事（`history-taiwan.json`、`history-world.json`、`history-tech.json`、`history-entertainment.json`、`history-personal.json`）、每日一句與公共資料更新清單（`update-manifest.json`）。
+- `src/newtab/`：畫面與互動主體（`newtab.ts`）、設定頁籤與鍵盤導覽（`settingsTabs.ts`）、關於與各資料檔版本（`about.ts`）、指針時鐘（`clock.ts`）、日曆情境設定（`calendarContext.ts`）、天氣顯示與地點設定（`weather.ts`）、工作便利貼（`todos.ts`）、個人歷史匯入／匯出對話框（`personalHistory.ts`）、紀事來源開關與排序（`historySources.ts`）、公共資料更新面板（`dataUpdates.ts`）、Google 應用程式九宮格（`googleApps.ts` 搭配 `googleServices.ts` 服務清單）、月序手帖與時光讀本版面（`concepts.ts`）；樣式依版面拆分為
+  `newtab.css`（共用基礎與留白日常）、`modern.css`（日常方格）、`traditional.css`（歲月紙曆）、`concepts.css`（月序手帖／時光讀本）、`identity.css`（五種樣式的配色、背景與材質）、`googleApps.css`（Google 應用程式選單）、`readability.css`（文字大小與閱讀相關樣式）、`settingsTabs.css`（設定頁籤）、`weather.css`（紙曆日期排版、天氣與地點設定按鈕）、`compact.css`（桌面與筆電緊湊排版）。
+- `data/`：離線日曆（`calendar-2026.json`、`calendar-2027.json`）、節日與連假規則、歷史紀事（`history-taiwan.json`、`history-world.json`、`history-tech.json`、`history-entertainment.json`、`history-personal.json`）、每日一句與公共資料更新清單（`update-manifest.json`）；`en/`、`ja/` 保存日曆翻譯資料，`translation-sources.json` 記錄翻譯來源。
 - `public/icons/`：應用程式圖示 `taiwan-today.png`（擴充功能與左上角標誌）、`taiwan-today.ico`（分頁圖示），以及內建捷徑的 favicon 與來源紀錄；`public/icons/google/` 保存 Google 應用程式選單圖示，`public/icons/websites/` 保存常用網站預設圖示，皆附來源說明。
 - `public/art/`：留白日常的亮／暗山景 PNG、日常方格的亮／暗幾何 SVG、歲月紙曆的亮／暗花卉 PNG，以及其他樣式的山海線條裝飾。
 - `templates/`：CSV、XLSX、ODS 個人紀事範本與填寫說明，供官網下載。
 - `vendor/sheetjs/`：插件與官網共用的本機試算表解析器及第三方授權。
-- `_locales/`：擴充功能名稱與說明的中英文語系檔。
+- `_locales/`：擴充功能名稱與說明的繁體中文、英文及日文語系檔。
 - `scripts/import-calendar.mjs`：依年份重建日曆資料，並可用官方 CSV 核對放假旗標。
+- `scripts/localize-calendar-data.mjs`、`scripts/calendar-data-translations.json`：日曆翻譯檔的產生、來源同步檢查與說明譯文。
 - `scripts/validate-history.mjs`：歷史紀事欄位、重複與月份覆蓋檢查。
 - `scripts/prepare-history-templates.mjs`：產生三種格式的紀事範本，並核對 XLSX／ODS 內容。
 - `scripts/prepare-data-update.mjs`：驗證公共 JSON 並產生 `data/update-manifest.json`，供使用者端下載更新比對。
 - `scripts/prepare-website-icons.mjs`：預先下載常用網站 Logo，更新圖示路徑與來源紀錄。
-- `tests/`：曆法及安全邊界單元測試、瀏覽器操作與真實 MV3 離線載入測試；`tests/pages/` 驗證官網範本下載與三種格式轉檔。
+- `tests/`：曆法及安全邊界單元測試、天氣與時區測試、瀏覽器操作及真實 MV3 離線載入／網站權限測試；`tests/pages/` 驗證官網範本下載與三種格式轉檔。
 - `index.html`、`docs/site/`：可部署到 GitHub Pages 的專案介紹網站，提供五種樣式的真實截圖、CSV／XLSX／ODS 範本下載、JSON 轉檔與匯入教學。樣式來源為 `docs/site/tailwind.css`，由 `tailwind.site.config.ts` 建置；截圖存放於 `docs/site/images/`，首頁裁切範圍定義於 `docs/site/tailwind.css`。
 
 ## 專案介紹網站與私人紀事工具
@@ -301,8 +341,8 @@ zh_TW。新增語系時在 `_locales/` 下建立對應資料夾即可，`vite.co
 
 文學短句收錄 366 則。文學短句以成長與省思為選句方向，收錄現代散文、小說及《菜根譚》《圍爐夜話》《幽夢影》等哲理小品，附作者、篇名、原文及來源網址。支援五種版型、偏好保存與公共資料更新；資料及順序不變時，連續 366 天不重複，第 367 天開始下一輪。版本與節錄方式保存在各筆 `sourceWork`，原文及連結保存在 `originalText`、`sourceUrl`。
 
-「聖經」分類收錄繁體《和合本》366 則經文選讀，涵蓋愛與饒恕、智慧與學習、謙卑與節制、盼望與安慰、感恩及行善等主題。每則為一節或相鄰數節，附書卷、章節、版本與來源連結；保留經文原意，排除依賴敘事情境才可理解的零碎片段。支援五種版型、偏好保存、台灣日期輪替與公共資料更新。
+「聖經」分類收錄繁體《和合本》366 則經文選讀，涵蓋愛與饒恕、智慧與學習、謙卑與節制、盼望與安慰、感恩及行善等主題。每則為一節或相鄰數節，附書卷、章節、版本與來源連結；保留經文原意，排除依賴敘事情境才可理解的零碎片段。支援五種版型、偏好保存、依所選日曆時區日期輪替與公共資料更新。
 
-「影視佳句」共 366 則，包含電影與動畫電影 307 則、電視與動畫影集 59 則，以希望、自我認識、挫折、關係與人生選擇為主題。保留原有 33 則，新增 333 則；每則附作品中英文名、年份、所據英文台詞及來源，中文為專案自譯，並非官方字幕。非英語原作另標明採用英文譯本／配音版本。依台灣日期每日輪替，在資料與順序不變時連續 366 天不重複，第 367 天開始下一輪，跨年不重設。新增選句依英文 Wikiquote 作品／分季條目核對；該站為可編輯的二手語錄資料庫，並非官方字幕或逐集影音複核。各筆 `sourceWork` 與 `sourceUrl` 保留角色、集名等資訊及核對連結。
+「影視佳句」共 366 則，包含電影與動畫電影 307 則、電視與動畫影集 59 則，以希望、自我認識、挫折、關係與人生選擇為主題。保留原有 33 則，新增 333 則；每則附作品中英文名、年份、所據英文台詞及來源，中文為專案自譯，並非官方字幕。非英語原作另標明採用英文譯本／配音版本。依所選日曆時區的日期每日輪替，在資料與順序不變時連續 366 天不重複，第 367 天開始下一輪，跨年不重設。新增選句依英文 Wikiquote 作品／分季條目核對；該站為可編輯的二手語錄資料庫，並非官方字幕或逐集影音複核。各筆 `sourceWork` 與 `sourceUrl` 保留角色、集名等資訊及核對連結。
 
 語錄來源補充：佛典使用 [CBETA XML 電子佛典](https://github.com/cbeta-org/xml-p5)，完整版本與使用條件 header 保存在 [licenses/cbeta/](licenses/cbeta/)，分別對應《法句經》《四十二章經》《六祖大師法寶壇經》，不由專案程式碼授權取代。古籍及文學選句依維基文庫版本，許地山《空山靈雨》採《空山霝雨》1925 年版。聖經底本為 [Open Bibles 繁體和合本](https://github.com/seven1m/open-bibles/blob/master/chi-cuv.usfx.xml)，2026-09-23 所用檔案 SHA-256：`049e36ec3ee1b5c9bc2c8bfd2ca07f9f1f30398838f692d12ea38a092d41fe4b`；顯示文字省略譯註與詩題等，原文保存在 `originalText`，整理方式記在 `sourceWork`。
