@@ -24,8 +24,6 @@ async function start() {
       status.textContent = t('設定無法儲存，請稍後重試。');
     }
   });
-  const imageSearch = document.getElementById('image-search-form') as HTMLFormElement;
-  imageSearch.action = `https://lens.google.com/v3/upload?hl=${document.documentElement.lang === 'zh-Hant-TW' ? 'zh-TW' : document.documentElement.lang}`;
   await import('./newtab');
 }
 

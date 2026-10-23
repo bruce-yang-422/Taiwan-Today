@@ -32,8 +32,7 @@ import { initializePersonalHistory } from './personalHistory';
 import { createHistorySourceControls } from './historySources';
 import { normalizeHistorySources, type HistorySourceSetting } from '../calendar/history';
 import { dailyCalendar, setHistorySources } from '../calendar/dailyCalendar';
-import { normalizeUrl, searchUrl } from '../search/search';
-import { initializeSearch } from '../search/imageSearch';
+import { normalizeUrl, searchWeb, initializeSearch } from '../search/search';
 import { defaults, parseShortcuts, loadShortcuts, shortcutIcon, validIcon, type Shortcut } from '../shortcuts/shortcuts';
 import { importShortcutIcon } from '../shortcuts/importIcon';
 import { automaticShortcutIcon, cachedAutomaticShortcutIcon } from '../shortcuts/automaticIcon';
@@ -84,7 +83,9 @@ function renderCalendar() {
     const article = node('article', 'history-card');
     article.append(node('p', 'history-year', t("{0} · {1} · {2} 年前", [event.year, event.region, date.year - event.year])), node('h3', '', event.title), node('p', 'history-summary', event.summary));
     if (event.keyword?.trim()) {
-      const more = node('a', 'history-more', t("深入了解 ↗")); more.href = searchUrl(event.keyword); article.append(more);
+      const more = node('button', 'history-more', t("深入了解 ↗")); more.type = 'button';
+      more.addEventListener('click', () => { void searchWeb(event.keyword!).catch(error => notify(error.message)); });
+      article.append(more);
     }
     if (event.source?.trim()) {
       const source = node('p', 'history-source', t("資料來源："));

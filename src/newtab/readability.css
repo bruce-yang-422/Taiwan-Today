@@ -1,7 +1,4 @@
 /* Shared reading sizes; independent of the decorative date and clock sizes. */
-#image-search-dialog { width:min(520px,calc(100% - 32px)); }
-#image-search-preview { display:block; max-width:100%; max-height:45dvh; margin:auto; object-fit:contain; border-radius:8px; }
-#image-search-dialog .settings-note { margin-top:16px; }
 .about-settings { margin-top:20px; padding-top:16px; border-top:1px solid var(--line); }
 .about-settings summary { cursor:pointer; font-size:var(--reading-control); color:var(--accent); font-weight:600; }
 .about-info { margin-top:12px; font-size:var(--reading-small); line-height:1.7; }

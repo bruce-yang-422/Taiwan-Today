@@ -374,12 +374,15 @@ test('offline rendering, shortcuts CRUD, keyboard sorting, themes and search', a
   await expect(page.locator('#day')).toHaveText('22');
   await expect(page.locator('#history')).toContainText('伊拉克入侵伊朗');
   await context.setOffline(false);
-  await page.route('https://www.google.com/**', route => route.fulfill({ body: '<html>search</html>', contentType: 'text/html' }));
+  await page.evaluate(() => {
+    (window as any).chrome ??= {};
+    (window as any).searchCalls = [];
+    (window as any).chrome.search = { query: async (info: unknown) => { (window as any).searchCalls.push(info); } };
+  });
   await page.getByRole('searchbox').count();
-  await page.getByLabel('搜尋 Google', { exact: true }).fill('台灣 & 日曆');
+  await page.getByLabel('搜尋網頁', { exact: true }).fill('台灣 & 日曆');
   await page.locator('#search-input').press('Enter');
-  await expect(page).toHaveURL(/google.com\/search/);
-  expect(new URL(page.url()).searchParams.get('q')).toBe('台灣 & 日曆');
+  expect(await page.evaluate(() => (window as any).searchCalls)).toEqual([{ text: '台灣 & 日曆', disposition: 'CURRENT_TAB' }]);
   expect(errors).toEqual([]);
 });
 test('mobile layout and storage failures', async ({ page }) => {
@@ -408,7 +411,7 @@ test('packaged MV3 extension loads offline and uses chrome.storage', async () =>
     await page.goto('chrome://newtab/');
     await expect(page.locator('#day')).not.toBeEmpty();
     await expect(page.getByRole('button', { name: '新增捷徑', exact: true })).toBeEnabled();
-    expect(await page.evaluate(() => chrome.runtime.getManifest().permissions)).toEqual(['storage', 'favicon']);
+    expect(await page.evaluate(() => chrome.runtime.getManifest().permissions)).toEqual(['storage', 'favicon', 'search']);
     await expect(page.locator('.shortcut-name')).toHaveText(['Yahoo 奇摩', 'YouTube', 'ChatGPT', 'Gemini', 'Google']);
     for (const name of ['YouTube']) {
       const image = page.getByRole('link', { name, exact: true }).locator('img');

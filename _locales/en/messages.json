@@ -1,4 +1,4 @@
 {
   "extName": { "message": "Taiwan Today", "description": "Extension name" },
-  "extDescription": { "message": "Open a new tab, see today's Taiwan. Offline calendar, Google search, and custom shortcuts.", "description": "Extension description" }
+  "extDescription": { "message": "Open a new tab, see today's Taiwan. Offline calendar, search using your browser settings, and custom shortcuts.", "description": "Extension description" }
 }

@@ -17,11 +17,11 @@
 
 版本下載：[v1.1.0 安裝包](release/taiwan-daily-chrome-1.1.0.zip) · [v1.1.0 更新說明](V1.1.0.md) · [v1.0.0 發布頁](https://github.com/bruce-yang-422/Taiwan-Today/releases/tag/v1.0.0)
 
-目前原始碼版本：**1.1.0**，更新內容見 [v1.1.0 更新說明](V1.1.0.md)；本版封裝檔統一為 [`release/taiwan-daily-chrome-1.1.0.zip`](release/taiwan-daily-chrome-1.1.0.zip)，已包含縮小網站存取權限的修改，可用於商店上傳。
+目前原始碼版本：**1.1.0**，更新內容見 [v1.1.0 更新說明](V1.1.0.md)；本版封裝檔統一為 [`release/taiwan-daily-chrome-1.1.0.zip`](release/taiwan-daily-chrome-1.1.0.zip)，已包含縮小網站存取權限與 Chrome Search API 搜尋修改，可用於商店上傳。
 
-以 Vite、TypeScript、Tailwind CSS 與 Manifest V3 實作的 Chrome 新分頁，提供繁體中文、English、日本語介面，支援國內、短期出差及長期海外的日曆與時鐘設定。無後端、無帳號、無追蹤，日曆與內建內容可離線使用；天氣、Google 文字／圖片搜尋、外部連結與公共資料更新需要網路。
+以 Vite、TypeScript、Tailwind CSS 與 Manifest V3 實作的 Chrome 新分頁，提供繁體中文、English、日本語介面，支援國內、短期出差及長期海外的日曆與時鐘設定。無後端、無帳號、無追蹤，日曆與內建內容可離線使用；天氣、使用瀏覽器預設搜尋引擎的文字搜尋、外部連結與公共資料更新需要網路。
 
-使用 `storage`、`favicon` 與限定於 `api.open-meteo.com` 的天氣連線權限；公共資料更新的 `raw.githubusercontent.com` 為選用權限，由使用者手動執行或啟用每日檢查時授權。不申請所有 HTTP／HTTPS 網站的存取權限；捷徑圖示由 Chrome 內建功能、打包素材或自行上傳提供。
+使用 `storage`、`favicon`、`search` 與限定於 `api.open-meteo.com` 的天氣連線權限；公共資料更新的 `raw.githubusercontent.com` 為選用權限，由使用者手動執行或啟用每日檢查時授權。不申請所有 HTTP／HTTPS 網站的存取權限；捷徑圖示由 Chrome 內建功能、打包素材或自行上傳提供。
 
 個人／家族紀事範例：[CSV](templates/history-template.csv)、[XLSX](templates/history-template.xlsx)、[ODS](templates/history-template.ods)。選一種填寫，再使用[官網轉檔工具](https://today.stack-base.com/#converter)預覽並下載 JSON，於插件「設定 → 資料管理 → 匯入個人歷史」匯入。欄位格式見 [範例說明](templates/README.md)。
 
@@ -155,8 +155,8 @@ npx playwright test --config tests/pages/playwright.config.mjs
 - 依日曆情境設定時區的指針時鐘，含時針、分針與秒針；每秒更新，背景分頁暫停更新，返回時校正。桌面以 1920×1080 設計，時鐘置於中央日曆右側；窄螢幕改為上下排列。
 - 國內與出差模式提供臺灣時區國曆、星期、農曆、二十四節氣、節氣進度與倒數；長期海外依所選時區顯示西曆。跨午夜及返回分頁更新。
 - 台灣民俗節日、2026～2027 年政府行政機關節日／補假，以及連假日次。
-- Google 搜尋及歷史事件深入了解連結。
-- 五種樣式的 Google 搜尋列皆可貼上剪貼簿圖片，預覽後傳送至 Google Lens；操作與格式限制見[文字與圖片搜尋](#文字與圖片搜尋)。
+- 使用瀏覽器預設搜尋引擎的文字搜尋與歷史事件「深入了解」。
+- 五種樣式共用文字搜尋列，透過 Chrome Search API 使用瀏覽器預設搜尋引擎；操作見[文字搜尋](#文字搜尋)。
 - 捷徑新增、編輯、刪除、拖曳排序；編輯按鈕支援 Alt + 左右方向鍵排序。
 - 首次使用的預設捷徑依序為 Yahoo 奇摩、YouTube、ChatGPT、Gemini、Google 搜尋首頁；保留使用者已儲存的捷徑。舊版升級時會補上 ChatGPT，手動刪除後不會再次加入。
 - 外觀使用圖示搭配滑動分段控制（系統／亮色／暗色），支援鍵盤方向鍵與減少動態效果偏好；另可選五種日曆樣式，設定持久保存。
@@ -247,17 +247,11 @@ node scripts/import-calendar.mjs --year 2027 --csv path/to/116-calendar.csv
 `data/history-taiwan.json` 與 `data/history-world.json` 合計收錄 193 筆「歷史上的今天」紀事，其中台灣 129 筆（67%）、國際 64 筆（33%）。9～12 月每天皆有 1～3 則；1～8 月目前為精選重大事件，僅涵蓋部分日期，尚未每天有內容，缺少資料的日期會顯示空狀態。內容以重大政治、社會、科學、文化及體育事件為主。另有預設關閉的主題紀事：`data/history-tech.json`（科技，51 筆）與 `data/history-entertainment.json`（影音娛樂，28 筆），同樣僅涵蓋部分日期，會逐步擴充。執行
 `npm run data:check-history` 可檢查資料完整性。
 
-### 文字與圖片搜尋
+### 文字搜尋
 
-五種樣式共用同一個 Google 搜尋列。輸入文字後按 Enter 或搜尋按鈕，會在目前分頁開啟文字搜尋；貼上純文字也維持原本的輸入方式。
+五種樣式共用搜尋列。輸入文字後按 Enter 或搜尋按鈕，會透過 `chrome.search.query()` 在目前分頁使用 Chrome 設定的預設搜尋引擎；貼上純文字維持原本的輸入方式。「歷史上的今天」的「深入了解」也使用相同 API，不固定導向 Google、不變更預設搜尋引擎設定。
 
-以剪貼簿圖片搜尋：
-
-1. 複製圖片或截圖，點選 Google 搜尋列。
-2. 按 Ctrl+V（macOS 為 Command+V），確認跳出的圖片預覽。
-3. 按「以圖片搜尋」，將圖片傳送至 Google Lens，結果於新分頁開啟；按「取消」或 Esc 可關閉預覽。
-
-支援 PNG、JPEG、WebP、GIF、BMP，單張最大 20 MB。格式不支援、超過限制或無法解碼時會顯示提示。圖片僅在本機暫存，按搜尋後才送到 Google；取消或送出後清除暫存，不保存為搜尋紀錄，不在背景讀取剪貼簿，也不需要新增剪貼簿讀取權限。原本輸入的文字會保留。第三方資料處理說明見[隱私權政策](privacy.html)。
+搜尋需要 `search` 權限，僅在已安裝的 Chrome 擴充功能中可用。網站預覽不提供搜尋 API；API 無法使用或執行失敗時會顯示提示，不會改用固定搜尋網址。插件不保存搜尋紀錄，搜尋服務商依其政策處理查詢內容。不提供剪貼簿圖片搜尋或圖片上傳。
 
 ### 常用網站與捷徑圖示
 
@@ -296,7 +290,7 @@ zh_TW。新增語系時在 `_locales/` 下建立對應資料夾即可，`vite.co
 - `src/i18n/`：介面英文／日文辭典（`en.json`、`ja.json`）、語言選擇與格式化（`index.ts`）、日曆標籤及錯誤訊息翻譯。繁體中文以原始字串作為索引與預設文字。
 - `src/weather/`：天氣查詢、座標與快取驗證（`weather.ts`），以及臺灣 22 縣市、368 鄉鎮市區的政府名稱與中心點資料（`taiwan-locations.json`）。
 - `src/shortcuts/`：捷徑資料驗證與儲存（`chrome.storage.local` / `localStorage`）、Chrome 圖示查詢與快取（`automaticIcon.ts`）。
-- `src/search/`：搜尋網址組成與自訂捷徑網址驗證（`search.ts`）、剪貼簿圖片預覽與 Google Lens 表單上傳（`imageSearch.ts`）。
+- `src/search/`：Chrome Search API 文字搜尋、搜尋表單事件與自訂捷徑網址驗證（`search.ts`）。
 - `src/data/`：資料版本包裝解析（`document.ts`）、公共資料格式定義與套用（`publicData.ts`）、GitHub 更新下載與快取（`updates.ts`）。
 - `src/newtab/`：畫面與互動主體（`newtab.ts`）、設定頁籤與鍵盤導覽（`settingsTabs.ts`）、關於與各資料檔版本（`about.ts`）、指針時鐘（`clock.ts`）、日曆情境設定（`calendarContext.ts`）、天氣顯示與地點設定（`weather.ts`）、工作便利貼（`todos.ts`）、個人歷史匯入／匯出對話框（`personalHistory.ts`）、紀事來源開關與排序（`historySources.ts`）、公共資料更新面板（`dataUpdates.ts`）、Google 應用程式九宮格（`googleApps.ts` 搭配 `googleServices.ts` 服務清單）、月序手帖與時光讀本版面（`concepts.ts`）；樣式依版面拆分為
   `newtab.css`（共用基礎與留白日常）、`modern.css`（日常方格）、`traditional.css`（歲月紙曆）、`concepts.css`（月序手帖／時光讀本）、`identity.css`（五種樣式的配色、背景與材質）、`googleApps.css`（Google 應用程式選單）、`readability.css`（文字大小與閱讀相關樣式）、`settingsTabs.css`（設定頁籤）、`weather.css`（紙曆日期排版、天氣與地點設定按鈕）、`compact.css`（桌面與筆電緊湊排版）。

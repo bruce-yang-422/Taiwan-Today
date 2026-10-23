@@ -1,7 +1,7 @@
 import { normalizeHistorySources, historyDatasets } from '../src/calendar/history';
 import { describe, expect, it } from 'vitest';
 import { dailyCalendar } from '../src/calendar/dailyCalendar';
-import { normalizeUrl, searchUrl } from '../src/search/search';
+import { normalizeUrl } from '../src/search/search';
 import { parseShortcuts } from '../src/shortcuts/shortcuts';
 import { catalogSites, websiteCategories, addCatalogSites, updateCatalogSites, websiteKey } from '../src/shortcuts/websiteCatalog';
 import reference from '../data/calendar-2026.json';
@@ -193,8 +193,7 @@ describe('Taiwan calendar', () => {
   });
 });
 describe('safe navigation and storage', () => {
-  it('encodes search text and normalizes website URLs', () => {
-    expect(new URL(searchUrl(' 台灣 & 日曆 ')).searchParams.get('q')).toBe('台灣 & 日曆');
+  it('normalizes website URLs', () => {
     expect(normalizeUrl('example.com')).toBe('https://example.com/');
     for (const bad of ['javascript:alert(1)', 'data:text/html,hi', 'file:///C:/x', 'https://user:pass@example.com', 'https://']) expect(() => normalizeUrl(bad)).toThrow();
   });
