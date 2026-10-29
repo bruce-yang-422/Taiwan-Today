@@ -1,4 +1,6 @@
 {
+  "時鐘展示模式": "Clock presentation mode",
+  "雙擊切換展示模式，按 Esc 離開": "Double-click to toggle presentation mode; press Esc to exit",
   "舊版資料（{0}）": "Legacy data ({0})",
   "未提供": "Not provided",
   "舊版未提供": "Unavailable in legacy data",
