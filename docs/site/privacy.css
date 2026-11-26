@@ -1,0 +1,26 @@
+.privacy-languages {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: .25rem;
+  max-width: 100%;
+  padding: .35rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #795638;
+  border-radius: 2rem;
+  background: #241b13;
+}
+.privacy-languages[hidden] { display: none; }
+.privacy-languages a {
+  padding: .6rem 1rem;
+  border-radius: 2rem;
+  color: #ffc089;
+  text-decoration: none;
+}
+.privacy-languages a:hover,
+.privacy-languages a[aria-current] { background: #49311e; }
+.privacy-languages a[aria-current] { font-weight: 700; }
+.privacy-languages a:focus-visible { outline: 2px solid #ffc089; }
+
+main > .privacy-languages { margin-top: 1rem; }
+.privacy-page > .privacy-languages { margin-top: 0; }
+.privacy-page .privacy-languages a { text-decoration: none; }

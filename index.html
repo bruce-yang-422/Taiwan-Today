@@ -2,9 +2,9 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="台灣今日曆：為台灣設計的 Chrome 新分頁插件。五種樣式、農曆節氣、時鐘待辦與歷史上的今天，也能加入自己的紀事。">
+<meta name="description" content="台灣今日曆是免費的 Chrome 新分頁日曆擴充功能。開啟新分頁即可查看農曆、二十四節氣、臺灣假期與歷史上的今天，也能管理待辦、捷徑及個人紀事。">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; worker-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'self'">
-<title>台灣今日曆 Taiwan Today｜Chrome 新分頁日曆・農曆節氣與每日紀事</title>
+<title>台灣今日曆｜Chrome 新分頁日曆・農曆、節氣與臺灣假期</title>
 <link rel="canonical" href="https://today.stack-base.com/">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="author" content="Bruce Yang">
@@ -14,16 +14,16 @@
 <meta property="og:locale" content="zh_TW">
 <meta property="og:site_name" content="台灣今日曆 Taiwan Today">
 <meta property="og:url" content="https://today.stack-base.com/">
-<meta property="og:title" content="台灣今日曆｜讓 Chrome 新分頁成為你的日常日曆">
-<meta property="og:description" content="五種亮暗樣式，國曆農曆、台灣節氣、時鐘待辦與歷史上的今天。也能將自己的紀事加入日曆，無須帳號，資料保存在本機。">
+<meta property="og:title" content="台灣今日曆｜Chrome 新分頁日曆・農曆、節氣與臺灣假期">
+<meta property="og:description" content="開啟 Chrome 新分頁，即可查看農曆、節氣、臺灣假期與歷史上的今天。支援五種版面，可加入自己的紀事，無須帳號。">
 <meta property="og:image" content="https://today.stack-base.com/docs/site/images/modern-light.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1280">
 <meta property="og:image:height" content="607">
 <meta property="og:image:alt" content="台灣今日曆日常方格亮色實際畫面">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="台灣今日曆 Taiwan Today｜Chrome 新分頁日曆">
-<meta name="twitter:description" content="農曆節氣、時鐘待辦、歷史紀事與五種亮暗樣式，開啟新分頁就能使用。">
+<meta name="twitter:title" content="台灣今日曆｜Chrome 新分頁日曆・農曆、節氣與臺灣假期">
+<meta name="twitter:description" content="開啟 Chrome 新分頁，即可查看農曆、節氣、臺灣假期與歷史上的今天。支援五種版面，可加入自己的紀事，無須帳號。">
 <meta name="twitter:image" content="https://today.stack-base.com/docs/site/images/modern-light.jpg">
 <meta name="twitter:image:alt" content="台灣今日曆日常方格亮色實際畫面">
 <script type="application/ld+json">
@@ -43,12 +43,13 @@
       "@id": "https://today.stack-base.com/#application",
       "name": "台灣今日曆 Taiwan Today",
       "url": "https://today.stack-base.com/",
-      "description": "獨立的 Chrome 新分頁插件，提供台灣日曆、農曆節氣、時鐘、待辦、歷史紀事與個人紀事匯入。",
+      "description": "免費的 Chrome 新分頁日曆擴充功能，提供農曆、二十四節氣、臺灣假期、歷史上的今天、待辦與個人紀事匯入。",
       "applicationCategory": "BrowserApplication",
       "softwareVersion": "1.2.0",
       "softwareRequirements": "Google Chrome 或 Microsoft Edge",
       "inLanguage": "zh-Hant",
       "isAccessibleForFree": true,
+      "offers": { "@type": "Offer", "price": 0, "priceCurrency": "TWD" },
       "author": { "@type": "Person", "name": "Bruce Yang" },
       "image": "https://today.stack-base.com/public/icons/taiwan-today.png",
       "screenshot": "https://today.stack-base.com/docs/site/images/modern-light.jpg",
@@ -59,6 +60,8 @@
 }
 </script>
 <link rel="stylesheet" href="./docs/site/style.css">
+<link rel="stylesheet" href="./docs/site/privacy.css">
+<script type="module" src="./docs/site/home-language.js"></script>
 </head>
 <body>
 <header>
@@ -66,9 +69,15 @@
 <nav aria-label="主導覽" class="shrink-0"><a href="#features">插件特色</a><a href="#styles">五種樣式</a><a href="#templates">個人紀事與轉檔</a><a href="#faq">常見問題</a></nav>
 </header>
 <main>
+<nav class="privacy-languages" aria-label="語言" hidden>
+<a href="?lang=zh-Hant" lang="zh-Hant" hreflang="zh-Hant" aria-current="true">繁體中文</a>
+<a href="?lang=zh-Hans" lang="zh-Hans" hreflang="zh-Hans">简体中文</a>
+<a href="?lang=ja" lang="ja" hreflang="ja">日本語</a>
+<a href="?lang=en" lang="en" hreflang="en">English</a>
+</nav>
 <div id="plugin-intro" class="min-w-0">
 <section class="hero">
-<div><p class="eyebrow">台灣今日曆 · 為台灣設計的新分頁插件</p><h1>打開新分頁，<br><em>安頓今天的日常。</em></h1>
+<div><p class="eyebrow">TAIWAN TODAY</p><h1>台灣今日曆<br><em>Chrome 新分頁日曆</em></h1>
 <p class="intro">日期、農曆、節氣與時間，一眼就能看見。記下今天的待辦、快速開啟常用網站，再讀一段歷史或一句提醒，從容開始每一天。</p>
 <div class="actions"><a class="button primary" href="https://chromewebstore.google.com/detail/adgohcafbfdmkkllmphehaeainhbeigp" target="_blank" rel="noopener noreferrer">開始使用台灣今日曆 ↗</a><a class="button" href="#styles">看看五種樣式</a></div>
 <p class="quiet">Chrome／Edge · 無須帳號 · 設定儲存在本機</p></div>

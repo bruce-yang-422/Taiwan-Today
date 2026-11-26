@@ -1,15 +1,47 @@
 import {test,expect} from '@playwright/test';
 import {readFileSync} from 'node:fs';
 
+test.describe('without JavaScript', () => {
+test.use({ javaScriptEnabled: false });
 test('privacy policy is accessible from home without scripts', async ({page}) => {
  await page.goto('/');
  await page.locator('footer a[href="./privacy.html"]').click();
  await expect(page).toHaveURL(/\/privacy\.html$/);
  await expect(page.getByRole('heading',{level:1,name:'隱私權政策'})).toBeVisible();
  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href','https://today.stack-base.com/privacy.html');
- await expect(page.locator('script')).toHaveCount(0);
+ await expect(page.locator('.privacy-languages')).toBeHidden();
  await page.setViewportSize({width:390,height:844});
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+});
+});
+
+test('language pills localize both pages and preserve the language between them', async ({ page }) => {
+ await page.setViewportSize({ width: 390, height: 844 });
+ await page.goto('/');
+ const pills = page.locator('.privacy-languages');
+ for (const [language, locale, home, privacy] of [
+   ['简体中文', 'zh-Hans', '台湾今日历', '隐私权政策'],
+   ['日本語', 'ja', '台湾今日暦', 'プライバシーポリシー'],
+   ['English', 'en', 'Taiwan Today', 'Privacy Policy'],
+   ['繁體中文', 'zh-Hant', '台灣今日曆', '隱私權政策'],
+ ]) {
+   await pills.getByRole('link', { name: language }).click();
+   await expect(page.locator('html')).toHaveAttribute('lang', locale);
+   await expect(page.locator('h1')).toContainText(home);
+   await expect(pills.getByRole('link', { name: language })).toHaveAttribute('aria-current', 'true');
+   await page.locator('footer a[href^="./privacy.html"]').click();
+   await expect(page.locator('h1')).toHaveText(privacy);
+   await expect(page.locator('html')).toHaveAttribute('lang', locale);
+   await expect(page.locator('article a[href^="mailto:"]')).toBeVisible();
+   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+   await page.locator('footer a').click();
+   await expect(page.locator('html')).toHaveAttribute('lang', locale);
+ }
+ await page.goto('/privacy.html?lang=en');
+ await pills.getByRole('link', { name: '日本語' }).click();
+ await expect(page.locator('h1')).toHaveText('プライバシーポリシー');
+ await page.goBack();
+ await expect(page.locator('h1')).toHaveText('Privacy Policy');
 });
 
 test('real screenshots switch themes and preserve their aspect ratio', async ({page}) => {
@@ -37,10 +69,12 @@ test('real screenshots switch themes and preserve their aspect ratio', async ({p
 
 test('homepage exposes canonical and valid structured data', async ({page,request}) => {
  await page.goto('/');
+ await expect(page).toHaveTitle(/台灣今日曆.*Chrome 新分頁日曆/);
  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href','https://today.stack-base.com/');
  await expect(page.locator('meta[property="og:image"]')).toHaveAttribute('content',/https:\/\/today\.stack-base\.com\/docs\/site\/images\/modern-light\.jpg/);
  const data = JSON.parse(await page.locator('script[type="application/ld+json"]').textContent());
  expect(data['@graph'].map(item=>item['@type'])).toEqual(['WebSite','SoftwareApplication']);
+ expect(data['@graph'][1].offers.price).toBe(0);
  expect(await (await request.get('/robots.txt')).text()).toContain('Sitemap: https://today.stack-base.com/sitemap.xml');
  expect(await (await request.get('/sitemap.xml')).text()).toContain('<loc>https://today.stack-base.com/</loc>');
 });
