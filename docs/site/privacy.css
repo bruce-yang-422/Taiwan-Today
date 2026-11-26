@@ -1,10 +1,15 @@
+.privacy-document {
+  --language-option-height: 32px;
+  --language-inset: .2rem;
+}
+
 .privacy-languages {
   display: inline-flex;
   flex-direction: row;
   flex-wrap: wrap;
   gap: .25rem;
   max-width: 100%;
-  padding: .35rem;
+  padding: var(--language-inset);
   margin-bottom: 1.5rem;
   border: 1px solid var(--line);
   border-radius: 2rem;
@@ -15,8 +20,9 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 44px;
-  padding: .35rem clamp(.55rem, 1.7vw, 1rem);
+  min-height: var(--language-option-height);
+  padding: .15rem clamp(.55rem, 1.7vw, 1rem);
+  line-height: 1.4;
   border-radius: 2rem;
   color: var(--ink);
   font-weight: 600;
@@ -29,6 +35,45 @@
   color: var(--paper);
 }
 
-main > .privacy-languages { margin-top: 1rem; }
-.privacy-page > .privacy-languages { margin-top: 0; }
-.privacy-page .privacy-languages a { text-decoration: none; }
+.home-header-actions {
+  display: flex;
+  align-items: center;
+  gap: clamp(.75rem, 2vw, 1.5rem);
+}
+.home-language {
+  border: 1px solid var(--line);
+  border-radius: 2rem;
+  padding: .35rem .7rem;
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+  font-size: .8125rem;
+  cursor: pointer;
+}
+
+.privacy-document > :is(header, footer) { max-width: 740px; }
+.privacy-document > header { align-items: center; padding-block: 1.125rem; }
+.privacy-header-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: .75rem;
+}
+.privacy-header-actions .privacy-languages { margin: 0; }
+.privacy-home {
+  display: inline-flex;
+  align-items: center;
+  min-height: calc(var(--language-option-height) + 2 * var(--language-inset) + 2px);
+  padding: 0 .8rem;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+.privacy-document .privacy-page { padding-block-start: 1.5rem; }
+.privacy-page article > :first-child { margin-block-start: 0; }
+
+@media (max-width: 650px) {
+  .home-header-actions { flex-direction: column; align-items: flex-end; gap: .5rem; }
+  .privacy-document > header { flex-wrap: wrap; gap: .75rem; }
+  .privacy-header-actions { width: 100%; justify-content: flex-start; }
+}

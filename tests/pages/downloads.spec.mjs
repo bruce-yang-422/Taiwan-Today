@@ -15,7 +15,7 @@ test('privacy policy is accessible from home without scripts', async ({page}) =>
 });
 });
 
-test('language pills localize both pages and preserve the language between them', async ({ page }) => {
+test('language controls localize both pages and preserve the language between them', async ({ page }) => {
  await page.setViewportSize({ width: 390, height: 844 });
  await page.goto('/');
  const pills = page.locator('.privacy-languages');
@@ -25,7 +25,7 @@ test('language pills localize both pages and preserve the language between them'
    ['English', 'en', 'Taiwan Today', 'Privacy Policy'],
    ['繁體中文', 'zh-Hant', '台灣今日曆', '隱私權政策'],
  ]) {
-   await pills.getByRole('link', { name: language }).click();
+   await page.locator('.home-language').selectOption(locale);
    await expect(page.locator('html')).toHaveAttribute('lang', locale);
    await expect(page.locator('h1')).toContainText(home);
    if (locale === 'zh-Hans') {
@@ -33,10 +33,11 @@ test('language pills localize both pages and preserve the language between them'
      await expect(page.locator('#templates')).toContainText('下载模板');
      await expect(page.locator('#history-file')).toHaveAccessibleName('选择你的表格');
    }
-   await expect(pills.getByRole('link', { name: language })).toHaveAttribute('aria-current', 'true');
+   await expect(page.locator('.home-language')).toHaveValue(locale);
    await page.locator('footer a[href^="./privacy.html"]').click();
    await expect(page.locator('h1')).toHaveText(privacy);
    await expect(page.locator('html')).toHaveAttribute('lang', locale);
+   await expect(pills.getByRole('link', { name: language })).toHaveAttribute('aria-current', 'true');
    await expect(page.locator('article a[href^="mailto:"]')).toBeVisible();
    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
    await page.locator('footer a').click();

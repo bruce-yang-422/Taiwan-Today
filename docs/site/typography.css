@@ -1,0 +1,78 @@
+@font-face {
+  font-family: "Noto Sans TC";
+  src: url("./fonts/notosanstc.woff") format("woff");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Noto Sans SC";
+  src: url("./fonts/notosanssc.woff") format("woff");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Noto Sans JP";
+  src: url("./fonts/notosansjp.woff") format("woff");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Noto Sans";
+  src: url("./fonts/notosans.woff") format("woff");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+:root {
+  --site-font: "Noto Sans TC", "Microsoft JhengHei", system-ui, sans-serif;
+}
+
+:root:lang(zh-Hans) {
+  --site-font: "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif;
+}
+
+:root:lang(ja) {
+  --site-font: "Noto Sans JP", "Yu Gothic", system-ui, sans-serif;
+}
+
+:root:lang(en) {
+  --site-font: "Noto Sans", system-ui, sans-serif;
+}
+
+body { font-family: var(--site-font); }
+.hero {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.22fr);
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  padding-block: clamp(1.75rem, 4vw, 3rem);
+}
+.hero h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  line-height: 1.18;
+  letter-spacing: -.025em;
+}
+.hero h1 :is(span, em) { display: block; }
+.hero h1 em {
+  margin-top: .45em;
+  font-family: inherit;
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
+  font-weight: 600;
+  line-height: 1.45;
+  letter-spacing: normal;
+  text-wrap: balance;
+}
+.hero .intro { margin: 0; }
+.hero .actions { margin-block: 1.25rem .75rem; }
+.hero .quiet { margin: 0; }
+
+@media (max-width: 760px) {
+  .hero { grid-template-columns: minmax(0, 1fr); }
+  .hero h1 em { text-wrap: wrap; }
+}
+.privacy-languages a:lang(zh-Hant) { font-family: "Noto Sans TC", var(--site-font); }
+.privacy-languages a:lang(zh-Hans) { font-family: "Noto Sans SC", var(--site-font); }
+.privacy-languages a:lang(ja) { font-family: "Noto Sans JP", var(--site-font); }
+.privacy-languages a:lang(en) { font-family: "Noto Sans", var(--site-font); }

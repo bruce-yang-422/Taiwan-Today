@@ -1,8 +1,8 @@
 export const homeTranslations = {
   en: {
     'header nav a': ['Features', 'Layouts', 'Personal events', 'FAQ'],
-    '.hero .eyebrow': ['Taiwan Today · A new tab for everyday life'],
-    '.hero h1': ['Taiwan Today · Chrome New Tab Calendar'],
+    '.hero h1 span': ['Taiwan Today'],
+    '.hero h1 em': ['Chrome New Tab Calendar'],
     '.hero .intro': ['See the date, lunar calendar, solar terms, and time at a glance. Keep a to-do list, open your favorite sites, and start the day with a quote or a moment from history.'],
     '.hero .actions a': ['Get Taiwan Today ↗', 'Explore the five layouts'],
     '.hero .quiet': ['Chrome / Edge · No account required · Settings stay on your device'],
@@ -48,8 +48,8 @@ export const homeTranslations = {
   },
   ja: {
     'header nav a': ['機能', 'レイアウト', '個人の記録', 'よくある質問'],
-    '.hero .eyebrow': ['台湾今日暦 · 日常のための新しいタブ'],
-    '.hero h1': ['台湾今日暦 · Chrome 新しいタブのカレンダー'],
+    '.hero h1 span': ['台湾今日暦'],
+    '.hero h1 em': ['Chrome の新しいタブで使えるカレンダー'],
     '.hero .intro': ['日付、旧暦、二十四節気、時刻をひと目で確認。ToDo を記録し、よく使うサイトを開き、歴史や名言を読んで一日を始めましょう。'],
     '.hero .actions a': ['台湾今日暦を使う ↗', '5種類のレイアウトを見る'],
     '.hero .quiet': ['Chrome / Edge · アカウント不要 · 設定は端末に保存'],

@@ -3,7 +3,7 @@ import { simplify, simplifyTree } from './simplified.js';
 
 const nav = document.querySelector('.privacy-languages');
 const article = document.querySelector('.privacy-page article');
-const home = document.querySelector('header > a:last-child');
+const home = document.querySelector('.privacy-home');
 const footer = document.querySelector('footer a');
 const brand = document.querySelector('.brand span');
 const footerBrand = document.querySelector('footer span');
@@ -32,7 +32,7 @@ function render() {
     'zh-Hans': '台湾今日历 · 隐私政策',
   }[locale] ?? original.footerBrand;
   const homeUrl = locale === 'zh-Hant' ? './' : './?lang=' + locale;
-  for (const link of document.querySelectorAll('header a, footer a')) link.href = homeUrl;
+  for (const link of [brand.closest('a'), home, footer]) link.href = homeUrl;
   for (const link of links) {
     if (link.lang === locale) link.setAttribute('aria-current', 'true');
     else link.removeAttribute('aria-current');

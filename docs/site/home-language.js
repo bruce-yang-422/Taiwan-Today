@@ -1,15 +1,14 @@
 import { homeTranslations } from './home-translations.js';
 import { simplify, simplifyTree } from './simplified.js';
 
-const nav = document.querySelector('.privacy-languages');
-const links = [...nav.querySelectorAll('a')];
+const language = document.querySelector('.home-language');
 const requested = new URL(location.href).searchParams.get('lang');
-const locale = links.some(link => link.lang === requested) ? requested : 'zh-Hant';
+const locale = [...language.options].some(option => option.value === requested) ? requested : 'zh-Hant';
 const description = document.querySelector('meta[name="description"]');
 document.documentElement.lang = locale;
 
 if (locale === 'zh-Hans') {
-  for (const element of document.querySelectorAll('header, main > :not(.privacy-languages), footer')) {
+  for (const element of document.querySelectorAll('header .brand, header nav, main, footer')) {
     simplifyTree(element);
   }
   document.title = simplify(document.title);
@@ -43,12 +42,15 @@ if (translations) {
 }
 
 const languageLabels = { 'zh-Hant': '語言', 'zh-Hans': '语言', en: 'Language', ja: '言語' };
-nav.setAttribute('aria-label', languageLabels[locale]);
-for (const link of links) {
-  if (link.lang === locale) link.setAttribute('aria-current', 'true');
-  else link.removeAttribute('aria-current');
-}
+language.setAttribute('aria-label', languageLabels[locale]);
+language.value = locale;
+language.addEventListener('change', () => {
+  const url = new URL(location.href);
+  if (language.value === 'zh-Hant') url.searchParams.delete('lang');
+  else url.searchParams.set('lang', language.value);
+  location.assign(url);
+});
 for (const link of document.querySelectorAll('a[href="./privacy.html"]')) {
   if (locale !== 'zh-Hant') link.href = './privacy.html?lang=' + locale;
 }
-nav.hidden = false;
+language.hidden = false;
