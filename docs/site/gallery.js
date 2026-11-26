@@ -9,7 +9,7 @@ controls.forEach(button => button.addEventListener('click', () => {
     const suffix = {
       en: light ? ' light-theme screenshot' : ' dark-theme screenshot',
       ja: light ? 'のライトテーマ画面' : 'のダークテーマ画面',
-      'zh-Hans': light ? '亮色实际画面' : '暗色实际画面',
+      'zh-Hans': light ? '浅色主题截图' : '深色主题截图',
     };
     img.alt = img.dataset.styleName + (suffix[document.documentElement.lang] ?? (light ? '亮色實際畫面' : '暗色實際畫面'));
   });

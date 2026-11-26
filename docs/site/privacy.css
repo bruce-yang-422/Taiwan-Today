@@ -1,25 +1,33 @@
 .privacy-languages {
   display: inline-flex;
+  flex-direction: row;
   flex-wrap: wrap;
   gap: .25rem;
   max-width: 100%;
   padding: .35rem;
   margin-bottom: 1.5rem;
-  border: 1px solid #795638;
+  border: 1px solid var(--line);
   border-radius: 2rem;
-  background: #241b13;
+  background: var(--paper);
 }
 .privacy-languages[hidden] { display: none; }
 .privacy-languages a {
-  padding: .6rem 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: .35rem clamp(.55rem, 1.7vw, 1rem);
   border-radius: 2rem;
-  color: #ffc089;
+  color: var(--ink);
+  font-weight: 600;
+  white-space: nowrap;
   text-decoration: none;
 }
-.privacy-languages a:hover,
-.privacy-languages a[aria-current] { background: #49311e; }
-.privacy-languages a[aria-current] { font-weight: 700; }
-.privacy-languages a:focus-visible { outline: 2px solid #ffc089; }
+.privacy-languages a:hover:not([aria-current]) { background: #e9eeeb; }
+.privacy-languages a[aria-current] {
+  background: var(--ink);
+  color: var(--paper);
+}
 
 main > .privacy-languages { margin-top: 1rem; }
 .privacy-page > .privacy-languages { margin-top: 0; }

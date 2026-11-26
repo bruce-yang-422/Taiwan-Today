@@ -29,7 +29,7 @@ function render() {
   footerBrand.textContent = {
     en: 'Taiwan Today · Privacy Policy',
     ja: '台湾今日暦 · プライバシーポリシー',
-    'zh-Hans': '台湾今日历 · 隐私权政策',
+    'zh-Hans': '台湾今日历 · 隐私政策',
   }[locale] ?? original.footerBrand;
   const homeUrl = locale === 'zh-Hant' ? './' : './?lang=' + locale;
   for (const link of document.querySelectorAll('header a, footer a')) link.href = homeUrl;

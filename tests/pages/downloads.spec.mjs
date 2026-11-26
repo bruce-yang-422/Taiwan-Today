@@ -20,7 +20,7 @@ test('language pills localize both pages and preserve the language between them'
  await page.goto('/');
  const pills = page.locator('.privacy-languages');
  for (const [language, locale, home, privacy] of [
-   ['简体中文', 'zh-Hans', '台湾今日历', '隐私权政策'],
+   ['简体中文', 'zh-Hans', '台湾今日历', '隐私政策'],
    ['日本語', 'ja', '台湾今日暦', 'プライバシーポリシー'],
    ['English', 'en', 'Taiwan Today', 'Privacy Policy'],
    ['繁體中文', 'zh-Hant', '台灣今日曆', '隱私權政策'],
@@ -28,6 +28,11 @@ test('language pills localize both pages and preserve the language between them'
    await pills.getByRole('link', { name: language }).click();
    await expect(page.locator('html')).toHaveAttribute('lang', locale);
    await expect(page.locator('h1')).toContainText(home);
+   if (locale === 'zh-Hans') {
+     await expect(page.locator('h1')).toContainText('Chrome 新标签页日历');
+     await expect(page.locator('#templates')).toContainText('下载模板');
+     await expect(page.locator('#history-file')).toHaveAccessibleName('选择你的表格');
+   }
    await expect(pills.getByRole('link', { name: language })).toHaveAttribute('aria-current', 'true');
    await page.locator('footer a[href^="./privacy.html"]').click();
    await expect(page.locator('h1')).toHaveText(privacy);
