@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "version": "1.0.0",
-  "updatedAt": "2026-10-27T06:30:19.342Z",
-  "updatedAtTaiwan": "2026-10-27T14:30:19.342+08:00",
-  "revision": "415f53b5b5de44a2357486ed32b0a3f48626a792678a22f21ceabc70ff0ecef5",
+  "updatedAt": "2026-11-26T04:52:11.701Z",
+  "updatedAtTaiwan": "2026-11-26T12:52:11.701+08:00",
+  "revision": "d517e885f82d35422b6d3f63719b4111802888b6145b66d56ff5b6754d91bedb",
   "files": [
     {
       "name": "calendar-2026.json",
@@ -57,22 +57,6 @@
       "name": "history-world.json",
       "sha256": "3ac4c619df18902dec01561fa09d8084127ebff6637788d29b2ddccd14cdf78c",
       "bytes": 34749,
-      "version": "1.0.0",
-      "updatedAt": "2026-09-21T09:10:04.106Z",
-      "updatedAtTaiwan": "2026-09-21T17:10:04.106+08:00"
-    },
-    {
-      "name": "holidays.json",
-      "sha256": "8067090e3cf047a6f357a8a6a29f3d79763ef634cd5c8dfacd0da11cbd4fe2ca",
-      "bytes": 2442,
-      "version": "1.0.0",
-      "updatedAt": "2026-09-21T09:10:04.106Z",
-      "updatedAtTaiwan": "2026-09-21T17:10:04.106+08:00"
-    },
-    {
-      "name": "long-holidays.json",
-      "sha256": "baea1f3d11d72ba8c82a5f99199c023b6a0061df5bc370143b7cfb99ad324508",
-      "bytes": 2731,
       "version": "1.0.0",
       "updatedAt": "2026-09-21T09:10:04.106Z",
       "updatedAtTaiwan": "2026-09-21T17:10:04.106+08:00"

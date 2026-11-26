@@ -58,7 +58,7 @@ test('API errors and unavailable API retain the query without sending it to anot
   expect(requests).toEqual([]);
 });
 
-test('packaged v1.1.0 uses the real Chrome Search API and browser default provider', async () => {
+test('packaged extension uses the real Chrome Search API and browser default provider', async () => {
   const profile = await mkdtemp(resolve(tmpdir(), 'taiwan-search-test-'));
   const extension = resolve('dist');
   const context = await chromium.launchPersistentContext(profile, { channel: 'chromium', headless: true, args: [`--disable-extensions-except=${extension}`, `--load-extension=${extension}`] });
@@ -68,7 +68,7 @@ test('packaged v1.1.0 uses the real Chrome Search API and browser default provid
     const page = await context.newPage();
     await page.goto('chrome://newtab/');
     await expect(page.locator('#search-input')).toBeVisible();
-    expect(await page.evaluate(() => chrome.runtime.getManifest().version)).toBe('1.1.0');
+    expect(await page.evaluate(() => chrome.runtime.getManifest().version)).toBe('1.2.0');
     expect(await page.evaluate(() => chrome.runtime.getManifest().permissions)).toContain('search');
     await page.locator('#search-input').fill('台灣 & 日曆');
     await page.locator('#search-input').press('Enter');

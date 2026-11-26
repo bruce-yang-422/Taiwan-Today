@@ -1,0 +1,234 @@
+{
+  "version": "1.2.1",
+  "updatedAt": "2026-11-26T00:00:00+08:00",
+  "data": [
+    {
+      "date": "03-08",
+      "name": "國際婦女節",
+      "type": "international",
+      "region": "global",
+      "calendar": "gregorian",
+      "recurring": true,
+      "sourceUrl": "https://www.un.org/en/observances/list-days-weeks"
+    },
+    {
+      "date": "06-05",
+      "name": "世界環境日",
+      "type": "international",
+      "region": "global",
+      "calendar": "gregorian",
+      "recurring": true,
+      "sourceUrl": "https://www.un.org/en/observances/list-days-weeks"
+    },
+    {
+      "date": "10-24",
+      "name": "聯合國日",
+      "type": "international",
+      "region": "global",
+      "calendar": "gregorian",
+      "recurring": true,
+      "sourceUrl": "https://www.un.org/en/observances/list-days-weeks"
+    },
+    {
+      "date": "10-31",
+      "name": "萬聖節",
+      "type": "cultural",
+      "region": "global",
+      "calendar": "gregorian",
+      "recurring": true,
+      "sourceUrl": "https://www.loc.gov/item/today-in-history/october-31/"
+    },
+    {
+      "date": "12-10",
+      "name": "世界人權日",
+      "type": "international",
+      "region": "global",
+      "calendar": "gregorian",
+      "recurring": true,
+      "sourceUrl": "https://www.un.org/en/observances/list-days-weeks"
+    },
+    {
+      "date": "12-25",
+      "name": "聖誕節",
+      "type": "religious",
+      "region": "global",
+      "calendar": "gregorian",
+      "recurring": true,
+      "religion": "christian",
+      "sourceUrl": "https://www.mom.gov.sg/newsroom/press-releases/2025/0616-public-holidays-for-2026"
+    },
+    {
+      "date": "2026-02-19",
+      "name": "齋戒月（拉瑪丹）",
+      "type": "religious",
+      "region": "SG",
+      "calendar": "gregorian",
+      "religion": "islam",
+      "endDate": "2026-03-20",
+      "description": "齋戒月期間，穆斯林通常從黎明到日落齋戒。",
+      "sourceUrl": "https://www.muis.gov.sg/resources/islamic-calendar/"
+    },
+    {
+      "date": "2026-03-21",
+      "name": "開齋節",
+      "type": "religious",
+      "region": "SG",
+      "calendar": "gregorian",
+      "religion": "islam",
+      "description": "採新加坡公布的日期，各地可能因觀月結果而異。",
+      "sourceUrl": "https://www.mom.gov.sg/newsroom/press-releases/2025/0616-public-holidays-for-2026"
+    },
+    {
+      "date": "2026-04-05",
+      "name": "復活節（西方教會）",
+      "type": "religious",
+      "region": "global",
+      "calendar": "gregorian",
+      "religion": "christian",
+      "sourceUrl": "https://www.usccb.org/resources/2026cal.pdf"
+    },
+    {
+      "date": "2026-05-27",
+      "name": "古爾邦節（宰牲節）",
+      "type": "religious",
+      "region": "SG",
+      "calendar": "gregorian",
+      "religion": "islam",
+      "description": "採新加坡公布的日期，各地可能因觀月結果而異。",
+      "sourceUrl": "https://www.mom.gov.sg/newsroom/press-releases/2025/0616-public-holidays-for-2026"
+    },
+    {
+      "date": "2026-06-17",
+      "name": "伊斯蘭新年",
+      "type": "religious",
+      "region": "SG",
+      "calendar": "gregorian",
+      "religion": "islam",
+      "sourceUrl": "https://www.muis.gov.sg/resources/islamic-calendar/"
+    },
+    {
+      "date": "2026-06-26",
+      "name": "阿舒拉日",
+      "type": "religious",
+      "region": "SG",
+      "calendar": "gregorian",
+      "religion": "islam",
+      "description": "部分穆斯林會在這天自願齋戒，各傳統的紀念方式不同。",
+      "sourceUrl": "https://www.muis.gov.sg/resources/islamic-calendar/"
+    },
+    {
+      "date": "2026-11-08",
+      "name": "排燈節",
+      "type": "religious",
+      "region": "SG",
+      "calendar": "gregorian",
+      "religion": "hindu",
+      "sourceUrl": "https://www.mom.gov.sg/newsroom/press-releases/2025/0616-public-holidays-for-2026"
+    },
+    {
+      "date": "2026-11-26",
+      "name": "感恩節",
+      "type": "cultural",
+      "region": "US",
+      "calendar": "gregorian",
+      "sourceUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/"
+    },
+    {
+      "date": "2026-11-28",
+      "name": "地方公職人員選舉（九合一選舉）",
+      "type": "election",
+      "region": "TW",
+      "calendar": "gregorian",
+      "sourceUrl": "https://info.cec.gov.tw/vote2026/navigation/"
+    },
+    {
+      "date": "2026-11-28",
+      "name": "全國性公民投票第 22 案",
+      "type": "referendum",
+      "region": "TW",
+      "calendar": "gregorian",
+      "sourceUrl": "https://info.cec.gov.tw/vote2026/navigation/"
+    },
+    {
+      "date": "2027-02-08",
+      "name": "齋戒月（拉瑪丹）",
+      "type": "religious",
+      "region": "SG",
+      "calendar": "gregorian",
+      "religion": "islam",
+      "endDate": "2027-03-09",
+      "description": "齋戒月期間，穆斯林通常從黎明到日落齋戒。",
+      "estimated": true,
+      "sourceUrl": "https://www.muis.gov.sg/resources/islamic-calendar/"
+    },
+    {
+      "date": "2027-03-10",
+      "name": "開齋節",
+      "type": "religious",
+      "region": "SG",
+      "calendar": "gregorian",
+      "religion": "islam",
+      "estimated": true,
+      "description": "採新加坡公布的日期，各地可能因觀月結果而異。",
+      "sourceUrl": "https://www.mom.gov.sg/newsroom/press-releases/2026/0618-public-holidays-for-2027"
+    },
+    {
+      "date": "2027-03-28",
+      "name": "復活節（西方教會）",
+      "type": "religious",
+      "region": "global",
+      "calendar": "gregorian",
+      "religion": "christian",
+      "sourceUrl": "https://www.usccb.org/resources/2027cal.pdf"
+    },
+    {
+      "date": "2027-05-17",
+      "name": "古爾邦節（宰牲節）",
+      "type": "religious",
+      "region": "SG",
+      "calendar": "gregorian",
+      "religion": "islam",
+      "estimated": true,
+      "description": "採新加坡公布的日期，各地可能因觀月結果而異。",
+      "sourceUrl": "https://www.mom.gov.sg/newsroom/press-releases/2026/0618-public-holidays-for-2027"
+    },
+    {
+      "date": "2027-06-06",
+      "name": "伊斯蘭新年",
+      "type": "religious",
+      "region": "SG",
+      "calendar": "gregorian",
+      "religion": "islam",
+      "estimated": true,
+      "sourceUrl": "https://www.muis.gov.sg/resources/islamic-calendar/"
+    },
+    {
+      "date": "2027-06-15",
+      "name": "阿舒拉日",
+      "type": "religious",
+      "region": "SG",
+      "calendar": "gregorian",
+      "religion": "islam",
+      "description": "部分穆斯林會在這天自願齋戒，各傳統的紀念方式不同。",
+      "estimated": true,
+      "sourceUrl": "https://www.muis.gov.sg/resources/islamic-calendar/"
+    },
+    {
+      "date": "2027-10-28",
+      "name": "排燈節",
+      "type": "religious",
+      "region": "SG",
+      "calendar": "gregorian",
+      "religion": "hindu",
+      "sourceUrl": "https://www.mom.gov.sg/newsroom/press-releases/2026/0618-public-holidays-for-2027"
+    },
+    {
+      "date": "2027-11-25",
+      "name": "感恩節",
+      "type": "cultural",
+      "region": "US",
+      "calendar": "gregorian",
+      "sourceUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/"
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 import { t, weekdayName } from '../i18n';
 import { holidayLabel } from '../i18n/calendar';
+import { observanceLabels } from '../i18n/observances';
 import { usesTaiwanCalendar } from '../calendar/context';
 import { getPublicData } from '../data/publicData';
 
@@ -38,7 +39,9 @@ export function renderPaperMonth(table: HTMLTableElement, date: { year: number; 
     time.textContent = String(value);
     if (isPaperRedDay(year, month, value)) time.className = 'paper-red-day';
     const holiday = getPublicData().holidays[time.dateTime];
-    if (holiday && usesTaiwanCalendar()) time.title = holidayLabel(holiday);
+    const labels = observanceLabels(time.dateTime);
+    if (holiday && usesTaiwanCalendar()) labels.unshift(holidayLabel(holiday));
+    if (labels.length) time.title = labels.join(' · ');
     if (value === day) time.setAttribute('aria-current', 'date');
     cell.append(time);
   }

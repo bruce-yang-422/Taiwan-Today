@@ -4,6 +4,7 @@ import english from '../src/i18n/en.json';
 import japanese from '../src/i18n/ja.json';
 import { getLocale, monthName, resolveLocale, setLocale, t, weekdayName } from '../src/i18n';
 import { holidayLabel, localizedCalendar } from '../src/i18n/calendar';
+import { observanceLabels } from '../src/i18n/observances';
 import { errorMessage } from '../src/i18n/errors';
 import { dailyCalendar } from '../src/calendar/dailyCalendar';
 import { getPublicData } from '../src/data/publicData';
@@ -11,6 +12,19 @@ import { websiteCategories } from '../src/shortcuts/websiteCatalog';
 import { Solar } from 'lunar-typescript';
 
 afterEach(() => setLocale('zh-TW'));
+
+it('labels national observances and matches recurring dates and inclusive ranges', () => {
+  expect(observanceLabels('2026-11-28')).toEqual([
+    '臺灣｜地方公職人員選舉（九合一選舉）',
+    '臺灣｜全國性公民投票第 22 案',
+  ]);
+  expect(observanceLabels('2027-11-28')).toEqual([]);
+  expect(observanceLabels('2027-10-31')).toContain('萬聖節');
+  expect(observanceLabels('2027-03-09')).toContain('新加坡｜齋戒月（拉瑪丹）');
+  expect(observanceLabels('2027-03-10')).toEqual(['新加坡｜開齋節']);
+  setLocale('en');
+  expect(observanceLabels('2026-11-28')).toContain('Taiwan｜National referendum No. 22');
+});
 
 describe('language selection and message safety', () => {
   it('uses explicit preferences, browser languages in order, and a Traditional Chinese fallback', () => {

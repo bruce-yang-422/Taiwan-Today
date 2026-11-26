@@ -1,5 +1,6 @@
 import { t, getLocale, weekdayName } from '../i18n';
 import { localizedCalendar } from '../i18n/calendar';
+import { observanceLabels } from '../i18n/observances';
 import { dailyCalendar } from '../calendar/dailyCalendar';
 import { calendarDate, calendarNoon, usesTaiwanCalendar } from '../calendar/context';
 import { lunarDate } from '../calendar/lunar';
@@ -86,8 +87,12 @@ export function createConceptLayouts(onSelect: (date?: Date) => void) {
       const lunar = lunarDate(info).lunar;
       const lunarLabel = document.createElement('span'); lunarLabel.className = 'month-lunar';
       lunarLabel.textContent = getLocale() === 'zh-TW' ? (lunar.getDay() === 1 ? info.lunar.split('・').pop()! : lunar.getDayInChinese()) : `${Math.abs(lunar.getMonth())}/${lunar.getDay()}`;
-      const detail = document.createElement('span'); detail.className = 'month-detail'; detail.textContent = (usesTaiwanCalendar() ? info.terms.today : '') || info.holiday || info.festivals[0] || '';
-      cell.title = usesTaiwanCalendar() ? t("{0} · 農曆 {1}{2}", [key, info.lunar, detail.textContent ? ` · ${detail.textContent}` : '']) : key;
+      const observances = observanceLabels(key);
+      const detail = document.createElement('span');
+      detail.className = 'month-detail';
+      detail.textContent = observances[0] || (usesTaiwanCalendar() ? info.terms.today : '') || info.holiday || info.festivals[0] || '';
+      const baseTitle = usesTaiwanCalendar() ? t("{0} · 農曆 {1}{2}", [key, info.lunar, '']) : key;
+      cell.title = [baseTitle, ...(observances.length ? observances : [detail.textContent])].filter(Boolean).join(' · ');
       cell.append(number, lunarLabel);
       if (detail.textContent) cell.append(detail);
       grid.append(cell);

@@ -12,7 +12,8 @@ import { parsePersonalHistory } from '../calendar/personalHistory';
 import type { HistoryEntry } from '../calendar/history';
 import { unwrapData } from './document';
 
-export const REQUIRED_FILES = ['history-taiwan.json', 'history-world.json', 'history-tech.json', 'history-entertainment.json', 'quotes.json', 'festivals.json', 'holidays.json', 'long-holidays.json'];
+export const REQUIRED_FILES = ['history-taiwan.json', 'history-world.json', 'history-tech.json', 'history-entertainment.json', 'quotes.json', 'festivals.json'];
+export const BUNDLED_HOLIDAY_FILES = ['holidays.json', 'long-holidays.json'];
 export const bundledFiles: Record<string, unknown> = {
   'history-taiwan.json': taiwan, 'history-world.json': world,
   'history-tech.json': tech, 'history-entertainment.json': entertainment, 'quotes.json': quotes,
@@ -45,7 +46,7 @@ function date(value: unknown): string {
   return s;
 }
 export function allowedFile(name: string) {
-  return REQUIRED_FILES.includes(name) || /^calendar-(19\d{2}|20\d{2}|2100)\.json$/.test(name);
+  return REQUIRED_FILES.includes(name) || BUNDLED_HOLIDAY_FILES.includes(name) || /^calendar-(19\d{2}|20\d{2}|2100)\.json$/.test(name);
 }
 /** Topic packs (e.g. tech, entertainment) share the entry shape but not the region whitelist used for personal imports. */
 function parseTopicHistory(value: unknown, region: string): HistoryEntry[] {
@@ -99,8 +100,8 @@ export function parsePublicData(files: Record<string, unknown>): PublicData {
     return { calendar, date: day, name: text(f.name), observances: f.observances === undefined ? [] : list(f.observances, 30).map(v => text(v)) };
   });
   const parsedHolidays: Record<string, string> = {};
-  for (const [key, value] of Object.entries(object(object(files['holidays.json']).dates))) parsedHolidays[date(key)] = text(value);
-  const periods = list(object(files['long-holidays.json']).periods, 1000).map(raw => {
+  for (const [key, value] of Object.entries(holidays.data.dates)) parsedHolidays[date(key)] = text(value);
+  const periods = list(longHolidays.data.periods, 1000).map(raw => {
     const p = object(raw), start = date(p.start), end = date(p.end), days = (Date.parse(end) - Date.parse(start)) / 86400000 + 1;
     if (days < 3 || days > 31 || p.days !== days) throw new Error('連假天數錯誤');
     return { name: text(p.name), start, end, days };

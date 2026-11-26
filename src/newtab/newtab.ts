@@ -1,6 +1,7 @@
 import { errorMessage } from '../i18n/errors';
 import { t, monthName, weekdayName } from '../i18n';
 import { localizedCalendar } from '../i18n/calendar';
+import { observanceLabels } from '../i18n/observances';
 import './newtab.css';
 import './traditional.css';
 import './modern.css';
@@ -67,7 +68,8 @@ function renderCalendar() {
   el('term-next').textContent = date.terms.next;
   el<HTMLProgressElement>('term-progress').value = date.terms.progress;
   el('term-countdown').textContent = t("{0}距{1} {2} 天", [date.terms.today ? t("今日{0}・", [date.terms.today]) : '', date.terms.next, date.terms.days]);
-  el('festivals').replaceChildren(...date.festivals.map(name => node('span', 'badge', name)));
+  const labels = [...date.festivals, ...observanceLabels(date.key)];
+  el('festivals').replaceChildren(...labels.map(name => node('span', 'badge', name)));
   if (date.holiday) {
     el('festivals').append(node('span', 'badge', date.holiday));
   }

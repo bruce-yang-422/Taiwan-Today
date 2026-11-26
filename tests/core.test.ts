@@ -8,7 +8,26 @@ import reference from '../data/calendar-2026.json';
 import reference2027 from '../data/calendar-2027.json';
 import { Lunar } from 'lunar-typescript';
 import { bundledFiles, parsePublicData } from '../src/data/publicData';
-import { parseManifest } from '../src/data/updates';
+import { parseCache, parseManifest } from '../src/data/updates';
+
+it('uses bundled holiday data and skips legacy holiday downloads and cache entries', () => {
+  const revision = 'a'.repeat(64);
+  const manifest = {
+    schemaVersion: 1, revision,
+    files: Object.keys(bundledFiles).map(name => ({ name, bytes: 10, sha256: 'b'.repeat(64) })),
+  };
+  const parsed = parseManifest(manifest);
+  expect(parsed.files.map(file => file.name)).not.toContain('holidays.json');
+  expect(parsed.files.map(file => file.name)).not.toContain('long-holidays.json');
+  const { cache, data } = parseCache({
+    schemaVersion: 1, revision, updatedAt: '2026-11-26T00:00:00Z', manifest,
+    files: { ...bundledFiles, 'holidays.json': null, 'long-holidays.json': null },
+  });
+  expect(cache.files).not.toHaveProperty(['holidays.json']);
+  expect(cache.files).not.toHaveProperty(['long-holidays.json']);
+  expect(data.holidays['2027-01-01']).toContain('放假');
+  expect(data.periods.length).toBeGreaterThan(0);
+});
 import { parsePersonalHistory } from '../src/calendar/personalHistory';
 import { unwrapData } from '../src/data/document';
 import { parsePersonalHistoryFile } from '../src/calendar/personalHistoryFile';

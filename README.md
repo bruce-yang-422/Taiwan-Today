@@ -15,9 +15,9 @@
 
 立即安裝：[Chrome 線上應用程式商店](https://chromewebstore.google.com/detail/adgohcafbfdmkkllmphehaeainhbeigp)
 
-版本下載：[v1.1.0 安裝包](release/taiwan-daily-chrome-1.1.0.zip) · [v1.1.0 更新說明](V1.1.0.md) · [v1.0.0 發布頁](https://github.com/bruce-yang-422/Taiwan-Today/releases/tag/v1.0.0)
+版本下載：[v1.2.0 安裝包](release/taiwan-daily-chrome-1.2.0.zip) · [v1.2.0 更新說明](V1.2.0.md) · [v1.0.0 發布頁](https://github.com/bruce-yang-422/Taiwan-Today/releases/tag/v1.0.0)
 
-目前原始碼版本：**1.1.0**，更新內容見 [v1.1.0 更新說明](V1.1.0.md)；本版封裝檔統一為 [`release/taiwan-daily-chrome-1.1.0.zip`](release/taiwan-daily-chrome-1.1.0.zip)，已包含縮小網站存取權限與 Chrome Search API 搜尋修改，可用於商店上傳。
+目前原始碼版本：**1.2.0**，更新內容見 [v1.2.0 更新說明](V1.2.0.md)；本版封裝檔統一為 [`release/taiwan-daily-chrome-1.2.0.zip`](release/taiwan-daily-chrome-1.2.0.zip)，已加入國際節慶與國家標籤，可用於商店上傳。
 
 以 Vite、TypeScript、Tailwind CSS 與 Manifest V3 實作的 Chrome 新分頁，提供繁體中文、English、日本語介面，支援國內、短期出差及長期海外的日曆與時鐘設定。無後端、無帳號、無追蹤，日曆與內建內容可離線使用；天氣、使用瀏覽器預設搜尋引擎的文字搜尋、外部連結與公共資料更新需要網路。
 
@@ -35,7 +35,7 @@
 
 ### 手動下載安裝（不需要 Node.js）
 
-1. 下載 [taiwan-daily-chrome-1.1.0.zip](release/taiwan-daily-chrome-1.1.0.zip)。
+1. 下載 [taiwan-daily-chrome-1.2.0.zip](release/taiwan-daily-chrome-1.2.0.zip)。
 2. 將 ZIP 解壓縮到固定的資料夾。
 3. 開啟 `chrome://extensions`，啟用「開發人員模式」，按「載入未封裝項目」。
 4. 選取解壓縮後直接包含 `manifest.json` 的資料夾，開啟新分頁即可使用。
@@ -119,7 +119,7 @@ npx playwright test --config tests/pages/playwright.config.mjs
 
 ### 建置、封裝與暫存檔
 
-`dist/` 是 `npm run build` 產生的可載入擴充功能；封裝時只壓縮 `dist/` 內的檔案，確保 `manifest.json` 位於 ZIP 根目錄，版本封裝統一保存為 `release/taiwan-daily-chrome-1.1.0.zip`。上傳商店前，核對 ZIP 中的版本與權限是否和根目錄 manifest 一致。
+`dist/` 是 `npm run build` 產生的可載入擴充功能；封裝時只壓縮 `dist/` 內的檔案，確保 `manifest.json` 位於 ZIP 根目錄，版本封裝統一保存為 `release/taiwan-daily-chrome-1.2.0.zip`。上傳商店前，核對 ZIP 中的版本與權限是否和根目錄 manifest 一致。
 
 測試截圖與執行結果輸出到 `test-results/`，報告可能產生於 `playwright-report/`；兩者均可刪除，後續執行測試時會重新產生。`.scratch/`、`.research/` 與 `*.log` 為忽略的本機暫存。一次性翻譯腳本與中間檔已移除，正式翻譯維護使用下述語言包及 `scripts/localize-calendar-data.mjs`。
 
@@ -155,6 +155,7 @@ npx playwright test --config tests/pages/playwright.config.mjs
 - 依日曆情境設定時區的指針時鐘，含時針、分針與秒針；每秒更新，背景分頁暫停更新，返回時校正。桌面以 1920×1080 設計，時鐘置於中央日曆右側；窄螢幕改為上下排列。
 - 國內與出差模式提供臺灣時區國曆、星期、農曆、二十四節氣、節氣進度與倒數；長期海外依所選時區顯示西曆。跨午夜及返回分頁更新。
 - 台灣民俗節日、2026～2027 年政府行政機關節日／補假，以及連假日次。
+- 2026～2027 年重要節慶與投票事件，依日期顯示，特定國家的項目會標示國名。資料與來源見 [observances.json](data/observances.json)。
 - 使用瀏覽器預設搜尋引擎的文字搜尋與歷史事件「深入了解」。
 - 五種樣式共用文字搜尋列，透過 Chrome Search API 使用瀏覽器預設搜尋引擎；操作見[文字搜尋](#文字搜尋)。
 - 捷徑新增、編輯、刪除、拖曳排序；編輯按鈕支援 Alt + 左右方向鍵排序。
@@ -176,6 +177,8 @@ npx playwright test --config tests/pages/playwright.config.mjs
 私人紀事的 `region` 是可自訂分類（最多 40 字），例如童年、中年、公司名稱或小孩名字；留白預設為「個人」。所有匯入紀事皆歸「私人」來源，不因分類文字而改成台灣或國際公共歷史。
 
 ### 資料版本與更新時間
+
+`data/observances.json`、`data/holidays.json` 和 `data/long-holidays.json` 隨插件封裝，使用者透過插件版本更新取得新版資料。維護時先修改 JSON，再提高 `manifest.json` 的插件版本並同步 `package.json` 與 `package-lock.json`，執行 `npm run build` 後，將 `dist/` 內容封裝成新版 ZIP 上傳 Chrome 線上應用程式商店。
 
 日曆、歷史、節日與語錄等資料 JSON 都在開頭宣告自己的 `version`，原本的陣列或物件放在 `data`，例如：
 

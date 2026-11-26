@@ -1,4 +1,4 @@
-import { allowedFile, REQUIRED_FILES, parsePublicData, type PublicData } from './publicData';
+import { allowedFile, BUNDLED_HOLIDAY_FILES, REQUIRED_FILES, parsePublicData, type PublicData } from './publicData';
 
 export const DATA_URL = 'https://raw.githubusercontent.com/bruce-yang-422/Taiwan-Today/main/data/';
 export const CACHE_KEY = 'publicDataCache';
@@ -19,13 +19,15 @@ export function parseManifest(value: unknown): DataManifest {
     checkVersion(file);
   }
   if (REQUIRED_FILES.some(name => !seen.has(name)) || size > 5 * 1024 * 1024) throw new Error('更新檔案不完整或超過 5 MB');
-  return m;
+  return { ...m, files: m.files.filter(file => !BUNDLED_HOLIDAY_FILES.includes(file.name)) };
 }
 export function parseCache(value: unknown): { cache: DataCache; data: PublicData } {
   const c = value as DataCache | null;
   if (!c || c.schemaVersion !== 1 || !/^[a-f0-9]{64}$/.test(c.revision) || !Number.isFinite(Date.parse(c.updatedAt)) || !c.files || typeof c.files !== 'object' || Array.isArray(c.files)) throw new Error('本機更新快取格式錯誤');
-  if (c.manifest && parseManifest(c.manifest).revision !== c.revision) throw new Error('快取資料版本不符');
-  return { cache: c, data: parsePublicData(c.files) };
+  const manifest = c.manifest && parseManifest(c.manifest);
+  if (manifest && manifest.revision !== c.revision) throw new Error('快取資料版本不符');
+  const files = Object.fromEntries(Object.entries(c.files).filter(([name]) => !BUNDLED_HOLIDAY_FILES.includes(name)));
+  return { cache: { ...c, files, manifest }, data: parsePublicData(files) };
 }
 async function download(name: string, maxBytes: number, revision = '') {
   const controller = new AbortController();

@@ -1,7 +1,7 @@
 import { readFile, readdir, writeFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 const root = new URL('../data/', import.meta.url);
-const required = ['history-taiwan.json', 'history-world.json', 'history-tech.json', 'history-entertainment.json', 'quotes.json', 'festivals.json', 'holidays.json', 'long-holidays.json'];
+const required = ['history-taiwan.json', 'history-world.json', 'history-tech.json', 'history-entertainment.json', 'quotes.json', 'festivals.json'];
 const names = (await readdir(root)).filter(name => required.includes(name) || /^calendar-(19\d{2}|20\d{2}|2100)\.json$/.test(name)).sort();
 if (required.some(name => !names.includes(name))) throw new Error('缺少公共資料檔案');
 const hash = bytes => createHash('sha256').update(bytes).digest('hex');
